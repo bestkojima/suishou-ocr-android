@@ -1,0 +1,6 @@
+{
+  "environment": "Linux JVM → 实际 App JNI → 同源生产 C ABI 与真实模型，非 Android 设备",
+  "input": "verification/real-ocr/source.png 转为 Android 同型 RGBA PNG，本次重新推理",
+  "status": "ok",
+  "blocks": 10
+}

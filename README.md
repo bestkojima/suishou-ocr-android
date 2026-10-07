@@ -72,7 +72,9 @@ Gradle 的 preBuild 会自动构建离线网页和复制样本。浏览器预览
 
 当前没有连接 Android 设备，也未运行设备模拟器。相机方向/权限、真实系统文件选择、WebView 设备兼容性、PDF 渲染及后台服务生命周期仍需真机验收。JVM 测试不能代替这些验收。
 
-## 单图真实 OCR（0.7.0）
+## 单图真实 OCR（0.7.1）
+
+`0.7.1-ocr` 修复 Android ARGB 规范 PNG 被原生引擎拒收、报 `decode/input_error/invalid input` 的问题。请覆盖安装同类型 APK，保留已下载模型，在原记录直接重试；[修复与验证记录](verification/android-image-decode/DELIVERY.md) 区分桌面实际 JNI／生产模型验证和设备待验收。
 
 拍照/导入先保存原始文件与 EXIF 方向规范后的 `source.png`。缺模型时保留待识别输入；设置 → 识别模型下载两个默认仓库的九个必需工件后，可“校验并加载识别模型”，再回到输入点击“开始识别”。工件齐备时采集后自动开始校验和识别，APK 不包含权重。
 

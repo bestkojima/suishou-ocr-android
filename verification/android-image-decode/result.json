@@ -1,0 +1,11 @@
+{
+  "environment": "Linux JVM → 实际 App JNI → 同源 C ABI，受控识别后端，非 Android 模型推理",
+  "passed": [
+    "RGB PNG",
+    "Android ARGB 规范 PNG",
+    "RGBA 透明内容以白纸合成",
+    "灰度 Alpha 以白纸合成",
+    "原始 RGB 内容与资源保持一致",
+    "损坏输入仍失败且同引擎可以重试"
+  ]
+}

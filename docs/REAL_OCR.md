@@ -73,3 +73,7 @@ node web/verify-real-results.mjs
 ticket5 在 ticket3／ticket4 修复之后重新构建两版 APK、执行生产 C ABI 识别并用该次结果生成预览，完整分项证据与设备清单见 [ticket5 交付记录](../verification/ticket5/DELIVERY.md)。预览脚本通过 `OCR_RESULT_DIR` 选择真实输出目录，`OCR_EVIDENCE_DIR` 选择报告／截图目录，报告记录导入 ZIP 的路径与 SHA-256；不要仅更换截图目录后声称输入已更新。`verify_real_ocr.py --input <图片> --output <新的空目录>` 会验证取消与恢复后完整输出、重复输入和空白页；`package_real_preview.py --output <该目录>` 生成预览 ZIP；`verify_ocr_apk.py --output <报告路径>` 保存独立静态检查。partial 使用带 provenance 的既有真实样本，并与新推理分开注明。
 
 浏览器识别桥接新增连续下载准备、实际加载状态、识别结果保存、另存重新识别和旧校对导出请求场景。下载／加载／正文与导出宿主均为明确模拟，实际文件导出语义另由真实输出往返和 JVM 测试验证。拖动校对与识别桥接脚本共用 4196 端口，运行时应串行执行。
+
+## 0.7.1 输入解码修复
+
+安卓实测报告 `engine_ready:true` 和 `decode/input_error/invalid input` 后，实际 JNI 最小复现确认了 Alpha PNG 的兼容缺陷：Android ARGB_8888 规范 PNG 含 4 通道，而引擎的编码 PNG 契约仅接受灰度／RGB。JNI 现在将 Alpha PNG 以白纸合成为 RGB8 后提交公共 C ABI，兼容之前已保存的原记录。两版 APK 更新为 `0.7.1-ocr`；覆盖安装同类型 APK 后可直接重试，无需重新下载模型。回归脚本 `tools/verify_android_image_input.py` 通过实际 JNI 验证通道及输出像素，`--production` 模式另行验证真实模型；[修复记录](../verification/android-image-decode/DELIVERY.md) 区分桌面结果与设备待验收。

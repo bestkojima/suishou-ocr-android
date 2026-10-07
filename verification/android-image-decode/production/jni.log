@@ -1,0 +1,2 @@
+production-argb.png run=0 status={"state":"completed","running":false,"terminal":true,"cancel_requested":false,"timeout_requested":false,"cancellation_granularity":"after_backend_call","page_current":1,"page_completed":1,"page_total":1,"region_completed":9,"region_total":9,"events_pending":0,"events_dropped":0,"engine_ready":true,"latestEvent":{"kind":"terminal","state":"completed","page":1,"request_id":null,"page_completed":1,"page_total":1,"region_completed":9,"region_total":9}}
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

@@ -6,6 +6,13 @@
 #include <vector>
 #include <cstdlib>
 #include <stdexcept>
+#include <memory>
+
+#define STBI_ONLY_PNG
+#define STBI_NO_STDIO
+#define STB_IMAGE_STATIC
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
 namespace {
 struct String {
@@ -49,6 +56,28 @@ extern "C" JNIEXPORT jint JNICALL Java_cn_local_ocr_NativeOcr_run(JNIEnv* env,jc
         std::vector<uint8_t> bytes(static_cast<size_t>(size)); in.seekg(0); in.read(reinterpret_cast<char*>(bytes.data()),bytes.size());
         if(!in) throw std::runtime_error("读取输入图片失败");
         DocOcrInput input{}; input.struct_size=sizeof(input); input.data=bytes.data(); input.size=bytes.size(); input.format=DOCOCR_IMAGE_PNG;
+        // Android ARGB_8888 的规范 PNG 含 Alpha；引擎的编码图片入口仅接受灰度/RGB。
+        // 在 JNI 适配为白纸背景的 RGB8，也兼容修复前已落盘的 source.png。
+        int width=0,height=0,channels=0;
+        std::vector<uint8_t> rgb;
+        if(bytes.size()<=64*1024*1024 &&
+           stbi_info_from_memory(bytes.data(),static_cast<int>(bytes.size()),&width,&height,&channels) &&
+           (channels==2||channels==4) && width>0 && height>0 &&
+           uint64_t(width)*height<=64'000'000 &&
+           !stbi_is_16_bit_from_memory(bytes.data(),static_cast<int>(bytes.size()))) {
+            std::unique_ptr<stbi_uc,void(*)(void*)> rgba(
+                stbi_load_from_memory(bytes.data(),static_cast<int>(bytes.size()),&width,&height,&channels,4),stbi_image_free);
+            if(rgba) {
+                size_t pixels=static_cast<size_t>(width)*height;rgb.resize(pixels*3);
+                for(size_t i=0;i<pixels;++i) {
+                    unsigned alpha=rgba.get()[i*4+3];
+                    for(size_t c=0;c<3;++c)
+                        rgb[i*3+c]=static_cast<uint8_t>((rgba.get()[i*4+c]*alpha+255*(255-alpha)+127)/255);
+                }
+                input.data=rgb.data();input.size=rgb.size();input.format=DOCOCR_IMAGE_RGB8;
+                input.width=width;input.height=height;input.row_stride=static_cast<size_t>(width)*3;
+            }
+        }
         return dococr_job_run(job,&input);
     } catch(const std::exception& e) { fail(env,e); return DOCOCR_FAILED; }
 }
