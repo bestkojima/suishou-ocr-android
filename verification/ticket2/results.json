@@ -1,0 +1,116 @@
+{
+  "boundary": "JVM 与浏览器/AndroidHost 模拟；APK 构建及静态检查，非设备推理",
+  "jvm": {
+    "testUserDebugUnitTest": {
+      "tests": 43,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "testLabDebugUnitTest": {
+      "tests": 43,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "recognition": {
+    "boundary": "AndroidHost 模拟，非模型推理",
+    "results": [
+      "待识别输入保存与历史重开，缺模型提供下载和稍后识别",
+      "识别阶段来自桥接，返回首页继续，回放暂停不调用取消",
+      "显式取消保持取消中，终态后提供重试；迟到事件无法改写状态",
+      "重复序号事件不能将终态改回识别中",
+      "重试使用公开请求，新作业忽略旧 jobId 事件",
+      "连续到达的乱序进度不能覆盖较新阶段",
+      "第二项启动明确报告冲突，其他文档事件不影响当前输入",
+      "完整落盘后进入结果回放，暂停输出与识别取消独立",
+      "进程退出后从历史重开，更新序号的恢复终态提供重试",
+      "失败保留输入并提供重试，模型使用中禁用删除和替换"
+    ],
+    "errors": []
+  },
+  "web": {
+    "passed": 19,
+    "results": [
+      {
+        "name": "首页保留拍照、导入和 JSON 入口",
+        "passed": true
+      },
+      {
+        "name": "真实 JSON 完成 16 个区域，图片和表格渲染",
+        "passed": true
+      },
+      {
+        "name": "竖屏内容不会撑宽页面",
+        "passed": true
+      },
+      {
+        "name": "已完成区域保持 DOM 身份；上翻不被新输出拉走",
+        "passed": true
+      },
+      {
+        "name": "暂停停止增量并可继续",
+        "passed": true
+      },
+      {
+        "name": "横屏显示原文和结果，图片可缩放查看",
+        "passed": true
+      },
+      {
+        "name": "校对内容保存，导出 Markdown 包含修改",
+        "passed": true
+      },
+      {
+        "name": "ZIP 导出包含图片、JSON 和校对状态",
+        "passed": true
+      },
+      {
+        "name": "历史在刷新后保留进度与校对内容",
+        "passed": true
+      },
+      {
+        "name": "ZIP 再导入保留校对和图片，刷新后图片可用",
+        "passed": true
+      },
+      {
+        "name": "仅测试模式显示处理详情",
+        "passed": true
+      },
+      {
+        "name": "模型页列出指定的两个 ModelScope 仓库",
+        "passed": true
+      },
+      {
+        "name": "公式样本完整输出，KaTeX 已渲染",
+        "passed": true
+      },
+      {
+        "name": "缺失图片展示固定占位并可重试",
+        "passed": true
+      },
+      {
+        "name": "Office 原生解析结果回放：sales-with-image.xlsx",
+        "passed": true
+      },
+      {
+        "name": "Office 原生解析结果回放：slides-with-table-and-image.pptx",
+        "passed": true
+      },
+      {
+        "name": "Office 回放导出的 JSON 保留幻灯片边界和图片状态",
+        "passed": true
+      },
+      {
+        "name": "原生大表格按区域直接显示，不逐字等待",
+        "passed": true
+      },
+      {
+        "name": "离线渲染无第三方请求和未捕获异常",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "externalRequests": []
+  }
+}

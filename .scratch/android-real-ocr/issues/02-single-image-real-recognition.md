@@ -18,4 +18,6 @@
 
 ## Comments
 
-2026-10-07：本轮实现与替代交付已完成，检查项勾选表示代码和所述本机/模拟证据已交付，不表示设备加载或推理通过。Status 保留规格分流标签 ready-for-agent。分项证据和设备待办见 [交付记录](../../../../verification/real-ocr/DELIVERY.md)；实现边界见 [开发说明](../../../../docs/REAL_OCR.md)。
+2026-10-07：本轮实现与替代交付已完成，检查项勾选表示代码和所述本机/模拟证据已交付，不表示设备加载或推理通过。Status 保留规格分流标签 ready-for-agent。分项证据和设备待办见 [交付记录](../../../verification/real-ocr/DELIVERY.md)；实现边界见 [开发说明](../../../docs/REAL_OCR.md)。
+
+2026-10-07：再次按 `implement ticket2` 核验既有实现，补齐重复序号、同批乱序进度及进程恢复终态的序号隔离。JVM、桥接/UI、真实输出展示回归和两版 APK 构建通过；双路代码复审无剩余发现。补充记录见 [ticket2 验收](../../../verification/ticket2/DELIVERY.md)。桌面真实推理沿用上轮实际产物，本次没有重新运行模型；设备推理仍待验收。

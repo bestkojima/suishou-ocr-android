@@ -35,6 +35,8 @@ python3 tools/verify_ocr_apk.py
 
 `nativeEvent('recognition', state)` 与状态轮询使用同一 jobId/docId/sequence 归属；旧作业、低序号事件和切换文档后的响应不能覆盖当前页面。状态/取消从桥接入口直接处理，原生同步运行使用独立 executor。JNI 状态同时读取真实事件与快照，不模拟模型正文增量。
 
+状态转换及实际阶段／区域进度变化时递增 `sequence`；进程退出后的恢复终态使用高于已保存状态的序号并落盘，后续查询保持该序号。前端忽略同作业的重复或较低序号，在 React 状态提交及异步结果读取返回时再次核对归属和序号，避免连续到达的乱序事件覆盖较新状态。ticket2 补充验证见 [验收记录](../verification/ticket2/DELIVERY.md)。
+
 状态为 `waiting`、`preparing`、`missing-models`、`recognizing`、`saving`、`cancelling`、`succeeded`、`partial`、`blank`、`failed`、`cancelled`。推理期间返回首页只暂停展示；不会取消识别。进程退出不继续推理；重开时，未提交结果的遗留运行状态转为可重试失败，已提交的真实结果恢复保存的成功／partial／空白终态。安全清理失败时保持作业占用并提示重启，避免复用尚存活的资源。
 
 ## 结果与校对

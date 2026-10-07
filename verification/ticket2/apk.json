@@ -1,0 +1,205 @@
+{
+  "environment": "Android NDK \u7f16\u8bd1\u4e0e\u9759\u6001\u6253\u5305\u68c0\u67e5\uff0c\u672a\u5728\u8bbe\u5907\u52a0\u8f7d",
+  "productionBackendCompileCommands": [
+    {
+      "directory": "/home/dr/project/android_ocr/app/.cxx/Debug/6x5g643g/arm64-v8a",
+      "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/android_ocr/app/src/main/cpp/../../../../../MNN/include -I/home/dr/project/android_ocr/app/src/main/cpp/../../../../../MNN/transformers/llm/engine/include -I/home/dr/project/docprase/third_party/stb -I/home/dr/project/docprase/include -I/home/dr/project/docprase/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/src/printed_page_mnn_backend.cpp.o -c /home/dr/project/docprase/src/printed_page_mnn_backend.cpp",
+      "file": "/home/dr/project/docprase/src/printed_page_mnn_backend.cpp",
+      "output": "docprase/CMakeFiles/dococr_c.dir/src/printed_page_mnn_backend.cpp.o"
+    },
+    {
+      "directory": "/home/dr/project/android_ocr/app/.cxx/Debug/6x5g643g/arm64-v8a",
+      "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/android_ocr/app/src/main/cpp/../../../../../MNN/include -I/home/dr/project/android_ocr/app/src/main/cpp/../../../../../MNN/transformers/llm/engine/include -I/home/dr/project/docprase/third_party/stb -I/home/dr/project/docprase/include -I/home/dr/project/docprase/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/src/printed_page_mnn_backend.cpp.o -c /home/dr/project/docprase/src/printed_page_mnn_backend.cpp",
+      "file": "/home/dr/project/docprase/src/printed_page_mnn_backend.cpp",
+      "output": "docprase/CMakeFiles/dococr_c.dir/src/printed_page_mnn_backend.cpp.o"
+    }
+  ],
+  "apks": [
+    {
+      "flavor": "user",
+      "path": "/home/dr/project/android_ocr/app/build/outputs/apk/user/debug/app-user-debug.apk",
+      "sha256": "202d4f2193a057b695b7e8becb5f090676ba6da4bfececc9c5c744f5493b979f",
+      "size": 43833729,
+      "abi": "arm64-v8a",
+      "libraries": {
+        "libc++_shared.so": {
+          "needed": [
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ],
+          "size": 1253544
+        },
+        "libdococr_c.so": {
+          "needed": [
+            "libllm.so",
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 2763664
+        },
+        "libdococr_jni.so": {
+          "needed": [
+            "libdococr_c.so",
+            "libm.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 79880
+        },
+        "libMNN.so": {
+          "needed": [
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 8809816
+        },
+        "libllm.so": {
+          "needed": [
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 3556576
+        },
+        "libMNNOpenCV.so": {
+          "needed": [
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 594760
+        },
+        "libMNN_Express.so": {
+          "needed": [
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 2916736
+        }
+      },
+      "weightsPackaged": false
+    },
+    {
+      "flavor": "lab",
+      "path": "/home/dr/project/android_ocr/app/build/outputs/apk/lab/debug/app-lab-debug.apk",
+      "sha256": "7013ee46413742fde4947884f40e9afc24728a7da587b10fe37ac70fc2e4f227",
+      "size": 43833729,
+      "abi": "arm64-v8a",
+      "libraries": {
+        "libc++_shared.so": {
+          "needed": [
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ],
+          "size": 1253544
+        },
+        "libdococr_c.so": {
+          "needed": [
+            "libllm.so",
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 2763664
+        },
+        "libdococr_jni.so": {
+          "needed": [
+            "libdococr_c.so",
+            "libm.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 79880
+        },
+        "libMNN.so": {
+          "needed": [
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 8809816
+        },
+        "libllm.so": {
+          "needed": [
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 3556576
+        },
+        "libMNNOpenCV.so": {
+          "needed": [
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 594760
+        },
+        "libMNN_Express.so": {
+          "needed": [
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 2916736
+        }
+      },
+      "weightsPackaged": false
+    }
+  ]
+}
