@@ -6,7 +6,7 @@
 
 - [普通版 APK](../../app/build/outputs/apk/user/debug/app-user-debug.apk)：`cn.local.ocr`。
 - [测试版 APK](../../app/build/outputs/apk/lab/debug/app-lab-debug.apk)：`cn.local.ocr.test`。
-- 版本 `0.7.0-ocr`，开发签名 Debug 包；构建日志：[real-ocr-build.log](../real-ocr-build.log)。
+- 版本 `0.7.0-ocr`，开发签名 Debug 包；构建日志：[最终构建日志](review-final-gradle.log)。
 - [APK 检查](apk.json) 记录大小、SHA、AArch64、所有 DT_NEEDED 依赖闭合、公共 C ABI/JNI/LLM 符号、实际 `DOCOCR_HAS_MNN=1`/`DOCOCR_HAS_LLM=1` 编译命令及未打包权重。已修正 MNN Express 输出目录，实际包含七个必需原生库。
 - 默认分库已构建；合并库绑定分支存在但未独立构建验收。打包与符号检查不证明设备模型加载成功。
 
@@ -31,17 +31,17 @@ Linux x86_64；使用与 APK 同源的 docprase/MNN 生产源代码和九个固�
 
 | 检查 | 环境与边界 | 结果 |
 | --- | --- | --- |
-| 普通/测试版 Java 编译与 JVM 完整套件 | Gradle；文件存储/归一化、原始输出/校对/排序/导出，模型大小/SHA，8 种非对称 EXIF 像素输入输出，既有 PDF/Office | 各 40 项，0 失败；[日志](../real-ocr-jvm-final.log) |
-| 既有浏览器完整回归 | Chromium；导入/回放/历史/校对/Office 展示/导出 | 19 项通过 |
-| 模型界面 | Chromium；原生宿主模拟 | 6 项通过 |
-| 顺序调整 | Chromium；原始块 ID 保留，App 展示 ID 稳定，导出/再导入 | 7 项通过 |
-| 长按与编辑 | Chromium；桌面和真实触屏事件、Markdown 编辑与导出 | 12 项通过；[日志](editor-regression.log) |
-| 新识别桥接场景 | Chromium；模拟 native 请求和事件 | 6 组通过；[日志](../recognition-green.log) |
-| 真实输出展示 | Chromium；实际模型输出文件 | 3 组通过；[日志](browser.log) |
+| 普通/测试版 Java 编译与 JVM 完整套件 | Gradle；文件存储/归一化、原始输出/校对/排序/导出，模型大小/SHA，8 种非对称 EXIF 像素输入输出，既有 PDF/Office | 各 43 项，0 失败；[日志](review-final-jvm.log) |
+| 既有浏览器完整回归 | Chromium；导入/回放/历史/校对/Office 展示/导出 | 19 项通过；[日志](review-final-browser.log) |
+| 模型界面 | Chromium；原生宿主模拟 | 6 项通过；[日志](review-final-models.log) |
+| 顺序调整 | Chromium；原始块 ID 保留，App 展示 ID 稳定，导出/再导入 | 7 项通过；[日志](review-final-reorder.log) |
+| 长按与编辑 | Chromium；桌面和真实触屏事件、Markdown 编辑与导出 | 12 项通过；[日志](review-final-editor.log) |
+| 新识别桥接场景 | Chromium；模拟 native 请求和事件 | 6 组通过；[日志](review-ui-green.log) |
+| 真实输出展示 | Chromium；实际模型输出文件 | 3 组通过；[日志](review-final-real-results.log) |
 | 原生 ABI 既有回归 | Linux；contract、printed_page_cancel、job_control、cli_job_control（受控测试后端） | 4 项通过；[日志](abi-regression.log) |
 | 实际 APK 内容 | NDK ELF/编译命令与 ZIP 静态检查 | 通过；[日志](apk.log) |
 
-代码审查记录将在实施提交后补充。工具与构建入口见 [开发说明](../../docs/REAL_OCR.md)。
+[代码审查](CODE_REVIEW.md) 分规范和规格两路执行；三处边界问题已修复并复审通过。补充检查包含写入失败后重试、目录外资源与重复原图导出、结果提交后禁用取消及进程重开恢复。控制器 JVM 检查通过固定内部状态断言公开行为，不证明设备原生清理时序。工具与构建入口见 [开发说明](../../docs/REAL_OCR.md)。
 
 ## 设备待验收
 

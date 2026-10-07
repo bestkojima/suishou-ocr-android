@@ -61,4 +61,15 @@ public class RecognitionResultTest {
         JSONObject blank=store.recognized(input.getString("id"),new File("../verification/real-ocr/blank"));
         assertEquals("blank",blank.getString("recognitionOutcome"));assertFalse(blank.has("notice"));
     }
+    @Test public void importedResourcesOutsideAssetsSurviveExportWithoutDuplicateOriginalImage()throws Exception {
+        DocumentStore store=store();JSONObject input=input(store);String id=input.getString("id");
+        File photo=new File(store.dir(id),"images/photo.png");FilesUtil.write(photo,"image bytes");
+        JSONObject ir=new JSONObject("{\"schema_version\":\"1.0\",\"pages\":[{\"page_id\":\"p\",\"blocks\":[{\"id\":\"picture\",\"type\":\"image\",\"content\":{\"resource\":\"images/photo.png\"}}],\"reading_order\":[\"picture\"]}],\"resources\":[{\"path\":\"images/photo.png\",\"width\":3,\"height\":2}]}");
+        FilesUtil.write(new File(store.dir(id),"document.json"),ir.toString());
+        JSONObject doc=store.normalize(id,"旧 ZIP",ir).put("progress",1).put("original",store.url(id,"source.png"));
+        doc.getJSONObject("assets").put("source.png",FilesUtil.obj("src",store.url(id,"source.png")));store.save(doc);
+        try(ZipFile zip=new ZipFile(store.export(id,"zip"))) {
+            assertNotNull(zip.getEntry("images/photo.png"));assertNotNull(zip.getEntry("source.png"));
+        }
+    }
 }

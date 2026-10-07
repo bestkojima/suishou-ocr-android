@@ -1,0 +1,21 @@
+PASS 识别阶段来自桥接，返回首页继续，回放暂停不调用取消
+PASS 显式取消保持取消中，终态后提供重试；迟到事件无法改写状态
+PASS 重试和作业冲突使用公开请求，新作业忽略旧 jobId 事件
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Timeout 2000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: '正在结束', exact: true }) to be visible[22m
+
+    at /home/dr/project/android_ocr/web/verify-recognition.mjs:59:59
+    at async check (/home/dr/project/android_ocr/web/verify-recognition.mjs:30:31)
+    at async file:///home/dr/project/android_ocr/web/verify-recognition.mjs:52:2 {
+  log: [
+    "  - waiting for getByRole('button', { name: '正在结束', exact: true }) to be visible"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

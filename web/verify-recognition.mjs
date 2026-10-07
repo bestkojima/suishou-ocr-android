@@ -55,7 +55,9 @@ try {
   await page.getByRole('button',{name:'最近记录'}).click();await page.getByRole('button',{name:/真实输出适配/}).first().click();
   await page.locator('.result h1').filter({hasText:'真实输出适配'}).waitFor();
   await page.getByText('正在识别新页',{exact:true}).waitFor();
-  await page.evaluate(()=>{window.saved.mode='real-ocr';window.saved.blocks=[{id:'p-a',type:'text',sourceStatus:'ok',markdown:'新的真实识别正文。'.repeat(50)}];window.saved.recognition={...window.saved.recognition,state:'succeeded',sequence:32,message:'识别完成，结果已保存；以下为结果回放'};window.nativeEvent('recognition',window.saved.recognition);});
+  await page.evaluate(()=>{window.saved.recognition={...window.saved.recognition,state:'saving',resultSaved:true,sequence:32,message:'结果已保存，正在释放原生资源'};window.nativeEvent('recognition',window.saved.recognition);});
+  await page.getByRole('button',{name:'正在结束',exact:true}).waitFor({timeout:2000});assert(await page.getByRole('button',{name:'正在结束',exact:true}).isDisabled());
+  await page.evaluate(()=>{window.saved.mode='real-ocr';window.saved.blocks=[{id:'p-a',type:'text',sourceStatus:'ok',markdown:'新的真实识别正文。'.repeat(50)}];window.saved.recognition={...window.saved.recognition,state:'succeeded',sequence:33,message:'识别完成，结果已保存；以下为结果回放'};window.nativeEvent('recognition',window.saved.recognition);});
   await page.getByRole('button',{name:'暂停输出',exact:true}).waitFor({timeout:4000}).catch(async e=>{console.log(await page.locator('body').innerText());console.log(await page.evaluate(()=>({saved:window.saved,calls:window.calls.slice(-15)})));throw e;});await page.getByRole('button',{name:'暂停输出',exact:true}).click();
   const cancels=await page.evaluate(()=>window.calls.filter(c=>c.method==='cancelRecognition').length);await page.waitForTimeout(900);assert.equal(await page.evaluate(()=>window.calls.filter(c=>c.method==='cancelRecognition').length),cancels);assert(await page.getByRole('button',{name:'继续输出',exact:true}).isVisible());
  });

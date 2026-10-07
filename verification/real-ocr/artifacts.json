@@ -26,16 +26,20 @@
       "sha256": "8481fbe6a3b1f9f235b677793549cf12596aec70f22689d07493edbdc1350336"
     },
     "DELIVERY.md": {
-      "size": 6095,
-      "sha256": "c9db59d92d5760e7aaef556b29a35590d8eee1657c6c8e6c7369af50d49082ef"
+      "size": 6511,
+      "sha256": "eff0635a9c629ce790cf8c73175458e1410103fc18ea2b9bd858a6e032be6968"
     },
     "preview-partial.png": {
       "size": 119306,
       "sha256": "613a6b093386b0a04d21d6e025ec2626a01619cdf0bd3317065f0b1a8756caf6"
     },
+    "CODE_REVIEW.md": {
+      "size": 2760,
+      "sha256": "e543f37ab0e6a6920973ab9fe309aee1a5e6efd86242acf2e18c31f47fb3525f"
+    },
     "apk.json": {
       "size": 7199,
-      "sha256": "33e5f28b008e223b57acbde968b88525fe1fb75ae6a962d9d2db5ccf0ce237fe"
+      "sha256": "74bd336051844dfb1049f338a804908a89bebdbbd472b90fbd6c63c7f70aac33"
     },
     "source.png": {
       "size": 75711,

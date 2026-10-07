@@ -1,0 +1,55 @@
+> Task :app:bundleWeb UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preUserDebugBuild UP-TO-DATE
+> Task :app:generateUserDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileUserDebug UP-TO-DATE
+> Task :app:checkUserDebugAarMetadata UP-TO-DATE
+> Task :app:generateUserDebugResValues UP-TO-DATE
+> Task :app:mapUserDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateUserDebugResources UP-TO-DATE
+> Task :app:mergeUserDebugResources UP-TO-DATE
+> Task :app:packageUserDebugResources UP-TO-DATE
+> Task :app:parseUserDebugLocalResources UP-TO-DATE
+> Task :app:createUserDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksUserDebug UP-TO-DATE
+> Task :app:processUserDebugMainManifest UP-TO-DATE
+> Task :app:processUserDebugManifest UP-TO-DATE
+> Task :app:processUserDebugManifestForPackage UP-TO-DATE
+> Task :app:processUserDebugResources UP-TO-DATE
+> Task :app:compileUserDebugJavaWithJavac UP-TO-DATE
+> Task :app:bundleUserDebugClassesToRuntimeJar UP-TO-DATE
+> Task :app:bundleUserDebugClassesToCompileJar UP-TO-DATE
+> Task :app:preUserDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileUserDebugUnitTest UP-TO-DATE
+> Task :app:compileUserDebugUnitTestJavaWithJavac
+> Task :app:processUserDebugJavaRes NO-SOURCE
+> Task :app:processUserDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:testUserDebugUnitTest
+> Task :app:preLabDebugBuild UP-TO-DATE
+> Task :app:generateLabDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileLabDebug UP-TO-DATE
+> Task :app:checkLabDebugAarMetadata UP-TO-DATE
+> Task :app:generateLabDebugResValues UP-TO-DATE
+> Task :app:mapLabDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateLabDebugResources UP-TO-DATE
+> Task :app:mergeLabDebugResources UP-TO-DATE
+> Task :app:packageLabDebugResources UP-TO-DATE
+> Task :app:parseLabDebugLocalResources UP-TO-DATE
+> Task :app:createLabDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksLabDebug UP-TO-DATE
+> Task :app:processLabDebugMainManifest UP-TO-DATE
+> Task :app:processLabDebugManifest UP-TO-DATE
+> Task :app:processLabDebugManifestForPackage UP-TO-DATE
+> Task :app:processLabDebugResources UP-TO-DATE
+> Task :app:compileLabDebugJavaWithJavac UP-TO-DATE
+> Task :app:bundleLabDebugClassesToRuntimeJar UP-TO-DATE
+> Task :app:bundleLabDebugClassesToCompileJar UP-TO-DATE
+> Task :app:preLabDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileLabDebugUnitTest UP-TO-DATE
+> Task :app:compileLabDebugUnitTestJavaWithJavac
+> Task :app:processLabDebugJavaRes NO-SOURCE
+> Task :app:processLabDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:testLabDebugUnitTest
+
+BUILD SUCCESSFUL in 3s
+45 actionable tasks: 4 executed, 41 up-to-date

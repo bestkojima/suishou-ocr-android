@@ -67,12 +67,15 @@ final class RecognitionController {
         JSONObject doc=store.load(id),state=doc.optJSONObject("recognition");
         if(state==null) return FilesUtil.obj("state","waiting","message","输入已保存，可开始识别");
         if(Arrays.asList("preparing","recognizing","cancelling","saving").contains(state.optString("state"))) {
-            state.put("state","failed").put("message","上次识别随进程退出而停止，输入已保留，可重试");store.save(doc);
+            if(doc.optString("mode").equals("real-ocr")) state.put("state",doc.optString("recognitionOutcome","succeeded")).put("resultSaved",true).put("message","识别结果已保存，以下为结果回放");
+            else state.put("state","failed").put("message","上次识别随进程退出而停止，输入已保留，可重试");
+            store.save(doc);
         }
         return state;
     }
     synchronized JSONObject cancel(String id,String jobId) throws Exception {
         if(!busy||current==null||!id.equals(current.optString("docId"))||!jobId.equals(current.optString("jobId"))) throw new IOException("该作业已结束或不是当前作业");
+        if(current.optBoolean("resultSaved")) return new JSONObject(current.toString());
         cancelled=true;
         if(nativeJob!=0) {
             JSONObject nativeState=new JSONObject(NativeOcr.status(nativeJob));
@@ -134,7 +137,9 @@ final class RecognitionController {
             synchronized(this) {
                 if(cancelled){terminal="cancelled";message="已安全取消，输入已保留，可重试";return;}
                 JSONObject result=store.recognized(id,output);
+                current.put("resultSaved",true);
                 terminal=result.optString("recognitionOutcome","succeeded");message=terminal.equals("partial")?"部分识别成功，未完成区域已标示":terminal.equals("blank")?"识别完成，此页没有正文区域":"识别完成，结果已保存；以下为结果回放";
+                update("saving","结果已保存，正在释放原生资源");
             }
         } catch(Exception|LinkageError e) {
             message="识别失败："+e.getMessage()+"；输入已保留，可重试";
