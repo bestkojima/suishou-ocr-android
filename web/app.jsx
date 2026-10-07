@@ -10,6 +10,12 @@ import {ModelManager} from './models.jsx';
 const recognitionStages={started:'开始处理',page_started:'读取页面',layout_started:'版面分析',layout_completed:'版面分析完成',region_started:'正在识别区域',region_completed:'区域完成',export_started:'保存结果',export_completed:'结果已导出',page_completed:'页面完成',terminal:'推理结束'};
 const activeRecognition=s=>['preparing','recognizing','cancelling','saving'].includes(s?.state);
 const finishedRecognition=s=>['succeeded','partial','blank'].includes(s?.state);
+function acceptsRecognition(current,state){
+ if(!current?.input||state.docId&&state.docId!==current.id)return false;
+ const previous=current.recognition;
+ if(previous?.jobId&&state.jobId!==previous.jobId)return false;
+ return !previous?.jobId||(state.sequence||0)>(previous.sequence||0);
+}
 const phases={idle:'准备输出',running:'正在回放结果',paused:'已暂停',complete:'已完成'};
 function App(){
  const[boot,setBoot]=useState(null),[settings,setSettings]=useState({chunk:8}),[doc,setDoc]=useState(null),[replay,setReplay]=useState(initialState),[sheet,setSheet]=useState(''),[history,setHistory]=useState([]),[busy,setBusy]=useState(''),[error,setError]=useState(''),[notice,setNotice]=useState(''),[edit,setEdit]=useState(null),[draft,setDraft]=useState(''),[viewer,setViewer]=useState(''),[zoom,setZoom]=useState(1),[following,setFollowing]=useState(true),[fonts,setFonts]=useState(false),[cameraMessage,setCameraMessage]=useState('对准文档，拍下即可开始'),[selectedPage,setSelectedPage]=useState(0),[cameraReady,setCameraReady]=useState(false);
@@ -29,16 +35,13 @@ function App(){
 
  async function refreshRecognition(state){
   const current=snapshot.current.doc;
-  if(!current?.input||state.docId&&state.docId!==current.id)return;
-  const previous=current.recognition;
-  if(previous?.jobId&&state.jobId!==previous.jobId)return;
-  if((state.sequence||0)<(previous?.sequence||0))return;
+  if(!acceptsRecognition(current,state))return;
   if(finishedRecognition(state)&&current.mode!=='real-ocr'){
    if(resultLoading.current===state.jobId)return;resultLoading.current=state.jobId;
    try{const fresh=await request('open',{id:current.id});
-    if(snapshot.current.doc?.id===current.id&&snapshot.current.doc?.recognition?.jobId===state.jobId)openDocument(fresh);
+    if(snapshot.current.doc?.id===current.id&&acceptsRecognition(snapshot.current.doc,state))openDocument(fresh);
    }finally{resultLoading.current=null;}
-  }else setDoc(d=>d?.id===current.id?{...d,recognition:state}:d);
+  }else setDoc(d=>d?.id===current.id&&acceptsRecognition(d,state)?{...d,recognition:state}:d);
  }
  useEffect(()=>{
   if(!doc?.input)return;let alive=true,timer;

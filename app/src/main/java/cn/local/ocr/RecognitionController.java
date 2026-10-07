@@ -60,7 +60,12 @@ final class RecognitionController {
         if(current!=null&&id.equals(current.optString("docId"))) {
             if(nativeJob!=0&&!cancelled&&current.optString("state").equals("recognizing")) {
                 JSONObject status=new JSONObject(NativeOcr.status(nativeJob));
-                JSONObject event=status.optJSONObject("latestEvent");if(event!=null)current.put("stage",event.optString("kind"));current.put("regionCompleted",status.optInt("region_completed"));current.put("regionTotal",status.optInt("region_total"));
+                JSONObject event=status.optJSONObject("latestEvent");
+                String stage=event!=null?event.optString("kind"):current.optString("stage");
+                int completed=status.optInt("region_completed"),total=status.optInt("region_total");
+                if(!stage.equals(current.optString("stage"))||completed!=current.optInt("regionCompleted")||total!=current.optInt("regionTotal")) {
+                    current.put("stage",stage).put("regionCompleted",completed).put("regionTotal",total).put("sequence",++sequence);
+                }
             }
             return new JSONObject(current.toString());
         }

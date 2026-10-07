@@ -41,10 +41,30 @@ try {
   await page.getByRole('button',{name:'重试识别',exact:true}).waitFor();
   await page.evaluate(()=>window.nativeEvent('recognition',{docId:'new-photo',jobId:'job-1',state:'recognizing',sequence:10,message:'旧作业错误提示'}));await page.waitForTimeout(100);assert.equal(await page.getByText('旧作业错误提示').count(),0);
  });
- await check('重试和作业冲突使用公开请求，新作业忽略旧 jobId 事件',async()=>{
+ await check('重复序号事件不能将终态改回识别中',async()=>{
+  await page.evaluate(()=>window.nativeEvent('recognition',{docId:'new-photo',jobId:'job-1',state:'recognizing',sequence:12,message:'重复事件错误提示'}));
+  await page.waitForTimeout(150);
+  assert.equal(await page.getByText('重复事件错误提示',{exact:true}).count(),0);
+  assert(await page.getByRole('button',{name:'重试识别',exact:true}).isVisible());
+ });
+ await check('重试使用公开请求，新作业忽略旧 jobId 事件',async()=>{
   await page.evaluate(()=>{const old=window.AndroidHost.request;window.AndroidHost.request=function(raw){const r=JSON.parse(raw);if(r.method==='recognize'){window.calls.push(r);window.saved.recognition={docId:window.saved.id,jobId:'job-2',sequence:13,state:'recognizing',message:'重试正在识别'};return window.nativeReply({id:r.id,value:structuredClone(window.saved)});}return old(raw);};});
   await page.getByRole('button',{name:'重试识别',exact:true}).click();await page.getByText('重试正在识别',{exact:true}).waitFor();
   await page.evaluate(()=>window.nativeEvent('recognition',{docId:'new-photo',jobId:'job-1',state:'succeeded',sequence:99,message:'过期结果'}));await page.waitForTimeout(150);assert.equal(await page.getByText('过期结果').count(),0);
+ });
+ await check('连续到达的乱序进度不能覆盖较新阶段',async()=>{
+  await page.evaluate(()=>{
+   const state={...window.saved.recognition,sequence:15,stage:'region_completed',regionCompleted:3,regionTotal:5,message:'已完成三个区域'};
+   window.nativeEvent('recognition',state);
+   window.nativeEvent('recognition',{...state,sequence:14,stage:'region_started',regionCompleted:2,message:'迟到的第二个区域'});
+  });
+  await page.waitForTimeout(150);
+  assert.equal(await page.getByText('迟到的第二个区域',{exact:true}).count(),0);
+  assert(await page.getByText('已完成三个区域',{exact:true}).isVisible());
+  assert((await page.locator('.recognition-panel').innerText()).includes('3/5'));
+  await page.evaluate(()=>{window.saved.recognition={...window.saved.recognition,sequence:15,stage:'region_completed',regionCompleted:3,regionTotal:5,message:'已完成三个区域'};});
+ });
+ await check('第二项启动明确报告冲突，其他文档事件不影响当前输入',async()=>{
   await page.evaluate(()=>{const old=window.AndroidHost.request;window.AndroidHost.request=function(raw){const r=JSON.parse(raw);if(r.method==='capture'){window.saved={id:'second-photo',title:'第二个输入',input:'source.png',mode:'pending-ocr',progress:0,blocks:[],pages:[],assets:{},recognition:{state:'waiting',message:'输入已保存，已有识别作业；稍后可开始识别'}};return window.nativeReply({id:r.id,value:structuredClone(window.saved)});}if(r.method==='recognize')return window.nativeReply({id:r.id,error:'已有识别作业，请返回该文档或等待安全停止'});return old(raw);};});
   await page.getByRole('button',{name:'返回首页'}).click();await page.getByRole('button',{name:'拍照',exact:true}).click();await page.getByRole('button',{name:'开始识别',exact:true}).click();await page.getByText('已有识别作业，请返回该文档或等待安全停止',{exact:true}).waitFor();
   await page.evaluate(()=>window.nativeEvent('recognition',{docId:'new-photo',jobId:'job-2',state:'failed',sequence:30,message:'别的文档错误'}));await page.waitForTimeout(100);assert.equal(await page.getByText('别的文档错误').count(),0);
