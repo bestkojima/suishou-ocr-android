@@ -1,0 +1,219 @@
+{
+  "environment": "分项验证：Android 编译与静态检查／Linux 真实引擎／浏览器回放与桥接模拟；无设备推理",
+  "baseline": "6ed99b4179e5d003e24966f5f7530a4e22db8a4e",
+  "jvm": {
+    "User": {
+      "tests": 44,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "Lab": {
+      "tests": 44,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "browser": {
+    "web": {
+      "passed": 19,
+      "errors": [],
+      "boundary": "Chromium；原生宿主模拟或结果回放"
+    },
+    "models": {
+      "passed": 6,
+      "errors": [],
+      "boundary": "Chromium；原生宿主模拟或结果回放"
+    },
+    "reorder": {
+      "passed": 7,
+      "errors": [],
+      "boundary": "Chromium；原生宿主模拟或结果回放"
+    },
+    "editor": {
+      "passed": 12,
+      "errors": [],
+      "boundary": "Chromium；原生宿主模拟或结果回放"
+    },
+    "recognition": {
+      "passed": 11,
+      "errors": [],
+      "boundary": "AndroidHost 模拟，非模型推理"
+    },
+    "navigation": {
+      "passed": 8,
+      "errors": [],
+      "boundary": "AndroidHost 浏览器模拟，非设备推理"
+    },
+    "browser": {
+      "passed": 8,
+      "errors": [],
+      "boundary": "Chromium；导入 Linux 真实输出后回放，不执行模型"
+    }
+  },
+  "deviceInference": "pending",
+  "lint": {
+    "user": {
+      "Error": 0,
+      "Warning": 11
+    },
+    "lab": {
+      "Error": 0,
+      "Warning": 11
+    }
+  },
+  "browserTotal": 71,
+  "desktop": {
+    "environment": "Linux x86_64 生产 C ABI，真实模型；非 Android",
+    "loadingSeconds": 5.7139171310000165,
+    "elapsedSeconds": 68.72822338900005,
+    "maxRssKiB": 2470644,
+    "repeatedInput": "/home/dr/project/android_ocr/verification/ticket5/partial-source.png",
+    "checks": [
+      "真实加载",
+      "推理中第二项返回 BUSY",
+      "推理中销毁返回 BUSY",
+      "安全取消到 terminal",
+      "取消无有效正文",
+      "同一引擎取消恢复后完整识别与导出",
+      "重复作业真实结构化输出",
+      "真实空白页"
+    ],
+    "cancelled": {
+      "state": "cancelled",
+      "error": {
+        "request_id": "p0001",
+        "stage": "inference",
+        "code": "cancelled",
+        "message": "job cancelled"
+      },
+      "running": false,
+      "terminal": true,
+      "cancel_requested": true,
+      "timeout_requested": false,
+      "cancellation_granularity": "after_backend_call",
+      "page_current": 1,
+      "page_completed": 0,
+      "page_total": 1,
+      "region_completed": 0,
+      "region_total": 9,
+      "events_pending": 4,
+      "events_dropped": 0,
+      "engine_ready": true
+    },
+    "completed": {
+      "state": "completed",
+      "running": false,
+      "terminal": true,
+      "cancel_requested": false,
+      "timeout_requested": false,
+      "cancellation_granularity": "after_backend_call",
+      "page_current": 1,
+      "page_completed": 1,
+      "page_total": 1,
+      "region_completed": 9,
+      "region_total": 9,
+      "events_pending": 27,
+      "events_dropped": 0,
+      "engine_ready": true
+    },
+    "outputStatus": "ok",
+    "repeated": {
+      "state": "completed",
+      "running": false,
+      "terminal": true,
+      "cancel_requested": false,
+      "timeout_requested": false,
+      "cancellation_granularity": "after_backend_call",
+      "page_current": 1,
+      "page_completed": 1,
+      "page_total": 1,
+      "region_completed": 9,
+      "region_total": 9,
+      "events_pending": 27,
+      "events_dropped": 0,
+      "engine_ready": true
+    },
+    "repeatedOutputStatus": "ok",
+    "blank": {
+      "state": "partial",
+      "running": false,
+      "terminal": true,
+      "cancel_requested": false,
+      "timeout_requested": false,
+      "cancellation_granularity": "after_backend_call",
+      "page_current": 1,
+      "page_completed": 1,
+      "page_total": 1,
+      "region_completed": 0,
+      "region_total": 0,
+      "events_pending": 11,
+      "events_dropped": 0,
+      "engine_ready": true
+    },
+    "eventsBeforeCancel": [
+      {
+        "kind": "started",
+        "state": "running",
+        "page": 0,
+        "request_id": null,
+        "page_completed": 0,
+        "page_total": 0,
+        "region_completed": 0,
+        "region_total": 0
+      },
+      {
+        "kind": "page_started",
+        "state": "running",
+        "page": 1,
+        "request_id": null,
+        "page_completed": 0,
+        "page_total": 1,
+        "region_completed": 0,
+        "region_total": 0
+      },
+      {
+        "kind": "decode_completed",
+        "state": "running",
+        "page": 1,
+        "request_id": null,
+        "page_completed": 0,
+        "page_total": 1,
+        "region_completed": 0,
+        "region_total": 0
+      },
+      {
+        "kind": "layout_started",
+        "state": "running",
+        "page": 1,
+        "request_id": null,
+        "page_completed": 0,
+        "page_total": 1,
+        "region_completed": 0,
+        "region_total": 0
+      },
+      {
+        "kind": "layout_completed",
+        "state": "running",
+        "page": 1,
+        "request_id": null,
+        "page_completed": 0,
+        "page_total": 1,
+        "region_completed": 0,
+        "region_total": 0
+      },
+      {
+        "kind": "region_started",
+        "state": "running",
+        "page": 1,
+        "request_id": "reqr0001",
+        "page_completed": 0,
+        "page_total": 1,
+        "region_completed": 0,
+        "region_total": 9
+      }
+    ]
+  },
+  "apk": "apk.json"
+}

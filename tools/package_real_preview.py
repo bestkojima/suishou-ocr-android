@@ -1,9 +1,11 @@
 """将本轮真实输出与输入打成可用现有 JSON/ZIP 导入器打开的预览文件。"""
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
-import json,hashlib
+import argparse,json,hashlib
 root=Path(__file__).resolve().parents[1]
-out=root/'verification/real-ocr'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output',type=Path,default=root/'verification/real-ocr',help='包含本次输入和真实输出的证据目录')
+out=parser.parse_args().output.resolve()
 for name in ['output','partial','blank','repeated']:
     folder=out/name
     if not (folder/'document.json').is_file():continue

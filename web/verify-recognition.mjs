@@ -1,25 +1,35 @@
 import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
-import {mkdir,writeFile} from 'node:fs/promises';
+import {mkdir,writeFile,readFile} from 'node:fs/promises';
 const server=spawn('python3',['-m','http.server','4196','--bind','127.0.0.1','--directory','web/dist'],{stdio:'ignore'});
 let browser; const results=[],errors=[];
 try {
  for(let i=0;i<50;i++){try{if((await fetch('http://127.0.0.1:4196')).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/home/dr/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome',args:['--no-sandbox']});
  const page=await browser.newPage({viewport:{width:412,height:892}}); page.on('pageerror',e=>errors.push(e.message));
- await page.addInitScript(()=>{
+ const modelContract=JSON.parse(await readFile('app/src/main/assets/ocr/models.json','utf8'));
+ await page.addInitScript(modelContract=>{
   window.calls=[];window.saved={id:'new-photo',title:'新拍摄输入',mode:'pending-ocr',blocks:[],assets:{},pages:[],progress:0,status:'ready',input:'source.png',recognition:{state:'missing-models',message:'缺少识别模型：PP-DocLayoutV3.mnn'}};
+  window.documents={};window.modelTasks=[];
   window.AndroidHost={request(raw){const {id,method,args}=JSON.parse(raw);window.calls.push({method,args});let value=true;
    if(method==='bootstrap')value={settings:{chunk:128},history:[],testBuild:true};
-   if(method==='capture'||method==='open')value=window.saved;
-   if(method==='save'){Object.assign(window.saved,args);value=window.saved;}
-   if(method==='history')value=[{...window.saved,count:window.saved.blocks.length}];
+   if(method==='capture')value=window.saved;
+   if(method==='open'){window.saved=window.documents[args.id]||window.saved;value=window.saved;}
+   if(method==='save'){Object.assign(window.documents[args.id]||window.saved,args);value=window.documents[args.id]||window.saved;}
+   if(method==='history'){window.documents[window.saved.id]=window.saved;value=Object.values(window.documents).map(d=>({...d,count:d.blocks.length}));}
    if(method==='recognitionStatus')value=window.saved.recognition;
-   if(method==='models')value={tasks:[],repos:['dr3334/PP-DocLayoutV3-mnn','dr3334/ovrics-ocrv2_mnn'],readiness:window.modelReadiness||{state:'missing-models',message:'缺少识别模型：PP-DocLayoutV3.mnn'}};
+   if(method==='models')value={tasks:window.modelTasks,repos:['dr3334/PP-DocLayoutV3-mnn','dr3334/ovrics-ocrv2_mnn'],readiness:window.modelReadiness||{state:'missing-models',message:'缺少识别模型：PP-DocLayoutV3.mnn'}};
+   if(method==='catalog')value=modelContract.filter(f=>f.repo===args.repo);
+   if(method==='download')window.modelTasks.push(...modelContract.filter(f=>f.repo===args.repo&&args.paths.includes(f.path)).map(f=>({...f,downloaded:f.size,status:'verified'})));
+   if(method==='activateModels'){window.modelReadiness={state:'ready',message:'模拟桥接：九个工件已就绪，引擎已加载'};value=window.modelReadiness;}
+   if(method==='recognize'){
+    if(args.again){window.documents[window.saved.id]=structuredClone(window.saved);window.saved={...window.saved,id:'recognize-again',title:'另存的新识别',mode:'pending-ocr',blocks:[],edits:{},progress:0};}
+    window.saved.recognition={docId:window.saved.id,jobId:'integrated-job',sequence:1,state:'recognizing',message:'模拟桥接：正在识别'};value=window.saved;
+   }
    setTimeout(()=>window.nativeReply({id,value:structuredClone(value),error:null}),5);
   }};
- });
+ },modelContract);
  await page.goto('http://127.0.0.1:4196');await page.getByRole('button',{name:'拍照',exact:true}).click();
  await page.getByText('缺少识别模型：PP-DocLayoutV3.mnn',{exact:true}).waitFor({timeout:4000});
  assert(await page.getByRole('button',{name:'下载识别模型',exact:true}).isVisible());
@@ -28,8 +38,44 @@ try {
  await page.getByText('缺少识别模型：PP-DocLayoutV3.mnn',{exact:true}).waitFor();results.push('待识别输入保存与历史重开，缺模型提供下载和稍后识别');
 
  const check=async(name,fn)=>{await fn();results.push(name);console.log('PASS',name);};
+ await check('模型缺失经下载准备、加载、识别保存、另存重识别，旧校对仍可导出（桥接模拟）',async()=>{
+  await page.getByRole('button',{name:'下载识别模型',exact:true}).click();
+  for(const repo of ['dr3334/PP-DocLayoutV3-mnn','dr3334/ovrics-ocrv2_mnn']){
+   const card=page.getByRole('region',{name:repo,exact:true});
+   await card.getByRole('button',{name:'浏览仓库文件',exact:true}).click();
+   await card.getByRole('button',{name:'下载 / 继续所选文件',exact:true}).click();
+   await card.locator('summary').click();
+   await card.getByText('SHA-256 校验通过',{exact:false}).first().waitFor();
+  }
+  assert.equal(await page.getByText('缺少识别模型：PP-DocLayoutV3.mnn',{exact:true}).count(),2,'文件下载完成仍需实际加载');
+  await page.getByRole('button',{name:'校验并加载识别模型',exact:true}).click();
+  await page.getByText('模拟桥接：九个工件已就绪，引擎已加载',{exact:true}).waitFor();
+  await page.getByRole('dialog').getByRole('button',{name:'关闭',exact:true}).click();
+  await page.getByRole('button',{name:'开始识别',exact:true}).click();
+  await page.getByText('模拟桥接：正在识别',{exact:true}).waitFor();
+  await page.evaluate(()=>{
+   window.saved.mode='real-ocr';window.saved.blocks=[{id:'integrated-text',type:'text',sourceStatus:'ok',markdown:'集成桥接模拟正文'}];
+   window.saved.recognition={...window.saved.recognition,sequence:2,state:'succeeded',message:'模拟桥接：结果已保存'};
+   window.nativeEvent('recognition',window.saved.recognition);
+  });
+  await page.getByRole('button',{name:'重新回放',exact:true}).waitFor();
+  await page.locator('.edit-region').first().click();
+  await page.getByRole('textbox',{name:'校对 Markdown'}).fill('旧记录的校对内容');
+  await page.getByRole('button',{name:'保存修改',exact:true}).click();
+  await page.getByRole('button',{name:'重新识别（另存）',exact:true}).click();
+  await page.locator('.result h1').filter({hasText:'另存的新识别'}).waitFor();
+  assert.equal(await page.getByText('旧记录的校对内容',{exact:true}).count(),0);
+  await page.getByRole('button',{name:'返回首页',exact:true}).click();
+  await page.getByRole('button',{name:'最近记录',exact:true}).click();
+  await page.getByRole('button',{name:/新拍摄输入/}).first().click();
+  await page.getByText('旧记录的校对内容',{exact:true}).waitFor();
+  await page.getByRole('button',{name:'导出 / 分享',exact:true}).click();
+  await page.getByRole('button',{name:'Markdown 单文件',exact:true}).click();
+  await page.getByText('已交给系统保存或分享',{exact:true}).waitFor();
+  assert(await page.evaluate(()=>window.calls.some(c=>c.method==='export'&&c.args.id==='new-photo'&&c.args.format==='md')));
+ });
  await check('识别阶段来自桥接，返回首页继续，回放暂停不调用取消',async()=>{
-  await page.evaluate(()=>{window.saved.recognition={docId:window.saved.id,jobId:'job-1',sequence:10,state:'recognizing',message:'正在本地识别',stage:'region_started',regionCompleted:2,regionTotal:5};});
+  await page.evaluate(()=>{window.saved.mode='pending-ocr';window.saved.blocks=[];window.saved.edits={};window.saved.progress=0;window.saved.recognition={docId:window.saved.id,jobId:'job-1',sequence:10,state:'recognizing',message:'正在本地识别',stage:'region_started',regionCompleted:2,regionTotal:5};});
   await page.getByRole('button',{name:'返回首页'}).click();await page.getByRole('button',{name:'最近记录'}).click();await page.getByRole('button',{name:/新拍摄输入/}).first().click();
   await page.getByText('正在本地识别',{exact:true}).waitFor();assert((await page.locator('.recognition-panel').innerText()).includes('2/5'));
   assert.equal(await page.evaluate(()=>window.calls.filter(c=>c.method==='cancelRecognition').length),0);

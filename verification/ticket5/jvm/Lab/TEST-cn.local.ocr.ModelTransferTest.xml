@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cn.local.ocr.ModelTransferTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-07T09:37:51" hostname="localhost.localdomain" time="0.022">
+  <properties/>
+  <testcase name="ambiguous200ResponseRestartsWithoutRange" classname="cn.local.ocr.ModelTransferTest" time="0.01"/>
+  <testcase name="validRangeAppendsExistingBytes" classname="cn.local.ocr.ModelTransferTest" time="0.003"/>
+  <testcase name="rejectsWrongRangeWithoutOverwritingPartialFile" classname="cn.local.ocr.ModelTransferTest" time="0.002"/>
+  <testcase name="truncatedResponsePreservesBytesForResume" classname="cn.local.ocr.ModelTransferTest" time="0.003"/>
+  <testcase name="wrongRemoteTotalDoesNotAppend" classname="cn.local.ocr.ModelTransferTest" time="0.001"/>
+  <testcase name="progressIsPublishedBeforeWaitingForNextNetworkChunk" classname="cn.local.ocr.ModelTransferTest" time="0.002"/>
+  <testcase name="pausedTransferPreservesPartAndClosesConnection" classname="cn.local.ocr.ModelTransferTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

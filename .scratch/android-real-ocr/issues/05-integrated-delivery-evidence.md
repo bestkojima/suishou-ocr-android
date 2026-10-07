@@ -19,3 +19,5 @@
 ## Comments
 
 2026-10-07：本轮实现与替代交付已完成，检查项勾选表示代码和所述本机/模拟证据已交付，不表示设备加载或推理通过。Status 保留规格分流标签 ready-for-agent。分项证据和设备待办见 [交付记录](../../../../verification/real-ocr/DELIVERY.md)；实现边界见 [开发说明](../../../../docs/REAL_OCR.md)。
+
+2026-10-07：在 ticket3／ticket4 修复基础上重新实施 ticket5，补齐预览输入目录选择及 SHA 来源记录、连续桥接工作流，并重新执行 APK 构建、生产 C ABI 识别和完整回归。本轮独立证据见 [ticket5 交付记录](../../../../verification/ticket5/DELIVERY.md)。两版 JVM 各 44 项、浏览器 71 项和 ABI 4 项通过；设备推理仍待验收，Status 保留分流语义。

@@ -1,0 +1,152 @@
+{
+  "environment": "Linux x86_64 生产 C ABI，真实模型；非 Android",
+  "loadingSeconds": 5.7139171310000165,
+  "elapsedSeconds": 68.72822338900005,
+  "maxRssKiB": 2470644,
+  "repeatedInput": "/home/dr/project/android_ocr/verification/ticket5/partial-source.png",
+  "checks": [
+    "真实加载",
+    "推理中第二项返回 BUSY",
+    "推理中销毁返回 BUSY",
+    "安全取消到 terminal",
+    "取消无有效正文",
+    "同一引擎取消恢复后完整识别与导出",
+    "重复作业真实结构化输出",
+    "真实空白页"
+  ],
+  "cancelled": {
+    "state": "cancelled",
+    "error": {
+      "request_id": "p0001",
+      "stage": "inference",
+      "code": "cancelled",
+      "message": "job cancelled"
+    },
+    "running": false,
+    "terminal": true,
+    "cancel_requested": true,
+    "timeout_requested": false,
+    "cancellation_granularity": "after_backend_call",
+    "page_current": 1,
+    "page_completed": 0,
+    "page_total": 1,
+    "region_completed": 0,
+    "region_total": 9,
+    "events_pending": 4,
+    "events_dropped": 0,
+    "engine_ready": true
+  },
+  "completed": {
+    "state": "completed",
+    "running": false,
+    "terminal": true,
+    "cancel_requested": false,
+    "timeout_requested": false,
+    "cancellation_granularity": "after_backend_call",
+    "page_current": 1,
+    "page_completed": 1,
+    "page_total": 1,
+    "region_completed": 9,
+    "region_total": 9,
+    "events_pending": 27,
+    "events_dropped": 0,
+    "engine_ready": true
+  },
+  "outputStatus": "ok",
+  "repeated": {
+    "state": "completed",
+    "running": false,
+    "terminal": true,
+    "cancel_requested": false,
+    "timeout_requested": false,
+    "cancellation_granularity": "after_backend_call",
+    "page_current": 1,
+    "page_completed": 1,
+    "page_total": 1,
+    "region_completed": 9,
+    "region_total": 9,
+    "events_pending": 27,
+    "events_dropped": 0,
+    "engine_ready": true
+  },
+  "repeatedOutputStatus": "ok",
+  "blank": {
+    "state": "partial",
+    "running": false,
+    "terminal": true,
+    "cancel_requested": false,
+    "timeout_requested": false,
+    "cancellation_granularity": "after_backend_call",
+    "page_current": 1,
+    "page_completed": 1,
+    "page_total": 1,
+    "region_completed": 0,
+    "region_total": 0,
+    "events_pending": 11,
+    "events_dropped": 0,
+    "engine_ready": true
+  },
+  "eventsBeforeCancel": [
+    {
+      "kind": "started",
+      "state": "running",
+      "page": 0,
+      "request_id": null,
+      "page_completed": 0,
+      "page_total": 0,
+      "region_completed": 0,
+      "region_total": 0
+    },
+    {
+      "kind": "page_started",
+      "state": "running",
+      "page": 1,
+      "request_id": null,
+      "page_completed": 0,
+      "page_total": 1,
+      "region_completed": 0,
+      "region_total": 0
+    },
+    {
+      "kind": "decode_completed",
+      "state": "running",
+      "page": 1,
+      "request_id": null,
+      "page_completed": 0,
+      "page_total": 1,
+      "region_completed": 0,
+      "region_total": 0
+    },
+    {
+      "kind": "layout_started",
+      "state": "running",
+      "page": 1,
+      "request_id": null,
+      "page_completed": 0,
+      "page_total": 1,
+      "region_completed": 0,
+      "region_total": 0
+    },
+    {
+      "kind": "layout_completed",
+      "state": "running",
+      "page": 1,
+      "request_id": null,
+      "page_completed": 0,
+      "page_total": 1,
+      "region_completed": 0,
+      "region_total": 0
+    },
+    {
+      "kind": "region_started",
+      "state": "running",
+      "page": 1,
+      "request_id": "reqr0001",
+      "page_completed": 0,
+      "page_total": 1,
+      "region_completed": 0,
+      "region_total": 9
+    }
+  ]
+}
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

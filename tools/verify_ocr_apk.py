@@ -1,8 +1,12 @@
 """检查 APK 的原生打包、符号、依赖与编译后端；不执行设备推理。"""
 from pathlib import Path
 from zipfile import ZipFile
-import subprocess,tempfile,json,hashlib
+import argparse,subprocess,tempfile,json,hashlib
 root=Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output',type=Path,default=root/'verification/real-ocr/apk.json',help='APK 静态检查报告路径')
+output=parser.parse_args().output.resolve()
+output.parent.mkdir(parents=True,exist_ok=True)
 readelf=Path('/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-readelf')
 platform={'libc.so','libdl.so','libm.so','liblog.so','libandroid.so','libz.so'}
 reports=[]
@@ -33,5 +37,5 @@ commands=list((root/'app/.cxx').rglob('compile_commands.json'))
 assert commands
 compiled=[x for f in commands for x in json.loads(f.read_text()) if x['file'].endswith('printed_page_mnn_backend.cpp')]
 assert compiled and all('DOCOCR_HAS_MNN=1' in c['command'] and 'DOCOCR_HAS_LLM=1' in c['command'] for c in compiled)
-(root/'verification/real-ocr/apk.json').write_text(json.dumps({'environment':'Android NDK 编译与静态打包检查，未在设备加载','productionBackendCompileCommands':compiled,'apks':reports},indent=2)+'\n')
+output.write_text(json.dumps({'environment':'Android NDK 编译与静态打包检查，未在设备加载','productionBackendCompileCommands':compiled,'apks':reports},indent=2)+'\n')
 print('PASS arm64-v8a、公共 C ABI/JNI/LLM 符号、依赖闭合、生产后端编译、未打包权重')

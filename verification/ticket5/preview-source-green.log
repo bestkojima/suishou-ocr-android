@@ -1,0 +1,16 @@
+node:internal/fs/promises:639
+  return new FileHandle(await PromisePrototypeThen(
+                        ^
+
+Error: ENOENT: no such file or directory, open 'verification/ticket5/missing/output.zip'
+    at async open (node:internal/fs/promises:639:25)
+    at async readFile (node:internal/fs/promises:1252:14)
+    at async importBundle (file:///home/dr/project/android_ocr/web/verify-real-results.mjs:17:46)
+    at async file:///home/dr/project/android_ocr/web/verify-real-results.mjs:18:2 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'verification/ticket5/missing/output.zip'
+}
+
+Node.js v22.23.2

@@ -1,0 +1,17 @@
+输出中调整已完成区域，边界按钮受限，保存后显示顺序正确
+继续输出无重复、遗漏或尾部错位
+关闭调整面板不应用未保存的顺序
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.reload: net::ERR_CONNECTION_REFUSED
+Call log:
+[2m  - waiting for navigation until "load"[22m
+
+    at /home/dr/project/android_ocr/web/verify-editor-drag.mjs:12:77 {
+  log: [ '  - waiting for navigation until "load"' ],
+  name: 'Error'
+}
+
+Node.js v22.23.2

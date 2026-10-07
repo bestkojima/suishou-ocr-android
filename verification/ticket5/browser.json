@@ -1,0 +1,28 @@
+{
+  "environment": "Chromium；导入 Linux 真实输出后回放，不执行模型",
+  "inputBundles": {
+    "output": {
+      "path": "/home/dr/project/android_ocr/verification/ticket5/output.zip",
+      "sha256": "84bf9765be8e7f0cb165297f14d8a7cc892eae425b791eb9fa0ae15f273b3b0f"
+    },
+    "partial": {
+      "path": "/home/dr/project/android_ocr/verification/ticket5/partial.zip",
+      "sha256": "bea8c75e2560a454f40e892a9b93d4ec8922a49ad21f70d520f2a7dc3a027a08"
+    },
+    "blank": {
+      "path": "/home/dr/project/android_ocr/verification/ticket5/blank.zip",
+      "sha256": "66b335efd3d0a9340a9596bf86ee79e1c763ee8fb9aef3dd84b3133bb6825d00"
+    }
+  },
+  "results": [
+    "本轮真实中文、公式、表格、插图及原图正常展示",
+    "真实输出校对、排序、ZIP 原始元数据保留与再导入",
+    "再次导出保留首次原始 DocumentIR、当前顺序和校对",
+    "完整保存原生二进制资源、图片、原图和 run-manifest",
+    "既有真实 partial 样本（provenance.json）与未完成区域提示",
+    "实际 empty_page 输出明确显示为空白，不误报部分成功或持续准备",
+    "合法的 assets 外图片路径及刷新后历史重开保持可用",
+    "原生应用状态导入浏览器后再导出，页面原图仍使用有效本地路径"
+  ],
+  "errors": []
+}

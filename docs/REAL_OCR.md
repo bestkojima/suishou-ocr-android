@@ -69,3 +69,7 @@ node web/verify-real-results.mjs
 桌面生命周期证据可用 `python3 tools/verify_real_ocr.py --output verification/ticket4/desktop` 独立保存，保留此前交付输出。导航专项仅替换 AndroidHost 宿主，通过公开请求／事件和界面操作验证迟到回复；JVM 的失败后重试使用不可用模型资源场景，不执行 JNI。
 
 没有连接 Android 设备，因此实际 APK 加载、首图/重复推理、相机方向、内存/耗时、导航/取消及系统进程退出后的重试等仍待实机验收；本轮 CPU 桌面内存与耗时不代表设备性能。
+
+ticket5 在 ticket3／ticket4 修复之后重新构建两版 APK、执行生产 C ABI 识别并用该次结果生成预览，完整分项证据与设备清单见 [ticket5 交付记录](../verification/ticket5/DELIVERY.md)。预览脚本通过 `OCR_RESULT_DIR` 选择真实输出目录，`OCR_EVIDENCE_DIR` 选择报告／截图目录，报告记录导入 ZIP 的路径与 SHA-256；不要仅更换截图目录后声称输入已更新。`verify_real_ocr.py --input <图片> --output <新的空目录>` 会验证取消与恢复后完整输出、重复输入和空白页；`package_real_preview.py --output <该目录>` 生成预览 ZIP；`verify_ocr_apk.py --output <报告路径>` 保存独立静态检查。partial 使用带 provenance 的既有真实样本，并与新推理分开注明。
+
+浏览器识别桥接新增连续下载准备、实际加载状态、识别结果保存、另存重新识别和旧校对导出请求场景。下载／加载／正文与导出宿主均为明确模拟，实际文件导出语义另由真实输出往返和 JVM 测试验证。拖动校对与识别桥接脚本共用 4196 端口，运行时应串行执行。

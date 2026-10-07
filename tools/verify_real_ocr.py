@@ -1,4 +1,4 @@
-"""Linux 生产 C ABI 证据：单作业、实际取消、恢复后 partial；不代表设备推理。"""
+"""Linux 生产 C ABI 证据：单作业、实际取消、恢复后完整输出及重复/空白输入；不代表设备推理。"""
 import ctypes as c
 import argparse
 import json
@@ -13,9 +13,11 @@ ROOT=Path(__file__).resolve().parents[1]
 ENGINE=ROOT.parent/'docprase'
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output',type=Path,default=ROOT/'verification/real-ocr',help='独立的桌面生命周期证据目录')
-OUT=parser.parse_args().output.resolve()
+parser.add_argument('--input',type=Path,default=ROOT/'verification/real-ocr/source.png',help='本次实际识别的输入图片')
+args=parser.parse_args()
+OUT=args.output.resolve()
 OUT.mkdir(parents=True,exist_ok=True)
-source=ROOT/'verification/real-ocr/source.png'
+source=args.input.resolve()
 if OUT/'source.png'!=source:shutil.copyfile(source,OUT/'source.png')
 class View(c.Structure):
     _fields_=[('data',c.c_char_p),('size',c.c_size_t)]
@@ -90,6 +92,11 @@ thread.join(timeout=1);assert not thread.is_alive();assert result==[7]
 cancelled=snapshot(job);assert cancelled['terminal'] and cancelled['state']=='cancelled'
 r=Result();r.struct_size=c.sizeof(Result);assert lib.dococr_job_result(job,c.byref(r))==8
 assert lib.dococr_job_destroy(job)==0;assert lib.dococr_job_destroy(other)==0
+buffer,req=request(OUT/'source.png')
+job=new_job(engine);assert lib.dococr_job_run(job,c.byref(req))==0
+complete_ir=export(job,OUT/'output');complete=snapshot(job)
+assert complete['terminal'] and complete_ir['pages'][0]['blocks']
+assert lib.dococr_job_destroy(job)==0
 Image.open(ROOT/'prototypes/ocr-streaming/fixtures/odb-09/source.jpg').convert('RGB').save(OUT/'partial-source.png')
 buffer,req=request(OUT/'partial-source.png')
 job=new_job(engine);assert lib.dococr_job_run(job,c.byref(req))==0
@@ -100,6 +107,6 @@ job=new_job(engine);assert lib.dococr_job_run(job,c.byref(req))==0
 blank_ir=export(job,OUT/'blank');blank=snapshot(job)
 assert not blank_ir['pages'][0]['blocks'];assert lib.dococr_job_destroy(job)==0
 assert lib.dococr_destroy(engine)==0
-report={'environment':'Linux x86_64 生产 C ABI，真实模型；非 Android','loadingSeconds':load,'elapsedSeconds':time.monotonic()-start,'maxRssKiB':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'repeatedInput':str(OUT/'partial-source.png'),'checks':['真实加载','推理中第二项返回 BUSY','推理中销毁返回 BUSY','安全取消到 terminal','取消无有效正文','同一引擎取消恢复后再次识别','重复作业真实结构化输出','真实空白页'],'cancelled':cancelled,'repeated':partial,'repeatedOutputStatus':ir['status'],'blank':blank,'eventsBeforeCancel':events}
+report={'environment':'Linux x86_64 生产 C ABI，真实模型；非 Android','loadingSeconds':load,'elapsedSeconds':time.monotonic()-start,'maxRssKiB':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'repeatedInput':str(OUT/'partial-source.png'),'checks':['真实加载','推理中第二项返回 BUSY','推理中销毁返回 BUSY','安全取消到 terminal','取消无有效正文','同一引擎取消恢复后完整识别与导出','重复作业真实结构化输出','真实空白页'],'cancelled':cancelled,'completed':complete,'outputStatus':complete_ir['status'],'repeated':partial,'repeatedOutputStatus':ir['status'],'blank':blank,'eventsBeforeCancel':events}
 (OUT/'lifecycle.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(report,ensure_ascii=False,indent=2))

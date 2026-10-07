@@ -1,17 +1,20 @@
 import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {resolve} from 'node:path';
 import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {unzipSync,zipSync,strFromU8,strToU8} from 'fflate';
 const server=spawn('python3',['-m','http.server','4197','--bind','127.0.0.1','--directory','web/dist'],{stdio:'ignore'});
-let browser;const results=[],errors=[];const out='verification/real-ocr',evidence=process.env.OCR_EVIDENCE_DIR||out;
+let browser;const results=[],errors=[];const out=process.env.OCR_RESULT_DIR||'verification/real-ocr',evidence=process.env.OCR_EVIDENCE_DIR||out;
 try{
  await mkdir(evidence,{recursive:true});
  for(let i=0;i<50;i++){try{if((await fetch('http://127.0.0.1:4197')).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/home/dr/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome',args:['--no-sandbox']});
+ const inputBundles={};
  const page=await browser.newPage({viewport:{width:1000,height:950},acceptDownloads:true});page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:4197');
  await page.getByRole('button',{name:'设置',exact:true}).click();await page.locator('select').selectOption('64');await page.getByRole('dialog').getByRole('button',{name:'关闭',exact:true}).click();
- const importBundle=async name=>{const pick=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入文件',exact:true}).click();await(await pick).setFiles(`${out}/${name}.zip`);await page.getByRole('button',{name:'重新回放',exact:true}).waitFor({timeout:45000});};
+ const importBundle=async name=>{const bytes=await readFile(`${out}/${name}.zip`);inputBundles[name]={path:resolve(`${out}/${name}.zip`),sha256:createHash('sha256').update(bytes).digest('hex')};const pick=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入文件',exact:true}).click();await(await pick).setFiles(`${out}/${name}.zip`);await page.getByRole('button',{name:'重新回放',exact:true}).waitFor({timeout:45000});};
  await importBundle('output');
  assert.equal(await page.locator('.region').count(),10);assert(await page.locator('.katex').count()>0);assert.equal(await page.locator('.markdown table').count(),1);assert.equal(await page.locator('.image-frame img').count(),1);
  await page.waitForFunction(()=>[...document.querySelectorAll('.image-frame img')].every(i=>i.complete&&i.naturalWidth>0));
@@ -52,6 +55,6 @@ try{
  await page.getByRole('button',{name:'返回首页',exact:true}).click();const sourcePick=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入文件',exact:true}).click();await(await sourcePick).setFiles({name:'原图关联往返.zip',mimeType:'application/zip',buffer:Buffer.from(zipSync({...secondZip,'app-state.json':strToU8(JSON.stringify(nativeState))}))});await page.getByRole('button',{name:'重新回放'}).waitFor({timeout:45000});
  await page.getByRole('button',{name:'导出 / 分享',exact:true}).click();const sourceDownload=page.waitForEvent('download');await page.getByRole('button',{name:'完整文档 ZIP（含图片）',exact:true}).click();const sourceZip=unzipSync(new Uint8Array(await readFile(await(await sourceDownload).path()))),portable=JSON.parse(strFromU8(sourceZip['app-state.json']));
  assert.equal(portable.pages[0].source,'source.png');assert(sourceZip[portable.pages[0].source]);results.push('原生应用状态导入浏览器后再导出，页面原图仍使用有效本地路径');assert.deepEqual(errors,[]);
- await writeFile(`${evidence}/browser.json`,JSON.stringify({environment:'Chromium；导入 Linux 真实输出后回放，不执行模型',results,errors},null,2));
+ await writeFile(`${evidence}/browser.json`,JSON.stringify({environment:'Chromium；导入 Linux 真实输出后回放，不执行模型',inputBundles,results,errors},null,2));
  console.log(results);
 }finally{await browser?.close();server.kill();}

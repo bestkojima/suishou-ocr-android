@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cn.local.ocr.OfficeFormatsTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-07T09:37:51" hostname="localhost.localdomain" time="0.476">
+  <properties/>
+  <testcase name="mergeRowsRenderOnceAndOversizedGridsFailExplicitly" classname="cn.local.ocr.OfficeFormatsTest" time="0.001"/>
+  <testcase name="xlsxPreservesSheetsMergedCellsFormatsFormulasAndImageOwnership" classname="cn.local.ocr.OfficeFormatsTest" time="0.022"/>
+  <testcase name="realOfficePackagesProduceReplayBundlesWithPageImageOwnership" classname="cn.local.ocr.OfficeFormatsTest" time="0.027"/>
+  <testcase name="pptxUsesPresentationOrderAndPreservesTextTableAndSlideImage" classname="cn.local.ocr.OfficeFormatsTest" time="0.009"/>
+  <testcase name="resourcePathsAllowPackageParentsButRejectEscapingAndRemote" classname="cn.local.ocr.OfficeFormatsTest" time="0.001"/>
+  <testcase name="legacyPptExtractsTextBySlideWithoutAwtRendering" classname="cn.local.ocr.OfficeFormatsTest" time="0.415"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
