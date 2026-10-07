@@ -20,14 +20,17 @@ public class RecognitionControllerTest {
             @Override public File getCacheDir(){return root;}
         };
         RecognitionController controller=RecognitionController.get(context);DocumentStore store=controller.store();String id=store.create();
-        JSONObject state=FilesUtil.obj("docId",id,"jobId","job","state","saving","resultSaved",true);
+        JSONObject state=FilesUtil.obj("docId",id,"jobId","job","state","saving","resultSaved",true,"sequence",42);
         JSONObject doc=FilesUtil.obj("id",id,"mode","real-ocr","recognitionOutcome","partial","recognition",state);store.save(doc);
         // 固定在 native 清理期间，不运行或伪造模型推理。
         set(controller,"current",state);set(controller,"busy",true);
         assertEquals("saving",controller.cancel(id,"job").getString("state"));
         assertEquals("saving",controller.status(id).getString("state"));
         set(controller,"current",null);set(controller,"busy",false);
-        assertEquals("partial",controller.status(id).getString("state"));assertEquals("partial",store.load(id).getJSONObject("recognition").getString("state"));
+        JSONObject committed=controller.status(id);
+        assertEquals("partial",committed.getString("state"));assertEquals("partial",store.load(id).getJSONObject("recognition").getString("state"));
+        assertTrue(committed.getLong("sequence")>42);
+        assertEquals(committed.getLong("sequence"),controller.status(id).getLong("sequence"));
         // 提交前仍允许取消，并将状态保存给历史重开。
         state=FilesUtil.obj("docId",id,"jobId","retry","state","saving");doc.put("mode","pending-ocr").put("recognition",state);store.save(doc);
         set(controller,"current",state);set(controller,"busy",true);
@@ -35,5 +38,13 @@ public class RecognitionControllerTest {
         assertEquals("cancelling",store.load(id).getJSONObject("recognition").getString("state"));
         set(controller,"busy",false);set(controller,"current",null);set(controller,"cancelled",false);
         assertEquals("failed",controller.status(id).getString("state"));
+        // 历史重开时，恢复终态必须比落盘的活跃状态更新，前端才能接受。
+        String interruptedId=store.create();
+        store.save(FilesUtil.obj("id",interruptedId,"mode","pending-ocr","recognition",
+            FilesUtil.obj("docId",interruptedId,"jobId","interrupted","state","recognizing","sequence",99)));
+        JSONObject recovered=controller.status(interruptedId);
+        assertEquals("failed",recovered.getString("state"));
+        assertTrue(recovered.getLong("sequence")>99);
+        assertEquals(recovered.getLong("sequence"),store.load(interruptedId).getJSONObject("recognition").getLong("sequence"));
     }
 }

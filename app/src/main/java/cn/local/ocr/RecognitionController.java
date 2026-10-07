@@ -74,6 +74,8 @@ final class RecognitionController {
         if(Arrays.asList("preparing","recognizing","cancelling","saving").contains(state.optString("state"))) {
             if(doc.optString("mode").equals("real-ocr")) state.put("state",doc.optString("recognitionOutcome","succeeded")).put("resultSaved",true).put("message","识别结果已保存，以下为结果回放");
             else state.put("state","failed").put("message","上次识别随进程退出而停止，输入已保留，可重试");
+            sequence=Math.max(sequence,state.optLong("sequence"))+1;
+            state.put("sequence",sequence);
             store.save(doc);
         }
         return state;

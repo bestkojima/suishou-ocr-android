@@ -81,6 +81,26 @@ try {
   await page.getByRole('button',{name:'暂停输出',exact:true}).waitFor({timeout:4000}).catch(async e=>{console.log(await page.locator('body').innerText());console.log(await page.evaluate(()=>({saved:window.saved,calls:window.calls.slice(-15)})));throw e;});await page.getByRole('button',{name:'暂停输出',exact:true}).click();
   const cancels=await page.evaluate(()=>window.calls.filter(c=>c.method==='cancelRecognition').length);await page.waitForTimeout(900);assert.equal(await page.evaluate(()=>window.calls.filter(c=>c.method==='cancelRecognition').length),cancels);assert(await page.getByRole('button',{name:'继续输出',exact:true}).isVisible());
  });
+ await check('进程退出后从历史重开，更新序号的恢复终态提供重试',async()=>{
+  await page.getByRole('button',{name:'返回首页',exact:true}).click();
+  await page.evaluate(()=>{
+   window.saved={id:'interrupted-input',title:'进程中断的输入',mode:'pending-ocr',input:'source.png',blocks:[],assets:{},pages:[],progress:0,
+    recognition:{docId:'interrupted-input',jobId:'interrupted-job',state:'recognizing',sequence:99,message:'上次正在识别'}};
+   const old=window.AndroidHost.request;
+   window.AndroidHost.request=function(raw){
+    const r=JSON.parse(raw);
+    if(r.method==='recognitionStatus'&&r.args.id==='interrupted-input'){
+     window.saved.recognition={...window.saved.recognition,state:'failed',sequence:100,message:'上次识别随进程退出而停止，输入已保留，可重试'};
+     return window.nativeReply({id:r.id,value:structuredClone(window.saved.recognition)});
+    }
+    return old(raw);
+   };
+  });
+  await page.getByRole('button',{name:'最近记录',exact:true}).click();
+  await page.getByRole('button',{name:/进程中断的输入/}).first().click();
+  await page.getByText('上次识别随进程退出而停止，输入已保留，可重试',{exact:true}).waitFor();
+  assert(await page.getByRole('button',{name:'重试识别',exact:true}).isVisible());
+ });
  await check('失败保留输入并提供重试，模型使用中禁用删除和替换',async()=>{
   await page.getByRole('button',{name:'返回首页',exact:true}).click();
   await page.evaluate(()=>{window.saved={id:'failed-input',title:'加载失败的输入',mode:'pending-ocr',input:'source.png',blocks:[],assets:{},pages:[],progress:0,recognition:{docId:'failed-input',jobId:'job-4',state:'failed',sequence:33,message:'模型加载失败，输入已保留，可重试'}};});
