@@ -43,7 +43,9 @@ python3 tools/verify_ocr_apk.py
 
 先写暂存目录的完整 DocumentIR、Markdown、run-manifest 和全部资源，再通过现有 normalize/storage 流程保存 `real-ocr` 文档。提交后设置 `resultSaved` 并禁用取消，原生资源清理结束后发布最终状态；成功结果进入回放；没有有效正文的取消不调用结果适配。DocumentIR 的原始元数据不被扁平展示区域覆盖，partial 区域保留状态和提示。无展示区域且引擎明确提供 `empty_page` 证据时显示为空白；原生记录仍保留原始状态。
 
-校对继续保存为 `edits`，同页排序修改展示顺序及导出副本的 reading_order。ZIP 包含原始 `original-document.json`、当前阅读顺序的 `document.json`、校对后 Markdown、App 状态、全部声明资源（包括 `assets/` 外的合法路径）和全部原生 assets；同一资源只打包一次，再次导入恢复校对。重新识别复制输入生成新文档，不迁移旧校对。
+校对继续保存为 `edits`，同页排序修改展示顺序及导出副本的 reading_order。ZIP 包含原始 `original-document.json`、当前阅读顺序的 `document.json`、校对后 Markdown、App 状态、全部声明资源（包括 `assets/` 外的合法路径）和全部原生 assets；同一资源只打包一次，再次导入恢复校对。多次导入／导出仍保留首次原始 DocumentIR，不以排序后的副本替换。重新识别复制输入生成新文档，不迁移旧校对。
+
+真实结果和 JSON/ZIP 导入共用完整／partial／空白判定：页面单独标记 partial 也提示部分成功；空白需要明确的 `empty_page` 或 blank 证据。浏览器预览导出同时保留二进制资源、运行元数据和页面原图的本地路径，渲染器支持已声明的合法本地图片路径。ticket3 补充修复、回归和证据见 [交付记录](../verification/ticket3/DELIVERY.md)。
 
 ## 验证入口
 

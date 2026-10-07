@@ -13,16 +13,22 @@ function normalize(ir,files,title){
  if(!ir.pages?.length)throw Error('JSON 缺少 DocumentIR pages');const assets={};
  for(const r of ir.resources||[]){if(!safePath(r.path))throw Error('无效资源路径');assets[r.path]={src:files[r.path]||'',width:r.width||400,height:r.height||240,missing:!files[r.path]};}
  const blocks=[];for(const [p,page] of ir.pages.entries()){const byId=Object.fromEntries((page.blocks||[]).map(b=>[b.id,b]));for(const id of page.reading_order||Object.keys(byId)){const b=byId[id];if(!b)continue;const c=b.content||{text:'> 此区域未完成识别，请对照原图校对。',format:'markdown'};blocks.push({id:`${page.page_id||p}-${id}`,type:b.type,page:p+1,markdown:b.type==='image'?`![插图](${c.resource})`:c.format==='latex'?`$$\n${c.text}\n$$`:c.text||'',sourceStatus:b.status||'ok',resource:c.resource,format:c.format});}}
- if(blocks.length>10000)throw Error('区域超过 10000');return {originalIR:ir,id:crypto.randomUUID(),title,mode:'json-replay',status:'ready',progress:0,blocks,assets,pendingAnalysis:blocks.filter(b=>b.sourceStatus==='pending-layout').length,pendingOcr:blocks.filter(b=>b.sourceStatus==='pending-ocr').length,pages:ir.pages.map((p,i)=>({number:i+1,title:p.title,kind:p.kind,route:'JSON 结果回放'})),updatedAt:Date.now()};
+ if(blocks.length>10000)throw Error('区域超过 10000');
+ const partial=ir.status==='partial'||ir.pages.some(p=>p.status==='partial')||blocks.some(b=>b.sourceStatus!=='ok');
+ const blank=blocks.length===0&&ir.pages.every(p=>ir.status==='blank'||p.status==='blank'||p.reading_order_evidence?.reason==='empty_page');
+ return {originalIR:ir,id:crypto.randomUUID(),title,mode:'json-replay',status:'ready',progress:0,blocks,assets,recognitionOutcome:blank?'blank':partial?'partial':'succeeded',notice:partial&&!blank?'部分区域未完整识别，可用内容已保存；请对照原图核验标示区域。':undefined,pendingAnalysis:blocks.filter(b=>b.sourceStatus==='pending-layout').length,pendingOcr:blocks.filter(b=>b.sourceStatus==='pending-ocr').length,pages:ir.pages.map((p,i)=>({number:i+1,title:p.title,kind:p.kind,sourceStatus:p.status,route:'JSON 结果回放'})),updatedAt:Date.now()};
 }
 async function imported(f){
  if(f.size>256*1024*1024)throw Error('文件超过 256 MB');let doc;
  if(/\.zip$/i.test(f.name)){
   let total=0;const files=unzipSync(new Uint8Array(await f.arrayBuffer()),{filter:e=>{if(!safePath(e.name))throw Error('无效资源路径');total+=e.originalSize;if(total>512*1024*1024)throw Error('解压内容过大');return true;}});
   const key=Object.keys(files).find(k=>/(^|\/)document.json$/.test(k));if(!key)throw Error('ZIP 中没有 document.json');const prefix=key.slice(0,-13),mapped={};
-  for(const [path,bytes]of Object.entries(files))if(path.startsWith(prefix)&&/\.(png|jpe?g|webp|gif)$/i.test(path))mapped[path.slice(prefix.length)]=await dataURL(new Blob([bytes],{type:/\.jpe?g$/i.test(path)?'image/jpeg':/\.webp$/i.test(path)?'image/webp':/\.gif$/i.test(path)?'image/gif':'image/png'}));
+  const generated=new Set(['document.json','original-document.json','document.md','app-state.json']);
+  for(const [path,bytes]of Object.entries(files))if(path.startsWith(prefix)&&!generated.has(path.slice(prefix.length)))mapped[path.slice(prefix.length)]=await dataURL(new Blob([bytes],{type:/\.jpe?g$/i.test(path)?'image/jpeg':/\.webp$/i.test(path)?'image/webp':/\.gif$/i.test(path)?'image/gif':/\.png$/i.test(path)?'image/png':'application/octet-stream'}));
   doc=normalize(JSON.parse(strFromU8(files[key])),mapped,f.name);
-  const snapshot=files[prefix+'app-state.json'];if(snapshot){const state=JSON.parse(strFromU8(snapshot));if(state.appExport!==1)throw Error('不支持的应用文档版本');doc.blocks=state.blocks;doc.edits=state.edits;doc.pendingOcr=state.pendingOcr||0;doc.pendingAnalysis=state.pendingAnalysis||0;doc.pdfClassification=state.pdfClassification;doc.notice=state.notice;doc.title=state.title;doc.pages=(state.pages||[]).map(p=>({...p,source:mapped[p.source]}));doc.original=mapped[state.original];}
+  doc.bundleFiles=Object.fromEntries(Object.entries(mapped).filter(([path])=>!Object.hasOwn(doc.assets,path)));
+  if(files[prefix+'original-document.json'])doc.rawIR=JSON.parse(strFromU8(files[prefix+'original-document.json']));
+  const snapshot=files[prefix+'app-state.json'];if(snapshot){const state=JSON.parse(strFromU8(snapshot));if(state.appExport!==1)throw Error('不支持的应用文档版本');doc.blocks=state.blocks;doc.edits=state.edits;doc.orderEdited=!!state.orderEdited;doc.pendingOcr=state.pendingOcr||0;doc.pendingAnalysis=state.pendingAnalysis||0;doc.pdfClassification=state.pdfClassification;doc.notice=state.notice??doc.notice;doc.title=state.title;doc.pages=(state.pages||[]).map(p=>({...p,source:mapped[p.source]}));doc.original=mapped[state.original];}
   doc.original ||= mapped[Object.keys(mapped).find(k=>k.startsWith('source.'))];
  }else if(/\.json$/i.test(f.name))doc=normalize(JSON.parse(await f.text()),{},f.name);
  else if(f.type.startsWith('image/')){const src=await dataURL(f),size=await dimensions(src);doc={id:crypto.randomUUID(),title:f.name,mode:'pending-ocr',recognition:{state:'waiting',message:'浏览器只预览输入；请在 APK 内执行本地识别'},status:'ready',progress:0,blocks:[{id:'image',type:'image',markdown:'![原图](assets/input.png)',resource:'assets/input.png',sourceStatus:'ok'}],assets:{'assets/input.png':{src,...size}},original:src,pages:[],notice:'浏览器已保存输入；真实识别请使用 arm64 APK。',updatedAt:Date.now()};}
@@ -47,9 +53,14 @@ function exportIR(d){
 async function exportDoc(d,format){
  const md=d.blocks.slice(0,d.progress).map(b=>d.edits?.[b.id]??b.markdown).join('\n\n');let blob;
  if(format==='zip'){
-  const portable=structuredClone(d),files={'document.json':strToU8(JSON.stringify(exportIR(d),null,2)),'document.md':strToU8(md)};portable.appExport=1;if(d.originalIR)files['original-document.json']=strToU8(JSON.stringify(d.originalIR,null,2));
+  const portable=structuredClone(d),files={'document.json':strToU8(JSON.stringify(exportIR(d),null,2)),'document.md':strToU8(md)};portable.appExport=1;if(d.originalIR)files['original-document.json']=strToU8(JSON.stringify(d.rawIR||d.originalIR,null,2));
+  const resourcePaths=new Map();
+  for(const [path,src]of Object.entries(d.bundleFiles||{})){if(!safePath(path)||Object.hasOwn(files,path))throw Error('无效资源路径');files[path]=new Uint8Array(await(await fetch(src)).arrayBuffer());resourcePaths.set(src,path);}
   for(const [path,a]of Object.entries(portable.assets)){if(!safePath(path))throw Error('无效资源路径');if(a.src){files[path]=new Uint8Array(await(await fetch(a.src)).arrayBuffer());a.src=path;}}
-  if(d.original){files['source.png']=new Uint8Array(await(await fetch(d.original)).arrayBuffer());portable.original='source.png';}
+  for(const [path,a]of Object.entries(d.assets))if(a.src)resourcePaths.set(a.src,path);
+  if(d.original){const path=resourcePaths.get(d.original)||'source.png';files[path]=new Uint8Array(await(await fetch(d.original)).arrayBuffer());portable.original=path;resourcePaths.set(d.original,path);}
+  portable.pages=(portable.pages||[]).map(p=>({...p,source:resourcePaths.get(p.source)}));
+  delete portable.bundleFiles;delete portable.originalIR;delete portable.rawIR;
   files['app-state.json']=strToU8(JSON.stringify(portable));blob=new Blob([zipSync(files)],{type:'application/zip'});
  }else blob=new Blob([format==='txt'?md.replace(/^#{1,6}\s+/gm,'').replace(/!\[([^\]]*)\]\([^)]+\)/g,'[图片：$1]').replace(/<[^>]*>/g,' '):md],{type:'text/plain;charset=utf-8'});
  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=d.title+'.'+format;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);return true;

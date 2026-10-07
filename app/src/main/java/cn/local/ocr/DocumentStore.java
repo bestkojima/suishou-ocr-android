@@ -29,6 +29,16 @@ public final class DocumentStore {
         }
         if(doc.getJSONArray("blocks").length()>10000)throw new IOException("区域数超过 10000");
         int pending=0;JSONArray normalized=doc.getJSONArray("blocks");for(int i=0;i<normalized.length();i++)if(normalized.getJSONObject(i).optString("sourceStatus").equals("pending-ocr"))pending++;doc.put("pendingOcr",pending);int pendingLayout=0;for(int i=0;i<normalized.length();i++)if(normalized.getJSONObject(i).optString("sourceStatus").equals("pending-layout"))pendingLayout++;doc.put("pendingAnalysis",pendingLayout);
+        boolean partial=ir.optString("status").equals("partial"),emptyPage=normalized.length()==0;
+        for(int i=0;i<normalized.length();i++)if(!normalized.getJSONObject(i).optString("sourceStatus","ok").equals("ok"))partial=true;
+        for(int i=0;i<pages.length();i++){
+            JSONObject page=pages.getJSONObject(i),evidence=page.optJSONObject("reading_order_evidence");
+            partial |= page.optString("status").equals("partial");
+            emptyPage &= ir.optString("status").equals("blank")||page.optString("status").equals("blank")||evidence!=null&&evidence.optString("reason").equals("empty_page");
+        }
+        String outcome=emptyPage?"blank":partial?"partial":"succeeded";
+        doc.put("recognitionOutcome",outcome);
+        if(outcome.equals("partial"))doc.put("notice","部分区域未完整识别，可用内容已保存；请对照原图核验标示区域。");
         return doc;
     }
     synchronized JSONObject copyInput(JSONObject source)throws Exception {
@@ -49,17 +59,6 @@ public final class DocumentStore {
         if(input.has("derivedFrom")) result.put("derivedFrom",input.getString("derivedFrom"));
         if(input.has("recognition")) result.put("recognition",input.getJSONObject("recognition"));
         for(int i=0;i<result.getJSONArray("pages").length();i++) result.getJSONArray("pages").getJSONObject(i).put("source",input.optString("original")).put("route","PP-DocLayoutV3 → OvisOCR2 → DocumentIR");
-        JSONArray blocks=result.getJSONArray("blocks");boolean partial=ir.optString("status").equals("partial");
-        for(int i=0;i<blocks.length();i++) if(!blocks.getJSONObject(i).optString("sourceStatus","ok").equals("ok")) partial=true;
-        boolean emptyPage=blocks.length()==0;
-        JSONArray originalPages=ir.getJSONArray("pages");
-        for(int i=0;i<originalPages.length();i++) {
-            JSONObject page=originalPages.getJSONObject(i),evidence=page.optJSONObject("reading_order_evidence");
-            emptyPage &= ir.optString("status").equals("blank")||page.optString("status").equals("blank")||evidence!=null&&evidence.optString("reason").equals("empty_page");
-        }
-        String outcome=emptyPage?"blank":partial?"partial":"succeeded";
-        result.put("recognitionOutcome",outcome);
-        if(outcome.equals("partial")) result.put("notice","部分区域未完整识别，可用内容已保存；请对照原图核验标示区域。");
         save(result);return result;
     }
     JSONObject sample(String sample)throws Exception{
@@ -93,7 +92,7 @@ public final class DocumentStore {
     String markdown(JSONObject doc,boolean partial)throws Exception{StringBuilder md=new StringBuilder();JSONObject edits=doc.optJSONObject("edits");JSONArray blocks=doc.getJSONArray("blocks");int count=partial?doc.optInt("progress",0):blocks.length();for(int i=0;i<count;i++){JSONObject b=blocks.getJSONObject(i);md.append(edits!=null?edits.optString(b.getString("id"),b.getString("markdown")):b.getString("markdown")).append("\n\n");}return md.toString();}
     File export(String id,String format)throws Exception{JSONObject doc=load(id);File outdir=new File(context.getCacheDir(),"exports");outdir.mkdirs();boolean partial=doc.optInt("progress")<doc.getJSONArray("blocks").length();String md=markdown(doc,partial);
         if(format.equals("txt")||format.equals("md")){File f=new File(outdir,id+(format.equals("txt")?".txt":".md"));FilesUtil.write(f,format.equals("txt")?md.replaceAll("(?m)^#{1,6}\\s+","").replaceAll("!\\[([^]]*)]\\([^)]+\\)","[图片：$1]").replaceAll("<[^>]*>"," "):md);return f;}
-        File f=new File(outdir,id+".zip");try(ZipOutputStream zip=new ZipOutputStream(new FileOutputStream(f))){put(zip,"document.md",md.getBytes(java.nio.charset.StandardCharsets.UTF_8));put(zip,"app-state.json",portable(doc).toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));put(zip,"document.json",exportIR(doc).toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));File raw=new File(dir(id),"document.json");if(raw.isFile())putFile(zip,"original-document.json",raw);File manifest=new File(dir(id),"run-manifest.json");if(manifest.isFile())putFile(zip,"run-manifest.json",manifest);Set<String> included=new HashSet<>(Arrays.asList("document.md","app-state.json","document.json","original-document.json","run-manifest.json"));
+        File f=new File(outdir,id+".zip");try(ZipOutputStream zip=new ZipOutputStream(new FileOutputStream(f))){put(zip,"document.md",md.getBytes(java.nio.charset.StandardCharsets.UTF_8));put(zip,"app-state.json",portable(doc).toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));put(zip,"document.json",exportIR(doc).toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));File raw=new File(dir(id),"original-document.json");if(!raw.isFile())raw=new File(dir(id),"document.json");if(raw.isFile())putFile(zip,"original-document.json",raw);File manifest=new File(dir(id),"run-manifest.json");if(manifest.isFile())putFile(zip,"run-manifest.json",manifest);Set<String> included=new HashSet<>(Arrays.asList("document.md","app-state.json","document.json","original-document.json","run-manifest.json"));
             JSONObject assets=doc.getJSONObject("assets");for(Iterator<String> it=assets.keys();it.hasNext();){String path=it.next();File asset=FilesUtil.child(dir(id),path);if(asset.isFile()&&included.add(path))putFile(zip,path,asset);}
             zipAssets(zip,dir(id),new File(dir(id),"assets"),included);for(File originalImage:dir(id).listFiles())if(originalImage.getName().startsWith("source.")&&included.add(originalImage.getName()))putFile(zip,originalImage.getName(),originalImage);}return f;
     }

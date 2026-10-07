@@ -46,9 +46,25 @@ public class RecognitionResultTest {
         String restoredId=store.create();FilesUtil.unzip(zip,store.dir(restoredId));
         JSONObject restored=store.restoreExport(restoredId,new JSONObject(FilesUtil.read(new File(store.dir(restoredId),"app-state.json"))));
         assertEquals("校对后的标题",restored.getJSONObject("edits").getString(a));assertFalse(restored.has("input"));
+        store.save(restored);
+        store.update(FilesUtil.obj("id",restoredId,"progress",10,"status","complete"));
+        try(ZipFile roundTrip=new ZipFile(store.export(restoredId,"zip"))) {
+            byte[] original=Files.readAllBytes(new File(fixture,"document.json").toPath());
+            assertArrayEquals("再次导出应保留首次模型输出，不能以排序后的副本覆盖",original,
+                FilesUtil.bytes(roundTrip.getInputStream(roundTrip.getEntry("original-document.json")),FilesUtil.IMPORT_LIMIT));
+            JSONObject current=new JSONObject(new String(FilesUtil.bytes(roundTrip.getInputStream(roundTrip.getEntry("document.json")),FilesUtil.IMPORT_LIMIT),java.nio.charset.StandardCharsets.UTF_8));
+            assertEquals("b0002",current.getJSONArray("pages").getJSONObject(0).getJSONArray("reading_order").getString(0));
+        }
         JSONObject another=store.copyInput(saved);assertNotEquals(id,another.getString("id"));assertFalse(another.has("edits"));
         assertEquals("校对后的标题",store.load(id).getJSONObject("edits").getString(a));
         assertArrayEquals(Files.readAllBytes(new File(store.dir(id),"source.png").toPath()),Files.readAllBytes(new File(store.dir(another.getString("id")),"source.png").toPath()));
+        JSONObject secondResult=store.recognized(another.getString("id"),new File("../verification/real-ocr/repeated"));
+        assertFalse(secondResult.has("edits"));
+        String secondImage=secondResult.getJSONArray("blocks").getJSONObject(1).getString("resource");
+        assertTrue(secondResult.getJSONObject("assets").getJSONObject(secondImage).getString("src").contains(another.getString("id")));
+        assertEquals("校对后的标题",store.load(id).getJSONObject("edits").getString(a));
+        assertEquals(b,store.load(id).getJSONArray("blocks").getJSONObject(0).getString("id"));
+        assertArrayEquals(Files.readAllBytes(new File(fixture,"assets/p0001-b0009.png").toPath()),Files.readAllBytes(new File(store.dir(id),"assets/p0001-b0009.png").toPath()));
     }
     @Test public void partialAndEmptyResultsPreserveInputAndMissingRegionState()throws Exception {
         DocumentStore store=store();JSONObject input=input(store);File output=temp.newFolder();
@@ -71,5 +87,17 @@ public class RecognitionResultTest {
         try(ZipFile zip=new ZipFile(store.export(id,"zip"))) {
             assertNotNull(zip.getEntry("images/photo.png"));assertNotNull(zip.getEntry("source.png"));
         }
+    }
+    @Test public void pageLevelPartialPreservesUsableContentAndWarnsAfterHistoryReopen()throws Exception {
+        DocumentStore store=store();JSONObject input=input(store);File output=temp.newFolder();
+        // 兼容只有页面记录 partial、可用内容块仍为 ok 的 DocumentIR。
+        JSONObject ir=new JSONObject("{\"schema_version\":\"1.9\",\"pages\":[{\"page_id\":\"p\",\"status\":\"partial\",\"blocks\":[{\"id\":\"a\",\"status\":\"ok\",\"type\":\"text\",\"content\":{\"text\":\"仍可阅读的正文\"}}],\"reading_order\":[\"a\"]}]}");
+        FilesUtil.write(new File(output,"document.json"),ir.toString());
+        JSONObject result=store.recognized(input.getString("id"),output);
+        assertEquals("partial",result.getString("recognitionOutcome"));
+        assertEquals("仍可阅读的正文",result.getJSONArray("blocks").getJSONObject(0).getString("markdown"));
+        assertTrue(store.load(input.getString("id")).getString("notice").contains("部分"));
+        JSONObject replay=store.normalize(store.create(),"部分结果 JSON",ir);
+        assertTrue("结果导入也应提示部分成功",replay.getString("notice").contains("部分"));
     }
 }
