@@ -18,4 +18,10 @@
 
 APK静态核验身份见apk.json，构建／单元与依赖检查见checks.json、build.log、final-build.log、native-deps.log，发布资产校验见SHA256SUMS.txt。工作树和711个历史文本blob扫描未发现GitHub/HuggingFace令牌、AWS访问密钥或私钥；扫描不打印原始凭据。
 
-远端推送及Release资产核对将在完成后追加记录。
+## 远端完成核对
+
+源码和v0.7.4标签已推送；Release已发布，非草稿、预发布。发布源码提交60fab20ca54918dc5f8b99dcc268de0394fa3eac。GitHub资产digest与本地SHA一致；从GitHub重新下载两版APK和校验清单后，文件SHA再次一致，见upload-verification.json与remote-release.json。
+
+另外从GitHub浅克隆发布源码，npm ci成功，使用仓库内docprase快照与已获取的固定MNN（显式mnnSourceRoot）从头构建两版APK、两版各62项JVM通过，见fresh-clone-checks.json和fresh-clone日志。该副本不依赖相邻docprase或本项目旧构建缓存；不同构建路径的APK不要求逐字节一致。发布资产仍使用前面已核验并上传的工作区最终产物。
+
+本次发布为用户明确授权；没有额外创建PR、GitHub任务或修改相邻仓库。发布后的校验记录以文档提交补充到main，版本标签保留构建源码身份。

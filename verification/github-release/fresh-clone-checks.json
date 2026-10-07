@@ -1,0 +1,23 @@
+{
+  "sourceCommit": "60fab20ca54918dc5f8b99dcc268de0394fa3eac",
+  "sourceClonedFromGithub": true,
+  "npmCiSucceeded": true,
+  "userApkBuilt": true,
+  "labApkBuilt": true,
+  "mnnSource": "已从GitHub固定提交获取的干净源码，通过mnnSourceRoot指定，未使用相邻docprase",
+  "unitTests": {
+    "user": {
+      "tests": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lab": {
+      "tests": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "vendoredSourceMatchesManifest": true
+}

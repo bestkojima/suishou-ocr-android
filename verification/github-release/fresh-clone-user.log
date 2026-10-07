@@ -1,0 +1,108 @@
+Starting a Gradle Daemon, 1 incompatible Daemon could not be reused, use --status for details
+
+> Task :app:bundleWeb
+Built browser preview and Android offline assets
+
+> Task :app:preBuild
+> Task :app:preUserDebugBuild
+> Task :app:generateUserDebugBuildConfig
+> Task :app:javaPreCompileUserDebug
+> Task :app:checkUserDebugAarMetadata
+> Task :app:generateUserDebugResValues
+> Task :app:mapUserDebugSourceSetPaths
+> Task :app:generateUserDebugResources
+> Task :app:packageUserDebugResources
+> Task :app:mergeUserDebugResources
+> Task :app:createUserDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksUserDebug
+> Task :app:parseUserDebugLocalResources
+> Task :app:processUserDebugMainManifest
+> Task :app:processUserDebugManifest
+> Task :app:preUserDebugUnitTestBuild
+> Task :app:javaPreCompileUserDebugUnitTest
+> Task :app:processUserDebugManifestForPackage
+> Task :app:processUserDebugJavaRes NO-SOURCE
+> Task :app:processUserDebugUnitTestJavaRes
+> Task :app:mergeUserDebugNativeDebugMetadata NO-SOURCE
+> Task :app:mergeUserDebugShaders
+> Task :app:compileUserDebugShaders NO-SOURCE
+> Task :app:generateUserDebugAssets UP-TO-DATE
+> Task :app:processUserDebugResources
+> Task :app:mergeUserDebugAssets
+
+> Task :app:compileUserDebugJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:bundleUserDebugClassesToCompileJar
+> Task :app:bundleUserDebugClassesToRuntimeJar
+> Task :app:compileUserDebugUnitTestJavaWithJavac
+> Task :app:testUserDebugUnitTest
+> Task :app:checkUserDebugDuplicateClasses
+> Task :app:desugarUserDebugFileDependencies
+> Task :app:compressUserDebugAssets
+> Task :app:mergeLibDexUserDebug
+> Task :app:dexBuilderUserDebug
+> Task :app:mergeExtDexUserDebug
+> Task :app:mergeProjectDexUserDebug
+> Task :app:mergeUserDebugGlobalSynthetics
+> Task :app:preLabDebugBuild
+> Task :app:mergeUserDebugJavaResource
+
+> Task :app:configureCMakeDebug[arm64-v8a]
+C/C++: CMake Deprecation Warning at /home/dr/project/android_ocr/native/MNN/CMakeLists.txt:1 (cmake_minimum_required):
+C/C++:   Compatibility with CMake < 3.10 will be removed from a future version of
+C/C++:   CMake.
+C/C++:   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+C/C++:   to tell CMake that the project requires at least <min> but has been updated
+C/C++:   to work with policies introduced by <max> or earlier.
+
+> Task :app:buildCMakeDebug[arm64-v8a][dococr_jni]
+C/C++: ninja: Entering directory `/tmp/suishou-ocr-github-check/app/.cxx/Debug/6t724z1s/arm64-v8a'
+C/C++: /home/dr/project/android_ocr/native/MNN/source/core/Pipeline.cpp:954:51: warning: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long') [-Wformat]
+C/C++:   954 |     MNN_PRINT("Fix: %d - Total: %d, rate = %f\n", fixNumber, totalNumber, (float)fixNumber / (float)totalNumber);
+C/C++:       |                     ~~                            ^~~~~~~~~
+C/C++:       |                     %zu
+C/C++: /home/dr/project/android_ocr/native/MNN/include/MNN/MNNDefine.h:30:90: note: expanded from macro 'MNN_PRINT'
+C/C++:    30 | #define MNN_PRINT(format, ...) __android_log_print(ANDROID_LOG_INFO, "MNNJNI", format, ##__VA_ARGS__)
+C/C++:       |                                                                                ~~~~~~    ^~~~~~~~~~~
+C/C++: /home/dr/project/android_ocr/native/MNN/source/core/Pipeline.cpp:954:62: warning: format specifies type 'int' but the argument has type 'size_t' (aka 'unsigned long') [-Wformat]
+C/C++:   954 |     MNN_PRINT("Fix: %d - Total: %d, rate = %f\n", fixNumber, totalNumber, (float)fixNumber / (float)totalNumber);
+C/C++:       |                                 ~~                           ^~~~~~~~~~~
+C/C++:       |                                 %zu
+C/C++: /home/dr/project/android_ocr/native/MNN/include/MNN/MNNDefine.h:30:90: note: expanded from macro 'MNN_PRINT'
+C/C++:    30 | #define MNN_PRINT(format, ...) __android_log_print(ANDROID_LOG_INFO, "MNNJNI", format, ##__VA_ARGS__)
+C/C++:       |                                                                                ~~~~~~    ^~~~~~~~~~~
+C/C++: 2 warnings generated.
+C/C++: /home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUDequantize.cpp:109:81: warning: implicit conversion from 'type' (aka 'int') to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
+C/C++:   109 |                 : std::max(minRange / std::numeric_limits<T>::min(), maxRange / std::numeric_limits<T>::max());
+C/C++:       |                                                                               ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C/C++: /home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUDequantize.cpp:33:19: note: in instantiation of member function 'MNN::CPUDequantize<int>::onExecute' requested here
+C/C++:    33 | CPUDequantize<T>::CPUDequantize(Backend* backend, QuantizeMode mode, const Op* op) :  Execution(backend), mMode(mode) {
+C/C++:       |                   ^
+C/C++: /home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUDequantize.cpp:132:28: note: in instantiation of member function 'MNN::CPUDequantize<int>::CPUDequantize' requested here
+C/C++:   132 |                 return new CPUDequantize<int32_t>(backend, dequantize->mode(), op);
+C/C++:       |                            ^
+C/C++: 1 warning generated.
+C/C++: /home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPURuntime.cpp:1152:9: warning: array designators are a C99 extension [-Wc99-designator]
+C/C++:  1152 |         [cpuinfo_android_chipset_property_proc_cpuinfo_hardware] =
+C/C++:       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C/C++: 1 warning generated.
+C/C++: /tmp/suishou-ocr-github-check/app/.cxx/Debug/6t724z1s/arm64-v8a/android-engine/layout_mnn_backend.cpp:17:17: warning: 'const' qualifier on reference type 'TensorMap' (aka 'const map<basic_string<char>, MNN::Tensor *> &') has no effect [-Wignored-reference-qualifiers]
+C/C++:    17 | bool shape_type(const TensorMap& tensors, const std::string& name,
+C/C++:       |                 ^~~~~
+C/C++: 1 warning generated.
+
+> Task :app:mergeUserDebugJniLibFolders
+> Task :app:validateSigningUserDebug
+> Task :app:writeUserDebugAppMetadata
+> Task :app:writeUserDebugSigningConfigVersions
+> Task :app:mergeUserDebugNativeLibs
+> Task :app:stripUserDebugDebugSymbols
+> Task :app:packageUserDebug
+> Task :app:createUserDebugApkListingFileRedirect
+> Task :app:assembleUserDebug
+[Incubating] Problems report is available at: file:///tmp/suishou-ocr-github-check/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 2m 5s
+44 actionable tasks: 44 executed

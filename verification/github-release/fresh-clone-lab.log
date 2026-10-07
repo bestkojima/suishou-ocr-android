@@ -1,0 +1,60 @@
+> Task :app:bundleWeb UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preLabDebugBuild UP-TO-DATE
+> Task :app:generateLabDebugBuildConfig
+> Task :app:javaPreCompileLabDebug
+> Task :app:generateLabDebugResValues
+> Task :app:checkLabDebugAarMetadata
+> Task :app:mapLabDebugSourceSetPaths
+> Task :app:generateLabDebugResources
+> Task :app:mergeLabDebugResources
+> Task :app:packageLabDebugResources
+> Task :app:createLabDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksLabDebug
+> Task :app:parseLabDebugLocalResources
+> Task :app:processLabDebugMainManifest
+> Task :app:processLabDebugManifest
+> Task :app:preLabDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileLabDebugUnitTest
+> Task :app:processLabDebugManifestForPackage
+> Task :app:processLabDebugJavaRes NO-SOURCE
+> Task :app:processLabDebugUnitTestJavaRes
+> Task :app:mergeLabDebugNativeDebugMetadata NO-SOURCE
+> Task :app:mergeLabDebugShaders
+> Task :app:compileLabDebugShaders NO-SOURCE
+> Task :app:generateLabDebugAssets UP-TO-DATE
+> Task :app:mergeLabDebugAssets
+> Task :app:processLabDebugResources
+> Task :app:compressLabDebugAssets
+
+> Task :app:compileLabDebugJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:bundleLabDebugClassesToRuntimeJar
+> Task :app:bundleLabDebugClassesToCompileJar
+> Task :app:checkLabDebugDuplicateClasses
+> Task :app:compileLabDebugUnitTestJavaWithJavac
+> Task :app:testLabDebugUnitTest
+> Task :app:desugarLabDebugFileDependencies
+> Task :app:dexBuilderLabDebug
+> Task :app:mergeLabDebugGlobalSynthetics
+> Task :app:mergeExtDexLabDebug
+> Task :app:mergeLibDexLabDebug
+> Task :app:mergeProjectDexLabDebug
+> Task :app:configureCMakeDebug[arm64-v8a]
+> Task :app:buildCMakeDebug[arm64-v8a][dococr_jni]
+> Task :app:mergeLabDebugJniLibFolders
+> Task :app:mergeLabDebugJavaResource
+> Task :app:validateSigningLabDebug
+> Task :app:writeLabDebugAppMetadata
+> Task :app:writeLabDebugSigningConfigVersions
+> Task :app:mergeLabDebugNativeLibs
+> Task :app:stripLabDebugDebugSymbols
+> Task :app:packageLabDebug
+> Task :app:createLabDebugApkListingFileRedirect
+> Task :app:assembleLabDebug
+[Incubating] Problems report is available at: file:///tmp/suishou-ocr-github-check/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 14s
+44 actionable tasks: 43 executed, 1 up-to-date

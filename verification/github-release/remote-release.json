@@ -1,0 +1,28 @@
+{
+  "url": "https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.4",
+  "tag": "v0.7.4",
+  "draft": false,
+  "prerelease": true,
+  "publishedAt": "2026-10-07T13:19:49Z",
+  "sourceCommit": "60fab20ca54918dc5f8b99dcc268de0394fa3eac",
+  "assets": [
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 192,
+      "digest": "sha256:c482798766f4b664925c7fbaec16e71a28931cc81eb784362142f379de5d56a4",
+      "downloadUrl": "https://github.com/bestkojima/suishou-ocr-android/releases/download/v0.7.4/SHA256SUMS.txt"
+    },
+    {
+      "name": "suishou-ocr-0.7.4-arm64.apk",
+      "size": 42815916,
+      "digest": "sha256:343b3b3e912d4f1ffe89e9b2c9dec3677ef605c2238449a698fe9e54ddc7f8dd",
+      "downloadUrl": "https://github.com/bestkojima/suishou-ocr-android/releases/download/v0.7.4/suishou-ocr-0.7.4-arm64.apk"
+    },
+    {
+      "name": "suishou-ocr-0.7.4-lab-arm64.apk",
+      "size": 42815916,
+      "digest": "sha256:635e4871f80136a6584a397d625396fd355bddc2df594b58aff95952a0448d0b",
+      "downloadUrl": "https://github.com/bestkojima/suishou-ocr-android/releases/download/v0.7.4/suishou-ocr-0.7.4-lab-arm64.apk"
+    }
+  ]
+}
