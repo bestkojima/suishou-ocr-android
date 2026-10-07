@@ -1,0 +1,23 @@
+{
+  "environment": "Android arm64 编译产物；未执行设备加载",
+  "objects": [
+    {
+      "source": "/home/dr/project/android_ocr/app/.cxx/Debug/6x5g643g/arm64-v8a/android-engine/config.cpp",
+      "sourceSha256": "5581dbfbc5058354b6472ede909f5cbfe2cbde9d05231ac27f2b880f054413c0",
+      "object": "/home/dr/project/android_ocr/app/.cxx/Debug/6x5g643g/arm64-v8a/docprase/CMakeFiles/dococr_core.dir/__/android-engine/config.cpp.o",
+      "fileSha256References": 0
+    },
+    {
+      "source": "/home/dr/project/android_ocr/app/.cxx/Debug/6x5g643g/arm64-v8a/android-engine/layout_mnn_backend.cpp",
+      "sourceSha256": "e272fe085b87bc0ca2158bc44a5c5a6bc7c1be7d58e47ae9dc0434327edec4b8",
+      "object": "/home/dr/project/android_ocr/app/.cxx/Debug/6x5g643g/arm64-v8a/docprase/CMakeFiles/dococr_c.dir/__/android-engine/layout_mnn_backend.cpp.o",
+      "fileSha256References": 0
+    },
+    {
+      "source": "/home/dr/project/android_ocr/app/.cxx/Debug/6x5g643g/arm64-v8a/android-engine/printed_page_mnn_backend.cpp",
+      "sourceSha256": "e651cf8d1ac43fcba0a3dd9a1089c47841b731f16c398a0de260e2c76ac043bc",
+      "object": "/home/dr/project/android_ocr/app/.cxx/Debug/6x5g643g/arm64-v8a/docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o",
+      "fileSha256References": 0
+    }
+  ]
+}

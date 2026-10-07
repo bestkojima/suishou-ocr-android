@@ -39,7 +39,7 @@ public final class DownloadService extends Service {
         try(InputStream in=new FileInputStream(file)){byte[] buffer=new byte[262144];int n;while((n=in.read(buffer))!=-1){if(pause)throw new IOException("已暂停");digest.update(buffer,0,n);count+=n;if(System.currentTimeMillis()-last>250){stage("verifying",task.getString("path"),"正在校验 SHA-256",count,file.length());last=System.currentTimeMillis();}}}
         StringBuilder hex=new StringBuilder();for(byte b:digest.digest())hex.append(String.format(Locale.ROOT,"%02x",b&255));return expected.equals(hex.toString());
     }
-    void finishTask(JSONObject task,JSONArray tasks)throws Exception{task.put("status",task.optString("sha256").isEmpty()?"downloaded":"verified");task.put("downloaded",task.getLong("size"));task.remove("error");ModelHub.save(this,tasks);}
+    void finishTask(JSONObject task,JSONArray tasks)throws Exception{ModelHub.finishDownloaded(ModelHub.root(this),task);ModelHub.save(this,tasks);}
     void run(String paths,int startId){JSONArray tasks=null;JSONObject current=null;try{
         ModelHub.checkRepo(repo);JSONArray files=ModelHub.select(ModelHub.cachedCatalog(this,repo),new JSONArray(paths));tasks=ModelHub.merge(ModelHub.state(this),files);ModelHub.save(this,tasks);Set<String> selected=new HashSet<>();for(int i=0;i<files.length();i++)selected.add(files.getJSONObject(i).getString("path"));
         for(int n=0;n<tasks.length();n++){

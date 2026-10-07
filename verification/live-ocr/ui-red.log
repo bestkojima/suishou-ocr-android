@@ -1,0 +1,16 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByText('正在生成的中文😀', { exact: true }) to be visible[22m
+
+    at /home/dr/project/android_ocr/web/verify-live-recognition.mjs:25:49 {
+  log: [
+    "  - waiting for getByText('正在生成的中文😀', { exact: true }) to be visible"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

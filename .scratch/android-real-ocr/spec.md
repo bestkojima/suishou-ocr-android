@@ -139,4 +139,11 @@ Status: ready-for-agent
 
 用户已确认以现有 App 原生请求／事件桥作为主要测试边界，真实引擎验证单独记录，设备验收保留待办。
 
+## Comments
+
+2026-10-07：用户补充要求“只在下载模型时候完成校验”，加载方式参照 MNN Chat。该要求更新上述“激活前完整 SHA 核验”的执行时机：内容 SHA 校验在下载完成边界执行并保存结果；激活前仅检查已校验下载记录、固定工件身份及文件元数据，原生加载不重复扫描模型。Ovis 初始化参考 `createLLM → set_config → load`，使用独立私有 mmap 缓存。实现及分项验证见 [加载流程交付记录](../../verification/model-loading/DELIVERY.md)。本地离线、单图、arm64-v8a 及设备待验收范围保持原约定。
+
 用户已确认当前 Android 项目使用本地 Markdown tracker、五个默认分流标签及单一领域上下文，并选择以 AGENTS.md 作为配置入口。本规格发布到本地 tracker，状态为 ready-for-agent，不创建相邻 docprase 仓库的远端 Issue。
+
+
+2026-10-07 后续要求：真实 OCR 生成时正文须实时渲染，不能以全部区域完成后的 JSON 回放代替。后续规格与实施任务见 [真实流式输出](../live-ocr/spec.md)，模型加载校验时机仍遵循此前下载时校验的约定。

@@ -1,0 +1,48 @@
+> Task :app:bundleWeb UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preUserDebugBuild UP-TO-DATE
+> Task :app:generateUserDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileUserDebug UP-TO-DATE
+> Task :app:checkUserDebugAarMetadata UP-TO-DATE
+> Task :app:generateUserDebugResValues UP-TO-DATE
+> Task :app:mapUserDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateUserDebugResources UP-TO-DATE
+> Task :app:mergeUserDebugResources UP-TO-DATE
+> Task :app:packageUserDebugResources UP-TO-DATE
+> Task :app:parseUserDebugLocalResources UP-TO-DATE
+> Task :app:createUserDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksUserDebug UP-TO-DATE
+> Task :app:processUserDebugMainManifest UP-TO-DATE
+> Task :app:processUserDebugManifest UP-TO-DATE
+> Task :app:processUserDebugManifestForPackage UP-TO-DATE
+> Task :app:processUserDebugResources UP-TO-DATE
+> Task :app:compileUserDebugJavaWithJavac
+> Task :app:bundleUserDebugClassesToRuntimeJar
+> Task :app:preUserDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileUserDebugUnitTest UP-TO-DATE
+> Task :app:processUserDebugJavaRes NO-SOURCE
+> Task :app:processUserDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:bundleUserDebugClassesToCompileJar
+> Task :app:compileUserDebugUnitTestJavaWithJavac
+
+> Task :app:testUserDebugUnitTest FAILED
+
+ImageResolutionTest > cameraPhotoIsBoundedBeforeAllocatingRotationPixels FAILED
+    java.lang.AssertionError at ImageResolutionTest.java:10
+
+ImageResolutionTest > fastAndLongNarrowInputsRespectBothLimits FAILED
+    java.lang.AssertionError at ImageResolutionTest.java:24
+
+4 tests completed, 2 failed
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:testUserDebugUnitTest'.
+> There were failing tests. See the report at: file:///home/dr/project/android_ocr/app/build/reports/tests/testUserDebugUnitTest/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 1s
+23 actionable tasks: 5 executed, 18 up-to-date

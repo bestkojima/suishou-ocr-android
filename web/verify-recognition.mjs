@@ -48,7 +48,7 @@ try {
    await card.getByText('SHA-256 校验通过',{exact:false}).first().waitFor();
   }
   assert.equal(await page.getByText('缺少识别模型：PP-DocLayoutV3.mnn',{exact:true}).count(),2,'文件下载完成仍需实际加载');
-  await page.getByRole('button',{name:'校验并加载识别模型',exact:true}).click();
+  await page.getByRole('button',{name:'加载识别模型',exact:true}).click();
   await page.getByText('模拟桥接：九个工件已就绪，引擎已加载',{exact:true}).waitFor();
   await page.getByRole('dialog').getByRole('button',{name:'关闭',exact:true}).click();
   await page.getByRole('button',{name:'开始识别',exact:true}).click();
@@ -155,8 +155,8 @@ try {
   await page.evaluate(()=>{window.modelReadiness={state:'ready',message:'本地引擎已加载',inUse:true};});
   await page.getByRole('button',{name:'设置',exact:true}).click();await page.getByRole('dialog').getByRole('button',{name:/识别模型/}).click();await page.getByText('本地引擎已加载',{exact:true}).waitFor();
   for(const button of await page.getByRole('button',{name:'删除文件',exact:true}).all())assert(await button.isDisabled());
-  assert(await page.getByRole('button',{name:'校验并加载识别模型',exact:true}).isDisabled());
-  await page.evaluate(()=>{window.modelReadiness={state:'load-failed',message:'模型加载失败：不兼容工件',inUse:false};});await page.getByText('模型加载失败：不兼容工件',{exact:true}).waitFor();assert(await page.getByRole('button',{name:'校验并加载识别模型',exact:true}).isEnabled());
+  assert(await page.getByRole('button',{name:'加载识别模型',exact:true}).isDisabled());
+  await page.evaluate(()=>{window.modelReadiness={state:'load-failed',message:'模型加载失败：不兼容工件',inUse:false};});await page.getByText('模型加载失败：不兼容工件',{exact:true}).waitFor();assert(await page.getByRole('button',{name:'加载识别模型',exact:true}).isEnabled());
  });
  assert.deepEqual(errors,[]);await mkdir('verification',{recursive:true});await writeFile('verification/recognition-ui.json',JSON.stringify({boundary:'AndroidHost 模拟，非模型推理',results,errors},null,2));
 } finally {await browser?.close();server.kill();}

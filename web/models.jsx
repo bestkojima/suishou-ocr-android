@@ -12,7 +12,8 @@ export function ModelManager({preview=false}){
  const activity=model.activity||{};
  return <>
   <p className="fine">公开 ModelScope 仓库可自由添加、浏览和选择文件。下载成功不代表此模型已适配 OCR 引擎。</p>
-  {model.readiness&&<div className="recognition-panel" role="status"><strong>{model.readiness.message}</strong><button disabled={model.readiness.inUse||model.running||preview} onClick={()=>act(async()=>{await request('activateModels');setModel(await request('models'));})}>校验并加载识别模型</button></div>}
+  {model.readiness&&<div className="recognition-panel" role="status"><strong>{model.readiness.message}</strong><button disabled={model.readiness.inUse||model.running||preview} onClick={()=>act(async()=>{await request('activateModels');setModel(await request('models'));})}>加载识别模型</button></div>}
+  {model.readiness?.cpuThreads&&<label className="setting-row"><span>CPU 推理线程<small>实际使用 {model.readiness.cpuThreads} 线程，连续识别复用已加载模型</small></span><select aria-label="CPU 推理线程" value={model.readiness.threadChoice??0} disabled={model.readiness.inUse||model.running||preview} onChange={e=>{const threads=+e.target.value;act(async()=>{const readiness=await request('setOcrThreads',{threads});setModel(m=>({...m,readiness}));});}}><option value={0}>自动（最多 4）</option>{[1,2,4].map(n=><option key={n} value={n}>{n}</option>)}</select></label>}
   {preview&&<p className="document-notice">可预览仓库管理；文件清单和实际下载请使用 APK。</p>}
   <form className="repo-add" onSubmit={e=>{e.preventDefault();act(async()=>{const repos=await request('addRepo',{repo:input});setModel(m=>({...m,repos}));setInput('');});}}>
    <label htmlFor="repo-input">添加模型仓库</label><input id="repo-input" value={input} onChange={e=>setInput(e.target.value)} placeholder="作者/仓库名，或 ModelScope 链接" autoCapitalize="none" spellCheck={false}/><button type="submit" disabled={!input.trim()}>添加仓库</button>

@@ -1,13 +1,22 @@
 """检查 APK 的原生打包、符号、依赖与编译后端；不执行设备推理。"""
 from pathlib import Path
 from zipfile import ZipFile
-import argparse,subprocess,tempfile,json,hashlib
+import argparse,subprocess,tempfile,json,hashlib,os,platform as host_platform,shutil
 root=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output',type=Path,default=root/'verification/real-ocr/apk.json',help='APK 静态检查报告路径')
-output=parser.parse_args().output.resolve()
+parser.add_argument('--readelf',type=Path,help='指定 NDK llvm-readelf（或 .exe）路径')
+args=parser.parse_args()
+output=args.output.resolve()
 output.parent.mkdir(parents=True,exist_ok=True)
-readelf=Path('/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-readelf')
+sdk=os.environ.get('ANDROID_HOME') or os.environ.get('ANDROID_SDK_ROOT')
+if not sdk and (root/'local.properties').is_file():
+    for line in (root/'local.properties').read_text().splitlines():
+        if line.startswith('sdk.dir='):sdk=line.split('=',1)[1].strip().replace('\\\\','\\').replace('\\:',':')
+host={'Linux':'linux-x86_64','Darwin':'darwin-x86_64','Windows':'windows-x86_64'}[host_platform.system()]
+name='llvm-readelf.exe' if host_platform.system()=='Windows' else 'llvm-readelf'
+readelf=args.readelf or (Path(sdk)/'ndk/28.1.13356709/toolchains/llvm/prebuilt'/host/'bin'/name if sdk else shutil.which(name))
+if not readelf or not Path(readelf).is_file():parser.error('请设置 ANDROID_HOME/local.properties 或用 --readelf 指定 NDK 工具')
 platform={'libc.so','libdl.so','libm.so','liblog.so','libandroid.so','libz.so'}
 reports=[]
 for flavor in ['user','lab']:
@@ -26,7 +35,7 @@ for flavor in ['user','lab']:
             assert set(deps)<=libs.keys()|platform,(name,deps)
             symbols=subprocess.check_output([readelf,'--dyn-syms',f],text=True)
             if name=='libdococr_c.so':
-                for symbol in ['dococr_create','dococr_job_run','dococr_job_status','dococr_job_next_event','dococr_job_cancel','dococr_job_result','dococr_job_asset','dococr_job_destroy','dococr_destroy']:
+                for symbol in ['dococr_create','dococr_job_run','dococr_job_status','dococr_job_next_event','dococr_job_cancel','dococr_job_result','dococr_job_asset','dococr_job_destroy','dococr_destroy','android_ocr_run_streaming','android_ocr_stream_snapshot','android_ocr_stream_forget']:
                     assert any(symbol in line and ' UND ' not in line for line in symbols.splitlines()),symbol
             if name=='libdococr_jni.so':
                 for method in ['create','jobCreate','run','status','cancel','export','jobDestroy','destroy']:assert 'Java_cn_local_ocr_NativeOcr_'+method in symbols

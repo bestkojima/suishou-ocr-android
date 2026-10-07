@@ -66,6 +66,45 @@ public class RecognitionResultTest {
         assertEquals(b,store.load(id).getJSONArray("blocks").getJSONObject(0).getString("id"));
         assertArrayEquals(Files.readAllBytes(new File(fixture,"assets/p0001-b0009.png").toPath()),Files.readAllBytes(new File(store.dir(id),"assets/p0001-b0009.png").toPath()));
     }
+    @Test public void resizingKeepsRawPhotoForHigherResolutionRetryAndPreservesInputMetadata()throws Exception {
+        DocumentStore store=store();JSONObject input=input(store);String id=input.getString("id");
+        byte[] raw={7,8,9};Files.write(new File(store.dir(id),"input-photo.jpg").toPath(),raw);
+        JSONObject metadata=FilesUtil.obj("version",ImageResolution.VERSION,"policy","balanced","rawWidth",8000,"rawHeight",6000,"width",3265,"height",2449);
+        input.put("rawInput","input-photo.jpg").put("imagePreparation",metadata);
+        input.getJSONObject("assets").put("source.png",FilesUtil.obj("src",store.url(id,"source.png"),"width",3265,"height",2449));
+        input.getJSONArray("pages").put(FilesUtil.obj("number",1,"source",store.url(id,"source.png"),"width",3265,"height",2449));store.save(input);
+        JSONObject result=store.recognized(id,new File("../verification/real-ocr/output"));
+        assertEquals("balanced",result.getJSONObject("imagePreparation").getString("policy"));
+        JSONObject retry=store.copyInput(result);String retryId=retry.getString("id");
+        assertArrayEquals(raw,Files.readAllBytes(new File(store.dir(retryId),retry.getString("rawInput")).toPath()));
+        assertEquals(3265,retry.getJSONObject("imagePreparation").getInt("width"));
+        // 同策略下已经规范化的图片直接复用；JVM 无 Bitmap 解码器，误重复解码会失败。
+        assertSame(retry,ImageInput.prepare(store,retry,"balanced"));
+        ImageInput.prepare(store,retry,"original",(rawFile,output,policy)->{
+            assertEquals("input-photo.jpg",rawFile.getName());assertEquals("original",policy);
+            assertArrayEquals(raw,Files.readAllBytes(rawFile.toPath()));
+            Files.write(output.toPath(),new byte[]{1,2,3});
+            return new ImageInput.Result(8000,6000,FilesUtil.obj("version",ImageResolution.VERSION,"policy",policy,"width",8000,"height",6000));
+        });
+        assertEquals(8000,store.load(retryId).getJSONObject("assets").getJSONObject("source.png").getInt("width"));
+        assertEquals(6000,store.load(retryId).getJSONArray("pages").getJSONObject(0).getInt("height"));
+        assertArrayEquals(raw,Files.readAllBytes(new File(store.dir(id),"input-photo.jpg").toPath()));
+        assertEquals("real-ocr",store.load(id).getString("mode"));
+    }
+    @Test public void legacyFullSizePendingInputIsNormalizedOnceAndSavedForRetry()throws Exception {
+        DocumentStore store=store();JSONObject input=input(store);int[] calls={0};
+        ImageInput.Normalizer normalizer=(rawFile,output,policy)->{
+            calls[0]++;assertEquals(new File(store.dir(input.getString("id")),"source.png"),rawFile);
+            assertEquals(rawFile,output); // 老记录缺少 rawInput 时仍可对保存的 source 安全规范化。
+            JSONObject latest=store.load(input.getString("id"));latest.put("recognition",FilesUtil.obj("state","cancelling"));store.save(latest);
+            ImageInput.atomicSave(output,out->out.write(new byte[]{3,4}));
+            return new ImageInput.Result(2407,3322,FilesUtil.obj("version",ImageResolution.VERSION,"policy",policy,"width",2407,"height",3322));
+        };
+        ImageInput.prepare(store,input,"balanced",normalizer);
+        ImageInput.prepare(store,store.load(input.getString("id")),"balanced",normalizer);
+        assertEquals(1,calls[0]);assertEquals(3322,store.load(input.getString("id")).getJSONArray("pages").getJSONObject(0).getInt("height"));
+        assertEquals("cancelling",store.load(input.getString("id")).getJSONObject("recognition").getString("state"));
+    }
     @Test public void partialAndEmptyResultsPreserveInputAndMissingRegionState()throws Exception {
         DocumentStore store=store();JSONObject input=input(store);File output=temp.newFolder();
         FilesUtil.write(new File(output,"document.json"),"{\"schema_version\":\"1.10\",\"status\":\"partial\",\"pages\":[{\"page_id\":\"p\",\"blocks\":[{\"id\":\"a\",\"status\":\"failed\",\"type\":\"text\"}],\"reading_order\":[\"a\"]}]}");

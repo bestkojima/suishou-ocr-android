@@ -1,4 +1,5 @@
 #include <jni.h>
+#include "android_recognition_stream.hpp"
 #include <dococr/dococr.h>
 #include <filesystem>
 #include <fstream>
@@ -78,7 +79,7 @@ extern "C" JNIEXPORT jint JNICALL Java_cn_local_ocr_NativeOcr_run(JNIEnv* env,jc
                 input.width=width;input.height=height;input.row_stride=static_cast<size_t>(width)*3;
             }
         }
-        return dococr_job_run(job,&input);
+        return android_ocr_run_streaming(job,&input);
     } catch(const std::exception& e) { fail(env,e); return DOCOCR_FAILED; }
 }
 extern "C" JNIEXPORT jstring JNICALL Java_cn_local_ocr_NativeOcr_status(JNIEnv* env,jclass,jlong job) {
@@ -91,7 +92,15 @@ extern "C" JNIEXPORT jstring JNICALL Java_cn_local_ocr_NativeOcr_status(JNIEnv* 
         Bytes bytes; check(dococr_job_status(job,&bytes.value));
         std::string value(reinterpret_cast<char*>(bytes.value.data),bytes.value.size);
         if(!latest.empty()) { value.pop_back();value+=",\"latestEvent\":"+latest+"}"; }
-        return env->NewStringUTF(value.c_str());
+        value.pop_back();value+=",\"stream\":"+std::string(android_ocr_stream_snapshot(job))+"}";
+        // NewStringUTF 使用 modified UTF-8，不能直接传模型生成的四字节 emoji。
+        auto data=env->NewByteArray(static_cast<jsize>(value.size()));
+        env->SetByteArrayRegion(data,0,static_cast<jsize>(value.size()),reinterpret_cast<const jbyte*>(value.data()));
+        auto cls=env->FindClass("java/lang/String");
+        auto ctor=env->GetMethodID(cls,"<init>","([BLjava/lang/String;)V");
+        auto charset=env->NewStringUTF("UTF-8");
+        auto result=static_cast<jstring>(env->NewObject(cls,ctor,data,charset));
+        env->DeleteLocalRef(data);env->DeleteLocalRef(charset);env->DeleteLocalRef(cls);return result;
     }
     catch(const std::exception& e) { fail(env,e); return nullptr; }
 }
@@ -115,7 +124,7 @@ extern "C" JNIEXPORT void JNICALL Java_cn_local_ocr_NativeOcr_export(JNIEnv* env
     } catch(const std::exception& e) { fail(env,e); }
 }
 extern "C" JNIEXPORT void JNICALL Java_cn_local_ocr_NativeOcr_jobDestroy(JNIEnv* env,jclass,jlong job) {
-    try { check(dococr_job_destroy(job)); } catch(const std::exception& e) { fail(env,e); }
+    try { check(dococr_job_destroy(job)); android_ocr_stream_forget(job); } catch(const std::exception& e) { fail(env,e); }
 }
 extern "C" JNIEXPORT void JNICALL Java_cn_local_ocr_NativeOcr_destroy(JNIEnv* env,jclass,jlong engine) {
     try { check(dococr_destroy(engine)); } catch(const std::exception& e) { fail(env,e); }

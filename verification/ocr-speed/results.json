@@ -1,0 +1,39 @@
+{
+  "version": "0.7.3-ocr",
+  "deviceVerified": false,
+  "jvm": {
+    "user": {
+      "tests": 56,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lab": {
+      "tests": 56,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "lint": {
+    "user": {
+      "Error": 0,
+      "Warning": 11
+    },
+    "lab": {
+      "Error": 0,
+      "Warning": 11
+    }
+  },
+  "browserGroups": {
+    "models-ui.json": 7,
+    "recognition-ui.json": 11,
+    "navigation.json": 8,
+    "live-ui.json": 4
+  },
+  "actualJNI": {
+    "capturedSnapshots": 19,
+    "partialRegionSnapshots": 19,
+    "beforeRunReturned": true
+  }
+}

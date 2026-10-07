@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cn.local.ocr.RegionOrderTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-07T11:36:35" hostname="localhost.localdomain" time="0.016">
+  <properties/>
+  <testcase name="appExportCanBeReorderedAgainWithoutCorruptingIds" classname="cn.local.ocr.RegionOrderTest" time="0.004"/>
+  <testcase name="completedPrefixCanMoveWithoutChangingPendingContent" classname="cn.local.ocr.RegionOrderTest" time="0.001"/>
+  <testcase name="rejectsMissingDuplicateUnfinishedAndCrossPageMoves" classname="cn.local.ocr.RegionOrderTest" time="0.002"/>
+  <testcase name="originalIrRetainsGeometryWhileReadingOrderChanges" classname="cn.local.ocr.RegionOrderTest" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

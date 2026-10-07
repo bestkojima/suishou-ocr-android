@@ -1,0 +1,13 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/android-ocr-loading-host/build
+[  3%] Building CXX object docprase/CMakeFiles/dococr_core.dir/__/android-engine/config.cpp.o
+[  7%] Linking CXX static library libdococr_core.a
+[ 61%] Built target dococr_core
+[ 65%] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/abi.cpp.o
+[ 69%] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/layout_mnn_backend.cpp.o
+[ 73%] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o
+[ 76%] Linking CXX shared library libdococr_c.so
+[ 84%] Built target dococr_c
+[ 88%] Linking CXX executable dococr_cli
+[100%] Built target dococr_cli

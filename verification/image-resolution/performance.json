@@ -1,0 +1,189 @@
+{
+  "environment": "Linux x86_64 VirtualBox、4 个逻辑处理器、实际 PP-DocLayoutV3/OvisOCR2 同源适配库；非 Android 设备",
+  "fixture": {
+    "source": "verification/ticket5/source.png ×4，合成大图，仅检验尺寸与同图推理差异；非真实高分辨率小字照片",
+    "large": [
+      4000,
+      5520
+    ],
+    "balanced": [
+      2407,
+      3322
+    ],
+    "resampler": "BILINEAR，匹配 Android 最终缩放；本图 inSampleSize=1",
+    "scale": 0.601929265428846,
+    "fast": [
+      1702,
+      2349
+    ]
+  },
+  "measurement": "三种尺寸顺序运行；每个尺寸一个引擎识别两次，无构建或浏览器测试同时运行。包括 native PNG 解码/版面/裁剪/视觉/prefill/decode；不包括 Android Bitmap/PNG 规范化。原图 partial 会触发 native 页末恢复重建，该时间计入总耗时。",
+  "cases": {
+    "large": {
+      "size": [
+        4000,
+        5520
+      ],
+      "runs": [
+        {
+          "seconds": 30.2561273529991,
+          "firstContentSeconds": 16.07377115899908,
+          "status": "partial",
+          "blocks": 10,
+          "phaseTotalsMs": {
+            "visionMs": 14926,
+            "prefillMs": 8897,
+            "decodeMs": 2585,
+            "elapsedMs": 26624
+          },
+          "totalVisualTokens": 1851,
+          "canvasPixels": 1895424,
+          "bodyTextMatchesLargeIgnoringHeadingPrefix": true,
+          "tableMarkupMatchesLarge": true,
+          "formula": [
+            {
+              "text": "## E=mc²\n",
+              "status": "partial"
+            }
+          ],
+          "rawMatchesSavedAttempts": true
+        },
+        {
+          "seconds": 20.66529770499983,
+          "firstContentSeconds": 6.148059835000822,
+          "status": "partial",
+          "blocks": 10,
+          "phaseTotalsMs": {
+            "visionMs": 3805,
+            "prefillMs": 8965,
+            "decodeMs": 2614,
+            "elapsedMs": 15596
+          },
+          "totalVisualTokens": 1851,
+          "canvasPixels": 1895424,
+          "bodyTextMatchesLargeIgnoringHeadingPrefix": true,
+          "tableMarkupMatchesLarge": true,
+          "formula": [
+            {
+              "text": "## E=mc²\n",
+              "status": "partial"
+            }
+          ],
+          "rawMatchesSavedAttempts": true
+        }
+      ],
+      "nativeCoordinatesWithinPreparedImage": true
+    },
+    "balanced": {
+      "size": [
+        2407,
+        3322
+      ],
+      "runs": [
+        {
+          "seconds": 24.47561688499991,
+          "firstContentSeconds": 13.476071831000809,
+          "status": "ok",
+          "blocks": 10,
+          "phaseTotalsMs": {
+            "visionMs": 12625,
+            "prefillMs": 7581,
+            "decodeMs": 2640,
+            "elapsedMs": 23004
+          },
+          "totalVisualTokens": 1039,
+          "canvasPixels": 1063936,
+          "bodyTextMatchesLargeIgnoringHeadingPrefix": true,
+          "tableMarkupMatchesLarge": true,
+          "formula": [
+            {
+              "text": "\\mathrm{E}=mc^{2}",
+              "status": "ok"
+            }
+          ],
+          "rawMatchesSavedAttempts": true
+        },
+        {
+          "seconds": 12.867871522001224,
+          "firstContentSeconds": 2.472842514000149,
+          "status": "ok",
+          "blocks": 10,
+          "phaseTotalsMs": {
+            "visionMs": 1774,
+            "prefillMs": 7395,
+            "decodeMs": 2213,
+            "elapsedMs": 11538
+          },
+          "totalVisualTokens": 1039,
+          "canvasPixels": 1063936,
+          "bodyTextMatchesLargeIgnoringHeadingPrefix": true,
+          "tableMarkupMatchesLarge": true,
+          "formula": [
+            {
+              "text": "\\mathrm{E}=mc^{2}",
+              "status": "ok"
+            }
+          ],
+          "rawMatchesSavedAttempts": true
+        }
+      ],
+      "nativeCoordinatesWithinPreparedImage": true
+    },
+    "fast": {
+      "size": [
+        1702,
+        2349
+      ],
+      "runs": [
+        {
+          "seconds": 23.686115040000004,
+          "firstContentSeconds": 12.748696253000162,
+          "status": "ok",
+          "blocks": 10,
+          "phaseTotalsMs": {
+            "visionMs": 12381,
+            "prefillMs": 7384,
+            "decodeMs": 2742,
+            "elapsedMs": 22686
+          },
+          "totalVisualTokens": 950,
+          "canvasPixels": 972800,
+          "bodyTextMatchesLargeIgnoringHeadingPrefix": true,
+          "tableMarkupMatchesLarge": true,
+          "formula": [
+            {
+              "text": "\\mathrm{E}=mc^{2}",
+              "status": "ok"
+            }
+          ],
+          "rawMatchesSavedAttempts": true
+        },
+        {
+          "seconds": 11.994581341999947,
+          "firstContentSeconds": 1.8005024809990573,
+          "status": "ok",
+          "blocks": 10,
+          "phaseTotalsMs": {
+            "visionMs": 1630,
+            "prefillMs": 7147,
+            "decodeMs": 2105,
+            "elapsedMs": 11034
+          },
+          "totalVisualTokens": 950,
+          "canvasPixels": 972800,
+          "bodyTextMatchesLargeIgnoringHeadingPrefix": true,
+          "tableMarkupMatchesLarge": true,
+          "formula": [
+            {
+              "text": "\\mathrm{E}=mc^{2}",
+              "status": "ok"
+            }
+          ],
+          "rawMatchesSavedAttempts": true
+        }
+      ],
+      "nativeCoordinatesWithinPreparedImage": true
+    }
+  },
+  "warmBalancedReductionPercent": 37.73198090009645
+}

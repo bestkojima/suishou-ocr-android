@@ -46,6 +46,16 @@ public final class DocumentStore {
         File target=FilesUtil.child(dir(id),path);target.getParentFile().mkdirs();
         java.nio.file.Files.copy(FilesUtil.child(dir(source.getString("id")),path).toPath(),target.toPath());
         JSONObject doc=FilesUtil.obj("id",id,"title",source.optString("title")+" · 重新识别","mode","pending-ocr","status","ready","progress",0,"blocks",new JSONArray(),"assets",new JSONObject(),"pages",new JSONArray(),"input",path,"original",url(id,path),"derivedFrom",source.getString("id"));
+        if(source.has("rawInput")) {
+            String raw=source.getString("rawInput");File rawTarget=FilesUtil.child(dir(id),raw);rawTarget.getParentFile().mkdirs();
+            if(!rawTarget.equals(target))java.nio.file.Files.copy(FilesUtil.child(dir(source.getString("id")),raw).toPath(),rawTarget.toPath());
+            doc.put("rawInput",raw);
+        }
+        if(source.has("imagePreparation"))doc.put("imagePreparation",new JSONObject(source.getJSONObject("imagePreparation").toString()));
+        if(source.getJSONObject("assets").has(path))doc.getJSONObject("assets").put(path,
+            new JSONObject(source.getJSONObject("assets").getJSONObject(path).toString()).put("src",url(id,path)));
+        if(source.has("pages"))doc.put("pages",new JSONArray(source.getJSONArray("pages").toString()));
+        if(doc.getJSONArray("pages").length()>0)doc.getJSONArray("pages").getJSONObject(0).put("source",url(id,path));
         save(doc);return doc;
     }
     synchronized JSONObject recognized(String id,File output)throws Exception {
@@ -56,6 +66,7 @@ public final class DocumentStore {
         JSONObject result=normalize(id,input.optString("title"),ir);
         result.put("mode","real-ocr").put("input",input.getString("input")).put("original",input.optString("original"));
         if(input.has("rawInput")) result.put("rawInput",input.getString("rawInput"));
+        if(input.has("imagePreparation"))result.put("imagePreparation",input.getJSONObject("imagePreparation"));
         if(input.has("derivedFrom")) result.put("derivedFrom",input.getString("derivedFrom"));
         if(input.has("recognition")) result.put("recognition",input.getJSONObject("recognition"));
         for(int i=0;i<result.getJSONArray("pages").length();i++) result.getJSONArray("pages").getJSONObject(i).put("source",input.optString("original")).put("route","PP-DocLayoutV3 → OvisOCR2 → DocumentIR");

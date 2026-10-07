@@ -1,0 +1,8 @@
+Ovis load: 748 ms, success=1, mmap=1
+observed real stream started
+PASS real live output: first=12.984s, total=25.326s, snapshots=25
+PASS warm engine run 1: 1.521s, 10 real blocks
+observed real stream started
+PASS real live output: first=1.984s, total=14.250s, snapshots=21
+PASS warm engine run 2: 1.521s, 10 real blocks
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

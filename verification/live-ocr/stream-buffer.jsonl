@@ -1,0 +1,7 @@
+{"revision":2,"regions":[{"requestId":"region1","type":"text","attempt":1,"raw":"","done":false,"finishReason":"","firstContentMs":0,"elapsedMs":0,"visionMs":0,"prefillMs":0,"decodeMs":0,"outputTokens":0}]}
+{"revision":3,"regions":[{"requestId":"region1","type":"text","attempt":1,"raw":"中","done":false,"finishReason":"","firstContentMs":0,"elapsedMs":0,"visionMs":0,"prefillMs":0,"decodeMs":0,"outputTokens":0}]}
+{"revision":4,"regions":[{"requestId":"region1","type":"text","attempt":1,"raw":"中😀","done":false,"finishReason":"","firstContentMs":0,"elapsedMs":0,"visionMs":0,"prefillMs":0,"decodeMs":0,"outputTokens":0}]}
+{"revision":7,"regions":[{"requestId":"region1","type":"text","attempt":2,"raw":"重试\n\"<script>","done":false,"finishReason":"","firstContentMs":0,"elapsedMs":0,"visionMs":0,"prefillMs":0,"decodeMs":0,"outputTokens":0}]}
+{"revision":8,"regions":[{"requestId":"region1","type":"text","attempt":2,"raw":"重试\n\"<script>","done":true,"finishReason":"failed","firstContentMs":0,"elapsedMs":0,"visionMs":0,"prefillMs":0,"decodeMs":0,"outputTokens":0}]}
+{"revision":0,"regions":[]}
+{"revision":0,"regions":[]}

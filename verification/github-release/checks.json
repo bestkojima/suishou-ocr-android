@@ -1,0 +1,30 @@
+{
+  "version": "0.7.4-ocr",
+  "versionCode": 11,
+  "unitTests": {
+    "user": {
+      "tests": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lab": {
+      "tests": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "lint": {
+    "user": {
+      "Error": 0,
+      "Warning": 11
+    },
+    "lab": {
+      "Error": 0,
+      "Warning": 11
+    }
+  },
+  "mnnCommit": "baaa5a62e9cc6d5b3660e37f8a2608a2d585adc6",
+  "vendoredEngineFilesVerified": 79
+}

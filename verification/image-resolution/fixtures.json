@@ -1,0 +1,17 @@
+{
+  "source": "verification/ticket5/source.png ×4，合成大图，仅检验尺寸与同图推理差异；非真实高分辨率小字照片",
+  "large": [
+    4000,
+    5520
+  ],
+  "balanced": [
+    2407,
+    3322
+  ],
+  "resampler": "BILINEAR，匹配 Android 最终缩放；本图 inSampleSize=1",
+  "scale": 0.601929265428846,
+  "fast": [
+    1702,
+    2349
+  ]
+}

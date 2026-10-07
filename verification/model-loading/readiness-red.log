@@ -1,0 +1,161 @@
+> Task :app:bundleWeb UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preUserDebugBuild UP-TO-DATE
+> Task :app:generateUserDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileUserDebug UP-TO-DATE
+> Task :app:checkUserDebugAarMetadata UP-TO-DATE
+> Task :app:generateUserDebugResValues UP-TO-DATE
+> Task :app:mapUserDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateUserDebugResources UP-TO-DATE
+> Task :app:mergeUserDebugResources UP-TO-DATE
+> Task :app:packageUserDebugResources UP-TO-DATE
+> Task :app:parseUserDebugLocalResources UP-TO-DATE
+> Task :app:createUserDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksUserDebug UP-TO-DATE
+> Task :app:processUserDebugMainManifest UP-TO-DATE
+> Task :app:processUserDebugManifest UP-TO-DATE
+> Task :app:processUserDebugManifestForPackage UP-TO-DATE
+> Task :app:processUserDebugResources UP-TO-DATE
+> Task :app:compileUserDebugJavaWithJavac UP-TO-DATE
+> Task :app:bundleUserDebugClassesToRuntimeJar UP-TO-DATE
+> Task :app:bundleUserDebugClassesToCompileJar UP-TO-DATE
+> Task :app:preUserDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileUserDebugUnitTest UP-TO-DATE
+
+> Task :app:compileUserDebugUnitTestJavaWithJavac FAILED
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:15: error: cannot find symbol
+        ModelHub.finishDownloaded(root,task);
+                ^
+  symbol:   method finishDownloaded(File,JSONObject)
+  location: class ModelHub
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:24: error: cannot find symbol
+        assertEquals("files-ready",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                           ^
+  symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+  location: class ModelHub
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:27: error: cannot find symbol
+            assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                                  ^
+  symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+  location: class ModelHub
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:30: error: cannot find symbol
+        assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,new JSONArray()).getString("state"));
+                                              ^
+  symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+  location: class ModelHub
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:37: error: cannot find symbol
+        assertEquals("files-ready",ModelHub.downloadedReadiness(root,new JSONArray().put(artifact),new JSONArray().put(task)).getString("state"));
+                                           ^
+  symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+  location: class ModelHub
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:44: error: cannot find symbol
+        assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                              ^
+  symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+  location: class ModelHub
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:46: error: cannot find symbol
+        assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                              ^
+  symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+  location: class ModelHub
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:48: error: cannot find symbol
+        assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                              ^
+  symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+  location: class ModelHub
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:50: error: cannot find symbol
+        assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                              ^
+  symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+  location: class ModelHub
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:52: error: cannot find symbol
+        assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                              ^
+  symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+  location: class ModelHub
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:58: error: cannot find symbol
+        assertEquals("files-ready",ModelHub.downloadedReadiness(root,new JSONArray().put(artifact),new JSONArray().put(legacy)).getString("state"));
+                                           ^
+  symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+  location: class ModelHub
+/home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:60: error: cannot find symbol
+        assertEquals("missing-models",ModelHub.downloadedReadiness(root,new JSONArray().put(artifact),new JSONArray().put(legacy)).getString("state"));
+                                              ^
+  symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+  location: class ModelHub
+12 errors
+[Incubating] Problems report is available at: file:///home/dr/project/android_ocr/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileUserDebugUnitTestJavaWithJavac'.
+> Compilation failed; see the compiler output below.
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:15: error: cannot find symbol
+          ModelHub.finishDownloaded(root,task);
+                  ^
+    symbol:   method finishDownloaded(File,JSONObject)
+    location: class ModelHub
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:24: error: cannot find symbol
+          assertEquals("files-ready",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                             ^
+    symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+    location: class ModelHub
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:27: error: cannot find symbol
+              assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                                    ^
+    symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+    location: class ModelHub
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:30: error: cannot find symbol
+          assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,new JSONArray()).getString("state"));
+                                                ^
+    symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+    location: class ModelHub
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:37: error: cannot find symbol
+          assertEquals("files-ready",ModelHub.downloadedReadiness(root,new JSONArray().put(artifact),new JSONArray().put(task)).getString("state"));
+                                             ^
+    symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+    location: class ModelHub
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:44: error: cannot find symbol
+          assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                                ^
+    symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+    location: class ModelHub
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:46: error: cannot find symbol
+          assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                                ^
+    symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+    location: class ModelHub
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:48: error: cannot find symbol
+          assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                                ^
+    symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+    location: class ModelHub
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:50: error: cannot find symbol
+          assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                                ^
+    symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+    location: class ModelHub
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:52: error: cannot find symbol
+          assertEquals("missing-models",ModelHub.downloadedReadiness(root,contract,tasks).getString("state"));
+                                                ^
+    symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+    location: class ModelHub
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:58: error: cannot find symbol
+          assertEquals("files-ready",ModelHub.downloadedReadiness(root,new JSONArray().put(artifact),new JSONArray().put(legacy)).getString("state"));
+                                             ^
+    symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+    location: class ModelHub
+  /home/dr/project/android_ocr/app/src/test/java/cn/local/ocr/RecognitionReadinessTest.java:60: error: cannot find symbol
+          assertEquals("missing-models",ModelHub.downloadedReadiness(root,new JSONArray().put(artifact),new JSONArray().put(legacy)).getString("state"));
+                                                ^
+    symbol:   method downloadedReadiness(File,JSONArray,JSONArray)
+    location: class ModelHub
+  12 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+BUILD FAILED in 2s
+21 actionable tasks: 1 executed, 20 up-to-date

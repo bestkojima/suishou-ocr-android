@@ -3,8 +3,16 @@
 node_modules/
 local.properties
 *.jks
+*.keystore
+*.mnn
+*.weight
+*.safetensors
 web/dist/
 app/src/main/assets/web/
 app/src/main/assets/fixtures/
 
 **/.cxx/
+native/MNN/
+native/mnn-download-*/
+artifacts/*.apk
+__pycache__/

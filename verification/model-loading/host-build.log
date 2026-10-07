@@ -1,0 +1,38 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/android-ocr-loading-host/build
+[  4%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/core.cpp.o
+[  9%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/sha256.cpp.o
+[ 14%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/layout_preprocess.cpp.o
+[ 19%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/visual_adaptation.cpp.o
+[ 23%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/table_parser.cpp.o
+[ 28%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/output_assessment.cpp.o
+[ 33%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/region_recognition.cpp.o
+[ 38%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/region_structure.cpp.o
+[ 42%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/layout_region_policy.cpp.o
+[ 47%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/label_export_policy.cpp.o
+[ 52%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/markdown.cpp.o
+[ 57%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/pdf_renderer.cpp.o
+[ 61%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/pdf_job.cpp.o
+[ 66%] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/formula_scripts.cpp.o
+[ 71%] Building CXX object docprase/CMakeFiles/dococr_core.dir/__/android-engine/config.cpp.o
+[ 76%] Linking CXX static library libdococr_core.a
+[ 76%] Built target dococr_core
+[ 80%] Building CXX object docprase/CMakeFiles/dococr_c.dir/src/abi.cpp.o
+[ 85%] Building CXX object docprase/CMakeFiles/dococr_c.dir/src/production_backend.cpp.o
+[ 90%] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/layout_mnn_backend.cpp.o
+[ 95%] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o
+[100%] Linking CXX shared library libdococr_c.so
+[100%] Built target dococr_c

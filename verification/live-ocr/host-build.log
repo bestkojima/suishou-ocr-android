@@ -1,0 +1,10 @@
+[ 61%] Built target dococr_core
+[ 65%] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o
+[ 69%] Building CXX object docprase/CMakeFiles/dococr_c.dir/home/dr/project/android_ocr/app/src/main/cpp/android_recognition_stream.cpp.o
+[ 73%] Linking CXX shared library libdococr_c.so
+[ 84%] Built target dococr_c
+[ 88%] Building CXX object docprase/CMakeFiles/dococr_cli.dir/tools/cli.cpp.o
+[ 92%] Building CXX object docprase/CMakeFiles/dococr_cli.dir/src/reexport.cpp.o
+[ 96%] Building CXX object docprase/CMakeFiles/dococr_cli.dir/src/schema_validator.cpp.o
+[100%] Linking CXX executable dococr_cli
+[100%] Built target dococr_cli

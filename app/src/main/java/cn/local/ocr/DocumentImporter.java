@@ -39,16 +39,12 @@ public final class DocumentImporter {
             doc.put("mode","pending-ocr");doc.put("rawInput",file.getName());doc.put("input","source.png");
             doc.put("recognition",FilesUtil.obj("state","waiting","message","输入已保存，可开始识别"));
             store.save(doc);
-            String path="source.png";File dest=FilesUtil.child(dir,path);
             try {
-                int[] size=ImageInput.normalize(file,dest);
-                doc.put("input",path);doc.put("original",store.url(id,path));resource(doc,path,size[0],size[1]);
-                doc.getJSONArray("pages").put(FilesUtil.obj("number",1,"source",store.url(id,path),"width",size[0],"height",size[1],"route","单图本地识别"));
+                return ImageInput.prepare(store,doc,ImageInput.policy(context));
             } catch(Exception e) {
                 doc.put("recognition",FilesUtil.obj("state","failed","message",e.getMessage()+"；原始输入已保留"));
                 store.save(doc);return doc;
             }
-            store.save(doc);return doc;
         }
         if(doc.getJSONArray("blocks").length()==0)throw new IOException("没有提取到内容；此文档需要真实 OCR 或更完整的格式解析器。");store.save(doc);return doc;
     }

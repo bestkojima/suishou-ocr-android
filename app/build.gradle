@@ -1,8 +1,12 @@
 plugins { id 'com.android.application' }
+// 正式克隆使用仓库内固定依赖；本工作区允许复用同版本的相邻 MNN。
+def mnnRoot = rootProject.file('native/MNN')
+if (!mnnRoot.exists() && rootProject.file('../MNN/CMakeLists.txt').exists()) mnnRoot = rootProject.file('../MNN')
+if (project.hasProperty('mnnSourceRoot')) mnnRoot = file(project.property('mnnSourceRoot'))
 android {
     namespace 'cn.local.ocr'
     compileSdk 35
-    defaultConfig { applicationId 'cn.local.ocr'; minSdk 26; targetSdk 35; versionCode 8; versionName '0.7.1-ocr'; ndk { abiFilters 'arm64-v8a' }; externalNativeBuild { cmake { arguments '-DANDROID_STL=c++_shared'; targets 'dococr_jni' } } }
+    defaultConfig { applicationId 'cn.local.ocr'; minSdk 26; targetSdk 35; versionCode 11; versionName '0.7.4-ocr'; ndk { abiFilters 'arm64-v8a' }; externalNativeBuild { cmake { arguments '-DANDROID_STL=c++_shared', "-DDOCOCR_SOURCE_ROOT=${rootProject.file('native/docprase').absolutePath}", "-DMNN_SOURCE_ROOT=${mnnRoot.absolutePath}"; targets 'dococr_jni' } } }
     ndkVersion '28.1.13356709'
     externalNativeBuild { cmake { path file('src/main/cpp/CMakeLists.txt'); version '3.31.6' } }
     flavorDimensions += 'audience'

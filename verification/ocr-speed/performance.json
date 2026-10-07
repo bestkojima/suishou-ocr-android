@@ -1,0 +1,160 @@
+{
+  "environment": "Linux x86_64 VirtualBox，4个逻辑处理器；非Android设备",
+  "coldAndWarmSeparated": true,
+  "baselineWarmSeconds": 22.030845127999783,
+  "finalWarmSeconds": [
+    12.79826833900006,
+    11.20019907599999
+  ],
+  "finalWarmMedianSeconds": 11.999233707500025,
+  "medianReductionPercent": 45.53439217704012,
+  "allSweepMarkdownIdentical": true,
+  "finalGeometryStatusContentIdentical": true,
+  "markdownSha256": "3b853714ebaf9b97af8390efef7e3e52a6afe9b56eb588f398e260498a7a7f84",
+  "finalColdSeconds": 24.118837527999858,
+  "finalColdFirstContentSeconds": 11.609396883000954,
+  "sweep": {
+    "baseline-1": [
+      {
+        "run": 1,
+        "loadSeconds": 1.6108162269993045,
+        "runSeconds": 23.1503726739993,
+        "firstContentSeconds": 4.53720646200054,
+        "phaseTotalsMs": {
+          "visionMs": 4591,
+          "prefillMs": 14414,
+          "decodeMs": 2747,
+          "elapsedMs": 21840
+        }
+      },
+      {
+        "run": 2,
+        "loadSeconds": 0,
+        "runSeconds": 22.030845127999783,
+        "firstContentSeconds": 3.209061769000982,
+        "phaseTotalsMs": {
+          "visionMs": 3901,
+          "prefillMs": 14498,
+          "decodeMs": 2335,
+          "elapsedMs": 20820
+        }
+      }
+    ],
+    "threads-2": [
+      {
+        "run": 1,
+        "loadSeconds": 1.664445844000511,
+        "runSeconds": 22.492149710000376,
+        "firstContentSeconds": 9.577253612000277,
+        "phaseTotalsMs": {
+          "visionMs": 9154,
+          "prefillMs": 9632,
+          "decodeMs": 2641,
+          "elapsedMs": 21557
+        }
+      },
+      {
+        "run": 2,
+        "loadSeconds": 0,
+        "runSeconds": 14.625193575000594,
+        "firstContentSeconds": 2.13208175300133,
+        "phaseTotalsMs": {
+          "visionMs": 2079,
+          "prefillMs": 9399,
+          "decodeMs": 2172,
+          "elapsedMs": 13748
+        }
+      }
+    ],
+    "threads-4": [
+      {
+        "run": 1,
+        "loadSeconds": 2.469250018999446,
+        "runSeconds": 23.015060823001477,
+        "firstContentSeconds": 13.0661816920001,
+        "phaseTotalsMs": {
+          "visionMs": 12437,
+          "prefillMs": 7082,
+          "decodeMs": 2623,
+          "elapsedMs": 22287
+        }
+      },
+      {
+        "run": 2,
+        "loadSeconds": 0,
+        "runSeconds": 11.21972706499946,
+        "firstContentSeconds": 2.5714903269999922,
+        "phaseTotalsMs": {
+          "visionMs": 1201,
+          "prefillMs": 7037,
+          "decodeMs": 2178,
+          "elapsedMs": 10557
+        }
+      }
+    ],
+    "llm-4-vision-1": [
+      {
+        "run": 1,
+        "loadSeconds": 1.521157442999538,
+        "runSeconds": 25.324311046999355,
+        "firstContentSeconds": 12.983706654998969,
+        "phaseTotalsMs": {
+          "visionMs": 14549,
+          "prefillMs": 7051,
+          "decodeMs": 2609,
+          "elapsedMs": 24345
+        }
+      },
+      {
+        "run": 2,
+        "loadSeconds": 0,
+        "runSeconds": 14.249134487999982,
+        "firstContentSeconds": 1.9836279560004186,
+        "phaseTotalsMs": {
+          "visionMs": 3799,
+          "prefillMs": 7465,
+          "decodeMs": 2128,
+          "elapsedMs": 13523
+        }
+      }
+    ],
+    "final-4": [
+      {
+        "run": 1,
+        "loadSeconds": 3.6459354090002307,
+        "runSeconds": 24.118837527999858,
+        "firstContentSeconds": 11.609396883000954,
+        "phaseTotalsMs": {
+          "visionMs": 10612,
+          "prefillMs": 8660,
+          "decodeMs": 3588,
+          "elapsedMs": 23035
+        }
+      },
+      {
+        "run": 2,
+        "loadSeconds": 0,
+        "runSeconds": 12.79826833900006,
+        "firstContentSeconds": 3.665388270001131,
+        "phaseTotalsMs": {
+          "visionMs": 1752,
+          "prefillMs": 7561,
+          "decodeMs": 2406,
+          "elapsedMs": 11863
+        }
+      },
+      {
+        "run": 3,
+        "loadSeconds": 0,
+        "runSeconds": 11.20019907599999,
+        "firstContentSeconds": 1.608635561000483,
+        "phaseTotalsMs": {
+          "visionMs": 1214,
+          "prefillMs": 7000,
+          "decodeMs": 2160,
+          "elapsedMs": 10512
+        }
+      }
+    ]
+  }
+}

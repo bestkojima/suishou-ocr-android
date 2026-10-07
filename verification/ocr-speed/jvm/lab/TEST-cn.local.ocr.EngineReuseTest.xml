@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cn.local.ocr.EngineReuseTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-07T12:13:07" hostname="localhost.localdomain" time="0.012">
+  <properties/>
+  <testcase name="memoryPressureReleasesOnlyAnIdleEngine" classname="cn.local.ocr.EngineReuseTest" time="0.004"/>
+  <testcase name="preparedEngineIsReusedWithoutReloadingArtifacts" classname="cn.local.ocr.EngineReuseTest" time="0.001"/>
+  <testcase name="equivalentAutoAndExplicitChoicesKeepTheLoadedEngine" classname="cn.local.ocr.EngineReuseTest" time="0.002"/>
+  <testcase name="cpuThreadChoicesRespectAvailableProcessors" classname="cn.local.ocr.EngineReuseTest" time="0.001"/>
+  <testcase name="threadChangesAreBlockedDuringInferenceAndInvalidateOnlyAnIdleEngine" classname="cn.local.ocr.EngineReuseTest" time="0.0"/>
+  <testcase name="failedUnloadKeepsTheEngineBlockedAndDoesNotApplyThreadChanges" classname="cn.local.ocr.EngineReuseTest" time="0.001"/>
+  <testcase name="completedJobReleasesResultsButKeepsModelForNextImage" classname="cn.local.ocr.EngineReuseTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

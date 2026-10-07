@@ -61,16 +61,35 @@ public final class ModelHub {
     static synchronized JSONArray repos(Context c)throws Exception{LinkedHashSet<String> all=new LinkedHashSet<>(Arrays.asList(REPOS));JSONArray saved=new JSONArray(c.getSharedPreferences("models",0).getString("repos","[]"));for(int i=0;i<saved.length();i++)all.add(saved.getString(i));JSONArray tasks=state(c);for(int i=0;i<tasks.length();i++)all.add(tasks.getJSONObject(i).getString("repo"));return new JSONArray(all);}
     static synchronized JSONArray addRepo(Context c,String input)throws Exception{String repo=normalizeRepo(input);JSONArray all=repos(c);boolean found=false;for(int i=0;i<all.length();i++)if(all.getString(i).equals(repo))found=true;if(!found)all.put(repo);c.getSharedPreferences("models",0).edit().putString("repos",all.toString()).apply();return all;}
     static synchronized JSONArray forgetRepo(Context c,String input)throws Exception{String repo=normalizeRepo(input);if(Arrays.asList(REPOS).contains(repo))throw new IOException("默认仓库保留入口");if(DownloadService.active||DownloadService.reserved)throw new IOException("请先暂停下载");JSONArray tasks=state(c);for(int i=0;i<tasks.length();i++)if(tasks.getJSONObject(i).getString("repo").equals(repo))throw new IOException("请先删除此仓库的下载文件");JSONArray all=repos(c),out=new JSONArray();for(int i=0;i<all.length();i++)if(!all.getString(i).equals(repo))out.put(all.get(i));c.getSharedPreferences("models",0).edit().putString("repos",out.toString()).apply();return out;}
-    static JSONObject verifyRequired(File root,JSONArray required)throws Exception {
+    /** 仅由下载完成且内容校验成功的分支调用，记录最终文件而非 .part 的元数据。 */
+    static void finishDownloaded(File root,JSONObject task)throws Exception {
+        File actual=file(root,task);
+        if(!actual.isFile()||actual.length()!=task.getLong("size")) throw new IOException("下载文件尚未完整保存");
+        String sha=task.optString("sha256");
+        task.put("status",sha.isEmpty()?"downloaded":"verified").put("downloaded",actual.length());
+        task.put("verifiedSize",actual.length()).put("verifiedModified",actual.lastModified()).put("verifiedSha256",sha);
+        task.remove("error");
+    }
+    /** 加载仅检查下载记录和文件元数据；SHA-256 在下载完成时计算。 */
+    static JSONObject downloadedReadiness(File root,JSONArray required,JSONArray tasks)throws Exception {
+        Map<String,JSONObject> downloaded=new HashMap<>();
+        for(int i=0;i<tasks.length();i++) {
+            JSONObject task=tasks.getJSONObject(i);
+            downloaded.put(task.optString("repo")+"/"+task.optString("path"),task);
+        }
         JSONArray problems=new JSONArray();
         for(int i=0;i<required.length();i++) {
             JSONObject expected=required.getJSONObject(i);File actual=file(root,expected);
+            JSONObject task=downloaded.get(expected.getString("repo")+"/"+expected.getString("path"));
             String reason=!actual.isFile()?"缺少文件":actual.length()!=expected.getLong("size")?"文件大小不符":
-                !FilesUtil.sha(actual).equals(expected.getString("sha256"))?"SHA-256 不符":"";
+                task==null||!task.optString("status").equals("verified")?"请在下载页完成文件校验":
+                !task.optString("sha256").equals(expected.getString("sha256"))||task.optLong("size",-1)!=expected.getLong("size")?"下载工件版本不符":
+                task.has("verifiedModified")&&(task.optLong("verifiedModified",-1)!=actual.lastModified()||
+                    task.optLong("verifiedSize",-1)!=actual.length()||!task.optString("verifiedSha256").equals(expected.getString("sha256")))?"文件已变化，请在下载页重新校验":"";
             if(!reason.isEmpty()) problems.put(FilesUtil.obj("path",expected.getString("path"),"reason",reason));
         }
         return FilesUtil.obj("state",problems.length()==0?"files-ready":"missing-models","problems",problems,
-            "message",problems.length()==0?"模型文件校验通过，尚未加载引擎":"识别模型未就绪："+problems);
+            "message",problems.length()==0?"模型下载校验已完成，尚未加载引擎":"识别模型未就绪："+problems);
     }
     static synchronized JSONObject summary(Context c)throws Exception{
         JSONArray tasks=state(c);if(!DownloadService.active)for(int i=0;i<tasks.length();i++){JSONObject f=tasks.getJSONObject(i);if(Arrays.asList("queued","downloading","verifying").contains(f.optString("status"))){f.put("status","paused");f.put("error","任务已停止，可继续下载");}}

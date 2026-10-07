@@ -13,7 +13,7 @@ try{
  const check=async(name,fn)=>{await fn();results.push({name,passed:true});console.log('PASS',name);};
  await page.goto(origin);await page.waitForSelector('.sample-card');
  await check('首页保留拍照、导入和 JSON 入口',async()=>{assert(await page.getByRole('button',{name:'拍照',exact:true}).isVisible());assert(await page.getByRole('button',{name:'导入文件',exact:true}).isVisible());await page.screenshot({path:`${out}/home.png`});});
- await page.getByRole('button',{name:'设置',exact:true}).click();await page.locator('select').selectOption('64');await page.getByRole('dialog').getByRole('button',{name:'关闭',exact:true}).click();
+ await page.getByRole('button',{name:'设置',exact:true}).click();await page.getByLabel('JSON 回放每次字符数',{exact:true}).selectOption('64');await page.getByRole('dialog').getByRole('button',{name:'关闭',exact:true}).click();
  await page.getByRole('button',{name:'文字 / 表格 / 图片',exact:true}).click();
  await check('真实 JSON 完成 16 个区域，图片和表格渲染',async()=>{await page.getByRole('button',{name:'重新回放',exact:true}).waitFor({timeout:45000});assert.equal(await page.locator('.region').count(),16);assert(await page.locator('.markdown table').count()>0);assert.equal(await page.locator('.image-frame img').count(),4);await page.waitForFunction(()=>[...document.querySelectorAll('.image-frame img')].every(i=>i.complete&&i.naturalWidth>0&&i.style.opacity==='1'));});
  await check('竖屏内容不会撑宽页面',async()=>{assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await page.locator('.reader').evaluate(e=>e.scrollTop=0);await page.screenshot({path:`${out}/portrait.png`});});

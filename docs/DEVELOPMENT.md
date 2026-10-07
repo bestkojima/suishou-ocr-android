@@ -1,4 +1,4 @@
-> 0.7.0 更新：单图 JNI 生产后端现已接入。当前构建与作业桥、已执行验证及设备待验收项见 [单图真实 OCR 开发说明](REAL_OCR.md) 与 [分项交付记录](../verification/real-ocr/DELIVERY.md)。下文的“尚未接入”描述属于 0.6.0 及更早版本，PDF/Office OCR 和 token 增量仍未接入。
+> 0.7.0 更新：单图 JNI 生产后端现已接入。当前构建与作业桥、已执行验证及设备待验收项见 [单图真实 OCR 开发说明](REAL_OCR.md) 与 [分项交付记录](../verification/real-ocr/DELIVERY.md)。下文的“尚未接入”描述属于 0.6.0 及更早版本，PDF/Office OCR 仍未接入。0.7.4 已实现真实模型增量输出、引擎复用、多线程与输入分辨率策略；当前发布说明以 README 与 REAL_OCR.md 为准。
 
 # 随手识别：完整开发文档
 

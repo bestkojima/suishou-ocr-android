@@ -1,0 +1,23 @@
+
+> test:web
+> node web/verify.mjs
+
+PASS 首页保留拍照、导入和 JSON 入口
+PASS 真实 JSON 完成 16 个区域，图片和表格渲染
+PASS 竖屏内容不会撑宽页面
+PASS 已完成区域保持 DOM 身份；上翻不被新输出拉走
+PASS 暂停停止增量并可继续
+PASS 横屏显示原文和结果，图片可缩放查看
+PASS 校对内容保存，导出 Markdown 包含修改
+PASS ZIP 导出包含图片、JSON 和校对状态
+PASS 历史在刷新后保留进度与校对内容
+PASS ZIP 再导入保留校对和图片，刷新后图片可用
+PASS 仅测试模式显示处理详情
+PASS 模型页列出指定的两个 ModelScope 仓库
+PASS 公式样本完整输出，KaTeX 已渲染
+PASS 缺失图片展示固定占位并可重试
+PASS Office 原生解析结果回放：sales-with-image.xlsx
+PASS Office 原生解析结果回放：slides-with-table-and-image.pptx
+PASS Office 回放导出的 JSON 保留幻灯片边界和图片状态
+PASS 原生大表格按区域直接显示，不逐字等待
+PASS 离线渲染无第三方请求和未捕获异常

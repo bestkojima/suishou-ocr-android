@@ -1,0 +1,45 @@
+{
+  "baseline": "460781f",
+  "jvm": {
+    "User": {
+      "tests": 49,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "Lab": {
+      "tests": 49,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "browser": {
+    "models": {
+      "passed": 6,
+      "errors": [],
+      "environment": "Chromium / AndroidHost 模拟，非设备运行"
+    },
+    "recognition": {
+      "passed": 11,
+      "errors": [],
+      "environment": "Chromium / AndroidHost 模拟，非设备运行"
+    },
+    "navigation": {
+      "passed": 8,
+      "errors": [],
+      "environment": "Chromium / AndroidHost 模拟，非设备运行"
+    }
+  },
+  "lint": {
+    "user": {
+      "Error": 0,
+      "Warning": 11
+    },
+    "lab": {
+      "Error": 0,
+      "Warning": 11
+    }
+  },
+  "device": "pending: adb devices 为空"
+}

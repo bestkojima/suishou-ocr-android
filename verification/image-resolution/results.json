@@ -1,0 +1,35 @@
+{
+  "unitTests": {
+    "user": {
+      "tests": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lab": {
+      "tests": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "lint": {
+    "user": {
+      "Error": 0,
+      "Warning": 11
+    },
+    "lab": {
+      "Error": 0,
+      "Warning": 11
+    }
+  },
+  "browser": {
+    "models": 9,
+    "recognition": 11,
+    "navigation": 8,
+    "live": 4,
+    "base": 19
+  },
+  "version": "0.7.4-ocr",
+  "versionCode": 11
+}

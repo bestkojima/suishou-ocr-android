@@ -1,0 +1,156 @@
+{
+  "environment": "Linux x86_64，同源 Android 加载适配＋真实模型；非设备推理",
+  "library": "/tmp/android-ocr-loading-host/build/docprase/libdococr_c.so",
+  "librarySha256": "629a6a314dfa694548708b7ec9de886954f63e66a32efda977ecf485e6c2f2e4",
+  "inputSha256": "c71ed55fd66f249cc6f2435f7986961e1065a804aee57665e48858455143a46d",
+  "modelsVerifiedBeforeLoading": true,
+  "loads": [
+    {
+      "attempt": 1,
+      "seconds": 5.477877011000601,
+      "status": "ok",
+      "blocks": 10
+    }
+  ],
+  "stream": {
+    "firstLiveSeconds": 4.548783180998726,
+    "totalSeconds": 23.27498448699953,
+    "snapshots": 18,
+    "regions": [
+      {
+        "requestId": "reqr0001",
+        "type": "text",
+        "attempt": 1,
+        "raw": "## 离线文档识别验证\n",
+        "done": true,
+        "finishReason": "complete",
+        "firstContentMs": 2632,
+        "elapsedMs": 3388,
+        "visionMs": 647,
+        "prefillMs": 1975,
+        "decodeMs": 754,
+        "outputTokens": 7
+      },
+      {
+        "requestId": "reqr0002",
+        "type": "text",
+        "attempt": 1,
+        "raw": "这是一张新生成的单页测试图片。\n",
+        "done": true,
+        "finishReason": "complete",
+        "firstContentMs": 1939,
+        "elapsedMs": 2094,
+        "visionMs": 392,
+        "prefillMs": 1541,
+        "decodeMs": 152,
+        "outputTokens": 10
+      },
+      {
+        "requestId": "reqr0003",
+        "type": "text",
+        "attempt": 1,
+        "raw": "输入在识别前保存，模型在本地运行。\n",
+        "done": true,
+        "finishReason": "complete",
+        "firstContentMs": 1908,
+        "elapsedMs": 2087,
+        "visionMs": 378,
+        "prefillMs": 1525,
+        "decodeMs": 177,
+        "outputTokens": 12
+      },
+      {
+        "requestId": "reqr0004",
+        "type": "text",
+        "attempt": 1,
+        "raw": "结果包括文字、公式、表格和插图。\n",
+        "done": true,
+        "finishReason": "complete",
+        "firstContentMs": 1954,
+        "elapsedMs": 2123,
+        "visionMs": 381,
+        "prefillMs": 1568,
+        "decodeMs": 166,
+        "outputTokens": 11
+      },
+      {
+        "requestId": "reqr0005",
+        "type": "text",
+        "attempt": 1,
+        "raw": "## 能量公式\n",
+        "done": true,
+        "finishReason": "complete",
+        "firstContentMs": 1894,
+        "elapsedMs": 1962,
+        "visionMs": 323,
+        "prefillMs": 1566,
+        "decodeMs": 67,
+        "outputTokens": 5
+      },
+      {
+        "requestId": "reqr0006",
+        "type": "formula",
+        "attempt": 1,
+        "raw": "$$ \\mathrm{E}=\\mathrm{mc}^{2} $$\n",
+        "done": true,
+        "finishReason": "complete",
+        "firstContentMs": 1762,
+        "elapsedMs": 2009,
+        "visionMs": 296,
+        "prefillMs": 1461,
+        "decodeMs": 244,
+        "outputTokens": 16
+      },
+      {
+        "requestId": "reqr0007",
+        "type": "text",
+        "attempt": 1,
+        "raw": "## 商品统计\n",
+        "done": true,
+        "finishReason": "complete",
+        "firstContentMs": 1797,
+        "elapsedMs": 1864,
+        "visionMs": 316,
+        "prefillMs": 1475,
+        "decodeMs": 66,
+        "outputTokens": 5
+      },
+      {
+        "requestId": "reqr0008",
+        "type": "table",
+        "attempt": 1,
+        "raw": "<table border=1><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>\n",
+        "done": true,
+        "finishReason": "complete",
+        "firstContentMs": 3005,
+        "elapsedMs": 4259,
+        "visionMs": 934,
+        "prefillMs": 2059,
+        "decodeMs": 1241,
+        "outputTokens": 76
+      },
+      {
+        "requestId": "reqr0010",
+        "type": "text",
+        "attempt": 1,
+        "raw": "图 1：圆形与三角形\n",
+        "done": true,
+        "finishReason": "complete",
+        "firstContentMs": 1928,
+        "elapsedMs": 2048,
+        "visionMs": 385,
+        "prefillMs": 1538,
+        "decodeMs": 118,
+        "outputTokens": 8
+      }
+    ],
+    "rawMatchesSavedAttempts": true,
+    "phaseTotalsMs": {
+      "visionMs": 4052,
+      "prefillMs": 14708,
+      "decodeMs": 2985,
+      "elapsedMs": 21834
+    }
+  },
+  "measurementContext": "首次私有 mmap 缓存，与 Android 构建并行；用于诊断与流式正确性，不作为独占资源性能基准。"
+}

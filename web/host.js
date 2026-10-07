@@ -5,7 +5,7 @@ const pending = new Map(); let next = 0;
 window.nativeReply = ({id,value,error}) => { const p=pending.get(id);if(!p)return;pending.delete(id);error?p.reject(new Error(error)):p.resolve(value); };
 const dbPromise = native ? null : new Promise((resolve,reject)=>{const r=indexedDB.open('suishou-ocr-v1',1);r.onupgradeneeded=()=>r.result.createObjectStore('documents',{keyPath:'id'});r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});
 async function database(method,value){const db=await dbPromise;return new Promise((resolve,reject)=>{const tx=db.transaction('documents',method==='get'||method==='getAll'?'readonly':'readwrite');const req=tx.objectStore('documents')[method](value);tx.oncomplete=()=>resolve(req.result);tx.onerror=()=>reject(tx.error);});}
-function prefs(){try{return {wifiOnly:true,debug:false,chunk:8,...JSON.parse(localStorage.getItem('ocr-settings')||'{}')};}catch{return {wifiOnly:true,debug:false,chunk:8};}}
+function prefs(){try{return {wifiOnly:true,debug:false,chunk:8,imageResolution:'balanced',...JSON.parse(localStorage.getItem('ocr-settings')||'{}')};}catch{return {wifiOnly:true,debug:false,chunk:8,imageResolution:'balanced'};}}
 const dataURL=blob=>new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=()=>no(r.error);r.readAsDataURL(blob);});
 function dimensions(src){return new Promise((ok,no)=>{const image=new Image();image.onload=()=>ok({width:image.naturalWidth,height:image.naturalHeight});image.onerror=()=>no(Error('无法解码图片'));image.src=src;});}
 const safePath=p=>p&&!p.startsWith('/')&&!p.includes('\\')&&!p.split('/').includes('..')&&!p.includes(':');

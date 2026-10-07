@@ -1,0 +1,21 @@
+{
+  "environment": "Linux x86_64，同源 Android 加载适配＋真实模型；非设备推理",
+  "library": "/tmp/android-ocr-loading-host/build/docprase/libdococr_c.so",
+  "librarySha256": "9d40d8ca4a926844fef0565b49ddb42db09e6ff12a405d2bf714c0b1aa240c69",
+  "inputSha256": "c71ed55fd66f249cc6f2435f7986961e1065a804aee57665e48858455143a46d",
+  "modelsVerifiedBeforeLoading": true,
+  "loads": [
+    {
+      "attempt": 1,
+      "seconds": 3.0099607770007424,
+      "status": "ok",
+      "blocks": 10
+    },
+    {
+      "attempt": 2,
+      "seconds": 0.844016709999778,
+      "status": "ok",
+      "blocks": 10
+    }
+  ]
+}

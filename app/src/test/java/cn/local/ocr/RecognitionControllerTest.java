@@ -23,7 +23,7 @@ public class RecognitionControllerTest {
             @Override public android.content.SharedPreferences getSharedPreferences(String name,int mode){
                 return (android.content.SharedPreferences)java.lang.reflect.Proxy.newProxyInstance(
                     getClass().getClassLoader(),new Class<?>[]{android.content.SharedPreferences.class},
-                    (proxy,method,args)->{if(method.getName().equals("getString"))return args[1];throw new UnsupportedOperationException(method.getName());});
+                    (proxy,method,args)->{if(method.getName().equals("getInt"))return args[1];if(method.getName().equals("getString"))return args[1];throw new UnsupportedOperationException(method.getName());});
             }
         };
         RecognitionController controller=RecognitionController.get(context);DocumentStore store=controller.store();String id=store.create();
@@ -65,7 +65,8 @@ public class RecognitionControllerTest {
         // 从公开启动/查询入口验证模型加载失败后的重试；JVM 无 Android 模型资源，不执行 JNI。
         File input=new File(store.dir(interruptedId),"source.png");
         java.nio.file.Files.write(input.toPath(),java.util.Base64.getDecoder().decode("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jRz8AAAAASUVORK5CYII="));
-        JSONObject retryInput=store.load(interruptedId).put("input","source.png");store.save(retryInput);
+        JSONObject retryInput=store.load(interruptedId).put("input","source.png")
+            .put("imagePreparation",FilesUtil.obj("version",ImageResolution.VERSION,"policy","balanced","width",1,"height",1));store.save(retryInput);
         String firstJob=controller.start(interruptedId,false).getJSONObject("recognition").getString("jobId");
         awaitFailure(controller,interruptedId);
         assertEquals("source.png",store.load(interruptedId).getString("input"));
