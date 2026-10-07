@@ -2,7 +2,7 @@
 
 完整的架构、接口、数据结构、构建测试与 OCR 接入说明见 [开发文档](docs/DEVELOPMENT.md)。
 
-第一版采用已确认的相机首页和流式文档界面。Android 原生层负责相机、文件和下载；离线 WebView 内的 React + Streamdown 负责 Markdown、表格、公式、图片。真实 docprase C++ OCR 推理尚未接入。
+第一版采用已确认的相机首页和流式文档界面。Android 原生层负责相机、文件和下载；离线 WebView 内的 React + Streamdown 负责 Markdown、表格、公式、图片。现已通过 JNI 接入 docprase 的 PP-DocLayoutV3 + OvisOCR2 生产后端，首轮为 arm64-v8a 本地离线单图识别。Android 内实际模型加载和推理仍待设备验收；本轮构建、桌面真实输出及预览见 [交付记录](verification/real-ocr/DELIVERY.md)。
 
 ## 安装
 
@@ -44,7 +44,7 @@ PDF 决策阈值与顺序参考 [RapidDoc pdf_classify.py 固定版本](https://
 
 清单来自 ModelScope repo/files API。逐文件固定 revision，并记录远端提供的 SHA-256；内容存储在应用私有 models 目录，partial 子目录保留可续传进度。仅对带有正确 Content-Range 的 206 响应追加；续传请求返回 200 时重新发起不带 Range 的完整请求。提供 SHA 的文件需通过大小与 SHA 校验；没有 SHA 的文件仅检查大小并明确标记，不称为哈希校验通过。
 
-早期清单快照记录过 11 个文件约 582 MiB，仓库后续可变化。网络验证仅下载小文件或有限字节范围，**没有下载完整权重，也没有验证 MNN 推理加载**。早期清单见 `verification/modelscope-live.json`，后续小文件与范围续传验证见 `verification/modelscope-network.json`。下载进程被系统终止后需要在页面点击继续；本版没有自动开机重启下载。
+早期清单快照记录过 11 个文件约 582 MiB，仓库后续可变化。网络验证仅下载小文件或有限字节范围，**当时没有下载完整权重，也没有验证 MNN 推理加载**。早期清单见 `verification/modelscope-live.json`，后续小文件与范围续传验证见 `verification/modelscope-network.json`。下载进程被系统终止后需要在页面点击继续；本版没有自动开机重启下载。
 
 ## 开发与验证
 
@@ -72,9 +72,13 @@ Gradle 的 preBuild 会自动构建离线网页和复制样本。浏览器预览
 
 当前没有连接 Android 设备，也未运行设备模拟器。相机方向/权限、真实系统文件选择、WebView 设备兼容性、PDF 渲染及后台服务生命周期仍需真机验收。JVM 测试不能代替这些验收。
 
-## 下一步接入位置
+## 单图真实 OCR（0.7.0）
 
-`DocumentImporter` 生成统一的文档/区域结构；`DocumentStore` 管理内容、资源和导出；`web/renderer.jsx` 负责稳定渲染；`web/app.jsx` 目前调用 JSON 回放 reducer。接入 docprase 时应新增 JNI 作业桥接，将真实区域增量/完成事件推送给该状态层。C++ 侧尚未证明可提供 token 级输出，不能把本版字符切片计时器当作已经验证的推理流协议。
+拍照/导入先保存原始文件与 EXIF 方向规范后的 `source.png`。缺模型时保留待识别输入；设置 → 识别模型下载两个默认仓库的九个必需工件后，可“校验并加载识别模型”，再回到输入点击“开始识别”。工件齐备时采集后自动开始校验和识别，APK 不包含权重。
+
+`RecognitionController` 在应用级工作线程运行 JNI/C ABI，同一时间只允许一个作业；返回首页继续运行，取消等待原生执行和资源清理完成。失败可重试，进程退出后的输入可重新打开；成功后的“重新识别（另存）”保留旧结果和校对。模型使用中阻止删除和替换。完整 JSON/Markdown/资源落盘后复用既有结果回放、校对、排序及导出；暂停输出仅暂停回放。
+
+Android CMake 从相邻 `../docprase` 和 `../MNN` 的现有源代码构建；不修改两个源引擎仓库。默认 MNN 分库，也提供合并库的 target 绑定分支。首轮使用 CPU 单线程；不新增 PDF/Office OCR、服务器后端或 token 增量协议。两种 Debug APK 与 [真实内容预览](verification/real-ocr/preview-structured.png) 见交付记录。
 
 ## v0.2 Office 分流
 

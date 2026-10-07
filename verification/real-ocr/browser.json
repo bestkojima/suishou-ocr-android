@@ -1,0 +1,9 @@
+{
+  "environment": "Chromium；导入 Linux 真实输出后回放，不执行模型",
+  "results": [
+    "本轮真实中文、公式、表格、插图及原图正常展示",
+    "真实输出校对、排序、ZIP 原始元数据保留与再导入",
+    "既有真实 partial 样本（provenance.json）与未完成区域提示"
+  ],
+  "errors": []
+}

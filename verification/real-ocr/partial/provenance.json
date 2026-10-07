@@ -1,0 +1,55 @@
+{
+  "id": "odb-09",
+  "title": "中文 · 三角公式 · 图片",
+  "document_id": "doc-dd694d243b73eff9",
+  "schema_version": "1.9",
+  "status": "partial",
+  "source_json": "/home/dr/project/docprase/output/issue-27-final/development/odb-09/job/document.json",
+  "source_json_sha256": "c2a0d9b92947d1ecb891efd915e98c6a6fc1ee9e13e1cac1f62e22238dbb3938",
+  "original_path": "/home/dr/project/docprase/output/omnidocbench/selected-20/images/jiaocaineedrop_j70ke43p.pdf_69.jpg",
+  "original_sha256": "9f9a0969fe7056dc3c8965b224ab61628aae7b9459723b5a0910011802553522",
+  "assets": [
+    {
+      "path": "assets/p0001-b0001.png",
+      "sha256": "2876f27543f7cccb2b63637fe1fefd9168d9db7af190119033d790607e4dd0f4"
+    },
+    {
+      "path": "assets/p0001-b0002.png",
+      "sha256": "71f2cb47b99dd3df4558e34de81f8929dbe75a015be7c92063c12386fa1def97"
+    },
+    {
+      "path": "assets/p0001-b0003.png",
+      "sha256": "afddd62c229ba82e49a6401d4b49506a23d47df9ace60698b00ff74826e45b2f"
+    },
+    {
+      "path": "assets/p0001-b0004.png",
+      "sha256": "7199130e4917bb88d3521376d149fc877d2ca60791f7b564490dbaca10c929bc"
+    },
+    {
+      "path": "assets/p0001-b0005.png",
+      "sha256": "58e792ee4403d417c0fc12d4f517321dfdc4f39edbf5affd79b08881602cff7d"
+    },
+    {
+      "path": "assets/p0001-b0006.png",
+      "sha256": "56b134a2074f9cb48f77fa5e40b0538df574da8971e6231e0dfb3b4ff3b3ce2c"
+    },
+    {
+      "path": "assets/p0001-b0007.png",
+      "sha256": "b1a8095ca740976e342c3d023247fcce7564ae7f74e3ac222874720b9f356576"
+    },
+    {
+      "path": "assets/p0001-b0008.png",
+      "sha256": "076fdc17c7dee9e83b3af35f608cd44b896d73460e3a90ad5db92b3c3ce904c1"
+    },
+    {
+      "path": "assets/p0001-b0009.png",
+      "sha256": "a7fe1d7e276af5defbfbf804dbe2addfa04e712a8ac683fe90e3f2cb4bafc5ca"
+    },
+    {
+      "path": "assets/p0001-b0010.png",
+      "sha256": "92e2a5dae56d4028766eebef7f9d9032f0d4e048a59f7c737c1cb404810ae646"
+    }
+  ],
+  "simulation": "Completed JSON replayed as synthetic character chunks; not recorded token events",
+  "normalization": "Use final page reading_order; wrap latex blocks in $$; convert resource blocks to Markdown images; other content preserved verbatim"
+}

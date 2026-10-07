@@ -22,14 +22,45 @@ public final class DocumentStore {
         if(pages.length()>1000)throw new IOException("页数过多");
         JSONObject assets=doc.getJSONObject("assets");JSONArray resources=ir.optJSONArray("resources");if(resources!=null)for(int i=0;i<resources.length();i++){JSONObject r=resources.getJSONObject(i);String path=r.optString("path");if(path.isEmpty())continue;File file=FilesUtil.child(dir(id),path);assets.put(path,FilesUtil.obj("src",url(id,path),"width",r.optInt("width",400),"height",r.optInt("height",240),"missing",!file.isFile()));}
         for(int p=0;p<pages.length();p++){JSONObject page=pages.getJSONObject(p);String pid=page.optString("page_id","p"+p);JSONArray bs=page.optJSONArray("blocks");if(bs==null)continue;HashMap<String,JSONObject> byId=new HashMap<>();for(int b=0;b<bs.length();b++){JSONObject block=bs.getJSONObject(b);byId.put(block.getString("id"),block);}JSONArray order=page.optJSONArray("reading_order");if(order==null){order=new JSONArray();for(int b=0;b<bs.length();b++)order.put(bs.getJSONObject(b).getString("id"));}
-            for(int n=0;n<order.length();n++){JSONObject b=byId.get(order.getString(n));if(b==null)continue;JSONObject c=b.optJSONObject("content");if(c==null)continue;String text=c.optString("text"),type=b.optString("type","text"),resource=c.optString("resource");if(type.equals("image"))text="![插图]("+resource+")";else if(c.optString("format").equals("latex"))text="$$\n"+text+"\n$$";
+            for(int n=0;n<order.length();n++){JSONObject b=byId.get(order.getString(n));if(b==null)continue;JSONObject c=b.optJSONObject("content");if(c==null){if(b.optString("status","ok").equals("ok"))continue;c=FilesUtil.obj("text","> 此区域未完成识别，请对照原图校对。","format","markdown");}String text=c.optString("text"),type=b.optString("type","text"),resource=c.optString("resource");if(type.equals("image"))text="![插图]("+resource+")";else if(c.optString("format").equals("latex"))text="$$\n"+text+"\n$$";
                 doc.getJSONArray("blocks").put(FilesUtil.obj("id",pid+"-"+b.getString("id"),"page",p+1,"type",type,"markdown",text,"resource",resource,"sourceStatus",b.optString("status","ok"),"format",c.optString("format","markdown")));
             }
-            doc.getJSONArray("pages").put(FilesUtil.obj("id",pid,"number",p+1,"title",page.optString("title"),"kind",page.optString("kind"),"route","JSON 结果回放"));
+            doc.getJSONArray("pages").put(FilesUtil.obj("id",pid,"number",p+1,"title",page.optString("title"),"kind",page.optString("kind"),"route","JSON 结果回放","sourceStatus",page.optString("status"),"rasterSize",page.optJSONArray("raster_size")));
         }
         if(doc.getJSONArray("blocks").length()>10000)throw new IOException("区域数超过 10000");
         int pending=0;JSONArray normalized=doc.getJSONArray("blocks");for(int i=0;i<normalized.length();i++)if(normalized.getJSONObject(i).optString("sourceStatus").equals("pending-ocr"))pending++;doc.put("pendingOcr",pending);int pendingLayout=0;for(int i=0;i<normalized.length();i++)if(normalized.getJSONObject(i).optString("sourceStatus").equals("pending-layout"))pendingLayout++;doc.put("pendingAnalysis",pendingLayout);
         return doc;
+    }
+    synchronized JSONObject copyInput(JSONObject source)throws Exception {
+        String id=create();String path=source.getString("input");
+        File target=FilesUtil.child(dir(id),path);target.getParentFile().mkdirs();
+        java.nio.file.Files.copy(FilesUtil.child(dir(source.getString("id")),path).toPath(),target.toPath());
+        JSONObject doc=FilesUtil.obj("id",id,"title",source.optString("title")+" · 重新识别","mode","pending-ocr","status","ready","progress",0,"blocks",new JSONArray(),"assets",new JSONObject(),"pages",new JSONArray(),"input",path,"original",url(id,path),"derivedFrom",source.getString("id"));
+        save(doc);return doc;
+    }
+    synchronized JSONObject recognized(String id,File output)throws Exception {
+        JSONObject input=load(id);
+        JSONObject ir=new JSONObject(FilesUtil.read(new File(output,"document.json")));
+        // 资源全部保存成功后才写新的 state；失败仍可从历史取得原始输入。
+        DocumentImporter.copyTree(output,dir(id));
+        JSONObject result=normalize(id,input.optString("title"),ir);
+        result.put("mode","real-ocr").put("input",input.getString("input")).put("original",input.optString("original"));
+        if(input.has("rawInput")) result.put("rawInput",input.getString("rawInput"));
+        if(input.has("derivedFrom")) result.put("derivedFrom",input.getString("derivedFrom"));
+        if(input.has("recognition")) result.put("recognition",input.getJSONObject("recognition"));
+        for(int i=0;i<result.getJSONArray("pages").length();i++) result.getJSONArray("pages").getJSONObject(i).put("source",input.optString("original")).put("route","PP-DocLayoutV3 → OvisOCR2 → DocumentIR");
+        JSONArray blocks=result.getJSONArray("blocks");boolean partial=ir.optString("status").equals("partial");
+        for(int i=0;i<blocks.length();i++) if(!blocks.getJSONObject(i).optString("sourceStatus","ok").equals("ok")) partial=true;
+        boolean emptyPage=blocks.length()==0;
+        JSONArray originalPages=ir.getJSONArray("pages");
+        for(int i=0;i<originalPages.length();i++) {
+            JSONObject page=originalPages.getJSONObject(i),evidence=page.optJSONObject("reading_order_evidence");
+            emptyPage &= ir.optString("status").equals("blank")||page.optString("status").equals("blank")||evidence!=null&&evidence.optString("reason").equals("empty_page");
+        }
+        String outcome=emptyPage?"blank":partial?"partial":"succeeded";
+        result.put("recognitionOutcome",outcome);
+        if(outcome.equals("partial")) result.put("notice","部分区域未完整识别，可用内容已保存；请对照原图核验标示区域。");
+        save(result);return result;
     }
     JSONObject sample(String sample)throws Exception{
         if(!sample.equals("odb-13")&&!sample.equals("odb-09"))throw new IOException("未知样本");String id=create();copyAssets("fixtures/"+sample,dir(id));JSONObject doc=normalize(id,sample.equals("odb-13")?"中文 · 表格 · 四张插图":"公式 · 图片",new JSONObject(FilesUtil.read(new File(dir(id),"document.json"))));for(File f:dir(id).listFiles())if(f.getName().startsWith("source."))doc.put("original",url(id,f.getName()));save(doc);return doc;
@@ -62,7 +93,7 @@ public final class DocumentStore {
     String markdown(JSONObject doc,boolean partial)throws Exception{StringBuilder md=new StringBuilder();JSONObject edits=doc.optJSONObject("edits");JSONArray blocks=doc.getJSONArray("blocks");int count=partial?doc.optInt("progress",0):blocks.length();for(int i=0;i<count;i++){JSONObject b=blocks.getJSONObject(i);md.append(edits!=null?edits.optString(b.getString("id"),b.getString("markdown")):b.getString("markdown")).append("\n\n");}return md.toString();}
     File export(String id,String format)throws Exception{JSONObject doc=load(id);File outdir=new File(context.getCacheDir(),"exports");outdir.mkdirs();boolean partial=doc.optInt("progress")<doc.getJSONArray("blocks").length();String md=markdown(doc,partial);
         if(format.equals("txt")||format.equals("md")){File f=new File(outdir,id+(format.equals("txt")?".txt":".md"));FilesUtil.write(f,format.equals("txt")?md.replaceAll("(?m)^#{1,6}\\s+","").replaceAll("!\\[([^]]*)]\\([^)]+\\)","[图片：$1]").replaceAll("<[^>]*>"," "):md);return f;}
-        File f=new File(outdir,id+".zip");try(ZipOutputStream zip=new ZipOutputStream(new FileOutputStream(f))){put(zip,"document.md",md.getBytes(java.nio.charset.StandardCharsets.UTF_8));put(zip,"app-state.json",portable(doc).toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));put(zip,"document.json",exportIR(doc).toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));JSONObject assets=doc.getJSONObject("assets");for(Iterator<String> it=assets.keys();it.hasNext();){String path=it.next();File asset=FilesUtil.child(dir(id),path);if(asset.isFile())putFile(zip,path,asset);}for(File originalImage:dir(id).listFiles())if(originalImage.getName().startsWith("source."))putFile(zip,originalImage.getName(),originalImage);}return f;
+        File f=new File(outdir,id+".zip");try(ZipOutputStream zip=new ZipOutputStream(new FileOutputStream(f))){put(zip,"document.md",md.getBytes(java.nio.charset.StandardCharsets.UTF_8));put(zip,"app-state.json",portable(doc).toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));put(zip,"document.json",exportIR(doc).toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));File raw=new File(dir(id),"document.json");if(raw.isFile())putFile(zip,"original-document.json",raw);File manifest=new File(dir(id),"run-manifest.json");if(manifest.isFile())putFile(zip,"run-manifest.json",manifest);zipAssets(zip,dir(id),new File(dir(id),"assets"));for(File originalImage:dir(id).listFiles())if(originalImage.getName().startsWith("source."))putFile(zip,originalImage.getName(),originalImage);}return f;
     }
     JSONObject portable(JSONObject doc)throws Exception{
         JSONObject copy=new JSONObject(doc.toString());copy.put("appExport",1);
@@ -78,7 +109,7 @@ public final class DocumentStore {
         JSONObject assets=state.getJSONObject("assets");for(Iterator<String> it=assets.keys();it.hasNext();){String path=it.next();File f=FilesUtil.child(dir(id),path);JSONObject a=assets.getJSONObject(path);a.put("src",url(id,path));a.put("missing",!f.isFile());}
         String source=state.optString("original");if(!source.isEmpty()){FilesUtil.child(dir(id),source);state.put("original",url(id,source));}
         JSONArray pages=state.optJSONArray("pages");if(pages!=null)for(int i=0;i<pages.length();i++){JSONObject p=pages.getJSONObject(i);if(p.has("source")){String path=p.getString("source");FilesUtil.child(dir(id),path);p.put("source",url(id,path));}}
-        state.put("id",id);state.put("mode","json-replay");state.put("progress",0);state.put("status","ready");state.remove("anchor");return state;
+        state.remove("input");state.remove("recognition");state.put("id",id);state.put("mode","json-replay");state.put("progress",0);state.put("status","ready");state.remove("anchor");return state;
     }
     static void putFile(ZipOutputStream zip,String path,File file)throws Exception{zip.putNextEntry(new ZipEntry(path));try(InputStream in=new FileInputStream(file)){FilesUtil.copy(in,zip,Long.MAX_VALUE);}zip.closeEntry();}
     JSONObject toIR(JSONObject doc)throws Exception{

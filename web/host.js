@@ -12,8 +12,8 @@ const safePath=p=>p&&!p.startsWith('/')&&!p.includes('\\')&&!p.split('/').includ
 function normalize(ir,files,title){
  if(!ir.pages?.length)throw Error('JSON 缺少 DocumentIR pages');const assets={};
  for(const r of ir.resources||[]){if(!safePath(r.path))throw Error('无效资源路径');assets[r.path]={src:files[r.path]||'',width:r.width||400,height:r.height||240,missing:!files[r.path]};}
- const blocks=[];for(const [p,page] of ir.pages.entries()){const byId=Object.fromEntries((page.blocks||[]).map(b=>[b.id,b]));for(const id of page.reading_order||Object.keys(byId)){const b=byId[id];if(!b?.content)continue;const c=b.content;blocks.push({id:`${page.page_id||p}-${id}`,type:b.type,page:p+1,markdown:b.type==='image'?`![插图](${c.resource})`:c.format==='latex'?`$$\n${c.text}\n$$`:c.text||'',sourceStatus:b.status||'ok',resource:c.resource,format:c.format});}}
- if(blocks.length>10000)throw Error('区域超过 10000');return {id:crypto.randomUUID(),title,mode:'json-replay',status:'ready',progress:0,blocks,assets,pendingAnalysis:blocks.filter(b=>b.sourceStatus==='pending-layout').length,pendingOcr:blocks.filter(b=>b.sourceStatus==='pending-ocr').length,pages:ir.pages.map((p,i)=>({number:i+1,title:p.title,kind:p.kind,route:'JSON 结果回放'})),updatedAt:Date.now()};
+ const blocks=[];for(const [p,page] of ir.pages.entries()){const byId=Object.fromEntries((page.blocks||[]).map(b=>[b.id,b]));for(const id of page.reading_order||Object.keys(byId)){const b=byId[id];if(!b)continue;const c=b.content||{text:'> 此区域未完成识别，请对照原图校对。',format:'markdown'};blocks.push({id:`${page.page_id||p}-${id}`,type:b.type,page:p+1,markdown:b.type==='image'?`![插图](${c.resource})`:c.format==='latex'?`$$\n${c.text}\n$$`:c.text||'',sourceStatus:b.status||'ok',resource:c.resource,format:c.format});}}
+ if(blocks.length>10000)throw Error('区域超过 10000');return {originalIR:ir,id:crypto.randomUUID(),title,mode:'json-replay',status:'ready',progress:0,blocks,assets,pendingAnalysis:blocks.filter(b=>b.sourceStatus==='pending-layout').length,pendingOcr:blocks.filter(b=>b.sourceStatus==='pending-ocr').length,pages:ir.pages.map((p,i)=>({number:i+1,title:p.title,kind:p.kind,route:'JSON 结果回放'})),updatedAt:Date.now()};
 }
 async function imported(f){
  if(f.size>256*1024*1024)throw Error('文件超过 256 MB');let doc;
@@ -25,7 +25,7 @@ async function imported(f){
   const snapshot=files[prefix+'app-state.json'];if(snapshot){const state=JSON.parse(strFromU8(snapshot));if(state.appExport!==1)throw Error('不支持的应用文档版本');doc.blocks=state.blocks;doc.edits=state.edits;doc.pendingOcr=state.pendingOcr||0;doc.pendingAnalysis=state.pendingAnalysis||0;doc.pdfClassification=state.pdfClassification;doc.notice=state.notice;doc.title=state.title;doc.pages=(state.pages||[]).map(p=>({...p,source:mapped[p.source]}));doc.original=mapped[state.original];}
   doc.original ||= mapped[Object.keys(mapped).find(k=>k.startsWith('source.'))];
  }else if(/\.json$/i.test(f.name))doc=normalize(JSON.parse(await f.text()),{},f.name);
- else if(f.type.startsWith('image/')){const src=await dataURL(f),size=await dimensions(src);doc={id:crypto.randomUUID(),title:f.name,mode:'pending-ocr',status:'ready',progress:0,blocks:[{id:'image',type:'image',markdown:'![原图](assets/input.png)',resource:'assets/input.png',sourceStatus:'ok'}],assets:{'assets/input.png':{src,...size}},original:src,pages:[],notice:'图片已导入；真实 OCR 尚未接入。',updatedAt:Date.now()};}
+ else if(f.type.startsWith('image/')){const src=await dataURL(f),size=await dimensions(src);doc={id:crypto.randomUUID(),title:f.name,mode:'pending-ocr',recognition:{state:'waiting',message:'浏览器只预览输入；请在 APK 内执行本地识别'},status:'ready',progress:0,blocks:[{id:'image',type:'image',markdown:'![原图](assets/input.png)',resource:'assets/input.png',sourceStatus:'ok'}],assets:{'assets/input.png':{src,...size}},original:src,pages:[],notice:'浏览器已保存输入；真实识别请使用 arm64 APK。',updatedAt:Date.now()};}
  else throw Error('浏览器预览支持图片、JSON 和 ZIP；PDF / Office 请在 APK 中导入。');
  await database('put',doc);return doc;
 }
@@ -35,10 +35,19 @@ function toIR(d){
  for(const b of d.blocks){const number=b.page||1;if(!pages.has(number))pages.set(number,{page_id:`p${number}`,blocks:[],reading_order:[]});const page=pages.get(number);page.reading_order.push(b.id);page.blocks.push({id:b.id,type:b.type,status:b.sourceStatus,content:{format:b.format||'markdown',text:b.markdown,resource:b.resource||b.markdown.match(/!\[[^\]]*\]\(([^)]+)\)/)?.[1]||''}});}
  return {schema_version:'app-replay-1',pages:[...pages.values()],resources:Object.entries(d.assets).map(([path,a])=>({path,width:a.width,height:a.height}))};
 }
+function exportIR(d){
+ if(!d.originalIR)return toIR(d);const ir=structuredClone(d.originalIR);
+ if(d.orderEdited)for(const [i,p] of ir.pages.entries()){
+  const ids=new Set((p.blocks||[]).map(b=>b.id)),prefix=(p.page_id||i)+'-';
+  const order=d.blocks.filter(b=>(b.page||1)===i+1).map(b=>ids.has(b.id)?b.id:b.id.slice(prefix.length));
+  p.reading_order=[...new Set([...order,...(p.reading_order||[])])];
+ }
+ return ir;
+}
 async function exportDoc(d,format){
  const md=d.blocks.slice(0,d.progress).map(b=>d.edits?.[b.id]??b.markdown).join('\n\n');let blob;
  if(format==='zip'){
-  const portable=structuredClone(d),files={'document.json':strToU8(JSON.stringify(toIR(d),null,2)),'document.md':strToU8(md)};portable.appExport=1;
+  const portable=structuredClone(d),files={'document.json':strToU8(JSON.stringify(exportIR(d),null,2)),'document.md':strToU8(md)};portable.appExport=1;if(d.originalIR)files['original-document.json']=strToU8(JSON.stringify(d.originalIR,null,2));
   for(const [path,a]of Object.entries(portable.assets)){if(!safePath(path))throw Error('无效资源路径');if(a.src){files[path]=new Uint8Array(await(await fetch(a.src)).arrayBuffer());a.src=path;}}
   if(d.original){files['source.png']=new Uint8Array(await(await fetch(d.original)).arrayBuffer());portable.original='source.png';}
   files['app-state.json']=strToU8(JSON.stringify(portable));blob=new Blob([zipSync(files)],{type:'application/zip'});

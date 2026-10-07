@@ -1,0 +1,20 @@
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dr/project/docprase/build/linux-current
+[  8%] Building CXX object CMakeFiles/dococr_core.dir/src/core.cpp.o
+[  8%] Building CXX object CMakeFiles/dococr_core.dir/src/config.cpp.o
+[ 12%] Building CXX object CMakeFiles/dococr_core.dir/src/sha256.cpp.o
+[ 16%] Building CXX object CMakeFiles/dococr_core.dir/src/region_recognition.cpp.o
+[ 20%] Building CXX object CMakeFiles/dococr_core.dir/src/label_export_policy.cpp.o
+[ 24%] Building CXX object CMakeFiles/dococr_core.dir/src/pdf_job.cpp.o
+[ 28%] Linking CXX static library libdococr_core.a
+[ 64%] Built target dococr_core
+[ 68%] Building CXX object CMakeFiles/dococr_c.dir/src/layout_mnn_backend.cpp.o
+[ 72%] Building CXX object CMakeFiles/dococr_c.dir/src/abi.cpp.o
+[ 76%] Building CXX object CMakeFiles/dococr_c.dir/src/printed_page_mnn_backend.cpp.o
+[ 80%] Linking CXX shared library libdococr_c.so
+[ 84%] Built target dococr_c
+[ 88%] Building CXX object CMakeFiles/dococr_cli.dir/src/schema_validator.cpp.o
+[ 92%] Building CXX object CMakeFiles/dococr_cli.dir/src/reexport.cpp.o
+[ 96%] Linking CXX executable dococr_cli
+[100%] Built target dococr_cli

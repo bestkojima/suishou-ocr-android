@@ -1,0 +1,13 @@
+Test project /home/dr/project/docprase/build/linux-current
+    Start  1: contract
+1/4 Test  #1: contract .........................   Passed    0.61 sec
+    Start 31: printed_page_cancel
+2/4 Test #31: printed_page_cancel ..............   Passed    0.99 sec
+    Start 32: job_control
+3/4 Test #32: job_control ......................   Passed    4.76 sec
+    Start 33: cli_job_control
+4/4 Test #33: cli_job_control ..................   Passed    1.88 sec
+
+100% tests passed out of 4
+
+Total Test time (real) =   8.30 sec

@@ -12,7 +12,7 @@ import java.util.*;
 import java.util.concurrent.*;
 
 public final class DownloadService extends Service {
-    static volatile boolean active=false,pause=false;
+    static volatile boolean active=false,reserved=false,pause=false;
     static volatile JSONObject activity=new JSONObject();
     static volatile HttpURLConnection connection;
     final ExecutorService executor=Executors.newSingleThreadExecutor();
@@ -25,7 +25,7 @@ public final class DownloadService extends Service {
         if("pause".equals(i.getAction())){requestPause();if(!active)stopSelf();return START_NOT_STICKY;}
         if(active)return START_NOT_STICKY;
         getSystemService(NotificationManager.class).createNotificationChannel(new NotificationChannel("models","模型下载",NotificationManager.IMPORTANCE_LOW));
-        startForeground(11,notification("准备下载"));active=true;pause=false;repo=i.getStringExtra("repo");stage("preparing","","正在准备已选文件",0,0);
+        startForeground(11,notification("准备下载"));active=true;reserved=false;pause=false;repo=i.getStringExtra("repo");stage("preparing","","正在准备已选文件",0,0);
         String paths=i.getStringExtra("paths");executor.execute(()->run(paths,startId));return START_NOT_STICKY;
     }
     Notification notification(String text){Intent open=new Intent(this,MainActivity.class);PendingIntent pi=PendingIntent.getActivity(this,0,open,PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);PendingIntent stop=PendingIntent.getService(this,1,new Intent(this,DownloadService.class).setAction("pause"),PendingIntent.FLAG_IMMUTABLE);return new Notification.Builder(this,"models").setSmallIcon(android.R.drawable.stat_sys_download).setContentTitle("随手识别 · 模型下载").setContentText(text).setContentIntent(pi).setOngoing(true).addAction(new Notification.Action.Builder(null,"暂停",stop).build()).build();}

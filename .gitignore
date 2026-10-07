@@ -6,3 +6,5 @@ local.properties
 web/dist/
 app/src/main/assets/web/
 app/src/main/assets/fixtures/
+
+**/.cxx/

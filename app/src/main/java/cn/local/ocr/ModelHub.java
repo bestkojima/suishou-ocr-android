@@ -60,10 +60,21 @@ public final class ModelHub {
     static synchronized void save(Context c,JSONArray tasks)throws Exception{FilesUtil.write(new File(root(c),"state.json"),tasks.toString());}
     static synchronized JSONArray repos(Context c)throws Exception{LinkedHashSet<String> all=new LinkedHashSet<>(Arrays.asList(REPOS));JSONArray saved=new JSONArray(c.getSharedPreferences("models",0).getString("repos","[]"));for(int i=0;i<saved.length();i++)all.add(saved.getString(i));JSONArray tasks=state(c);for(int i=0;i<tasks.length();i++)all.add(tasks.getJSONObject(i).getString("repo"));return new JSONArray(all);}
     static synchronized JSONArray addRepo(Context c,String input)throws Exception{String repo=normalizeRepo(input);JSONArray all=repos(c);boolean found=false;for(int i=0;i<all.length();i++)if(all.getString(i).equals(repo))found=true;if(!found)all.put(repo);c.getSharedPreferences("models",0).edit().putString("repos",all.toString()).apply();return all;}
-    static synchronized JSONArray forgetRepo(Context c,String input)throws Exception{String repo=normalizeRepo(input);if(Arrays.asList(REPOS).contains(repo))throw new IOException("默认仓库保留入口");if(DownloadService.active)throw new IOException("请先暂停下载");JSONArray tasks=state(c);for(int i=0;i<tasks.length();i++)if(tasks.getJSONObject(i).getString("repo").equals(repo))throw new IOException("请先删除此仓库的下载文件");JSONArray all=repos(c),out=new JSONArray();for(int i=0;i<all.length();i++)if(!all.getString(i).equals(repo))out.put(all.get(i));c.getSharedPreferences("models",0).edit().putString("repos",out.toString()).apply();return out;}
+    static synchronized JSONArray forgetRepo(Context c,String input)throws Exception{String repo=normalizeRepo(input);if(Arrays.asList(REPOS).contains(repo))throw new IOException("默认仓库保留入口");if(DownloadService.active||DownloadService.reserved)throw new IOException("请先暂停下载");JSONArray tasks=state(c);for(int i=0;i<tasks.length();i++)if(tasks.getJSONObject(i).getString("repo").equals(repo))throw new IOException("请先删除此仓库的下载文件");JSONArray all=repos(c),out=new JSONArray();for(int i=0;i<all.length();i++)if(!all.getString(i).equals(repo))out.put(all.get(i));c.getSharedPreferences("models",0).edit().putString("repos",out.toString()).apply();return out;}
+    static JSONObject verifyRequired(File root,JSONArray required)throws Exception {
+        JSONArray problems=new JSONArray();
+        for(int i=0;i<required.length();i++) {
+            JSONObject expected=required.getJSONObject(i);File actual=file(root,expected);
+            String reason=!actual.isFile()?"缺少文件":actual.length()!=expected.getLong("size")?"文件大小不符":
+                !FilesUtil.sha(actual).equals(expected.getString("sha256"))?"SHA-256 不符":"";
+            if(!reason.isEmpty()) problems.put(FilesUtil.obj("path",expected.getString("path"),"reason",reason));
+        }
+        return FilesUtil.obj("state",problems.length()==0?"files-ready":"missing-models","problems",problems,
+            "message",problems.length()==0?"模型文件校验通过，尚未加载引擎":"识别模型未就绪："+problems);
+    }
     static synchronized JSONObject summary(Context c)throws Exception{
         JSONArray tasks=state(c);if(!DownloadService.active)for(int i=0;i<tasks.length();i++){JSONObject f=tasks.getJSONObject(i);if(Arrays.asList("queued","downloading","verifying").contains(f.optString("status"))){f.put("status","paused");f.put("error","任务已停止，可继续下载");}}
         return FilesUtil.obj("tasks",tasks,"repos",repos(c),"running",DownloadService.active,"activity",DownloadService.activity,"freeBytes",root(c).getUsableSpace());
     }
-    static synchronized void remove(Context c,String repo)throws Exception{checkRepo(repo);if(DownloadService.active)throw new IOException("请先暂停下载");FilesUtil.remove(FilesUtil.child(root(c),repo));JSONArray all=state(c),out=new JSONArray();for(int i=0;i<all.length();i++)if(!all.getJSONObject(i).getString("repo").equals(repo))out.put(all.get(i));save(c,out);}
+    static synchronized void remove(Context c,String repo)throws Exception{checkRepo(repo);if(DownloadService.active||DownloadService.reserved)throw new IOException("请先暂停下载");FilesUtil.remove(FilesUtil.child(root(c),repo));JSONArray all=state(c),out=new JSONArray();for(int i=0;i<all.length();i++)if(!all.getJSONObject(i).getString("repo").equals(repo))out.put(all.get(i));save(c,out);}
 }

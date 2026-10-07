@@ -32,7 +32,24 @@ public final class DocumentImporter {
             int candidates=doc.has("ocrCandidates")?doc.getJSONArray("ocrCandidates").length():0;doc.put("pendingOcr",candidates);
             doc.put("notice","已直接提取文档内容"+(candidates>0?"；"+candidates+" 张图片已保留，图片文字待 OCR":"")+"。复杂版式、图表和 SmartArt 不保证还原。");
         }
-        else {BitmapFactory.Options bounds=new BitmapFactory.Options();bounds.inJustDecodeBounds=true;BitmapFactory.decodeFile(file.getPath(),bounds);if(bounds.outWidth<=0)throw new IOException("无法读取此文件。支持图片、PDF、Word、Excel、PPT、DocumentIR JSON/ZIP。");String path="assets/source."+ext;File dest=FilesUtil.child(dir,path);dest.getParentFile().mkdirs();java.nio.file.Files.copy(file.toPath(),dest.toPath(),java.nio.file.StandardCopyOption.REPLACE_EXISTING);int width=bounds.outWidth,height=bounds.outHeight;try{int orientation=new android.media.ExifInterface(file.getPath()).getAttributeInt(android.media.ExifInterface.TAG_ORIENTATION,1);if(orientation>=5&&orientation<=8){width=bounds.outHeight;height=bounds.outWidth;}}catch(IOException ignored){}doc.put("original",store.url(id,path));resource(doc,path,width,height);add(doc,"image","![原图]("+path+")",1);doc.put("mode","pending-ocr");doc.put("notice","图片已导入；真实 OCR 尚未接入。可在首页打开 JSON 示例验证流式识别。");}
+        else {
+            BitmapFactory.Options bounds=new BitmapFactory.Options();bounds.inJustDecodeBounds=true;BitmapFactory.decodeFile(file.getPath(),bounds);
+            if(bounds.outWidth<=0)throw new IOException("无法读取此文件。支持图片、PDF、Word、Excel、PPT、DocumentIR JSON/ZIP。");
+            // 原始文件已在私有目录保存；方向转换失败也保留待识别输入。
+            doc.put("mode","pending-ocr");doc.put("rawInput",file.getName());doc.put("input","source.png");
+            doc.put("recognition",FilesUtil.obj("state","waiting","message","输入已保存，可开始识别"));
+            store.save(doc);
+            String path="source.png";File dest=FilesUtil.child(dir,path);
+            try {
+                int[] size=ImageInput.normalize(file,dest);
+                doc.put("input",path);doc.put("original",store.url(id,path));resource(doc,path,size[0],size[1]);
+                doc.getJSONArray("pages").put(FilesUtil.obj("number",1,"source",store.url(id,path),"width",size[0],"height",size[1],"route","单图本地识别"));
+            } catch(Exception e) {
+                doc.put("recognition",FilesUtil.obj("state","failed","message",e.getMessage()+"；原始输入已保留"));
+                store.save(doc);return doc;
+            }
+            store.save(doc);return doc;
+        }
         if(doc.getJSONArray("blocks").length()==0)throw new IOException("没有提取到内容；此文档需要真实 OCR 或更完整的格式解析器。");store.save(doc);return doc;
     }
     void add(JSONObject doc,String type,String text,int page)throws Exception{JSONArray bs=doc.getJSONArray("blocks");bs.put(FilesUtil.obj("id","p"+page+"-b"+(bs.length()+1),"page",page,"type",type,"markdown",text,"format",type.equals("table")?"html":"markdown","sourceStatus","ok","resource",type.equals("image")?text.substring(text.indexOf("(")+1,text.lastIndexOf(")")):""));}

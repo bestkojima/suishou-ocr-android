@@ -1,0 +1,1 @@
+既有 Linux 真实 partial 样本；来源与工件身份见 provenance.json。本轮新输入输出位于 output/；本轮重复推理位于 repeated/，不以此样本替代新验证。
