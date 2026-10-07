@@ -1,0 +1,19 @@
+PASS 启动回复迟到时，切换文档后保持当前页面，原作业可从历史重开
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.isDisabled: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: '正在启动', exact: true })[22m
+
+    at /home/dr/project/android_ocr/web/verify-recognition-navigation.mjs:61:66
+    at async check (/home/dr/project/android_ocr/web/verify-recognition-navigation.mjs:40:31)
+    at async file:///home/dr/project/android_ocr/web/verify-recognition-navigation.mjs:55:2 {
+  log: [
+    "  - waiting for getByRole('button', { name: '正在启动', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

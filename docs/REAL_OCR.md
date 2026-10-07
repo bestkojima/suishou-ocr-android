@@ -37,6 +37,8 @@ python3 tools/verify_ocr_apk.py
 
 状态转换及实际阶段／区域进度变化时递增 `sequence`；进程退出后的恢复终态使用高于已保存状态的序号并落盘，后续查询保持该序号。前端忽略同作业的重复或较低序号，在 React 状态提交及异步结果读取返回时再次核对归属和序号，避免连续到达的乱序事件覆盖较新状态。ticket2 补充验证见 [验收记录](../verification/ticket2/DELIVERY.md)。
 
+启动识别请求记录发起时的文档和导航次数；回复到达时，只有仍在该次打开的页面才应用返回文档或显示错误。返回首页、切换文档或重开同一文档之后，旧启动回复不会打开旧页面或覆盖恢复的新进度，已启动的原生作业继续运行。启动等待期间禁用该文档的重复提交，取消请求的迟到错误也按导航归属处理。ticket4 补充证据见 [交付记录](../verification/ticket4/DELIVERY.md)。
+
 状态为 `waiting`、`preparing`、`missing-models`、`recognizing`、`saving`、`cancelling`、`succeeded`、`partial`、`blank`、`failed`、`cancelled`。推理期间返回首页只暂停展示；不会取消识别。进程退出不继续推理；重开时，未提交结果的遗留运行状态转为可重试失败，已提交的真实结果恢复保存的成功／partial／空白终态。安全清理失败时保持作业占用并提示重启，避免复用尚存活的资源。
 
 ## 结果与校对
@@ -56,11 +58,14 @@ node web/verify-models.mjs
 node web/verify-reorder.mjs
 node web/verify-editor-drag.mjs
 node web/verify-recognition.mjs
+node web/verify-recognition-navigation.mjs
 python3 tools/verify_real_ocr.py
 python3 tools/package_real_preview.py
 node web/verify-real-results.mjs
 ```
 
 最后三个脚本依赖本轮 Linux 引擎/模型和实际输出。`verify_real_ocr.py` 执行公共生产 C ABI 的真实取消、BUSY、同引擎恢复和重复/空白输入；界面测试用实际输出 ZIP。控制器 JVM 补充检查使用固定内部状态，断言公开取消／查询结果和持久化终态；不代表 AndroidHost 自动流程或 native 清理时序已在设备执行。partial 预览明确使用既有 Linux 真实样本和 provenance，不把历史样本当作本轮新推理。
+
+桌面生命周期证据可用 `python3 tools/verify_real_ocr.py --output verification/ticket4/desktop` 独立保存，保留此前交付输出。导航专项仅替换 AndroidHost 宿主，通过公开请求／事件和界面操作验证迟到回复；JVM 的失败后重试使用不可用模型资源场景，不执行 JNI。
 
 没有连接 Android 设备，因此实际 APK 加载、首图/重复推理、相机方向、内存/耗时、导航/取消及系统进程退出后的重试等仍待实机验收；本轮 CPU 桌面内存与耗时不代表设备性能。

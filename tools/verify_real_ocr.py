@@ -1,6 +1,8 @@
 """Linux 生产 C ABI 证据：单作业、实际取消、恢复后 partial；不代表设备推理。"""
 import ctypes as c
+import argparse
 import json
+import shutil
 import time
 import threading
 import resource
@@ -9,7 +11,12 @@ from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
 ENGINE=ROOT.parent/'docprase'
-OUT=ROOT/'verification/real-ocr'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output',type=Path,default=ROOT/'verification/real-ocr',help='独立的桌面生命周期证据目录')
+OUT=parser.parse_args().output.resolve()
+OUT.mkdir(parents=True,exist_ok=True)
+source=ROOT/'verification/real-ocr/source.png'
+if OUT/'source.png'!=source:shutil.copyfile(source,OUT/'source.png')
 class View(c.Structure):
     _fields_=[('data',c.c_char_p),('size',c.c_size_t)]
 class Bytes(c.Structure):

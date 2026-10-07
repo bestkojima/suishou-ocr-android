@@ -1,0 +1,38 @@
+{
+  "tools/verify_real_ocr.py": {
+    "bytes": 6371,
+    "sha256": "c987ae3590f0699b0f667b4ce270b5e66b2b22b7ddab08c172e419cd4dbd0ef4"
+  },
+  "verification/ticket4/desktop/source.png": {
+    "bytes": 75711,
+    "sha256": "c71ed55fd66f249cc6f2435f7986961e1065a804aee57665e48858455143a46d"
+  },
+  "verification/ticket4/desktop/partial-source.png": {
+    "bytes": 562890,
+    "sha256": "ce9617313c482b6f965db9fff1b4864d6d25c0e25527344d4603ccec9ece632a"
+  },
+  "verification/ticket4/desktop/lifecycle-config.json": {
+    "bytes": 3386,
+    "sha256": "6e5640b6c514e3067e5e5fb6fdab8425adf4496c11ddb4bb5cf671d4427d86bb"
+  },
+  "verification/ticket4/desktop/repeated/document.json": {
+    "bytes": 150296,
+    "sha256": "641226495796720824ec940ad96f3f6a451796a8ba3e264f30b1a9351a6c0912"
+  },
+  "verification/ticket4/desktop/repeated/document.md": {
+    "bytes": 853,
+    "sha256": "333149f9de3139b32fe7f4b047ec996a9e938529a11ad3c0f033bdaed3187dd2"
+  },
+  "verification/ticket4/desktop/repeated/run-manifest.json": {
+    "bytes": 13827,
+    "sha256": "9ab01d01e994839c76516ba15bbcaba36fcf3bdf3fd55e1f988763a51c745f62"
+  },
+  "verification/ticket4/desktop/blank/document.json": {
+    "bytes": 113819,
+    "sha256": "867711f22d6654f60ef2a9758f9346149cdd18b1865c3dd5fc1bd9e2cbe4b190"
+  },
+  "/home/dr/project/docprase/build/linux-current/libdococr_c.so": {
+    "bytes": 1769032,
+    "sha256": "473869c99271d03a036c572f0dc695864c985f11c9d8fee9afc35a61899c34fa"
+  }
+}
