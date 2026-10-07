@@ -1,6 +1,9 @@
-> Task :app:bundleWeb UP-TO-DATE
-> Task :app:preBuild UP-TO-DATE
-> Task :app:preUserDebugBuild UP-TO-DATE
+
+> Task :app:bundleWeb
+Built browser preview and Android offline assets
+
+> Task :app:preBuild
+> Task :app:preUserDebugBuild
 > Task :app:generateUserDebugBuildConfig UP-TO-DATE
 > Task :app:javaPreCompileUserDebug UP-TO-DATE
 > Task :app:checkUserDebugAarMetadata UP-TO-DATE
@@ -19,13 +22,13 @@
 > Task :app:compileUserDebugJavaWithJavac UP-TO-DATE
 > Task :app:bundleUserDebugClassesToRuntimeJar UP-TO-DATE
 > Task :app:bundleUserDebugClassesToCompileJar UP-TO-DATE
-> Task :app:preUserDebugUnitTestBuild UP-TO-DATE
+> Task :app:preUserDebugUnitTestBuild
 > Task :app:javaPreCompileUserDebugUnitTest UP-TO-DATE
 > Task :app:compileUserDebugUnitTestJavaWithJavac UP-TO-DATE
 > Task :app:processUserDebugJavaRes NO-SOURCE
 > Task :app:processUserDebugUnitTestJavaRes UP-TO-DATE
-> Task :app:testUserDebugUnitTest
-> Task :app:preLabDebugBuild UP-TO-DATE
+> Task :app:testUserDebugUnitTest UP-TO-DATE
+> Task :app:preLabDebugBuild
 > Task :app:generateLabDebugBuildConfig UP-TO-DATE
 > Task :app:javaPreCompileLabDebug UP-TO-DATE
 > Task :app:checkLabDebugAarMetadata UP-TO-DATE
@@ -44,12 +47,12 @@
 > Task :app:compileLabDebugJavaWithJavac UP-TO-DATE
 > Task :app:bundleLabDebugClassesToRuntimeJar UP-TO-DATE
 > Task :app:bundleLabDebugClassesToCompileJar UP-TO-DATE
-> Task :app:preLabDebugUnitTestBuild UP-TO-DATE
+> Task :app:preLabDebugUnitTestBuild
 > Task :app:javaPreCompileLabDebugUnitTest UP-TO-DATE
-> Task :app:compileLabDebugUnitTestJavaWithJavac
+> Task :app:compileLabDebugUnitTestJavaWithJavac UP-TO-DATE
 > Task :app:processLabDebugJavaRes NO-SOURCE
 > Task :app:processLabDebugUnitTestJavaRes UP-TO-DATE
-> Task :app:testLabDebugUnitTest
+> Task :app:testLabDebugUnitTest UP-TO-DATE
 > Task :app:mergeUserDebugNativeDebugMetadata NO-SOURCE
 > Task :app:mergeUserDebugShaders UP-TO-DATE
 > Task :app:compileUserDebugShaders NO-SOURCE
@@ -58,12 +61,12 @@
 > Task :app:checkUserDebugDuplicateClasses UP-TO-DATE
 > Task :app:desugarUserDebugFileDependencies UP-TO-DATE
 > Task :app:mergeExtDexUserDebug UP-TO-DATE
-> Task :app:compressUserDebugAssets
 > Task :app:mergeLibDexUserDebug UP-TO-DATE
 > Task :app:dexBuilderUserDebug UP-TO-DATE
 > Task :app:mergeProjectDexUserDebug UP-TO-DATE
 > Task :app:mergeUserDebugGlobalSynthetics UP-TO-DATE
 > Task :app:mergeUserDebugJavaResource UP-TO-DATE
+> Task :app:compressUserDebugAssets
 > Task :app:configureCMakeDebug[arm64-v8a]
 > Task :app:buildCMakeDebug[arm64-v8a][dococr_jni]
 > Task :app:mergeUserDebugJniLibFolders UP-TO-DATE
@@ -77,12 +80,9 @@
 > Task :app:compileLabDebugShaders NO-SOURCE
 > Task :app:generateLabDebugAssets UP-TO-DATE
 > Task :app:mergeLabDebugAssets
-> Task :app:packageUserDebug
-> Task :app:createUserDebugApkListingFileRedirect UP-TO-DATE
-> Task :app:assembleUserDebug
+> Task :app:compressLabDebugAssets
 > Task :app:checkLabDebugDuplicateClasses UP-TO-DATE
 > Task :app:desugarLabDebugFileDependencies UP-TO-DATE
-> Task :app:compressLabDebugAssets
 > Task :app:mergeExtDexLabDebug UP-TO-DATE
 > Task :app:dexBuilderLabDebug UP-TO-DATE
 > Task :app:mergeLabDebugGlobalSynthetics UP-TO-DATE
@@ -95,36 +95,33 @@
 > Task :app:validateSigningLabDebug UP-TO-DATE
 > Task :app:writeLabDebugAppMetadata UP-TO-DATE
 > Task :app:writeLabDebugSigningConfigVersions UP-TO-DATE
+> Task :app:packageUserDebug
+> Task :app:createUserDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleUserDebug
 > Task :app:preUserDebugAndroidTestBuild SKIPPED
 > Task :app:generateUserDebugAndroidTestResValues UP-TO-DATE
-> Task :app:generateUserDebugAndroidTestLintModel
+> Task :app:generateUserDebugAndroidTestLintModel UP-TO-DATE
 > Task :app:extractProguardFiles UP-TO-DATE
-> Task :app:generateUserDebugLintReportModel
-> Task :app:generateUserDebugUnitTestLintModel
 > Task :app:packageLabDebug
 > Task :app:createLabDebugApkListingFileRedirect UP-TO-DATE
 > Task :app:assembleLabDebug
-> Task :app:lintAnalyzeUserDebugAndroidTest
-> Task :app:lintAnalyzeUserDebugUnitTest
+> Task :app:generateUserDebugLintReportModel
+> Task :app:generateUserDebugUnitTestLintModel UP-TO-DATE
+> Task :app:lintAnalyzeUserDebugAndroidTest UP-TO-DATE
+> Task :app:lintAnalyzeUserDebugUnitTest UP-TO-DATE
 > Task :app:preLabDebugAndroidTestBuild SKIPPED
-> Task :app:generateLabDebugAndroidTestResValues
-> Task :app:generateLabDebugAndroidTestLintModel
+> Task :app:generateLabDebugAndroidTestResValues UP-TO-DATE
+> Task :app:generateLabDebugAndroidTestLintModel UP-TO-DATE
 > Task :app:generateLabDebugLintReportModel
-> Task :app:generateLabDebugUnitTestLintModel
+> Task :app:generateLabDebugUnitTestLintModel UP-TO-DATE
 > Task :app:lintAnalyzeUserDebug
-> Task :app:lintAnalyzeLabDebug
-
-> Task :app:lintReportUserDebug
-Wrote HTML report to file:///home/dr/project/android_ocr/app/build/reports/lint-results-userDebug.html
-
+> Task :app:lintReportUserDebug UP-TO-DATE
 > Task :app:lintUserDebug
-> Task :app:lintAnalyzeLabDebugAndroidTest
-> Task :app:lintAnalyzeLabDebugUnitTest
-
-> Task :app:lintReportLabDebug
-Wrote HTML report to file:///home/dr/project/android_ocr/app/build/reports/lint-results-labDebug.html
-
+> Task :app:lintAnalyzeLabDebugAndroidTest UP-TO-DATE
+> Task :app:lintAnalyzeLabDebugUnitTest UP-TO-DATE
+> Task :app:lintAnalyzeLabDebug
+> Task :app:lintReportLabDebug UP-TO-DATE
 > Task :app:lintLabDebug
 
-BUILD SUCCESSFUL in 29s
-104 actionable tasks: 28 executed, 76 up-to-date
+BUILD SUCCESSFUL in 4s
+104 actionable tasks: 15 executed, 89 up-to-date

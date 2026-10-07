@@ -8,10 +8,10 @@
     "editor": 12,
     "recognition": 10,
     "real-results": 8,
-    "navigation": 6,
+    "navigation": 8,
     "reorder": 7
   },
-  "browserTotal": 68,
+  "browserTotal": 70,
   "jvm": {
     "user": {
       "tests": 44,
@@ -170,5 +170,11 @@
       }
     ]
   },
-  "deviceAcceptance": "待验收：adb 无连接设备"
+  "deviceAcceptance": "待验收：adb 无连接设备",
+  "sourceCommit": "76bb524",
+  "review": {
+    "standardsRemaining": 0,
+    "specRemaining": 0,
+    "target": "76bb524"
+  }
 }

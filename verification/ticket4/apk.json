@@ -18,8 +18,8 @@
     {
       "flavor": "user",
       "path": "/home/dr/project/android_ocr/app/build/outputs/apk/user/debug/app-user-debug.apk",
-      "sha256": "20fcee10160d817d3b77e5c044b80612dfb6e10df411fec132983e7423a37c03",
-      "size": 43834420,
+      "sha256": "0eeeaba05961f0513dec6b2327e4d2b75f6472194d56a906b6c70f85997cb6aa",
+      "size": 43834471,
       "abi": "arm64-v8a",
       "libraries": {
         "libc++_shared.so": {
@@ -111,8 +111,8 @@
     {
       "flavor": "lab",
       "path": "/home/dr/project/android_ocr/app/build/outputs/apk/lab/debug/app-lab-debug.apk",
-      "sha256": "1ae54bfa9a81a27270fe876506100c1e06e7c0dbac01436fd9a7880c3dba5a5c",
-      "size": 43834420,
+      "sha256": "a6336f310ee87b5625a0e1dd1d91ef87f645b0199f5056a7efd10284b9cf4d26",
+      "size": 43834471,
       "abi": "arm64-v8a",
       "libraries": {
         "libc++_shared.so": {

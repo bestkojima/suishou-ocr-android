@@ -1,6 +1,6 @@
 # ticket4 导航、取消和失败重试交付
 
-日期：2026-10-07（Asia/Shanghai）。任务：[04：贯通导航、取消和失败重试](../../.scratch/android-real-ocr/issues/04-navigation-cancel-retry.md)。本轮基线：`381b890d61f3ccac98177eb45fc26ecee96a9e53`，当前分支为 `main`。
+日期：2026-10-07（Asia/Shanghai）。任务：[04：贯通导航、取消和失败重试](../../.scratch/android-real-ocr/issues/04-navigation-cancel-retry.md)。本轮基线：`381b890d61f3ccac98177eb45fc26ecee96a9e53`，代码提交为 `ec866dd`、`76bb524`，当前分支为 `main`。
 
 ## 实施结果
 
@@ -26,6 +26,7 @@
 | 实际结构化输出展示与往返保存 | 8 组；[日志](real-results-final.log)、[报告](real-results.json)，复用既有真实输出 |
 | APK 架构、符号、依赖、生产后端和无权重打包 | 通过；[日志](apk.log)、[APK 身份](apk.json) |
 | 桌面生产 C ABI 的取消与重复作业 | 8 项检查通过；[日志](desktop.log)、[报告](desktop/lifecycle.json) |
+| 规范／规格双路审查和修复复审 | 各 0 项剩余发现；[审查报告](CODE_REVIEW.md) |
 
 全部浏览器检查共 70 项。汇总见 [results.json](results.json)。项目为 Java／JSX，没有独立 TypeScript 类型检查；本轮通过 Java 编译、esbuild 打包、脚本语法检查及 Android lint。双路审查见 [CODE_REVIEW.md](CODE_REVIEW.md)。
 
