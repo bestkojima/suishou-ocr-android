@@ -1,0 +1,8 @@
+.gradle/
+**/build/
+node_modules/
+local.properties
+*.jks
+web/dist/
+app/src/main/assets/web/
+app/src/main/assets/fixtures/

@@ -1,0 +1,21 @@
+{
+  "version": "0.5.0-order",
+  "jvm": {
+    "tests": 36,
+    "failures": 0,
+    "errors": 0
+  },
+  "reorderBrowser": 7,
+  "browserRegression": 19,
+  "deviceValidation": "Not run; no connected Android device",
+  "artifacts": [
+    {
+      "path": "artifacts/suishou-ocr-user-0.5.0.apk",
+      "sha256": "89c3cd07dd6b2a7e2b049165c50a31a647a5a38fd20a512cf264f2c72a5dde25"
+    },
+    {
+      "path": "artifacts/suishou-ocr-test-0.5.0.apk",
+      "sha256": "b9a832d4658396d57b6d53772404543a424179ad965296fcf378deed7c71229f"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "odb-13",
+  "title": "中文 · 表格 · 四张插图",
+  "document_id": "doc-2e4f4db35837cf62",
+  "schema_version": "1.9",
+  "status": "ok",
+  "source_json": "/home/dr/project/docprase/output/issue-27-final/development/odb-13/job/document.json",
+  "source_json_sha256": "186872facb5803fe20043026b4c965bc53d444f6ae232108eba8e38c29f640e6",
+  "original_path": "/home/dr/project/docprase/output/omnidocbench/selected-20/images/jiaocaineedrop_jiaocai_needrop_en_2755.jpg",
+  "original_sha256": "63b11a697d37d0b7621e9f98edf32f594d3ff0db1adb513d2e0909f41ae35a8f",
+  "assets": [
+    {
+      "path": "assets/p0001-b0002.png",
+      "sha256": "910e0f70f82e7783ed7399e7edbd84d66eb383c9b2949cb08c10850ca087ac82"
+    },
+    {
+      "path": "assets/p0001-b0003.png",
+      "sha256": "0780bdfc797f117e6d883f61b2582aa797990296dafcbf4108de49f239eadaeb"
+    },
+    {
+      "path": "assets/p0001-b0007.png",
+      "sha256": "a57bc77f31876acb12397c8886b6107da7db614ee975849034da0d57e8af9c5b"
+    },
+    {
+      "path": "assets/p0001-b0011.png",
+      "sha256": "9cc1936ce1197320498bdde27736a1a4500b10c51c38e548c220ad115881db72"
+    },
+    {
+      "path": "assets/p0001-b0012.png",
+      "sha256": "c370a526c1cde88fff0c7b2230a2479b1bb7d623b9d23e5432f16ea54719ecba"
+    },
+    {
+      "path": "assets/p0001-b0016.png",
+      "sha256": "3450c939fb10b951302bbedb52335e902e9ac6dfcd3a6d8b95ac65fb86371e9f"
+    },
+    {
+      "path": "assets/p0001-b0013.png",
+      "sha256": "86af92c4c445a0ccf682aff2f25ed577981d620d44bcdc841dbb722308c392b4"
+    },
+    {
+      "path": "assets/p0001-b0015.png",
+      "sha256": "7f10124842c9e6e3117f490ab6bf8b61c8490bd4ebbeda4061ce4bac54f4dbe9"
+    },
+    {
+      "path": "assets/p0001-b0001.png",
+      "sha256": "77df0f6696adc2854f0d94f5db235d4e4d2455495acd68b2d208b31253007809"
+    },
+    {
+      "path": "assets/p0001-b0004.png",
+      "sha256": "b86e70098ca505e214d0771533506430137996cec273c9724aeaa547c405a44a"
+    },
+    {
+      "path": "assets/p0001-b0006.png",
+      "sha256": "2c51ae8088f30c65a893ada62d7356e250a38c8ac720c20e0f658b13b2072a96"
+    },
+    {
+      "path": "assets/p0001-b0009.png",
+      "sha256": "b1f3399573b78ff56ceeaa0fb72d6c1f8ea43addce4418fdcb1e9ede3f63abe3"
+    },
+    {
+      "path": "assets/p0001-b0005.png",
+      "sha256": "250c698694b02e16ee2757e42a485a701afd01fd18d85ad3c2c9917a35608b16"
+    },
+    {
+      "path": "assets/p0001-b0008.png",
+      "sha256": "b41d66e2760b7ef3224a70e838b30412f455720be9d545ee468c45120512a7b4"
+    },
+    {
+      "path": "assets/p0001-b0010.png",
+      "sha256": "7b72cb6d81680946650ebba3c596202d290719437886f863866b4c2704ea4d87"
+    },
+    {
+      "path": "assets/p0001-b0014.png",
+      "sha256": "b9dedb9ab4e3ce1970fecc7c11a930ba1e83f24d7d737ee1c1e7c2fc16b9af4a"
+    }
+  ],
+  "simulation": "Completed JSON replayed as synthetic character chunks; not recorded token events",
+  "normalization": "Use final page reading_order; wrap latex blocks in $$; convert resource blocks to Markdown images; other content preserved verbatim"
+}

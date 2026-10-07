@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0-office",
+  "verifiedAt": "2026-10-04T15:24:40.245542+00:00",
+  "jvmTests": 21,
+  "jvmFailures": 0,
+  "lintErrors": 0,
+  "lintWarnings": 9,
+  "artifacts": [
+    {
+      "file": "artifacts/suishou-ocr-user-0.2.0.apk",
+      "sha256": "c2032417f1a3ec3846ec5abb5055578b4bdfe6f58769ae54cb62b374433c2b3f",
+      "bytes": 19970863
+    },
+    {
+      "file": "artifacts/suishou-ocr-test-0.2.0.apk",
+      "sha256": "fe209b3a6f8bc4001dc94b2623c2c3a2a68b5b38d96025f2c8fada6cc3baec04",
+      "bytes": 19970923
+    }
+  ],
+  "deviceValidation": "Not run; no Android device connected",
+  "limitations": [
+    "Real OCR remains deferred",
+    "No full Office page rasterizer",
+    "PPTX follows XML object order; charts, SmartArt, masters and notes are not reproduced",
+    "Legacy PPT pictures are attachments with no verified slide association"
+  ],
+  "browserTests": 19
+}

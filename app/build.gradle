@@ -1,0 +1,33 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'cn.local.ocr'
+    compileSdk 35
+    defaultConfig { applicationId 'cn.local.ocr'; minSdk 26; targetSdk 35; versionCode 6; versionName '0.6.0-edit' }
+    flavorDimensions += 'audience'
+    productFlavors {
+        user { dimension 'audience'; buildConfigField 'boolean', 'TEST_FEATURES', 'false'; resValue 'string', 'app_name', '随手识别' }
+        lab { dimension 'audience'; applicationIdSuffix '.test'; buildConfigField 'boolean', 'TEST_FEATURES', 'true'; resValue 'string', 'app_name', '随手识别 · 测试' }
+    }
+    buildFeatures { buildConfig true }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    packaging { resources { excludes += ['META-INF/DEPENDENCIES','META-INF/LICENSE*','META-INF/NOTICE*','META-INF/INDEX.LIST'] } }
+    testOptions { unitTests.returnDefaultValues = true; unitTests.all { systemProperty "officeFixtureOutput", rootProject.file("verification/office-fixtures").absolutePath } }
+}
+dependencies {
+    implementation 'com.tom-roush:pdfbox-android:2.0.27.0'
+    implementation 'org.apache.poi:poi:4.1.2'
+    implementation 'org.apache.poi:poi-scratchpad:4.1.2'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.json:json:20240303'
+}
+
+def bundleWeb = tasks.register('bundleWeb', Exec) {
+    workingDir rootProject.projectDir
+    commandLine 'node', 'web/build.mjs'
+    inputs.files(rootProject.fileTree('web') { include '*.jsx', '*.js', '*.css', 'build.mjs' })
+    inputs.files(rootProject.files('package.json', 'package-lock.json', 'prototypes/ocr-streaming/fixture-data.json', 'prototypes/ocr-streaming/stream-state.mjs'))
+    inputs.dir(rootProject.file('prototypes/ocr-streaming/fixtures'))
+    outputs.dir(file('src/main/assets/web'))
+    outputs.dir(file('src/main/assets/fixtures'))
+}
+tasks.named('preBuild').configure { dependsOn bundleWeb }

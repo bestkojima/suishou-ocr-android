@@ -1,0 +1,15 @@
+[
+  {
+    "repo": "dr3334/PP-DocLayoutV3-mnn",
+    "files": 4,
+    "smallFile": "configuration.json",
+    "sha256Verified": true,
+    "rangeResumeVerified": true
+  },
+  {
+    "repo": "dr3334/ovrics-ocrv2_mnn",
+    "files": 11,
+    "smallFile": "config.json",
+    "sha256Verified": true
+  }
+]

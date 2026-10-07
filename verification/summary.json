@@ -1,0 +1,24 @@
+{
+  "verifiedAtUTC": "2026-10-04T14:56:53.076567+00:00",
+  "artifacts": [
+    {
+      "file": "artifacts/suishou-ocr-user-0.1.0.apk",
+      "bytes": 21657183,
+      "sha256": "efd84c13b36a49a9872cc0fd4b4e8337cce8ea286ac8702151d43dd352cdc672",
+      "signature": "APK v2 verified"
+    },
+    {
+      "file": "artifacts/suishou-ocr-test-0.1.0.apk",
+      "bytes": 21657195,
+      "sha256": "40b764371df76a405b1b53d2bf2696428856d89d2af42f323959c849974d9611",
+      "signature": "APK v2 verified"
+    }
+  ],
+  "browserTests": 15,
+  "jvmTests": 14,
+  "jvmFailures": 0,
+  "lintErrors": 0,
+  "lintWarnings": 9,
+  "hardwareValidation": "No Android device connected; camera, device PDF rendering, SAF and foreground service lifecycle not run on device.",
+  "ocrInference": "Not connected; uses explicit JSON replay or actual file text extraction."
+}

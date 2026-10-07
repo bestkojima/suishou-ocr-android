@@ -1,0 +1,41 @@
+{
+  "version": "0.4.0-models",
+  "verifiedAt": "2026-10-04T16:30:06.600758+00:00",
+  "jvm": {
+    "tests": 32,
+    "failures": 0,
+    "errors": 0
+  },
+  "browserRegression": 19,
+  "modelUI": 6,
+  "network": [
+    {
+      "repo": "dr3334/PP-DocLayoutV3-mnn",
+      "files": 4,
+      "smallFile": "configuration.json",
+      "sha256Verified": true,
+      "rangeResumeVerified": true
+    },
+    {
+      "repo": "dr3334/ovrics-ocrv2_mnn",
+      "files": 11,
+      "smallFile": "config.json",
+      "sha256Verified": true
+    }
+  ],
+  "lintErrors": 0,
+  "lintWarnings": 9,
+  "deviceValidation": "No connected Android device; background service and user-reported freeze still need device confirmation",
+  "artifacts": [
+    {
+      "file": "artifacts/suishou-ocr-user-0.4.0.apk",
+      "bytes": 21691363,
+      "sha256": "1c9ef36e4bdf2ad4f20241b4d1c7ee5769dbb88dc6063a8864168f92c6c8ae9e"
+    },
+    {
+      "file": "artifacts/suishou-ocr-test-0.4.0.apk",
+      "bytes": 21691383,
+      "sha256": "5e96e70f072e6181f3e84a213e52878baee93001e17cc17e8112c4c19a9751bf"
+    }
+  ]
+}

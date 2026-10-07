@@ -1,0 +1,23 @@
+{
+  "name": "ocr-streaming-prototype",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fixtures": "python3 prepare-fixtures.py",
+    "build": "node build.mjs",
+    "test": "node verify.mjs",
+    "start": "python3 -m http.server 4173 --bind 127.0.0.1 --directory dist"
+  },
+  "dependencies": {
+    "@streamdown/cjk": "1.0.4",
+    "@streamdown/math": "1.0.3",
+    "katex": "0.16.47",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "streamdown": "2.7.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "playwright": "1.63.0"
+  }
+}

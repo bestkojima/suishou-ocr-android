@@ -1,0 +1,25 @@
+{
+  "name": "suishou-ocr",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:web": "node web/build.mjs",
+    "test:web": "node web/verify.mjs",
+    "preview": "python3 -m http.server 4174 --bind 127.0.0.1 --directory web/dist",
+    "build:apk": "npm run build:web && ./gradlew assembleUserDebug assembleLabDebug",
+    "test": "npm run test:web && ./gradlew testUserDebugUnitTest"
+  },
+  "dependencies": {
+    "@streamdown/cjk": "1.0.4",
+    "@streamdown/math": "1.0.3",
+    "fflate": "0.8.2",
+    "katex": "0.16.47",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "streamdown": "2.7.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "playwright": "1.63.0"
+  }
+}

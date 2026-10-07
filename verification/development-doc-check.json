@@ -1,0 +1,23 @@
+{
+  "file": "docs/DEVELOPMENT.md",
+  "sections": 25,
+  "tables": 20,
+  "links": 49,
+  "jsonExamples": 4,
+  "mermaidDiagrams": 2,
+  "errors": [],
+  "mermaidRendering": "Not verified; Markdown diagram source retained",
+  "render": {
+    "headings": 25,
+    "tables": 20,
+    "codeBlocks": 25,
+    "bodyWidth": 1100,
+    "viewport": 1280,
+    "textLength": 26188
+  },
+  "mobile": {
+    "bodyWidth": 412,
+    "viewport": 412
+  },
+  "applicationTestsRerun": false
+}

@@ -1,0 +1,119 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Task :app:bundleWeb
+Built browser preview and Android offline assets
+
+> Task :app:preBuild
+> Task :app:preUserDebugBuild
+> Task :app:generateUserDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileUserDebug UP-TO-DATE
+> Task :app:checkUserDebugAarMetadata UP-TO-DATE
+> Task :app:generateUserDebugResValues UP-TO-DATE
+> Task :app:mapUserDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateUserDebugResources UP-TO-DATE
+> Task :app:mergeUserDebugResources UP-TO-DATE
+> Task :app:packageUserDebugResources UP-TO-DATE
+> Task :app:parseUserDebugLocalResources UP-TO-DATE
+> Task :app:createUserDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksUserDebug UP-TO-DATE
+> Task :app:processUserDebugMainManifest UP-TO-DATE
+> Task :app:processUserDebugManifest UP-TO-DATE
+> Task :app:processUserDebugManifestForPackage UP-TO-DATE
+> Task :app:processUserDebugResources UP-TO-DATE
+
+> Task :app:compileUserDebugJavaWithJavac
+Note: /home/dr/project/android_ocr/app/src/main/java/cn/local/ocr/MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:bundleUserDebugClassesToCompileJar
+> Task :app:bundleUserDebugClassesToRuntimeJar
+> Task :app:preUserDebugUnitTestBuild
+> Task :app:javaPreCompileUserDebugUnitTest UP-TO-DATE
+> Task :app:compileUserDebugUnitTestJavaWithJavac UP-TO-DATE
+> Task :app:processUserDebugJavaRes NO-SOURCE
+> Task :app:processUserDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:testUserDebugUnitTest
+> Task :app:mergeUserDebugNativeDebugMetadata NO-SOURCE
+> Task :app:mergeUserDebugShaders UP-TO-DATE
+> Task :app:compileUserDebugShaders NO-SOURCE
+> Task :app:generateUserDebugAssets UP-TO-DATE
+> Task :app:mergeUserDebugAssets
+> Task :app:checkUserDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarUserDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexUserDebug UP-TO-DATE
+> Task :app:mergeLibDexUserDebug UP-TO-DATE
+> Task :app:compressUserDebugAssets
+> Task :app:dexBuilderUserDebug
+> Task :app:mergeUserDebugGlobalSynthetics UP-TO-DATE
+> Task :app:mergeUserDebugJavaResource UP-TO-DATE
+> Task :app:mergeUserDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeUserDebugNativeLibs NO-SOURCE
+> Task :app:stripUserDebugDebugSymbols NO-SOURCE
+> Task :app:validateSigningUserDebug UP-TO-DATE
+> Task :app:writeUserDebugAppMetadata UP-TO-DATE
+> Task :app:writeUserDebugSigningConfigVersions UP-TO-DATE
+> Task :app:preLabDebugBuild
+> Task :app:mergeLabDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateLabDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileLabDebug UP-TO-DATE
+> Task :app:checkLabDebugAarMetadata UP-TO-DATE
+> Task :app:generateLabDebugResValues UP-TO-DATE
+> Task :app:mapLabDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateLabDebugResources UP-TO-DATE
+> Task :app:mergeLabDebugResources UP-TO-DATE
+> Task :app:packageLabDebugResources UP-TO-DATE
+> Task :app:parseLabDebugLocalResources UP-TO-DATE
+> Task :app:createLabDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksLabDebug UP-TO-DATE
+> Task :app:processLabDebugMainManifest UP-TO-DATE
+> Task :app:processLabDebugManifest UP-TO-DATE
+> Task :app:processLabDebugManifestForPackage UP-TO-DATE
+> Task :app:processLabDebugResources UP-TO-DATE
+> Task :app:mergeProjectDexUserDebug
+
+> Task :app:compileLabDebugJavaWithJavac
+Note: /home/dr/project/android_ocr/app/src/main/java/cn/local/ocr/MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:mergeLabDebugShaders UP-TO-DATE
+> Task :app:compileLabDebugShaders NO-SOURCE
+> Task :app:generateLabDebugAssets UP-TO-DATE
+> Task :app:mergeLabDebugAssets
+> Task :app:compressLabDebugAssets
+> Task :app:checkLabDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarLabDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexLabDebug UP-TO-DATE
+> Task :app:dexBuilderLabDebug
+> Task :app:packageUserDebug
+> Task :app:createUserDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleUserDebug
+> Task :app:mergeLabDebugGlobalSynthetics UP-TO-DATE
+> Task :app:processLabDebugJavaRes NO-SOURCE
+> Task :app:mergeLabDebugJavaResource UP-TO-DATE
+> Task :app:mergeLibDexLabDebug UP-TO-DATE
+> Task :app:mergeLabDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeLabDebugNativeLibs NO-SOURCE
+> Task :app:stripLabDebugDebugSymbols NO-SOURCE
+> Task :app:validateSigningLabDebug UP-TO-DATE
+> Task :app:writeLabDebugAppMetadata UP-TO-DATE
+> Task :app:writeLabDebugSigningConfigVersions UP-TO-DATE
+> Task :app:preUserDebugAndroidTestBuild SKIPPED
+> Task :app:generateUserDebugAndroidTestResValues UP-TO-DATE
+> Task :app:mergeProjectDexLabDebug
+> Task :app:generateUserDebugAndroidTestLintModel
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:generateUserDebugLintReportModel
+> Task :app:generateUserDebugUnitTestLintModel
+> Task :app:packageLabDebug
+> Task :app:createLabDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleLabDebug
+> Task :app:lintAnalyzeUserDebugAndroidTest
+> Task :app:lintAnalyzeUserDebugUnitTest
+> Task :app:lintAnalyzeUserDebug
+> Task :app:lintReportUserDebug UP-TO-DATE
+> Task :app:lintUserDebug
+[Incubating] Problems report is available at: file:///home/dr/project/android_ocr/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 17s
+83 actionable tasks: 23 executed, 60 up-to-date

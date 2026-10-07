@@ -1,0 +1,26 @@
+{
+  "status": "UI concept accepted by user; component selection pending implementation validation",
+  "accepted_on": "2026-10-04",
+  "reference_images": [
+    "mockups/portrait-processing-v1.png",
+    "mockups/landscape-streaming-v1.png"
+  ],
+  "main_screens": ["camera_and_file_import", "live_document_result"],
+  "secondary_surfaces": ["history_sheet", "settings_sheet", "modelscope_download_sheet"],
+  "portrait": "Document-first reading surface with compact source preview",
+  "landscape": "Source and live document side by side when available window dimensions permit",
+  "streaming": "Open result screen immediately; progressively render engine output as Markdown with tables and formulas",
+  "inputs_requested": ["camera", "image", "pdf", "word", "excel"],
+  "routing_requested": "Extract reliable native content where possible; render and OCR unsupported/scanned content at page or region granularity. Parser and renderer availability remains to be validated.",
+  "builds": {
+    "user": "Consumer interface without diagnostic entry points",
+    "test": "Consumer interface plus optional diagnostics mode"
+  },
+  "proposed_components_not_yet_approved_or_tested": {
+    "ui": "Jetpack Compose Material 3 and adaptive layout",
+    "camera": "CameraX",
+    "source_image": "ZoomImage",
+    "markdown_primary_candidate": "Local WebView with React, Streamdown, math/KaTeX and CJK plugins",
+    "markdown_native_candidates": ["mikepenz/multiplatform-markdown-renderer", "noties/Markwon"]
+  }
+}

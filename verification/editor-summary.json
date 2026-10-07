@@ -1,0 +1,21 @@
+{
+  "version": "0.6.0-edit",
+  "jvm": {
+    "tests": 36,
+    "failures": 0,
+    "errors": 0
+  },
+  "editorDragBrowser": 12,
+  "browserRegression": 19,
+  "deviceValidation": "Chromium mouse and CDP touch events tested; Android WebView device not connected",
+  "artifacts": [
+    {
+      "path": "artifacts/suishou-ocr-user-0.6.0.apk",
+      "sha256": "5bced6e5c7713c45c636fc2e28fa10689829e0ca6b656c8dea10e177f85db5d5"
+    },
+    {
+      "path": "artifacts/suishou-ocr-test-0.6.0.apk",
+      "sha256": "f401f3f49c381b14a9fc3293588a04549a37d12ff0376655940785b8db5d6069"
+    }
+  ]
+}

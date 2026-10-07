@@ -1,0 +1,29 @@
+{
+  "version": "0.3.0-pdf",
+  "verifiedAt": "2026-10-04T15:36:49.107315+00:00",
+  "referenceRevision": "60cd038d424e0e839462ba4bd96345e0279290fe",
+  "referenceMetricCases": 228,
+  "samplingCases": 11,
+  "jvmTests": 24,
+  "jvmFailures": 0,
+  "browserTests": 19,
+  "lintErrors": 0,
+  "lintWarnings": 9,
+  "limitations": [
+    "No connected Android device: PDFBox collectors and rendering are not device-validated",
+    "Original RapidDoc metric-level decisions verified; PDFBox metrics are not PDFium-equivalent",
+    "Real OCR and model-based region layout remain deferred"
+  ],
+  "artifacts": [
+    {
+      "file": "artifacts/suishou-ocr-user-0.3.0.apk",
+      "sha256": "56a78b74e22166528317bb6b048399402cbbcfbaec4e9ab438f85479d1e26127",
+      "bytes": 21681427
+    },
+    {
+      "file": "artifacts/suishou-ocr-test-0.3.0.apk",
+      "sha256": "2819f2f55abca5ba905f0ab7aeec606dcc9e78d597e6456706430c16b88f4ecc",
+      "bytes": 21681455
+    }
+  ]
+}

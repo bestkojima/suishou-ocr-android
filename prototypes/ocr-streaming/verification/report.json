@@ -1,0 +1,65 @@
+{
+  "scope": "Desktop Chromium offline browser simulation; not Android WebView or real inference",
+  "checks": [
+    {
+      "name": "真实样本与输入原图加载",
+      "pass": true
+    },
+    {
+      "name": "定时增量输出及暂停后不再增长",
+      "pass": true
+    },
+    {
+      "name": "完成区域复用原 DOM；后续文本不挪动已完成区域",
+      "pass": true
+    },
+    {
+      "name": "真实 HTML 表格由渲染器显示",
+      "pass": true
+    },
+    {
+      "name": "延迟图片预留尺寸，加载后后续区域位移不超过 1px",
+      "pass": true
+    },
+    {
+      "name": "点击真实图片放大并关闭",
+      "pass": true
+    },
+    {
+      "name": "上滑后流式更新不强制拉回底部",
+      "pass": true
+    },
+    {
+      "name": "旋转保留任务与阅读块",
+      "pass": true
+    },
+    {
+      "name": "完整回放与 JSON 内容一致，四张真实插图均加载",
+      "pass": true
+    },
+    {
+      "name": "图片失败占位与重试不改变后续区域位置",
+      "pass": true
+    },
+    {
+      "name": "真实 LaTeX 公式渲染，保留原始 partial 内容",
+      "pass": true
+    },
+    {
+      "name": "390px 手机布局无页面横向溢出",
+      "pass": true
+    },
+    {
+      "name": "图片/字体/脚本不依赖外部网络，无 JavaScript 错误",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "measurements": {
+    "delayedImageFollowingBlockShiftPx": 0,
+    "readingScrollDriftPx": 0,
+    "retryFollowingBlockShiftPx": 0
+  },
+  "passed": true
+}
