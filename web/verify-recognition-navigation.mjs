@@ -15,18 +15,18 @@ try {
  await page.addInitScript(()=>{
   const input=(id,title)=>({id,title,mode:'pending-ocr',input:'source.png',blocks:[],assets:{},pages:[],progress:0,status:'ready',recognition:{state:'waiting',message:'输入已保存，可开始识别'}});
   window.documents={first:input('first','第一个输入'),second:input('second','第二个输入')};
-  window.calls=[];window.heldStart=null;
+  window.calls=[];window.heldStart=null;window.heldStarts={};window.deferStart=false;
   window.AndroidHost={request(raw){
    const {id,method,args}=JSON.parse(raw);window.calls.push({method,args});let value=true;
    if(method==='bootstrap')value={settings:{chunk:128},history:Object.values(window.documents),testBuild:true};
    if(method==='history')value=Object.values(window.documents);
    if(method==='open')value=window.documents[args.id];
    if(method==='save')value=Object.assign(window.documents[args.id],args);
-   if(method==='recognitionStatus')value=window.documents[args.id].recognition;
+   if(method==='recognitionStatus'){if(window.holdStatus)return;value=window.documents[args.id].recognition;}
    if(method==='recognize'){
     const doc=window.documents[args.id];
-    doc.recognition={docId:doc.id,jobId:'first-job',sequence:1,state:'preparing',message:'正在准备第一个输入'};
-    window.heldStart={id,value:structuredClone(doc)};return;
+    if(!window.deferStart)doc.recognition={docId:doc.id,jobId:'first-job',sequence:1,state:'preparing',message:'正在准备第一个输入'};
+    window.heldStart={id,value:structuredClone(doc)};window.heldStarts[args.id]=window.heldStart;return;
    }
    if(method==='cancelRecognition'){window.heldCancel={id};return;}
    window.nativeReply({id,value:structuredClone(value)});
@@ -116,6 +116,48 @@ try {
   await page.getByText('当前输入启动失败，请重试',{exact:true}).waitFor();
   assert(await page.getByRole('button',{name:'重试识别',exact:true}).isEnabled());
   assert.equal(await page.locator('.result h1').innerText(),'第一个输入');
+ });
+ await check('同页迟到的启动快照不能覆盖较新进度和取消中状态',async()=>{
+  await page.evaluate(()=>{window.heldStart=null;});
+  await page.getByRole('button',{name:'重试识别',exact:true}).click();
+  await page.waitForFunction(()=>!!window.heldStart);
+  await page.evaluate(()=>{
+   window.holdStatus=true;
+   window.documents.first.recognition={docId:'first',jobId:'first-job',sequence:13,state:'recognizing',stage:'region_completed',message:'已完成三个识别区域',regionCompleted:3,regionTotal:5};
+   window.nativeEvent('recognition',window.documents.first.recognition);
+  });
+  await page.getByText('已完成三个识别区域',{exact:true}).waitFor();
+  await page.evaluate(()=>{
+   window.documents.first.recognition={...window.documents.first.recognition,sequence:14,state:'cancelling',message:'当前作业正在安全停止'};
+   window.nativeEvent('recognition',window.documents.first.recognition);
+   window.nativeReply(window.heldStart);
+  });
+  await page.waitForTimeout(150);
+  assert(await page.getByRole('button',{name:'取消中',exact:true}).isDisabled({timeout:1000}));
+  assert((await page.locator('.recognition-panel').innerText()).includes('3/5'));
+  await page.evaluate(()=>{window.holdStatus=false;});
+ });
+ await check('不同文档都有未返回的启动请求时，重开仍禁用各自的重复提交',async()=>{
+  await page.evaluate(()=>{
+   window.deferStart=true;window.heldStart=null;window.heldStarts={};
+   window.documents.first.recognition={docId:'first',jobId:'first-job',state:'failed',sequence:15,message:'输入已保留，可重试'};
+   window.nativeEvent('recognition',window.documents.first.recognition);
+   window.documents.second.recognition={state:'waiting',message:'输入已保存，可开始识别'};
+  });
+  await page.getByRole('button',{name:'重试识别',exact:true}).click();
+  await page.waitForFunction(()=>!!window.heldStarts.first);
+  await page.getByRole('button',{name:'返回首页',exact:true}).click();
+  await openHistory('第二个输入');
+  await page.getByRole('button',{name:'开始识别',exact:true}).click();
+  await page.waitForFunction(()=>!!window.heldStarts.second);
+  await page.evaluate(()=>window.nativeReply({id:window.heldStarts.second.id,error:'已有识别作业'}));
+  await page.getByText('已有识别作业',{exact:true}).waitFor();
+  await page.getByRole('button',{name:'返回首页',exact:true}).click();
+  await openHistory('第一个输入');
+  assert(await page.getByRole('button',{name:'正在启动',exact:true}).isDisabled({timeout:1000}));
+  await page.evaluate(()=>window.nativeReply({id:window.heldStarts.first.id,error:'已有识别作业'}));
+  await page.getByRole('button',{name:'重试识别',exact:true}).waitFor();
+  assert(await page.getByRole('button',{name:'重试识别',exact:true}).isEnabled());
  });
  assert.deepEqual(errors,[]);
  await mkdir('verification/ticket4',{recursive:true});
