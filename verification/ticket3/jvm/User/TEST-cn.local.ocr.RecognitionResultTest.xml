@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cn.local.ocr.RecognitionResultTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-07T09:15:13" hostname="localhost.localdomain" time="0.437">
+  <properties/>
+  <testcase name="importedResourcesOutsideAssetsSurviveExportWithoutDuplicateOriginalImage" classname="cn.local.ocr.RecognitionResultTest" time="0.019"/>
+  <testcase name="pageLevelPartialPreservesUsableContentAndWarnsAfterHistoryReopen" classname="cn.local.ocr.RecognitionResultTest" time="0.018"/>
+  <testcase name="partialAndEmptyResultsPreserveInputAndMissingRegionState" classname="cn.local.ocr.RecognitionResultTest" time="0.062"/>
+  <testcase name="realStructuredOutputCanBeCorrectedReorderedExportedAndRecognizedAgain" classname="cn.local.ocr.RecognitionResultTest" time="0.337"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

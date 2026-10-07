@@ -1,0 +1,273 @@
+{
+  "date": "2026-10-07 (Asia/Shanghai)",
+  "baseline": "295edc31b57629c972250c27914538df0927016b",
+  "codeCommits": [
+    "6976bc9",
+    "9d973a7"
+  ],
+  "jvm": {
+    "User": {
+      "tests": 44,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "Lab": {
+      "tests": 44,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "browser": {
+    "web": {
+      "passed": 19,
+      "log": "web.log"
+    },
+    "models": {
+      "passed": 6,
+      "log": "models.log"
+    },
+    "reorder": {
+      "passed": 7,
+      "log": "reorder.log"
+    },
+    "editor": {
+      "passed": 12,
+      "log": "editor.log"
+    },
+    "recognition": {
+      "passed": 10,
+      "log": "recognition.log"
+    },
+    "realResults": {
+      "passed": 8,
+      "log": "real-results.log"
+    }
+  },
+  "deviceInferenceVerified": false,
+  "freshDesktopInferenceExecuted": false,
+  "apks": [
+    {
+      "flavor": "user",
+      "path": "/home/dr/project/android_ocr/app/build/outputs/apk/user/debug/app-user-debug.apk",
+      "sha256": "3f47e34b52470d41cc09111f2eeb786eb071fd2b47ce14456ad8e620d8dd5cc5",
+      "size": 43834228,
+      "abi": "arm64-v8a",
+      "libraries": {
+        "libc++_shared.so": {
+          "needed": [
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ],
+          "size": 1253544
+        },
+        "libdococr_c.so": {
+          "needed": [
+            "libllm.so",
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 2763664
+        },
+        "libdococr_jni.so": {
+          "needed": [
+            "libdococr_c.so",
+            "libm.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 79880
+        },
+        "libMNN.so": {
+          "needed": [
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 8809816
+        },
+        "libllm.so": {
+          "needed": [
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 3556576
+        },
+        "libMNNOpenCV.so": {
+          "needed": [
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 594760
+        },
+        "libMNN_Express.so": {
+          "needed": [
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 2916736
+        }
+      },
+      "weightsPackaged": false
+    },
+    {
+      "flavor": "lab",
+      "path": "/home/dr/project/android_ocr/app/build/outputs/apk/lab/debug/app-lab-debug.apk",
+      "sha256": "598edbfdefdf767a6c8aa32431a8346cf5d4abc61455bb9c01d4f4faae392e4a",
+      "size": 43834228,
+      "abi": "arm64-v8a",
+      "libraries": {
+        "libc++_shared.so": {
+          "needed": [
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ],
+          "size": 1253544
+        },
+        "libdococr_c.so": {
+          "needed": [
+            "libllm.so",
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 2763664
+        },
+        "libdococr_jni.so": {
+          "needed": [
+            "libdococr_c.so",
+            "libm.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 79880
+        },
+        "libMNN.so": {
+          "needed": [
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 8809816
+        },
+        "libllm.so": {
+          "needed": [
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 3556576
+        },
+        "libMNNOpenCV.so": {
+          "needed": [
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 594760
+        },
+        "libMNN_Express.so": {
+          "needed": [
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 2916736
+        }
+      },
+      "weightsPackaged": false
+    }
+  ],
+  "realOutputSources": {
+    "output": {
+      "path": "verification/real-ocr/output/document.json",
+      "schemaVersion": "1.10",
+      "status": "ok",
+      "sha256": "3cb751ad7da3c1a5b9ba15cfb43093112ab528cf333ed6c4f8d81fd9ef00128c",
+      "inferenceExecutedThisTurn": false
+    },
+    "partial": {
+      "path": "verification/real-ocr/partial/document.json",
+      "schemaVersion": "1.9",
+      "status": "partial",
+      "sha256": "c2a0d9b92947d1ecb891efd915e98c6a6fc1ee9e13e1cac1f62e22238dbb3938",
+      "inferenceExecutedThisTurn": false
+    },
+    "blank": {
+      "path": "verification/real-ocr/blank/document.json",
+      "schemaVersion": "1.10",
+      "status": "partial",
+      "sha256": "867711f22d6654f60ef2a9758f9346149cdd18b1865c3dd5fc1bd9e2cbe4b190",
+      "inferenceExecutedThisTurn": false
+    },
+    "repeated": {
+      "path": "verification/real-ocr/repeated/document.json",
+      "schemaVersion": "1.11",
+      "status": "ok",
+      "sha256": "e58f6a7c30dd2e1581645ba106fc7ea505e9bbf90c6f7a111da10a06b560e519",
+      "inferenceExecutedThisTurn": false
+    }
+  },
+  "syntheticCases": [
+    "页面独立 partial 状态的 DocumentIR",
+    "基于真实内容改写的 images/ 路径及 ZIP 目录项",
+    "按原生应用状态契约构造的页面原图关联；不是设备导出产物"
+  ]
+}

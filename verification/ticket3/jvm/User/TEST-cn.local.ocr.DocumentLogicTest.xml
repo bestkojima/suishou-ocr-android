@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cn.local.ocr.DocumentLogicTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-10-07T09:15:12" hostname="localhost.localdomain" time="0.179">
+  <properties/>
+  <testcase name="refusesOversizeStreams" classname="cn.local.ocr.DocumentLogicTest" time="0.003"/>
+  <testcase name="rejectsExternalEntitiesUtf8AndUtf16" classname="cn.local.ocr.DocumentLogicTest" time="0.004"/>
+  <testcase name="docxTextTableAndImages" classname="cn.local.ocr.DocumentLogicTest" time="0.026"/>
+  <testcase name="modelSourcesAreExplicitAndFileUrlsPinned" classname="cn.local.ocr.DocumentLogicTest" time="0.005"/>
+  <testcase name="exportedBundleRestoresEditsAndRebasesImageResources" classname="cn.local.ocr.DocumentLogicTest" time="0.02"/>
+  <testcase name="shaAndAtomicSaveRoundTrip" classname="cn.local.ocr.DocumentLogicTest" time="0.008"/>
+  <testcase name="rejectsZipTraversal" classname="cn.local.ocr.DocumentLogicTest" time="0.001"/>
+  <testcase name="readingOrderOverridesSourceArrayAndHistoryProgressIsBounded" classname="cn.local.ocr.DocumentLogicTest" time="0.007"/>
+  <testcase name="xlsxSparseCellsSharedStringsAndCachedFormula" classname="cn.local.ocr.DocumentLogicTest" time="0.015"/>
+  <testcase name="oldXlsExtractsActualCells" classname="cn.local.ocr.DocumentLogicTest" time="0.086"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
