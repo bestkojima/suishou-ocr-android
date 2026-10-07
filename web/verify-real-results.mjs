@@ -40,12 +40,14 @@ try{
  // 使用真实内容改写合法资源路径，检验 schema 变体；这不是新的模型推理。
  const variant=structuredClone(original),picture=variant.pages[0].blocks.find(b=>b.type==='image'),oldPath=picture.content.resource,newPath='images/figure.png';
  picture.content.resource=newPath;variant.resources.find(r=>r.path===oldPath).path=newPath;
- const variantFiles={...inputZip,'document.json':strToU8(JSON.stringify(variant)),[newPath]:inputZip[oldPath]};delete variantFiles[oldPath];
+ const variantFiles={...inputZip,'document.json':strToU8(JSON.stringify(variant)),[newPath]:inputZip[oldPath],'assets/':new Uint8Array(),'images/':new Uint8Array()};delete variantFiles[oldPath];
  await page.getByRole('button',{name:'返回首页',exact:true}).click();const variantPick=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入文件',exact:true}).click();await(await variantPick).setFiles({name:'真实内容资源路径变体.zip',mimeType:'application/zip',buffer:Buffer.from(zipSync(variantFiles))});await page.getByRole('button',{name:'重新回放'}).waitFor({timeout:45000});
  const image=page.locator(`.image-frame[data-resource="${newPath}"] img`);assert.equal(await image.count(),1,'合法的 assets 外图片资源应展示');
  await page.waitForFunction(path=>{const img=document.querySelector(`.image-frame[data-resource="${path}"] img`);return img?.complete&&img.naturalWidth>0;},newPath);
  await page.getByRole('button',{name:'返回首页',exact:true}).click();await page.reload();await page.getByRole('button',{name:'最近记录',exact:true}).click();await page.getByRole('button',{name:/真实内容资源路径变体/}).first().click();await image.waitFor();assert.equal(await image.count(),1);
  results.push('合法的 assets 外图片路径及刷新后历史重开保持可用');
+ await page.getByRole('button',{name:'导出 / 分享',exact:true}).click();const variantDownload=page.waitForEvent('download');await page.getByRole('button',{name:'完整文档 ZIP（含图片）',exact:true}).click();const variantExport=unzipSync(new Uint8Array(await readFile(await(await variantDownload).path())));
+ assert(!Object.keys(variantExport).some(path=>path.endsWith('/')),'目录项不能作为零字节资源文件导出');assert.deepEqual(variantExport[newPath],inputZip[oldPath]);
  const nativeState=JSON.parse(strFromU8(secondZip['app-state.json']));nativeState.pages[0].source='source.png';
  await page.getByRole('button',{name:'返回首页',exact:true}).click();const sourcePick=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入文件',exact:true}).click();await(await sourcePick).setFiles({name:'原图关联往返.zip',mimeType:'application/zip',buffer:Buffer.from(zipSync({...secondZip,'app-state.json':strToU8(JSON.stringify(nativeState))}))});await page.getByRole('button',{name:'重新回放'}).waitFor({timeout:45000});
  await page.getByRole('button',{name:'导出 / 分享',exact:true}).click();const sourceDownload=page.waitForEvent('download');await page.getByRole('button',{name:'完整文档 ZIP（含图片）',exact:true}).click();const sourceZip=unzipSync(new Uint8Array(await readFile(await(await sourceDownload).path()))),portable=JSON.parse(strFromU8(sourceZip['app-state.json']));

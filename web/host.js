@@ -24,7 +24,7 @@ async function imported(f){
   let total=0;const files=unzipSync(new Uint8Array(await f.arrayBuffer()),{filter:e=>{if(!safePath(e.name))throw Error('无效资源路径');total+=e.originalSize;if(total>512*1024*1024)throw Error('解压内容过大');return true;}});
   const key=Object.keys(files).find(k=>/(^|\/)document.json$/.test(k));if(!key)throw Error('ZIP 中没有 document.json');const prefix=key.slice(0,-13),mapped={};
   const generated=new Set(['document.json','original-document.json','document.md','app-state.json']);
-  for(const [path,bytes]of Object.entries(files))if(path.startsWith(prefix)&&!generated.has(path.slice(prefix.length)))mapped[path.slice(prefix.length)]=await dataURL(new Blob([bytes],{type:/\.jpe?g$/i.test(path)?'image/jpeg':/\.webp$/i.test(path)?'image/webp':/\.gif$/i.test(path)?'image/gif':/\.png$/i.test(path)?'image/png':'application/octet-stream'}));
+  for(const [path,bytes]of Object.entries(files))if(path.startsWith(prefix)&&!path.endsWith('/')&&!generated.has(path.slice(prefix.length)))mapped[path.slice(prefix.length)]=await dataURL(new Blob([bytes],{type:/\.jpe?g$/i.test(path)?'image/jpeg':/\.webp$/i.test(path)?'image/webp':/\.gif$/i.test(path)?'image/gif':/\.png$/i.test(path)?'image/png':'application/octet-stream'}));
   doc=normalize(JSON.parse(strFromU8(files[key])),mapped,f.name);
   doc.bundleFiles=Object.fromEntries(Object.entries(mapped).filter(([path])=>!Object.hasOwn(doc.assets,path)));
   if(files[prefix+'original-document.json'])doc.rawIR=JSON.parse(strFromU8(files[prefix+'original-document.json']));
