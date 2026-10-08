@@ -1,0 +1,1033 @@
+{
+  "environment": "Linux x86_64 VirtualBox，同源 C ABI＋固定 MNN＋真实模型；非 Android 性能或标注准确率",
+  "inputSha256": "c71ed55fd66f249cc6f2435f7986961e1065a804aee57665e48858455143a46d",
+  "threads": 4,
+  "contentEquivalent": false,
+  "reviewedDifferencesAccepted": true,
+  "validationPassed": true,
+  "review": {
+    "inputSha256": "c71ed55fd66f249cc6f2435f7986961e1065a804aee57665e48858455143a46d",
+    "reviewer": "Codex，2026-10-08，实际查看原始合成样图并比较全部内容块",
+    "acceptedPairs": [
+      {
+        "baselineContentSha256": "e17d62b697da18bcbbf8664da3824dddbeca02c83febd622b17f861b2ba69cd8",
+        "contentSha256": "3bac03c27d0b0a0c8af2d4aec505a236fc7f5ef5c32835eb7cdec5d1e69169d4",
+        "reason": "差异随 Debug/Release 编译模式稳定复现；同模式重复两次一致，两种 Release 的四次输出完全一致并匹配 verification/ticket5/output/document.json 的既有真实内容。仅 b0006 从 Markdown 标题“E = mc²”转为有效 LaTeX“\\mathrm{E}=\\mathrm{mc}^{2}”，内容符合原图，公式由 partial/unverified 改为 ok；b0010 去掉多余 ## 标题标记，文字不变。其他正文、表格完整结构、块类型、阅读顺序和资源引用完全一致。不是模型数值逐比特一致或标注准确率保证。"
+      }
+    ]
+  },
+  "comparison": "页面状态、阅读顺序、内容块类型、正文／公式／表格结构与资源引用完全比较；忽略运行元数据",
+  "memoryNote": "RSS 为采样时进程驻留内存，processPeakRssBytes 为整个测试进程生命周期峰值",
+  "configurations": [
+    {
+      "configuration": "Debug+mmap",
+      "librarySha256": "9b92ac97a8a83a7dfa3fa976244d9e11b2359a92e9d3ffdc7acec9f14b51c4a3",
+      "memoryAfterLoading": {
+        "rssBytes": 1565069312,
+        "processPeakRssBytes": 1793171456
+      },
+      "runs": [
+        {
+          "run": 1,
+          "engineReused": false,
+          "loadingSeconds": 2.7251404879998518,
+          "firstContentSeconds": 19.79476225999997,
+          "totalSeconds": 77.55657276700003,
+          "phasesMs": {
+            "visionMs": 22658,
+            "prefillMs": 42416,
+            "decodeMs": 8463,
+            "elapsedMs": 73912
+          },
+          "memory": {
+            "rssBytes": 1592643584,
+            "processPeakRssBytes": 2489638912
+          },
+          "blocks": 10,
+          "contentMatchesBaseline": true,
+          "rawMatchesSavedAttempts": true
+        },
+        {
+          "run": 2,
+          "engineReused": true,
+          "loadingSeconds": 0,
+          "firstContentSeconds": 8.172067539999716,
+          "totalSeconds": 69.70301755799983,
+          "phasesMs": {
+            "visionMs": 12928,
+            "prefillMs": 43607,
+            "decodeMs": 9321,
+            "elapsedMs": 66194
+          },
+          "memory": {
+            "rssBytes": 1895743488,
+            "processPeakRssBytes": 2663104512
+          },
+          "blocks": 10,
+          "contentMatchesBaseline": true,
+          "rawMatchesSavedAttempts": true
+        }
+      ],
+      "temporaryDirectory": {
+        "files": [
+          {
+            "path": "ovis-mmap-8d64f50e84a49469c2a3cf7713e482204149bb81a6e6a630f3e32c912f51a07b/0_0_0_0_0.static",
+            "bytes": 1073741824
+          },
+          {
+            "path": "ovis-mmap-8d64f50e84a49469c2a3cf7713e482204149bb81a6e6a630f3e32c912f51a07b/0_0_0_0_sync.static",
+            "bytes": 0
+          }
+        ],
+        "mmapDirectories": [
+          "ovis-mmap-8d64f50e84a49469c2a3cf7713e482204149bb81a6e6a630f3e32c912f51a07b"
+        ]
+      }
+    },
+    {
+      "configuration": "Release+mmap",
+      "librarySha256": "f86c98b36bc912bb0a7bd8a80ede6cdc524570083cbfa7b7f9fd7bae3b0041b8",
+      "memoryAfterLoading": {
+        "rssBytes": 1552490496,
+        "processPeakRssBytes": 1780588544
+      },
+      "runs": [
+        {
+          "run": 1,
+          "engineReused": false,
+          "loadingSeconds": 2.7529669880000256,
+          "firstContentSeconds": 13.386075658000209,
+          "totalSeconds": 24.443077923000146,
+          "phasesMs": {
+            "visionMs": 12454,
+            "prefillMs": 7829,
+            "decodeMs": 3099,
+            "elapsedMs": 23541
+          },
+          "memory": {
+            "rssBytes": 2388013056,
+            "processPeakRssBytes": 2477281280
+          },
+          "blocks": 10,
+          "contentMatchesBaseline": false,
+          "rawMatchesSavedAttempts": true
+        },
+        {
+          "run": 2,
+          "engineReused": true,
+          "loadingSeconds": 0,
+          "firstContentSeconds": 1.7589334240001335,
+          "totalSeconds": 12.526962076000018,
+          "phasesMs": {
+            "visionMs": 1560,
+            "prefillMs": 7785,
+            "decodeMs": 2291,
+            "elapsedMs": 11776
+          },
+          "memory": {
+            "rssBytes": 2406297600,
+            "processPeakRssBytes": 2496045056
+          },
+          "blocks": 10,
+          "contentMatchesBaseline": false,
+          "rawMatchesSavedAttempts": true
+        }
+      ],
+      "temporaryDirectory": {
+        "files": [
+          {
+            "path": "ovis-mmap-8d64f50e84a49469c2a3cf7713e482204149bb81a6e6a630f3e32c912f51a07b/0_0_0_0_0.static",
+            "bytes": 1073741824
+          },
+          {
+            "path": "ovis-mmap-8d64f50e84a49469c2a3cf7713e482204149bb81a6e6a630f3e32c912f51a07b/0_0_0_0_sync.static",
+            "bytes": 0
+          }
+        ],
+        "mmapDirectories": [
+          "ovis-mmap-8d64f50e84a49469c2a3cf7713e482204149bb81a6e6a630f3e32c912f51a07b"
+        ]
+      }
+    },
+    {
+      "configuration": "Release+no-mmap",
+      "librarySha256": "1205ae28a86810cf66b5759fce60e52ccb2aac9c4c87b3a0acb96cce38b2a62b",
+      "memoryAfterLoading": {
+        "rssBytes": 1555066880,
+        "processPeakRssBytes": 1794486272
+      },
+      "runs": [
+        {
+          "run": 1,
+          "engineReused": false,
+          "loadingSeconds": 2.0589663009996,
+          "firstContentSeconds": 1.95304367000017,
+          "totalSeconds": 12.691357858000174,
+          "phasesMs": {
+            "visionMs": 1354,
+            "prefillMs": 7619,
+            "decodeMs": 2782,
+            "elapsedMs": 11924
+          },
+          "memory": {
+            "rssBytes": 2390577152,
+            "processPeakRssBytes": 2479726592
+          },
+          "blocks": 10,
+          "contentMatchesBaseline": false,
+          "rawMatchesSavedAttempts": true
+        },
+        {
+          "run": 2,
+          "engineReused": true,
+          "loadingSeconds": 0,
+          "firstContentSeconds": 1.7264627960003054,
+          "totalSeconds": 11.946231956000247,
+          "phasesMs": {
+            "visionMs": 1320,
+            "prefillMs": 7516,
+            "decodeMs": 2229,
+            "elapsedMs": 11210
+          },
+          "memory": {
+            "rssBytes": 2414424064,
+            "processPeakRssBytes": 2504286208
+          },
+          "blocks": 10,
+          "contentMatchesBaseline": false,
+          "rawMatchesSavedAttempts": true
+        }
+      ],
+      "temporaryDirectory": {
+        "files": [],
+        "mmapDirectories": []
+      }
+    }
+  ],
+  "differences": [
+    {
+      "configuration": "Release+mmap",
+      "run": 1,
+      "baselineContentSha256": "e17d62b697da18bcbbf8664da3824dddbeca02c83febd622b17f861b2ba69cd8",
+      "contentSha256": "3bac03c27d0b0a0c8af2d4aec505a236fc7f5ef5c32835eb7cdec5d1e69169d4",
+      "content": {
+        "status": "ok",
+        "pages": [
+          {
+            "id": "p0001",
+            "readingOrder": [
+              "b0001",
+              "b0002",
+              "b0003",
+              "b0004",
+              "b0005",
+              "b0006",
+              "b0007",
+              "b0008",
+              "b0009",
+              "b0010"
+            ],
+            "blocks": [
+              {
+                "id": "b0001",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 离线文档识别验证\n",
+                  "resource": "assets/p0001-b0001.png"
+                }
+              },
+              {
+                "id": "b0002",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "这是一张新生成的单页测试图片。\n",
+                  "resource": "assets/p0001-b0002.png"
+                }
+              },
+              {
+                "id": "b0003",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "输入在识别前保存，模型在本地运行。\n",
+                  "resource": "assets/p0001-b0003.png"
+                }
+              },
+              {
+                "id": "b0004",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "结果包括文字、公式、表格和插图。\n",
+                  "resource": "assets/p0001-b0004.png"
+                }
+              },
+              {
+                "id": "b0005",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 能量公式\n",
+                  "resource": "assets/p0001-b0005.png"
+                }
+              },
+              {
+                "id": "b0006",
+                "type": "formula",
+                "content": {
+                  "format": "latex",
+                  "text": "\\mathrm{E}=\\mathrm{mc}^{2}",
+                  "resource": "assets/p0001-b0006.png",
+                  "display": true
+                }
+              },
+              {
+                "id": "b0007",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 商品统计\n",
+                  "resource": "assets/p0001-b0007.png"
+                }
+              },
+              {
+                "id": "b0008",
+                "type": "table",
+                "content": {
+                  "format": "html",
+                  "text": "<table><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>",
+                  "resource": "assets/p0001-b0008.png",
+                  "table": {
+                    "rows": 3,
+                    "columns": 3,
+                    "cells": [
+                      {
+                        "row": 0,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "商品",
+                        "bbox": null
+                      },
+                      {
+                        "row": 0,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "数量",
+                        "bbox": null
+                      },
+                      {
+                        "row": 0,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "金额",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "钢笔",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "3",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "45",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "笔记本",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "2",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "30",
+                        "bbox": null
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b0009",
+                "type": "image",
+                "content": {
+                  "format": "resource",
+                  "text": "",
+                  "resource": "assets/p0001-b0009.png"
+                }
+              },
+              {
+                "id": "b0010",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "图 1：圆形与三角形\n",
+                  "resource": "assets/p0001-b0010.png"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "configuration": "Release+mmap",
+      "run": 2,
+      "baselineContentSha256": "e17d62b697da18bcbbf8664da3824dddbeca02c83febd622b17f861b2ba69cd8",
+      "contentSha256": "3bac03c27d0b0a0c8af2d4aec505a236fc7f5ef5c32835eb7cdec5d1e69169d4",
+      "content": {
+        "status": "ok",
+        "pages": [
+          {
+            "id": "p0001",
+            "readingOrder": [
+              "b0001",
+              "b0002",
+              "b0003",
+              "b0004",
+              "b0005",
+              "b0006",
+              "b0007",
+              "b0008",
+              "b0009",
+              "b0010"
+            ],
+            "blocks": [
+              {
+                "id": "b0001",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 离线文档识别验证\n",
+                  "resource": "assets/p0001-b0001.png"
+                }
+              },
+              {
+                "id": "b0002",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "这是一张新生成的单页测试图片。\n",
+                  "resource": "assets/p0001-b0002.png"
+                }
+              },
+              {
+                "id": "b0003",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "输入在识别前保存，模型在本地运行。\n",
+                  "resource": "assets/p0001-b0003.png"
+                }
+              },
+              {
+                "id": "b0004",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "结果包括文字、公式、表格和插图。\n",
+                  "resource": "assets/p0001-b0004.png"
+                }
+              },
+              {
+                "id": "b0005",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 能量公式\n",
+                  "resource": "assets/p0001-b0005.png"
+                }
+              },
+              {
+                "id": "b0006",
+                "type": "formula",
+                "content": {
+                  "format": "latex",
+                  "text": "\\mathrm{E}=\\mathrm{mc}^{2}",
+                  "resource": "assets/p0001-b0006.png",
+                  "display": true
+                }
+              },
+              {
+                "id": "b0007",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 商品统计\n",
+                  "resource": "assets/p0001-b0007.png"
+                }
+              },
+              {
+                "id": "b0008",
+                "type": "table",
+                "content": {
+                  "format": "html",
+                  "text": "<table><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>",
+                  "resource": "assets/p0001-b0008.png",
+                  "table": {
+                    "rows": 3,
+                    "columns": 3,
+                    "cells": [
+                      {
+                        "row": 0,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "商品",
+                        "bbox": null
+                      },
+                      {
+                        "row": 0,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "数量",
+                        "bbox": null
+                      },
+                      {
+                        "row": 0,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "金额",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "钢笔",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "3",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "45",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "笔记本",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "2",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "30",
+                        "bbox": null
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b0009",
+                "type": "image",
+                "content": {
+                  "format": "resource",
+                  "text": "",
+                  "resource": "assets/p0001-b0009.png"
+                }
+              },
+              {
+                "id": "b0010",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "图 1：圆形与三角形\n",
+                  "resource": "assets/p0001-b0010.png"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "configuration": "Release+no-mmap",
+      "run": 1,
+      "baselineContentSha256": "e17d62b697da18bcbbf8664da3824dddbeca02c83febd622b17f861b2ba69cd8",
+      "contentSha256": "3bac03c27d0b0a0c8af2d4aec505a236fc7f5ef5c32835eb7cdec5d1e69169d4",
+      "content": {
+        "status": "ok",
+        "pages": [
+          {
+            "id": "p0001",
+            "readingOrder": [
+              "b0001",
+              "b0002",
+              "b0003",
+              "b0004",
+              "b0005",
+              "b0006",
+              "b0007",
+              "b0008",
+              "b0009",
+              "b0010"
+            ],
+            "blocks": [
+              {
+                "id": "b0001",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 离线文档识别验证\n",
+                  "resource": "assets/p0001-b0001.png"
+                }
+              },
+              {
+                "id": "b0002",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "这是一张新生成的单页测试图片。\n",
+                  "resource": "assets/p0001-b0002.png"
+                }
+              },
+              {
+                "id": "b0003",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "输入在识别前保存，模型在本地运行。\n",
+                  "resource": "assets/p0001-b0003.png"
+                }
+              },
+              {
+                "id": "b0004",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "结果包括文字、公式、表格和插图。\n",
+                  "resource": "assets/p0001-b0004.png"
+                }
+              },
+              {
+                "id": "b0005",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 能量公式\n",
+                  "resource": "assets/p0001-b0005.png"
+                }
+              },
+              {
+                "id": "b0006",
+                "type": "formula",
+                "content": {
+                  "format": "latex",
+                  "text": "\\mathrm{E}=\\mathrm{mc}^{2}",
+                  "resource": "assets/p0001-b0006.png",
+                  "display": true
+                }
+              },
+              {
+                "id": "b0007",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 商品统计\n",
+                  "resource": "assets/p0001-b0007.png"
+                }
+              },
+              {
+                "id": "b0008",
+                "type": "table",
+                "content": {
+                  "format": "html",
+                  "text": "<table><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>",
+                  "resource": "assets/p0001-b0008.png",
+                  "table": {
+                    "rows": 3,
+                    "columns": 3,
+                    "cells": [
+                      {
+                        "row": 0,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "商品",
+                        "bbox": null
+                      },
+                      {
+                        "row": 0,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "数量",
+                        "bbox": null
+                      },
+                      {
+                        "row": 0,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "金额",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "钢笔",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "3",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "45",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "笔记本",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "2",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "30",
+                        "bbox": null
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b0009",
+                "type": "image",
+                "content": {
+                  "format": "resource",
+                  "text": "",
+                  "resource": "assets/p0001-b0009.png"
+                }
+              },
+              {
+                "id": "b0010",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "图 1：圆形与三角形\n",
+                  "resource": "assets/p0001-b0010.png"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "configuration": "Release+no-mmap",
+      "run": 2,
+      "baselineContentSha256": "e17d62b697da18bcbbf8664da3824dddbeca02c83febd622b17f861b2ba69cd8",
+      "contentSha256": "3bac03c27d0b0a0c8af2d4aec505a236fc7f5ef5c32835eb7cdec5d1e69169d4",
+      "content": {
+        "status": "ok",
+        "pages": [
+          {
+            "id": "p0001",
+            "readingOrder": [
+              "b0001",
+              "b0002",
+              "b0003",
+              "b0004",
+              "b0005",
+              "b0006",
+              "b0007",
+              "b0008",
+              "b0009",
+              "b0010"
+            ],
+            "blocks": [
+              {
+                "id": "b0001",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 离线文档识别验证\n",
+                  "resource": "assets/p0001-b0001.png"
+                }
+              },
+              {
+                "id": "b0002",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "这是一张新生成的单页测试图片。\n",
+                  "resource": "assets/p0001-b0002.png"
+                }
+              },
+              {
+                "id": "b0003",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "输入在识别前保存，模型在本地运行。\n",
+                  "resource": "assets/p0001-b0003.png"
+                }
+              },
+              {
+                "id": "b0004",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "结果包括文字、公式、表格和插图。\n",
+                  "resource": "assets/p0001-b0004.png"
+                }
+              },
+              {
+                "id": "b0005",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 能量公式\n",
+                  "resource": "assets/p0001-b0005.png"
+                }
+              },
+              {
+                "id": "b0006",
+                "type": "formula",
+                "content": {
+                  "format": "latex",
+                  "text": "\\mathrm{E}=\\mathrm{mc}^{2}",
+                  "resource": "assets/p0001-b0006.png",
+                  "display": true
+                }
+              },
+              {
+                "id": "b0007",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "## 商品统计\n",
+                  "resource": "assets/p0001-b0007.png"
+                }
+              },
+              {
+                "id": "b0008",
+                "type": "table",
+                "content": {
+                  "format": "html",
+                  "text": "<table><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>",
+                  "resource": "assets/p0001-b0008.png",
+                  "table": {
+                    "rows": 3,
+                    "columns": 3,
+                    "cells": [
+                      {
+                        "row": 0,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "商品",
+                        "bbox": null
+                      },
+                      {
+                        "row": 0,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "数量",
+                        "bbox": null
+                      },
+                      {
+                        "row": 0,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "金额",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "钢笔",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "3",
+                        "bbox": null
+                      },
+                      {
+                        "row": 1,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "45",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 0,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "笔记本",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 1,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "2",
+                        "bbox": null
+                      },
+                      {
+                        "row": 2,
+                        "column": 2,
+                        "rowspan": 1,
+                        "colspan": 1,
+                        "header": false,
+                        "text": "30",
+                        "bbox": null
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "id": "b0009",
+                "type": "image",
+                "content": {
+                  "format": "resource",
+                  "text": "",
+                  "resource": "assets/p0001-b0009.png"
+                }
+              },
+              {
+                "id": "b0010",
+                "type": "text",
+                "content": {
+                  "format": "markdown",
+                  "text": "图 1：圆形与三角形\n",
+                  "resource": "assets/p0001-b0010.png"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

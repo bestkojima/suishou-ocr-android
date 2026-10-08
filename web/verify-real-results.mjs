@@ -13,7 +13,7 @@ try{
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/home/dr/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome',args:['--no-sandbox']});
  const inputBundles={};
  const page=await browser.newPage({viewport:{width:1000,height:950},acceptDownloads:true});page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:4197');
- await page.getByRole('button',{name:'设置',exact:true}).click();await page.locator('select').selectOption('64');await page.getByRole('dialog').getByRole('button',{name:'关闭',exact:true}).click();
+ await page.getByRole('button',{name:'设置',exact:true}).click();await page.getByLabel('JSON 回放每次字符数',{exact:true}).selectOption('64');await page.getByRole('dialog').getByRole('button',{name:'关闭',exact:true}).click();
  const importBundle=async name=>{const bytes=await readFile(`${out}/${name}.zip`);inputBundles[name]={path:resolve(`${out}/${name}.zip`),sha256:createHash('sha256').update(bytes).digest('hex')};const pick=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入文件',exact:true}).click();await(await pick).setFiles(`${out}/${name}.zip`);await page.getByRole('button',{name:'重新回放',exact:true}).waitFor({timeout:45000});};
  await importBundle('output');
  assert.equal(await page.locator('.region').count(),10);assert(await page.locator('.katex').count()>0);assert.equal(await page.locator('.markdown table').count(),1);assert.equal(await page.locator('.image-frame img').count(),1);

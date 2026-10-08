@@ -1,0 +1,479 @@
+[1/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/AutoTime.cpp.o
+[2/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/BufferAllocator.cpp.o
+[3/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/Backend.cpp.o
+[4/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/Execution.cpp.o
+[5/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/FileLoader.cpp.o
+[6/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/ConvolutionCommon.cpp.o
+[7/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/KVCacheManager.cpp.o
+[8/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/Interpreter.cpp.o
+[9/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/MNNMemoryUtils.cpp.o
+[10/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/MNNFileUtils.cpp.o
+[11/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/Pipeline.cpp.o
+In file included from /home/dr/project/android_ocr/native/MNN/include/MNN/Tensor.hpp:14,
+                 from /home/dr/project/android_ocr/native/MNN/include/MNN/Interpreter.hpp:18,
+                 from /home/dr/project/android_ocr/native/MNN/source/core/Schedule.hpp:13,
+                 from /home/dr/project/android_ocr/native/MNN/source/core/Pipeline.hpp:12,
+                 from /home/dr/project/android_ocr/native/MNN/source/core/Pipeline.cpp:10:
+/home/dr/project/android_ocr/native/MNN/source/core/Pipeline.cpp: In member function ‘MNN::ErrorCode MNN::Pipeline::fixResizeCache()’:
+/home/dr/project/android_ocr/native/MNN/source/core/Pipeline.cpp:954:15: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ {aka ‘long unsigned int’} [-Wformat=]
+  954 |     MNN_PRINT("Fix: %d - Total: %d, rate = %f\n", fixNumber, totalNumber, (float)fixNumber / (float)totalNumber);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~~
+      |                                                   |
+      |                                                   size_t {aka long unsigned int}
+/home/dr/project/android_ocr/native/MNN/include/MNN/MNNDefine.h:38:39: note: in definition of macro ‘MNN_PRINT’
+   38 | #define MNN_PRINT(format, ...) printf(format, ##__VA_ARGS__)
+      |                                       ^~~~~~
+/home/dr/project/android_ocr/native/MNN/source/core/Pipeline.cpp:954:22: note: format string is defined here
+  954 |     MNN_PRINT("Fix: %d - Total: %d, rate = %f\n", fixNumber, totalNumber, (float)fixNumber / (float)totalNumber);
+      |                     ~^
+      |                      |
+      |                      int
+      |                     %ld
+/home/dr/project/android_ocr/native/MNN/source/core/Pipeline.cpp:954:15: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘size_t’ {aka ‘long unsigned int’} [-Wformat=]
+  954 |     MNN_PRINT("Fix: %d - Total: %d, rate = %f\n", fixNumber, totalNumber, (float)fixNumber / (float)totalNumber);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~             ~~~~~~~~~~~
+      |                                                              |
+      |                                                              size_t {aka long unsigned int}
+/home/dr/project/android_ocr/native/MNN/include/MNN/MNNDefine.h:38:39: note: in definition of macro ‘MNN_PRINT’
+   38 | #define MNN_PRINT(format, ...) printf(format, ##__VA_ARGS__)
+      |                                       ^~~~~~
+/home/dr/project/android_ocr/native/MNN/source/core/Pipeline.cpp:954:34: note: format string is defined here
+  954 |     MNN_PRINT("Fix: %d - Total: %d, rate = %f\n", fixNumber, totalNumber, (float)fixNumber / (float)totalNumber);
+      |                                 ~^
+      |                                  |
+      |                                  int
+      |                                 %ld
+[12/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/RuntimeFactory.cpp.o
+[13/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/OpCommonUtils.cpp.o
+[14/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/Schedule.cpp.o
+[15/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/Session.cpp.o
+[16/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/Tensor.cpp.o
+[17/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/WorkerThread.cpp.o
+[18/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/TensorUtils.cpp.o
+[19/354] Building CXX object mnn/CMakeFiles/MNNCore.dir/source/core/WrapExecution.cpp.o
+[20/354] Building CXX object mnn/CMakeFiles/MNNCV.dir/source/cv/ImageProcess.cpp.o
+[21/354] Building CXX object mnn/CMakeFiles/MNNCV.dir/source/cv/Matrix_CV.cpp.o
+[22/354] Building CXX object mnn/CMakeFiles/MNNCV.dir/source/cv/ImageProcessUtils.cpp.o
+[23/354] Building CXX object mnn/CMakeFiles/MNNMath.dir/source/math/WingoradGenerater.cpp.o
+[24/354] Building CXX object mnn/CMakeFiles/MNNMath.dir/source/math/Matrix.cpp.o
+[25/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/ConvertUtils.cpp.o
+[26/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryBatchMatMul.cpp.o
+[27/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryBinary.cpp.o
+[28/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryBroadcastTo.cpp.o
+[29/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryComputer.cpp.o
+[30/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryConcat.cpp.o
+[31/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryComputerUtils.cpp.o
+[32/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryConv2DBackPropFilter.cpp.o
+[33/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryConv2D.cpp.o
+[34/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryConv3D.cpp.o
+[35/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryConvUtils.cpp.o
+[36/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryConvert.cpp.o
+[37/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryCosineSimilarity.cpp.o
+[38/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryCrop.cpp.o
+[39/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryCumSum.cpp.o
+[40/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryDepthToSpace.cpp.o
+[41/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryDet.cpp.o
+[42/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryDilation2D.cpp.o
+[43/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryELU.cpp.o
+[44/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryFill.cpp.o
+[45/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryGatedRMSNorm.cpp.o
+[46/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryFusedProj.cpp.o
+[47/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryImageOp.cpp.o
+[48/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryGather.cpp.o
+[49/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryInnerProduct.cpp.o
+[50/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryLRN.cpp.o
+[51/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryLayernorm.cpp.o
+In file included from /usr/include/string.h:548,
+                 from /usr/include/c++/13/cstring:42,
+                 from /home/dr/project/android_ocr/native/MNN/3rd_party/flatbuffers/include/flatbuffers/base.h:24,
+                 from /home/dr/project/android_ocr/native/MNN/3rd_party/flatbuffers/include/flatbuffers/flatbuffers.h:20,
+                 from /home/dr/project/android_ocr/native/MNN/schema/current/Type_generated.h:7,
+                 from /home/dr/project/android_ocr/native/MNN/schema/current/Tensor_generated.h:8,
+                 from /home/dr/project/android_ocr/native/MNN/schema/current/CaffeOp_generated.h:8,
+                 from /home/dr/project/android_ocr/native/MNN/schema/current/MNN_generated.h:8,
+                 from /home/dr/project/android_ocr/native/MNN/source/geometry/GeometryComputer.hpp:13,
+                 from /home/dr/project/android_ocr/native/MNN/source/geometry/GeometryLayernorm.cpp:9:
+In function ‘void* memcpy(void*, const void*, size_t)’,
+    inlined from ‘virtual bool MNN::GeometryLayerNorm::onCompute(const MNN::Op*, const std::vector<MNN::Tensor*>&, const std::vector<MNN::Tensor*>&, MNN::GeometryComputer::Context&, MNN::CommandBuffer&) const’ at /home/dr/project/android_ocr/native/MNN/source/geometry/GeometryLayernorm.cpp:120:21:
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:29:33: warning: ‘void* __builtin_memcpy(void*, const void*, long unsigned int)’ reading between 4 and 8589934588 bytes from a region of size 0 [-Wstringop-overread]
+   29 |   return __builtin___memcpy_chk (__dest, __src, __len,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   30 |                                  __glibc_objsize0 (__dest));
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+In member function ‘virtual bool MNN::GeometryLayerNorm::onCompute(const MNN::Op*, const std::vector<MNN::Tensor*>&, const std::vector<MNN::Tensor*>&, MNN::GeometryComputer::Context&, MNN::CommandBuffer&) const’:
+cc1plus: note: source object is likely at address zero
+[52/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryOPRegister.cpp.o
+[53/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryLSTM.cpp.o
+[54/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryPermute.cpp.o
+[55/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryPooling3D.cpp.o
+[56/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryReduce.cpp.o
+[57/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryPoolGrad.cpp.o
+[58/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryReshape.cpp.o
+[59/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryReverseSequence.cpp.o
+[60/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometrySelect.cpp.o
+[61/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryScatter.cpp.o
+[62/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryShape.cpp.o
+[63/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometrySlice.cpp.o
+[64/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometrySpaceToBatchND.cpp.o
+[65/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometrySpatialProduct.cpp.o
+[66/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryStridedSlice.cpp.o
+[67/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryTensorArray.cpp.o
+[68/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryThreshold.cpp.o
+[69/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryTile.cpp.o
+[70/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryUnary.cpp.o
+[71/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/geometry/GeometryTopK.cpp.o
+[72/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeArgMax.cpp.o
+[73/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeAttention.cpp.o
+[74/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeBatchToSpaceND.cpp.o
+[75/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeBinaryOp.cpp.o
+[76/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeCast.cpp.o
+[77/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeBroadcastTo.cpp.o
+[78/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeConcat.cpp.o
+[79/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeConvTranspose3D.cpp.o
+[80/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeConvolution3D.cpp.o
+[81/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeConvolution.cpp.o
+[82/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeCosineSimilarity.cpp.o
+[83/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeCrop.cpp.o
+[84/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeCropAndResize.cpp.o
+[85/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeDeconvolution.cpp.o
+[86/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeDepthToSpace.cpp.o
+[87/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeDequantize.cpp.o
+[88/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeDet.cpp.o
+[89/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeDetectionOutput.cpp.o
+[90/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeDetectionPostProcess.cpp.o
+[91/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeDynamicQuant.cpp.o
+[92/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeExpandDims.cpp.o
+[93/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeFill.cpp.o
+[94/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeGatedRMSNorm.cpp.o
+[95/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeFusedProj.cpp.o
+[96/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeGatherND.cpp.o
+[97/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeGatherV2.cpp.o
+[98/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeGridSample.cpp.o
+[99/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeHistogram.cpp.o
+[100/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeInnerProduct.cpp.o
+[101/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeInterp.cpp.o
+[102/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeLSTM.cpp.o
+[103/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeLinSpace.cpp.o
+[104/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeMatMul.cpp.o
+[105/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeMoments.cpp.o
+[106/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeNonMaxSuppressionV2.cpp.o
+[107/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeOneHot.cpp.o
+[108/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapePack.cpp.o
+[109/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapePadding.cpp.o
+[110/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapePermute.cpp.o
+[111/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapePlugin.cpp.o
+[112/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapePool.cpp.o
+[113/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapePool3D.cpp.o
+[114/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeProposal.cpp.o
+[115/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapePriorbox.cpp.o
+[116/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeQuantizedMaxPool.cpp.o
+[117/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeQuantizedAvgPool.cpp.o
+[118/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeROIAlign.cpp.o
+[119/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeRNNSequenceGRU.cpp.o
+[120/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeROIPooling.cpp.o
+[121/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeRandomUniform.cpp.o
+[122/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeRange.cpp.o
+[123/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeReduction.cpp.o
+[124/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeRegister.cpp.o
+[125/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeResize.cpp.o
+[126/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeReshape.cpp.o
+[127/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeScatterNd.cpp.o
+[128/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeSegmentMean.cpp.o
+[129/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeSelect.cpp.o
+[130/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeSetDiff1D.cpp.o
+[131/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeSize.cpp.o
+[132/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeShape.cpp.o
+[133/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeSliceTf.cpp.o
+[134/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeSlice.cpp.o
+[135/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeSpaceToDepth.cpp.o
+[136/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeSpaceToBatchND.cpp.o
+[137/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeSplitGelu.cpp.o
+[138/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeSqueeze.cpp.o
+[139/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeStft.cpp.o
+[140/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeStridedSlice.cpp.o
+[141/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeSvd.cpp.o
+[142/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeTensorArray.cpp.o
+[143/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeTensorConvert.cpp.o
+[144/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeTile.cpp.o
+[145/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeTopKV2.cpp.o
+[146/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeTranspose.cpp.o
+[147/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeUnique.cpp.o
+[148/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeUnpack.cpp.o
+[149/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeUnravelIndex.cpp.o
+[150/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/ShapeWhere.cpp.o
+[151/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/SizeComputer.cpp.o
+[152/354] Building CXX object mnn/CMakeFiles/MNNTransform.dir/source/shape/render/ShapeRasterAndInterpolate.cpp.o
+[153/354] Building CXX object mnn/CMakeFiles/MNNUtils.dir/source/utils/JNIHelper.cpp.o
+[154/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUArgMax.cpp.o
+[155/354] Building CXX object mnn/CMakeFiles/MNNUtils.dir/source/utils/InitNet.cpp.o
+[156/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUAttention.cpp.o
+[157/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUBackend.cpp.o
+[158/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUBinaryInt8.cpp.o
+[159/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUBinary.cpp.o
+[160/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUCast.cpp.o
+[161/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUConvolution.cpp.o
+[162/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUConvolutionDepthwise.cpp.o
+[163/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUCropAndResize.cpp.o
+[164/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUDeconvolution.cpp.o
+[165/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUDeconvolutionDepthwise.cpp.o
+[166/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUDepthwiseConvInt8.cpp.o
+[167/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUDequantize.cpp.o
+[168/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUDet.cpp.o
+[169/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUDetectionOutput.cpp.o
+[170/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUDetectionPostProcess.cpp.o
+[171/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUDynamicQuant.cpp.o
+[172/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUEltwise.cpp.o
+[173/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUEltwiseInt8.cpp.o
+[174/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUExternalConst.cpp.o
+[175/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUFloatToInt8.cpp.o
+[176/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUGridSample.cpp.o
+[177/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUHistogram.cpp.o
+[178/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUInstanceNorm.cpp.o
+[179/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUImageProcess.cpp.o
+In file included from /home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUImageProcess.cpp:9:
+In constructor ‘MNN::CPUImageProcess::CPUImageProcess(MNN::Backend*, const MNN::ImageProcessParam*)’,
+    inlined from ‘virtual MNN::Execution* MNN::CPUImageProcessCreator::onCreate(const std::vector<MNN::Tensor*>&, const std::vector<MNN::Tensor*>&, const MNN::Op*, MNN::Backend*) const’ at /home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUImageProcess.cpp:63:52:
+/home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUImageProcess.hpp:56:34: warning: ‘void* __builtin_memmove(void*, const void*, long unsigned int)’ reading 16 bytes from a region of size 0 [-Wstringop-overread]
+   56 |             mImgConfig.normal[i] = process->normal()->Get(i);
+      |             ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In member function ‘virtual MNN::Execution* MNN::CPUImageProcessCreator::onCreate(const std::vector<MNN::Tensor*>&, const std::vector<MNN::Tensor*>&, const MNN::Op*, MNN::Backend*) const’:
+cc1plus: note: source object is likely at address zero
+[180/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUInt8ToFloat.cpp.o
+[181/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUInterp.cpp.o
+[182/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUInterp3D.cpp.o
+[183/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUKVCacheManager.cpp.o
+[184/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPULayerNorm.cpp.o
+[185/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPULinSpace.cpp.o
+[186/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPULinearAttention.cpp.o
+[187/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUMatMul.cpp.o
+[188/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUMatrixBandPart.cpp.o
+[189/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUMoments.cpp.o
+[190/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUOPRegister.cpp.o
+[191/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUOneHot.cpp.o
+[192/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUNonMaxSuppressionV2.cpp.o
+[193/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUPlugin.cpp.o
+[194/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUPool.cpp.o
+[195/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUPoolInt8.cpp.o
+[196/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUQuanConvolutionDepthwise.cpp.o
+[197/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUProposal.cpp.o
+[198/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUQuantizedAdd.cpp.o
+[199/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUQuantizedAvgPool.cpp.o
+[200/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUQuantizedLogistic.cpp.o
+[201/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUQuantizedMaxPool.cpp.o
+[202/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUQuantizedSoftmax.cpp.o
+[203/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPURNNSequenceGRU.cpp.o
+[204/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUROIAlign.cpp.o
+[205/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUROIPooling.cpp.o
+[206/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPURandomUniform.cpp.o
+[207/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPURange.cpp.o
+[208/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUReduction.cpp.o
+[209/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPURaster.cpp.o
+[210/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPURelu.cpp.o
+[211/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUResizeCache.cpp.o
+[212/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUResize.cpp.o
+[213/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPURuntime.cpp.o
+/home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPURuntime.cpp:108: warning: "CPU_SETSIZE" redefined
+  108 | #define CPU_SETSIZE 1024
+      | 
+In file included from /usr/include/pthread.h:22,
+                 from /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:148,
+                 from /usr/include/c++/13/bits/std_mutex.h:41,
+                 from /usr/include/c++/13/mutex:45,
+                 from /home/dr/project/android_ocr/native/MNN/source/core/FileLoader.hpp:11,
+                 from /home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPURuntime.cpp:81:
+/usr/include/sched.h:91: note: this is the location of the previous definition
+   91 | # define CPU_SETSIZE __CPU_SETSIZE
+      | 
+/home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPURuntime.cpp:120: warning: "CPU_ZERO" redefined
+  120 | #define CPU_ZERO(set) CPU_ZERO_S(sizeof(cpu_set_t), set)
+      | 
+/usr/include/sched.h:96: note: this is the location of the previous definition
+   96 | # define CPU_ZERO(cpusetp)       __CPU_ZERO_S (sizeof (cpu_set_t), cpusetp)
+      | 
+/home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPURuntime.cpp:125: warning: "CPU_ZERO_S" redefined
+  125 | #define CPU_ZERO_S(setsize, set) __builtin_memset(set, 0, setsize)
+      | 
+/usr/include/sched.h:103: note: this is the location of the previous definition
+  103 | # define CPU_ZERO_S(setsize, cpusetp)       __CPU_ZERO_S (setsize, cpusetp)
+      | 
+/home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPURuntime.cpp:130: warning: "CPU_SET" redefined
+  130 | #define CPU_SET(cpu, set) CPU_SET_S(cpu, sizeof(cpu_set_t), set)
+      | 
+/usr/include/sched.h:92: note: this is the location of the previous definition
+   92 | # define CPU_SET(cpu, cpusetp)   __CPU_SET_S (cpu, sizeof (cpu_set_t), cpusetp)
+      | 
+/home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPURuntime.cpp:135: warning: "CPU_SET_S" redefined
+  135 | #define CPU_SET_S(cpu, setsize, set)                              \
+      | 
+/usr/include/sched.h:99: note: this is the location of the previous definition
+   99 | # define CPU_SET_S(cpu, setsize, cpusetp)   __CPU_SET_S (cpu, setsize, cpusetp)
+      | 
+[214/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPURoPE.cpp.o
+[215/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUScale.cpp.o
+[216/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUScaleInt8.cpp.o
+[217/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUSegmentMean.cpp.o
+[218/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUSelect.cpp.o
+[219/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUSetDiff1D.cpp.o
+[220/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUSoftmax.cpp.o
+[221/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUStft.cpp.o
+[222/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUSvd.cpp.o
+[223/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUTFQuantizedConv2D.cpp.o
+[224/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUTensorConvert.cpp.o
+[225/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUTopKV2.cpp.o
+[226/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUUnique.cpp.o
+[227/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUUnary.cpp.o
+[228/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUUnravelIndex.cpp.o
+[229/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/OneDNNConvInt8.cpp.o
+[230/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/OneDNNConvolution.cpp.o
+[231/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUWhere.cpp.o
+[232/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/ThreadPool.cpp.o
+[233/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/CommonOptFunction.cpp.o
+[234/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ConvInt8TiledExecutor.cpp.o
+[235/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ConvOpt.cpp.o
+[236/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/Convolution1x1Strassen.cpp.o
+[237/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ConvInt8Winograd.cpp.o
+[238/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ConvolutionGroup.cpp.o
+[239/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ConvolutionFloatFactory.cpp.o
+[240/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ConvolutionIntFactory.cpp.o
+[241/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ConvolutionPackFreeWinograd.cpp.o
+[242/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ConvolutionPackWinograd.cpp.o
+[243/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ConvolutionTiledExecutor.cpp.o
+[244/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ConvolutionWinogradBridge.cpp.o
+[245/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ConvolutionWinogradImpl.cpp.o
+[246/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/IdstConvolutionInt8.cpp.o
+[247/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/DenseConvolutionTiledExecutor.cpp.o
+[248/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ImageProcessFunction.cpp.o
+[249/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/OptimizedComputer.cpp.o
+[250/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/ResizeFunction.cpp.o
+[251/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/Int8FunctionsOpt.cpp.o
+[252/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/SharedGather.cpp.o
+[253/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/SparseConvInt8TiledExecutor.cpp.o
+[254/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/SparseConvolutionTiledExecutor.cpp.o
+[255/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/StrassenMatmulComputor.cpp.o
+[256/354] Building CXX object mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/compute/WinogradOptFunction.cpp.o
+[257/354] Building CXX object mnn/CMakeFiles/MNNX8664.dir/source/backend/cpu/x86_x64/AVX2Functions.cpp.o
+[258/354] Building CXX object mnn/CMakeFiles/MNNX8664.dir/source/backend/cpu/x86_x64/AVX2Backend.cpp.o
+[259/354] Building CXX object mnn/CMakeFiles/MNNX8664.dir/source/backend/cpu/x86_x64/cpu_id.cc.o
+[260/354] Building CXX object mnn/CMakeFiles/MNNX8664.dir/source/backend/cpu/x86_x64/FunctionDispatcher.cpp.o
+[261/354] Building CXX object mnn/CMakeFiles/MNNSSE.dir/source/backend/cpu/x86_x64/sse/GemmCommon.cpp.o
+[262/354] Building CXX object mnn/CMakeFiles/MNNSSE.dir/source/backend/cpu/x86_x64/sse/GemmInt8.cpp.o
+/home/dr/project/android_ocr/native/MNN/source/backend/cpu/x86_x64/sse/GemmInt8.cpp:478: warning: "COMPUTE" redefined
+  478 |     #define COMPUTE(i, j)\
+      | 
+/home/dr/project/android_ocr/native/MNN/source/backend/cpu/x86_x64/sse/GemmInt8.cpp:126: note: this is the location of the previous definition
+  126 |     #define COMPUTE(i, j)\
+      | 
+[263/354] Building CXX object mnn/CMakeFiles/MNNSSE.dir/source/backend/cpu/x86_x64/sse/GemmSSE.cpp.o
+[264/354] Building CXX object mnn/CMakeFiles/MNNSSE.dir/source/backend/cpu/x86_x64/sse/MathFunctions.cpp.o
+[265/354] Building CXX object mnn/CMakeFiles/MNNSSE.dir/source/backend/cpu/x86_x64/sse/ImageProcessFunction.cpp.o
+[266/354] Building CXX object mnn/CMakeFiles/MNNSSE.dir/source/backend/cpu/x86_x64/sse/PackedFunction.cpp.o
+[267/354] Building CXX object mnn/CMakeFiles/MNNSSE.dir/source/backend/cpu/x86_x64/sse/ReorderFunctions.cpp.o
+[268/354] Building CXX object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/GemmAVX2.cpp.o
+[269/354] Building CXX object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/GemmCommon.cpp.o
+[270/354] Building CXX object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/GemmCommonBF16.cpp.o
+[271/354] Building CXX object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/GemmInt8.cpp.o
+[272/354] Building CXX object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/GemmSparse.cpp.o
+[273/354] Building CXX object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/LinearAttentionFunctions.cpp.o
+[274/354] Building CXX object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/MathFunctions.cpp.o
+[275/354] Building CXX object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/PackedFunction.cpp.o
+[276/354] Building CXX object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/ReorderFunctions.cpp.o
+[277/354] Building ASM object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/_AVX_MNNPackedSparseMatMulEpx1EFMA_ASM.S.o
+[278/354] Building ASM object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/_AVX_MNNPackedSparseMatMulEpx4EFMA_ASM.S.o
+[279/354] Building CXX object mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/WinogradFunctions.cpp.o
+[280/354] Building CXX object mnn/CMakeFiles/MNNAVXFMA.dir/source/backend/cpu/x86_x64/avxfma/GemmAVX2FMABF16.cpp.o
+[281/354] Building CXX object mnn/CMakeFiles/MNNAVXFMA.dir/source/backend/cpu/x86_x64/avxfma/GemmAVX2FMA.cpp.o
+[282/354] Building CXX object mnn/CMakeFiles/MNNAVXFMA.dir/source/backend/cpu/x86_x64/avxfma/MathFunctions.cpp.o
+[283/354] Building CXX object mnn/CMakeFiles/MNNAVXFMA.dir/source/backend/cpu/x86_x64/avxfma/GemmSparseFMA.cpp.o
+[284/354] Building ASM object mnn/CMakeFiles/MNNAVXFMA.dir/source/backend/cpu/x86_x64/avxfma/_AVX_MNNGemmFloatUnitMainFMA.S.o
+[285/354] Building ASM object mnn/CMakeFiles/MNNAVXFMA.dir/source/backend/cpu/x86_x64/avxfma/_AVX_MNNGemmFloatUnitMainFMA6x16.S.o
+[286/354] Building ASM object mnn/CMakeFiles/MNNAVXFMA.dir/source/backend/cpu/x86_x64/avxfma/_AVX_MNNGemmFloatUnitMainFMA_Fused.S.o
+[287/354] Building ASM object mnn/CMakeFiles/MNNAVXFMA.dir/source/backend/cpu/x86_x64/avxfma/_AVX_MNNPackedSparseMatMulEpx1NFMA_ASM.S.o
+[288/354] Building ASM object mnn/CMakeFiles/MNNAVXFMA.dir/source/backend/cpu/x86_x64/avxfma/_AVX_MNNPackedSparseMatMulEpx4NFMA_ASM.S.o
+[289/354] Building CXX object mnn/CMakeFiles/MNN.dir/cmake/dummy.cpp.o
+[290/354] Building CXX object mnn/CMakeFiles/MNNAVXFMA.dir/source/backend/cpu/x86_x64/avxfma/PackedFunction.cpp.o
+[291/354] Linking CXX shared library mnn/libMNN.so
+/usr/bin/ld: warning: mnn/CMakeFiles/MNNAVX.dir/source/backend/cpu/x86_x64/avx/_AVX_MNNPackedSparseMatMulEpx4EFMA_ASM.S.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+[292/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/ExecutorScope.cpp.o
+[293/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/Executor.cpp.o
+[294/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/MathOp.cpp.o
+[295/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/NeuralNetWorkOp.cpp.o
+[296/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/Optimizer.cpp.o
+[297/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/Expr.cpp.o
+/home/dr/project/android_ocr/native/MNN/express/Expr.cpp: In static member function ‘static void MNN::Express::Variable::save(const std::vector<MNN::Express::VARP>&, MNN::NetT*)’:
+/home/dr/project/android_ocr/native/MNN/express/Expr.cpp:31:24: warning: ‘__builtin___snprintf_chk’ output may be truncated before the last format character [-Wformat-truncation=]
+   31 |     snprintf(s, 10, "%d", index);
+      |                        ^
+In file included from /usr/include/stdio.h:980,
+                 from /home/dr/project/android_ocr/native/MNN/include/MNN/MNNDefine.h:13,
+                 from /home/dr/project/android_ocr/native/MNN/include/MNN/Tensor.hpp:14,
+                 from /home/dr/project/android_ocr/native/MNN/source/core/OpCommonUtils.hpp:11,
+                 from /home/dr/project/android_ocr/native/MNN/express/Expr.cpp:11:
+In function ‘int snprintf(char*, size_t, const char*, ...)’,
+    inlined from ‘std::string numberToString(int)’ at /home/dr/project/android_ocr/native/MNN/express/Expr.cpp:31:13,
+    inlined from ‘static void MNN::Express::Variable::save(const std::vector<MNN::Express::VARP>&, MNN::NetT*)’ at /home/dr/project/android_ocr/native/MNN/express/Expr.cpp:1273:75:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:54:35: note: ‘__builtin___snprintf_chk’ output between 2 and 11 bytes into a destination of size 10
+   54 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   55 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   56 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
+[298/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/Utils.cpp.o
+[299/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/module/IfModule.cpp.o
+[300/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/module/MoEModule.cpp.o
+[301/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/module/Module.cpp.o
+[302/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/module/NMSModule.cpp.o
+[303/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/module/StaticModule.cpp.o
+[304/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/module/PipelineModule.cpp.o
+[305/354] Building CXX object mnn/tools/cv/CMakeFiles/MNNOpenCV.dir/source/imgproc/color.cpp.o
+[306/354] Building CXX object mnn/tools/cv/CMakeFiles/MNNOpenCV.dir/source/imgproc/geometric.cpp.o
+[307/354] Building CXX object mnn/express/CMakeFiles/MNN_Express.dir/module/WhileModule.cpp.o
+[308/354] Linking CXX shared library mnn/express/libMNN_Express.so
+[309/354] Building CXX object mnn/tools/cv/CMakeFiles/MNNOpenCV.dir/source/imgproc/draw.cpp.o
+[310/354] Building CXX object mnn/tools/cv/CMakeFiles/MNNOpenCV.dir/source/imgproc/filter.cpp.o
+[311/354] Building CXX object mnn/tools/cv/CMakeFiles/MNNOpenCV.dir/source/imgproc/miscellaneous.cpp.o
+[312/354] Building CXX object mnn/tools/cv/CMakeFiles/MNNOpenCV.dir/source/imgproc/histograms.cpp.o
+[313/354] Building CXX object mnn/tools/cv/CMakeFiles/MNNOpenCV.dir/source/calib3d/calib3d.cpp.o
+[314/354] Building CXX object mnn/tools/cv/CMakeFiles/MNNOpenCV.dir/source/imgproc/structural.cpp.o
+[315/354] Building CXX object mnn/tools/cv/CMakeFiles/MNNOpenCV.dir/source/core/core.cpp.o
+[316/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/diskembedding.cpp.o
+[317/354] Building CXX object mnn/tools/cv/CMakeFiles/MNNOpenCV.dir/source/imgcodecs/imgcodecs.cpp.o
+[318/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/embedding.cpp.o
+[319/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/llmconfig.cpp.o
+[320/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/llm.cpp.o
+[321/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/sampler.cpp.o
+[322/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/omni.cpp.o
+[323/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/speculative_decoding/dflash.cpp.o
+[324/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/speculative_decoding/generate.cpp.o
+[325/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/speculative_decoding/eagle.cpp.o
+[326/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/speculative_decoding/lookahead.cpp.o
+[327/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/speculative_decoding/mtp.cpp.o
+[328/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/tokenizer/unicode.cpp.o
+[329/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/tokenizer/unicode_data.cpp.o
+[330/354] Linking CXX shared library mnn/tools/cv/libMNNOpenCV.so
+[331/354] Building CXX object mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/tokenizer/tokenizer.cpp.o
+[332/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/sha256.cpp.o
+[333/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/layout_preprocess.cpp.o
+[334/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/visual_adaptation.cpp.o
+[335/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/table_parser.cpp.o
+[336/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/output_assessment.cpp.o
+[337/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/region_recognition.cpp.o
+[338/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/region_structure.cpp.o
+[339/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/layout_region_policy.cpp.o
+[340/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/label_export_policy.cpp.o
+[341/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/markdown.cpp.o
+[342/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/core.cpp.o
+[343/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/pdf_renderer.cpp.o
+[344/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/formula_scripts.cpp.o
+[345/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/__/android-engine/config.cpp.o
+[346/354] Linking CXX shared library mnn/libllm.so
+[347/354] Building CXX object docprase/CMakeFiles/dococr_c.dir/src/production_backend.cpp.o
+[348/354] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/pdf_job.cpp.o
+[349/354] Linking CXX static library docprase/libdococr_core.a
+[350/354] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/layout_mnn_backend.cpp.o
+[351/354] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/abi.cpp.o
+[352/354] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o
+[353/354] Building CXX object docprase/CMakeFiles/dococr_c.dir/tmp/suishou-ocr-075/baseline-cpp/android_recognition_stream.cpp.o
+[354/354] Linking CXX shared library docprase/libdococr_c.so

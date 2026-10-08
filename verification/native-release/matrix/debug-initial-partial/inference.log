@@ -1,0 +1,10 @@
+Ovis load: 4378 ms, success=1, mmap=1
+observed real stream started
+Ovis load: 370 ms, success=1, mmap=1
+PASS real live output: first=23.061s, total=88.699s, snapshots=62
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+Traceback (most recent call last):
+  File "/home/dr/project/android_ocr/tools/benchmark_ocr.py", line 138, in <module>
+    assert (ir['status'] == 'ok' or args.allow_partial and ir['status'] == 'partial') and blocks > 0, ir['status']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: partial

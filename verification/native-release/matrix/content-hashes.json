@@ -1,0 +1,14 @@
+{
+  "debug-mmap": [
+    "e17d62b697da18bcbbf8664da3824dddbeca02c83febd622b17f861b2ba69cd8",
+    "e17d62b697da18bcbbf8664da3824dddbeca02c83febd622b17f861b2ba69cd8"
+  ],
+  "release-mmap": [
+    "3bac03c27d0b0a0c8af2d4aec505a236fc7f5ef5c32835eb7cdec5d1e69169d4",
+    "3bac03c27d0b0a0c8af2d4aec505a236fc7f5ef5c32835eb7cdec5d1e69169d4"
+  ],
+  "release-no-mmap": [
+    "3bac03c27d0b0a0c8af2d4aec505a236fc7f5ef5c32835eb7cdec5d1e69169d4",
+    "3bac03c27d0b0a0c8af2d4aec505a236fc7f5ef5c32835eb7cdec5d1e69169d4"
+  ]
+}

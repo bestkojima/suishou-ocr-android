@@ -1,0 +1,101 @@
+{
+  "vendoredFilesVerified": 79,
+  "mnnCommit": "baaa5a62e9cc6d5b3660e37f8a2608a2d585adc6",
+  "hostCompileChecks": [
+    {
+      "configuration": "host-debug",
+      "samples": [
+        {
+          "directory": "/tmp/suishou-ocr-075/host-debug",
+          "command": "/usr/bin/c++ -DDEBUG -DLLM_SUPPORT_VISION -DMNN_DEBUG -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/source -I/home/dr/project/android_ocr/native/MNN/express -I/home/dr/project/android_ocr/native/MNN/tools -I/home/dr/project/android_ocr/native/MNN/codegen -I/home/dr/project/android_ocr/native/MNN/schema/current -I/home/dr/project/android_ocr/native/MNN/3rd_party -I/home/dr/project/android_ocr/native/MNN/3rd_party/flatbuffers/include -I/home/dr/project/android_ocr/native/MNN/3rd_party/half -I/home/dr/project/android_ocr/native/MNN/3rd_party/imageHelper -I/home/dr/project/android_ocr/native/MNN/3rd_party/OpenCLHeaders -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/../../../tools/cv/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include  -std=c++17 -D__STRICT_ANSI__ -g -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -g0 -std=gnu++17   -fPIC -DMNN_USE_SPARSE_COMPUTE -DMNN_USE_SSE -o mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUArgMax.cpp.o -c /home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUArgMax.cpp",
+          "file": "/home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUArgMax.cpp",
+          "output": "/tmp/suishou-ocr-075/host-debug/mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUArgMax.cpp.o"
+        },
+        {
+          "directory": "/tmp/suishou-ocr-075/host-debug",
+          "command": "/usr/bin/c++ -DDEBUG -DLLM_SUPPORT_VISION -DLLM_USE_JINJA -DMNN_DEBUG -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL -Dllm_EXPORTS -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/source -I/home/dr/project/android_ocr/native/MNN/express -I/home/dr/project/android_ocr/native/MNN/tools -I/home/dr/project/android_ocr/native/MNN/codegen -I/home/dr/project/android_ocr/native/MNN/schema/current -I/home/dr/project/android_ocr/native/MNN/3rd_party -I/home/dr/project/android_ocr/native/MNN/3rd_party/flatbuffers/include -I/home/dr/project/android_ocr/native/MNN/3rd_party/half -I/home/dr/project/android_ocr/native/MNN/3rd_party/imageHelper -I/home/dr/project/android_ocr/native/MNN/3rd_party/OpenCLHeaders -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/../../../tools/cv/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include  -std=c++17 -D__STRICT_ANSI__ -g -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -g0 -std=gnu++17 -fPIC   -fPIC -fvisibility=default -o mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/llm.cpp.o -c /home/dr/project/android_ocr/native/MNN/transformers/llm/engine/src/llm.cpp",
+          "file": "/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/src/llm.cpp",
+          "output": "/tmp/suishou-ocr-075/host-debug/mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/llm.cpp.o"
+        },
+        {
+          "directory": "/tmp/suishou-ocr-075/host-debug",
+          "command": "/usr/bin/c++ -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include -I/tmp/suishou-ocr-075/docprase/third_party/stb -I/tmp/suishou-ocr-075/docprase/include -I/tmp/suishou-ocr-075/docprase/src -I/tmp/suishou-ocr-075/baseline-cpp -g0 -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o -c /tmp/suishou-ocr-075/host-debug/android-engine/printed_page_mnn_backend.cpp",
+          "file": "/tmp/suishou-ocr-075/host-debug/android-engine/printed_page_mnn_backend.cpp",
+          "output": "/tmp/suishou-ocr-075/host-debug/docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o"
+        }
+      ],
+      "cacheBuildType": "CMAKE_BUILD_TYPE:STRING=Debug"
+    },
+    {
+      "configuration": "host-release-mmap",
+      "samples": [
+        {
+          "directory": "/tmp/suishou-ocr-075/host-release-mmap",
+          "command": "/usr/bin/c++ -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/source -I/home/dr/project/android_ocr/native/MNN/express -I/home/dr/project/android_ocr/native/MNN/tools -I/home/dr/project/android_ocr/native/MNN/codegen -I/home/dr/project/android_ocr/native/MNN/schema/current -I/home/dr/project/android_ocr/native/MNN/3rd_party -I/home/dr/project/android_ocr/native/MNN/3rd_party/flatbuffers/include -I/home/dr/project/android_ocr/native/MNN/3rd_party/half -I/home/dr/project/android_ocr/native/MNN/3rd_party/imageHelper -I/home/dr/project/android_ocr/native/MNN/3rd_party/OpenCLHeaders -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/../../../tools/cv/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include  -std=c++17 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++17   -fPIC -DMNN_USE_SPARSE_COMPUTE -DMNN_USE_SSE -o mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUArgMax.cpp.o -c /home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUArgMax.cpp",
+          "file": "/home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUArgMax.cpp",
+          "output": "/tmp/suishou-ocr-075/host-release-mmap/mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUArgMax.cpp.o"
+        },
+        {
+          "directory": "/tmp/suishou-ocr-075/host-release-mmap",
+          "command": "/usr/bin/c++ -DLLM_SUPPORT_VISION -DLLM_USE_JINJA -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL -Dllm_EXPORTS -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/source -I/home/dr/project/android_ocr/native/MNN/express -I/home/dr/project/android_ocr/native/MNN/tools -I/home/dr/project/android_ocr/native/MNN/codegen -I/home/dr/project/android_ocr/native/MNN/schema/current -I/home/dr/project/android_ocr/native/MNN/3rd_party -I/home/dr/project/android_ocr/native/MNN/3rd_party/flatbuffers/include -I/home/dr/project/android_ocr/native/MNN/3rd_party/half -I/home/dr/project/android_ocr/native/MNN/3rd_party/imageHelper -I/home/dr/project/android_ocr/native/MNN/3rd_party/OpenCLHeaders -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/../../../tools/cv/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include  -std=c++17 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++17 -fPIC   -fPIC -fvisibility=default -o mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/llm.cpp.o -c /home/dr/project/android_ocr/native/MNN/transformers/llm/engine/src/llm.cpp",
+          "file": "/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/src/llm.cpp",
+          "output": "/tmp/suishou-ocr-075/host-release-mmap/mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/llm.cpp.o"
+        },
+        {
+          "directory": "/tmp/suishou-ocr-075/host-release-mmap",
+          "command": "/usr/bin/c++ -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include -I/tmp/suishou-ocr-075/docprase/third_party/stb -I/tmp/suishou-ocr-075/docprase/include -I/tmp/suishou-ocr-075/docprase/src -I/tmp/suishou-ocr-075/baseline-cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o -c /tmp/suishou-ocr-075/host-release-mmap/android-engine/printed_page_mnn_backend.cpp",
+          "file": "/tmp/suishou-ocr-075/host-release-mmap/android-engine/printed_page_mnn_backend.cpp",
+          "output": "/tmp/suishou-ocr-075/host-release-mmap/docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o"
+        }
+      ],
+      "cacheBuildType": "CMAKE_BUILD_TYPE:STRING=Release"
+    },
+    {
+      "configuration": "host-release-no-mmap",
+      "samples": [
+        {
+          "directory": "/tmp/suishou-ocr-075/host-release-no-mmap",
+          "command": "/usr/bin/c++ -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o -c /tmp/suishou-ocr-075/host-release-no-mmap/android-engine/printed_page_mnn_backend.cpp",
+          "file": "/tmp/suishou-ocr-075/host-release-no-mmap/android-engine/printed_page_mnn_backend.cpp",
+          "output": "/tmp/suishou-ocr-075/host-release-no-mmap/docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o"
+        }
+      ],
+      "cacheBuildType": "CMAKE_BUILD_TYPE:STRING=Release"
+    }
+  ],
+  "baselineCppVerified": [
+    {
+      "file": "android_engine_loading.hpp",
+      "sha256": "c408127b29fd6c048837d0f80aa8a3190dec06913b06f297fd602a898f1c0579"
+    },
+    {
+      "file": "pdf_renderer_android.cpp",
+      "sha256": "2f4d3bf0cab499653bc43a7cb5edceefd9d3c7fde795946d23c4f696097e9f23"
+    },
+    {
+      "file": "android_engine_runtime.hpp",
+      "sha256": "3f6387ffbb041e99f9d7c6fa8958d054b26db81af7fa8f907a351ad323b0c491"
+    },
+    {
+      "file": "android_recognition_stream.hpp",
+      "sha256": "fc47ab3e88c5a94cdf1dc8276e9519c182d7b878f5e9ed9788e706d5bdda55d5"
+    },
+    {
+      "file": "CMakeLists.txt",
+      "sha256": "7388beb0162547150b42d08e87feff315142bcdba75340d5bee5ee14bdfc3b33"
+    },
+    {
+      "file": "dococr_jni.cpp",
+      "sha256": "87c370b42940ed907757fe93a6747482eeded82ff8b13378427ad5a0c654de34"
+    },
+    {
+      "file": "android_engine_sources.cmake",
+      "sha256": "eccb1b6d17411f8ffefc8947c7c1f5c975146ebed8c6fb88de052dad5783ba31"
+    },
+    {
+      "file": "android_recognition_stream.cpp",
+      "sha256": "5db4459db708a61f6f50ff0d86124de5760971f509d35ca01d034fd29b93ef45"
+    }
+  ],
+  "baselineCommit": "70d5e690e9d1ec23c3819ea87a7248c45ca36101"
+}

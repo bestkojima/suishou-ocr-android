@@ -1,0 +1,65 @@
+[
+  {
+    "label": "release-mmap",
+    "command": [
+      "python3",
+      "tools/benchmark_ocr.py",
+      "--library",
+      "/tmp/suishou-ocr-075/host-release-mmap/docprase/libdococr_c.so",
+      "--threads",
+      "4",
+      "--runs",
+      "2",
+      "--allow-partial",
+      "--expect-mmap",
+      "true",
+      "--input",
+      "verification/ticket5/source.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/native-release/matrix/release-mmap"
+    ],
+    "exitCode": 0
+  },
+  {
+    "label": "release-no-mmap",
+    "command": [
+      "python3",
+      "tools/benchmark_ocr.py",
+      "--library",
+      "/tmp/suishou-ocr-075/host-release-no-mmap/docprase/libdococr_c.so",
+      "--threads",
+      "4",
+      "--runs",
+      "2",
+      "--allow-partial",
+      "--expect-mmap",
+      "false",
+      "--input",
+      "verification/ticket5/source.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/native-release/matrix/release-no-mmap"
+    ],
+    "exitCode": 0
+  },
+  {
+    "label": "debug-mmap",
+    "command": [
+      "python3",
+      "tools/benchmark_ocr.py",
+      "--library",
+      "/tmp/suishou-ocr-075/host-debug/docprase/libdococr_c.so",
+      "--threads",
+      "4",
+      "--runs",
+      "2",
+      "--allow-partial",
+      "--expect-mmap",
+      "true",
+      "--input",
+      "verification/ticket5/source.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/native-release/matrix/debug-mmap"
+    ],
+    "exitCode": 0
+  }
+]

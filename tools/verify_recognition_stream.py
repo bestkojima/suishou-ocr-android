@@ -16,7 +16,7 @@ args.output.mkdir(parents=True, exist_ok=True)
 with tempfile.TemporaryDirectory(prefix='ocr-stream-buffer-') as temporary:
     probe = Path(temporary) / 'probe'
     subprocess.run(['c++', '-std=c++17', '-pthread', '-Wl,--export-dynamic',
-                    '-I' + str(ROOT / 'app/src/main/cpp'), '-I' + str(ROOT.parent / 'docprase/include'),
+                    '-I' + str(ROOT / 'app/src/main/cpp'), '-I' + str(ROOT / 'native/docprase/include'),
                     str(ROOT / 'app/src/test/cpp/recognition_stream_test.cpp'),
                     '-L' + str(library.parent), '-Wl,-rpath,' + str(library.parent),
                     '-l:' + library.name, '-o', str(probe)], check=True)

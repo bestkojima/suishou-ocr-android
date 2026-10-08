@@ -1,0 +1,5 @@
+Ovis load: 2189 ms, success=1, mmap=0
+PASS model load 1: 4.716s, mmap=0, 10 real blocks
+Ovis load: 890 ms, success=1, mmap=0
+PASS model load 2: 1.580s, mmap=0, 10 real blocks
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

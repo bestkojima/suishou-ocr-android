@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
+# 与 APK 的 Debug build type 独立；在 project()/NDK 初始化前确定优化类型。
+set(CMAKE_BUILD_TYPE Release CACHE STRING "生产原生引擎使用 Release 优化" FORCE)
 project(android_dococr LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 get_filename_component(ANDROID_OCR_ROOT "${CMAKE_CURRENT_LIST_DIR}/../../../.." ABSOLUTE)

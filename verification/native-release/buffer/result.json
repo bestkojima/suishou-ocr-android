@@ -1,0 +1,11 @@
+{
+  "environment": "Linux 实际共享库流缓冲，受控 C ABI 模型调用，非模型推理",
+  "librarySha256": "1205ae28a86810cf66b5759fce60e52ccb2aac9c4c87b3a0acb96cce38b2a62b",
+  "passed": [
+    "分段中文 UTF-8",
+    "分段四字节 emoji",
+    "重试替换及 JSON 转义",
+    "异常结束标记",
+    "作业隔离及资源清理"
+  ]
+}

@@ -8,12 +8,15 @@ from pathlib import Path
 import tempfile
 import time
 import threading
+from ocr_runtime_checks import check_runtime, memory_usage, check_cache_directory
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--library', type=Path, required=True, help='使用 Android 源码适配层编译的 Linux dococr_c 库')
 parser.add_argument('--output', type=Path, required=True)
+parser.add_argument('--expect-mmap', choices=['false','true'], default='false', help='true 仅用于历史对照库')
 args = parser.parse_args()
+expected_mmap = args.expect_mmap == 'true'
 args.output.mkdir(parents=True, exist_ok=True)
 engine_root = ROOT.parent / 'docprase'
 config = json.loads((ROOT / 'app/src/main/assets/ocr/config.json').read_text())
@@ -72,8 +75,8 @@ request = Input(c.sizeof(Input), buffer, len(image), 1, 0, 0, 0, 0, 0, 0, 0, 0)
 report = {'environment': 'Linux x86_64，同源 Android 加载适配＋真实模型；非设备推理',
           'library': str(library), 'librarySha256': hashlib.sha256(library.read_bytes()).hexdigest(),
           'inputSha256': hashlib.sha256(image).hexdigest(), 'modelsVerifiedBeforeLoading': True,
-          'loads': []}
-with tempfile.TemporaryDirectory(prefix='android-ocr-mmap-') as cache:
+          'expectedMmap': expected_mmap, 'memoryBeforeLoading': memory_usage(), 'loads': []}
+with tempfile.TemporaryDirectory(prefix='android-ocr-runtime-') as cache:
     os.environ['TMPDIR'] = cache
     for attempt in range(1):
         engine, job = c.c_uint64(), c.c_uint64()
@@ -119,6 +122,8 @@ with tempfile.TemporaryDirectory(prefix='android-ocr-mmap-') as cache:
             ir = json.loads(document)
             blocks = sum(len(page['blocks']) for page in ir['pages'])
             assert ir['status'] == 'ok' and blocks > 0
+            manifest, manifest_data = check_runtime(lib, job, Bytes, take, expected_mmap)
+            (args.output / f'manifest-{attempt + 1}.json').write_bytes(manifest_data)
             by_request = {block['provenance']['request_id']: block for page in ir['pages'] for block in page['blocks'] if block.get('provenance', {}).get('request_id')}
             for region in snapshot['regions']:
                 attempts = by_request[region['requestId']]['provenance']['recognition']['attempts']
@@ -129,11 +134,12 @@ with tempfile.TemporaryDirectory(prefix='android-ocr-mmap-') as cache:
             (args.output / f'run-{attempt + 1}.json').write_bytes(document)
             (args.output / f'run-{attempt + 1}.md').write_bytes(markdown)
             report['loads'].append({'attempt': attempt + 1, 'seconds': load_seconds,
-                                    'status': ir['status'], 'blocks': blocks})
-            print(f'PASS mmap load {attempt + 1}: {load_seconds:.3f}s, {blocks} real blocks', flush=True)
+                                    'status': ir['status'], 'blocks': blocks, 'useMmap': manifest['runtime_configuration']['use_mmap'], 'memory': memory_usage()})
+            print(f'PASS model load {attempt + 1}: {load_seconds:.3f}s, mmap={int(expected_mmap)}, {blocks} real blocks', flush=True)
         finally:
             if job.value:
                 check(lib.dococr_job_destroy(job))
                 lib.android_ocr_stream_forget(job)
             check(lib.dococr_destroy(engine))
+    report['temporaryDirectory'] = check_cache_directory(cache, expected_mmap)
 (args.output / 'streaming.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')

@@ -1,0 +1,30 @@
+[
+  {
+    "script": "web/verify.mjs",
+    "exitCode": 0
+  },
+  {
+    "script": "web/verify-models.mjs",
+    "exitCode": 0
+  },
+  {
+    "script": "web/verify-reorder.mjs",
+    "exitCode": 0
+  },
+  {
+    "script": "web/verify-editor-drag.mjs",
+    "exitCode": 0
+  },
+  {
+    "script": "web/verify-recognition.mjs",
+    "exitCode": 0
+  },
+  {
+    "script": "web/verify-recognition-navigation.mjs",
+    "exitCode": 0
+  },
+  {
+    "script": "web/verify-live-recognition.mjs",
+    "exitCode": 0
+  }
+]

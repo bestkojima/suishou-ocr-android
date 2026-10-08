@@ -24,7 +24,13 @@ python3 tools/verify_ocr_apk.py
 
 根据用户 2026-10-07 的后续要求，Android 加载不重复计算文件 SHA。`android_engine_sources.cmake` 为本平台生成 config／版面／识别／ABI 四份适配源码，移除各加载路径的文件散列扫描，保留固定工件和模型配置匹配；相邻 docprase 与 MNN 源码不变。替换必须精确匹配，发现源引擎变更或残留散列调用时构建失败并要求核对。
 
-Ovis 初始化参照 MNN Chat 的 `LlmSession::Load`，执行 `createLLM → set_config → load`，启用 `use_mmap` 并传入私有可写 `tmp_path`，缓存按模型／配置身份隔离。这是 MNN 的权重运行缓存，会占用额外磁盘空间；首次建立与后续复用的耗时分别记录。临时配置和裁剪仍使用 App 缓存。0.7.3 的CPU线程默认自动选择最多4个，并受可用处理器数限制，可在模型页选择1／2／4。`OcrEngine` 日志记录下载状态检查、生产引擎总加载及 Ovis 初始化耗时。下载完成、文件就绪和实际加载仍是独立状态；自定义公开仓库下载不承诺推理兼容。
+Ovis 初始化执行 `createLLM → set_config → load`。0.7.5 按用户要求显式设置 `use_mmap=false`、`kvcache_mmap=false`，语言和视觉后端共享该设置；`tmp_path` 使用现有 App 私有临时目录，不创建或复用 `ovis-mmap-*` 权重缓存，不删除旧缓存。加载后校验实际配置，manifest 与日志分别记录 false／`mmap=0`。加载失败不会自动切换回 mmap。临时配置和裁剪仍使用 App 临时目录。0.7.3／0.7.4 开启 mmap 的原始验证属于历史证据，见对应交付记录。0.7.3 的CPU线程默认自动选择最多4个，并受可用处理器数限制，可在模型页选择1／2／4。`OcrEngine` 日志记录下载状态检查、生产引擎总加载及 Ovis 初始化耗时。下载完成、文件就绪和实际加载仍是独立状态；自定义公开仓库下载不承诺推理兼容。
+
+## 0.7.5 原生编译
+
+两类 APK 保留 Debug build type、开发签名、应用标识和既有调试能力；MNN、docprase、JNI 固定使用 Release／`-O3`／`NDEBUG`，关闭 MNN 原生调试宏。AGP 的构建任务／目录可反映原生 Release，但 APK 输出仍在 debug 下。`verify_ocr_apk.py --require-native-release` 用 APK 内 JNI／dococr／MNN 库的 ELF build ID 关联本次 AGP 构建目录，检查实际编译命令，排除历史缓存；不由符号 strip 状态推断优化类型。
+
+版本 0.7.5-ocr，versionCode 12。构建、回归、同源真实推理及预发布记录见 [本轮交付](../verification/native-release/DELIVERY.md)。该改动不是 AOT/JIT 执行模式切换，设备推理性能与内存仍待验收。
 
 ## 0.7.4 图片输入分辨率
 

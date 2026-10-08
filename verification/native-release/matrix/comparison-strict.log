@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/dr/project/android_ocr/tools/compare_ocr_benchmarks.py", line 61, in <module>
+    assert not differences, '真实内容与改前不同，请查阅报告，解释差异后才能发布'
+           ^^^^^^^^^^^^^^^
+AssertionError: 真实内容与改前不同，请查阅报告，解释差异后才能发布

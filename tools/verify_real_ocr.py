@@ -6,15 +6,26 @@ import shutil
 import time
 import threading
 import resource
+import os
+import tempfile
 from pathlib import Path
 from PIL import Image
+from ocr_runtime_checks import check_runtime, check_cache_directory
 
 ROOT=Path(__file__).resolve().parents[1]
 ENGINE=ROOT.parent/'docprase'
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output',type=Path,default=ROOT/'verification/real-ocr',help='独立的桌面生命周期证据目录')
 parser.add_argument('--input',type=Path,default=ROOT/'verification/real-ocr/source.png',help='本次实际识别的输入图片')
+parser.add_argument('--library',type=Path,default=ENGINE/'build/linux-current/libdococr_c.so',help='本次构建的同源生产 C ABI 库')
+parser.add_argument('--threads',type=int,choices=[1,2,4],default=1)
+parser.add_argument('--expect-mmap',choices=['false','true'],default='false',help='true 仅用于历史对照库')
 args=parser.parse_args()
+library=args.library.resolve()
+expected_mmap=args.expect_mmap=='true'
+threads=args.threads
+runtime_dir=tempfile.TemporaryDirectory(prefix='android-ocr-lifecycle-')
+os.environ['TMPDIR']=runtime_dir.name
 OUT=args.output.resolve()
 OUT.mkdir(parents=True,exist_ok=True)
 source=args.input.resolve()
@@ -27,7 +38,7 @@ class Input(c.Structure):
     _fields_=[('struct_size',c.c_uint32),('data',c.POINTER(c.c_uint8)),('size',c.c_size_t),('format',c.c_uint32),('width',c.c_uint32),('height',c.c_uint32),('row_stride',c.c_size_t),('first_page',c.c_uint32),('last_page',c.c_uint32),('dpi',c.c_uint32),('max_page_pixels',c.c_uint64),('timeout_ms',c.c_uint32)]
 class Result(c.Structure):
     _fields_=[('struct_size',c.c_uint32),('json',Bytes),('markdown',Bytes)]
-lib=c.CDLL(str(ENGINE/'build/linux-current/libdococr_c.so'))
+lib=c.CDLL(str(library))
 for name,args in {
     'create':[View,c.POINTER(c.c_uint64)],'job_create':[c.c_uint64,c.POINTER(c.c_uint64)],
     'job_run':[c.c_uint64,c.POINTER(Input)],'job_result':[c.c_uint64,c.POINTER(Result)],
@@ -58,16 +69,19 @@ def export(job,path):
     path.mkdir(parents=True,exist_ok=True);r=Result();r.struct_size=c.sizeof(Result)
     assert lib.dococr_job_result(job,c.byref(r))==0
     data=take(r.json);(path/'document.json').write_bytes(data);(path/'document.md').write_bytes(take(r.markdown))
-    m=Bytes();assert lib.dococr_job_manifest(job,c.byref(m))==0;(path/'run-manifest.json').write_bytes(take(m))
+    manifest,manifest_data=check_runtime(lib,job,Bytes,take,expected_mmap)
+    assert manifest['runtime_configuration']['ovis_threads']==threads
+    (path/'run-manifest.json').write_bytes(manifest_data)
     count=c.c_size_t();assert lib.dococr_job_asset_count(job,c.byref(count))==0
     for i in range(count.value):
         name,bytes=Bytes(),Bytes();assert lib.dococr_job_asset(job,i,c.byref(name),c.byref(bytes))==0
         target=path/take(name).decode();target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(take(bytes))
     return json.loads(data)
 
-config=json.loads((ENGINE/'configs/printed-page.example.json').read_text())
+config=json.loads((ROOT/'app/src/main/assets/ocr/config.json').read_text())
 for key,dir in [('layout','doclayout'),('recognition','ovis')]:config['models'][key]['root']=str(ENGINE/'models'/dir)
 config['execution']['max_new_tokens']=512
+config['platform']['threads']=threads
 (OUT/'lifecycle-config.json').write_text(json.dumps(config,indent=2))
 encoded=json.dumps(config).encode();engine=c.c_uint64();start=time.monotonic()
 assert lib.dococr_create(View(encoded,len(encoded)),c.byref(engine))==0
@@ -108,5 +122,7 @@ blank_ir=export(job,OUT/'blank');blank=snapshot(job)
 assert not blank_ir['pages'][0]['blocks'];assert lib.dococr_job_destroy(job)==0
 assert lib.dococr_destroy(engine)==0
 report={'environment':'Linux x86_64 生产 C ABI，真实模型；非 Android','loadingSeconds':load,'elapsedSeconds':time.monotonic()-start,'maxRssKiB':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'repeatedInput':str(OUT/'partial-source.png'),'checks':['真实加载','推理中第二项返回 BUSY','推理中销毁返回 BUSY','安全取消到 terminal','取消无有效正文','同一引擎取消恢复后完整识别与导出','重复作业真实结构化输出','真实空白页'],'cancelled':cancelled,'completed':complete,'outputStatus':complete_ir['status'],'repeated':partial,'repeatedOutputStatus':ir['status'],'blank':blank,'eventsBeforeCancel':events}
+report.update({'library':str(library),'threads':threads,'expectedMmap':expected_mmap,'temporaryDirectory':check_cache_directory(runtime_dir.name,expected_mmap)})
 (OUT/'lifecycle.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(report,ensure_ascii=False,indent=2))
+runtime_dir.cleanup()

@@ -8,6 +8,7 @@ from pathlib import Path
 import tempfile
 import time
 import threading
+from ocr_runtime_checks import check_runtime, memory_usage, check_cache_directory
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
@@ -17,7 +18,9 @@ parser.add_argument('--threads', type=int, choices=[1,2,4], default=1)
 parser.add_argument('--runs', type=int, default=2)
 parser.add_argument('--input', type=Path, default=ROOT / 'verification/ticket5/source.png')
 parser.add_argument('--allow-partial', action='store_true', help='保留失败区域用于分辨率诊断；默认仍要求完整成功')
+parser.add_argument('--expect-mmap', choices=['false','true'], default='false', help='验证实际配置；true 仅用于历史对照库')
 args = parser.parse_args()
+expected_mmap = args.expect_mmap == 'true'
 if args.runs < 1: parser.error("runs必须为正整数")
 args.output.mkdir(parents=True, exist_ok=True)
 engine_root = ROOT.parent / 'docprase'
@@ -78,14 +81,15 @@ request = Input(c.sizeof(Input), buffer, len(image), 1, 0, 0, 0, 0, 0, 0, 0, 0)
 report = {'environment': 'Linux x86_64，同源 Android 加载适配＋真实模型；非设备推理',
           'library': str(library), 'librarySha256': hashlib.sha256(library.read_bytes()).hexdigest(),
           'inputPath': str(args.input.resolve()), 'inputSha256': hashlib.sha256(image).hexdigest(), 'modelsVerifiedBeforeLoading': True,
-          'threads': args.threads, 'loads': []}
-with tempfile.TemporaryDirectory(prefix='android-ocr-mmap-') as cache:
+          'threads': args.threads, 'expectedMmap': expected_mmap, 'memoryBeforeLoading': memory_usage(), 'loads': []}
+with tempfile.TemporaryDirectory(prefix='android-ocr-runtime-') as cache:
     os.environ['TMPDIR'] = cache
     for engine_attempt in range(1):
         engine, job = c.c_uint64(), c.c_uint64()
         started = time.monotonic()
         check(lib.dococr_create(View(encoded, len(encoded)), c.byref(engine)))
         load_seconds = time.monotonic() - started
+        report['memoryAfterLoading'] = memory_usage()
         try:
             for attempt in range(args.runs):
                 check(lib.dococr_job_create(engine, c.byref(job)))
@@ -119,10 +123,7 @@ with tempfile.TemporaryDirectory(prefix='android-ocr-mmap-') as cache:
                 stream_report = {'firstLiveSeconds': visible[0]['seconds'], 'totalSeconds': time.monotonic()-start, 'snapshots': len(timeline), 'regions': snapshot['regions']}
                 (args.output / f'timeline-{attempt+1}.json').write_text(json.dumps(timeline, ensure_ascii=False, indent=2)+'\n')
                 print(f"PASS real live output: first={visible[0]['seconds']:.3f}s, total={time.monotonic()-start:.3f}s, snapshots={len(timeline)}", flush=True)
-                manifest = Bytes()
-                check(lib.dococr_job_manifest(job, c.byref(manifest)))
-                manifest_data = take(manifest)
-                manifest_json = json.loads(manifest_data)
+                manifest_json, manifest_data = check_runtime(lib, job, Bytes, take, expected_mmap)
                 assert manifest_json['effective_parameters']['threads'] == args.threads
                 assert manifest_json['runtime_configuration']['ovis_threads'] == args.threads
                 (args.output / f'manifest-{attempt+1}.json').write_bytes(manifest_data)
@@ -143,7 +144,8 @@ with tempfile.TemporaryDirectory(prefix='android-ocr-mmap-') as cache:
                 stream_report['phaseTotalsMs'] = {key: sum(region[key] for region in snapshot['regions']) for key in ('visionMs', 'prefillMs', 'decodeMs', 'elapsedMs')}
 
                 report['loads'].append({'attempt': attempt + 1, 'seconds': load_seconds if attempt == 0 else 0, 'engineReused': attempt > 0,
-                                        'status': ir['status'], 'blocks': blocks, 'stream': stream_report, 'markdownSha256': hashlib.sha256(markdown).hexdigest()})
+                                        'status': ir['status'], 'blocks': blocks, 'stream': stream_report, 'memory': memory_usage(),
+                                        'useMmap': manifest_json['runtime_configuration']['use_mmap'], 'markdownSha256': hashlib.sha256(markdown).hexdigest()})
                 check(lib.dococr_job_destroy(job))
                 lib.android_ocr_stream_forget(job)
                 job.value=0
@@ -153,4 +155,5 @@ with tempfile.TemporaryDirectory(prefix='android-ocr-mmap-') as cache:
                 check(lib.dococr_job_destroy(job))
                 lib.android_ocr_stream_forget(job)
             check(lib.dococr_destroy(engine))
+    report['temporaryDirectory'] = check_cache_directory(cache, expected_mmap)
 (args.output / 'benchmark.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')

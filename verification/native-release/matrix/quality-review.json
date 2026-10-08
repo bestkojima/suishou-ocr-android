@@ -1,0 +1,11 @@
+{
+  "inputSha256": "c71ed55fd66f249cc6f2435f7986961e1065a804aee57665e48858455143a46d",
+  "reviewer": "Codex，2026-10-08，实际查看原始合成样图并比较全部内容块",
+  "acceptedPairs": [
+    {
+      "baselineContentSha256": "e17d62b697da18bcbbf8664da3824dddbeca02c83febd622b17f861b2ba69cd8",
+      "contentSha256": "3bac03c27d0b0a0c8af2d4aec505a236fc7f5ef5c32835eb7cdec5d1e69169d4",
+      "reason": "差异随 Debug/Release 编译模式稳定复现；同模式重复两次一致，两种 Release 的四次输出完全一致并匹配 verification/ticket5/output/document.json 的既有真实内容。仅 b0006 从 Markdown 标题“E = mc²”转为有效 LaTeX“\\mathrm{E}=\\mathrm{mc}^{2}”，内容符合原图，公式由 partial/unverified 改为 ok；b0010 去掉多余 ## 标题标记，文字不变。其他正文、表格完整结构、块类型、阅读顺序和资源引用完全一致。不是模型数值逐比特一致或标注准确率保证。"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "environment": "Linux x86_64，同源 Android 加载适配＋真实模型；非设备推理",
+  "library": "/tmp/suishou-ocr-075/host-release-no-mmap/docprase/libdococr_c.so",
+  "librarySha256": "1205ae28a86810cf66b5759fce60e52ccb2aac9c4c87b3a0acb96cce38b2a62b",
+  "inputSha256": "c71ed55fd66f249cc6f2435f7986961e1065a804aee57665e48858455143a46d",
+  "modelsVerifiedBeforeLoading": true,
+  "expectedMmap": false,
+  "memoryBeforeLoading": {
+    "rssBytes": 21987328,
+    "processPeakRssBytes": 23822336
+  },
+  "loads": [
+    {
+      "attempt": 1,
+      "seconds": 4.715721176999978,
+      "status": "ok",
+      "blocks": 10,
+      "useMmap": false,
+      "memoryAfterLoading": {
+        "rssBytes": 1554149376,
+        "processPeakRssBytes": 1793597440
+      },
+      "memoryAfterRecognition": {
+        "rssBytes": 2373533696,
+        "processPeakRssBytes": 2463498240
+      }
+    },
+    {
+      "attempt": 2,
+      "seconds": 1.5795196929998383,
+      "status": "ok",
+      "blocks": 10,
+      "useMmap": false,
+      "memoryAfterLoading": {
+        "rssBytes": 1582821376,
+        "processPeakRssBytes": 2463498240
+      },
+      "memoryAfterRecognition": {
+        "rssBytes": 2374475776,
+        "processPeakRssBytes": 2463498240
+      }
+    }
+  ],
+  "oldCachePreserved": true,
+  "temporaryDirectory": {
+    "files": [
+      {
+        "path": "ovis-mmap-history/preserved.txt",
+        "bytes": 46
+      }
+    ],
+    "mmapDirectories": [
+      "ovis-mmap-history"
+    ]
+  }
+}

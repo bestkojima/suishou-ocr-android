@@ -147,3 +147,5 @@ Status: ready-for-agent
 
 
 2026-10-07 后续要求：真实 OCR 生成时正文须实时渲染，不能以全部区域完成后的 JSON 回放代替。后续规格与实施任务见 [真实流式输出](../live-ocr/spec.md)，模型加载校验时机仍遵循此前下载时校验的约定。
+
+2026-10-08：用户明确更新加载要求为 use_mmap=false、kvcache_mmap=false。0.7.5 同时采用原生 Release/-O3 编译，APK 保持 Debug 变体与签名；当前有效设置及验证以 [本轮交付](../../verification/native-release/DELIVERY.md) 为准，早期 mmap=true 记录保留为历史证据。

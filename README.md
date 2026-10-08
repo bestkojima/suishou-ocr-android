@@ -2,17 +2,17 @@
 
 Android 本地离线文档识别应用：拍照或导入图片，使用 PP-DocLayoutV3 与 OvisOCR2 检测版面、识别文字／表格／公式，模型输出实时显示，并支持校对、历史记录与导出。
 
-当前版本：**0.7.4-ocr**。Java + Camera2 + JNI/C++ + MNN，界面使用本地 WebView、React、Streamdown 和 KaTeX。APK不包含模型，首次需要在应用内下载；模型下载完成后，单图识别和结果阅读可离线运行。
+当前版本：**0.7.5-ocr**。Java + Camera2 + JNI/C++ + MNN，界面使用本地 WebView、React、Streamdown 和 KaTeX。APK不包含模型，首次需要在应用内下载；模型下载完成后，单图识别和结果阅读可离线运行。
 
 ## 下载与安装
 
-从 [GitHub Releases](https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.4) 下载：
+从 [GitHub Releases](https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.5) 下载：
 
-- `suishou-ocr-0.7.4-arm64.apk`：普通版，应用ID `cn.local.ocr`。
-- `suishou-ocr-0.7.4-lab-arm64.apk`：测试版，应用ID `cn.local.ocr.test`，可与普通版同时安装。
+- `suishou-ocr-0.7.5-arm64.apk`：普通版，应用ID `cn.local.ocr`。
+- `suishou-ocr-0.7.5-lab-arm64.apk`：测试版，应用ID `cn.local.ocr.test`，可与普通版同时安装。
 - `SHA256SUMS.txt`：安装包校验值。
 
-需要 **Android 8.0 / API 26或以上、arm64-v8a**，及支持现代JavaScript的Android System WebView（Chromium 100+）。本次为预发布，使用开发签名的Debug APK；覆盖安装同类型版本可保留已下载模型和记录。普通版没有测试开关或WebView调试。
+需要 **Android 8.0 / API 26或以上、arm64-v8a**，及支持现代JavaScript的Android System WebView（Chromium 100+）。本次为预发布，使用开发签名的Debug APK，原生 MNN／docprase／JNI 使用 Release／`-O3`／`NDEBUG`；覆盖安装同类型版本可保留已下载模型和记录。普通版没有测试开关或WebView调试。
 
 首次使用：打开设置 → 识别模型 → 浏览仓库文件，下载必需的配置、词表与权重 → 加载识别模型 → 拍照或导入图片。下载成功的自定义模型不一定与引擎兼容。
 
@@ -29,7 +29,7 @@ Android 本地离线文档识别应用：拍照或导入图片，使用 PP-DocLa
 | PDF与Office | 提取已有文档内容；待OCR图片明确标记，尚未接通完整PDF／Office页面OCR |
 | 模型管理 | ModelScope仓库管理、选择下载、断点续传、下载完成时SHA-256校验 |
 
-0.7.4图片流程：
+0.7.5图片流程（沿用0.7.4）：
 
 ```text
 保留原文件 → 整页分辨率策略／EXIF校正 → source.png
@@ -40,6 +40,8 @@ Android 本地离线文档识别应用：拍照或导入图片，使用 PP-DocLa
 ```
 
 默认区域视觉预算为65,536～313,600像素，不是所有区域统一变成560×560。均衡模式的裁剪来自降采样后的整页；密集小字可选原图重新识别。首次初始化与连续识别的耗时不同。
+
+0.7.5 固定关闭 `use_mmap` 和 `kvcache_mmap`。加载前设置有效配置，使用现有私有临时目录；不创建或复用 `ovis-mmap-*` 权重缓存。模型仍在应用内加载并本地执行。
 
 ## 模型来源
 
@@ -61,6 +63,8 @@ npm ci
 
 `native/docprase`包含实际构建源码快照；脚本从GitHub获取固定提交的MNN到`native/MNN`。已有目录版本不匹配或受跟踪文件有改动时，脚本保留该目录并报错。来源与文件校验记录见 [原生依赖](native/README.md)。不需要单独克隆另一个docprase仓库，也不需要在构建机下载模型权重。
 
+Gradle 的 APK build type 与原生编译类型分开：`userDebug`／`labDebug` 仍可用开发签名覆盖安装，原生代码固定为 Release；以 CMakeCache 和实际编译命令验收优化，不以 APK 名称或符号是否被 strip 判断。
+
 可用Android Studio打开根目录，设置SDK位置、安装上述NDK／CMake并选择`userDebug`或`labDebug`构建；也可以命令行构建。Windows使用`gradlew.bat`，Linux/macOS使用`./gradlew`；SDK位置保存在不提交的`local.properties`，或通过`ANDROID_HOME`配置。
 
 ```bash
@@ -68,6 +72,7 @@ npm ci
 ./gradlew testUserDebugUnitTest testLabDebugUnitTest lintUserDebug lintLabDebug
 npm run build:web
 npm run test:web
+python tools/verify_ocr_apk.py --require-native-release --output verification/native-release/apk.json
 ```
 
 输出在`app/build/outputs/apk/{user,lab}/debug/`。浏览器预览使用`npm run preview`；其中相机、下载和真实模型推理需要APK。
@@ -82,10 +87,11 @@ adb logcat -s OcrEngine
 
 ## 验证与当前边界
 
-两版JVM各62项、浏览器51组、两版lint与arm64 APK静态检查通过。真实模型输出、流式采集和分辨率对比在Linux同源实现上运行；**Android设备的推理、相机、Bitmap与性能仍待实测**，JVM／浏览器通过不能代替设备验收。
+0.7.5 两版JVM各62项、浏览器78组（含本轮真实结果展示8组）、两版lint与原生Release／arm64 APK静态检查通过。真实模型输出、流式采集和分辨率对比在Linux同源实现上运行；**Android设备的推理、相机、Bitmap与性能仍待实测**，JVM／浏览器通过不能代替设备验收。
 
 合成大图分辨率对比中，连续识别2208万像素20.67s→约800万像素12.87s；该数据不代表平板速度，也不是密集小字精度保证。模型可能给出不完整或未校验结果，界面会保留可用内容并标示。
 
+- [0.7.5原生优化／关闭mmap与发布验证](verification/native-release/DELIVERY.md)
 - [当前OCR实现与接口](docs/REAL_OCR.md)
 - [0.7.4分辨率验证](verification/image-resolution/DELIVERY.md)
 - [引擎复用与线程对比](verification/ocr-speed/DELIVERY.md)

@@ -1,0 +1,59 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Warning (deprecated) at /home/dr/project/android_ocr/native/MNN/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+This warning is for project developers.  Use -Wno-author or -Wno-deprecated
+to suppress it.
+
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Use Threadpool, forbid openmp
+-- >>>>>>>>>>>>>
+-- MNN BUILD INFO:
+-- 	System: Linux
+-- 	Processor: x86_64
+-- 	Version: 3.6.1
+-- 	Metal: OFF
+-- 	OpenCL: OFF
+-- 	OpenGL: OFF
+-- 	Vulkan: OFF
+-- 	ARM82: ON
+-- 	KleidiAI: ON
+-- 	oneDNN: OFF
+-- 	TensorRT: OFF
+-- 	CoreML: OFF
+-- 	NNAPI: OFF
+-- 	QNN: OFF
+-- 	CUDA: OFF
+-- 	MUSA: OFF
+-- 	OpenMP: OFF
+-- 	BF16: OFF
+-- 	ThreadPool: ON
+-- 	Hidden: FALSE
+-- 	Build Path: /tmp/suishou-ocr-075/host-debug/mnn
+-- 	CUDA PROFILE: OFF
+-- WIN_USE_ASM: 
+-- x86_64: Open SSE
+-- MNN_AVX512:OFF
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- MNN_IMGCODECS: ON
+-- Configuring done (1.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /tmp/suishou-ocr-075/host-debug

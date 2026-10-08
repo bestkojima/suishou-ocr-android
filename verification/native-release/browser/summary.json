@@ -1,0 +1,40 @@
+{
+  "passedGroups": 70,
+  "reports": [
+    {
+      "scriptReport": "web/test-results/report.json",
+      "groups": 19,
+      "errors": []
+    },
+    {
+      "scriptReport": "verification/models-ui.json",
+      "groups": 9,
+      "errors": []
+    },
+    {
+      "scriptReport": "verification/reorder-ui.json",
+      "groups": 7,
+      "errors": []
+    },
+    {
+      "scriptReport": "verification/editor-drag-ui.json",
+      "groups": 12,
+      "errors": []
+    },
+    {
+      "scriptReport": "verification/recognition-ui.json",
+      "groups": 11,
+      "errors": []
+    },
+    {
+      "scriptReport": "verification/ticket4/navigation.json",
+      "groups": 8,
+      "errors": []
+    },
+    {
+      "scriptReport": "verification/live-ocr/ui.json",
+      "groups": 4,
+      "errors": []
+    }
+  ]
+}

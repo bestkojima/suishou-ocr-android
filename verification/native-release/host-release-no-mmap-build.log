@@ -1,0 +1,22 @@
+[1/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/sha256.cpp.o
+[2/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/layout_preprocess.cpp.o
+[3/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/visual_adaptation.cpp.o
+[4/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/table_parser.cpp.o
+[5/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/output_assessment.cpp.o
+[6/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/region_recognition.cpp.o
+[7/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/region_structure.cpp.o
+[8/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/layout_region_policy.cpp.o
+[9/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/label_export_policy.cpp.o
+[10/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/markdown.cpp.o
+[11/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/pdf_renderer.cpp.o
+[12/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/core.cpp.o
+[13/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/formula_scripts.cpp.o
+[14/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/src/pdf_job.cpp.o
+[15/22] Building CXX object docprase/CMakeFiles/dococr_c.dir/src/production_backend.cpp.o
+[16/22] Building CXX object docprase/CMakeFiles/dococr_core.dir/__/android-engine/config.cpp.o
+[17/22] Linking CXX static library docprase/libdococr_core.a
+[18/22] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/layout_mnn_backend.cpp.o
+[19/22] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/abi.cpp.o
+[20/22] Building CXX object docprase/CMakeFiles/dococr_c.dir/home/dr/project/android_ocr/app/src/main/cpp/android_recognition_stream.cpp.o
+[21/22] Building CXX object docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o
+[22/22] Linking CXX shared library docprase/libdococr_c.so

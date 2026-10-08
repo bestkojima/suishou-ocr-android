@@ -1,0 +1,359 @@
+{
+  "environment": "Linux x86_64，同源 Android 加载适配＋真实模型；非设备推理",
+  "library": "/tmp/suishou-ocr-075/host-debug/docprase/libdococr_c.so",
+  "librarySha256": "9b92ac97a8a83a7dfa3fa976244d9e11b2359a92e9d3ffdc7acec9f14b51c4a3",
+  "inputPath": "/home/dr/project/android_ocr/verification/ticket5/source.png",
+  "inputSha256": "c71ed55fd66f249cc6f2435f7986961e1065a804aee57665e48858455143a46d",
+  "modelsVerifiedBeforeLoading": true,
+  "threads": 4,
+  "expectedMmap": true,
+  "memoryBeforeLoading": {
+    "rssBytes": 32284672,
+    "processPeakRssBytes": 38379520
+  },
+  "loads": [
+    {
+      "attempt": 1,
+      "seconds": 2.7251404879998518,
+      "engineReused": false,
+      "status": "partial",
+      "blocks": 10,
+      "stream": {
+        "firstLiveSeconds": 19.79476225999997,
+        "totalSeconds": 77.55657276700003,
+        "snapshots": 56,
+        "regions": [
+          {
+            "threads": 4,
+            "requestId": "reqr0001",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 离线文档识别验证\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 17281,
+            "elapsedMs": 18708,
+            "visionMs": 12270,
+            "prefillMs": 4982,
+            "decodeMs": 1419,
+            "outputTokens": 7
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0002",
+            "type": "text",
+            "attempt": 1,
+            "raw": "这是一张新生成的单页测试图片。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5984,
+            "elapsedMs": 6540,
+            "visionMs": 1195,
+            "prefillMs": 4758,
+            "decodeMs": 546,
+            "outputTokens": 10
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0003",
+            "type": "text",
+            "attempt": 1,
+            "raw": "输入在识别前保存，模型在本地运行。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5867,
+            "elapsedMs": 6464,
+            "visionMs": 1189,
+            "prefillMs": 4658,
+            "decodeMs": 584,
+            "outputTokens": 12
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0004",
+            "type": "text",
+            "attempt": 1,
+            "raw": "结果包括文字、公式、表格和插图。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5869,
+            "elapsedMs": 6454,
+            "visionMs": 1157,
+            "prefillMs": 4689,
+            "decodeMs": 574,
+            "outputTokens": 11
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0005",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 能量公式\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5362,
+            "elapsedMs": 5641,
+            "visionMs": 999,
+            "prefillMs": 4344,
+            "decodeMs": 274,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0006",
+            "type": "formula",
+            "attempt": 1,
+            "raw": "## E = mc²\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5321,
+            "elapsedMs": 5595,
+            "visionMs": 1037,
+            "prefillMs": 4267,
+            "decodeMs": 268,
+            "outputTokens": 6
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0007",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 商品统计\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5272,
+            "elapsedMs": 5489,
+            "visionMs": 1019,
+            "prefillMs": 4234,
+            "decodeMs": 212,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0008",
+            "type": "table",
+            "attempt": 1,
+            "raw": "<table border=1><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 8623,
+            "elapsedMs": 12732,
+            "visionMs": 2642,
+            "prefillMs": 5942,
+            "decodeMs": 4023,
+            "outputTokens": 76
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0010",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 图 1：圆形与三角形\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5714,
+            "elapsedMs": 6289,
+            "visionMs": 1150,
+            "prefillMs": 4542,
+            "decodeMs": 563,
+            "outputTokens": 10
+          }
+        ],
+        "rawMatchesSavedAttempts": true,
+        "phaseTotalsMs": {
+          "visionMs": 22658,
+          "prefillMs": 42416,
+          "decodeMs": 8463,
+          "elapsedMs": 73912
+        }
+      },
+      "memory": {
+        "rssBytes": 1592643584,
+        "processPeakRssBytes": 2489638912
+      },
+      "useMmap": true,
+      "markdownSha256": "af24a95ab0bf104cd19c9a99b455897d94cbafd4d6dd9f9e4a704a330572c4c0"
+    },
+    {
+      "attempt": 2,
+      "seconds": 0,
+      "engineReused": true,
+      "status": "partial",
+      "blocks": 10,
+      "stream": {
+        "firstLiveSeconds": 8.172067539999716,
+        "totalSeconds": 69.70301755799983,
+        "snapshots": 59,
+        "regions": [
+          {
+            "threads": 4,
+            "requestId": "reqr0001",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 离线文档识别验证\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5979,
+            "elapsedMs": 7760,
+            "visionMs": 1324,
+            "prefillMs": 4635,
+            "decodeMs": 1774,
+            "outputTokens": 7
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0002",
+            "type": "text",
+            "attempt": 1,
+            "raw": "这是一张新生成的单页测试图片。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 7443,
+            "elapsedMs": 8094,
+            "visionMs": 2157,
+            "prefillMs": 5266,
+            "decodeMs": 641,
+            "outputTokens": 10
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0003",
+            "type": "text",
+            "attempt": 1,
+            "raw": "输入在识别前保存，模型在本地运行。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 6051,
+            "elapsedMs": 6751,
+            "visionMs": 1253,
+            "prefillMs": 4777,
+            "decodeMs": 688,
+            "outputTokens": 12
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0004",
+            "type": "text",
+            "attempt": 1,
+            "raw": "结果包括文字、公式、表格和插图。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5815,
+            "elapsedMs": 6442,
+            "visionMs": 1146,
+            "prefillMs": 4648,
+            "decodeMs": 617,
+            "outputTokens": 11
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0005",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 能量公式\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5734,
+            "elapsedMs": 6157,
+            "visionMs": 1117,
+            "prefillMs": 4598,
+            "decodeMs": 418,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0006",
+            "type": "formula",
+            "attempt": 1,
+            "raw": "## E = mc²\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5479,
+            "elapsedMs": 5772,
+            "visionMs": 1003,
+            "prefillMs": 4458,
+            "decodeMs": 288,
+            "outputTokens": 6
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0007",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 商品统计\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 5310,
+            "elapsedMs": 5547,
+            "visionMs": 973,
+            "prefillMs": 4321,
+            "decodeMs": 233,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0008",
+            "type": "table",
+            "attempt": 1,
+            "raw": "<table border=1><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 8909,
+            "elapsedMs": 13037,
+            "visionMs": 2785,
+            "prefillMs": 6084,
+            "decodeMs": 4051,
+            "outputTokens": 76
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0010",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 图 1：圆形与三角形\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 6014,
+            "elapsedMs": 6634,
+            "visionMs": 1170,
+            "prefillMs": 4820,
+            "decodeMs": 611,
+            "outputTokens": 10
+          }
+        ],
+        "rawMatchesSavedAttempts": true,
+        "phaseTotalsMs": {
+          "visionMs": 12928,
+          "prefillMs": 43607,
+          "decodeMs": 9321,
+          "elapsedMs": 66194
+        }
+      },
+      "memory": {
+        "rssBytes": 1895743488,
+        "processPeakRssBytes": 2663104512
+      },
+      "useMmap": true,
+      "markdownSha256": "af24a95ab0bf104cd19c9a99b455897d94cbafd4d6dd9f9e4a704a330572c4c0"
+    }
+  ],
+  "memoryAfterLoading": {
+    "rssBytes": 1565069312,
+    "processPeakRssBytes": 1793171456
+  },
+  "temporaryDirectory": {
+    "files": [
+      {
+        "path": "ovis-mmap-8d64f50e84a49469c2a3cf7713e482204149bb81a6e6a630f3e32c912f51a07b/0_0_0_0_0.static",
+        "bytes": 1073741824
+      },
+      {
+        "path": "ovis-mmap-8d64f50e84a49469c2a3cf7713e482204149bb81a6e6a630f3e32c912f51a07b/0_0_0_0_sync.static",
+        "bytes": 0
+      }
+    ],
+    "mmapDirectories": [
+      "ovis-mmap-8d64f50e84a49469c2a3cf7713e482204149bb81a6e6a630f3e32c912f51a07b"
+    ]
+  }
+}
