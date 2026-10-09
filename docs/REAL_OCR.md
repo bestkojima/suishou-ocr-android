@@ -1,6 +1,6 @@
 # 单图真实 OCR
 
-当前开发分支已加入模型目录配置驱动的 GLM-OCR 适配；版本仍为已发布的 0.7.6，尚未发布新 APK。配置与优先级见 [MODEL_CONFIG.md](MODEL_CONFIG.md)，真实对照见 [GLM-OCR 交付记录](../verification/glm-ocr/DELIVERY.md)。下方按版本保留历史实现与证据。
+0.7.7 已加入模型目录配置驱动的 GLM-OCR 适配，包含两版 APK 与模型切换入口。配置与优先级见 [MODEL_CONFIG.md](MODEL_CONFIG.md)，真实对照见 [GLM-OCR 交付记录](../verification/glm-ocr/DELIVERY.md)。下方按版本保留历史实现与证据。
 
 实施规格与任务：[本地规格](../.scratch/android-real-ocr/spec.md)。已执行的分项证据和设备待办：[交付记录](../verification/real-ocr/DELIVERY.md)。
 

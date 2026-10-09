@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cn.local.ocr.RecognitionReadinessTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-09T14:13:30" hostname="localhost.localdomain" time="0.064">
+  <properties/>
+  <testcase name="loadingUsesDownloadReceiptWithoutHashingModelContents" classname="cn.local.ocr.RecognitionReadinessTest" time="0.007"/>
+  <testcase name="existingVerifiedDownloadRecordsRemainUsableAfterUpgrade" classname="cn.local.ocr.RecognitionReadinessTest" time="0.005"/>
+  <testcase name="everyRequiredFileNeedsACompletedMatchingDownload" classname="cn.local.ocr.RecognitionReadinessTest" time="0.044"/>
+  <testcase name="missingChangedOrUnverifiedFilesCannotLoad" classname="cn.local.ocr.RecognitionReadinessTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

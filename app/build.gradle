@@ -7,7 +7,7 @@ android {
     namespace 'cn.local.ocr'
     compileSdk 35
     // APK 保留 Debug 签名与调试能力，生产原生引擎始终使用 Release 优化。
-    defaultConfig { applicationId 'cn.local.ocr'; minSdk 26; targetSdk 35; versionCode 13; versionName '0.7.6-ocr'; ndk { abiFilters 'arm64-v8a' }; externalNativeBuild { cmake { arguments '-DANDROID_STL=c++_shared', '-DCMAKE_BUILD_TYPE=Release', "-DDOCOCR_SOURCE_ROOT=${rootProject.file('native/docprase').absolutePath}", "-DMNN_SOURCE_ROOT=${mnnRoot.absolutePath}"; cppFlags '-O3'; targets 'dococr_jni' } } }
+    defaultConfig { applicationId 'cn.local.ocr'; minSdk 26; targetSdk 35; versionCode 14; versionName '0.7.7-ocr'; ndk { abiFilters 'arm64-v8a' }; externalNativeBuild { cmake { arguments '-DANDROID_STL=c++_shared', '-DCMAKE_BUILD_TYPE=Release', "-DDOCOCR_SOURCE_ROOT=${rootProject.file('native/docprase').absolutePath}", "-DMNN_SOURCE_ROOT=${mnnRoot.absolutePath}"; cppFlags '-O3'; targets 'dococr_jni' } } }
     ndkVersion '28.1.13356709'
     externalNativeBuild { cmake { path file('src/main/cpp/CMakeLists.txt'); version '3.31.6' } }
     flavorDimensions += 'audience'

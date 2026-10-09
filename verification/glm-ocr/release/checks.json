@@ -1,0 +1,57 @@
+{
+  "versionName": "0.7.7-ocr",
+  "versionCode": 14,
+  "unitTests": {
+    "User": {
+      "tests": 74,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "Lab": {
+      "tests": 74,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "lint": {
+    "User": {
+      "Error": 0,
+      "Warning": 11
+    },
+    "Lab": {
+      "Error": 0,
+      "Warning": 11
+    }
+  },
+  "apks": [
+    {
+      "flavor": "user",
+      "file": "suishou-ocr-0.7.7-arm64.apk",
+      "applicationId": "cn.local.ocr",
+      "versionName": "0.7.7-ocr",
+      "versionCode": 14,
+      "size": 50871521,
+      "sha256": "7cecdd3b84ff7a96a50c94a4d7e149f6e6bf34c1dbdd36c1d2363ed4661214fe",
+      "certificateSha256": "d1f75d2fcad2ee6b10351eb0f1a4da6b94c7069a0f8cadcce57d771c30242f33",
+      "signatureCompatibleWith076": true,
+      "glmProfilesPackaged": true,
+      "nativeUnchangedFromRealTestedConfigBuild": true
+    },
+    {
+      "flavor": "lab",
+      "file": "suishou-ocr-0.7.7-lab-arm64.apk",
+      "applicationId": "cn.local.ocr.test",
+      "versionName": "0.7.7-ocr",
+      "versionCode": 14,
+      "size": 50871537,
+      "sha256": "c8de77ada4e8dab272886d599edb1c5b9311bc6d329561b905c1c0fc1121e295",
+      "certificateSha256": "d1f75d2fcad2ee6b10351eb0f1a4da6b94c7069a0f8cadcce57d771c30242f33",
+      "signatureCompatibleWith076": true,
+      "glmProfilesPackaged": true,
+      "nativeUnchangedFromRealTestedConfigBuild": true
+    }
+  ],
+  "deviceAcceptance": "Titan_1 未连接，设备端真实 GLM 识别、速度和内存待验收"
+}

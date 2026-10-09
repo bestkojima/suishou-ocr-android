@@ -10,9 +10,12 @@ Status: ready-for-agent
 
 - [x] [01 配置驱动适配](issues/01-config-adapter.md)
 - [x] [02 GLM 真实识别对照](issues/02-real-comparison.md)
+- [ ] [03 v0.7.7 预发布](issues/03-publish-077.md)
 
 ## Comments
 
 2026-10-09：开始。当前加载器固定 Ovis 工件、提示词及 image_pad；固定 MNN 源码已包含 GLM-OCR 导出支持。未在现有模型目录找到 GLM 工件，已询问用户路径，同时检查 MNN 团队的 taobao-mnn/GLM-OCR-MNN 固定提交。
 
 2026-10-09：已完成。模型目录字段驱动 GLM/Ovis 加载，两版构建、各 74 项 JVM、lint、原生与界面检查通过。用户扫描页三个异常区域各 3/3 正常停止，整页 17 区域正常；低像素仍错识。未发布新版，BUG-002 与设备验收保留。证据见 [GLM-OCR 交付记录](../../verification/glm-ocr/DELIVERY.md)。
+
+2026-10-09：用户明确授权将当前代码提交 GitHub，并附最新 release 和改进说明；按 0.7.7-ocr／14 预发布实施。

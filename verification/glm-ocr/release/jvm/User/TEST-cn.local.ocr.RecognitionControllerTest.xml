@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cn.local.ocr.RecognitionControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-09T14:13:30" hostname="localhost.localdomain" time="0.073">
+  <properties/>
+  <testcase name="cancellationStopsBeforeCommitAndRestartRecoversCommittedResults" classname="cn.local.ocr.RecognitionControllerTest" time="0.073"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

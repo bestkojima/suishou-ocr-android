@@ -1,6 +1,6 @@
 # GLM-OCR 配置适配与真实识别对照
 
-2026-10-09。用户要求“使用 glm ocr 试试”，并明确由模型文件夹的 config 字段适配。已实施、完成本地验证；尚未发布新版，BUG-002 保持未关闭。
+2026-10-09。用户要求“使用 glm ocr 试试”，并明确由模型文件夹的 config 字段适配。已实施并完成本地验证。用户随后授权发布，当前准备 v0.7.7 预发布；BUG-002 保持未关闭。
 
 ## 实现
 
@@ -57,7 +57,7 @@
 - 原生配置测试通过：任意目录/名称、任务提示词、不同 image_pad、非法/越界工件、非法采样、浮点序列化舍入、线程/mmap 与旧 Ovis 兼容数据一致性，见 [native-config-test.json](native-config-test.json)。
 - 浏览器主验收 19 项、模型页 10 项、真实流/导航及裁剪回归通过。主验收首次在模型推理并行时出现滚动坐标断言失败；无相关阅读代码改动，停止推理后原断言完整通过，未放宽断言。新模型选项使用 AndroidHost 桥模拟验证，不能当作设备推理。
 - 两版 APK 构建成功；arm64 ABI、动态库/符号、权重排除、构建 ID 关联 Release/-O3/NDEBUG、裁剪/OpenCV 检查通过，见 [apk-checks.json](apk-checks.json)。签名与已发布 v0.7.6 同类型 APK 相同，见 [apk-signatures.json](apk-signatures.json)。
-- 本地 APK 在 `artifacts/glm-ocr/`：`suishou-ocr-glm-config-user-arm64.apk` 和 `suishou-ocr-glm-config-lab-arm64.apk`，附 SHA256SUMS。仍为 0.7.6-ocr／13 的开发构建，**未覆盖 GitHub 发布资产，也未发布新版本**。
+- 本地 APK 在 `artifacts/glm-ocr/`：`suishou-ocr-glm-config-user-arm64.apk` 和 `suishou-ocr-glm-config-lab-arm64.apk`，附 SHA256SUMS。为适配阶段的 0.7.6-ocr／13 开发构建，不作为 v0.7.7 发布资产；此次升级的两版包另存于 `artifacts/glm-ocr/release/`，见下方发布记录。
 
 复现入口：
 
@@ -77,3 +77,7 @@ python3 tools/debug/continuation_probe.py \
 ## 待验收
 
 ADB 当前设备列表为空。Titan_1 上的加载、实际识别、流式 UI、内存与速度需后续验证；Linux 结果不能替代设备验收。整页只有一次运行，尚无全面人工标注、不同纸张/低像素来源及透印因果对照。BUG-002 不关闭，不宣称根因已确定或通用准确率已通过。
+
+## v0.7.7 预发布准备
+
+用户于 2026-10-09 授权提交这版代码并发布最新 release，附中文改进说明。版本升级为 `0.7.7-ocr`／`versionCode=14`，保持应用 ID 和签名。两版 APK 已重新构建：每版 74 项 JVM 通过，lint 各 0 错误／11 个既有警告；版本和应用 ID、GLM 配置资产、ABI、原生 Release、依赖及签名兼容检查通过。新包原生库字节与适配阶段 APK 相同，本轮版本升级未改变已实测的原生实现。检查见 [checks.json](release/checks.json) 与 [apk-checks.json](release/apk-checks.json)。正式上传文件为 `suishou-ocr-0.7.7-arm64.apk`、`suishou-ocr-0.7.7-lab-arm64.apk`、`SHA256SUMS.txt`。发布说明见 [release-notes.md](release/release-notes.md)，发布构建日志见 [build.log](release/build.log)。GitHub 上传与下载 SHA 复核结果将在发布后补记，保留历史版本。

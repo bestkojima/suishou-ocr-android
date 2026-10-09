@@ -1,0 +1,3 @@
+PASS arm64-v8a、公共 C ABI/JNI/LLM 符号、依赖闭合、生产后端编译、未打包权重
+PASS APK build ID 关联的原生 Release/-O3/NDEBUG、MNN 无调试宏
+PASS 文档裁剪界面、OpenCV、许可及当前 NDK libc++ 运行库

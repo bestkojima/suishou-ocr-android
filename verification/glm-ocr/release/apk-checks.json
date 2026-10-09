@@ -1,0 +1,393 @@
+{
+  "environment": "Android NDK \u7f16\u8bd1\u4e0e\u9759\u6001\u6253\u5305\u68c0\u67e5\uff0c\u672a\u5728\u8bbe\u5907\u52a0\u8f7d",
+  "productionBackendCompileCommands": [
+    {
+      "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+      "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -O3 -DNDEBUG  -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o -c /home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/android-engine/printed_page_mnn_backend.cpp",
+      "file": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/android-engine/printed_page_mnn_backend.cpp",
+      "output": "docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o"
+    },
+    {
+      "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+      "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -O3 -DNDEBUG  -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o -c /home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/android-engine/printed_page_mnn_backend.cpp",
+      "file": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/android-engine/printed_page_mnn_backend.cpp",
+      "output": "docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o"
+    }
+  ],
+  "nativeBuilds": [
+    {
+      "flavor": "user",
+      "buildModel": "/home/dr/project/android_ocr/app/build/intermediates/cxx/Release/3n4zk5l2/logs/arm64-v8a/build_model.json",
+      "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+      "buildType": "Release",
+      "nativeReleaseRequired": true,
+      "translationUnits": 394,
+      "groups": {
+        "MNN_CPU": {
+          "translationUnits": 107,
+          "sample": {
+            "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+            "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DLLM_SUPPORT_VISION -DMNN_BUILD_FOR_ANDROID -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_KLEIDIAI_ENABLED=1 -DMNN_LOW_MEMORY -DMNN_SME2 -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_LOGCAT -DMNN_USE_NEON -DMNN_USE_THREAD_POOL -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/source -I/home/dr/project/android_ocr/native/MNN/express -I/home/dr/project/android_ocr/native/MNN/tools -I/home/dr/project/android_ocr/native/MNN/codegen -I/home/dr/project/android_ocr/native/MNN/schema/current -I/home/dr/project/android_ocr/native/MNN/3rd_party -I/home/dr/project/android_ocr/native/MNN/3rd_party/flatbuffers/include -I/home/dr/project/android_ocr/native/MNN/3rd_party/half -I/home/dr/project/android_ocr/native/MNN/3rd_party/imageHelper -I/home/dr/project/android_ocr/native/MNN/3rd_party/OpenCLHeaders -I/home/dr/project/android_ocr/native/MNN/cmake/../source/backend/cpu/kleidiai -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0 -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_qai8dxp_qsi4cxp -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_qsi8d32p_qai4c32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_qsi8d32p_qai4c32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/pack -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_f32p_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_f32_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_f16p_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_f16_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/imatmul_clamp_f32_f32p_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/imatmul_clamp_f16_f16p_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/dwconv/pack -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/dwconv/dwconv_f32_f32_f32p -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/../../../tools/cv/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -std=c++17 -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG  -std=gnu++17 -fPIC   -fPIC -DMNN_USE_SPARSE_COMPUTE -DENABLE_ARMV82 -o mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUArgMax.cpp.o -c /home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUArgMax.cpp",
+            "file": "/home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUArgMax.cpp",
+            "output": "mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUArgMax.cpp.o"
+          },
+          "optimization": [
+            "-O3",
+            "-O3",
+            "-O3"
+          ]
+        },
+        "MNN_LLM": {
+          "translationUnits": 14,
+          "sample": {
+            "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+            "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DLLM_SUPPORT_VISION -DLLM_USE_JINJA -DMNN_BUILD_FOR_ANDROID -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_KLEIDIAI_ENABLED=1 -DMNN_LOW_MEMORY -DMNN_SME2 -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_LOGCAT -DMNN_USE_NEON -DMNN_USE_THREAD_POOL -Dllm_EXPORTS -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/source -I/home/dr/project/android_ocr/native/MNN/express -I/home/dr/project/android_ocr/native/MNN/tools -I/home/dr/project/android_ocr/native/MNN/codegen -I/home/dr/project/android_ocr/native/MNN/schema/current -I/home/dr/project/android_ocr/native/MNN/3rd_party -I/home/dr/project/android_ocr/native/MNN/3rd_party/flatbuffers/include -I/home/dr/project/android_ocr/native/MNN/3rd_party/half -I/home/dr/project/android_ocr/native/MNN/3rd_party/imageHelper -I/home/dr/project/android_ocr/native/MNN/3rd_party/OpenCLHeaders -I/home/dr/project/android_ocr/native/MNN/cmake/../source/backend/cpu/kleidiai -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0 -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_qai8dxp_qsi4cxp -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_qsi8d32p_qai4c32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_qsi8d32p_qai4c32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/pack -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_f32p_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_f32_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_f16p_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_f16_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/imatmul_clamp_f32_f32p_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/imatmul_clamp_f16_f16p_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/dwconv/pack -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/dwconv/dwconv_f32_f32_f32p -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/../../../tools/cv/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -std=c++17 -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG  -std=gnu++17 -fPIC   -fPIC -fvisibility=default -o mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/diskembedding.cpp.o -c /home/dr/project/android_ocr/native/MNN/transformers/llm/engine/src/diskembedding.cpp",
+            "file": "/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/src/diskembedding.cpp",
+            "output": "mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/diskembedding.cpp.o"
+          },
+          "optimization": [
+            "-O3",
+            "-O3",
+            "-O3"
+          ]
+        },
+        "docprase": {
+          "translationUnits": 21,
+          "sample": {
+            "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+            "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -O3 -DNDEBUG  -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/core.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/core.cpp",
+            "file": "/home/dr/project/android_ocr/native/docprase/src/core.cpp",
+            "output": "docprase/CMakeFiles/dococr_core.dir/src/core.cpp.o"
+          },
+          "optimization": [
+            "-O3",
+            "-O3"
+          ]
+        },
+        "JNI": {
+          "translationUnits": 1,
+          "sample": {
+            "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+            "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DDOCOCR_SHARED -Ddococr_jni_EXPORTS -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -O3 -DNDEBUG  -fPIC -o CMakeFiles/dococr_jni.dir/dococr_jni.cpp.o -c /home/dr/project/android_ocr/app/src/main/cpp/dococr_jni.cpp",
+            "file": "/home/dr/project/android_ocr/app/src/main/cpp/dococr_jni.cpp",
+            "output": "CMakeFiles/dococr_jni.dir/dococr_jni.cpp.o"
+          },
+          "optimization": [
+            "-O3",
+            "-O3"
+          ]
+        }
+      },
+      "productionBackendCompileCommands": [
+        {
+          "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+          "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -O3 -DNDEBUG  -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o -c /home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/android-engine/printed_page_mnn_backend.cpp",
+          "file": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/android-engine/printed_page_mnn_backend.cpp",
+          "output": "docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o"
+        }
+      ]
+    },
+    {
+      "flavor": "lab",
+      "buildModel": "/home/dr/project/android_ocr/app/build/intermediates/cxx/Release/3n4zk5l2/logs/arm64-v8a/build_model.json",
+      "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+      "buildType": "Release",
+      "nativeReleaseRequired": true,
+      "translationUnits": 394,
+      "groups": {
+        "MNN_CPU": {
+          "translationUnits": 107,
+          "sample": {
+            "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+            "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DLLM_SUPPORT_VISION -DMNN_BUILD_FOR_ANDROID -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_KLEIDIAI_ENABLED=1 -DMNN_LOW_MEMORY -DMNN_SME2 -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_LOGCAT -DMNN_USE_NEON -DMNN_USE_THREAD_POOL -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/source -I/home/dr/project/android_ocr/native/MNN/express -I/home/dr/project/android_ocr/native/MNN/tools -I/home/dr/project/android_ocr/native/MNN/codegen -I/home/dr/project/android_ocr/native/MNN/schema/current -I/home/dr/project/android_ocr/native/MNN/3rd_party -I/home/dr/project/android_ocr/native/MNN/3rd_party/flatbuffers/include -I/home/dr/project/android_ocr/native/MNN/3rd_party/half -I/home/dr/project/android_ocr/native/MNN/3rd_party/imageHelper -I/home/dr/project/android_ocr/native/MNN/3rd_party/OpenCLHeaders -I/home/dr/project/android_ocr/native/MNN/cmake/../source/backend/cpu/kleidiai -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0 -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_qai8dxp_qsi4cxp -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_qsi8d32p_qai4c32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_qsi8d32p_qai4c32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/pack -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_f32p_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_f32_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_f16p_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_f16_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/imatmul_clamp_f32_f32p_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/imatmul_clamp_f16_f16p_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/dwconv/pack -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/dwconv/dwconv_f32_f32_f32p -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/../../../tools/cv/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -std=c++17 -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG  -std=gnu++17 -fPIC   -fPIC -DMNN_USE_SPARSE_COMPUTE -DENABLE_ARMV82 -o mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUArgMax.cpp.o -c /home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUArgMax.cpp",
+            "file": "/home/dr/project/android_ocr/native/MNN/source/backend/cpu/CPUArgMax.cpp",
+            "output": "mnn/CMakeFiles/MNNCPU.dir/source/backend/cpu/CPUArgMax.cpp.o"
+          },
+          "optimization": [
+            "-O3",
+            "-O3",
+            "-O3"
+          ]
+        },
+        "MNN_LLM": {
+          "translationUnits": 14,
+          "sample": {
+            "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+            "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DLLM_SUPPORT_VISION -DLLM_USE_JINJA -DMNN_BUILD_FOR_ANDROID -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_KLEIDIAI_ENABLED=1 -DMNN_LOW_MEMORY -DMNN_SME2 -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_LOGCAT -DMNN_USE_NEON -DMNN_USE_THREAD_POOL -Dllm_EXPORTS -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/source -I/home/dr/project/android_ocr/native/MNN/express -I/home/dr/project/android_ocr/native/MNN/tools -I/home/dr/project/android_ocr/native/MNN/codegen -I/home/dr/project/android_ocr/native/MNN/schema/current -I/home/dr/project/android_ocr/native/MNN/3rd_party -I/home/dr/project/android_ocr/native/MNN/3rd_party/flatbuffers/include -I/home/dr/project/android_ocr/native/MNN/3rd_party/half -I/home/dr/project/android_ocr/native/MNN/3rd_party/imageHelper -I/home/dr/project/android_ocr/native/MNN/3rd_party/OpenCLHeaders -I/home/dr/project/android_ocr/native/MNN/cmake/../source/backend/cpu/kleidiai -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0 -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_qai8dxp_qsi4cxp -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_qsi8d32p_qai4c32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_qsi8d32p_qai4c32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/pack -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_f32p_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f32_f32_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_f16p_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/matmul_clamp_f16_f16_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/imatmul_clamp_f32_f32p_f32p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/matmul/imatmul_clamp_f16_f16p_f16p -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/dwconv/pack -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/mnn/_deps/kleidiai-1.16.0/kai/ukernels/dwconv/dwconv_f32_f32_f32p -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/../../../tools/cv/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -std=c++17 -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG  -std=gnu++17 -fPIC   -fPIC -fvisibility=default -o mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/diskembedding.cpp.o -c /home/dr/project/android_ocr/native/MNN/transformers/llm/engine/src/diskembedding.cpp",
+            "file": "/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/src/diskembedding.cpp",
+            "output": "mnn/CMakeFiles/llm.dir/transformers/llm/engine/src/diskembedding.cpp.o"
+          },
+          "optimization": [
+            "-O3",
+            "-O3",
+            "-O3"
+          ]
+        },
+        "docprase": {
+          "translationUnits": 21,
+          "sample": {
+            "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+            "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -O3 -DNDEBUG  -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/core.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/core.cpp",
+            "file": "/home/dr/project/android_ocr/native/docprase/src/core.cpp",
+            "output": "docprase/CMakeFiles/dococr_core.dir/src/core.cpp.o"
+          },
+          "optimization": [
+            "-O3",
+            "-O3"
+          ]
+        },
+        "JNI": {
+          "translationUnits": 1,
+          "sample": {
+            "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+            "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DDOCOCR_SHARED -Ddococr_jni_EXPORTS -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -O3 -DNDEBUG  -fPIC -o CMakeFiles/dococr_jni.dir/dococr_jni.cpp.o -c /home/dr/project/android_ocr/app/src/main/cpp/dococr_jni.cpp",
+            "file": "/home/dr/project/android_ocr/app/src/main/cpp/dococr_jni.cpp",
+            "output": "CMakeFiles/dococr_jni.dir/dococr_jni.cpp.o"
+          },
+          "optimization": [
+            "-O3",
+            "-O3"
+          ]
+        }
+      },
+      "productionBackendCompileCommands": [
+        {
+          "directory": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a",
+          "command": "/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/home/dr/Android/Sdk/ndk/28.1.13356709/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/android_ocr/native/MNN/include -I/home/dr/project/android_ocr/native/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -O3 -DNDEBUG  -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o -c /home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/android-engine/printed_page_mnn_backend.cpp",
+          "file": "/home/dr/project/android_ocr/app/.cxx/Release/3n4zk5l2/arm64-v8a/android-engine/printed_page_mnn_backend.cpp",
+          "output": "docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o"
+        }
+      ]
+    }
+  ],
+  "apks": [
+    {
+      "flavor": "user",
+      "path": "/home/dr/project/android_ocr/app/build/outputs/apk/user/debug/app-user-debug.apk",
+      "sha256": "7cecdd3b84ff7a96a50c94a4d7e149f6e6bf34c1dbdd36c1d2363ed4661214fe",
+      "size": 50871521,
+      "abi": "arm64-v8a",
+      "libraries": {
+        "libMNN.so": {
+          "needed": [
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 2458320,
+          "buildId": "2c3302f4130a42ad6b1dce587a9c22cb91cb2d49"
+        },
+        "libMNNOpenCV.so": {
+          "needed": [
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 258640,
+          "buildId": "efe3d51ac1dd6d7d6bd0cf2957431f48e9f62f22"
+        },
+        "libMNN_Express.so": {
+          "needed": [
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 747160,
+          "buildId": "b35c0c287918998d0612c9987267bc0448576910"
+        },
+        "libc++_shared.so": {
+          "needed": [
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ],
+          "size": 1253544,
+          "buildId": "725db191d65be59dc18ddb3238f9e749442844a4"
+        },
+        "libdococr_c.so": {
+          "needed": [
+            "libllm.so",
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 1202640,
+          "buildId": "64a78d6fae40e60a88feb8a04e66dbd851ff0f5e"
+        },
+        "libdococr_jni.so": {
+          "needed": [
+            "libdococr_c.so",
+            "libm.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 78096,
+          "buildId": "1958ba31ab72ab212e53193ee9096e415c20265f"
+        },
+        "libllm.so": {
+          "needed": [
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 1243848,
+          "buildId": "9a4bfc89d705e89e11f4de225c0de60f1190562b"
+        },
+        "libopencv_java4.so": {
+          "needed": [
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libjnigraphics.so",
+            "libz.so",
+            "libmediandk.so",
+            "libc.so",
+            "libc++_shared.so"
+          ],
+          "size": 23465088,
+          "buildId": "1aaa9c4d1e0fe8876532bfb8b2faaabd4e8d9b3e"
+        }
+      },
+      "weightsPackaged": false
+    },
+    {
+      "flavor": "lab",
+      "path": "/home/dr/project/android_ocr/app/build/outputs/apk/lab/debug/app-lab-debug.apk",
+      "sha256": "c8de77ada4e8dab272886d599edb1c5b9311bc6d329561b905c1c0fc1121e295",
+      "size": 50871537,
+      "abi": "arm64-v8a",
+      "libraries": {
+        "libMNN.so": {
+          "needed": [
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 2458320,
+          "buildId": "2c3302f4130a42ad6b1dce587a9c22cb91cb2d49"
+        },
+        "libMNNOpenCV.so": {
+          "needed": [
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 258640,
+          "buildId": "efe3d51ac1dd6d7d6bd0cf2957431f48e9f62f22"
+        },
+        "libMNN_Express.so": {
+          "needed": [
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 747160,
+          "buildId": "b35c0c287918998d0612c9987267bc0448576910"
+        },
+        "libc++_shared.so": {
+          "needed": [
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ],
+          "size": 1253544,
+          "buildId": "725db191d65be59dc18ddb3238f9e749442844a4"
+        },
+        "libdococr_c.so": {
+          "needed": [
+            "libllm.so",
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 1202640,
+          "buildId": "64a78d6fae40e60a88feb8a04e66dbd851ff0f5e"
+        },
+        "libdococr_jni.so": {
+          "needed": [
+            "libdococr_c.so",
+            "libm.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 78096,
+          "buildId": "1958ba31ab72ab212e53193ee9096e415c20265f"
+        },
+        "libllm.so": {
+          "needed": [
+            "libMNNOpenCV.so",
+            "libMNN_Express.so",
+            "libMNN.so",
+            "liblog.so",
+            "libm.so",
+            "libandroid.so",
+            "libc++_shared.so",
+            "libdl.so",
+            "libc.so"
+          ],
+          "size": 1243848,
+          "buildId": "9a4bfc89d705e89e11f4de225c0de60f1190562b"
+        },
+        "libopencv_java4.so": {
+          "needed": [
+            "libdl.so",
+            "libm.so",
+            "liblog.so",
+            "libjnigraphics.so",
+            "libz.so",
+            "libmediandk.so",
+            "libc.so",
+            "libc++_shared.so"
+          ],
+          "size": 23465088,
+          "buildId": "1aaa9c4d1e0fe8876532bfb8b2faaabd4e8d9b3e"
+        }
+      },
+      "weightsPackaged": false
+    }
+  ]
+}
