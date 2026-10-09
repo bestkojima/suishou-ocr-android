@@ -1,0 +1,62 @@
+[
+  {
+    "file": "original-baseline/user-original-run-1/timeline.json.gz",
+    "uncompressedSha256": "7eacf06c66319dd3d3e9f76b12f5264d66e1bebe57e8979478c2947993ad04e5",
+    "uncompressedBytes": 24604044,
+    "compressedBytes": 174265,
+    "losslessVerified": true,
+    "earlyAbnormalStreamEvents": [
+      {
+        "seconds": 37.87789134600098,
+        "requestId": "reqr0009",
+        "attempt": 1,
+        "beforeReturn": true,
+        "rawTail": " M: Honey, do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日"
+      },
+      {
+        "seconds": 37.92980120500215,
+        "requestId": "reqr0009",
+        "attempt": 1,
+        "beforeReturn": true,
+        "rawTail": "Honey, do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日\n\n20"
+      },
+      {
+        "seconds": 37.98299280700303,
+        "requestId": "reqr0009",
+        "attempt": 1,
+        "beforeReturn": true,
+        "rawTail": "ey, do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日\n\n2023年"
+      }
+    ]
+  },
+  {
+    "file": "balanced-baseline/user-balanced-size-pillow-run-1/timeline.json.gz",
+    "uncompressedSha256": "10a1d244fd1975f11a4f08bee9446b111f8d8090070ee80fde8bf583ea5a7a72",
+    "uncompressedBytes": 1124874,
+    "compressedBytes": 14562,
+    "losslessVerified": true,
+    "earlyAbnormalStreamEvents": [
+      {
+        "seconds": 24.046274071999505,
+        "requestId": "reqr0009",
+        "attempt": 1,
+        "beforeReturn": true,
+        "rawTail": ": Honey, do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日\n\n"
+      },
+      {
+        "seconds": 24.098523337001097,
+        "requestId": "reqr0009",
+        "attempt": 1,
+        "beforeReturn": true,
+        "rawTail": "ney, do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日\n\n2023"
+      },
+      {
+        "seconds": 24.15045974000168,
+        "requestId": "reqr0009",
+        "attempt": 1,
+        "beforeReturn": true,
+        "rawTail": ", do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日\n\n2023年1月"
+      }
+    ]
+  }
+]

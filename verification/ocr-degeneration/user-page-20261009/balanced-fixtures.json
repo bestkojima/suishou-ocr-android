@@ -1,0 +1,20 @@
+{
+  "synthetic": false,
+  "cases": [
+    {
+      "id": "user-balanced-size-pillow",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/user-page-20261009/balanced-size-pillow.png",
+      "family": "user-provided-page",
+      "dimensions": [
+        2449,
+        3266
+      ],
+      "pixels": 7998434,
+      "sha256": "a771bddc652fdeed25f884ef4dd43e1db08fb80fc29ca6b76ce86b997f694694",
+      "description": "采用应用 balanced 尺寸策略，Pillow BILINEAR 缩放。未复现 Android Bitmap 解码采样与像素实现，不代表设备逐像素等效。",
+      "sourceSha256": "0f69c46def894afc60ba0d36901578d9aa65705ad3a9510274e8915fb710f88e",
+      "appPlannedSampleSize": 2,
+      "pixelImplementation": "Pillow 单步 BILINEAR；非 Android 精确图像处理"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+Ovis load: 806 ms, success=1, mmap=0
+LOADED real model 1.787 seconds
+RED user-balanced-size-pillow real repeated unit= '2023年1月1日' copies= 6
+Ovis load: 740 ms, success=1, mmap=0
+REPETITION user-balanced-size-pillow run 1 seconds 33.07 regions 9
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

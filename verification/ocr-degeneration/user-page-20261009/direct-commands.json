@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "date",
+    "command": [
+      "python3",
+      "tools/debug/continuation_probe.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "verification/ocr-degeneration/user-page-20261009/captured/date-region.crop.png",
+      "--output",
+      "verification/ocr-degeneration/user-page-20261009/direct/date",
+      "--kind",
+      "date",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "256"
+    ],
+    "exitCode": 1
+  },
+  {
+    "kind": "numbers",
+    "command": [
+      "python3",
+      "tools/debug/continuation_probe.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "verification/ocr-degeneration/user-page-20261009/captured/directions-region.crop.png",
+      "--output",
+      "verification/ocr-degeneration/user-page-20261009/direct/numbers",
+      "--kind",
+      "numbers",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "256"
+    ],
+    "exitCode": 1
+  },
+  {
+    "kind": "punctuation",
+    "command": [
+      "python3",
+      "tools/debug/continuation_probe.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "verification/ocr-degeneration/user-page-20261009/captured/heading-region.crop.png",
+      "--output",
+      "verification/ocr-degeneration/user-page-20261009/direct/punctuation",
+      "--kind",
+      "punctuation",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "256"
+    ],
+    "exitCode": 1
+  }
+]

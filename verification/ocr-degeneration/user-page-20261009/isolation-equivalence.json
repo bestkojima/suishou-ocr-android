@@ -1,0 +1,107 @@
+[
+  {
+    "kind": "date",
+    "originalSourceSize": [
+      4821,
+      398
+    ],
+    "visualSize": [
+      1952,
+      160
+    ],
+    "visualRgbSha256": "26b90a51be7b4b1980008105c8b44780b64ad2ce3a4411e4701effdb3118f681",
+    "runs": [
+      {
+        "run": 1,
+        "sameVisualRgb": true,
+        "sameOriginalTokenPrefix": true,
+        "tokens": 256,
+        "sameGeneratedRaw": true
+      },
+      {
+        "run": 2,
+        "sameVisualRgb": true,
+        "sameOriginalTokenPrefix": true,
+        "tokens": 256,
+        "sameGeneratedRaw": true
+      },
+      {
+        "run": 3,
+        "sameVisualRgb": true,
+        "sameOriginalTokenPrefix": true,
+        "tokens": 256,
+        "sameGeneratedRaw": true
+      }
+    ]
+  },
+  {
+    "kind": "numbers",
+    "originalSourceSize": [
+      5033,
+      784
+    ],
+    "visualSize": [
+      1376,
+      224
+    ],
+    "visualRgbSha256": "8ee1f8203d5f5af93f51afd5256c9de32f435a8f8dab1d918837b5ab1c02f067",
+    "runs": [
+      {
+        "run": 1,
+        "sameVisualRgb": true,
+        "sameOriginalTokenPrefix": true,
+        "tokens": 256,
+        "sameGeneratedRaw": true
+      },
+      {
+        "run": 2,
+        "sameVisualRgb": true,
+        "sameOriginalTokenPrefix": true,
+        "tokens": 256,
+        "sameGeneratedRaw": true
+      },
+      {
+        "run": 3,
+        "sameVisualRgb": true,
+        "sameOriginalTokenPrefix": true,
+        "tokens": 256,
+        "sameGeneratedRaw": true
+      }
+    ]
+  },
+  {
+    "kind": "punctuation",
+    "originalSourceSize": [
+      4776,
+      208
+    ],
+    "visualSize": [
+      2432,
+      128
+    ],
+    "visualRgbSha256": "9d31a0913323c9e75241676a871da53ec3df75c763c8e53087bbbe364aaa3f31",
+    "runs": [
+      {
+        "run": 1,
+        "sameVisualRgb": true,
+        "sameOriginalTokenPrefix": true,
+        "tokens": 256,
+        "sameGeneratedRaw": true
+      },
+      {
+        "run": 2,
+        "sameVisualRgb": true,
+        "sameOriginalTokenPrefix": true,
+        "tokens": 256,
+        "sameGeneratedRaw": true
+      },
+      {
+        "run": 3,
+        "sameVisualRgb": true,
+        "sameOriginalTokenPrefix": true,
+        "tokens": 256,
+        "sameGeneratedRaw": true
+      }
+    ]
+  }
+]

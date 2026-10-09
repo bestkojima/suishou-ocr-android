@@ -1,0 +1,8 @@
+Ovis load: 761 ms, success=1, mmap=0
+REPETITION heading-region.crop.png 1 6.397 'Questions 11 through 13 are based on the following passage.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.'
+REPETITION heading-region.crop.png 2 5.322 'Questions 11 through 13 are based on the following passage.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.'
+REPETITION heading-region.crop.png 3 5.342 'Questions 11 through 13 are based on the following passage.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.'
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+ABNORMAL_CONTINUATION punctuation run 1 {"kind": "punctuation_repetition", "copies": 120}
+ABNORMAL_CONTINUATION punctuation run 2 {"kind": "punctuation_repetition", "copies": 120}
+ABNORMAL_CONTINUATION punctuation run 3 {"kind": "punctuation_repetition", "copies": 120}

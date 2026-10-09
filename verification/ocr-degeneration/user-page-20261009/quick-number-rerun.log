@@ -1,0 +1,4 @@
+Ovis load: 950 ms, success=1, mmap=0
+NO_REPEAT directions-region.crop.png 1 7.281 'Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the '
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+ABNORMAL_CONTINUATION numbers run 1 {"kind": "unsupported_number_sequence", "first": 1, "last": 12, "minimumLines": 12}

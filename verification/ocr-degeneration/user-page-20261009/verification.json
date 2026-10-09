@@ -1,0 +1,20 @@
+{
+  "productionSourceDiffEmpty": true,
+  "publishedApks": [
+    {
+      "variant": "user",
+      "sha256": "277442d1cf47d6d316be7bf99cfc85aa95ff9ca180a6f6769012038db10ae381",
+      "samePublishedApk": true
+    },
+    {
+      "variant": "lab",
+      "sha256": "870543693c49ffa3fa437af1c7b663d2b834c6e20b7e5e95dd6282b2c9f8afc7",
+      "samePublishedApk": true
+    }
+  ],
+  "adbConnectedDevices": 0,
+  "quickNumberCommandExit": 1,
+  "quickNumberSeconds": 7.281101795997529,
+  "oldRepetitionPredicateWouldPass": true,
+  "originalSourceSha256": "0f69c46def894afc60ba0d36901578d9aa65705ad3a9510274e8915fb710f88e"
+}

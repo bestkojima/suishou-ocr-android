@@ -1,0 +1,8 @@
+Ovis load: 769 ms, success=1, mmap=0
+NO_REPEAT directions-region.crop.png 1 6.484 'Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the '
+NO_REPEAT directions-region.crop.png 2 7.315 'Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the '
+NO_REPEAT directions-region.crop.png 3 5.683 'Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the '
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+ABNORMAL_CONTINUATION numbers run 1 {"kind": "unsupported_number_sequence", "first": 1, "last": 12, "minimumLines": 12}
+ABNORMAL_CONTINUATION numbers run 2 {"kind": "unsupported_number_sequence", "first": 1, "last": 12, "minimumLines": 12}
+ABNORMAL_CONTINUATION numbers run 3 {"kind": "unsupported_number_sequence", "first": 1, "last": 12, "minimumLines": 12}

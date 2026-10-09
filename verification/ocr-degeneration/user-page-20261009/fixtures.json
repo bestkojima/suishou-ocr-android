@@ -1,0 +1,17 @@
+{
+  "synthetic": false,
+  "cases": [
+    {
+      "id": "user-original",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/user-page-20261009/source.png",
+      "family": "user-provided-page",
+      "dimensions": [
+        6800,
+        9067
+      ],
+      "pixels": 61655600,
+      "sha256": "0f69c46def894afc60ba0d36901578d9aa65705ad3a9510274e8915fb710f88e",
+      "description": "用户提供的英文试卷扫描页，可见背面文字透印；具体新症状待用户补充，不预设根因。"
+    }
+  ]
+}

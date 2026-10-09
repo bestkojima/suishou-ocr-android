@@ -1,0 +1,8 @@
+Ovis load: 799 ms, success=1, mmap=0
+REPETITION date-region.crop.png 1 6.577 '9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日\n\n2023年1'
+REPETITION date-region.crop.png 2 5.413 '9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日\n\n2023年1'
+REPETITION date-region.crop.png 3 5.373 '9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日\n\n2023年1'
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+ABNORMAL_CONTINUATION date run 1 {"kind": "unsupported_date_repetition", "copies": 23}
+ABNORMAL_CONTINUATION date run 2 {"kind": "unsupported_date_repetition", "copies": 23}
+ABNORMAL_CONTINUATION date run 3 {"kind": "unsupported_date_repetition", "copies": 23}

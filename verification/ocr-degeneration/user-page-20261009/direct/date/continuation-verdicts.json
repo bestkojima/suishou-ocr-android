@@ -1,0 +1,53 @@
+{
+  "scope": "只对这三个已查看的固定区域判定，不是生产通用规则",
+  "kind": "date",
+  "expectedVisibleEnding": "W: I did?",
+  "directCommand": [
+    "/usr/bin/python3",
+    "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+    "--library",
+    "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+    "--input",
+    "verification/ocr-degeneration/user-page-20261009/captured/date-region.crop.png",
+    "--output",
+    "verification/ocr-degeneration/user-page-20261009/direct/date",
+    "--runs",
+    "3",
+    "--max-tokens",
+    "256"
+  ],
+  "directExitCode": 1,
+  "rawAndActualTokens": "report.json",
+  "verdicts": [
+    {
+      "run": 1,
+      "verdict": "ABNORMAL_CONTINUATION",
+      "anomaly": {
+        "kind": "unsupported_date_repetition",
+        "copies": 23
+      },
+      "stopReason": "token_limit",
+      "seconds": 6.577214949000336
+    },
+    {
+      "run": 2,
+      "verdict": "ABNORMAL_CONTINUATION",
+      "anomaly": {
+        "kind": "unsupported_date_repetition",
+        "copies": 23
+      },
+      "stopReason": "token_limit",
+      "seconds": 5.412783601997944
+    },
+    {
+      "run": 3,
+      "verdict": "ABNORMAL_CONTINUATION",
+      "anomaly": {
+        "kind": "unsupported_date_repetition",
+        "copies": 23
+      },
+      "stopReason": "token_limit",
+      "seconds": 5.373163894000754
+    }
+  ]
+}
