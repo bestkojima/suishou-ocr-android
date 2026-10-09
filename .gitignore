@@ -16,4 +16,5 @@ native/MNN/
 native/mnn-download-*/
 artifacts/*.apk
 artifacts/**/*.apk
+artifacts/releases/
 __pycache__/

@@ -87,6 +87,16 @@ python tools/verify_ocr_apk.py --require-native-release --require-document-crop 
 
 输出在`app/build/outputs/apk/{user,lab}/debug/`。浏览器预览使用`npm run preview`；其中相机、下载和真实模型推理需要APK。
 
+## 一键构建、提交与发布
+
+准备好构建环境并用 `gh auth login` 登录 GitHub 后，在项目根目录执行：
+
+```bash
+python3 tools/release.py --change "填写本次改进内容"
+```
+
+默认从当前源码版本递增 patch，构建两版、执行本地检查、提交项目全部未忽略改动、推送到 `origin/main` 和版本标签，并创建附两份 APK 与 `SHA256SUMS.txt` 的预发布。上传成功即完成，**不再下载或复核远端资产**。可指定版本、发布说明文件，或从上传失败处续传；Windows 使用 `python`。详见 [一键发布说明](docs/RELEASE.md)。
+
 连接Android设备、启用USB调试后可用ADB：
 
 ```bash
