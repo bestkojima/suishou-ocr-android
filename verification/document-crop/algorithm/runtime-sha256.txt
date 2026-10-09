@@ -1,0 +1,1 @@
+17823d249cb8ba18bc3cdb878db84936694d1cfaeac0f95517e320c8a8c458d9  android-ocr-opencv-host-4.9.0.jar

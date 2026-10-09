@@ -15,4 +15,5 @@ app/src/main/assets/fixtures/
 native/MNN/
 native/mnn-download-*/
 artifacts/*.apk
+artifacts/**/*.apk
 __pycache__/

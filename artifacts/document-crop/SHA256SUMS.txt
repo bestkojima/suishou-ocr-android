@@ -1,0 +1,2 @@
+277442d1cf47d6d316be7bf99cfc85aa95ff9ca180a6f6769012038db10ae381  suishou-ocr-0.7.6-arm64.apk
+870543693c49ffa3fa437af1c7b663d2b834c6e20b7e5e95dd6282b2c9f8afc7  suishou-ocr-0.7.6-lab-arm64.apk

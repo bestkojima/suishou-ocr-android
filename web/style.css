@@ -14,3 +14,11 @@
 .live-raw{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;margin:0;color:inherit}
 
 .resolution-setting{align-items:stretch;flex-direction:column;gap:8px}.resolution-setting select{width:100%}
+
+.document-crop{position:fixed;inset:0;z-index:30;background:var(--bg,#f6f8f3);color:inherit;display:flex;flex-direction:column;width:100%;height:100dvh;max-width:none;max-height:none;margin:0;border:0;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+.document-crop header{display:flex;align-items:center;gap:14px;padding:12px 18px;flex-shrink:0}.document-crop h1{font-size:20px;margin:0}.document-crop small{color:var(--sub);font-size:12px}
+.crop-help{font-size:13px;padding:0 18px;margin:4px 0 12px;flex-shrink:0}.crop-workspace{min-height:0;flex:1;display:flex;align-items:center;justify-content:center;background:#172923;padding:12px;overflow:hidden}
+.crop-canvas{width:100%;height:100%;touch-action:none;user-select:none;overflow:visible}.crop-canvas polygon,.crop-canvas circle{cursor:move}.crop-canvas circle:focus{stroke:#f5b842;outline:none}
+.crop-preview{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0}.crop-preview img{max-width:100%;min-height:0;max-height:calc(100% - 35px);object-fit:contain}.crop-preview p{color:#fff;font-size:12px;flex-shrink:0}
+.crop-tools{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:10px 12px;flex-shrink:0}.crop-tools button{font-size:12px;padding:6px 10px}.crop-error{color:#9e3027;font-size:13px;padding:0 18px;margin:4px 0}.document-crop footer{flex-shrink:0}
+@media(orientation:landscape) and (max-height:550px){.document-crop{display:grid;grid-template-columns:1fr 240px;grid-template-rows:auto 1fr auto}.document-crop header{grid-column:1/-1;padding:6px 12px}.crop-workspace{grid-column:1;grid-row:2/4}.crop-help{grid-column:2;grid-row:2;padding:8px 12px}.crop-tools{grid-column:2;grid-row:3}.document-crop footer{grid-column:1/-1}.crop-error{position:absolute;top:44px;right:12px;max-width:230px;background:#fff0e9;padding:8px;border-radius:8px}}

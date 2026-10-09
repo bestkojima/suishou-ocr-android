@@ -1,11 +1,12 @@
 # 第三方组件
 
-随手识别0.7.4使用以下第三方组件。模型权重在应用中另行下载，没有随APK或本仓库打包。
+随手识别0.7.6使用以下第三方组件。模型权重在应用中另行下载，没有随APK或本仓库打包。
 
 | 组件 | 用途 | 原许可／来源 |
 | --- | --- | --- |
 | docprase | 版面规划、区域识别、DocumentIR与导出 | Apache-2.0；https://github.com/bestkojima/docprase |
 | MNN | CPU推理、视觉与语言模型运行时 | Apache-2.0；https://github.com/bestkojima/MNN |
+| OpenCV 4.12.0 | 文档边界检测及透视裁剪 | Apache-2.0；https://github.com/opencv/opencv；许可证见 app/src/main/assets/legal/opencv-LICENSE.txt |
 | nlohmann/json | 原生JSON处理 | MIT，见native/docprase/third_party/nlohmann |
 | stb_image / stb_image_write | PNG/JPEG解码和PNG保存 | 保留stb的MIT/Public Domain双许可，见源码头部与尾部 |
 | React / React DOM | WebView界面 | MIT，见对应LICENSE |

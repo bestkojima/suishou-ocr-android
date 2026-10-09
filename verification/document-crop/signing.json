@@ -1,0 +1,20 @@
+[
+  {
+    "flavor": "user",
+    "certificateSha256": "d1f75d2fcad2ee6b10351eb0f1a4da6b94c7069a0f8cadcce57d771c30242f33",
+    "previousRelease": "v0.7.5",
+    "signatureCompatible": true,
+    "manifest": "package: name='cn.local.ocr' versionCode='13' versionName='0.7.6-ocr' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'",
+    "sha256": "277442d1cf47d6d316be7bf99cfc85aa95ff9ca180a6f6769012038db10ae381",
+    "bytes": 50771217
+  },
+  {
+    "flavor": "lab",
+    "certificateSha256": "d1f75d2fcad2ee6b10351eb0f1a4da6b94c7069a0f8cadcce57d771c30242f33",
+    "previousRelease": "v0.7.5",
+    "signatureCompatible": true,
+    "manifest": "package: name='cn.local.ocr.test' versionCode='13' versionName='0.7.6-ocr' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'",
+    "sha256": "870543693c49ffa3fa437af1c7b663d2b834c6e20b7e5e95dd6282b2c9f8afc7",
+    "bytes": 50771233
+  }
+]

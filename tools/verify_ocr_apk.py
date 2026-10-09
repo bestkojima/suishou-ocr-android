@@ -7,6 +7,7 @@ parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output',type=Path,default=root/'verification/real-ocr/apk.json',help='APK 静态检查报告路径')
 parser.add_argument('--readelf',type=Path,help='指定 NDK llvm-readelf（或 .exe）路径')
 parser.add_argument('--require-native-release',action='store_true',help='要求 APK 对应原生构建为 Release/-O3/NDEBUG，MNN 无调试宏')
+parser.add_argument('--require-document-crop',action='store_true',help='要求文档裁剪界面、OpenCV 和当前 NDK libc++ 已打包')
 args=parser.parse_args()
 output=args.output.resolve()
 output.parent.mkdir(parents=True,exist_ok=True)
@@ -18,7 +19,7 @@ host={'Linux':'linux-x86_64','Darwin':'darwin-x86_64','Windows':'windows-x86_64'
 name='llvm-readelf.exe' if host_platform.system()=='Windows' else 'llvm-readelf'
 readelf=args.readelf or (Path(sdk)/'ndk/28.1.13356709/toolchains/llvm/prebuilt'/host/'bin'/name if sdk else shutil.which(name))
 if not readelf or not Path(readelf).is_file():parser.error('请设置 ANDROID_HOME/local.properties 或用 --readelf 指定 NDK 工具')
-platform={'libc.so','libdl.so','libm.so','liblog.so','libandroid.so','libz.so'}
+platform={'libc.so','libdl.so','libm.so','liblog.so','libandroid.so','libz.so','libjnigraphics.so','libmediandk.so'}
 def build_id(path):
     notes=subprocess.check_output([readelf,'--notes',path],text=True)
     found=re.search(r'Build ID:\s*([0-9a-fA-F]+)',notes)
@@ -88,6 +89,12 @@ for flavor in ['user','lab']:
         assert all(p.startswith('lib/arm64-v8a/') for p in libs.values())
         assert {'libdococr_jni.so','libdococr_c.so','libMNN.so','libMNN_Express.so','libMNNOpenCV.so','libllm.so','libc++_shared.so'}<=libs.keys()
         assert not any(p.endswith(('.mnn','.weight','.mtok')) for p in names)
+        if args.require_document_crop:
+            assert 'libopencv_java4.so' in libs,('缺少文档裁剪 OpenCV',flavor)
+            assert 'assets/legal/opencv-LICENSE.txt' in names,('缺少 OpenCV 许可',flavor)
+            ui=archive.read('assets/web/app.js').decode()
+            ui=re.sub(r'\\u([0-9a-fA-F]{4})',lambda match:chr(int(match.group(1),16)),ui)
+            assert all(value in ui for value in ['previewCrop','confirmCrop','beginCrop','确认并识别','预览裁剪']),('未打包裁剪界面',flavor)
         info={}
         for name,path in libs.items():
             f=Path(tmp)/name;f.write_bytes(archive.read(path))
@@ -103,9 +110,14 @@ for flavor in ['user','lab']:
                 for method in ['create','jobCreate','run','status','cancel','export','jobDestroy','destroy']:assert 'Java_cn_local_ocr_NativeOcr_'+method in symbols
             if name=='libllm.so':assert 'createLLM' in symbols
             info[name]={'needed':deps,'size':len(archive.read(path)),'buildId':build_id(f)}
+        if args.require_document_crop:
+            assert sdk,'检查当前 NDK libc++ 需要 Android SDK 路径'
+            runtime=Path(sdk)/'ndk/28.1.13356709/toolchains/llvm/prebuilt'/host/'sysroot/usr/lib/aarch64-linux-android/libc++_shared.so'
+            assert info['libc++_shared.so']['buildId']==build_id(runtime),('APK libc++ 不是当前 MNN 编译使用的 NDK 运行库',flavor)
         native_reports.append(native_build(flavor,{name:item['buildId'] for name,item in info.items()}))
         reports.append({'flavor':flavor,'path':str(apk),'sha256':hashlib.file_digest(apk.open('rb'),'sha256').hexdigest(),'size':apk.stat().st_size,'abi':'arm64-v8a','libraries':info,'weightsPackaged':False})
 compiled=[row for report in native_reports for row in report['productionBackendCompileCommands']]
 output.write_text(json.dumps({'environment':'Android NDK 编译与静态打包检查，未在设备加载','productionBackendCompileCommands':compiled,'nativeBuilds':native_reports,'apks':reports},indent=2)+'\n')
 print('PASS arm64-v8a、公共 C ABI/JNI/LLM 符号、依赖闭合、生产后端编译、未打包权重')
 if args.require_native_release:print('PASS APK build ID 关联的原生 Release/-O3/NDEBUG、MNN 无调试宏')
+if args.require_document_crop:print('PASS 文档裁剪界面、OpenCV、许可及当前 NDK libc++ 运行库')

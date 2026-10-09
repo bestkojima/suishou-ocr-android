@@ -44,6 +44,7 @@ final class RecognitionController {
     synchronized JSONObject start(String id,boolean again) throws Exception {
         if(busy) throw new IOException("已有识别作业，请返回该文档或等待安全停止");
         JSONObject doc=store.load(id);
+        if(DocumentCrop.pending(doc))throw new IOException("请先预览并确认文档裁剪，再开始识别");
         if(doc.optString("input").isEmpty()) throw new IOException("首轮仅支持已保存的单张图片");
         if(DownloadService.active||DownloadService.reserved) throw new IOException("请先完成或暂停模型下载，再开始识别");
         String imagePolicy=ImageInput.policy(context);
@@ -59,6 +60,7 @@ final class RecognitionController {
         return doc;
     }
     JSONObject autoStart(JSONObject doc) throws Exception {
+        if(DocumentCrop.pending(doc))return doc;
         if(!doc.optString("mode").equals("pending-ocr")||doc.optString("input").isEmpty()||doc.optJSONObject("recognition")!=null&&doc.getJSONObject("recognition").optString("state").equals("failed")) return doc;
         synchronized(this) {
             if(busy||DownloadService.active||DownloadService.reserved) {
@@ -94,6 +96,25 @@ final class RecognitionController {
             store.save(doc);
         }
         return state;
+    }
+    synchronized JSONObject beginCrop(String id)throws Exception {
+        if(busy)throw new IOException("请先等待当前识别或加载作业结束，再调整裁剪");
+        JSONObject doc=store.load(id);
+        if(!doc.has("documentCrop"))throw new IOException("此记录没有拍照裁剪底图");
+        if(doc.optString("mode").equals("real-ocr"))doc=store.copyInput(doc);
+        if(current!=null&&doc.getString("id").equals(current.optString("docId")))current=null;
+        return DocumentCrop.detect(store,DocumentCrop.begin(store,doc));
+    }
+    synchronized JSONObject previewCrop(String id,JSONArray points)throws Exception {
+        if(busy)throw new IOException("请先等待当前识别或加载作业结束");
+        JSONObject doc=store.load(id);
+        if(!DocumentCrop.pending(doc))throw new IOException("请先打开调整裁剪");
+        return DocumentCrop.preview(store,doc,points,ImageInput.policy(context));
+    }
+    synchronized JSONObject confirmCrop(String id,String token)throws Exception {
+        if(busy)throw new IOException("请先等待当前识别或加载作业结束");
+        JSONObject doc=DocumentCrop.confirm(store,store.load(id),token);
+        return autoStart(doc);
     }
     synchronized JSONObject cancel(String id,String jobId) throws Exception {
         if(!busy||current==null||!id.equals(current.optString("docId"))||!jobId.equals(current.optString("jobId"))) throw new IOException("该作业已结束或不是当前作业");

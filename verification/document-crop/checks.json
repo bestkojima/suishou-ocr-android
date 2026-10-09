@@ -1,0 +1,29 @@
+{
+  "versionName": "0.7.6-ocr",
+  "versionCode": 13,
+  "unitTests": {
+    "UserDebug": {
+      "tests": 68,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "LabDebug": {
+      "tests": 68,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "lint": {
+    "lint-results-userDebug.xml": {
+      "Error": 0,
+      "Warning": 11
+    },
+    "lint-results-labDebug.xml": {
+      "Error": 0,
+      "Warning": 11
+    }
+  },
+  "device": "List of devices attached"
+}

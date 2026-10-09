@@ -52,6 +52,14 @@ public final class DocumentStore {
             doc.put("rawInput",raw);
         }
         if(source.has("imagePreparation"))doc.put("imagePreparation",new JSONObject(source.getJSONObject("imagePreparation").toString()));
+        if(source.has("documentCrop")) {
+            JSONObject crop=new JSONObject(source.getJSONObject("documentCrop").toString());
+            for(String key:new String[]{"source","original"}) {
+                String cropPath=crop.getString(key);File dest=FilesUtil.child(dir(id),cropPath);dest.getParentFile().mkdirs();
+                if(!dest.isFile())java.nio.file.Files.copy(FilesUtil.child(dir(source.getString("id")),cropPath).toPath(),dest.toPath());
+            }
+            crop.put("sourceUrl",url(id,crop.getString("source"))).remove("preview");doc.put("documentCrop",crop);
+        }
         if(source.getJSONObject("assets").has(path))doc.getJSONObject("assets").put(path,
             new JSONObject(source.getJSONObject("assets").getJSONObject(path).toString()).put("src",url(id,path)));
         if(source.has("pages"))doc.put("pages",new JSONArray(source.getJSONArray("pages").toString()));
@@ -67,6 +75,7 @@ public final class DocumentStore {
         result.put("mode","real-ocr").put("input",input.getString("input")).put("original",input.optString("original"));
         if(input.has("rawInput")) result.put("rawInput",input.getString("rawInput"));
         if(input.has("imagePreparation"))result.put("imagePreparation",input.getJSONObject("imagePreparation"));
+        if(input.has("documentCrop"))result.put("documentCrop",input.getJSONObject("documentCrop"));
         if(input.has("derivedFrom")) result.put("derivedFrom",input.getString("derivedFrom"));
         if(input.has("recognition")) result.put("recognition",input.getJSONObject("recognition"));
         for(int i=0;i<result.getJSONArray("pages").length();i++) result.getJSONArray("pages").getJSONObject(i).put("source",input.optString("original")).put("route","PP-DocLayoutV3 → OvisOCR2 → DocumentIR");
@@ -105,6 +114,10 @@ public final class DocumentStore {
         if(format.equals("txt")||format.equals("md")){File f=new File(outdir,id+(format.equals("txt")?".txt":".md"));FilesUtil.write(f,format.equals("txt")?md.replaceAll("(?m)^#{1,6}\\s+","").replaceAll("!\\[([^]]*)]\\([^)]+\\)","[图片：$1]").replaceAll("<[^>]*>"," "):md);return f;}
         File f=new File(outdir,id+".zip");try(ZipOutputStream zip=new ZipOutputStream(new FileOutputStream(f))){put(zip,"document.md",md.getBytes(java.nio.charset.StandardCharsets.UTF_8));put(zip,"app-state.json",portable(doc).toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));put(zip,"document.json",exportIR(doc).toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));File raw=new File(dir(id),"original-document.json");if(!raw.isFile())raw=new File(dir(id),"document.json");if(raw.isFile())putFile(zip,"original-document.json",raw);File manifest=new File(dir(id),"run-manifest.json");if(manifest.isFile())putFile(zip,"run-manifest.json",manifest);Set<String> included=new HashSet<>(Arrays.asList("document.md","app-state.json","document.json","original-document.json","run-manifest.json"));
             JSONObject assets=doc.getJSONObject("assets");for(Iterator<String> it=assets.keys();it.hasNext();){String path=it.next();File asset=FilesUtil.child(dir(id),path);if(asset.isFile()&&included.add(path))putFile(zip,path,asset);}
+            JSONObject crop=doc.optJSONObject("documentCrop");
+            if(crop!=null)for(String path:new String[]{crop.getString("source"),crop.getString("original"),doc.optString("rawInput")}) {
+                if(!path.isEmpty()){File image=FilesUtil.child(dir(id),path);if(image.isFile()&&included.add(path))putFile(zip,path,image);}
+            }
             zipAssets(zip,dir(id),new File(dir(id),"assets"),included);for(File originalImage:dir(id).listFiles())if(originalImage.getName().startsWith("source.")&&included.add(originalImage.getName()))putFile(zip,originalImage.getName(),originalImage);}return f;
     }
     JSONObject portable(JSONObject doc)throws Exception{
@@ -112,6 +125,7 @@ public final class DocumentStore {
         String prefix="https://appassets.androidplatform.net/documents/"+doc.getString("id")+"/";
         if(copy.optString("original").startsWith(prefix))copy.put("original",copy.getString("original").substring(prefix.length()));
         JSONArray pages=copy.optJSONArray("pages");if(pages!=null)for(int i=0;i<pages.length();i++){JSONObject page=pages.getJSONObject(i);if(page.optString("source").startsWith(prefix))page.put("source",page.getString("source").substring(prefix.length()));}
+        JSONObject crop=copy.optJSONObject("documentCrop");if(crop!=null){crop.remove("sourceUrl");crop.remove("preview");}
         return copy;
     }
     JSONObject restoreExport(String id,JSONObject state)throws Exception{
@@ -121,6 +135,7 @@ public final class DocumentStore {
         JSONObject assets=state.getJSONObject("assets");for(Iterator<String> it=assets.keys();it.hasNext();){String path=it.next();File f=FilesUtil.child(dir(id),path);JSONObject a=assets.getJSONObject(path);a.put("src",url(id,path));a.put("missing",!f.isFile());}
         String source=state.optString("original");if(!source.isEmpty()){FilesUtil.child(dir(id),source);state.put("original",url(id,source));}
         JSONArray pages=state.optJSONArray("pages");if(pages!=null)for(int i=0;i<pages.length();i++){JSONObject p=pages.getJSONObject(i);if(p.has("source")){String path=p.getString("source");FilesUtil.child(dir(id),path);p.put("source",url(id,path));}}
+        JSONObject crop=state.optJSONObject("documentCrop");if(crop!=null){FilesUtil.child(dir(id),crop.getString("source"));FilesUtil.child(dir(id),crop.getString("original"));crop.put("sourceUrl",url(id,crop.getString("source")));crop.remove("preview");}
         state.remove("input");state.remove("recognition");state.put("id",id);state.put("mode","json-replay");state.put("progress",0);state.put("status","ready");state.remove("anchor");return state;
     }
     static void putFile(ZipOutputStream zip,String path,File file)throws Exception{zip.putNextEntry(new ZipEntry(path));try(InputStream in=new FileInputStream(file)){FilesUtil.copy(in,zip,Long.MAX_VALUE);}zip.closeEntry();}

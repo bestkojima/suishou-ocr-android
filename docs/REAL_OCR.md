@@ -44,6 +44,14 @@ Ovis 初始化执行 `createLLM → set_config → load`。0.7.5 按用户要求
 
 ## 请求与事件
 
+### 0.7.6／BUG-005：拍照后的裁剪确认
+
+相机拍摄完成不再调用 `autoStart`，而是先保存照片、准备规范底图，进入文档裁剪阶段。固定 OpenCV 4.12.0 在最长边不超过 960 的检测图上识别凸四边形；自动检测失败回退全图。前端 SVG 支持四角与整框拖动、键盘微调、全图/重新检测和横竖屏裁剪预览。需要先预览再确认；确认前前端按钮和原生 `RecognitionController.start/autoStart` 均限制识别。取消保留输入，重拍返回相机，历史重开可继续。
+
+`documentCrop` 保存未裁剪底图路径、原始相机文件路径、尺寸、四角、确认状态及当前预览。裁剪底图沿用拍摄时的整页分辨率策略；完整相机 JPEG 另行保留。`previewCrop` 生成透视校正后的 PNG 与令牌，`confirmCrop` 直接将该 PNG 作为 `input` 和 `rawInput`，保存对应分辨率元数据。同策略识别直接复用；改变分辨率仍以裁剪 PNG 为源，不能恢复已排除的背景。重新裁剪已识别记录由 `beginCrop` 另存，旧结果和校对内容保留。
+
+桥接新增 `beginCrop(id)`、`previewCrop(id, points)` 和 `confirmCrop(id, token)`；耗时图像处理在宿主工作线程运行。ZIP 导出额外保留拍摄原照片、裁剪底图及实际识别输入，导入后继续按现有结果回放约定处理。详见 [实现与验收证据](../verification/document-crop/DELIVERY.md)。
+
 沿用 `window.AndroidHost.request`/`nativeReply`；新增请求：
 
 | 请求 | 参数 | 结果 |

@@ -2,14 +2,16 @@
 
 Android 本地离线文档识别应用：拍照或导入图片，使用 PP-DocLayoutV3 与 OvisOCR2 检测版面、识别文字／表格／公式，模型输出实时显示，并支持校对、历史记录与导出。
 
-当前版本：**0.7.5-ocr**。Java + Camera2 + JNI/C++ + MNN，界面使用本地 WebView、React、Streamdown 和 KaTeX。APK不包含模型，首次需要在应用内下载；模型下载完成后，单图识别和结果阅读可离线运行。
+当前版本：**0.7.6-ocr**（`versionCode=13`，预发布）。Java + Camera2 + JNI/C++ + MNN，界面使用本地 WebView、React、Streamdown 和 KaTeX。APK不包含模型，首次需要在应用内下载；模型下载完成后，单图识别和结果阅读可离线运行。
+
+0.7.6 实现 BUG-005：拍照后先自动检测文档边界，支持四角/整框调整、透视裁剪预览和确认后识别。原照片保留，检测失败可手动调整；真机效果待验收。详见 [裁剪交付记录](verification/document-crop/DELIVERY.md)。
 
 ## 下载与安装
 
-从 [GitHub Releases](https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.5) 下载：
+从 [GitHub Releases](https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.6) 下载：
 
-- `suishou-ocr-0.7.5-arm64.apk`：普通版，应用ID `cn.local.ocr`。
-- `suishou-ocr-0.7.5-lab-arm64.apk`：测试版，应用ID `cn.local.ocr.test`，可与普通版同时安装。
+- `suishou-ocr-0.7.6-arm64.apk`：普通版，应用ID `cn.local.ocr`。
+- `suishou-ocr-0.7.6-lab-arm64.apk`：测试版，应用ID `cn.local.ocr.test`，可与普通版同时安装。
 - `SHA256SUMS.txt`：安装包校验值。
 
 需要 **Android 8.0 / API 26或以上、arm64-v8a**，及支持现代JavaScript的Android System WebView（Chromium 100+）。本次为预发布，使用开发签名的Debug APK，原生 MNN／docprase／JNI 使用 Release／`-O3`／`NDEBUG`；覆盖安装同类型版本可保留已下载模型和记录。普通版没有测试开关或WebView调试。
@@ -20,6 +22,7 @@ Android 本地离线文档识别应用：拍照或导入图片，使用 PP-DocLa
 
 | 功能 | 行为 |
 | --- | --- |
+| 拍照裁剪 | 自动检测文档边界，四角/整框调整，透视预览，确认后识别；保留原照片 |
 | 单图真实OCR | 本地版面检测，逐区域识别文字、表格、公式；插图随结果保留 |
 | 实时输出 | 正文来自实际模型生成流；JSON示例另有明确的回放模式 |
 | 图片分辨率 | 均衡默认≤800万像素、长边≤4096；快速≤400万像素、长边≤2560；原图不缩小；保留原始文件 |
@@ -29,19 +32,22 @@ Android 本地离线文档识别应用：拍照或导入图片，使用 PP-DocLa
 | PDF与Office | 提取已有文档内容；待OCR图片明确标记，尚未接通完整PDF／Office页面OCR |
 | 模型管理 | ModelScope仓库管理、选择下载、断点续传、下载完成时SHA-256校验 |
 
-0.7.5图片流程（沿用0.7.4）：
+0.7.6 拍照先经过文档裁剪确认，再进入现有 OCR 流程；导入图片沿用原流程：
 
 ```text
-保留原文件 → 整页分辨率策略／EXIF校正 → source.png
+拍照：保留原照片 → 整页分辨率策略／EXIF校正 → 自动边界／手动调整
+  → 透视裁剪预览 → 确认同一 PNG 作为识别输入
+导入：保留原文件 → 整页分辨率策略／EXIF校正 → source.png
+共同识别流程：
   → 等比例缩放／补白到800×800做版面检测
-  → 框映射回source.png → 裁剪各区域
+  → 框映射回实际识别输入 → 裁剪各区域
   → 每个区域单独smartresize／补白／32对齐
   → OvisOCR2真实生成、实时显示 → 保存DocumentIR与资源
 ```
 
 默认区域视觉预算为65,536～313,600像素，不是所有区域统一变成560×560。均衡模式的裁剪来自降采样后的整页；密集小字可选原图重新识别。首次初始化与连续识别的耗时不同。
 
-0.7.5 固定关闭 `use_mmap` 和 `kvcache_mmap`。加载前设置有效配置，使用现有私有临时目录；不创建或复用 `ovis-mmap-*` 权重缓存。模型仍在应用内加载并本地执行。
+自 0.7.5 起固定关闭 `use_mmap` 和 `kvcache_mmap`，0.7.6 保持该设置。加载前设置有效配置，使用现有私有临时目录；不创建或复用 `ovis-mmap-*` 权重缓存。模型仍在应用内加载并本地执行。
 
 ## 模型来源
 
@@ -72,7 +78,7 @@ Gradle 的 APK build type 与原生编译类型分开：`userDebug`／`labDebug`
 ./gradlew testUserDebugUnitTest testLabDebugUnitTest lintUserDebug lintLabDebug
 npm run build:web
 npm run test:web
-python tools/verify_ocr_apk.py --require-native-release --output verification/native-release/apk.json
+python tools/verify_ocr_apk.py --require-native-release --require-document-crop --output verification/document-crop/apk.json
 ```
 
 输出在`app/build/outputs/apk/{user,lab}/debug/`。浏览器预览使用`npm run preview`；其中相机、下载和真实模型推理需要APK。
@@ -87,11 +93,14 @@ adb logcat -s OcrEngine
 
 ## 验证与当前边界
 
-0.7.5 两版JVM各62项、浏览器78组（含本轮真实结果展示8组）、两版lint与原生Release／arm64 APK静态检查通过。真实模型输出、流式采集和分辨率对比在Linux同源实现上运行；**Android设备的推理、相机、Bitmap与性能仍待实测**，JVM／浏览器通过不能代替设备验收。
+0.7.6 两版 JVM 各 68 项通过，lint 各 0 错误、11 项既有警告；裁剪界面 4 组和既有界面/识别/导航/流式回归通过，APK 通过原生 Release、arm64、OpenCV、依赖及签名检查。同一生产 Java 图像算法在 Linux 上验证倾斜、背景杂物、低对比度、无边界和全图输入。**Android设备的裁剪交互、推理、相机、Bitmap、性能与内存仍待实测**，JVM／浏览器／Linux 通过不能代替设备验收。
+
+BUG-001 插图流式显示、BUG-002 重复生成、BUG-003 相机预览范围和 BUG-004 错误 LaTeX 的校对问题仍待处理，见 [Bug 记录](bugdoc.md)。历史 0.7.5 的真实模型输出、流式采集和分辨率验证保留在原交付记录中。
 
 合成大图分辨率对比中，连续识别2208万像素20.67s→约800万像素12.87s；该数据不代表平板速度，也不是密集小字精度保证。模型可能给出不完整或未校验结果，界面会保留可用内容并标示。
 
 - [0.7.5原生优化／关闭mmap与发布验证](verification/native-release/DELIVERY.md)
+- [0.7.6拍照裁剪与发布验证](verification/document-crop/DELIVERY.md)
 - [当前OCR实现与接口](docs/REAL_OCR.md)
 - [0.7.4分辨率验证](verification/image-resolution/DELIVERY.md)
 - [引擎复用与线程对比](verification/ocr-speed/DELIVERY.md)
