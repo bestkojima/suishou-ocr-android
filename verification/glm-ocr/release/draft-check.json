@@ -1,0 +1,30 @@
+{
+  "tag": "v0.7.7",
+  "sourceCommit": "5649d1d3f4b32cd98525c565855ac217e5ff9160",
+  "draft": true,
+  "prerelease": true,
+  "notesMatch": true,
+  "assets": [
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 192,
+      "sha256": "e42d6b6791abf91123cc697882d2baf51d27847b5e177f5fd9270eafc300a4e6",
+      "githubDigest": "sha256:e42d6b6791abf91123cc697882d2baf51d27847b5e177f5fd9270eafc300a4e6",
+      "url": "https://github.com/bestkojima/suishou-ocr-android/releases/download/untagged-0d98185eff1b23383e89/SHA256SUMS.txt"
+    },
+    {
+      "name": "suishou-ocr-0.7.7-arm64.apk",
+      "size": 50871521,
+      "sha256": "7cecdd3b84ff7a96a50c94a4d7e149f6e6bf34c1dbdd36c1d2363ed4661214fe",
+      "githubDigest": "sha256:7cecdd3b84ff7a96a50c94a4d7e149f6e6bf34c1dbdd36c1d2363ed4661214fe",
+      "url": "https://github.com/bestkojima/suishou-ocr-android/releases/download/untagged-0d98185eff1b23383e89/suishou-ocr-0.7.7-arm64.apk"
+    },
+    {
+      "name": "suishou-ocr-0.7.7-lab-arm64.apk",
+      "size": 50871537,
+      "sha256": "c8de77ada4e8dab272886d599edb1c5b9311bc6d329561b905c1c0fc1121e295",
+      "githubDigest": "sha256:c8de77ada4e8dab272886d599edb1c5b9311bc6d329561b905c1c0fc1121e295",
+      "url": "https://github.com/bestkojima/suishou-ocr-android/releases/download/untagged-0d98185eff1b23383e89/suishou-ocr-0.7.7-lab-arm64.apk"
+    }
+  ]
+}

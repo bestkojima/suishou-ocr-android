@@ -1,6 +1,6 @@
 # GLM-OCR 配置适配与真实识别对照
 
-2026-10-09。用户要求“使用 glm ocr 试试”，并明确由模型文件夹的 config 字段适配。已实施并完成本地验证。用户随后授权发布，当前准备 v0.7.7 预发布；BUG-002 保持未关闭。
+2026-10-09。用户要求“使用 glm ocr 试试”，并明确由模型文件夹的 config 字段适配。已实施并完成本地验证。按用户后续授权已发布为 v0.7.7 预发布；BUG-002 保持未关闭。
 
 ## 实现
 
@@ -78,6 +78,6 @@ python3 tools/debug/continuation_probe.py \
 
 ADB 当前设备列表为空。Titan_1 上的加载、实际识别、流式 UI、内存与速度需后续验证；Linux 结果不能替代设备验收。整页只有一次运行，尚无全面人工标注、不同纸张/低像素来源及透印因果对照。BUG-002 不关闭，不宣称根因已确定或通用准确率已通过。
 
-## v0.7.7 预发布准备
+## v0.7.7 发布与下载复核
 
-用户于 2026-10-09 授权提交这版代码并发布最新 release，附中文改进说明。版本升级为 `0.7.7-ocr`／`versionCode=14`，保持应用 ID 和签名。两版 APK 已重新构建：每版 74 项 JVM 通过，lint 各 0 错误／11 个既有警告；版本和应用 ID、GLM 配置资产、ABI、原生 Release、依赖及签名兼容检查通过。新包原生库字节与适配阶段 APK 相同，本轮版本升级未改变已实测的原生实现。检查见 [checks.json](release/checks.json) 与 [apk-checks.json](release/apk-checks.json)。正式上传文件为 `suishou-ocr-0.7.7-arm64.apk`、`suishou-ocr-0.7.7-lab-arm64.apk`、`SHA256SUMS.txt`。发布说明见 [release-notes.md](release/release-notes.md)，发布构建日志见 [build.log](release/build.log)。GitHub 上传与下载 SHA 复核结果将在发布后补记，保留历史版本。
+用户于 2026-10-09 授权提交这版代码并发布最新 release，附中文改进说明。版本升级为 `0.7.7-ocr`／`versionCode=14`，保持应用 ID 和签名。两版 APK 已重新构建：每版 74 项 JVM 通过，lint 各 0 错误／11 个既有警告；版本和应用 ID、GLM 配置资产、ABI、原生 Release、依赖及签名兼容检查通过。新包原生库字节与适配阶段 APK 相同，本轮版本升级未改变已实测的原生实现。检查见 [checks.json](release/checks.json) 与 [apk-checks.json](release/apk-checks.json)。正式上传文件为 `suishou-ocr-0.7.7-arm64.apk`、`suishou-ocr-0.7.7-lab-arm64.apk`、`SHA256SUMS.txt`。发布说明见 [release-notes.md](release/release-notes.md)，发布构建日志见 [build.log](release/build.log)。已于 2026-10-09T22:20:50+08:00 发布 [v0.7.7 预发布](https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.7)，来源提交 `5649d1d3f4b32cd98525c565855ac217e5ff9160`；main、适配分支和标签均已推送。两版 APK 及 SHA256SUMS.txt 重新下载后，大小/SHA 与本地及 GitHub 资产摘要一致，发布说明一致，v0.7.6、v0.7.5、v0.7.4 及三项资产各自保留。证据见 [publication.json](release/publication.json)。

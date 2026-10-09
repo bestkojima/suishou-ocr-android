@@ -6,12 +6,14 @@ Status: ready-for-agent
 
 - [x] 升级为 0.7.7-ocr／versionCode=14，保持应用标识、签名、原生 Release 和 mmap=false。
 - [x] 重新构建两版，验证 JVM、lint、APK 版本、模型适配资产、ABI、依赖和签名兼容。
-- [ ] 推送新代码和 v0.7.7 标签，附普通版、测试版及 SHA256SUMS.txt。
+- [x] 推送新代码和 v0.7.7 标签，附普通版、测试版及 SHA256SUMS.txt。
 - [x] 发布说明写明配置驱动 GLM、DocLayout 流程、真实流式、实测改善与局限，明确真机待验收、BUG-002 未关闭。
-- [ ] 下载复核资产、发布说明与来源提交；保留 v0.7.6、v0.7.5、v0.7.4，更新项目记忆和交付记录。
+- [x] 下载复核资产、发布说明与来源提交；保留 v0.7.6、v0.7.5、v0.7.4，更新项目记忆和交付记录。
 
 ## Comments
 
 2026-10-09：开始。GitHub main 是当前分支祖先，可正常快进提交；发布仍为预发布，不升级为 1.0.0。
 
 2026-10-09：两版 0.7.7-ocr／14 构建及各 74 项 JVM、lint、APK 静态/GLM 配置资产/原签名检查通过，准备推送与上传。
+
+2026-10-09：已发布 [v0.7.7](https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.7)，代码与标签提交 `5649d1d3f4b32cd98525c565855ac217e5ff9160` 已推送；两版 APK 及校验文件下载复核通过，旧版本保留，记录见 `verification/glm-ocr/release/publication.json`。

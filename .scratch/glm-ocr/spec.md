@@ -10,7 +10,7 @@ Status: ready-for-agent
 
 - [x] [01 配置驱动适配](issues/01-config-adapter.md)
 - [x] [02 GLM 真实识别对照](issues/02-real-comparison.md)
-- [ ] [03 v0.7.7 预发布](issues/03-publish-077.md)
+- [x] [03 v0.7.7 预发布](issues/03-publish-077.md)
 
 ## Comments
 
@@ -19,3 +19,5 @@ Status: ready-for-agent
 2026-10-09：已完成。模型目录字段驱动 GLM/Ovis 加载，两版构建、各 74 项 JVM、lint、原生与界面检查通过。用户扫描页三个异常区域各 3/3 正常停止，整页 17 区域正常；低像素仍错识。未发布新版，BUG-002 与设备验收保留。证据见 [GLM-OCR 交付记录](../../verification/glm-ocr/DELIVERY.md)。
 
 2026-10-09：用户明确授权将当前代码提交 GitHub，并附最新 release 和改进说明；按 0.7.7-ocr／14 预发布实施。
+
+2026-10-09：v0.7.7 已公开发布，main/标签和两版 APK、SHA256SUMS.txt 均交付，下载复核通过。发布说明包含改进、实测及真机待验收，BUG-002 不关闭。发布页：https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.7。
