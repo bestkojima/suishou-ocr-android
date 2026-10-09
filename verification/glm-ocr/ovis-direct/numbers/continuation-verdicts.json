@@ -1,0 +1,37 @@
+{
+  "scope": "只对这三个已查看的固定区域判定，不是生产通用规则",
+  "kind": "numbers",
+  "expectedVisibleEnding": "answer to the question you have heard.",
+  "directCommand": [
+    "/usr/bin/python3",
+    "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+    "--library",
+    "/tmp/glm-ocr-probe/libdococr_c_diagnostic.so",
+    "--input",
+    "verification/ocr-degeneration/user-page-20261009/captured/directions-region.crop.png",
+    "--output",
+    "verification/glm-ocr/ovis-direct/numbers",
+    "--runs",
+    "1",
+    "--max-tokens",
+    "256",
+    "--engine-config",
+    "verification/glm-ocr/ovis-engine-config.json"
+  ],
+  "directExitCode": 0,
+  "rawAndActualTokens": "report.json",
+  "verdicts": [
+    {
+      "run": 1,
+      "verdict": "ABNORMAL_CONTINUATION",
+      "anomaly": {
+        "kind": "unsupported_number_sequence",
+        "first": 1,
+        "last": 12,
+        "minimumLines": 12
+      },
+      "stopReason": "token_limit",
+      "seconds": 6.51475351100089
+    }
+  ]
+}

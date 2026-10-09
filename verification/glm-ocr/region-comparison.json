@@ -1,0 +1,125 @@
+[
+  {
+    "case": "date",
+    "ovisRawIdentical": true,
+    "ovisTokensIdentical": true,
+    "ovisVisualIdentical": true,
+    "glmRuns": [
+      {
+        "stopReason": "normal",
+        "raw": "9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\nW: I did?\n",
+        "seconds": 8.221647282000049,
+        "visualSize": [
+          1952,
+          160
+        ],
+        "visualTokens": 420,
+        "actualMmap": false
+      },
+      {
+        "stopReason": "normal",
+        "raw": "9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\nW: I did?\n",
+        "seconds": 5.598737215997971,
+        "visualSize": [
+          1952,
+          160
+        ],
+        "visualTokens": 420,
+        "actualMmap": false
+      },
+      {
+        "stopReason": "normal",
+        "raw": "9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\nW: I did?\n",
+        "seconds": 5.647003912999935,
+        "visualSize": [
+          1952,
+          160
+        ],
+        "visualTokens": 420,
+        "actualMmap": false
+      }
+    ]
+  },
+  {
+    "case": "numbers",
+    "ovisRawIdentical": true,
+    "ovisTokensIdentical": true,
+    "ovisVisualIdentical": true,
+    "glmRuns": [
+      {
+        "stopReason": "normal",
+        "raw": "Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the passages. The passages will be read twice but the questions will be spoken only once. When you hear a question, read the four possible answers on your paper and decide which one would be the best answer to the question you have heard.\n",
+        "seconds": 5.8600654439978825,
+        "visualSize": [
+          1376,
+          224
+        ],
+        "visualTokens": 392,
+        "actualMmap": false
+      },
+      {
+        "stopReason": "normal",
+        "raw": "Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the passages. The passages will be read twice but the questions will be spoken only once. When you hear a question, read the four possible answers on your paper and decide which one would be the best answer to the question you have heard.\n",
+        "seconds": 5.6227612889997545,
+        "visualSize": [
+          1376,
+          224
+        ],
+        "visualTokens": 392,
+        "actualMmap": false
+      },
+      {
+        "stopReason": "normal",
+        "raw": "Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the passages. The passages will be read twice but the questions will be spoken only once. When you hear a question, read the four possible answers on your paper and decide which one would be the best answer to the question you have heard.\n",
+        "seconds": 5.747907712997403,
+        "visualSize": [
+          1376,
+          224
+        ],
+        "visualTokens": 392,
+        "actualMmap": false
+      }
+    ]
+  },
+  {
+    "case": "punctuation",
+    "ovisRawIdentical": true,
+    "ovisTokensIdentical": true,
+    "ovisVisualIdentical": true,
+    "glmRuns": [
+      {
+        "stopReason": "normal",
+        "raw": "Questions 11 through 13 are based on the following passage.\n",
+        "seconds": 6.671797922001133,
+        "visualSize": [
+          2432,
+          128
+        ],
+        "visualTokens": 435,
+        "actualMmap": false
+      },
+      {
+        "stopReason": "normal",
+        "raw": "Questions 11 through 13 are based on the following passage.\n",
+        "seconds": 5.368263214997569,
+        "visualSize": [
+          2432,
+          128
+        ],
+        "visualTokens": 435,
+        "actualMmap": false
+      },
+      {
+        "stopReason": "normal",
+        "raw": "Questions 11 through 13 are based on the following passage.\n",
+        "seconds": 6.639102732999163,
+        "visualSize": [
+          2432,
+          128
+        ],
+        "visualTokens": 435,
+        "actualMmap": false
+      }
+    ]
+  }
+]

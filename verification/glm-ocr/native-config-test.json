@@ -1,0 +1,5 @@
+{
+  "exitCode": 0,
+  "output": "PASS 配置驱动任务、图像 token、工件约束、采样错误、线程/mmap 与旧 Ovis 兼容配置\n",
+  "errors": ""
+}

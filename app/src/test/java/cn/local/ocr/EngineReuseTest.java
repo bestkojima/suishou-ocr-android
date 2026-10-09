@@ -4,6 +4,8 @@ import android.content.*;
 import java.io.*;
 import java.lang.reflect.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+import org.json.JSONObject;
 import org.junit.*;
 import org.junit.rules.TemporaryFolder;
 import static org.junit.Assert.*;
@@ -14,6 +16,7 @@ public class EngineReuseTest {
     Field instance;
     Object previous;
     AtomicInteger preference = new AtomicInteger();
+    AtomicReference<String> modelPreference = new AtomicReference<>("ovis");
     @Before public void setup() throws Exception {
         instance=RecognitionController.class.getDeclaredField("instance");instance.setAccessible(true);
         previous=instance.get(null);instance.set(null,null);
@@ -27,10 +30,11 @@ public class EngineReuseTest {
                     if(method.getName().equals("getInt"))return preference.get();
                     if(method.getName().equals("edit"))return Proxy.newProxyInstance(getClass().getClassLoader(),new Class<?>[]{SharedPreferences.Editor.class},(editor,action,values)->{
                         if(action.getName().equals("putInt")){preference.set((Integer)values[1]);return editor;}
+                        if(action.getName().equals("putString")){modelPreference.set((String)values[1]);return editor;}
                         if(action.getName().equals("apply"))return null;
                         throw new UnsupportedOperationException(action.getName());
                     });
-                    if(method.getName().equals("getString"))return args[1];
+                    if(method.getName().equals("getString"))return args[0].equals("ocrModel")?modelPreference.get():args[1];
                     throw new UnsupportedOperationException(method.getName());
                 });
             }
@@ -86,5 +90,32 @@ public class EngineReuseTest {
     @Test public void preparedEngineIsReusedWithoutReloadingArtifacts()throws Exception {
         set("engine",99L);assertEquals(true,call("prepare"));assertEquals(99L,get("engine"));
         assertEquals("ready",controller.readiness().getString("state"));
+    }
+    void cacheProfiles()throws Exception {
+        RecognitionModels models=(RecognitionModels)get("models");
+        Field profiles=RecognitionModels.class.getDeclaredField("cachedProfiles");profiles.setAccessible(true);
+        profiles.set(models,new JSONObject("{\"ovis\":{},\"glm\":{}}"));
+    }
+    @Test public void switchingModelUnloadsAnIdleEngineAndPersistsTheSelection()throws Exception {
+        cacheProfiles();Cleanup cleanup=new Cleanup();set("resources",cleanup);set("engine",99L);
+        controller.setModel("glm");assertEquals(1,cleanup.engines);assertEquals(0L,get("engine"));
+        assertEquals("glm",modelPreference.get());assertEquals("glm",controller.readiness().getString("modelChoice"));
+        controller.setModel("glm");assertEquals(1,cleanup.engines);
+        assertThrows(IOException.class,()->controller.setModel("unknown"));assertEquals("glm",modelPreference.get());
+    }
+    @Test public void modelSwitchIsBlockedWhileBusyWithoutReadingArtifacts()throws Exception {
+        set("busy",true);assertThrows(IOException.class,()->controller.setModel("glm"));
+        assertEquals("ovis",modelPreference.get());
+    }
+    @Test public void modelSwitchIsBlockedWhileDownloadIsReserved()throws Exception {
+        boolean previous=DownloadService.reserved;
+        try {DownloadService.reserved=true;assertThrows(IOException.class,()->controller.setModel("glm"));}
+        finally {DownloadService.reserved=previous;}
+        assertEquals("ovis",modelPreference.get());
+    }
+    @Test public void failedUnloadDoesNotApplyAnotherModel()throws Exception {
+        cacheProfiles();Cleanup cleanup=new Cleanup();cleanup.fail=true;set("resources",cleanup);set("engine",99L);
+        assertThrows(IOException.class,()->controller.setModel("glm"));
+        assertEquals("ovis",modelPreference.get());assertEquals(99L,get("engine"));assertTrue(controller.readiness().getBoolean("inUse"));
     }
 }

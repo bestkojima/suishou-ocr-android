@@ -1,0 +1,37 @@
+{
+  "llm_model": "llm.mnn",
+  "llm_weight": "llm.mnn.weight",
+  "backend_type": "cpu",
+  "thread_num": 4,
+  "precision": "low",
+  "memory": "low",
+  "sampler_type": "greedy",
+  "temperature": 0.8,
+  "top_k": 40,
+  "top_p": 0.9,
+  "min_p": 0.05,
+  "tfs_z": 1.0,
+  "typical": 0.95,
+  "repetition_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "penalty_window": 0,
+  "n_gram": 8,
+  "ngram_factor": 1.0,
+  "tokenizer_file": "tokenizer.mtok",
+  "mllm": {
+    "backend_type": "cpu",
+    "thread_num": 4,
+    "precision": "normal",
+    "memory": "low"
+  },
+  "ocr": {
+    "name": "OvisOCR2",
+    "prompts": {
+      "text": "\nExtract all readable content from the image in natural human reading order and output the result as a single Markdown document. For charts or images, represent them using an HTML image tag: <img src=\"images/bbox_{left}_{top}_{right}_{bottom}.jpg\" />, where left, top, right, bottom are bounding box coordinates scaled to [0, 1000). Format formulas as LaTeX. Format tables as HTML: <table>...</table>. Transcribe all other text as standard Markdown. Preserve the original text without translation or paraphrasing.",
+      "formula": "\nExtract all readable content from the image in natural human reading order and output the result as a single Markdown document. For charts or images, represent them using an HTML image tag: <img src=\"images/bbox_{left}_{top}_{right}_{bottom}.jpg\" />, where left, top, right, bottom are bounding box coordinates scaled to [0, 1000). Format formulas as LaTeX. Format tables as HTML: <table>...</table>. Transcribe all other text as standard Markdown. Preserve the original text without translation or paraphrasing.",
+      "table": "\nExtract all readable content from the image in natural human reading order and output the result as a single Markdown document. For charts or images, represent them using an HTML image tag: <img src=\"images/bbox_{left}_{top}_{right}_{bottom}.jpg\" />, where left, top, right, bottom are bounding box coordinates scaled to [0, 1000). Format formulas as LaTeX. Format tables as HTML: <table>...</table>. Transcribe all other text as standard Markdown. Preserve the original text without translation or paraphrasing."
+    }
+  },
+  "source_config_sha256": "b81ac7008ba5f894301b7b9265bba882889df52c6e25c86390514c1bd4afe0c4"
+}

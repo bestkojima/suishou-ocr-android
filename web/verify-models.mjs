@@ -25,11 +25,12 @@ try{
  await page.close();
  const native=await browser.newPage({viewport:{width:412,height:892}});native.on('pageerror',e=>errors.push(e.message));
  await native.addInitScript(()=>{
-  const repos=['dr3334/PP-DocLayoutV3-mnn','dr3334/ovrics-ocrv2_mnn'];window.modelCalls=[];window.modelState={tasks:[],repos,running:false,freeBytes:1e10};window.holdCatalog=false;
+  const repos=['dr3334/PP-DocLayoutV3-mnn','dr3334/ovrics-ocrv2_mnn','MNN/GLM-OCR-MNN'];window.modelCalls=[];window.modelState={tasks:[],repos,running:false,freeBytes:1e10,readiness:{modelChoice:'ovis',cpuThreads:4,inUse:false},modelChoices:[{id:'ovis',name:'OvisOCR2'},{id:'glm',name:'GLM-OCR'}]};window.holdCatalog=false;
   window.AndroidHost={request(raw){const {id,method,args}=JSON.parse(raw);window.modelCalls.push({method,args});let value=true;
    if(method==='bootstrap')value={testBuild:true,settings:{wifiOnly:true,imageResolution:'balanced'},history:[],version:'test'};
    if(method==='settings')value={wifiOnly:true,...args};
    if(method==='models')value=window.modelState;
+   if(method==='setOcrModel'){window.modelState.readiness={...window.modelState.readiness,modelChoice:args.model,message:'识别模型已切换'};value=window.modelState.readiness;}
    if(method==='setOcrThreads'){window.modelState.readiness={...window.modelState.readiness,threadChoice:args.threads,cpuThreads:args.threads||4,message:'线程设置已更新'};value=window.modelState.readiness;}
    if(method==='catalog'){if(window.holdCatalog)return;value=[{repo:args.repo,path:'sub/model.mnn',size:1000,sha256:'a'.repeat(64)},{repo:args.repo,path:'config.json',size:100,sha256:'b'.repeat(64)},{repo:args.repo,path:'README.md',size:20,sha256:''}];}
    if(method==='download'){window.modelState={...window.modelState,running:true,tasks:[{repo:args.repo,path:'sub/model.mnn',size:1000,downloaded:0,status:'downloading'}],activity:{repo:args.repo,path:'sub/model.mnn',stage:'downloading',message:'正在下载',bytes:100,total:1000,updatedAt:Date.now()}};value={started:true};}
@@ -45,6 +46,12 @@ try{
   assert.equal(await native.getByLabel('图片分辨率',{exact:true}).inputValue(),'original');
  });
  await native.getByRole('button',{name:/识别模型/}).click();
+ await check('选择 GLM-OCR 发送模型切换请求并显示独立仓库（桥模拟）',async()=>{
+  const select=native.getByLabel('当前识别模型',{exact:true});await select.waitFor();assert.equal(await select.inputValue(),'ovis');
+  await select.selectOption('glm');await native.getByText('识别模型已切换',{exact:true}).waitFor();assert.equal(await select.inputValue(),'glm');
+  assert(await native.evaluate(()=>window.modelCalls.some(c=>c.method==='setOcrModel'&&c.args.model==='glm')));
+  await native.getByRole('region',{name:'MNN/GLM-OCR-MNN',exact:true}).waitFor();
+ });
  const card=native.getByRole('region',{name:'dr3334/PP-DocLayoutV3-mnn',exact:true});
  await check('浏览文件、筛选和选择下载，未选文件不会提交',async()=>{
   await card.getByRole('button',{name:'浏览仓库文件'}).click();await card.getByLabel('选择 sub/model.mnn',{exact:true}).waitFor();await card.getByLabel('选择 config.json',{exact:true}).uncheck();await card.getByLabel('筛选仓库文件').fill('.mnn');assert.equal(await card.locator('.selectable').count(),1);await card.getByRole('button',{name:'下载 / 继续所选文件'}).click();assert.deepEqual(await native.evaluate(()=>window.modelCalls.find(c=>c.method==='download').args.paths),['sub/model.mnn']);
@@ -57,11 +64,11 @@ try{
  });
  await check('手机宽度不溢出，无页面异常',async()=>{assert(await native.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));assert.deepEqual(errors,[]);});
  await check('推理线程选择发送真实请求，识别占用时禁止切换（桥模拟）',async()=>{
-  await native.evaluate(()=>{window.modelState={...window.modelState,running:false,readiness:{state:'ready',message:'引擎已复用',inUse:false,cpuThreads:4,threadChoice:0}};});
+  await native.evaluate(()=>{window.modelState={...window.modelState,running:false,readiness:{modelChoice:'glm',state:'ready',message:'引擎已复用',inUse:false,cpuThreads:4,threadChoice:0}};});
   const select=native.getByLabel('CPU 推理线程',{exact:true});await select.waitFor();await select.selectOption('2');
   await native.getByText('线程设置已更新',{exact:true}).waitFor();assert.equal(await select.inputValue(),'2');
   assert(await native.evaluate(()=>window.modelCalls.some(c=>c.method==='setOcrThreads'&&c.args.threads===2)));
-  await native.evaluate(()=>window.modelState.readiness.inUse=true);await native.waitForTimeout(1200);assert(await select.isDisabled());
+  await native.evaluate(()=>window.modelState.readiness.inUse=true);await native.waitForTimeout(1200);assert(await select.isDisabled());assert(await native.getByLabel('当前识别模型',{exact:true}).isDisabled());
  });
  await mkdir('web/test-results',{recursive:true});await native.screenshot({path:'web/test-results/models-manager.png',fullPage:true});await writeFile('verification/models-ui.json',JSON.stringify({passed:results.length,results,errors},null,2));
 }finally{await browser?.close();server.kill();}

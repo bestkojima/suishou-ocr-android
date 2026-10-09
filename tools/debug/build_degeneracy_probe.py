@@ -28,18 +28,25 @@ replace('        temporary.write(effective);', '''        // [DEBUG-b002] 临时
             effective = config.dump();
         }
         temporary.write(effective);''')
-replace('count("\\\"sampler_type\\\":\\\"greedy\\\"") != 1',
-        'count("\\\"sampler_type\\\":" + json_quote(nlohmann::json::parse(effective).at("sampler_type").get<std::string>())) != 1')
+if 'count("\\\"sampler_type\\\":\\\"greedy\\\"") != 1' in source:
+    replace('count("\\\"sampler_type\\\":\\\"greedy\\\"") != 1',
+            'count("\\\"sampler_type\\\":" + json_quote(nlohmann::json::parse(effective).at("sampler_type").get<std::string>())) != 1')
 replace('        raw.finish(output, state);', '''        // [DEBUG-b002] 捕获真实生成 token、实际配置及原始区域/视觉画布。
         if (state) if (const char* path = std::getenv("OCR_DIAG_TRACE")) {
             nlohmann::json trace;
             trace["tag"] = "[DEBUG-b002]";
             trace["requestId"] = generation->request_id;
+            trace["task"] = generation->task;
+            trace["prompt"] = user_content;
+            trace["visualTokens"] = output.visual_tokens;
             trace["maxTokens"] = generation->max_new_tokens;
             trace["outputTokens"] = state->output_tokens;
             trace["generatedString"] = state->generate_str;
             trace["raw"] = output.raw_output;
             trace["stopReason"] = output.stop_reason;
+            trace["visionUs"] = state->vision_us;
+            trace["prefillUs"] = state->prefill_us;
+            trace["decodeUs"] = state->decode_us;
             trace["llmConfig"] = nlohmann::json::parse(llm_->dump_config());
             trace["sourceSize"] = {generation->image.width, generation->image.height};
             trace["sourceBox"] = {generation->source_box.x0, generation->source_box.y0,

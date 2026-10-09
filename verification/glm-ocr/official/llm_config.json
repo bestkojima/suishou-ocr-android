@@ -1,0 +1,26 @@
+{
+    "model_type": "glm_ocr",
+    "hidden_size": 1536,
+    "attention_mask": "float",
+    "attention_type": "full",
+    "is_mrope": true,
+    "is_visual": true,
+    "image_mean": [
+        122.7709383,
+        116.7460125,
+        104.09373615000001
+    ],
+    "image_norm": [
+        0.01459842661924292,
+        0.015007768493717056,
+        0.014220065717024088
+    ],
+    "image_size": 420,
+    "vision_start": 59256,
+    "vision_end": 59257,
+    "image_pad": 59280,
+    "jinja": {
+        "chat_template": "[gMASK]<sop>{% for message in messages %}{% if message.role == \"user\" %}<|user|>\n{{ message.content }}{% elif message.role == \"assistant\" %}<|assistant|>\n{{ message.content }}{% elif message.role == \"system\" %}<|system|>\n{{ message.content }}{% endif %}{% endfor %}{% if add_generation_prompt %}<|assistant|>\n{% endif %}",
+        "eos": "<|endoftext|>"
+    }
+}

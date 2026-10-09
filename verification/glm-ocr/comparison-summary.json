@@ -1,0 +1,104 @@
+{
+  "environment": "Linux x86_64 VM，同源真实模型；非 Titan_1 验收",
+  "regions": {
+    "date": {
+      "runs": 3,
+      "normalStops": 3,
+      "repeatHits": 0,
+      "medianSecondsIncludingFirstRun": 5.647003912999935,
+      "medianVisionSeconds": 4.57057,
+      "medianPrefillSeconds": 0.695009,
+      "medianDecodeSeconds": 0.32788,
+      "rssAfterLoading": 2159599616,
+      "processPeakRssBytes": 2415538176
+    },
+    "numbers": {
+      "runs": 3,
+      "normalStops": 3,
+      "repeatHits": 0,
+      "medianSecondsIncludingFirstRun": 5.747907712997403,
+      "medianVisionSeconds": 3.996935,
+      "medianPrefillSeconds": 0.632053,
+      "medianDecodeSeconds": 0.95158,
+      "rssAfterLoading": 2174345216,
+      "processPeakRssBytes": 2478772224
+    },
+    "punctuation": {
+      "runs": 3,
+      "normalStops": 3,
+      "repeatHits": 0,
+      "medianSecondsIncludingFirstRun": 6.639102732999163,
+      "medianVisionSeconds": 5.02978,
+      "medianPrefillSeconds": 0.727158,
+      "medianDecodeSeconds": 0.210131,
+      "rssAfterLoading": 2153291776,
+      "processPeakRssBytes": 2406862848
+    }
+  },
+  "controlled": {
+    "low": {
+      "expected": "商品统计",
+      "inputSize": [
+        20,
+        8
+      ],
+      "runs": [
+        {
+          "raw": "商品设计\n",
+          "stopReason": "normal",
+          "repeat": null,
+          "exactIgnoringWhitespace": false
+        },
+        {
+          "raw": "商品设计\n",
+          "stopReason": "normal",
+          "repeat": null,
+          "exactIgnoringWhitespace": false
+        },
+        {
+          "raw": "商品设计\n",
+          "stopReason": "normal",
+          "repeat": null,
+          "exactIgnoringWhitespace": false
+        }
+      ]
+    },
+    "large": {
+      "expected": "识",
+      "inputSize": [
+        692,
+        696
+      ],
+      "runs": [
+        {
+          "raw": "识\n",
+          "stopReason": "normal",
+          "repeat": null,
+          "exactIgnoringWhitespace": true
+        },
+        {
+          "raw": "识\n",
+          "stopReason": "normal",
+          "repeat": null,
+          "exactIgnoringWhitespace": true
+        },
+        {
+          "raw": "识\n",
+          "stopReason": "normal",
+          "repeat": null,
+          "exactIgnoringWhitespace": true
+        }
+      ]
+    }
+  },
+  "mixed": {
+    "seconds": 15.02618474100018,
+    "normalStops": 9,
+    "taskPrompts": {
+      "text": "Text Recognition:",
+      "formula": "Formula Recognition:",
+      "table": "Table Recognition:"
+    },
+    "rssBytes": 2605965312
+  }
+}

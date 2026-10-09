@@ -1,0 +1,42 @@
+OCR model load: 3395 ms, success=1, mmap=0
+NO_REPEAT date-region.crop.png 1 8.222 '9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\nW: I did?\n'
+NO_REPEAT date-region.crop.png 2 5.599 '9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\nW: I did?\n'
+NO_REPEAT date-region.crop.png 3 5.647 '9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\nW: I did?\n'
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+NOT_REPRODUCED date run 1 null
+NOT_REPRODUCED date run 2 null
+NOT_REPRODUCED date run 3 null
+CASE_COMPLETE glm date 0
+OCR model load: 1419 ms, success=1, mmap=0
+NO_REPEAT directions-region.crop.png 1 5.86 'Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the '
+NO_REPEAT directions-region.crop.png 2 5.623 'Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the '
+NO_REPEAT directions-region.crop.png 3 5.748 'Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the '
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+NOT_REPRODUCED numbers run 1 null
+NOT_REPRODUCED numbers run 2 null
+NOT_REPRODUCED numbers run 3 null
+CASE_COMPLETE glm numbers 0
+OCR model load: 1360 ms, success=1, mmap=0
+NO_REPEAT heading-region.crop.png 1 6.672 'Questions 11 through 13 are based on the following passage.\n'
+NO_REPEAT heading-region.crop.png 2 5.368 'Questions 11 through 13 are based on the following passage.\n'
+NO_REPEAT heading-region.crop.png 3 6.639 'Questions 11 through 13 are based on the following passage.\n'
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+NOT_REPRODUCED punctuation run 1 null
+NOT_REPRODUCED punctuation run 2 null
+NOT_REPRODUCED punctuation run 3 null
+CASE_COMPLETE glm punctuation 0
+OCR model load: 834 ms, success=1, mmap=0
+REPETITION date-region.crop.png 1 6.35 '9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日\n\n2023年1'
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+ABNORMAL_CONTINUATION date run 1 {"kind": "unsupported_date_repetition", "copies": 23}
+CASE_COMPLETE ovis date 1
+OCR model load: 807 ms, success=1, mmap=0
+NO_REPEAT directions-region.crop.png 1 6.515 'Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the '
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+ABNORMAL_CONTINUATION numbers run 1 {"kind": "unsupported_number_sequence", "first": 1, "last": 12, "minimumLines": 12}
+CASE_COMPLETE ovis numbers 1
+OCR model load: 790 ms, success=1, mmap=0
+REPETITION heading-region.crop.png 1 6.308 'Questions 11 through 13 are based on the following passage.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.'
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+ABNORMAL_CONTINUATION punctuation run 1 {"kind": "punctuation_repetition", "copies": 120}
+CASE_COMPLETE ovis punctuation 1

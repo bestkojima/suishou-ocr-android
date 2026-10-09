@@ -1,0 +1,12 @@
+{
+  "sources": {
+    "app/src/main/cpp/model_ocr_config.hpp": "a8d0aa123bfc02cc339556b4e5cebd5ff63e27facbdf19cc4d77c6586a111712",
+    "app/src/main/cpp/model_config_ocr_backend.cpp": "c92ab8770bc8658f958a6c413f1d9baa8bfd89e171ff5e231e78dc499abe7484",
+    "app/src/main/cpp/android_engine_loading.hpp": "647380536e9a4151b1255101917ab46b23bb4efca71c3af112cd017e2f0f31c1",
+    "app/src/main/cpp/android_recognition_stream.cpp": "5db4459db708a61f6f50ff0d86124de5760971f509d35ca01d034fd29b93ef45",
+    "app/src/main/assets/ocr/model-profiles.json": "7c0961721d81ad65c5a54a0dc3a22c88aa52bfd0f45cef0be71794d52163b15d",
+    "app/src/main/assets/ocr/glm-models.json": "00cbbb8c393d20e21e363a2d3908975d8d22418bd7144f88831901e982099db0"
+  },
+  "hostLibrarySha256": "159409ee21409743a11978c174c27570cf5e208d24d4ae486e2807a50fa40328",
+  "diagnosticLibrarySha256": "9fe40a298275f01c2c0cb439fa1244f2ed1bd2bca4080daa3fb1d13924a0a562"
+}

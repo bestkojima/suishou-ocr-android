@@ -15,7 +15,11 @@ function(android_replace_once before after)
 endfunction()
 
 function(android_engine_source target filename)
-  set(android_source_path "${DOCOCR_SOURCE_ROOT}/src/${filename}")
+  if(filename STREQUAL "printed_page_mnn_backend.cpp")
+    set(android_source_path "${CMAKE_CURRENT_LIST_DIR}/model_config_ocr_backend.cpp")
+  else()
+    set(android_source_path "${DOCOCR_SOURCE_ROOT}/src/${filename}")
+  endif()
   set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${android_source_path}")
   file(READ "${android_source_path}" android_source_text)
   if(filename STREQUAL "config.cpp")
@@ -29,30 +33,29 @@ function(android_engine_source target filename)
     android_replace_once([=[#include "config.hpp"]=] [=[#include "config.hpp"
 #include "android_engine_runtime.hpp"]=])
   elseif(filename STREQUAL "printed_page_mnn_backend.cpp")
-    android_replace_once("artifact.contract_status != \"contract_verified\" ||\n                sha256_file(artifact.path) != artifact.sha256"
-      "artifact.contract_status != \"contract_verified\"")
-    android_replace_once("if (!llm_ || !llm_->load())" "if (!llm_ || !load_android_llm(*llm_))")
-    android_replace_once([=[count("\"prompt_cache\":false") != 1 ||]=] [=[count("\"prompt_cache\":false") != 1 || count("\"use_mmap\":false") != 1 ||
-            count("\"kvcache_mmap\":false") != 1 ||]=])
-    android_replace_once("GenerationOutput output;" "GenerationOutput output;\n        AndroidGenerationStream raw(*generation, threads_);")
-    android_replace_once("std::ostringstream raw;" "// AndroidGenerationStream 已在视觉处理前建立，正文随模型写入发布。")
-    android_replace_once("        return {output};\n    }\n    bool reset()" "        raw.finish(output, state);\n        return {output};\n    }\n    bool reset()")
-    android_replace_once([=[temporary.write(effective);]=] [=[threads_ = android_inference_threads();
-        effective = android_thread_config(effective);
-        temporary.write(effective);]=])
-    android_replace_once([=[count("\"thread_num\":1") != 2]=] [=[count("\"thread_num\":" + std::to_string(threads_)) != 2]=])
-    android_replace_once([=[EngineCapabilities capabilities_{true, true, true, 1};]=] [=[int threads_ = 1;
-    EngineCapabilities capabilities_{true, true, true, 1};]=])
-    android_replace_once([=["/RuntimeConfig=" + runtime_config_hash_;]=] [=["/RuntimeConfig=" + runtime_config_hash_ + "/CPUThreads=" + std::to_string(threads_);]=])
-    # loader 使用 config.hpp 中的 json_quote；头文件放在其定义之后。
-    android_replace_once("#include \"config.hpp\"" "#include \"config.hpp\"\n#include \"android_engine_loading.hpp\"\n#include \"android_engine_runtime.hpp\"\n#include \"android_recognition_stream.hpp\"")
+    # 模型目录配置驱动后端已经包含 Android 加载、线程及真实流式适配。
   elseif(filename STREQUAL "abi.cpp")
     android_replace_once([=[#include "config.hpp"]=] [=[#include "config.hpp"
+#include "model_ocr_config.hpp"]=])
+    android_replace_once([=[        out += ",\"runtime_configuration\":{\"layout_threads\":1,\"ovis_threads\":1,"
+            "\"device\":\"cpu\",\"sampler\":\"greedy\",\"seed\":null,"
+            "\"seed_status\":\"not_configured\",\"temperature\":0.8,\"top_k\":40,"
+            "\"top_p\":0.9,\"min_p\":0.05,\"tfs_z\":1.0,\"typical\":0.95,"
+            "\"repetition_penalty\":1.0,\"presence_penalty\":0.0,"
+            "\"frequency_penalty\":0.0,\"penalty_window\":0,\"n_gram\":8,"
+            "\"ngram_factor\":1.0,\"llm_precision\":\"low\",\"llm_memory\":\"low\","
+            "\"vision_precision\":\"normal\",\"vision_memory\":\"low\","
+            "\"reuse_kv\":false,"
+            "\"prompt_cache\":false,\"use_mmap\":false,\"kvcache_mmap\":false,"
+            "\"async\":false,\"timeout_ms\":" + std::to_string(plan.generation_timeout_ms) + ","
+            "\"session_strategy\":\"shared_model_reset_before_each_region\","
+            "\"prompt_sha256\":\"de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267\"}";]=] [=[        out += ",\"runtime_configuration\":" + dococr::ocr_runtime_manifest(plan);]=])
+    android_replace_once([=[#include "model_ocr_config.hpp"]=] [=[#include "model_ocr_config.hpp"
 #include "android_engine_runtime.hpp"]=])
     android_replace_once([=[engine->backend->load(load_spec)]=] [=[dococr::load_android_backend(*engine->backend, load_spec, engine->plan ? engine->plan->threads : 1)]=])
     android_replace_once([=[replacement->load(spec)]=] [=[dococr::load_android_backend(*replacement, spec, job->plan ? job->plan->threads : 1)]=])
     android_replace_once([=["\"effective_parameters\":{\"threads\":1,\"max_new_tokens\":"]=] [=["\"effective_parameters\":{\"threads\":" + std::to_string(plan.threads) + ",\"max_new_tokens\":"]=])
-    android_replace_once([=[",\"runtime_configuration\":{\"layout_threads\":1,\"ovis_threads\":1,"]=] [=[",\"runtime_configuration\":{\"layout_threads\":" + std::to_string(plan.threads) + ",\"ovis_threads\":" + std::to_string(plan.threads) + ","]=])
+
   else()
     message(FATAL_ERROR "未知 Android 引擎适配源码：${filename}")
   endif()
@@ -66,7 +69,7 @@ function(android_engine_source target filename)
   list(FILTER sources EXCLUDE REGEX "(^|/)${filename}$")
   set_property(TARGET ${target} PROPERTY SOURCES "${sources}")
   target_sources(${target} PRIVATE "${output}")
-  target_include_directories(${target} PRIVATE "${DOCOCR_SOURCE_ROOT}/src" "${CMAKE_CURRENT_LIST_DIR}")
+  target_include_directories(${target} PRIVATE "${DOCOCR_SOURCE_ROOT}/src" "${DOCOCR_SOURCE_ROOT}/third_party" "${CMAKE_CURRENT_LIST_DIR}")
 endfunction()
 
 android_engine_source(dococr_core config.cpp)

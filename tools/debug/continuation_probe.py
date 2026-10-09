@@ -49,6 +49,7 @@ def anomaly(raw, kind):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--library', type=Path, required=True)
+    parser.add_argument('--engine-config', type=Path)
     parser.add_argument('--input', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--kind', choices=list(REFERENCES), required=True)
@@ -59,8 +60,10 @@ def main():
                '--library', str(args.library), '--input', str(args.input),
                '--output', str(args.output), '--runs', str(args.runs),
                '--max-tokens', str(args.max_tokens)]
+    if args.engine_config:
+        command += ['--engine-config', str(args.engine_config)]
     result = subprocess.run(command)
-    if result.returncode not in (0, 1):
+    if result.returncode not in (0, 1) or not (args.output / 'report.json').is_file():
         return 2
     report = json.loads((args.output / 'report.json').read_text())
     verdicts = []

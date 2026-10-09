@@ -1,0 +1,17 @@
+{
+  "seconds": 113.16815418899932,
+  "regions": 17,
+  "allStopsNormal": true,
+  "partialSnapshotsBeforeReturn": 186,
+  "firstContentSecondsFromJobStart": 21.770424791997357,
+  "modelName": "GLM-OCR",
+  "modelType": "glm_ocr",
+  "imagePad": 59280,
+  "mmap": false,
+  "kvMmap": false,
+  "newMmapWeightCaches": [],
+  "memoryAfterRecognition": {
+    "rssBytes": 2746462208,
+    "processPeakRssBytes": 3115429888
+  }
+}

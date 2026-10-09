@@ -1,6 +1,6 @@
 import React,{useEffect,useState}from'react';
 import{request}from'./host.js';
-export const defaultRepos=['dr3334/PP-DocLayoutV3-mnn','dr3334/ovrics-ocrv2_mnn'];
+export const defaultRepos=['dr3334/PP-DocLayoutV3-mnn','dr3334/ovrics-ocrv2_mnn','MNN/GLM-OCR-MNN'];
 const bytes=n=>n>=1024**3?(n/1024**3).toFixed(2)+' GB':n>=1024**2?(n/1024**2).toFixed(1)+' MB':n>=1024?(n/1024).toFixed(1)+' KB':`${n||0} B`;
 const labels={queued:'等待下载',downloading:'下载中',verifying:'校验中',verified:'SHA-256 校验通过',downloaded:'已下载 · 仅校验大小',paused:'已暂停',error:'下载失败'};
 export function ModelManager({preview=false}){
@@ -13,6 +13,7 @@ export function ModelManager({preview=false}){
  return <>
   <p className="fine">公开 ModelScope 仓库可自由添加、浏览和选择文件。下载成功不代表此模型已适配 OCR 引擎。</p>
   {model.readiness&&<div className="recognition-panel" role="status"><strong>{model.readiness.message}</strong><button disabled={model.readiness.inUse||model.running||preview} onClick={()=>act(async()=>{await request('activateModels');setModel(await request('models'));})}>加载识别模型</button></div>}
+  {!!model.modelChoices?.length&&<label className="setting-row"><span>当前识别模型<small>先选择模型，再下载对应仓库文件并加载</small></span><select aria-label="当前识别模型" value={model.readiness?.modelChoice||'ovis'} disabled={model.readiness?.inUse||model.running||preview} onChange={e=>{const name=e.target.value;act(async()=>{const readiness=await request('setOcrModel',{model:name});setModel(m=>({...m,readiness}));});}}>{model.modelChoices.map(m=><option value={m.id} key={m.id}>{m.name}</option>)}</select></label>}
   {model.readiness?.cpuThreads&&<label className="setting-row"><span>CPU 推理线程<small>实际使用 {model.readiness.cpuThreads} 线程，连续识别复用已加载模型</small></span><select aria-label="CPU 推理线程" value={model.readiness.threadChoice??0} disabled={model.readiness.inUse||model.running||preview} onChange={e=>{const threads=+e.target.value;act(async()=>{const readiness=await request('setOcrThreads',{threads});setModel(m=>({...m,readiness}));});}}><option value={0}>自动（最多 4）</option>{[1,2,4].map(n=><option key={n} value={n}>{n}</option>)}</select></label>}
   {preview&&<p className="document-notice">可预览仓库管理；文件清单和实际下载请使用 APK。</p>}
   <form className="repo-add" onSubmit={e=>{e.preventDefault();act(async()=>{const repos=await request('addRepo',{repo:input});setModel(m=>({...m,repos}));setInput('');});}}>
@@ -27,7 +28,7 @@ export function ModelManager({preview=false}){
    const selectedSize=list?.filter(f=>chosen.includes(f.path)).reduce((sum,f)=>sum+f.size,0)||0;
    const stale=live&&['connecting','downloading'].includes(activity.stage)&&Date.now()-(activity.updatedAt||0)>6000;
    return <section className="model-card" key={repo} aria-label={repo}>
-    <strong>{repo===defaultRepos[0]?'版面分析':repo===defaultRepos[1]?'文字 / 表格 / 公式识别':'自定义仓库'}</strong><small>{repo}</small>
+    <strong>{repo===defaultRepos[0]?'版面分析':repo===defaultRepos[1]?'OvisOCR2 · 文字 / 表格 / 公式':repo===defaultRepos[2]?'GLM-OCR · 文字 / 表格 / 公式':'自定义仓库'}</strong><small>{repo}</small>
     {active&&<p className="download-stage" role="status">{activity.message}{activity.path&&` · ${activity.path}`}{stale&&' · 等待服务器响应，可暂停后重试'}{live&&activity.stage==='verifying'&&activity.total>0&&` · ${(activity.bytes*100/activity.total).toFixed(0)}%`}</p>}
     <p>{total?`${bytes(done)} / ${bytes(total)} · 文件完成 ${complete}/${tasks.filter(t=>t.size!==undefined).length}`:'尚未下载'}</p>
     {live&&['preparing','connecting'].includes(activity.stage)?<progress aria-label="正在连接"/>:<progress aria-label="下载进度" max={Math.max(total,1)} value={done}/>}

@@ -1,0 +1,2 @@
+f045b5bc08abee489672c350a6749930814e32a1d1151b100634b2406ddd5ebf  suishou-ocr-glm-config-user-arm64.apk
+04f37ed23305b524d7e7989a80a7cd09ac015dae45d930dceea014e2683f3a94  suishou-ocr-glm-config-lab-arm64.apk

@@ -1,4 +1,6 @@
-# 单图真实 OCR · 0.7.4
+# 单图真实 OCR
+
+当前开发分支已加入模型目录配置驱动的 GLM-OCR 适配；版本仍为已发布的 0.7.6，尚未发布新 APK。配置与优先级见 [MODEL_CONFIG.md](MODEL_CONFIG.md)，真实对照见 [GLM-OCR 交付记录](../verification/glm-ocr/DELIVERY.md)。下方按版本保留历史实现与证据。
 
 实施规格与任务：[本地规格](../.scratch/android-real-ocr/spec.md)。已执行的分项证据和设备待办：[交付记录](../verification/real-ocr/DELIVERY.md)。
 
@@ -20,11 +22,11 @@ python3 tools/verify_ocr_apk.py
 
 `app/src/main/cpp/CMakeLists.txt` 可配置 `DOCOCR_SOURCE_ROOT` 和 `MNN_SOURCE_ROOT`。默认从仓库内 native 依赖构建，MNN 分库；合并库时将 LLM 绑定为 MNN target，避免查找到宿主 Linux 库。MNN Android command 的 Express 输出目录在 App CMake 中修正，保证 Gradle 收集依赖。分库构建已执行；合并库分支尚未独立构建验收。
 
-支持工件清单在 `app/src/main/assets/ocr/models.json`，生产配置在 `ocr/config.json`。模型根目录直接指向现有私有 `models/{repo}/files`。SHA-256 在下载完成时校验，校验成功并将文件移到最终路径后记录大小、修改时间与校验值。加载仅检查九个必需文件的存在性、大小及匹配的已校验下载记录；新记录还检查修改时间，旧版 `verified` 记录保留兼容。未完成下载、仅大小校验、工件版本不匹配或已变化文件不能激活。需要重新校验时，在下载页选择对应文件并点击“下载 / 继续所选文件”，完整本地文件会在下载流程中校验并复用，不在加载阶段扫描权重。
+支持工件清单在 `app/src/main/assets/ocr/models.json`（Ovis）和 `ocr/glm-models.json`（GLM），数据预设在 `ocr/model-profiles.json`，管线配置在 `ocr/config.json`。模型根目录直接指向现有私有 `models/{repo}/files`。SHA-256 在下载完成时校验，校验成功并将文件移到最终路径后记录大小、修改时间与校验值。加载仅检查所选模型及共同版面模型的必需文件（Ovis 共九个、GLM 共十个）的存在性、大小及匹配的已校验下载记录；新记录还检查修改时间，旧版 `verified` 记录保留兼容。未完成下载、仅大小校验、工件版本不匹配或已变化文件不能激活。需要重新校验时，在下载页选择对应文件并点击“下载 / 继续所选文件”，完整本地文件会在下载流程中校验并复用，不在加载阶段扫描权重。
 
 根据用户 2026-10-07 的后续要求，Android 加载不重复计算文件 SHA。`android_engine_sources.cmake` 为本平台生成 config／版面／识别／ABI 四份适配源码，移除各加载路径的文件散列扫描，保留固定工件和模型配置匹配；相邻 docprase 与 MNN 源码不变。替换必须精确匹配，发现源引擎变更或残留散列调用时构建失败并要求核对。
 
-Ovis 初始化执行 `createLLM → set_config → load`。0.7.5 按用户要求显式设置 `use_mmap=false`、`kvcache_mmap=false`，语言和视觉后端共享该设置；`tmp_path` 使用现有 App 私有临时目录，不创建或复用 `ovis-mmap-*` 权重缓存，不删除旧缓存。加载后校验实际配置，manifest 与日志分别记录 false／`mmap=0`。加载失败不会自动切换回 mmap。临时配置和裁剪仍使用 App 临时目录。0.7.3／0.7.4 开启 mmap 的原始验证属于历史证据，见对应交付记录。0.7.3 的CPU线程默认自动选择最多4个，并受可用处理器数限制，可在模型页选择1／2／4。`OcrEngine` 日志记录下载状态检查、生产引擎总加载及 Ovis 初始化耗时。下载完成、文件就绪和实际加载仍是独立状态；自定义公开仓库下载不承诺推理兼容。
+识别模型初始化执行 `createLLM → set_config → load`，实际工件、任务提示词与图像 token 从目录配置读取。0.7.5 按用户要求显式设置 `use_mmap=false`、`kvcache_mmap=false`，语言和视觉后端共享该设置；`tmp_path` 使用现有 App 私有临时目录，不创建或复用 `ovis-mmap-*` 权重缓存，不删除旧缓存。加载后校验实际配置，manifest 与日志分别记录 false／`mmap=0`。加载失败不会自动切换回 mmap。临时配置和裁剪仍使用 App 临时目录。0.7.3／0.7.4 开启 mmap 的原始验证属于历史证据，见对应交付记录。0.7.3 的CPU线程默认自动选择最多4个，并受可用处理器数限制，可在模型页选择1／2／4。`OcrEngine` 日志记录下载状态检查、生产引擎总加载及 Ovis 初始化耗时。下载完成、文件就绪和实际加载仍是独立状态；自定义公开仓库下载不承诺推理兼容。
 
 ## 0.7.5 原生编译
 
@@ -59,6 +61,7 @@ Ovis 初始化执行 `createLLM → set_config → load`。0.7.5 按用户要求
 | `recognize` | `id`, `again` | 已保存并关联新 jobId 的文档；活跃作业冲突时报错 |
 | `recognitionStatus` | `id` | 文档所属作业状态、sequence、原生区域进度和真实模型正文快照 |
 | `cancelRecognition` | `id`, `jobId` | 提交前进入取消中；结果已保存时保持当前结束状态，等待清理 |
+| `setOcrModel` | `model`: ovis／glm | 空闲时切换识别模型并卸载原引擎，识别和下载时拒绝；配置由模型目录驱动 |
 | `setOcrThreads` | `threads`: 0（自动）／1／2／4 | 空闲时保存设置；实际线程变化先卸载引擎；活跃作业与下载时拒绝更改 |
 | `activateModels` | 无 | 后台检查已校验下载记录并实际加载，不重新计算文件 SHA；由 `models.readiness` 读取状态 |
 

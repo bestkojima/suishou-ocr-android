@@ -1,0 +1,5 @@
+OCR model load: 1580 ms, success=1, mmap=0
+LOADED real model 2.332 seconds
+NO_REPEAT user-original run 1 seconds 113.168 regions 17
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+FULL_PAGE_EXIT 0

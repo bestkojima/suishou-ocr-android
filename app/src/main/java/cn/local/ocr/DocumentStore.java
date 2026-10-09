@@ -78,7 +78,7 @@ public final class DocumentStore {
         if(input.has("documentCrop"))result.put("documentCrop",input.getJSONObject("documentCrop"));
         if(input.has("derivedFrom")) result.put("derivedFrom",input.getString("derivedFrom"));
         if(input.has("recognition")) result.put("recognition",input.getJSONObject("recognition"));
-        for(int i=0;i<result.getJSONArray("pages").length();i++) result.getJSONArray("pages").getJSONObject(i).put("source",input.optString("original")).put("route","PP-DocLayoutV3 → OvisOCR2 → DocumentIR");
+        for(int i=0;i<result.getJSONArray("pages").length();i++) result.getJSONArray("pages").getJSONObject(i).put("source",input.optString("original")).put("route","本地版面分析 → 识别 → 文档");
         save(result);return result;
     }
     JSONObject sample(String sample)throws Exception{

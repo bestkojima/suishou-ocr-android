@@ -54,7 +54,9 @@ Android 本地离线文档识别应用：拍照或导入图片，使用 PP-DocLa
 - [PP-DocLayoutV3-mnn](https://modelscope.cn/models/dr3334/PP-DocLayoutV3-mnn)
 - [ovrics-ocrv2_mnn](https://modelscope.cn/models/dr3334/ovrics-ocrv2_mnn)
 
-固定工件清单：`app/src/main/assets/ocr/models.json`。SHA在下载完成时校验；加载不重新扫描权重SHA。当前适配这组固定工件，尚未接入GLM-OCR。
+已发布 v0.7.6 使用上述 Ovis 工件。当前开发分支新增 [GLM-OCR-MNN](https://modelscope.cn/models/MNN/GLM-OCR-MNN) 与模型选择入口：由模型目录 config 字段适配提示词、模板、图像 token、采样及工件，Ovis 仍为默认。配置见 [模型配置说明](docs/MODEL_CONFIG.md)，真实对照见 [GLM-OCR 交付记录](verification/glm-ocr/DELIVERY.md)；本次尚未发布新版本。
+
+固定工件清单在 `ocr/models.json`（Ovis）和 `ocr/glm-models.json`（GLM）。SHA 在下载完成时校验；加载不重新扫描权重 SHA。
 
 ## 从源码构建
 

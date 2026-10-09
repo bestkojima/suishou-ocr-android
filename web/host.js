@@ -74,9 +74,9 @@ case 'save':{const d=await database('get',args.id);const {order,...fields}=args;
 case 'delete':await database('delete',args.id);return browser('history',{});
 case 'settings':{const p={...prefs(),...args};localStorage.setItem('ocr-settings',JSON.stringify(p));return p;}
 case 'import':return pick();
-case 'models':return {tasks:[],repos:JSON.parse(localStorage.getItem('ocr-repos')||'["dr3334/PP-DocLayoutV3-mnn","dr3334/ovrics-ocrv2_mnn"]'),running:false,preview:true};
+case 'models':return {tasks:[],repos:JSON.parse(localStorage.getItem('ocr-repos')||'["dr3334/PP-DocLayoutV3-mnn","dr3334/ovrics-ocrv2_mnn","MNN/GLM-OCR-MNN"]'),running:false,preview:true,modelChoices:[{id:'ovis',name:'OvisOCR2'},{id:'glm',name:'GLM-OCR'}]};
 case 'addRepo':{let repo=args.repo.trim();if(repo.startsWith('https://')){const u=new URL(repo);if(!['modelscope.cn','www.modelscope.cn'].includes(u.hostname)||u.username||u.password||u.port)throw Error('请输入 ModelScope 仓库链接');const p=u.pathname.split('/');if(p[1]!=='models')throw Error('链接应包含 /models/作者/仓库');repo=p.slice(2,4).join('/');}if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}\/[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$/.test(repo))throw Error('仓库格式应为 作者/仓库名');const state=await browser('models',{});const repos=[...new Set([...state.repos,repo])];localStorage.setItem('ocr-repos',JSON.stringify(repos));return repos;}
-case 'forgetRepo':{if(['dr3334/PP-DocLayoutV3-mnn','dr3334/ovrics-ocrv2_mnn'].includes(args.repo))throw Error('默认仓库保留入口');const state=await browser('models',{});const repos=state.repos.filter(r=>r!==args.repo);localStorage.setItem('ocr-repos',JSON.stringify(repos));return repos;}
+case 'forgetRepo':{if(['dr3334/PP-DocLayoutV3-mnn','dr3334/ovrics-ocrv2_mnn','MNN/GLM-OCR-MNN'].includes(args.repo))throw Error('默认仓库保留入口');const state=await browser('models',{});const repos=state.repos.filter(r=>r!==args.repo);localStorage.setItem('ocr-repos',JSON.stringify(repos));return repos;}
 case 'cameraBounds':case 'cameraPermission':return true;
 case 'export':return exportDoc(await database('get',args.id),args.format);
 default:throw Error('此功能使用 Android 原生服务，请在 APK 中测试。');}}

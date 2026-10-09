@@ -7,14 +7,18 @@ import json
 import os
 import tempfile
 import time
+import sys
 from PIL import Image
 from ocr_degeneracy import ROOT, repetition
+sys.path.insert(0, str(ROOT / 'tools'))
+from ocr_runtime_checks import memory_usage
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--library', type=Path, required=True)
 parser.add_argument('--input', type=Path, required=True)
 parser.add_argument('--output', type=Path, required=True)
 parser.add_argument('--sampler-config', type=Path)
+parser.add_argument('--engine-config', type=Path, help='已绑定模型目录的引擎配置；只复核登记大小，不重新扫描权重')
 parser.add_argument('--max-tokens', type=int, default=64)
 parser.add_argument('--runs', type=int, default=3)
 args = parser.parse_args()
@@ -28,12 +32,13 @@ assert set(overrides) <= allowed
 if args.sampler_config: os.environ['OCR_DIAG_SAMPLER_JSON'] = json.dumps(overrides)
 else: os.environ.pop('OCR_DIAG_SAMPLER_JSON', None)
 image = Image.open(args.input).convert('RGB'); rgb = image.tobytes()
-config = json.loads((ROOT / 'app/src/main/assets/ocr/config.json').read_text())
-for kind, folder in [('layout', 'doclayout'), ('recognition', 'ovis')]:
-    config['models'][kind]['root'] = str(ROOT.parent / 'docprase/models' / folder)
-for artifact in json.loads((ROOT / 'app/src/main/assets/ocr/models.json').read_text()):
-    folder = 'doclayout' if 'PP-DocLayout' in artifact['repo'] else 'ovis'
-    assert (ROOT.parent / 'docprase/models' / folder / artifact['path']).stat().st_size == artifact['size']
+config = json.loads((args.engine_config or ROOT / 'app/src/main/assets/ocr/config.json').read_text())
+if not args.engine_config:
+    for kind, folder in [('layout', 'doclayout'), ('recognition', 'ovis')]:
+        config['models'][kind]['root'] = str(ROOT.parent / 'docprase/models' / folder)
+    for artifact in json.loads((ROOT / 'app/src/main/assets/ocr/models.json').read_text()):
+        folder = 'doclayout' if 'PP-DocLayout' in artifact['repo'] else 'ovis'
+        assert (ROOT.parent / 'docprase/models' / folder / artifact['path']).stat().st_size == artifact['size']
 lib = c.CDLL(str(args.library.resolve()))
 lib.ocr_diag_create.argtypes = [c.c_char_p, c.c_int]
 lib.ocr_diag_last_error.restype = c.c_char_p
@@ -42,12 +47,14 @@ lib.ocr_diag_region.restype = c.c_char_p
 report = dict(environment='Linux x86_64，临时 ABI 直接调用生产区域 backend；非设备验收',
               library=str(args.library.resolve()), librarySha256=hashlib.sha256(args.library.read_bytes()).hexdigest(),
               input=str(args.input.resolve()), inputSha256=hashlib.sha256(args.input.read_bytes()).hexdigest(),
-              inputSize=list(image.size), samplerOverrides=overrides, maxTokens=args.max_tokens, runs=[])
+              inputSize=list(image.size), samplerOverrides=overrides, maxTokens=args.max_tokens,
+              memoryBeforeLoading=memory_usage(), runs=[])
 with tempfile.TemporaryDirectory(prefix='ocr-direct-loop-') as cache:
     os.environ['TMPDIR'] = cache
     start = time.monotonic()
     assert lib.ocr_diag_create(json.dumps(config).encode(), 4) == 0, lib.ocr_diag_last_error().decode()
     report['loadSeconds'] = time.monotonic() - start
+    report['memoryAfterLoading'] = memory_usage()
     try:
         buffer = (c.c_uint8 * len(rgb)).from_buffer_copy(rgb)
         for attempt in range(1, args.runs + 1):
@@ -57,6 +64,7 @@ with tempfile.TemporaryDirectory(prefix='ocr-direct-loop-') as cache:
             start = time.monotonic()
             result = json.loads(lib.ocr_diag_region(buffer, len(rgb), image.width, image.height, args.max_tokens).decode())
             result.update(run=attempt, seconds=time.monotonic()-start)
+            result['memoryAfterRecognition'] = memory_usage()
             assert 'diagnosticError' not in result, result
             assert trace.is_file(), '未采集真实 token 证据'
             native = json.loads(trace.read_text().strip())

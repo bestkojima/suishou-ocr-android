@@ -1,0 +1,137 @@
+{
+  "_id": "69afd856ea6ad7cbfa286a10",
+  "id": "taobao-mnn/GLM-OCR-MNN",
+  "private": false,
+  "pipeline_tag": "text-generation",
+  "tags": [
+    "chat",
+    "text-generation",
+    "en",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 24,
+  "likes": 0,
+  "modelId": "taobao-mnn/GLM-OCR-MNN",
+  "author": "taobao-mnn",
+  "sha": "d77c8eb81b0c55418f56959dfccd4c61c48a2d6a",
+  "lastModified": "2026-03-10T08:39:45.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "Hi, what can you help me with?"
+    },
+    {
+      "text": "What is 84 * 3 / 2?"
+    },
+    {
+      "text": "Tell me an interesting fact about the universe!"
+    },
+    {
+      "text": "Explain quantum computing in simple terms."
+    }
+  ],
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "apache-2.0",
+    "language": [
+      "en"
+    ],
+    "pipeline_tag": "text-generation",
+    "tags": [
+      "chat"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "c8634f721cafb20b8a2a51dace8bba2ce8fcc32c",
+      "size": 1642
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "f86f7dce7938afea7cab202199041893277c88db",
+      "size": 1092
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "9e5a45cfaadf64a26670c760931e1cf9e39e8670",
+      "size": 342
+    },
+    {
+      "rfilename": "embeddings_bf16.bin",
+      "blobId": "ccf49a081cacc4b48f368e074d877b8491aafa79",
+      "size": 182452224,
+      "lfs": {
+        "sha256": "b8dbafc308854bb52ff5f9f0b852b6e58dfe54b1a2f3490d2299ad278601f603",
+        "size": 182452224,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "export_args.json",
+      "blobId": "292b01c797ced9aa564b962cebf28491d19c5796",
+      "size": 1032
+    },
+    {
+      "rfilename": "llm.mnn",
+      "blobId": "82f59fa719906f39dfdddf2caf8d5bfde84b5706",
+      "size": 486144,
+      "lfs": {
+        "sha256": "02d24795f89d82e16062b6ce5e90e573e003d88d7a00cbea3ca9e10da0e54210",
+        "size": 486144,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "llm.mnn.json",
+      "blobId": "03626c82096528fffe00ed92b30ade8bfe696726",
+      "size": 997049
+    },
+    {
+      "rfilename": "llm.mnn.weight",
+      "blobId": "f76d8a06ee10ec2fb63aa81c28f3bab12e1afbc1",
+      "size": 364525654,
+      "lfs": {
+        "sha256": "71017aaf1be71d9ac2630300f89db1cb37a5fd863017bc95799b1fdc2a3a9d01",
+        "size": 364525654,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "llm_config.json",
+      "blobId": "bf94fd3ec3217bc93900052d0afa1d0e00765602",
+      "size": 884
+    },
+    {
+      "rfilename": "tokenizer.txt",
+      "blobId": "8e6ff8caff24ae397024d693fb3918590766d52d",
+      "size": 592462
+    },
+    {
+      "rfilename": "visual.mnn",
+      "blobId": "0bb1cae793f9c0d357f2a1c4834c90c5e87187f1",
+      "size": 516256,
+      "lfs": {
+        "sha256": "7d78231555814a1d9e4146d62c9b92db6f87483bf1170f76fc16544b427183a5",
+        "size": 516256,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "visual.mnn.weight",
+      "blobId": "3fd39a9d8ec2994a1b046acf3b5fedc5e870befd",
+      "size": 462322458,
+      "lfs": {
+        "sha256": "3b28d1f97a5cc27927deeb14c73f5029019aebc32351ac788ca633ae226aa208",
+        "size": 462322458,
+        "pointerSize": 134
+      }
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2026-03-10T08:37:42.000Z",
+  "usedStorage": 1010302736
+}

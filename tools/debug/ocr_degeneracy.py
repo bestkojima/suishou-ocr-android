@@ -9,8 +9,11 @@ import re
 import tempfile
 import threading
 import time
+import sys
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT / 'tools'))
+from ocr_runtime_checks import memory_usage
 
 def repetition(raw, minimum=32, copies=6):
     # 仅用于已知不含这种过量重复的诊断图片，不是生产截断算法。
@@ -51,6 +54,7 @@ def main():
     parser.add_argument('--timeout', type=float, default=90)
     parser.add_argument('--max-tokens', type=int, default=512)
     parser.add_argument('--sampler-config', type=Path, help='仅临时 probe 使用的采样参数 JSON；不会修改模型文件')
+    parser.add_argument('--engine-config', type=Path, help='已绑定模型目录的引擎配置')
     parser.add_argument('--cancel-on-repeat', action='store_true', help='诊断命中后请求现有取消接口，记录命中前原始输出；不是产品修复')
     args = parser.parse_args()
     assert args.runs > 0 and args.timeout > 0 and args.max_tokens > 0
@@ -73,13 +77,14 @@ def main():
     if args.case:
         cases = [case for case in cases if case['id'] in args.case]
         assert {case['id'] for case in cases} == set(args.case), '样图名称不存在'
-    config = json.loads((ROOT / 'app/src/main/assets/ocr/config.json').read_text())
+    config = json.loads((args.engine_config or ROOT / 'app/src/main/assets/ocr/config.json').read_text())
     config['platform']['threads'] = args.threads
     config['execution']['max_new_tokens'] = args.max_tokens
-    for kind, folder in [('layout', 'doclayout'), ('recognition', 'ovis')]:
-        config['models'][kind]['root'] = str(ROOT.parent / 'docprase/models' / folder)
+    if not args.engine_config:
+        for kind, folder in [('layout', 'doclayout'), ('recognition', 'ovis')]:
+            config['models'][kind]['root'] = str(ROOT.parent / 'docprase/models' / folder)
     # 已下载工件只复核大小；不在模型加载前重复扫描完整权重 SHA。
-    for artifact in json.loads((ROOT / 'app/src/main/assets/ocr/models.json').read_text()):
+    for artifact in ([] if args.engine_config else json.loads((ROOT / 'app/src/main/assets/ocr/models.json').read_text())):
         folder = 'doclayout' if 'PP-DocLayout' in artifact['repo'] else 'ovis'
         assert (ROOT.parent / 'docprase/models' / folder / artifact['path']).stat().st_size == artifact['size']
     library = args.library.resolve()
@@ -109,7 +114,8 @@ def main():
                   library=str(library), librarySha256=hashlib.sha256(library.read_bytes()).hexdigest(),
                   threads=args.threads, maxNewTokens=args.max_tokens,
                   predicate='同一连续片段≥6次且总计≥32个非空白字符，基于原始生成流',
-                  diagnosticCancellation=args.cancel_on_repeat, config=config, runs=[])
+                  diagnosticCancellation=args.cancel_on_repeat, config=config,
+                  memoryBeforeLoading=memory_usage(), runs=[])
     report['samplerOverrides'] = overrides
     def persist():
         (args.output / 'report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
@@ -119,6 +125,7 @@ def main():
         engine = c.c_uint64(); encoded = json.dumps(config).encode(); started = time.monotonic()
         check(lib.dococr_create(View(encoded, len(encoded)), c.byref(engine)))
         report['loadSeconds'] = time.monotonic() - started
+        report['memoryAfterLoading'] = memory_usage()
         print('LOADED real model', round(report['loadSeconds'], 3), 'seconds', flush=True)
         try:
             for case in cases:
@@ -160,6 +167,7 @@ def main():
                         value = dict(case=case, run=attempt, seconds=time.monotonic()-start,
                                      nativeReturn=outcome[0], cancellation=cancellation, repeat=hit,
                                      regions=list(regions.values()))
+                        value['memoryAfterRecognition'] = memory_usage()
                         value['verdict'] = 'REPETITION' if hit else 'ERROR' if outcome[0] else 'NO_REPEAT' if any(r['raw'] for r in regions.values()) else 'NOT_REACHED'
                         manifest = Bytes(); status = lib.dococr_job_manifest(job, c.byref(manifest))
                         if status == 0:
@@ -174,7 +182,7 @@ def main():
                             value['actualLlmConfig'] = actual
                             assert all(actual.get(key) == requested for key, requested in overrides.items()), '实验参数未实际生效'
                             assert actual['use_mmap'] is False and actual['kvcache_mmap'] is False
-                            value['runtimeSource'] = '临时 probe 的实际 dump_config；原 manifest 的硬编码采样字段不用于实验判定'
+                            value['runtimeSource'] = '临时 probe 的实际 dump_config；采样实验覆盖值以实际配置为准'
                             value['runtime']['sampler'] = actual['sampler_type']
                             for key in ['repetition_penalty', 'presence_penalty', 'frequency_penalty', 'penalty_window', 'temperature', 'top_k', 'top_p']:
                                 value['runtime'][key] = actual[key]

@@ -37,7 +37,7 @@ public final class MainActivity extends Activity {
         @JavascriptInterface public void request(String raw){
             try{
                 JSONObject quick=new JSONObject(raw);String method=quick.getString("method"),qid=quick.getString("id");
-                if(method.equals("models")){reply(qid,FilesUtil.obj("tasks",ModelHub.summary(MainActivity.this).getJSONArray("tasks"),"repos",ModelHub.repos(MainActivity.this),"running",DownloadService.active,"activity",DownloadService.activity,"freeBytes",ModelHub.root(MainActivity.this).getUsableSpace(),"readiness",recognition.readiness()),null);return;}
+                if(method.equals("models")){reply(qid,FilesUtil.obj("tasks",ModelHub.summary(MainActivity.this).getJSONArray("tasks"),"repos",ModelHub.repos(MainActivity.this),"running",DownloadService.active,"activity",DownloadService.activity,"freeBytes",ModelHub.root(MainActivity.this).getUsableSpace(),"readiness",recognition.readiness(),"modelChoices",recognition.modelChoices()),null);return;}
                 if(method.equals("recognitionStatus")){reply(qid,recognition.status(quick.getJSONObject("args").getString("id")),null);return;}
                 if(method.equals("cancelRecognition")){JSONObject a=quick.getJSONObject("args");reply(qid,recognition.cancel(a.getString("id"),a.getString("jobId")),null);return;}
                 if(method.equals("recognize")){JSONObject a=quick.getJSONObject("args");reply(qid,recognition.start(a.getString("id"),a.optBoolean("again")),null);return;}
@@ -60,6 +60,7 @@ public final class MainActivity extends Activity {
                 case "import":pickerRequest=id;runOnUiThread(()->{Intent i=new Intent(Intent.ACTION_OPEN_DOCUMENT);i.setType("*/*");i.addCategory(Intent.CATEGORY_OPENABLE);startActivityForResult(i,12);});return;
                 case "export":pendingExport=store.export(a.getString("id"),a.optString("format","zip"));exportRequest=id;boolean share=a.optBoolean("share");runOnUiThread(()->exportUi(share));return;
                 case "settings":saveSettings(a);out=settings();break;
+                case "setOcrModel":out=recognition.setModel(a.getString("model"));break;
                 case "models":out=ModelHub.summary(MainActivity.this);break;
                 case "catalog":out=ModelHub.catalog(a.getString("repo"));break;
                 case "addRepo":out=ModelHub.addRepo(MainActivity.this,a.getString("repo"));break;

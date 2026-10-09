@@ -1,0 +1,44 @@
+{
+  "llm_model": "llm.mnn",
+  "llm_weight": "llm.mnn.weight",
+  "backend_type": "cpu",
+  "thread_num": 4,
+  "precision": "low",
+  "memory": "low",
+  "sampler_type": "greedy",
+  "penalty": 1.1,
+  "mllm": {
+    "backend_type": "cpu",
+    "thread_num": 4,
+    "precision": "normal",
+    "memory": "low"
+  },
+  "llm_config": "llm_config.json",
+  "tokenizer_file": "tokenizer.txt",
+  "embedding_file": "embeddings_bf16.bin",
+  "visual_model": "visual.mnn",
+  "visual_weight": "visual.mnn.weight",
+  "image_min_pixels": 12544,
+  "image_max_pixels": 9633792,
+  "ocr": {
+    "name": "GLM-OCR",
+    "prompts": {
+      "text": "Text Recognition:",
+      "formula": "Formula Recognition:",
+      "table": "Table Recognition:"
+    }
+  },
+  "temperature": 0.8,
+  "top_k": 40,
+  "top_p": 0.9,
+  "min_p": 0.05,
+  "tfs_z": 1.0,
+  "typical": 0.95,
+  "repetition_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "penalty_window": 0,
+  "n_gram": 8,
+  "ngram_factor": 1.0,
+  "source_config_sha256": "40d2d5bf0393cc347ff48cf29246ca9efff9a44a29c2c1ea4acac3135fff87fe"
+}

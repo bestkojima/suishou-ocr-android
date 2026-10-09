@@ -1,0 +1,10 @@
+{
+  "cases": [
+    {
+      "id": "mixed-text-formula-table",
+      "path": "/home/dr/project/android_ocr/verification/ticket5/source.png",
+      "sha256": "c71ed55fd66f249cc6f2435f7986961e1065a804aee57665e48858455143a46d",
+      "description": "既有混合样本，测试正文/公式/表格任务适配；无准确率指标验收"
+    }
+  ]
+}

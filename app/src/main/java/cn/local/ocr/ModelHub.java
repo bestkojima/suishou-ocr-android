@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public final class ModelHub {
-    public static final String[] REPOS={"dr3334/PP-DocLayoutV3-mnn","dr3334/ovrics-ocrv2_mnn"};
+    public static final String[] REPOS={"dr3334/PP-DocLayoutV3-mnn","dr3334/ovrics-ocrv2_mnn","MNN/GLM-OCR-MNN"};
     static String enc(String s)throws Exception{return URLEncoder.encode(s,"UTF-8");}
     static String normalizeRepo(String input)throws Exception{
         String repo=input.trim();

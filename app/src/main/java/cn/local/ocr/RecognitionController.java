@@ -39,8 +39,9 @@ final class RecognitionController {
     void listen(Listener l) { listeners.add(l); }
     void unlisten(Listener l) { listeners.remove(l); }
     synchronized JSONObject readiness() throws Exception {
-        return new JSONObject(readiness.toString()).put("inUse",busy).put("cpuThreads",engine!=0&&engineThreads>0?engineThreads:models.cpuThreads()).put("threadChoice",models.threadChoice());
+        return new JSONObject(readiness.toString()).put("inUse",busy).put("cpuThreads",engine!=0&&engineThreads>0?engineThreads:models.cpuThreads()).put("threadChoice",models.threadChoice()).put("modelChoice",models.modelChoice());
     }
+    JSONArray modelChoices()throws Exception {return models.choices();}
     synchronized JSONObject start(String id,boolean again) throws Exception {
         if(busy) throw new IOException("已有识别作业，请返回该文档或等待安全停止");
         JSONObject doc=store.load(id);
@@ -254,6 +255,17 @@ final class RecognitionController {
 
     synchronized void checkModelMutation(String repo) throws Exception {
         if(busy&&Arrays.asList(ModelHub.REPOS).contains(repo)) throw new IOException("识别作业正在使用模型，请等待安全停止后再修改");
+    }
+    synchronized JSONObject setModel(String choice)throws Exception {
+        if(busy)throw new IOException("请等待当前识别或加载结束后再切换模型");
+        if(DownloadService.active||DownloadService.reserved)throw new IOException("请先完成或暂停模型下载");
+        if(!models.profiles().has(choice))throw new IOException("未知识别模型配置");
+        if(!choice.equals(models.modelChoice())) {
+            if(engine!=0)unloadIdleEngine();
+            context.getSharedPreferences("settings",0).edit().putString("ocrModel",choice).apply();
+            readiness=FilesUtil.obj("state","unchecked","message","识别模型已切换，请完成对应文件下载后加载");
+        }
+        return readiness();
     }
     synchronized void reserveDownload(String repo) throws Exception {
         checkModelMutation(repo);

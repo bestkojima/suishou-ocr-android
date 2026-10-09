@@ -1,0 +1,15 @@
+OCR model load: 1450 ms, success=1, mmap=0
+NO_REPEAT low-region.png 1 0.879 '商品设计\n'
+NO_REPEAT low-region.png 2 0.861 '商品设计\n'
+NO_REPEAT low-region.png 3 0.831 '商品设计\n'
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+OCR model load: 1419 ms, success=1, mmap=0
+NO_REPEAT large-region.png 1 4.875 '识\n'
+NO_REPEAT large-region.png 2 5.072 '识\n'
+NO_REPEAT large-region.png 3 5.036 '识\n'
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+OCR model load: 1388 ms, success=1, mmap=0
+LOADED real model 2.239 seconds
+NO_REPEAT mixed-text-formula-table run 1 seconds 15.026 regions 9
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+MIXED_EXIT 0

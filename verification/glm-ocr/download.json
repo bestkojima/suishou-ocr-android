@@ -1,0 +1,55 @@
+{
+  "directory": "/home/dr/project/models/GLM-OCR-MNN",
+  "source": "taobao-mnn/GLM-OCR-MNN",
+  "revision": "d77c8eb81b0c55418f56959dfccd4c61c48a2d6a",
+  "mirror": "https://hf-mirror.com",
+  "checkedAfterDownload": true,
+  "matchingModelScopeRepo": "MNN/GLM-OCR-MNN",
+  "files": [
+    {
+      "path": "config.json",
+      "size": 342,
+      "sha256": "40d2d5bf0393cc347ff48cf29246ca9efff9a44a29c2c1ea4acac3135fff87fe"
+    },
+    {
+      "path": "llm_config.json",
+      "size": 884,
+      "sha256": "552ca5ccd5b8aa3cfd59ff78882775dcb212a972ab8e7a35ee81ee3681d22403"
+    },
+    {
+      "path": "llm.mnn",
+      "size": 486144,
+      "sha256": "02d24795f89d82e16062b6ce5e90e573e003d88d7a00cbea3ca9e10da0e54210"
+    },
+    {
+      "path": "llm.mnn.weight",
+      "size": 364525654,
+      "sha256": "71017aaf1be71d9ac2630300f89db1cb37a5fd863017bc95799b1fdc2a3a9d01"
+    },
+    {
+      "path": "visual.mnn",
+      "size": 516256,
+      "sha256": "7d78231555814a1d9e4146d62c9b92db6f87483bf1170f76fc16544b427183a5"
+    },
+    {
+      "path": "visual.mnn.weight",
+      "size": 462322458,
+      "sha256": "3b28d1f97a5cc27927deeb14c73f5029019aebc32351ac788ca633ae226aa208"
+    },
+    {
+      "path": "tokenizer.txt",
+      "size": 592462,
+      "sha256": "c3823c73bda8910d027b26cedec0d703aa0a1f342ce6ce503eb74b7e8b776431"
+    },
+    {
+      "path": "embeddings_bf16.bin",
+      "size": 182452224,
+      "sha256": "b8dbafc308854bb52ff5f9f0b852b6e58dfe54b1a2f3490d2299ad278601f603"
+    },
+    {
+      "path": "export_args.json",
+      "size": 1032,
+      "sha256": "e7c8a5d731ae629b48e28e761484b7b7c60c1938865805ad3161c4ee30aa536f"
+    }
+  ]
+}
