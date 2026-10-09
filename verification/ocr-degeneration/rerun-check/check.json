@@ -1,0 +1,9 @@
+{
+  "sameCommandSameOutputDirectory": true,
+  "verdict": "REPETITION",
+  "rawAndTokensIdentical": true,
+  "exitCodes": [
+    1,
+    1
+  ]
+}

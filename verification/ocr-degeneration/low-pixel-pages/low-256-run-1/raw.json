@@ -1,0 +1,17 @@
+[
+  {
+    "threads": 4,
+    "requestId": "reqr0001",
+    "type": "text",
+    "attempt": 1,
+    "raw": "## 随手识别\n\n## 模型在本地运行\n\n## 预览确认后开始识别\n",
+    "done": true,
+    "finishReason": "complete",
+    "firstContentMs": 990,
+    "elapsedMs": 1748,
+    "visionMs": 129,
+    "prefillMs": 851,
+    "decodeMs": 748,
+    "outputTokens": 19
+  }
+]

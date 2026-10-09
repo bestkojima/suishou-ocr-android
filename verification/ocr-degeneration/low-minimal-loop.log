@@ -1,0 +1,9 @@
+Ovis load: 1574 ms, success=1, mmap=0
+LOADED real model 4.273 seconds
+Ovis load: 1342 ms, success=1, mmap=0
+NOT_REACHED low-region run 1 seconds 3.217 regions 0
+Ovis load: 784 ms, success=1, mmap=0
+NOT_REACHED low-region run 2 seconds 2.624 regions 0
+Ovis load: 747 ms, success=1, mmap=0
+NOT_REACHED low-region run 3 seconds 2.024 regions 0
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

@@ -1,0 +1,17 @@
+[
+  {
+    "threads": 4,
+    "requestId": "reqr0001",
+    "type": "text",
+    "attempt": 1,
+    "raw": "## 随手识别\n",
+    "done": true,
+    "finishReason": "complete",
+    "firstContentMs": 979,
+    "elapsedMs": 1551,
+    "visionMs": 132,
+    "prefillMs": 835,
+    "decodeMs": 570,
+    "outputTokens": 5
+  }
+]

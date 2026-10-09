@@ -1,0 +1,202 @@
+[
+  {
+    "seconds": 0.0006447609994211234,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 0,
+      "regions": []
+    }
+  },
+  {
+    "seconds": 1.3085198080007103,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 1,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 51,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.826465964000818,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 2,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 3513,
+          "elapsedMs": 3569,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.175245468999492,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 5,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 3513,
+          "elapsedMs": 4918,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.227312257000449,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 8,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 3513,
+          "elapsedMs": 4970,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.279763202997856,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 11,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n## 模型在本地",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 3513,
+          "elapsedMs": 5022,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.331420274000266,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 14,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n## 模型在本地运行\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 3513,
+          "elapsedMs": 5074,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.383338878000359,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 17,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n## 模型在本地运行\n\n## 预览确认后",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 3513,
+          "elapsedMs": 5126,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.435366088000592,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 21,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n## 模型在本地运行\n\n## 预览确认后开始识别\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 3513,
+          "elapsedMs": 5166,
+          "visionMs": 119,
+          "prefillMs": 3371,
+          "decodeMs": 1643,
+          "outputTokens": 19
+        }
+      ]
+    }
+  }
+]

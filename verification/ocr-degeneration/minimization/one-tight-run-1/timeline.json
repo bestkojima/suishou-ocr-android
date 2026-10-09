@@ -1,0 +1,3778 @@
+[
+  {
+    "seconds": 0.0003103970011579804,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 0,
+      "regions": []
+    }
+  },
+  {
+    "seconds": 0.5955863759991189,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 1,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 35,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.5254231540020555,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 4,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 1965,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.577558515000419,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 7,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2017,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.6298653650010237,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 10,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2069,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.6818390539992834,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 13,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2121,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.733771911000076,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 17,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2173,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.7857513380004093,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 20,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2225,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.8378629770013504,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 23,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2277,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.898631011001271,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 26,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2338,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.9522718110019923,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 30,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2391,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.0041327899998578,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 33,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2443,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.056002745001024,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 36,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2495,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.10796471499998,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 39,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2547,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.1600195190003433,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 42,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2599,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.2122594680004113,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 45,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2651,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.263649054999405,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 49,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2703,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.3156478050004807,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 52,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2755,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.3673981130014,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 55,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2807,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.419267173001572,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 58,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2858,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.4717420039996796,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 61,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2911,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.523109421999834,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 65,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 2962,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.589037071000348,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 68,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3028,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.648354593999102,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 72,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3087,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.6988618950017553,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 76,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3138,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.752165590001823,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 79,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3191,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.804032525000366,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 82,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3243,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.856097927000519,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 85,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3295,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.907970676998957,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 89,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3347,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.9602907990010863,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 92,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3399,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.0111200739993365,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 95,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3450,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.063943845001631,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 99,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3503,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.115770693999366,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 102,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3555,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.179838721000124,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 107,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3619,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.231756062999921,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 108,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3671,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.281988327998988,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 112,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3721,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.332972182000958,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 114,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3772,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.384999263002101,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 117,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3824,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.447547089999716,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 121,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3887,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.498950981000235,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 125,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3938,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.551168075999158,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 128,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 3990,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.602687524999055,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 131,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4042,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.655460076999589,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 134,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4095,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.706242372001725,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 138,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4145,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.758285273001093,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 141,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4197,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.8103665669987095,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 144,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4249,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.862365099001181,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 147,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4301,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.91456739700152,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 150,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4354,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.966335065000749,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 153,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4405,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.018461185001797,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 156,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4458,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.070801535999635,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 160,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4510,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.122486382999341,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 163,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4562,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.1748676450006315,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 166,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4614,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.2396376590004365,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 170,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4679,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.299953935002122,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 174,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4739,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.351906597999914,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 178,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4791,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.404520862000936,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 181,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4844,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.4573928480022005,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 184,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4896,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.508003162001842,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 188,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4947,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.560215526998945,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 191,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 4999,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.610732123001071,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 194,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5050,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.6642771840015484,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 198,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5103,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.716696352999861,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 201,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5156,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.767097815998568,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 205,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5206,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.820759066999017,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 208,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5260,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.873702952001622,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 211,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5313,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.92493874000138,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 215,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5364,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.976845797998976,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 218,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5416,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.029181693000282,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 221,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5468,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.081118254998728,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 225,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5520,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.133470344000671,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 228,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5573,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.185195953999937,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 231,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5624,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.236948910001956,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 235,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5676,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.292323233999923,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 238,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5731,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.351369645999512,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 242,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5790,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.403542200001539,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 245,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5843,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.468188670001837,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 249,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5907,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.529887122000218,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 253,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 5969,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.593360243001371,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 257,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6032,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.6528964700009965,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 261,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6092,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.704299387001811,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 264,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6143,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.756781233001675,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 268,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6196,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.808605096000974,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 271,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6248,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.869208102001721,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 274,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6308,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.919770485001209,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 278,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6359,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.977672109002015,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 280,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6417,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.033045716001652,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 283,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6472,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.083447953002178,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 286,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6523,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.1345164269987436,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 289,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6574,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.192833455999789,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 293,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6632,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.244881861999602,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 296,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6684,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.299648824999167,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 299,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6739,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.3517550630022015,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 302,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6791,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.402153981998708,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 305,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6841,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.452954755000974,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 309,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6892,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.504910802999802,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 312,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6944,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.5571234519993595,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 315,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 6996,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.610032127999148,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 318,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7049,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.6613355110021075,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 322,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7100,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.713310439001361,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 325,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7152,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.767954592000024,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 328,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7207,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.828385585999058,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 332,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7267,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.8799378809999325,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 336,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7319,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.931968764998601,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 339,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7371,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.987399073001143,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 342,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7427,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.04922184699899,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 346,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7488,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.108838724001544,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 350,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7548,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.16163139100172,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 353,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7601,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.213099304000934,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 357,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7652,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.265430129002198,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 360,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7705,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.317307163000805,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 363,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7756,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.369289463000314,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 366,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7808,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.421337111998582,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 369,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7860,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.473273661002168,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 372,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7912,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.525212522999936,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 375,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 7964,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.57750587999908,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 378,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8017,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.62837429800129,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 381,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8067,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.678862207001657,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 384,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8118,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.74536022400207,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 388,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8184,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.796797335999145,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 391,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8236,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.850024063998717,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 394,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8289,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.901590093999403,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 397,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8341,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.960837328999332,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 401,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8400,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.013794516999042,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 404,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8453,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.064337337000325,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 408,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8503,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.11604274199999,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 411,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8555,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.168165245999262,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 414,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8607,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.220334378002008,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 417,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8659,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.272311396001896,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 421,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8711,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.324282833000325,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 424,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8763,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.38480030700157,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 427,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8824,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.439472187001229,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 430,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8879,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.490859272002126,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 433,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8930,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.541541581002093,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 436,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 8981,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.595132418999128,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 440,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9034,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.647254784002143,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 443,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9086,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.698781810999208,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 446,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9138,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.751215361000504,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 450,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9190,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.803286053000193,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 453,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9242,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.857786576001672,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 456,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9297,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.918031170000177,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 460,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9357,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.968811523998738,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 463,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9408,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.02079099600087,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 467,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9460,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.07213293300083,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 470,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9511,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.128877326002112,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 473,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9568,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.190777592000813,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 477,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9630,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.24814492600126,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 481,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9687,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.2987712130016,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 484,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9738,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.352705223998782,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 488,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9792,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.404778731000988,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 491,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9844,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.45690498499971,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 494,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9896,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.50973182099915,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 497,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 9949,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.560586646999582,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 501,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 10000,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.61222766300125,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 504,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 10051,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.664873067998997,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 507,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 10104,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.716835653001908,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 510,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 10156,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.768800827001542,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 513,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 1912,
+          "elapsedMs": 10208,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.639228632000595,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 514,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+          "done": true,
+          "finishReason": "truncated",
+          "firstContentMs": 1912,
+          "elapsedMs": 10211,
+          "visionMs": 724,
+          "prefillMs": 1169,
+          "decodeMs": 8061,
+          "outputTokens": 512
+        }
+      ]
+    }
+  }
+]

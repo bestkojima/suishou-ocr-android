@@ -1,0 +1,82 @@
+[
+  {
+    "seconds": 0.00047128499863902107,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 0,
+      "regions": []
+    }
+  },
+  {
+    "seconds": 1.2018121129985957,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 1,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 43,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.332554248001543,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 2,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2153,
+          "elapsedMs": 2173,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.3892863479995867,
+    "beforeReturn": false,
+    "stream": {
+      "revision": 6,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 测试\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 2153,
+          "elapsedMs": 2208,
+          "visionMs": 964,
+          "prefillMs": 1171,
+          "decodeMs": 54,
+          "outputTokens": 4
+        }
+      ]
+    }
+  }
+]

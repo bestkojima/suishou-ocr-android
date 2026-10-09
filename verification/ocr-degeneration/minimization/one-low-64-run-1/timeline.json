@@ -1,0 +1,82 @@
+[
+  {
+    "seconds": 0.000673562000883976,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 0,
+      "regions": []
+    }
+  },
+  {
+    "seconds": 0.8242327689986269,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 1,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 285,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 1.5494445269978314,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 3,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 959,
+          "elapsedMs": 1010,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 1.6027843199990457,
+    "beforeReturn": false,
+    "stream": {
+      "revision": 6,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 识\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 959,
+          "elapsedMs": 1044,
+          "visionMs": 109,
+          "prefillMs": 844,
+          "decodeMs": 83,
+          "outputTokens": 4
+        }
+      ]
+    }
+  }
+]

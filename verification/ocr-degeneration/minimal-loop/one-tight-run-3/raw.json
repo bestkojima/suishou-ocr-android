@@ -1,0 +1,17 @@
+[
+  {
+    "threads": 4,
+    "requestId": "reqr0001",
+    "type": "text",
+    "attempt": 1,
+    "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+    "done": true,
+    "finishReason": "truncated",
+    "firstContentMs": 1941,
+    "elapsedMs": 3776,
+    "visionMs": 724,
+    "prefillMs": 1199,
+    "decodeMs": 1805,
+    "outputTokens": 64
+  }
+]

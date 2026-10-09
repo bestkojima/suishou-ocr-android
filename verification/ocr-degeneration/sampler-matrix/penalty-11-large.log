@@ -1,0 +1,5 @@
+Ovis load: 783 ms, success=1, mmap=0
+REPETITION large-region.png 1 3.667 '## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n'
+REPETITION large-region.png 2 2.709 '## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n'
+REPETITION large-region.png 3 2.787 '## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n'
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

@@ -1,0 +1,106 @@
+[
+  {
+    "seconds": 0.00046536000081687234,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 0,
+      "regions": []
+    }
+  },
+  {
+    "seconds": 1.1384909580010572,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 1,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 512,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.567059781002172,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 2,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2892,
+          "elapsedMs": 2940,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.407324592000805,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 4,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2892,
+          "elapsedMs": 4780,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.463243611000507,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 7,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 2892,
+          "elapsedMs": 4807,
+          "visionMs": 499,
+          "prefillMs": 2373,
+          "decodeMs": 1912,
+          "outputTokens": 5
+        }
+      ]
+    }
+  }
+]

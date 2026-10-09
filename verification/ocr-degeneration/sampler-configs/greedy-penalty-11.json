@@ -1,0 +1,4 @@
+{
+  "sampler_type": "greedy",
+  "repetition_penalty": 1.1
+}

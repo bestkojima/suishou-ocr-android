@@ -1,0 +1,782 @@
+[
+  {
+    "label": "baseline",
+    "kind": "low",
+    "expected": "商品统计",
+    "inputSize": [
+      20,
+      8
+    ],
+    "overrides": {},
+    "repetitions": 3,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": {
+          "unit": "##目",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.502913329997682
+      },
+      {
+        "repeat": {
+          "unit": "##目",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 1.4166016210001544
+      },
+      {
+        "repeat": {
+          "unit": "##目",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 1.367339272001118
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/low-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/baseline-low",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64"
+    ],
+    "exitCode": 1
+  },
+  {
+    "label": "baseline",
+    "kind": "large",
+    "expected": "识",
+    "inputSize": [
+      692,
+      696
+    ],
+    "overrides": {},
+    "repetitions": 3,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 3.712861037998664
+      },
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.490431466998416
+      },
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.6048003180003434
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/large-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/baseline-large",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64"
+    ],
+    "exitCode": 1
+  },
+  {
+    "label": "greedy-penalty-11",
+    "kind": "low",
+    "expected": "商品统计",
+    "inputSize": [
+      20,
+      8
+    ],
+    "overrides": {
+      "sampler_type": "greedy",
+      "repetition_penalty": 1.1
+    },
+    "repetitions": 3,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": {
+          "unit": "##目",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.4140083990023413
+      },
+      {
+        "repeat": {
+          "unit": "##目",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 1.3755430249984784
+      },
+      {
+        "repeat": {
+          "unit": "##目",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 1.4365523380001832
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/low-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/greedy-penalty-11-low",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64",
+      "--sampler-config",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-configs/greedy-penalty-11.json"
+    ],
+    "exitCode": 1
+  },
+  {
+    "label": "greedy-penalty-11",
+    "kind": "large",
+    "expected": "识",
+    "inputSize": [
+      692,
+      696
+    ],
+    "overrides": {
+      "sampler_type": "greedy",
+      "repetition_penalty": 1.1
+    },
+    "repetitions": 3,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 3.5511704569980793
+      },
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.5251186639980006
+      },
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.5980397349994746
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/large-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/greedy-penalty-11-large",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64",
+      "--sampler-config",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-configs/greedy-penalty-11.json"
+    ],
+    "exitCode": 1
+  },
+  {
+    "label": "penalty-neutral",
+    "kind": "low",
+    "expected": "商品统计",
+    "inputSize": [
+      20,
+      8
+    ],
+    "overrides": {
+      "sampler_type": "penalty",
+      "penalty_sampler": "greedy",
+      "repetition_penalty": 1.0
+    },
+    "repetitions": 3,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": {
+          "unit": "##目",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.479367486001138
+      },
+      {
+        "repeat": {
+          "unit": "##目",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 1.5414047580015904
+      },
+      {
+        "repeat": {
+          "unit": "##目",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 1.4625131320026412
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/low-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/penalty-neutral-low",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64",
+      "--sampler-config",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-configs/penalty-neutral.json"
+    ],
+    "exitCode": 1
+  },
+  {
+    "label": "penalty-neutral",
+    "kind": "large",
+    "expected": "识",
+    "inputSize": [
+      692,
+      696
+    ],
+    "overrides": {
+      "sampler_type": "penalty",
+      "penalty_sampler": "greedy",
+      "repetition_penalty": 1.0
+    },
+    "repetitions": 3,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 3.584822902997985
+      },
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.601864238997223
+      },
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.691844218999904
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/large-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/penalty-neutral-large",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64",
+      "--sampler-config",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-configs/penalty-neutral.json"
+    ],
+    "exitCode": 1
+  },
+  {
+    "label": "penalty-105",
+    "kind": "low",
+    "expected": "商品统计",
+    "inputSize": [
+      20,
+      8
+    ],
+    "overrides": {
+      "sampler_type": "penalty",
+      "penalty_sampler": "greedy",
+      "repetition_penalty": 1.05
+    },
+    "repetitions": 0,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": null,
+        "raw": "## 目见设计\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 1.5233420580007078
+      },
+      {
+        "repeat": null,
+        "raw": "## 目见设计\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 0.5487545739997586
+      },
+      {
+        "repeat": null,
+        "raw": "## 目见设计\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 0.48663484799908474
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/low-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/penalty-105-low",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64",
+      "--sampler-config",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-configs/penalty-105.json"
+    ],
+    "exitCode": 0
+  },
+  {
+    "label": "penalty-105",
+    "kind": "large",
+    "expected": "识",
+    "inputSize": [
+      692,
+      696
+    ],
+    "overrides": {
+      "sampler_type": "penalty",
+      "penalty_sampler": "greedy",
+      "repetition_penalty": 1.05
+    },
+    "repetitions": 3,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 3.620156094999402
+      },
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.806417149000481
+      },
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.6559917189988482
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/large-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/penalty-105-large",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64",
+      "--sampler-config",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-configs/penalty-105.json"
+    ],
+    "exitCode": 1
+  },
+  {
+    "label": "penalty-11",
+    "kind": "low",
+    "expected": "商品统计",
+    "inputSize": [
+      20,
+      8
+    ],
+    "overrides": {
+      "sampler_type": "penalty",
+      "penalty_sampler": "greedy",
+      "repetition_penalty": 1.1
+    },
+    "repetitions": 0,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": null,
+        "raw": "## 目见设计\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 1.5425922190006531
+      },
+      {
+        "repeat": null,
+        "raw": "## 目见设计\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 0.5587073179995059
+      },
+      {
+        "repeat": null,
+        "raw": "## 目见设计\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 0.498385162998602
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/low-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/penalty-11-low",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64",
+      "--sampler-config",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-configs/penalty-11.json"
+    ],
+    "exitCode": 0
+  },
+  {
+    "label": "penalty-11",
+    "kind": "large",
+    "expected": "识",
+    "inputSize": [
+      692,
+      696
+    ],
+    "overrides": {
+      "sampler_type": "penalty",
+      "penalty_sampler": "greedy",
+      "repetition_penalty": 1.1
+    },
+    "repetitions": 3,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 3.667201598000247
+      },
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.7090113690028375
+      },
+      {
+        "repeat": {
+          "unit": "##口",
+          "copies": 16,
+          "compactStart": 0,
+          "repeatedCharacters": 48
+        },
+        "raw": "## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n## 口\n\n",
+        "stopReason": "token_limit",
+        "exactExpectedText": false,
+        "seconds": 2.7872232490008173
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/large-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/penalty-11-large",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64",
+      "--sampler-config",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-configs/penalty-11.json"
+    ],
+    "exitCode": 1
+  },
+  {
+    "label": "frequency-02",
+    "kind": "low",
+    "expected": "商品统计",
+    "inputSize": [
+      20,
+      8
+    ],
+    "overrides": {
+      "sampler_type": "penalty",
+      "penalty_sampler": "greedy",
+      "repetition_penalty": 1.0,
+      "frequency_penalty": 0.2
+    },
+    "repetitions": 0,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": null,
+        "raw": "## 目见设计\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 1.534911186001409
+      },
+      {
+        "repeat": null,
+        "raw": "## 目见设计\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 0.517906942000991
+      },
+      {
+        "repeat": null,
+        "raw": "## 目见设计\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 0.5469997389991477
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/low-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/frequency-02-low",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64",
+      "--sampler-config",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-configs/frequency-02.json"
+    ],
+    "exitCode": 0
+  },
+  {
+    "label": "frequency-02",
+    "kind": "large",
+    "expected": "识",
+    "inputSize": [
+      692,
+      696
+    ],
+    "overrides": {
+      "sampler_type": "penalty",
+      "penalty_sampler": "greedy",
+      "repetition_penalty": 1.0,
+      "frequency_penalty": 0.2
+    },
+    "repetitions": 0,
+    "exactExpectedText": 0,
+    "trials": [
+      {
+        "repeat": null,
+        "raw": "## 口\n\n## 口\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 2.655703705000633
+      },
+      {
+        "repeat": null,
+        "raw": "## 口\n\n## 口\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 1.783780587000365
+      },
+      {
+        "repeat": null,
+        "raw": "## 口\n\n## 口\n",
+        "stopReason": "normal",
+        "exactExpectedText": false,
+        "seconds": 1.7265620849975676
+      }
+    ],
+    "command": [
+      "/usr/bin/python3",
+      "/home/dr/project/android_ocr/tools/debug/direct_region.py",
+      "--library",
+      "/tmp/ocr-degeneracy-native/libdococr_c_diagnostic.so",
+      "--input",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/captured/large-region.png",
+      "--output",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-matrix/frequency-02-large",
+      "--runs",
+      "3",
+      "--max-tokens",
+      "64",
+      "--sampler-config",
+      "/home/dr/project/android_ocr/verification/ocr-degeneration/sampler-configs/frequency-02.json"
+    ],
+    "exitCode": 0
+  }
+]

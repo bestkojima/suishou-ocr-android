@@ -1,0 +1,5 @@
+Ovis load: 791 ms, success=1, mmap=0
+REPETITION low-region.png 1 2.414 '## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n'
+REPETITION low-region.png 2 1.376 '## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n'
+REPETITION low-region.png 3 1.437 '## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n'
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

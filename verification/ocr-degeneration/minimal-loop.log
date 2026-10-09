@@ -1,0 +1,12 @@
+Ovis load: 786 ms, success=1, mmap=0
+LOADED real model 1.653 seconds
+RED one-tight real repeated unit= '##口' copies= 11
+Ovis load: 729 ms, success=1, mmap=0
+REPETITION one-tight run 1 seconds 5.885 regions 1
+RED one-tight real repeated unit= '##口' copies= 11
+Ovis load: 738 ms, success=1, mmap=0
+REPETITION one-tight run 2 seconds 5.578 regions 1
+RED one-tight real repeated unit= '##口' copies= 11
+Ovis load: 738 ms, success=1, mmap=0
+REPETITION one-tight run 3 seconds 5.649 regions 1
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

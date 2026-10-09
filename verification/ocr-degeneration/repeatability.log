@@ -1,0 +1,12 @@
+Ovis load: 1185 ms, success=1, mmap=0
+LOADED real model 3.205 seconds
+RED large-one real repeated unit= '##1' copies= 11
+Ovis load: 777 ms, success=1, mmap=0
+REPETITION large-one run 1 seconds 13.553 regions 1
+RED large-one real repeated unit= '##1' copies= 11
+Ovis load: 733 ms, success=1, mmap=0
+REPETITION large-one run 2 seconds 13.006 regions 1
+RED large-one real repeated unit= '##1' copies= 11
+Ovis load: 723 ms, success=1, mmap=0
+REPETITION large-one run 3 seconds 12.983 regions 1
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

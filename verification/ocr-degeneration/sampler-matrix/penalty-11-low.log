@@ -1,0 +1,5 @@
+Ovis load: 792 ms, success=1, mmap=0
+NO_REPEAT low-region.png 1 1.543 '## 目见设计\n'
+NO_REPEAT low-region.png 2 0.559 '## 目见设计\n'
+NO_REPEAT low-region.png 3 0.498 '## 目见设计\n'
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

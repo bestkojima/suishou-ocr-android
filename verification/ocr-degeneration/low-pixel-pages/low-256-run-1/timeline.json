@@ -1,0 +1,178 @@
+[
+  {
+    "seconds": 0.0017847830022219568,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 0,
+      "regions": []
+    }
+  },
+  {
+    "seconds": 0.725269197999296,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 1,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 44,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 1.7178483470015635,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 2,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 990,
+          "elapsedMs": 1037,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.21539793500051,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 6,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 990,
+          "elapsedMs": 1534,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.267484059000708,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 9,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n## 模型",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 990,
+          "elapsedMs": 1587,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.33115918600015,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 13,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n## 模型在本地运行\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 990,
+          "elapsedMs": 1650,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.393759656999464,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 17,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n## 模型在本地运行\n\n## 预览确认后",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 990,
+          "elapsedMs": 1713,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.4488746259994514,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 21,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n## 模型在本地运行\n\n## 预览确认后开始识别\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 990,
+          "elapsedMs": 1748,
+          "visionMs": 129,
+          "prefillMs": 851,
+          "decodeMs": 748,
+          "outputTokens": 19
+        }
+      ]
+    }
+  }
+]

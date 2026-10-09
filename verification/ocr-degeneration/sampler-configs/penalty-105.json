@@ -1,0 +1,5 @@
+{
+  "sampler_type": "penalty",
+  "penalty_sampler": "greedy",
+  "repetition_penalty": 1.05
+}

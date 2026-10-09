@@ -1,0 +1,561 @@
+{
+  "environment": "Linux x86_64 同源 Android 生产适配，真实模型；非设备复现",
+  "library": "/tmp/suishou-ocr-075/host-release-no-mmap/docprase/libdococr_c.so",
+  "librarySha256": "1205ae28a86810cf66b5759fce60e52ccb2aac9c4c87b3a0acb96cce38b2a62b",
+  "threads": 4,
+  "maxNewTokens": 512,
+  "predicate": "同一连续片段≥6次且总计≥32个非空白字符，基于原始生成流",
+  "diagnosticCancellation": true,
+  "config": {
+    "schema_version": "1.0",
+    "mode": "production",
+    "backend": "mnn:pp-doclayout-v3+ovisocr2",
+    "models": {
+      "layout": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/docprase/models/doclayout",
+        "artifacts": [
+          {
+            "path": "PP-DocLayoutV3.mnn",
+            "sha256": "5f1a43441d70f6843012b47eb294bed7edd3d0ef2344f0074700a38cb2e29c67"
+          }
+        ]
+      },
+      "recognition": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/docprase/models/ovis",
+        "artifacts": [
+          {
+            "path": "config.json",
+            "sha256": "b81ac7008ba5f894301b7b9265bba882889df52c6e25c86390514c1bd4afe0c4"
+          },
+          {
+            "path": "llm_config.json",
+            "sha256": "bb0d93883767c2c47de7f6965494c689c9890fffb79e3ca5e00e6f1fa5fd9770"
+          },
+          {
+            "path": "llm.mnn",
+            "sha256": "1da84439dec62e4f966833c54438859e1bdae8a07b03a55c643aabbeb48bc880"
+          },
+          {
+            "path": "llm.mnn.weight",
+            "sha256": "f09832b6ee9d63167ef456e83dea7f5df28e3983953e28b0a1e63e598cb45d32"
+          },
+          {
+            "path": "visual.mnn",
+            "sha256": "d85dbe1c24890bdd514cf35f23d2c0dfdb3d207489f50c05705782759881daa5"
+          },
+          {
+            "path": "visual.mnn.weight",
+            "sha256": "2a1b5138bdc1f6369df64f2b21b379b11f47ec51a46bb74a5013e4b2b9c4aa6d"
+          },
+          {
+            "path": "tokenizer.mtok",
+            "sha256": "1a0c1ee1d04a63791ea87be31bb8c1f6346ecdd9c3b55ccdbb894cea32fbedfa"
+          },
+          {
+            "path": "export_args.json",
+            "sha256": "953745b0456e0e4e3d2d4a0b31dd5a2d4dce632230a0b1d7c0ccfeead2de9334"
+          }
+        ]
+      }
+    },
+    "skills": {
+      "layout.detect": "layout",
+      "ocr.transcribe": "recognition"
+    },
+    "flow": [
+      {
+        "id": "load",
+        "processor": "page_loader",
+        "depends_on": []
+      },
+      {
+        "id": "layout",
+        "skill": "layout.detect",
+        "depends_on": [
+          "load"
+        ]
+      },
+      {
+        "id": "transcribe",
+        "skill": "ocr.transcribe",
+        "depends_on": [
+          "layout"
+        ]
+      },
+      {
+        "id": "assemble",
+        "processor": "document_assembler",
+        "depends_on": [
+          "transcribe"
+        ]
+      },
+      {
+        "id": "export",
+        "processor": "document_exporter",
+        "depends_on": [
+          "assemble"
+        ]
+      }
+    ],
+    "processing": [
+      {
+        "id": "decode",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "rgb_identity",
+        "owner": "none",
+        "enabled": true
+      },
+      {
+        "id": "normalize",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "crop",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "session_reset",
+        "owner": "runtime",
+        "enabled": true
+      },
+      {
+        "id": "deskew",
+        "owner": "none",
+        "enabled": false
+      }
+    ],
+    "platform": {
+      "device": "cpu",
+      "threads": 4
+    },
+    "execution": {
+      "max_page_pixels": 64000000,
+      "max_output_bytes": 67108864,
+      "max_new_tokens": 512,
+      "layout_preprocess": "smartresize_lanczos",
+      "layout_score_threshold": 0.3,
+      "markdown_ignore_labels": [
+        "number",
+        "footnote",
+        "header",
+        "header_image",
+        "footer",
+        "footer_image",
+        "aside_text"
+      ],
+      "show_formula_number": false
+    }
+  },
+  "runs": [
+    {
+      "case": {
+        "id": "low-256",
+        "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/low-256.png",
+        "family": "low-pixels",
+        "expectedText": "随手识别\n模型在本地运行\n预览确认后开始识别",
+        "dimensions": [
+          256,
+          256
+        ],
+        "pixels": 65536,
+        "sha256": "e5468f3e9e9aecccad2fee8274f09663d5c95853d84b1da24fdbd560c1fb7c80",
+        "description": "同一清晰输入整体降采样，仅改变图片像素",
+        "source": "control-1000"
+      },
+      "run": 1,
+      "seconds": 2.450520416001382,
+      "nativeReturn": 0,
+      "cancellation": null,
+      "repeat": null,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n## 模型在本地运行\n\n## 预览确认后开始识别\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 990,
+          "elapsedMs": 1748,
+          "visionMs": 129,
+          "prefillMs": 851,
+          "decodeMs": 748,
+          "outputTokens": 19
+        }
+      ],
+      "verdict": "NO_REPEAT",
+      "runtime": {
+        "layout_threads": 4,
+        "ovis_threads": 4,
+        "device": "cpu",
+        "sampler": "greedy",
+        "seed": null,
+        "seed_status": "not_configured",
+        "temperature": 0.8,
+        "top_k": 40,
+        "top_p": 0.9,
+        "min_p": 0.05,
+        "tfs_z": 1.0,
+        "typical": 0.95,
+        "repetition_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "penalty_window": 0,
+        "n_gram": 8,
+        "ngram_factor": 1.0,
+        "llm_precision": "low",
+        "llm_memory": "low",
+        "vision_precision": "normal",
+        "vision_memory": "low",
+        "reuse_kv": false,
+        "prompt_cache": false,
+        "use_mmap": false,
+        "kvcache_mmap": false,
+        "async": false,
+        "timeout_ms": 120000,
+        "session_strategy": "shared_model_reset_before_each_region",
+        "prompt_sha256": "de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267"
+      }
+    },
+    {
+      "case": {
+        "id": "page-low-256",
+        "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/page-low-256.png",
+        "family": "low-pixels",
+        "expectedText": null,
+        "dimensions": [
+          256,
+          353
+        ],
+        "pixels": 90368,
+        "sha256": "9f82d83cefc1ad3c4e25e0b58ce2d236ed73707940529b63200f2b8088ac4574",
+        "description": "既有正文/公式/表格样图整体降采样，原图无过量连续重复",
+        "source": "verification/real-ocr/source.png"
+      },
+      "run": 1,
+      "seconds": 9.799636199000815,
+      "nativeReturn": 0,
+      "cancellation": null,
+      "repeat": null,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 离线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 870,
+          "elapsedMs": 976,
+          "visionMs": 97,
+          "prefillMs": 768,
+          "decodeMs": 102,
+          "outputTokens": 7
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生成的单页测试图片。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 941,
+          "elapsedMs": 1082,
+          "visionMs": 132,
+          "prefillMs": 800,
+          "decodeMs": 136,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "输入在识别前保存，模型在本地运行。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 869,
+          "elapsedMs": 1036,
+          "visionMs": 94,
+          "prefillMs": 769,
+          "decodeMs": 162,
+          "outputTokens": 12
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "text",
+          "attempt": 1,
+          "raw": "结果包括文字、公式、表格和插图。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 876,
+          "elapsedMs": 1031,
+          "visionMs": 110,
+          "prefillMs": 759,
+          "decodeMs": 150,
+          "outputTokens": 11
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 能量公式\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 955,
+          "elapsedMs": 1022,
+          "visionMs": 103,
+          "prefillMs": 846,
+          "decodeMs": 63,
+          "outputTokens": 5
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0006",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "$$ E=mc^{2} $$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 474,
+          "elapsedMs": 597,
+          "visionMs": 121,
+          "prefillMs": 347,
+          "decodeMs": 118,
+          "outputTokens": 9
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0007",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 商品统计\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 420,
+          "elapsedMs": 484,
+          "visionMs": 94,
+          "prefillMs": 321,
+          "decodeMs": 61,
+          "outputTokens": 5
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0008",
+          "type": "table",
+          "attempt": 1,
+          "raw": "<table border=1><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 875,
+          "elapsedMs": 2004,
+          "visionMs": 110,
+          "prefillMs": 759,
+          "decodeMs": 1094,
+          "outputTokens": 76
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0010",
+          "type": "text",
+          "attempt": 1,
+          "raw": "图1：图形与三角形\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 893,
+          "elapsedMs": 999,
+          "visionMs": 90,
+          "prefillMs": 798,
+          "decodeMs": 103,
+          "outputTokens": 7
+        }
+      ],
+      "verdict": "NO_REPEAT",
+      "runtime": {
+        "layout_threads": 4,
+        "ovis_threads": 4,
+        "device": "cpu",
+        "sampler": "greedy",
+        "seed": null,
+        "seed_status": "not_configured",
+        "temperature": 0.8,
+        "top_k": 40,
+        "top_p": 0.9,
+        "min_p": 0.05,
+        "tfs_z": 1.0,
+        "typical": 0.95,
+        "repetition_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "penalty_window": 0,
+        "n_gram": 8,
+        "ngram_factor": 1.0,
+        "llm_precision": "low",
+        "llm_memory": "low",
+        "vision_precision": "normal",
+        "vision_memory": "low",
+        "reuse_kv": false,
+        "prompt_cache": false,
+        "use_mmap": false,
+        "kvcache_mmap": false,
+        "async": false,
+        "timeout_ms": 120000,
+        "session_strategy": "shared_model_reset_before_each_region",
+        "prompt_sha256": "de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267"
+      }
+    },
+    {
+      "case": {
+        "id": "page-low-128",
+        "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/page-low-128.png",
+        "family": "low-pixels",
+        "expectedText": null,
+        "dimensions": [
+          128,
+          177
+        ],
+        "pixels": 22656,
+        "sha256": "379c48384747a65aa3c7cdbcb272903492e834b92406dd10520eefb06cd9cee4",
+        "description": "既有正文/公式/表格样图整体降采样，原图无过量连续重复",
+        "source": "verification/real-ocr/source.png"
+      },
+      "run": 1,
+      "seconds": 14.335128008999163,
+      "nativeReturn": 7,
+      "cancellation": "diagnostic_repeat",
+      "repeat": {
+        "seconds": 5.435324821999529,
+        "requestId": "reqr0005",
+        "attempt": 1,
+        "unit": "##目",
+        "copies": 11,
+        "compactStart": 0,
+        "repeatedCharacters": 33
+      },
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 862,
+          "elapsedMs": 976,
+          "visionMs": 95,
+          "prefillMs": 762,
+          "decodeMs": 109,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 870,
+          "elapsedMs": 1340,
+          "visionMs": 98,
+          "prefillMs": 756,
+          "decodeMs": 455,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 881,
+          "elapsedMs": 931,
+          "visionMs": 93,
+          "prefillMs": 782,
+          "decodeMs": 48,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 445,
+          "elapsedMs": 585,
+          "visionMs": 90,
+          "prefillMs": 350,
+          "decodeMs": 135,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+          "done": true,
+          "finishReason": "truncated",
+          "firstContentMs": 399,
+          "elapsedMs": 8411,
+          "visionMs": 82,
+          "prefillMs": 312,
+          "decodeMs": 7770,
+          "outputTokens": 512
+        }
+      ],
+      "verdict": "REPETITION",
+      "runtime": {
+        "layout_threads": 4,
+        "ovis_threads": 4,
+        "device": "cpu",
+        "sampler": "greedy",
+        "seed": null,
+        "seed_status": "not_configured",
+        "temperature": 0.8,
+        "top_k": 40,
+        "top_p": 0.9,
+        "min_p": 0.05,
+        "tfs_z": 1.0,
+        "typical": 0.95,
+        "repetition_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "penalty_window": 0,
+        "n_gram": 8,
+        "ngram_factor": 1.0,
+        "llm_precision": "low",
+        "llm_memory": "low",
+        "vision_precision": "normal",
+        "vision_memory": "low",
+        "reuse_kv": false,
+        "prompt_cache": false,
+        "use_mmap": false,
+        "kvcache_mmap": false,
+        "async": false,
+        "timeout_ms": 120000,
+        "session_strategy": "shared_model_reset_before_each_region",
+        "prompt_sha256": "de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267"
+      }
+    }
+  ],
+  "loadSeconds": 1.6284630030022527,
+  "newMmapWeightCaches": []
+}

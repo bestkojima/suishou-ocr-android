@@ -1,0 +1,58 @@
+[
+  {
+    "seconds": 0.0005501189989445265,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 0,
+      "regions": []
+    }
+  },
+  {
+    "seconds": 0.6589033929994912,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 1,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 116,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 1.5373297670012107,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 6,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 识\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 931,
+          "elapsedMs": 978,
+          "visionMs": 111,
+          "prefillMs": 814,
+          "decodeMs": 45,
+          "outputTokens": 4
+        }
+      ]
+    }
+  }
+]

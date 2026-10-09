@@ -1,0 +1,2536 @@
+[
+  {
+    "seconds": 0.0004072029987582937,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 0,
+      "regions": []
+    }
+  },
+  {
+    "seconds": 0.5042999969991797,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 1,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 2,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 1.3944762460014317,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 5,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 842,
+          "elapsedMs": 892,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 1.44896055999925,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 8,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 1.5090253710004617,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 11,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 58,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.2870958499988774,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 12,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 836,
+          "elapsedMs": 836,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.3396621709980536,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 15,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 836,
+          "elapsedMs": 889,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.391671433000738,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 18,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 836,
+          "elapsedMs": 941,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.443427955000516,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 22,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 836,
+          "elapsedMs": 993,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.495453823998105,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 25,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 836,
+          "elapsedMs": 1045,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.546864725998603,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 29,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 836,
+          "elapsedMs": 1096,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.5990904589998536,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 32,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 836,
+          "elapsedMs": 1148,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.650697509998281,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 36,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 836,
+          "elapsedMs": 1200,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.702879076001409,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 39,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 836,
+          "elapsedMs": 1252,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.7532007890004024,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 45,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 1,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.6358413429989014,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 48,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 849,
+          "elapsedMs": 884,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.6876949680008693,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 51,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 38,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.0505825510008435,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 53,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 378,
+          "elapsedMs": 400,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.102561978001177,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 56,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E =",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 378,
+          "elapsedMs": 452,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.154310575999261,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 60,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 378,
+          "elapsedMs": 504,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.253595394999138,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 63,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 86,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.64225893999901,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 67,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 475,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.693239642001572,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 70,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 526,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.745881032999023,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 74,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 579,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.797947816998203,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 77,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 631,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.848671746000036,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 80,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 681,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.902325732000463,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 84,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 735,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.95427485899927,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 87,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 787,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.007945972000016,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 90,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 841,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.066809283998737,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 94,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 900,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.120723811000062,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 98,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 954,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.172226686998329,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 101,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 1005,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.224465011000575,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 105,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 1057,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.2757263489984325,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 108,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 1109,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.327270511999814,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 112,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 1160,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.379360415998235,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 115,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 1212,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.43140512500031,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 118,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 1264,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.483246869000141,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 122,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 1316,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.534455466000509,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 125,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 419,
+          "elapsedMs": 1367,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.882291830999748,
+    "beforeReturn": false,
+    "stream": {
+      "revision": 128,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 高线文档识别验证\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 842,
+          "elapsedMs": 947,
+          "visionMs": 89,
+          "prefillMs": 748,
+          "decodeMs": 102,
+          "outputTokens": 8
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0002",
+          "type": "text",
+          "attempt": 1,
+          "raw": "这是一张新生期的学生测试照片。\n\n输入在识别的保存。模型在本地运行。\n\n模型生成文字、公式、表格和图表。\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 836,
+          "elapsedMs": 1300,
+          "visionMs": 100,
+          "prefillMs": 730,
+          "decodeMs": 449,
+          "outputTokens": 32
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0003",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 1\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 849,
+          "elapsedMs": 897,
+          "visionMs": 82,
+          "prefillMs": 761,
+          "decodeMs": 46,
+          "outputTokens": 4
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0004",
+          "type": "formula",
+          "attempt": 1,
+          "raw": "##  $E = mc^{2}$\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 378,
+          "elapsedMs": 516,
+          "visionMs": 84,
+          "prefillMs": 288,
+          "decodeMs": 133,
+          "outputTokens": 10
+        },
+        {
+          "threads": 4,
+          "requestId": "reqr0005",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n## 目\n\n",
+          "done": true,
+          "finishReason": "truncated",
+          "firstContentMs": 419,
+          "elapsedMs": 1397,
+          "visionMs": 82,
+          "prefillMs": 331,
+          "decodeMs": 950,
+          "outputTokens": 64
+        }
+      ]
+    }
+  }
+]

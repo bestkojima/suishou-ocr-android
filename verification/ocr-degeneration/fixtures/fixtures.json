@@ -1,0 +1,293 @@
+{
+  "synthetic": true,
+  "font": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+  "fontSha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+  "cases": [
+    {
+      "id": "control-1000",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/control-1000.png",
+      "family": "control",
+      "expectedText": "随手识别\n模型在本地运行\n预览确认后开始识别",
+      "dimensions": [
+        1000,
+        1000
+      ],
+      "pixels": 1000000,
+      "sha256": "8297044ca395bb11cfc5456ffb984c0582a54986545d51794061962391a7f241",
+      "description": "清晰小段文字，100 万像素",
+      "fontSize": 64
+    },
+    {
+      "id": "low-256",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/low-256.png",
+      "family": "low-pixels",
+      "expectedText": "随手识别\n模型在本地运行\n预览确认后开始识别",
+      "dimensions": [
+        256,
+        256
+      ],
+      "pixels": 65536,
+      "sha256": "e5468f3e9e9aecccad2fee8274f09663d5c95853d84b1da24fdbd560c1fb7c80",
+      "description": "同一清晰输入整体降采样，仅改变图片像素",
+      "source": "control-1000"
+    },
+    {
+      "id": "low-128",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/low-128.png",
+      "family": "low-pixels",
+      "expectedText": "随手识别\n模型在本地运行\n预览确认后开始识别",
+      "dimensions": [
+        128,
+        128
+      ],
+      "pixels": 16384,
+      "sha256": "25a5318050f1e0f6bff734b24172313435a64e16fbd42d535c75f4b355840172",
+      "description": "同一清晰输入整体降采样，仅改变图片像素",
+      "source": "control-1000"
+    },
+    {
+      "id": "low-64",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/low-64.png",
+      "family": "low-pixels",
+      "expectedText": "随手识别\n模型在本地运行\n预览确认后开始识别",
+      "dimensions": [
+        64,
+        64
+      ],
+      "pixels": 4096,
+      "sha256": "fbf4217d396adebdf12131891426142e2671f417195e15ac3e488d2000aa2ae5",
+      "description": "同一清晰输入整体降采样，仅改变图片像素",
+      "source": "control-1000"
+    },
+    {
+      "id": "low-32",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/low-32.png",
+      "family": "low-pixels",
+      "expectedText": "随手识别\n模型在本地运行\n预览确认后开始识别",
+      "dimensions": [
+        32,
+        32
+      ],
+      "pixels": 1024,
+      "sha256": "60ca0776b3826ac3870789e2202e7c499cf9b47f0f2d2d5e1775e186b3256928",
+      "description": "同一清晰输入整体降采样，仅改变图片像素",
+      "source": "control-1000"
+    },
+    {
+      "id": "large-four",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/large-four.png",
+      "family": "large-glyphs",
+      "expectedText": "随手识别",
+      "dimensions": [
+        1000,
+        1000
+      ],
+      "pixels": 1000000,
+      "sha256": "8d3d6f6537ca577375ed6326a682bb64a222f75235e998c5fa1e60578ca7de14",
+      "description": "100 万像素，仅有 1～4 个大字",
+      "fontSize": 230
+    },
+    {
+      "id": "large-two",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/large-two.png",
+      "family": "large-glyphs",
+      "expectedText": "测试",
+      "dimensions": [
+        1000,
+        1000
+      ],
+      "pixels": 1000000,
+      "sha256": "156f548ab83f0164e0a4164190318d8582184d19770b580ca21cd9414920e6e5",
+      "description": "100 万像素，仅有 1～4 个大字",
+      "fontSize": 440
+    },
+    {
+      "id": "large-one",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/large-one.png",
+      "family": "large-glyphs",
+      "expectedText": "识",
+      "dimensions": [
+        1000,
+        1000
+      ],
+      "pixels": 1000000,
+      "sha256": "eddddc743e74eb95749d82da35c011cf06133571457436e4f660c9ff7c0a681c",
+      "description": "100 万像素，仅有 1～4 个大字",
+      "fontSize": 760
+    },
+    {
+      "id": "one-low-512",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/one-low-512.png",
+      "family": "low-pixels",
+      "expectedText": "识",
+      "dimensions": [
+        512,
+        512
+      ],
+      "pixels": 262144,
+      "sha256": "636d7ce69fda816d296f12e861d5b28c68fd95f6b3c2ac4f9585853deef0381f",
+      "description": "已触发大字样图整体降采样，用于缩小复现",
+      "source": "large-one"
+    },
+    {
+      "id": "one-low-256",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/one-low-256.png",
+      "family": "low-pixels",
+      "expectedText": "识",
+      "dimensions": [
+        256,
+        256
+      ],
+      "pixels": 65536,
+      "sha256": "a262d30976368fd5fbe365ec09df488a8f7f2e9a0482b9a15e71b0269bc5c6e9",
+      "description": "已触发大字样图整体降采样，用于缩小复现",
+      "source": "large-one"
+    },
+    {
+      "id": "one-low-128",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/one-low-128.png",
+      "family": "low-pixels",
+      "expectedText": "识",
+      "dimensions": [
+        128,
+        128
+      ],
+      "pixels": 16384,
+      "sha256": "0324cdd3acb8e238ef494292e7da0c3bf36f8b6594dd1b14d797492b099023dc",
+      "description": "已触发大字样图整体降采样，用于缩小复现",
+      "source": "large-one"
+    },
+    {
+      "id": "one-low-64",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/one-low-64.png",
+      "family": "low-pixels",
+      "expectedText": "识",
+      "dimensions": [
+        64,
+        64
+      ],
+      "pixels": 4096,
+      "sha256": "90f48c4201b07ba1397b67c3876147333877526ab172dc2f24db91f8ff44f13a",
+      "description": "已触发大字样图整体降采样，用于缩小复现",
+      "source": "large-one"
+    },
+    {
+      "id": "one-low-32",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/one-low-32.png",
+      "family": "low-pixels",
+      "expectedText": "识",
+      "dimensions": [
+        32,
+        32
+      ],
+      "pixels": 1024,
+      "sha256": "efeab65d51a05d28737d6d591045c8e49f0ee1aed7fa7d69dd554ec4481ef23e",
+      "description": "已触发大字样图整体降采样，用于缩小复现",
+      "source": "large-one"
+    },
+    {
+      "id": "one-tight",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/one-tight.png",
+      "family": "minimization",
+      "expectedText": "识",
+      "dimensions": [
+        696,
+        696
+      ],
+      "pixels": 484416,
+      "sha256": "f66a4374995585d9d603e1c7d62b6c6d36aec49fb97cbfb9bd9aca12462fd6d9",
+      "description": "仅移除已触发样图外部空白，保留完整字形",
+      "source": "large-one"
+    },
+    {
+      "id": "control-four",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/control-four.png",
+      "family": "control",
+      "expectedText": "随手识别",
+      "dimensions": [
+        1000,
+        1000
+      ],
+      "pixels": 1000000,
+      "sha256": "aa1d8f3ec5d84ca644a8f8347fea74a387389248e5efd9284d393ca8fd7af44e",
+      "description": "与大字四字图相同内容和画布，字号 64",
+      "fontSize": 64
+    },
+    {
+      "id": "one-font-64",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/one-font-64.png",
+      "family": "glyph-scale-control",
+      "expectedText": "识",
+      "dimensions": [
+        1000,
+        1000
+      ],
+      "pixels": 1000000,
+      "sha256": "064e2703021e18f7310c6c59e862434788ff1646d02f2fcd5be2954dc51f957d",
+      "description": "同一字符、同一 100 万像素画布，仅改变字号",
+      "fontSize": 64
+    },
+    {
+      "id": "one-font-320",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/one-font-320.png",
+      "family": "glyph-scale-control",
+      "expectedText": "识",
+      "dimensions": [
+        1000,
+        1000
+      ],
+      "pixels": 1000000,
+      "sha256": "75fa82fec9b12be6918f8eb5bb02418117444af65f373476d9f6aec9adbe3a9d",
+      "description": "同一字符、同一 100 万像素画布，仅改变字号",
+      "fontSize": 320
+    },
+    {
+      "id": "page-low-256",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/page-low-256.png",
+      "family": "low-pixels",
+      "expectedText": null,
+      "dimensions": [
+        256,
+        353
+      ],
+      "pixels": 90368,
+      "sha256": "9f82d83cefc1ad3c4e25e0b58ce2d236ed73707940529b63200f2b8088ac4574",
+      "description": "既有正文/公式/表格样图整体降采样，原图无过量连续重复",
+      "source": "verification/real-ocr/source.png"
+    },
+    {
+      "id": "page-low-128",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/page-low-128.png",
+      "family": "low-pixels",
+      "expectedText": null,
+      "dimensions": [
+        128,
+        177
+      ],
+      "pixels": 22656,
+      "sha256": "379c48384747a65aa3c7cdbcb272903492e834b92406dd10520eefb06cd9cee4",
+      "description": "既有正文/公式/表格样图整体降采样，原图无过量连续重复",
+      "source": "verification/real-ocr/source.png"
+    },
+    {
+      "id": "low-region",
+      "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/low-region.png",
+      "family": "low-pixels-minimization",
+      "expectedText": null,
+      "dimensions": [
+        20,
+        8
+      ],
+      "pixels": 160,
+      "sha256": "c8ab016fe4c5680863ab308cc4a3ca7cda59eacf5ced56412336ec805dd34c8d",
+      "description": "从真实触发页 reqr0005 提取的原始区域，20×8；不是人工重画",
+      "source": "page-low-128",
+      "sourceBox": [
+        9,
+        66,
+        29,
+        74
+      ]
+    }
+  ]
+}

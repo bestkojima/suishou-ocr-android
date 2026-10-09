@@ -1,0 +1,24 @@
+[
+  {
+    "case": "low",
+    "originalVisual": "verification/ocr-degeneration/probe-baseline/page-low-128-run-1/native-trace.jsonl.reqr0005.visual.png",
+    "directVisual": "verification/ocr-degeneration/direct-low-baseline/native-trace-1.jsonl.diagnostic-region.visual.png",
+    "sameRgbPixels": true,
+    "size": [
+      256,
+      256
+    ],
+    "rgbSha256": "a4f8df3098d5a6ad06a977550a1df2e132eefc5d70ac7e3319f8a12b0debdd64"
+  },
+  {
+    "case": "large",
+    "originalVisual": "verification/ocr-degeneration/probe-baseline/one-tight-run-1/native-trace.jsonl.reqr0001.visual.png",
+    "directVisual": "verification/ocr-degeneration/sampler-matrix/baseline-large/native-trace-1.jsonl.diagnostic-region.visual.png",
+    "sameRgbPixels": true,
+    "size": [
+      544,
+      576
+    ],
+    "rgbSha256": "3ab8b8c6419f00cd0f2ce9f86f8de00e5c236dfda0ea768fb5daa50672a9f6af"
+  }
+]

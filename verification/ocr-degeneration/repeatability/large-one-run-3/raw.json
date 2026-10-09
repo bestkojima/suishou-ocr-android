@@ -1,0 +1,17 @@
+[
+  {
+    "threads": 4,
+    "requestId": "reqr0001",
+    "type": "text",
+    "attempt": 1,
+    "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+    "done": true,
+    "finishReason": "truncated",
+    "firstContentMs": 2099,
+    "elapsedMs": 11065,
+    "visionMs": 702,
+    "prefillMs": 1377,
+    "decodeMs": 8725,
+    "outputTokens": 512
+  }
+]

@@ -1,0 +1,566 @@
+{
+  "sourceVersion": "0.7.6-ocr / versionCode 13",
+  "scope": "仅诊断；未实施修复或发布",
+  "host": "Linux x86_64 真实固定模型，Android 同源适配；未接通 Titan_1",
+  "userSymptom": "单个字或短字符串反复重复",
+  "userProblemImageProvided": false,
+  "modelsVerified": "使用已下载固定工件，读取登记信息/大小；加载未进行全量权重 SHA 扫描",
+  "sourcePageReproductions": {
+    "large-one": {
+      "inputSize": [
+        1000,
+        1000
+      ],
+      "text": "识",
+      "fontSize": 760,
+      "reproductions": 3,
+      "trials": 3,
+      "repeat": "##1"
+    },
+    "page-low-128": {
+      "inputSize": [
+        128,
+        177
+      ],
+      "reproductions": 3,
+      "trials": 3,
+      "repeat": "##目",
+      "regionSourceSize": [
+        20,
+        8
+      ]
+    }
+  },
+  "minimalEvidence": {
+    "large": {
+      "sourceSize": [
+        692,
+        696
+      ],
+      "repeat": "##口",
+      "tokenCycle": [
+        550,
+        220,
+        96116,
+        271
+      ]
+    },
+    "low": {
+      "sourceSize": [
+        20,
+        8
+      ],
+      "repeat": "##目",
+      "tokenCycle": [
+        550,
+        220,
+        96060,
+        271
+      ]
+    }
+  },
+  "generationBudgetNote": "整页基线 512 tokens；最小化和参数对照仅诊断改为 64 tokens，仍复现 16 周期；产品预算未改",
+  "observations": [
+    {
+      "group": "screening",
+      "case": "low-128",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 6.521814308998728,
+      "repeat": null,
+      "inputSize": [
+        128,
+        128
+      ]
+    },
+    {
+      "group": "screening",
+      "case": "low-64",
+      "run": 1,
+      "verdict": "NOT_REACHED",
+      "seconds": 2.392768806999811,
+      "repeat": null,
+      "inputSize": [
+        64,
+        64
+      ]
+    },
+    {
+      "group": "screening",
+      "case": "low-32",
+      "run": 1,
+      "verdict": "NOT_REACHED",
+      "seconds": 2.095603232999565,
+      "repeat": null,
+      "inputSize": [
+        32,
+        32
+      ]
+    },
+    {
+      "group": "screening",
+      "case": "large-four",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 5.49054854300266,
+      "repeat": null,
+      "inputSize": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "group": "screening",
+      "case": "large-two",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 3.3893829510016076,
+      "repeat": null,
+      "inputSize": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "group": "screening",
+      "case": "large-one",
+      "run": 1,
+      "verdict": "REPETITION",
+      "seconds": 13.940201088000322,
+      "repeat": {
+        "seconds": 3.5127150299995265,
+        "requestId": "reqr0001",
+        "attempt": 1,
+        "unit": "##1",
+        "copies": 11,
+        "compactStart": 3,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "group": "screening",
+      "case": "control-four",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 2.250436850001279,
+      "repeat": null,
+      "inputSize": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "group": "repeatability",
+      "case": "large-one",
+      "run": 1,
+      "verdict": "REPETITION",
+      "seconds": 13.553061917999003,
+      "repeat": {
+        "seconds": 4.321986232000199,
+        "requestId": "reqr0001",
+        "attempt": 1,
+        "unit": "##1",
+        "copies": 11,
+        "compactStart": 3,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "group": "repeatability",
+      "case": "large-one",
+      "run": 2,
+      "verdict": "REPETITION",
+      "seconds": 13.005597408002359,
+      "repeat": {
+        "seconds": 4.07124918000045,
+        "requestId": "reqr0001",
+        "attempt": 1,
+        "unit": "##1",
+        "copies": 11,
+        "compactStart": 3,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "group": "repeatability",
+      "case": "large-one",
+      "run": 3,
+      "verdict": "REPETITION",
+      "seconds": 12.983340787999623,
+      "repeat": {
+        "seconds": 4.088683107001998,
+        "requestId": "reqr0001",
+        "attempt": 1,
+        "unit": "##1",
+        "copies": 11,
+        "compactStart": 3,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "group": "minimization",
+      "case": "one-low-512",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 2.352103403998626,
+      "repeat": null,
+      "inputSize": [
+        512,
+        512
+      ]
+    },
+    {
+      "group": "minimization",
+      "case": "one-low-256",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 1.5392934800001967,
+      "repeat": null,
+      "inputSize": [
+        256,
+        256
+      ]
+    },
+    {
+      "group": "minimization",
+      "case": "one-low-128",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 1.0552386169983947,
+      "repeat": null,
+      "inputSize": [
+        128,
+        128
+      ]
+    },
+    {
+      "group": "minimization",
+      "case": "one-low-64",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 1.6028079979987524,
+      "repeat": null,
+      "inputSize": [
+        64,
+        64
+      ]
+    },
+    {
+      "group": "minimization",
+      "case": "one-low-32",
+      "run": 1,
+      "verdict": "NOT_REACHED",
+      "seconds": 0.5339165080004022,
+      "repeat": null,
+      "inputSize": [
+        32,
+        32
+      ]
+    },
+    {
+      "group": "minimization",
+      "case": "one-tight",
+      "run": 1,
+      "verdict": "REPETITION",
+      "seconds": 12.251355675998639,
+      "repeat": {
+        "seconds": 3.2122594680004113,
+        "requestId": "reqr0001",
+        "attempt": 1,
+        "unit": "##口",
+        "copies": 11,
+        "compactStart": 0,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        696,
+        696
+      ]
+    },
+    {
+      "group": "minimal-loop",
+      "case": "one-tight",
+      "run": 1,
+      "verdict": "REPETITION",
+      "seconds": 5.884922490000463,
+      "repeat": {
+        "seconds": 4.074721539000166,
+        "requestId": "reqr0001",
+        "attempt": 1,
+        "unit": "##口",
+        "copies": 11,
+        "compactStart": 0,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        696,
+        696
+      ]
+    },
+    {
+      "group": "minimal-loop",
+      "case": "one-tight",
+      "run": 2,
+      "verdict": "REPETITION",
+      "seconds": 5.5784512129976065,
+      "repeat": {
+        "seconds": 3.9176366600004258,
+        "requestId": "reqr0001",
+        "attempt": 1,
+        "unit": "##口",
+        "copies": 11,
+        "compactStart": 0,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        696,
+        696
+      ]
+    },
+    {
+      "group": "minimal-loop",
+      "case": "one-tight",
+      "run": 3,
+      "verdict": "REPETITION",
+      "seconds": 5.6490522409985715,
+      "repeat": {
+        "seconds": 4.0526575349977065,
+        "requestId": "reqr0001",
+        "attempt": 1,
+        "unit": "##口",
+        "copies": 11,
+        "compactStart": 0,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        696,
+        696
+      ]
+    },
+    {
+      "group": "low-pixel-pages",
+      "case": "low-256",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 2.450520416001382,
+      "repeat": null,
+      "inputSize": [
+        256,
+        256
+      ]
+    },
+    {
+      "group": "low-pixel-pages",
+      "case": "page-low-256",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 9.799636199000815,
+      "repeat": null,
+      "inputSize": [
+        256,
+        353
+      ]
+    },
+    {
+      "group": "low-pixel-pages",
+      "case": "page-low-128",
+      "run": 1,
+      "verdict": "REPETITION",
+      "seconds": 14.335128008999163,
+      "repeat": {
+        "seconds": 5.435324821999529,
+        "requestId": "reqr0005",
+        "attempt": 1,
+        "unit": "##目",
+        "copies": 11,
+        "compactStart": 0,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        128,
+        177
+      ]
+    },
+    {
+      "group": "low-repeatability",
+      "case": "page-low-128",
+      "run": 1,
+      "verdict": "REPETITION",
+      "seconds": 17.61977605800348,
+      "repeat": {
+        "seconds": 6.891063545001089,
+        "requestId": "reqr0005",
+        "attempt": 1,
+        "unit": "##目",
+        "copies": 11,
+        "compactStart": 0,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        128,
+        177
+      ]
+    },
+    {
+      "group": "low-repeatability",
+      "case": "page-low-128",
+      "run": 2,
+      "verdict": "REPETITION",
+      "seconds": 16.70346328300002,
+      "repeat": {
+        "seconds": 7.342142320001585,
+        "requestId": "reqr0005",
+        "attempt": 1,
+        "unit": "##目",
+        "copies": 11,
+        "compactStart": 0,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        128,
+        177
+      ]
+    },
+    {
+      "group": "low-repeatability",
+      "case": "page-low-128",
+      "run": 3,
+      "verdict": "REPETITION",
+      "seconds": 15.218497998997918,
+      "repeat": {
+        "seconds": 6.173720243998105,
+        "requestId": "reqr0005",
+        "attempt": 1,
+        "unit": "##目",
+        "copies": 11,
+        "compactStart": 0,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        128,
+        177
+      ]
+    },
+    {
+      "group": "probe-baseline",
+      "case": "one-tight",
+      "run": 1,
+      "verdict": "REPETITION",
+      "seconds": 5.568366352999874,
+      "repeat": {
+        "seconds": 3.8171312089980347,
+        "requestId": "reqr0001",
+        "attempt": 1,
+        "unit": "##口",
+        "copies": 11,
+        "compactStart": 0,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        696,
+        696
+      ]
+    },
+    {
+      "group": "probe-baseline",
+      "case": "one-font-64",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 2.1372349209996173,
+      "repeat": null,
+      "inputSize": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "group": "probe-baseline",
+      "case": "one-font-320",
+      "run": 1,
+      "verdict": "NO_REPEAT",
+      "seconds": 1.991548504000093,
+      "repeat": null,
+      "inputSize": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "group": "probe-baseline",
+      "case": "page-low-128",
+      "run": 1,
+      "verdict": "REPETITION",
+      "seconds": 6.882355423000263,
+      "repeat": {
+        "seconds": 5.2757263489984325,
+        "requestId": "reqr0005",
+        "attempt": 1,
+        "unit": "##目",
+        "copies": 11,
+        "compactStart": 0,
+        "repeatedCharacters": 33
+      },
+      "inputSize": [
+        128,
+        177
+      ]
+    },
+    {
+      "group": "low-minimal-loop",
+      "case": "low-region",
+      "run": 1,
+      "verdict": "NOT_REACHED",
+      "seconds": 3.2169825849996414,
+      "repeat": null,
+      "inputSize": [
+        20,
+        8
+      ]
+    },
+    {
+      "group": "low-minimal-loop",
+      "case": "low-region",
+      "run": 2,
+      "verdict": "NOT_REACHED",
+      "seconds": 2.6235226310018334,
+      "repeat": null,
+      "inputSize": [
+        20,
+        8
+      ]
+    },
+    {
+      "group": "low-minimal-loop",
+      "case": "low-region",
+      "run": 3,
+      "verdict": "NOT_REACHED",
+      "seconds": 2.0241261440023663,
+      "repeat": null,
+      "inputSize": [
+        20,
+        8
+      ]
+    }
+  ],
+  "samplerTrials": 36,
+  "samplerSummary": "sampler-matrix/summary.json",
+  "rootCauseConfirmed": false,
+  "productionDefaultsChanged": false,
+  "apkPublishedInThisTask": false
+}

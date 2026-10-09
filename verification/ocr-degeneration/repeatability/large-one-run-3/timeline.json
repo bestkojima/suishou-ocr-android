@@ -1,0 +1,3826 @@
+[
+  {
+    "seconds": 0.0006475260015577078,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 0,
+      "regions": []
+    }
+  },
+  {
+    "seconds": 0.665266578002047,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 1,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": -1,
+          "elapsedMs": 40,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 2.770874052999716,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 2,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 2146,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.4032845360015926,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 6,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 2778,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.4552372170001036,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 9,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 2830,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.5064707700003055,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 12,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 2882,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.558333930999652,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 16,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 2933,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.6101173649985867,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 19,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 2985,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.662047252000775,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 22,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3037,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.7138616670017655,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 25,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3089,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.7659086730018316,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 28,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3141,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.816202746002091,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 31,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3191,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.8692412939999485,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 35,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3244,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.9212741859992093,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 38,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3296,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 3.972958590999042,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 42,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3348,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.025157873998978,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 45,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3400,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.088683107001998,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 49,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3464,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.153126559001976,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 52,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3528,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.212047295000957,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 56,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3587,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.263981017000333,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 60,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3639,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.316502976002084,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 63,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3692,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.368120590999752,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 66,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3743,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.425354689999949,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 69,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3801,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.482524903000012,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 73,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3858,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.53468803999931,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 76,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3910,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.586122011001862,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 79,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 3961,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.6382429850018525,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 82,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4013,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.688491198001429,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 85,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4064,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.741962536001665,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 89,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4117,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.793778059000033,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 92,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4169,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.845627916998637,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 95,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4221,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.897507153000333,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 99,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4273,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 4.949148417999822,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 102,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4324,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.001224612999067,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 105,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4376,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.0515330330017605,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 108,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4427,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.104515719001938,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 112,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4480,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.156558176000544,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 115,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4532,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.208558790000097,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 119,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4584,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.260803570999997,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 122,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4636,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.3122619450005,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 126,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4687,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.364289894001558,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 129,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4739,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.429904617998545,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 132,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4805,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.489971999999398,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 136,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4865,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.54167063299974,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 140,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4917,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.596644285000366,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 143,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 4972,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.6469897070019215,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 146,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5022,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.697943939001561,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 150,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5073,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.7500991449996945,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 153,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5125,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.801937354000984,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 156,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5177,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.853439479000372,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 159,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5229,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.904755105999357,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 163,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5280,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 5.957044542999938,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 166,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5332,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.009104354001465,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 169,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5384,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.059628519000398,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 172,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5435,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.1124037689987745,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 176,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5488,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.164506692999566,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 179,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5540,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.214845406000677,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 182,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5590,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.268319322000025,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 186,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5643,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.320107220999489,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 189,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5695,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.371577875001094,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 192,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5747,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.423677462000342,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 196,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5799,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.475721329999942,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 199,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5851,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.527834716998768,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 202,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5903,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.5828658630016434,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 205,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 5958,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.642217107000761,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 209,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6017,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.694623256000341,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 212,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6070,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.746096170001692,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 215,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6121,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.798603637002088,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 219,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6174,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.850526999001886,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 222,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6226,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.902248671001871,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 225,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6277,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 6.954522667001584,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 228,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6330,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.006766188002075,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 231,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6382,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.058395758998813,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 234,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6434,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.110599419000209,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 237,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6486,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.161646683001891,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 239,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6537,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.22819562299992,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 243,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6603,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.279169682999054,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 246,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6654,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.330437090000487,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 249,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6706,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.3807282369998575,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 252,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6756,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.432250746998761,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 256,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6807,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.484681027999613,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 259,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6860,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.540395856998657,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 261,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6916,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.599205075999635,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 265,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 6974,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.656179098001303,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 268,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7031,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.713723159999063,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 272,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7089,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.765758233999804,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 275,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7141,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.8191603849991225,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 278,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7194,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.869529293999221,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 282,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7245,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.922091658001591,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 285,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7297,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 7.973731844998838,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 289,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7349,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.025943276999897,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 292,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7401,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.07684583399896,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 295,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7452,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.129863640999247,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 299,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7505,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.184571585999947,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 302,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7560,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.247651558001962,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 306,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7623,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.30303626100067,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 309,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7678,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.35352364999926,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 312,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7729,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.410072888000286,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 316,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7785,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.460662243000115,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 319,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7836,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.514268038001319,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 323,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7889,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.570910770999035,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 326,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 7946,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.628715055001521,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 330,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8004,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.68900305400166,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 333,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8064,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.742411702001846,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 337,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8118,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.794722549999278,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 340,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8170,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.85410523199971,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 343,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8229,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.908776282998588,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 347,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8284,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 8.961331414000597,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 350,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8336,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.011868211000547,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 353,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8387,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.065140039001562,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 357,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8440,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.120611490001465,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 360,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8496,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.180069496000215,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 364,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8555,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.232226744999934,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 368,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8607,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.28474056399864,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 371,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8660,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.336911156999122,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 374,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8712,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.38910013900022,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 377,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8764,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.439501658001973,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 380,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8815,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.493000270998891,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 384,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8868,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.54515615100172,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 387,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8920,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.596075197001483,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 390,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 8971,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.65027281500079,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 393,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9025,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.701578225998674,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 396,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9077,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.753167419999954,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 400,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9128,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.80553998799951,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 403,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9181,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.857511407000857,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 406,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9233,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.910023307998927,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 409,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9285,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 9.961712742999225,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 412,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9337,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.013981191001221,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 416,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9389,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.065902469999855,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 419,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9441,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.118069187999936,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 422,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9493,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.168846324999322,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 425,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9544,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.22257155600164,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 429,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9598,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.274442263002129,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 432,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9650,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.32641813400187,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 435,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9702,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.38132385499921,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 438,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9756,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.441387675000442,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 442,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9816,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.494158796998818,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 445,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9869,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.54583401399941,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 448,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9921,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.597472059998836,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 451,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 9973,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.64905108899984,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 454,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10024,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.705701885999588,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 456,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10081,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.758025695999095,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 459,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10133,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.80885078999927,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 462,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10184,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.874655401999917,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 466,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10250,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.929458878999867,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 469,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10305,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 10.984404737999284,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 472,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10360,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.034888267000497,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 476,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10410,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.086053301001812,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 478,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10461,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.138035364001553,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 482,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10513,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.190007699999114,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 485,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10565,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.242305734998808,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 488,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10617,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.294505541001854,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 490,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10670,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.346484392001003,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 493,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10722,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.398623651999515,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 496,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10774,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.4506554590007,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 499,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10826,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.50280125900099,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 502,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n##",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10878,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.55382257400197,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 505,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10929,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.604657892999967,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 508,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 10980,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 11.656712840998807,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 511,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## ",
+          "done": false,
+          "finishReason": "",
+          "firstContentMs": 2099,
+          "elapsedMs": 11032,
+          "visionMs": 0,
+          "prefillMs": 0,
+          "decodeMs": 0,
+          "outputTokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "seconds": 12.26040662000014,
+    "beforeReturn": true,
+    "stream": {
+      "revision": 514,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": true,
+          "finishReason": "truncated",
+          "firstContentMs": 2099,
+          "elapsedMs": 11065,
+          "visionMs": 702,
+          "prefillMs": 1377,
+          "decodeMs": 8725,
+          "outputTokens": 512
+        }
+      ]
+    }
+  }
+]

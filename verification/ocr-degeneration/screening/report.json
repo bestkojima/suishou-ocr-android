@@ -1,0 +1,633 @@
+{
+  "environment": "Linux x86_64 同源 Android 生产适配，真实模型；非设备复现",
+  "library": "/tmp/suishou-ocr-075/host-release-no-mmap/docprase/libdococr_c.so",
+  "librarySha256": "1205ae28a86810cf66b5759fce60e52ccb2aac9c4c87b3a0acb96cce38b2a62b",
+  "threads": 4,
+  "maxNewTokens": 512,
+  "predicate": "同一连续片段≥6次且总计≥32个非空白字符，基于原始生成流",
+  "diagnosticCancellation": true,
+  "config": {
+    "schema_version": "1.0",
+    "mode": "production",
+    "backend": "mnn:pp-doclayout-v3+ovisocr2",
+    "models": {
+      "layout": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/docprase/models/doclayout",
+        "artifacts": [
+          {
+            "path": "PP-DocLayoutV3.mnn",
+            "sha256": "5f1a43441d70f6843012b47eb294bed7edd3d0ef2344f0074700a38cb2e29c67"
+          }
+        ]
+      },
+      "recognition": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/docprase/models/ovis",
+        "artifacts": [
+          {
+            "path": "config.json",
+            "sha256": "b81ac7008ba5f894301b7b9265bba882889df52c6e25c86390514c1bd4afe0c4"
+          },
+          {
+            "path": "llm_config.json",
+            "sha256": "bb0d93883767c2c47de7f6965494c689c9890fffb79e3ca5e00e6f1fa5fd9770"
+          },
+          {
+            "path": "llm.mnn",
+            "sha256": "1da84439dec62e4f966833c54438859e1bdae8a07b03a55c643aabbeb48bc880"
+          },
+          {
+            "path": "llm.mnn.weight",
+            "sha256": "f09832b6ee9d63167ef456e83dea7f5df28e3983953e28b0a1e63e598cb45d32"
+          },
+          {
+            "path": "visual.mnn",
+            "sha256": "d85dbe1c24890bdd514cf35f23d2c0dfdb3d207489f50c05705782759881daa5"
+          },
+          {
+            "path": "visual.mnn.weight",
+            "sha256": "2a1b5138bdc1f6369df64f2b21b379b11f47ec51a46bb74a5013e4b2b9c4aa6d"
+          },
+          {
+            "path": "tokenizer.mtok",
+            "sha256": "1a0c1ee1d04a63791ea87be31bb8c1f6346ecdd9c3b55ccdbb894cea32fbedfa"
+          },
+          {
+            "path": "export_args.json",
+            "sha256": "953745b0456e0e4e3d2d4a0b31dd5a2d4dce632230a0b1d7c0ccfeead2de9334"
+          }
+        ]
+      }
+    },
+    "skills": {
+      "layout.detect": "layout",
+      "ocr.transcribe": "recognition"
+    },
+    "flow": [
+      {
+        "id": "load",
+        "processor": "page_loader",
+        "depends_on": []
+      },
+      {
+        "id": "layout",
+        "skill": "layout.detect",
+        "depends_on": [
+          "load"
+        ]
+      },
+      {
+        "id": "transcribe",
+        "skill": "ocr.transcribe",
+        "depends_on": [
+          "layout"
+        ]
+      },
+      {
+        "id": "assemble",
+        "processor": "document_assembler",
+        "depends_on": [
+          "transcribe"
+        ]
+      },
+      {
+        "id": "export",
+        "processor": "document_exporter",
+        "depends_on": [
+          "assemble"
+        ]
+      }
+    ],
+    "processing": [
+      {
+        "id": "decode",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "rgb_identity",
+        "owner": "none",
+        "enabled": true
+      },
+      {
+        "id": "normalize",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "crop",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "session_reset",
+        "owner": "runtime",
+        "enabled": true
+      },
+      {
+        "id": "deskew",
+        "owner": "none",
+        "enabled": false
+      }
+    ],
+    "platform": {
+      "device": "cpu",
+      "threads": 4
+    },
+    "execution": {
+      "max_page_pixels": 64000000,
+      "max_output_bytes": 67108864,
+      "max_new_tokens": 512,
+      "layout_preprocess": "smartresize_lanczos",
+      "layout_score_threshold": 0.3,
+      "markdown_ignore_labels": [
+        "number",
+        "footnote",
+        "header",
+        "header_image",
+        "footer",
+        "footer_image",
+        "aside_text"
+      ],
+      "show_formula_number": false
+    }
+  },
+  "runs": [
+    {
+      "case": {
+        "id": "low-128",
+        "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/low-128.png",
+        "family": "low-pixels",
+        "expectedText": "随手识别\n模型在本地运行\n预览确认后开始识别",
+        "dimensions": [
+          128,
+          128
+        ],
+        "pixels": 16384,
+        "sha256": "25a5318050f1e0f6bff734b24172313435a64e16fbd42d535c75f4b355840172",
+        "description": "同一清晰输入整体降采样，仅改变图片像素",
+        "source": "control-1000"
+      },
+      "run": 1,
+      "seconds": 6.521814308998728,
+      "nativeReturn": 0,
+      "cancellation": null,
+      "repeat": null,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n\n## 模型在本地运行\n\n## 预览确认后开始识别\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 3513,
+          "elapsedMs": 5166,
+          "visionMs": 119,
+          "prefillMs": 3371,
+          "decodeMs": 1643,
+          "outputTokens": 19
+        }
+      ],
+      "verdict": "NO_REPEAT",
+      "runtime": {
+        "layout_threads": 4,
+        "ovis_threads": 4,
+        "device": "cpu",
+        "sampler": "greedy",
+        "seed": null,
+        "seed_status": "not_configured",
+        "temperature": 0.8,
+        "top_k": 40,
+        "top_p": 0.9,
+        "min_p": 0.05,
+        "tfs_z": 1.0,
+        "typical": 0.95,
+        "repetition_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "penalty_window": 0,
+        "n_gram": 8,
+        "ngram_factor": 1.0,
+        "llm_precision": "low",
+        "llm_memory": "low",
+        "vision_precision": "normal",
+        "vision_memory": "low",
+        "reuse_kv": false,
+        "prompt_cache": false,
+        "use_mmap": false,
+        "kvcache_mmap": false,
+        "async": false,
+        "timeout_ms": 120000,
+        "session_strategy": "shared_model_reset_before_each_region",
+        "prompt_sha256": "de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267"
+      }
+    },
+    {
+      "case": {
+        "id": "low-64",
+        "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/low-64.png",
+        "family": "low-pixels",
+        "expectedText": "随手识别\n模型在本地运行\n预览确认后开始识别",
+        "dimensions": [
+          64,
+          64
+        ],
+        "pixels": 4096,
+        "sha256": "fbf4217d396adebdf12131891426142e2671f417195e15ac3e488d2000aa2ae5",
+        "description": "同一清晰输入整体降采样，仅改变图片像素",
+        "source": "control-1000"
+      },
+      "run": 1,
+      "seconds": 2.392768806999811,
+      "nativeReturn": 0,
+      "cancellation": null,
+      "repeat": null,
+      "regions": [],
+      "verdict": "NOT_REACHED",
+      "runtime": {
+        "layout_threads": 4,
+        "ovis_threads": 4,
+        "device": "cpu",
+        "sampler": "greedy",
+        "seed": null,
+        "seed_status": "not_configured",
+        "temperature": 0.8,
+        "top_k": 40,
+        "top_p": 0.9,
+        "min_p": 0.05,
+        "tfs_z": 1.0,
+        "typical": 0.95,
+        "repetition_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "penalty_window": 0,
+        "n_gram": 8,
+        "ngram_factor": 1.0,
+        "llm_precision": "low",
+        "llm_memory": "low",
+        "vision_precision": "normal",
+        "vision_memory": "low",
+        "reuse_kv": false,
+        "prompt_cache": false,
+        "use_mmap": false,
+        "kvcache_mmap": false,
+        "async": false,
+        "timeout_ms": 120000,
+        "session_strategy": "shared_model_reset_before_each_region",
+        "prompt_sha256": "de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267"
+      }
+    },
+    {
+      "case": {
+        "id": "low-32",
+        "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/low-32.png",
+        "family": "low-pixels",
+        "expectedText": "随手识别\n模型在本地运行\n预览确认后开始识别",
+        "dimensions": [
+          32,
+          32
+        ],
+        "pixels": 1024,
+        "sha256": "60ca0776b3826ac3870789e2202e7c499cf9b47f0f2d2d5e1775e186b3256928",
+        "description": "同一清晰输入整体降采样，仅改变图片像素",
+        "source": "control-1000"
+      },
+      "run": 1,
+      "seconds": 2.095603232999565,
+      "nativeReturn": 0,
+      "cancellation": null,
+      "repeat": null,
+      "regions": [],
+      "verdict": "NOT_REACHED",
+      "runtime": {
+        "layout_threads": 4,
+        "ovis_threads": 4,
+        "device": "cpu",
+        "sampler": "greedy",
+        "seed": null,
+        "seed_status": "not_configured",
+        "temperature": 0.8,
+        "top_k": 40,
+        "top_p": 0.9,
+        "min_p": 0.05,
+        "tfs_z": 1.0,
+        "typical": 0.95,
+        "repetition_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "penalty_window": 0,
+        "n_gram": 8,
+        "ngram_factor": 1.0,
+        "llm_precision": "low",
+        "llm_memory": "low",
+        "vision_precision": "normal",
+        "vision_memory": "low",
+        "reuse_kv": false,
+        "prompt_cache": false,
+        "use_mmap": false,
+        "kvcache_mmap": false,
+        "async": false,
+        "timeout_ms": 120000,
+        "session_strategy": "shared_model_reset_before_each_region",
+        "prompt_sha256": "de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267"
+      }
+    },
+    {
+      "case": {
+        "id": "large-four",
+        "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/large-four.png",
+        "family": "large-glyphs",
+        "expectedText": "随手识别",
+        "dimensions": [
+          1000,
+          1000
+        ],
+        "pixels": 1000000,
+        "sha256": "8d3d6f6537ca577375ed6326a682bb64a222f75235e998c5fa1e60578ca7de14",
+        "description": "100 万像素，仅有 1～4 个大字",
+        "fontSize": 230
+      },
+      "run": 1,
+      "seconds": 5.49054854300266,
+      "nativeReturn": 0,
+      "cancellation": null,
+      "repeat": null,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 2892,
+          "elapsedMs": 4807,
+          "visionMs": 499,
+          "prefillMs": 2373,
+          "decodeMs": 1912,
+          "outputTokens": 5
+        }
+      ],
+      "verdict": "NO_REPEAT",
+      "runtime": {
+        "layout_threads": 4,
+        "ovis_threads": 4,
+        "device": "cpu",
+        "sampler": "greedy",
+        "seed": null,
+        "seed_status": "not_configured",
+        "temperature": 0.8,
+        "top_k": 40,
+        "top_p": 0.9,
+        "min_p": 0.05,
+        "tfs_z": 1.0,
+        "typical": 0.95,
+        "repetition_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "penalty_window": 0,
+        "n_gram": 8,
+        "ngram_factor": 1.0,
+        "llm_precision": "low",
+        "llm_memory": "low",
+        "vision_precision": "normal",
+        "vision_memory": "low",
+        "reuse_kv": false,
+        "prompt_cache": false,
+        "use_mmap": false,
+        "kvcache_mmap": false,
+        "async": false,
+        "timeout_ms": 120000,
+        "session_strategy": "shared_model_reset_before_each_region",
+        "prompt_sha256": "de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267"
+      }
+    },
+    {
+      "case": {
+        "id": "large-two",
+        "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/large-two.png",
+        "family": "large-glyphs",
+        "expectedText": "测试",
+        "dimensions": [
+          1000,
+          1000
+        ],
+        "pixels": 1000000,
+        "sha256": "156f548ab83f0164e0a4164190318d8582184d19770b580ca21cd9414920e6e5",
+        "description": "100 万像素，仅有 1～4 个大字",
+        "fontSize": 440
+      },
+      "run": 1,
+      "seconds": 3.3893829510016076,
+      "nativeReturn": 0,
+      "cancellation": null,
+      "repeat": null,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 测试\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 2153,
+          "elapsedMs": 2208,
+          "visionMs": 964,
+          "prefillMs": 1171,
+          "decodeMs": 54,
+          "outputTokens": 4
+        }
+      ],
+      "verdict": "NO_REPEAT",
+      "runtime": {
+        "layout_threads": 4,
+        "ovis_threads": 4,
+        "device": "cpu",
+        "sampler": "greedy",
+        "seed": null,
+        "seed_status": "not_configured",
+        "temperature": 0.8,
+        "top_k": 40,
+        "top_p": 0.9,
+        "min_p": 0.05,
+        "tfs_z": 1.0,
+        "typical": 0.95,
+        "repetition_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "penalty_window": 0,
+        "n_gram": 8,
+        "ngram_factor": 1.0,
+        "llm_precision": "low",
+        "llm_memory": "low",
+        "vision_precision": "normal",
+        "vision_memory": "low",
+        "reuse_kv": false,
+        "prompt_cache": false,
+        "use_mmap": false,
+        "kvcache_mmap": false,
+        "async": false,
+        "timeout_ms": 120000,
+        "session_strategy": "shared_model_reset_before_each_region",
+        "prompt_sha256": "de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267"
+      }
+    },
+    {
+      "case": {
+        "id": "large-one",
+        "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/large-one.png",
+        "family": "large-glyphs",
+        "expectedText": "识",
+        "dimensions": [
+          1000,
+          1000
+        ],
+        "pixels": 1000000,
+        "sha256": "eddddc743e74eb95749d82da35c011cf06133571457436e4f660c9ff7c0a681c",
+        "description": "100 万像素，仅有 1～4 个大字",
+        "fontSize": 760
+      },
+      "run": 1,
+      "seconds": 13.940201088000322,
+      "nativeReturn": 7,
+      "cancellation": "diagnostic_repeat",
+      "repeat": {
+        "seconds": 3.5127150299995265,
+        "requestId": "reqr0001",
+        "attempt": 1,
+        "unit": "##1",
+        "copies": 11,
+        "compactStart": 3,
+        "repeatedCharacters": 33
+      },
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 口\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n## 1\n\n",
+          "done": true,
+          "finishReason": "truncated",
+          "firstContentMs": 2076,
+          "elapsedMs": 11892,
+          "visionMs": 855,
+          "prefillMs": 1198,
+          "decodeMs": 9578,
+          "outputTokens": 512
+        }
+      ],
+      "verdict": "REPETITION",
+      "runtime": {
+        "layout_threads": 4,
+        "ovis_threads": 4,
+        "device": "cpu",
+        "sampler": "greedy",
+        "seed": null,
+        "seed_status": "not_configured",
+        "temperature": 0.8,
+        "top_k": 40,
+        "top_p": 0.9,
+        "min_p": 0.05,
+        "tfs_z": 1.0,
+        "typical": 0.95,
+        "repetition_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "penalty_window": 0,
+        "n_gram": 8,
+        "ngram_factor": 1.0,
+        "llm_precision": "low",
+        "llm_memory": "low",
+        "vision_precision": "normal",
+        "vision_memory": "low",
+        "reuse_kv": false,
+        "prompt_cache": false,
+        "use_mmap": false,
+        "kvcache_mmap": false,
+        "async": false,
+        "timeout_ms": 120000,
+        "session_strategy": "shared_model_reset_before_each_region",
+        "prompt_sha256": "de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267"
+      }
+    },
+    {
+      "case": {
+        "id": "control-four",
+        "path": "/home/dr/project/android_ocr/verification/ocr-degeneration/fixtures/control-four.png",
+        "family": "control",
+        "expectedText": "随手识别",
+        "dimensions": [
+          1000,
+          1000
+        ],
+        "pixels": 1000000,
+        "sha256": "aa1d8f3ec5d84ca644a8f8347fea74a387389248e5efd9284d393ca8fd7af44e",
+        "description": "与大字四字图相同内容和画布，字号 64",
+        "fontSize": 64
+      },
+      "run": 1,
+      "seconds": 2.250436850001279,
+      "nativeReturn": 0,
+      "cancellation": null,
+      "repeat": null,
+      "regions": [
+        {
+          "threads": 4,
+          "requestId": "reqr0001",
+          "type": "text",
+          "attempt": 1,
+          "raw": "## 随手识别\n",
+          "done": true,
+          "finishReason": "complete",
+          "firstContentMs": 979,
+          "elapsedMs": 1551,
+          "visionMs": 132,
+          "prefillMs": 835,
+          "decodeMs": 570,
+          "outputTokens": 5
+        }
+      ],
+      "verdict": "NO_REPEAT",
+      "runtime": {
+        "layout_threads": 4,
+        "ovis_threads": 4,
+        "device": "cpu",
+        "sampler": "greedy",
+        "seed": null,
+        "seed_status": "not_configured",
+        "temperature": 0.8,
+        "top_k": 40,
+        "top_p": 0.9,
+        "min_p": 0.05,
+        "tfs_z": 1.0,
+        "typical": 0.95,
+        "repetition_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "penalty_window": 0,
+        "n_gram": 8,
+        "ngram_factor": 1.0,
+        "llm_precision": "low",
+        "llm_memory": "low",
+        "vision_precision": "normal",
+        "vision_memory": "low",
+        "reuse_kv": false,
+        "prompt_cache": false,
+        "use_mmap": false,
+        "kvcache_mmap": false,
+        "async": false,
+        "timeout_ms": 120000,
+        "session_strategy": "shared_model_reset_before_each_region",
+        "prompt_sha256": "de9617f877f6110d22adf1a6ba2a96221189dc246fb1fef161e408d37bff5267"
+      }
+    }
+  ],
+  "loadSeconds": 15.161189064998325,
+  "newMmapWeightCaches": []
+}
