@@ -1,0 +1,63 @@
+{
+  "repository": "https://github.com/bestkojima/suishou-ocr-android",
+  "releaseUrl": "https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.6",
+  "releaseId": 407675477,
+  "tag": "v0.7.6",
+  "sourceCommit": "8388588ba2851429dec322e8a4365557b33400af",
+  "versionName": "0.7.6-ocr",
+  "versionCode": 13,
+  "draft": false,
+  "prerelease": true,
+  "publishedAt": "2026-10-09T07:55:59Z",
+  "checkedAt": "2026-10-09T07:57:05.667182+00:00",
+  "releaseNotesMatch": true,
+  "assets": [
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 192,
+      "sha256": "9ce793970c55b50f3944a37ec92f7e68bf71c17ec731e04cb352bdfedd1c10d1",
+      "githubDigest": "sha256:9ce793970c55b50f3944a37ec92f7e68bf71c17ec731e04cb352bdfedd1c10d1",
+      "downloadMatchesLocal": true,
+      "url": "https://github.com/bestkojima/suishou-ocr-android/releases/download/v0.7.6/SHA256SUMS.txt"
+    },
+    {
+      "name": "suishou-ocr-0.7.6-arm64.apk",
+      "size": 50771217,
+      "sha256": "277442d1cf47d6d316be7bf99cfc85aa95ff9ca180a6f6769012038db10ae381",
+      "githubDigest": "sha256:277442d1cf47d6d316be7bf99cfc85aa95ff9ca180a6f6769012038db10ae381",
+      "downloadMatchesLocal": true,
+      "url": "https://github.com/bestkojima/suishou-ocr-android/releases/download/v0.7.6/suishou-ocr-0.7.6-arm64.apk"
+    },
+    {
+      "name": "suishou-ocr-0.7.6-lab-arm64.apk",
+      "size": 50771233,
+      "sha256": "870543693c49ffa3fa437af1c7b663d2b834c6e20b7e5e95dd6282b2c9f8afc7",
+      "githubDigest": "sha256:870543693c49ffa3fa437af1c7b663d2b834c6e20b7e5e95dd6282b2c9f8afc7",
+      "downloadMatchesLocal": true,
+      "url": "https://github.com/bestkojima/suishou-ocr-android/releases/download/v0.7.6/suishou-ocr-0.7.6-lab-arm64.apk"
+    }
+  ],
+  "previousReleasesPreserved": [
+    {
+      "tag": "v0.7.5",
+      "releaseId": 406660545,
+      "url": "https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.5",
+      "assets": [
+        "SHA256SUMS.txt",
+        "suishou-ocr-0.7.5-arm64.apk",
+        "suishou-ocr-0.7.5-lab-arm64.apk"
+      ]
+    },
+    {
+      "tag": "v0.7.4",
+      "releaseId": 405777077,
+      "url": "https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.4",
+      "assets": [
+        "SHA256SUMS.txt",
+        "suishou-ocr-0.7.4-arm64.apk",
+        "suishou-ocr-0.7.4-lab-arm64.apk"
+      ]
+    }
+  ],
+  "deviceAcceptance": "Titan_1 未接通，裁剪交互、真实 OCR、速度及内存待验收"
+}

@@ -1,6 +1,6 @@
 # BUG-005：拍照后的文档裁剪交付
 
-日期：2026-10-09（Asia/Shanghai）。版本 `0.7.6-ocr`／`13`，用户已授权发布 GitHub v0.7.6 预发布并附两版 APK 与修改说明。发布及下载复核结果将在下方记录；保留既有 v0.7.5 和 v0.7.4。
+日期：2026-10-09（Asia/Shanghai）。版本 `0.7.6-ocr`／`13` 已按用户授权发布为 GitHub v0.7.6 预发布，附两版 APK、校验文件与中文修改说明。下载复核通过；保留既有 v0.7.5 和 v0.7.4。
 
 ## 当前行为
 
@@ -48,3 +48,11 @@ python3 tools/verify_ocr_apk.py --require-native-release --require-document-crop
 ## 发布 APK
 
 本地固定副本位于项目 `artifacts/document-crop/release/`：`suishou-ocr-0.7.6-arm64.apk`、`suishou-ocr-0.7.6-lab-arm64.apk` 和 `SHA256SUMS.txt`。应用标识和签名兼容既有安装；旧的本地 BUG-005 测试副本不作为本次发布资产。
+
+## GitHub 发布与下载复核
+
+- [v0.7.6 预发布](https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.6)，发布时间 2026-10-09 15:55:59（Asia/Shanghai），源码提交 `8388588ba2851429dec322e8a4365557b33400af`；`main` 与 v0.7.6 标签已推送。
+- [普通版 APK](https://github.com/bestkojima/suishou-ocr-android/releases/download/v0.7.6/suishou-ocr-0.7.6-arm64.apk)：50,771,217 字节，SHA-256 `277442d1cf47d6d316be7bf99cfc85aa95ff9ca180a6f6769012038db10ae381`。
+- [测试版 APK](https://github.com/bestkojima/suishou-ocr-android/releases/download/v0.7.6/suishou-ocr-0.7.6-lab-arm64.apk)：50,771,233 字节，SHA-256 `870543693c49ffa3fa437af1c7b663d2b834c6e20b7e5e95dd6282b2c9f8afc7`。
+- 两版及 SHA256SUMS.txt 从 GitHub 重新下载，文件大小与 SHA 均与本地及 GitHub 资产摘要一致；公开发布说明与 [release-notes.md](release-notes.md) 一致。结果见 [publication.json](publication.json)。
+- v0.7.5、v0.7.4 及各自三项资产仍保留。BUG-001～004 仍待处理，真机待验收范围已写入发布说明。

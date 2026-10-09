@@ -15,7 +15,7 @@ Status: ready-for-agent
 - [x] [01 原生检测、裁剪与存储](issues/01-native-crop.md)
 - [x] [02 裁剪界面与识别门禁](issues/02-crop-ui.md)
 - [x] [03 构建与验证](issues/03-verification.md)
-- [ ] [04 GitHub 0.7.6 预发布](issues/04-publish-076.md)
+- [x] [04 GitHub 0.7.6 预发布](issues/04-publish-076.md)
 
 
 ## Comments
@@ -23,3 +23,5 @@ Status: ready-for-agent
 2026-10-09：代码与本地验证完成；真机拍摄、触摸及检测效果仍待复测。证据见 `verification/document-crop/DELIVERY.md`。
 
 2026-10-09：用户明确授权发布 GitHub 并说明修改。提升为 `0.7.6-ocr`／13，以 v0.7.6 预发布交付源码、两版 APK 与 SHA256SUMS.txt；原生 Release 与 mmap 关闭约定不变，真机未接通不阻止预发布。
+
+2026-10-09：v0.7.6 预发布完成，源码与标签已推送，两版 APK、SHA256SUMS.txt 和中文修改说明公开；下载 SHA 与本地及 GitHub 摘要一致，旧版保留。真机裁剪效果、性能和内存仍待验收。

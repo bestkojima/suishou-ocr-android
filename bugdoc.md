@@ -121,4 +121,6 @@ Status: ready-for-agent
 
 2026-10-09：用户授权发布至 GitHub；本功能交付版本提升至 `0.7.6-ocr`／13，作为 v0.7.6 预发布，两版沿用原签名并附修改说明及 SHA 校验。
 
+2026-10-09：已发布 [v0.7.6 预发布](https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.6)，上传两版 APK 与 SHA256SUMS.txt，下载复核通过。真机验收继续待办。
+
 任务见 [.scratch/document-crop/spec.md](.scratch/document-crop/spec.md)，详细证据见 [verification/document-crop/DELIVERY.md](verification/document-crop/DELIVERY.md)。其余 BUG 仍保持原记录状态。
