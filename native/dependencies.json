@@ -1,8 +1,8 @@
 {
   "docprase": {
     "repository": "https://github.com/bestkojima/docprase",
-    "localBaseCommit": "c23b4f033b46ce022c23b9f129fd81b8b100c140",
-    "snapshot": "0.7.8 模块化页面流水线已提交源码；删除 core.cpp 转发层，仅复制构建所需目录，不包含模型、构建、测试集或上游文档",
+    "localBaseCommit": "fd8960d6e2f2596dfb77f0c86828127088778624",
+    "snapshot": "0.7.8 模块化页面流水线源码，含已提交的 page_pipeline.cpp 中文学习注释；删除 core.cpp 转发层，仅复制构建所需目录，不包含模型、构建、测试集或上游文档",
     "filesSha256": {
       "CMakeLists.txt": "57298b9eb3fdfba5c6362884b6dc7b114f94565a0abb99f9949bc8e4fc9e56fb",
       "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
@@ -78,7 +78,7 @@
       "src/page_execution.hpp": "507f06ec53455da3a7d985f23a1831ff48aed8622fdf602e8c67b428677a0c45",
       "src/page_identity.cpp": "409d1b1ade4e79c385368862aa1c4e4d86eff9dcf163558a2cfa0bfdf0774175",
       "src/page_identity.hpp": "e69b01662092cc873fe93159eac1209309b4764b1f362e54007afecd7cd37fd9",
-      "src/page_pipeline.cpp": "049c08dedad6ba519a1f9c7aa4eb3a0c74a8a60016ff42cdf0ace612da73206b",
+      "src/page_pipeline.cpp": "3092332072170144885ffa49bd940eaa3b011a1ffc1c39953472e02ade74d709",
       "src/page_pipeline_context.hpp": "de38df38e79e10289ee0fd350a34f9d2ac9264a9951f58036932f31172bae519",
       "src/page_plan.cpp": "67756756b01a6fd03dda01dabd544f6e990ce1e20d913893f46c4527ccf33378",
       "src/page_plan.hpp": "6fe8ab33cac4949ea06864707ee97fc36b8cdf8199d5f95cab9f9ae816de9235",
@@ -109,7 +109,7 @@
       "third_party/stb/stb_image_write.h": "cbd5f0ad7a9cf4468affb36354a1d2338034f2c12473cf1a8e32053cb6914a05",
       "tools/cli.cpp": "6f7dff82dcfcd07dc3293460a6f02849d5023d63b07a96fb7f34aa4dfc6225c5"
     },
-    "sourceCommit": "c23b4f033b46ce022c23b9f129fd81b8b100c140"
+    "sourceCommit": "fd8960d6e2f2596dfb77f0c86828127088778624"
   },
   "mnn": {
     "repository": "https://github.com/bestkojima/MNN.git",
