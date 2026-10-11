@@ -1,0 +1,57 @@
+{
+  "startedAtUtc": "2026-10-09T15:23:05.292575+00:00",
+  "inputPath": "/home/dr/project/android_ocr/verification/ocr-degeneration/user-page-20261009/source.png",
+  "inputDimensions": [
+    6800,
+    9067
+  ],
+  "inputSha256": "0f69c46def894afc60ba0d36901578d9aa65705ad3a9510274e8915fb710f88e",
+  "actualLibraryEvidence": "../normal-page/native-release-evidence.json",
+  "expectedLoadedNativeLibrariesSha256": {
+    "/home/dr/project/MNN/build/libllm.so": "6350e3461088e4531a677db83ee2a54001587e10e228b563423d5623ffc4dd01",
+    "/home/dr/project/MNN/build/libMNN.so": "3dfe05cd51a3916db5da236d44a08f945b4054cfaae7ee1d88d0cc30b7655ded",
+    "/home/dr/project/MNN/build/express/libMNN_Express.so": "058d8669293ce6390d10bafe7f683992114c25da146a0bf250c3e708d9e97e63",
+    "/tmp/ocr-model-pipeline/host/docprase/libdococr_c.so": "826a40b086eed0181f9cb99230ffc4a4513959d5f183bb6a7a2d9f116cae72e4",
+    "/home/dr/project/MNN/build/tools/cv/libMNNOpenCV.so": "91e9bfc4996bb97c70e7e69483e96417826283c5f904f2beb01ed41fd7b3c6be",
+    "/home/dr/project/MNN/build/tools/audio/libMNNAudio.so": "0d26cfaaafa176dd7a77b8d7d8a310e7c7d04196adb40f8d0885303f2bdacc2c"
+  },
+  "modelRuntimeConfigSha256": {
+    "glm": {
+      "ocr_runtime.json": "c2572f7ebd581cfca6b15113b5d4a7dc519586c37ef331ba5d3a698d53069555",
+      "llm_config.json": "552ca5ccd5b8aa3cfd59ff78882775dcb212a972ab8e7a35ee81ee3681d22403"
+    },
+    "ovis": {
+      "ocr_runtime.json": "17dc5e7b875f12bc70abee033dd220cb8e3ff59b11bbcdc70a6f710e725eaf7b",
+      "llm_config.json": "bb0d93883767c2c47de7f6965494c689c9890fffb79e3ca5e00e6f1fa5fd9770"
+    }
+  },
+  "threads": 4,
+  "runsPerModel": 1,
+  "modelOrder": [
+    "glm",
+    "ovis"
+  ],
+  "independentWarmup": false,
+  "clearedOsDiskCache": false,
+  "modelWeightShaRescanned": false,
+  "androidDevice": false,
+  "changesToProductionConfiguration": false,
+  "completedAtUtc": "2026-10-09T15:29:14.282596+00:00",
+  "benchmarkRunnerSha256": "0949ffe4d4d717c7fcadc4829bbcaf68ea524c6c0001b804eec6b907eead7646",
+  "diagnosticCheckerSha256": "424bf52b6c9591e1a5acc98876ef5b3b75ae0a2ef8538241e6a1bdbeecb965f7",
+  "comparisonToolSha256": "341fbcf2765fa406045d0378d800403606b3117c3f77f34888b6a853c378c431",
+  "rawComparisonToPreviousRun": {
+    "glm": {
+      "sameAttemptKeys": true,
+      "allRawOutputsIdenticalToPrevious": true,
+      "changedRawOutputRequests": [],
+      "attempts": 17
+    },
+    "ovis": {
+      "sameAttemptKeys": true,
+      "allRawOutputsIdenticalToPrevious": true,
+      "changedRawOutputRequests": [],
+      "attempts": 18
+    }
+  }
+}

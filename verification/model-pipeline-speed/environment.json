@@ -1,0 +1,58 @@
+{
+  "environment": "Linux x86_64 VirtualBox；CPU 4 线程；无 ADB 设备",
+  "sourceCommit": "bf174e6b86f307f1d6074676bdb79636a86a141c",
+  "mnnCommit": "baaa5a62e9cc6d5b3660e37f8a2608a2d585adc6",
+  "files": [
+    {
+      "path": "/tmp/ocr-model-pipeline/host/docprase/libdococr_c.so",
+      "sha256": "826a40b086eed0181f9cb99230ffc4a4513959d5f183bb6a7a2d9f116cae72e4",
+      "bytes": 1965064
+    },
+    {
+      "path": "/home/dr/project/MNN/build/libMNN.so",
+      "sha256": "3dfe05cd51a3916db5da236d44a08f945b4054cfaae7ee1d88d0cc30b7655ded",
+      "bytes": 3828960
+    },
+    {
+      "path": "/home/dr/project/MNN/build/libllm.so",
+      "sha256": "6350e3461088e4531a677db83ee2a54001587e10e228b563423d5623ffc4dd01",
+      "bytes": 1940976
+    }
+  ],
+  "adapterCompileCommands": [
+    {
+      "directory": "/tmp/ocr-model-pipeline/host",
+      "command": "/usr/bin/c++ -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/MNN/include -I/home/dr/project/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/layout_mnn_backend.cpp.o -c /tmp/ocr-model-pipeline/host/android-engine/layout_mnn_backend.cpp",
+      "file": "/tmp/ocr-model-pipeline/host/android-engine/layout_mnn_backend.cpp",
+      "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_c.dir/__/android-engine/layout_mnn_backend.cpp.o"
+    },
+    {
+      "directory": "/tmp/ocr-model-pipeline/host",
+      "command": "/usr/bin/c++ -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/MNN/include -I/home/dr/project/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o -c /tmp/ocr-model-pipeline/host/android-engine/printed_page_mnn_backend.cpp",
+      "file": "/tmp/ocr-model-pipeline/host/android-engine/printed_page_mnn_backend.cpp",
+      "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o"
+    },
+    {
+      "directory": "/tmp/ocr-model-pipeline/host",
+      "command": "/usr/bin/c++ -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/MNN/include -I/home/dr/project/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/home/dr/project/android_ocr/app/src/main/cpp/android_recognition_stream.cpp.o -c /home/dr/project/android_ocr/app/src/main/cpp/android_recognition_stream.cpp",
+      "file": "/home/dr/project/android_ocr/app/src/main/cpp/android_recognition_stream.cpp",
+      "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_c.dir/home/dr/project/android_ocr/app/src/main/cpp/android_recognition_stream.cpp.o"
+    }
+  ],
+  "nativeBuildType": "Release",
+  "modelWeightShaRescanned": false,
+  "runsPerModel": 1,
+  "independentWarmup": false,
+  "clearedOsDiskCache": false,
+  "inputPolicy": "original",
+  "inputDimensions": [
+    6800,
+    9067
+  ],
+  "benchmarkRunnerSha256": "6404d885d0902b21b655bdff87ac2fb0b97ede9787374c859593d5fda557e9e9",
+  "modelOrder": [
+    "glm",
+    "ovis"
+  ],
+  "reportGeneratedAtUtc": "2026-10-09T15:00:43.433421+00:00"
+}

@@ -1,0 +1,3 @@
+ovis: 4 次均 ok／normal、无重试；版面框一致；真实流与保存尝试一致；27 项资源完整；Markdown SHA 稳定；mmap=false；实际原生库 SHA 与编译证据一致
+glm: 4 次均 ok／normal、无重试；版面框一致；真实流与保存尝试一致；27 项资源完整；Markdown SHA 稳定；mmap=false；实际原生库 SHA 与编译证据一致
+正常页面准入检查拒绝之前实际异常扫描页：正常页有异常停止，不能归入正常页面比较

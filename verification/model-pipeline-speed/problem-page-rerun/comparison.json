@@ -1,0 +1,156 @@
+{
+  "environment": "Linux x86_64 VirtualBox，同源 Android 原生完整流水线；非安卓设备或 UI 计时",
+  "inputSha256": "0f69c46def894afc60ba0d36901578d9aa65705ad3a9510274e8915fb710f88e",
+  "inputDimensions": [
+    6800,
+    9067
+  ],
+  "librarySha256": "826a40b086eed0181f9cb99230ffc4a4513959d5f183bb6a7a2d9f116cae72e4",
+  "threads": 4,
+  "runsPerModel": 1,
+  "independentWarmup": false,
+  "clearedOsDiskCache": false,
+  "sameLayoutCandidatesAndBoxes": true,
+  "layoutCanvas": [
+    800,
+    800
+  ],
+  "pipelineScope": "完整 PNG 的内存输入→解码→800画布版面检测→原图区域裁剪→视觉适配→识别与重试→DocumentIR/Markdown组装→作业恢复；文件保存另计",
+  "models": {
+    "glm": {
+      "modelName": "GLM-OCR",
+      "status": "ok",
+      "engineReused": false,
+      "loadingSeconds": 6.048622687999341,
+      "pipelineSeconds": 103.76581740200072,
+      "firstContentFromPipelineStartSeconds": 20.138040911000644,
+      "saveResultsSeconds": 0.025966672000322433,
+      "loadingPlusPipelinePlusSavingSeconds": 109.84040676200038,
+      "pipelineTimingsMs": {
+        "decode": 1635,
+        "layout": 2164,
+        "recognition": 89165,
+        "export": 148
+      },
+      "recognitionRegions": 17,
+      "attempts": 17,
+      "retriedRegions": [],
+      "notNormalRegions": [],
+      "lastAttemptPhasesMs": {
+        "visionMs": 68042,
+        "prefillMs": 11398,
+        "decodeMs": 8852,
+        "elapsedMs": 89126
+      },
+      "lastAttemptPhasesScope": "每个生成区域的最后一次尝试；重试前阶段不含在此合计中",
+      "outputTokensLastAttempts": 707,
+      "memoryAfterLoading": {
+        "rssBytes": 2151788544,
+        "processPeakRssBytes": 2151600128
+      },
+      "memoryAfterRecognition": {
+        "rssBytes": 2741473280,
+        "processPeakRssBytes": 3119935488
+      },
+      "useMmap": false,
+      "kvCacheMmap": false,
+      "sampler": "greedy",
+      "sessionStrategy": "shared_model_reset_before_each_region",
+      "savedAssets": 41,
+      "commonNormalRegionsPhasesMs": {
+        "visionMs": 54837,
+        "prefillMs": 9255,
+        "decodeMs": 7325
+      }
+    },
+    "ovis": {
+      "modelName": "OvisOCR2",
+      "status": "partial",
+      "engineReused": false,
+      "loadingSeconds": 3.3767118199994,
+      "pipelineSeconds": 148.43369597899982,
+      "firstContentFromPipelineStartSeconds": 14.55855494000025,
+      "saveResultsSeconds": 0.019981335000011313,
+      "loadingPlusPipelinePlusSavingSeconds": 151.83038913399923,
+      "pipelineTimingsMs": {
+        "decode": 244,
+        "layout": 962,
+        "recognition": 135138,
+        "export": 141
+      },
+      "recognitionRegions": 17,
+      "attempts": 18,
+      "retriedRegions": [
+        "reqr0014"
+      ],
+      "notNormalRegions": [
+        "reqr0009",
+        "reqr0013",
+        "reqr0014"
+      ],
+      "lastAttemptPhasesMs": {
+        "visionMs": 10436,
+        "prefillMs": 17612,
+        "decodeMs": 93756,
+        "elapsedMs": 125034
+      },
+      "lastAttemptPhasesScope": "每个生成区域的最后一次尝试；重试前阶段不含在此合计中",
+      "outputTokensLastAttempts": 5733,
+      "memoryAfterLoading": {
+        "rssBytes": 1565282304,
+        "processPeakRssBytes": 1804775424
+      },
+      "memoryAfterRecognition": {
+        "rssBytes": 1901207552,
+        "processPeakRssBytes": 3009773568
+      },
+      "useMmap": false,
+      "kvCacheMmap": false,
+      "sampler": "greedy",
+      "sessionStrategy": "shared_model_reset_before_each_region",
+      "savedAssets": 41,
+      "commonNormalRegionsPhasesMs": {
+        "visionMs": 8568,
+        "prefillMs": 14696,
+        "decodeMs": 9521
+      }
+    }
+  },
+  "pipelineComparison": {
+    "ovisOverGlm": 1.430468141584146,
+    "glmSavedSeconds": 44.6678785769991,
+    "glmSavedPercentOfOvis": 30.09281570629262
+  },
+  "bothNormalRegionsSubset": {
+    "requestIds": [
+      "reqr0001",
+      "reqr0002",
+      "reqr0003",
+      "reqr0004",
+      "reqr0005",
+      "reqr0006",
+      "reqr0007",
+      "reqr0008",
+      "reqr0010",
+      "reqr0011",
+      "reqr0012",
+      "reqr0015",
+      "reqr0016",
+      "reqr0017"
+    ],
+    "count": 14,
+    "seconds": {
+      "glm": 72.132,
+      "ovis": 33.486
+    },
+    "glmOverOvis": 2.154094248342591,
+    "scope": "由本次完整运行中双方均正常停止的相同区域派生；不是额外单区域实验，不含整页公共步骤"
+  },
+  "limitations": [
+    "每模型一次，无独立预热和三次中位数；顺序为 GLM 后 Ovis，未清空系统缓存",
+    "模型目录的提示词、视觉 token/模板不同；测量的是当前各自适配的实际流水线",
+    "正常停止不等于识别内容或准确率通过验收",
+    "阶段 vision/prefill/decode 合计仅含每区最后一次尝试，不能排除重试前阶段后再称全程合计",
+    "峰值为包含输入、模型、真实流采集和导出的整个进程 RSS，不能当作 Android 模型独立占用"
+  ]
+}

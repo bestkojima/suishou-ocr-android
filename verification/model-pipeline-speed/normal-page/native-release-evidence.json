@@ -1,0 +1,263 @@
+{
+  "environment": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+  "mnnCommit": "baaa5a62e9cc6d5b3660e37f8a2608a2d585adc6",
+  "buildType": "Release",
+  "actualMappedLibraries": {
+    "/home/dr/project/MNN/build/libllm.so": {
+      "sha256": "6350e3461088e4531a677db83ee2a54001587e10e228b563423d5623ffc4dd01",
+      "bytes": 1940976,
+      "elfBuildId": "b989d5bbc9285634edfeb8c402c0c29b5dc89a1e"
+    },
+    "/home/dr/project/MNN/build/libMNN.so": {
+      "sha256": "3dfe05cd51a3916db5da236d44a08f945b4054cfaae7ee1d88d0cc30b7655ded",
+      "bytes": 3828960,
+      "elfBuildId": "43e048cc44bfa2895756c2e7858a43def4761276"
+    },
+    "/home/dr/project/MNN/build/express/libMNN_Express.so": {
+      "sha256": "058d8669293ce6390d10bafe7f683992114c25da146a0bf250c3e708d9e97e63",
+      "bytes": 1199848,
+      "elfBuildId": "fc009ebf21c551f34bbdc47efd15f8a6bacf3ec8"
+    },
+    "/tmp/ocr-model-pipeline/host/docprase/libdococr_c.so": {
+      "sha256": "826a40b086eed0181f9cb99230ffc4a4513959d5f183bb6a7a2d9f116cae72e4",
+      "bytes": 1965064,
+      "elfBuildId": "4c4484a8ab42d9d13716544cd8c659f627799225"
+    },
+    "/home/dr/project/MNN/build/tools/cv/libMNNOpenCV.so": {
+      "sha256": "91e9bfc4996bb97c70e7e69483e96417826283c5f904f2beb01ed41fd7b3c6be",
+      "bytes": 433824,
+      "elfBuildId": "ecdf5ea83d1f9611dfc8fbbd741e350cb824ef18"
+    },
+    "/home/dr/project/MNN/build/tools/audio/libMNNAudio.so": {
+      "sha256": "0d26cfaaafa176dd7a77b8d7d8a310e7c7d04196adb40f8d0885303f2bdacc2c",
+      "bytes": 94552,
+      "elfBuildId": "6c4a196654317a0ec658fefbdb1c2b3f7024eb82"
+    }
+  },
+  "mnnTargetCompileFlags": {
+    "MNN": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNN.dir/flags.make",
+      "evidence": "compile-flags/MNN.flags.make",
+      "parameters": [
+        "ASM_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_EXPORTS -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "ASM_FLAGS =  -fvisibility=hidden -O3 -DNDEBUG -fPIC   -fPIC",
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_EXPORTS -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11 -fPIC   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNAVX": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNNAVX.dir/flags.make",
+      "evidence": "compile-flags/MNNAVX.flags.make",
+      "parameters": [
+        "ASM_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "ASM_FLAGS =  -fvisibility=hidden -O3 -DNDEBUG   -fPIC -DMNN_USE_SSE -m64 -mavx2 -DMNN_X86_USE_ASM -DMNN_LOW_MEMORY",
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC -DMNN_USE_SSE -m64 -mavx2 -DMNN_X86_USE_ASM -DMNN_LOW_MEMORY"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNAVXFMA": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNNAVXFMA.dir/flags.make",
+      "evidence": "compile-flags/MNNAVXFMA.flags.make",
+      "parameters": [
+        "ASM_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "ASM_FLAGS =  -fvisibility=hidden -O3 -DNDEBUG   -fPIC -DMNN_USE_SSE -m64 -mavx2 -mfma -DMNN_X86_USE_ASM -DMNN_LOW_MEMORY",
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC -DMNN_USE_SSE -m64 -mavx2 -mfma -DMNN_X86_USE_ASM -DMNN_LOW_MEMORY"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNCPU": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNNCPU.dir/flags.make",
+      "evidence": "compile-flags/MNNCPU.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC -DMNN_USE_SPARSE_COMPUTE -DMNN_USE_SSE"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNCV": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNNCV.dir/flags.make",
+      "evidence": "compile-flags/MNNCV.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNCore": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNNCore.dir/flags.make",
+      "evidence": "compile-flags/MNNCore.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNMath": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNNMath.dir/flags.make",
+      "evidence": "compile-flags/MNNMath.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNSSE": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNNSSE.dir/flags.make",
+      "evidence": "compile-flags/MNNSSE.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC -DMNN_USE_SSE -msse4.1 -DMNN_LOW_MEMORY"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNTransform": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNNTransform.dir/flags.make",
+      "evidence": "compile-flags/MNNTransform.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNUtils": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNNUtils.dir/flags.make",
+      "evidence": "compile-flags/MNNUtils.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNV2Basic.out": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNNV2Basic.out.dir/flags.make",
+      "evidence": "compile-flags/MNNV2Basic.out.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC -DMNN_USE_SSE"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNX8664": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/MNNX8664.dir/flags.make",
+      "evidence": "compile-flags/MNNX8664.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC -DMNN_USE_SSE -DMNN_USE_AVX -DMNN_LOW_MEMORY"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "llm": {
+      "source": "/home/dr/project/MNN/build/CMakeFiles/llm.dir/flags.make",
+      "evidence": "compile-flags/llm.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DCPPHTTPLIB_NO_EXCEPTIONS -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_HTTP_RESOURCE -DLLM_SUPPORT_VISION -DLLM_USE_JINJA -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL -Dllm_EXPORTS",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11 -fPIC   -fPIC -fvisibility=default"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNN_Express": {
+      "source": "/home/dr/project/MNN/build/express/CMakeFiles/MNN_Express.dir/flags.make",
+      "evidence": "compile-flags/MNN_Express.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DMNN_Express_EXPORTS -DMNN_GATED_RMS_NORM -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11 -fPIC   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNAudio": {
+      "source": "/home/dr/project/MNN/build/tools/audio/CMakeFiles/MNNAudio.dir/flags.make",
+      "evidence": "compile-flags/MNNAudio.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DMNNAudio_EXPORTS -DMNN_GATED_RMS_NORM -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11 -fPIC   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNCompress": {
+      "source": "/home/dr/project/MNN/build/tools/converter/CMakeFiles/MNNCompress.dir/flags.make",
+      "evidence": "compile-flags/MNNCompress.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DGOOGLE_PROTOBUF_NO_RTTI -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNDump2Json": {
+      "source": "/home/dr/project/MNN/build/tools/converter/CMakeFiles/MNNDump2Json.dir/flags.make",
+      "evidence": "compile-flags/MNNDump2Json.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DGOOGLE_PROTOBUF_NO_RTTI -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNRevert2Buffer": {
+      "source": "/home/dr/project/MNN/build/tools/converter/CMakeFiles/MNNRevert2Buffer.dir/flags.make",
+      "evidence": "compile-flags/MNNRevert2Buffer.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DGOOGLE_PROTOBUF_NO_RTTI -DLLM_SUPPORT_AUDIO -DLLM_SUPPORT_VISION -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    },
+    "MNNOpenCV": {
+      "source": "/home/dr/project/MNN/build/tools/cv/CMakeFiles/MNNOpenCV.dir/flags.make",
+      "evidence": "compile-flags/MNNOpenCV.flags.make",
+      "parameters": [
+        "CXX_DEFINES = -DMNNOpenCV_EXPORTS -DMNN_CALIB3D -DMNN_CVCORE -DMNN_GATED_RMS_NORM -DMNN_IMGCODECS -DMNN_IMGPROC_DRAW -DMNN_LOW_MEMORY -DMNN_SUPPORT_DEPRECATED_OPV2 -DMNN_SUPPORT_QUANT_EXTEND -DMNN_SUPPORT_TRANSFORMER_FUSE -DMNN_USE_THREAD_POOL",
+        "CXX_FLAGS =  -std=c++11 -D__STRICT_ANSI__ -O3 -fvisibility-inlines-hidden -fvisibility=hidden -fomit-frame-pointer -funwind-tables -fstrict-aliasing -ffunction-sections -fdata-sections -fno-rtti -fno-exceptions  -O3 -DNDEBUG -std=gnu++11 -fPIC   -fPIC"
+      ],
+      "lastOptimization": "-O3",
+      "ndebug": true,
+      "debugMacros": false
+    }
+  },
+  "adapterCompileCommands": "compile_commands.json",
+  "adapterTranslationUnits": 23,
+  "allCheckedLastOptimization": "-O3",
+  "allCheckedNdebug": true,
+  "mnnDebugMacros": false,
+  "sameAdapterHashAsPreviousRun": true,
+  "previousEnvironmentEvidence": "../environment.json",
+  "scope": "实际动态加载路径与 SHA；现有构建目录的最终编译参数证据。未重新编译、未扫描模型权重。",
+  "sameMnnAndLlmHashesAsPreviousRun": true
+}

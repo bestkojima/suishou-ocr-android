@@ -1,0 +1,140 @@
+[
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/core.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/core.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/core.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/core.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/sha256.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/sha256.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/sha256.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/sha256.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/layout_preprocess.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/layout_preprocess.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/layout_preprocess.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/layout_preprocess.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/visual_adaptation.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/visual_adaptation.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/visual_adaptation.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/visual_adaptation.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/table_parser.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/table_parser.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/table_parser.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/table_parser.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/output_assessment.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/output_assessment.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/output_assessment.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/output_assessment.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/region_recognition.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/region_recognition.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/region_recognition.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/region_recognition.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/region_structure.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/region_structure.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/region_structure.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/region_structure.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/layout_region_policy.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/layout_region_policy.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/layout_region_policy.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/layout_region_policy.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/label_export_policy.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/label_export_policy.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/label_export_policy.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/label_export_policy.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/markdown.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/markdown.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/markdown.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/markdown.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/pdf_renderer.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/pdf_renderer.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/pdf_renderer.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/pdf_renderer.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/pdf_job.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/pdf_job.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/pdf_job.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/pdf_job.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/src/formula_scripts.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/formula_scripts.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/formula_scripts.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/src/formula_scripts.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_core.dir/__/android-engine/config.cpp.o -c /tmp/ocr-model-pipeline/host/android-engine/config.cpp",
+    "file": "/tmp/ocr-model-pipeline/host/android-engine/config.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_core.dir/__/android-engine/config.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/MNN/include -I/home/dr/project/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/src/production_backend.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/production_backend.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/production_backend.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_c.dir/src/production_backend.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/MNN/include -I/home/dr/project/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/abi.cpp.o -c /tmp/ocr-model-pipeline/host/android-engine/abi.cpp",
+    "file": "/tmp/ocr-model-pipeline/host/android-engine/abi.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_c.dir/__/android-engine/abi.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/MNN/include -I/home/dr/project/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/layout_mnn_backend.cpp.o -c /tmp/ocr-model-pipeline/host/android-engine/layout_mnn_backend.cpp",
+    "file": "/tmp/ocr-model-pipeline/host/android-engine/layout_mnn_backend.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_c.dir/__/android-engine/layout_mnn_backend.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/MNN/include -I/home/dr/project/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o -c /tmp/ocr-model-pipeline/host/android-engine/printed_page_mnn_backend.cpp",
+    "file": "/tmp/ocr-model-pipeline/host/android-engine/printed_page_mnn_backend.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_c.dir/__/android-engine/printed_page_mnn_backend.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -DDOCOCR_BUILDING -DDOCOCR_HAS_LLM=1 -DDOCOCR_HAS_MNN=1 -DDOCOCR_SHARED -Ddococr_c_EXPORTS -I/home/dr/project/MNN/include -I/home/dr/project/MNN/transformers/llm/engine/include -I/home/dr/project/android_ocr/native/docprase/third_party/stb -I/home/dr/project/android_ocr/native/docprase/include -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party -I/home/dr/project/android_ocr/app/src/main/cpp -O3 -DNDEBUG -std=c++17 -fPIC -o docprase/CMakeFiles/dococr_c.dir/home/dr/project/android_ocr/app/src/main/cpp/android_recognition_stream.cpp.o -c /home/dr/project/android_ocr/app/src/main/cpp/android_recognition_stream.cpp",
+    "file": "/home/dr/project/android_ocr/app/src/main/cpp/android_recognition_stream.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_c.dir/home/dr/project/android_ocr/app/src/main/cpp/android_recognition_stream.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -DDOCOCR_SHARED -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/include -O3 -DNDEBUG -std=c++17 -o docprase/CMakeFiles/dococr_cli.dir/tools/cli.cpp.o -c /home/dr/project/android_ocr/native/docprase/tools/cli.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/tools/cli.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_cli.dir/tools/cli.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -DDOCOCR_SHARED -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/include -O3 -DNDEBUG -std=c++17 -o docprase/CMakeFiles/dococr_cli.dir/src/reexport.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/reexport.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/reexport.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_cli.dir/src/reexport.cpp.o"
+  },
+  {
+    "directory": "/tmp/ocr-model-pipeline/host",
+    "command": "/usr/bin/c++ -DDOCOCR_SHARED -I/home/dr/project/android_ocr/native/docprase/src -I/home/dr/project/android_ocr/native/docprase/third_party/nlohmann -I/tmp/ocr-model-pipeline/host/docprase/generated -I/home/dr/project/android_ocr/native/docprase/include -O3 -DNDEBUG -std=c++17 -o docprase/CMakeFiles/dococr_cli.dir/src/schema_validator.cpp.o -c /home/dr/project/android_ocr/native/docprase/src/schema_validator.cpp",
+    "file": "/home/dr/project/android_ocr/native/docprase/src/schema_validator.cpp",
+    "output": "/tmp/ocr-model-pipeline/host/docprase/CMakeFiles/dococr_cli.dir/src/schema_validator.cpp.o"
+  }
+]

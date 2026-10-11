@@ -87,6 +87,16 @@ Status: needs-triage
 
 配置、证据及局限见 [GLM-OCR 交付记录](verification/glm-ocr/DELIVERY.md)。
 
+### 2026-10-09：正常样页比较之后，再次复测原始异常扫描页
+
+保持同一 `-O3 -DNDEBUG` 原生库、原图、CPU 4 线程、mmap=false 和原生产配置，两模型再次各完整运行一次。
+
+- Ovis 仍在相同三处异常：第 9 题后日期循环 48 次、Directions 后递增空编号至 107、标题后句点循环 248 个；4096 token 重试后仍有 2040 个句点。17 区中 14 区正常，3 区异常、1 区重试，文档 partial，整页 148.43 s。
+- GLM 17 区均正常、无重试，未复现上述异常续写，整页 103.77 s。没有用“正常停止”替代全字符准确率验收。
+- 两模型各区域、各尝试全部原始输出与之前完整流水线对照逐字相同；三个异常均在真实流生成、作业返回前出现。`-O3` 已启用也仍复现，未修改采样、prompt、分辨率或重试，BUG-002 继续未关闭。
+
+证据见 [异常原图再次完整对照](verification/model-pipeline-speed/problem-page-rerun/DELIVERY.md)。Linux 单次实测，Titan_1 仍待验收；原因未确认。
+
 ## BUG-003：相机预览可见范围与实际拍摄结果不一致
 
 Status: needs-triage

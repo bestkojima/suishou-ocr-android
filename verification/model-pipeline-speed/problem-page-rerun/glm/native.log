@@ -1,0 +1,21 @@
+OCR model load: 2130 ms, success=1, mmap=0
+observed real stream started
+REGION reqr0001 attempt=1 6.192s stop=complete
+REGION reqr0002 attempt=1 5.459s stop=complete
+REGION reqr0003 attempt=1 5.183s stop=complete
+REGION reqr0004 attempt=1 5.276s stop=complete
+REGION reqr0005 attempt=1 5.298s stop=complete
+REGION reqr0006 attempt=1 5.511s stop=complete
+REGION reqr0007 attempt=1 5.806s stop=complete
+REGION reqr0008 attempt=1 5.399s stop=complete
+REGION reqr0009 attempt=1 5.685s stop=complete
+REGION reqr0010 attempt=1 5.299s stop=complete
+REGION reqr0011 attempt=1 5.321s stop=complete
+REGION reqr0012 attempt=1 2.058s stop=complete
+REGION reqr0013 attempt=1 5.652s stop=complete
+REGION reqr0014 attempt=1 5.689s stop=complete
+REGION reqr0015 attempt=1 7.917s stop=complete
+REGION reqr0016 attempt=1 4.880s stop=complete
+PASS real live output: first=20.138s, total=103.766s, snapshots=71
+PASS image 1: engineReused=False, load=6.049s, 17 real blocks
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

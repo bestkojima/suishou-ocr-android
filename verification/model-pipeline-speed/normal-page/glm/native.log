@@ -1,0 +1,46 @@
+OCR model load: 9471 ms, success=1, mmap=0
+observed real stream started
+REGION reqr0001 attempt=1 1.405s stop=complete
+REGION reqr0002 attempt=1 1.183s stop=complete
+REGION reqr0003 attempt=1 1.106s stop=complete
+REGION reqr0004 attempt=1 1.338s stop=complete
+REGION reqr0005 attempt=1 1.072s stop=complete
+REGION reqr0006 attempt=1 1.075s stop=complete
+REGION reqr0007 attempt=1 1.055s stop=complete
+REGION reqr0008 attempt=1 3.700s stop=complete
+PASS real live output: first=4.486s, total=15.154s, snapshots=18
+PASS image 1: engineReused=False, load=12.919s, 10 real blocks
+observed real stream started
+REGION reqr0001 attempt=1 1.359s stop=complete
+REGION reqr0002 attempt=1 1.054s stop=complete
+REGION reqr0003 attempt=1 1.099s stop=complete
+REGION reqr0004 attempt=1 1.067s stop=complete
+REGION reqr0005 attempt=1 1.063s stop=complete
+REGION reqr0006 attempt=1 1.096s stop=complete
+REGION reqr0007 attempt=1 1.009s stop=complete
+REGION reqr0008 attempt=1 3.989s stop=complete
+PASS real live output: first=4.029s, total=13.772s, snapshots=19
+PASS image 2: engineReused=True, load=0.000s, 10 real blocks
+observed real stream started
+REGION reqr0001 attempt=1 1.392s stop=complete
+REGION reqr0002 attempt=1 1.065s stop=complete
+REGION reqr0003 attempt=1 1.033s stop=complete
+REGION reqr0004 attempt=1 1.030s stop=complete
+REGION reqr0005 attempt=1 1.040s stop=complete
+REGION reqr0006 attempt=1 1.030s stop=complete
+REGION reqr0007 attempt=1 1.009s stop=complete
+REGION reqr0008 attempt=1 3.763s stop=complete
+PASS real live output: first=2.070s, total=13.361s, snapshots=17
+PASS image 3: engineReused=True, load=0.000s, 10 real blocks
+observed real stream started
+REGION reqr0001 attempt=1 1.240s stop=complete
+REGION reqr0002 attempt=1 1.023s stop=complete
+REGION reqr0003 attempt=1 1.048s stop=complete
+REGION reqr0004 attempt=1 1.070s stop=complete
+REGION reqr0005 attempt=1 1.030s stop=complete
+REGION reqr0006 attempt=1 1.067s stop=complete
+REGION reqr0007 attempt=1 0.988s stop=complete
+REGION reqr0008 attempt=1 3.447s stop=complete
+PASS real live output: first=3.786s, total=12.779s, snapshots=17
+PASS image 4: engineReused=True, load=0.000s, 10 real blocks
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0

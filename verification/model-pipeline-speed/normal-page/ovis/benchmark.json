@@ -1,0 +1,912 @@
+{
+  "environment": "Linux x86_64，同源 Android 加载适配＋真实模型；非设备推理",
+  "library": "/tmp/ocr-model-pipeline/host/docprase/libdococr_c.so",
+  "librarySha256": "826a40b086eed0181f9cb99230ffc4a4513959d5f183bb6a7a2d9f116cae72e4",
+  "loadedNativeLibrariesSha256": {
+    "/home/dr/project/MNN/build/express/libMNN_Express.so": "058d8669293ce6390d10bafe7f683992114c25da146a0bf250c3e708d9e97e63",
+    "/home/dr/project/MNN/build/libllm.so": "6350e3461088e4531a677db83ee2a54001587e10e228b563423d5623ffc4dd01",
+    "/home/dr/project/MNN/build/libMNN.so": "3dfe05cd51a3916db5da236d44a08f945b4054cfaae7ee1d88d0cc30b7655ded",
+    "/tmp/ocr-model-pipeline/host/docprase/libdococr_c.so": "826a40b086eed0181f9cb99230ffc4a4513959d5f183bb6a7a2d9f116cae72e4",
+    "/home/dr/project/MNN/build/tools/cv/libMNNOpenCV.so": "91e9bfc4996bb97c70e7e69483e96417826283c5f904f2beb01ed41fd7b3c6be",
+    "/home/dr/project/MNN/build/tools/audio/libMNNAudio.so": "0d26cfaaafa176dd7a77b8d7d8a310e7c7d04196adb40f8d0885303f2bdacc2c"
+  },
+  "inputPath": "/home/dr/project/android_ocr/verification/ticket5/source.png",
+  "inputSha256": "c71ed55fd66f249cc6f2435f7986961e1065a804aee57665e48858455143a46d",
+  "modelsVerifiedBeforeLoading": false,
+  "modelIntegrityBoundary": "已准备绑定；本次不扫描权重 SHA",
+  "config": {
+    "schema_version": "1.0",
+    "mode": "production",
+    "backend": "mnn:pp-doclayout-v3+ovisocr2",
+    "models": {
+      "layout": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/docprase/models/doclayout",
+        "artifacts": [
+          {
+            "path": "PP-DocLayoutV3.mnn",
+            "sha256": "5f1a43441d70f6843012b47eb294bed7edd3d0ef2344f0074700a38cb2e29c67"
+          }
+        ]
+      },
+      "recognition": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/docprase/models/ovis",
+        "artifacts": [
+          {
+            "path": "config.json",
+            "sha256": "b81ac7008ba5f894301b7b9265bba882889df52c6e25c86390514c1bd4afe0c4"
+          },
+          {
+            "path": "llm_config.json",
+            "sha256": "bb0d93883767c2c47de7f6965494c689c9890fffb79e3ca5e00e6f1fa5fd9770"
+          },
+          {
+            "path": "llm.mnn",
+            "sha256": "1da84439dec62e4f966833c54438859e1bdae8a07b03a55c643aabbeb48bc880"
+          },
+          {
+            "path": "llm.mnn.weight",
+            "sha256": "f09832b6ee9d63167ef456e83dea7f5df28e3983953e28b0a1e63e598cb45d32"
+          },
+          {
+            "path": "visual.mnn",
+            "sha256": "d85dbe1c24890bdd514cf35f23d2c0dfdb3d207489f50c05705782759881daa5"
+          },
+          {
+            "path": "visual.mnn.weight",
+            "sha256": "2a1b5138bdc1f6369df64f2b21b379b11f47ec51a46bb74a5013e4b2b9c4aa6d"
+          },
+          {
+            "path": "tokenizer.mtok",
+            "sha256": "1a0c1ee1d04a63791ea87be31bb8c1f6346ecdd9c3b55ccdbb894cea32fbedfa"
+          },
+          {
+            "path": "export_args.json",
+            "sha256": "953745b0456e0e4e3d2d4a0b31dd5a2d4dce632230a0b1d7c0ccfeead2de9334"
+          },
+          {
+            "path": "ocr_runtime.json",
+            "sha256": "17dc5e7b875f12bc70abee033dd220cb8e3ff59b11bbcdc70a6f710e725eaf7b"
+          }
+        ]
+      }
+    },
+    "skills": {
+      "layout.detect": "layout",
+      "ocr.transcribe": "recognition"
+    },
+    "flow": [
+      {
+        "id": "load",
+        "processor": "page_loader",
+        "depends_on": []
+      },
+      {
+        "id": "layout",
+        "skill": "layout.detect",
+        "depends_on": [
+          "load"
+        ]
+      },
+      {
+        "id": "transcribe",
+        "skill": "ocr.transcribe",
+        "depends_on": [
+          "layout"
+        ]
+      },
+      {
+        "id": "assemble",
+        "processor": "document_assembler",
+        "depends_on": [
+          "transcribe"
+        ]
+      },
+      {
+        "id": "export",
+        "processor": "document_exporter",
+        "depends_on": [
+          "assemble"
+        ]
+      }
+    ],
+    "processing": [
+      {
+        "id": "decode",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "rgb_identity",
+        "owner": "none",
+        "enabled": true
+      },
+      {
+        "id": "normalize",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "crop",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "session_reset",
+        "owner": "runtime",
+        "enabled": true
+      },
+      {
+        "id": "deskew",
+        "owner": "none",
+        "enabled": false
+      }
+    ],
+    "platform": {
+      "device": "cpu",
+      "threads": 4
+    },
+    "execution": {
+      "max_page_pixels": 64000000,
+      "max_output_bytes": 67108864,
+      "max_new_tokens": 512,
+      "layout_preprocess": "smartresize_lanczos",
+      "layout_score_threshold": 0.3,
+      "markdown_ignore_labels": [
+        "number",
+        "footnote",
+        "header",
+        "header_image",
+        "footer",
+        "footer_image",
+        "aside_text"
+      ],
+      "show_formula_number": false
+    }
+  },
+  "threads": 4,
+  "expectedMmap": false,
+  "memoryBeforeLoading": {
+    "rssBytes": 26120192,
+    "processPeakRssBytes": 27918336
+  },
+  "loads": [
+    {
+      "attempt": 1,
+      "seconds": 11.858753281000645,
+      "engineReused": false,
+      "status": "ok",
+      "blocks": 10,
+      "stream": {
+        "firstLiveSeconds": 14.234754729000088,
+        "totalSeconds": 16.21342455499962,
+        "snapshots": 11,
+        "regions": [
+          {
+            "threads": 4,
+            "requestId": "reqr0001",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 离线文档识别验证\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 3105,
+            "elapsedMs": 4766,
+            "visionMs": 226,
+            "prefillMs": 2868,
+            "decodeMs": 1658,
+            "outputTokens": 7
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0002",
+            "type": "text",
+            "attempt": 1,
+            "raw": "这是一张新生成的单页测试图片。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 1092,
+            "elapsedMs": 1226,
+            "visionMs": 213,
+            "prefillMs": 873,
+            "decodeMs": 129,
+            "outputTokens": 10
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0003",
+            "type": "text",
+            "attempt": 1,
+            "raw": "输入在识别前保存，模型在本地运行。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 919,
+            "elapsedMs": 1088,
+            "visionMs": 111,
+            "prefillMs": 801,
+            "decodeMs": 164,
+            "outputTokens": 12
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0004",
+            "type": "text",
+            "attempt": 1,
+            "raw": "结果包括文字、公式、表格和插图。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 854,
+            "elapsedMs": 1001,
+            "visionMs": 119,
+            "prefillMs": 729,
+            "decodeMs": 142,
+            "outputTokens": 11
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0005",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 能量公式\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 828,
+            "elapsedMs": 888,
+            "visionMs": 95,
+            "prefillMs": 728,
+            "decodeMs": 57,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0006",
+            "type": "formula",
+            "attempt": 1,
+            "raw": "$$ \\mathrm{E}=\\mathrm{mc}^{2} $$\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 810,
+            "elapsedMs": 1035,
+            "visionMs": 87,
+            "prefillMs": 718,
+            "decodeMs": 217,
+            "outputTokens": 16
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0007",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 商品统计\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 808,
+            "elapsedMs": 871,
+            "visionMs": 93,
+            "prefillMs": 706,
+            "decodeMs": 59,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0008",
+            "type": "table",
+            "attempt": 1,
+            "raw": "<table border=1><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 1361,
+            "elapsedMs": 2484,
+            "visionMs": 444,
+            "prefillMs": 904,
+            "decodeMs": 1084,
+            "outputTokens": 76
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0010",
+            "type": "text",
+            "attempt": 1,
+            "raw": "图 1：圆形与三角形\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 875,
+            "elapsedMs": 985,
+            "visionMs": 121,
+            "prefillMs": 748,
+            "decodeMs": 105,
+            "outputTokens": 8
+          }
+        ],
+        "savedAssets": 27,
+        "saveResultsSeconds": 0.020788402000107453,
+        "rawMatchesSavedAttempts": true,
+        "phaseTotalsMs": {
+          "visionMs": 1509,
+          "prefillMs": 9075,
+          "decodeMs": 3615,
+          "elapsedMs": 14344
+        },
+        "phaseTotalsScope": "每个生成区域的最后一次尝试；重试前阶段不含在此合计中",
+        "pipelineTimingsMs": {
+          "decode": 4,
+          "layout": 1709,
+          "recognition": 14345,
+          "export": 4
+        },
+        "pipelineTimingStatus": {
+          "decode": "measured",
+          "layout": "measured",
+          "recognition": "measured",
+          "export": "measured"
+        },
+        "recognitionRegions": 9,
+        "attempts": 9,
+        "retriedRegions": [],
+        "outputTokensLastAttempts": 150,
+        "modelName": "OvisOCR2"
+      },
+      "memory": {
+        "rssBytes": 2399305728,
+        "processPeakRssBytes": 2477289472
+      },
+      "useMmap": false,
+      "markdownSha256": "3b853714ebaf9b97af8390efef7e3e52a6afe9b56eb588f398e260498a7a7f84"
+    },
+    {
+      "attempt": 2,
+      "seconds": 0,
+      "engineReused": true,
+      "status": "ok",
+      "blocks": 10,
+      "stream": {
+        "firstLiveSeconds": 3.276889965999544,
+        "totalSeconds": 11.565188966999813,
+        "snapshots": 22,
+        "regions": [
+          {
+            "threads": 4,
+            "requestId": "reqr0001",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 离线文档识别验证\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 891,
+            "elapsedMs": 982,
+            "visionMs": 133,
+            "prefillMs": 751,
+            "decodeMs": 88,
+            "outputTokens": 7
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0002",
+            "type": "text",
+            "attempt": 1,
+            "raw": "这是一张新生成的单页测试图片。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 1075,
+            "elapsedMs": 1218,
+            "visionMs": 114,
+            "prefillMs": 954,
+            "decodeMs": 138,
+            "outputTokens": 10
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0003",
+            "type": "text",
+            "attempt": 1,
+            "raw": "输入在识别前保存，模型在本地运行。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 882,
+            "elapsedMs": 1046,
+            "visionMs": 119,
+            "prefillMs": 756,
+            "decodeMs": 158,
+            "outputTokens": 12
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0004",
+            "type": "text",
+            "attempt": 1,
+            "raw": "结果包括文字、公式、表格和插图。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 859,
+            "elapsedMs": 1012,
+            "visionMs": 116,
+            "prefillMs": 737,
+            "decodeMs": 148,
+            "outputTokens": 11
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0005",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 能量公式\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 809,
+            "elapsedMs": 869,
+            "visionMs": 95,
+            "prefillMs": 708,
+            "decodeMs": 57,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0006",
+            "type": "formula",
+            "attempt": 1,
+            "raw": "$$ \\mathrm{E}=\\mathrm{mc}^{2} $$\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 818,
+            "elapsedMs": 1059,
+            "visionMs": 87,
+            "prefillMs": 724,
+            "decodeMs": 233,
+            "outputTokens": 16
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0007",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 商品统计\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 854,
+            "elapsedMs": 920,
+            "visionMs": 101,
+            "prefillMs": 746,
+            "decodeMs": 64,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0008",
+            "type": "table",
+            "attempt": 1,
+            "raw": "<table border=1><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 1206,
+            "elapsedMs": 2345,
+            "visionMs": 315,
+            "prefillMs": 878,
+            "decodeMs": 1106,
+            "outputTokens": 76
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0010",
+            "type": "text",
+            "attempt": 1,
+            "raw": "图 1：圆形与三角形\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 902,
+            "elapsedMs": 1007,
+            "visionMs": 114,
+            "prefillMs": 782,
+            "decodeMs": 101,
+            "outputTokens": 8
+          }
+        ],
+        "savedAssets": 27,
+        "saveResultsSeconds": 0.041979528999945614,
+        "rawMatchesSavedAttempts": true,
+        "phaseTotalsMs": {
+          "visionMs": 1194,
+          "prefillMs": 7036,
+          "decodeMs": 2093,
+          "elapsedMs": 10458
+        },
+        "phaseTotalsScope": "每个生成区域的最后一次尝试；重试前阶段不含在此合计中",
+        "pipelineTimingsMs": {
+          "decode": 1,
+          "layout": 950,
+          "recognition": 10459,
+          "export": 3
+        },
+        "pipelineTimingStatus": {
+          "decode": "measured",
+          "layout": "measured",
+          "recognition": "measured",
+          "export": "measured"
+        },
+        "recognitionRegions": 9,
+        "attempts": 9,
+        "retriedRegions": [],
+        "outputTokensLastAttempts": 150,
+        "modelName": "OvisOCR2"
+      },
+      "memory": {
+        "rssBytes": 2413203456,
+        "processPeakRssBytes": 2503061504
+      },
+      "useMmap": false,
+      "markdownSha256": "3b853714ebaf9b97af8390efef7e3e52a6afe9b56eb588f398e260498a7a7f84"
+    },
+    {
+      "attempt": 3,
+      "seconds": 0,
+      "engineReused": true,
+      "status": "ok",
+      "blocks": 10,
+      "stream": {
+        "firstLiveSeconds": 2.5135023520006143,
+        "totalSeconds": 11.044712650000292,
+        "snapshots": 20,
+        "regions": [
+          {
+            "threads": 4,
+            "requestId": "reqr0001",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 离线文档识别验证\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 867,
+            "elapsedMs": 956,
+            "visionMs": 129,
+            "prefillMs": 732,
+            "decodeMs": 85,
+            "outputTokens": 7
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0002",
+            "type": "text",
+            "attempt": 1,
+            "raw": "这是一张新生成的单页测试图片。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 860,
+            "elapsedMs": 996,
+            "visionMs": 117,
+            "prefillMs": 736,
+            "decodeMs": 131,
+            "outputTokens": 10
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0003",
+            "type": "text",
+            "attempt": 1,
+            "raw": "输入在识别前保存，模型在本地运行。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 881,
+            "elapsedMs": 1081,
+            "visionMs": 113,
+            "prefillMs": 761,
+            "decodeMs": 194,
+            "outputTokens": 12
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0004",
+            "type": "text",
+            "attempt": 1,
+            "raw": "结果包括文字、公式、表格和插图。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 924,
+            "elapsedMs": 1073,
+            "visionMs": 123,
+            "prefillMs": 793,
+            "decodeMs": 144,
+            "outputTokens": 11
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0005",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 能量公式\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 834,
+            "elapsedMs": 895,
+            "visionMs": 98,
+            "prefillMs": 730,
+            "decodeMs": 59,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0006",
+            "type": "formula",
+            "attempt": 1,
+            "raw": "$$ \\mathrm{E}=\\mathrm{mc}^{2} $$\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 835,
+            "elapsedMs": 1068,
+            "visionMs": 89,
+            "prefillMs": 740,
+            "decodeMs": 225,
+            "outputTokens": 16
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0007",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 商品统计\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 850,
+            "elapsedMs": 913,
+            "visionMs": 100,
+            "prefillMs": 745,
+            "decodeMs": 61,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0008",
+            "type": "table",
+            "attempt": 1,
+            "raw": "<table border=1><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 1277,
+            "elapsedMs": 2395,
+            "visionMs": 342,
+            "prefillMs": 922,
+            "decodeMs": 1084,
+            "outputTokens": 76
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0010",
+            "type": "text",
+            "attempt": 1,
+            "raw": "图 1：圆形与三角形\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 877,
+            "elapsedMs": 987,
+            "visionMs": 112,
+            "prefillMs": 759,
+            "decodeMs": 106,
+            "outputTokens": 8
+          }
+        ],
+        "savedAssets": 27,
+        "saveResultsSeconds": 0.013817324999763514,
+        "rawMatchesSavedAttempts": true,
+        "phaseTotalsMs": {
+          "visionMs": 1223,
+          "prefillMs": 6918,
+          "decodeMs": 2089,
+          "elapsedMs": 10364
+        },
+        "phaseTotalsScope": "每个生成区域的最后一次尝试；重试前阶段不含在此合计中",
+        "pipelineTimingsMs": {
+          "decode": 1,
+          "layout": 526,
+          "recognition": 10367,
+          "export": 4
+        },
+        "pipelineTimingStatus": {
+          "decode": "measured",
+          "layout": "measured",
+          "recognition": "measured",
+          "export": "measured"
+        },
+        "recognitionRegions": 9,
+        "attempts": 9,
+        "retriedRegions": [],
+        "outputTokensLastAttempts": 150,
+        "modelName": "OvisOCR2"
+      },
+      "memory": {
+        "rssBytes": 2413236224,
+        "processPeakRssBytes": 2508980224
+      },
+      "useMmap": false,
+      "markdownSha256": "3b853714ebaf9b97af8390efef7e3e52a6afe9b56eb588f398e260498a7a7f84"
+    },
+    {
+      "attempt": 4,
+      "seconds": 0,
+      "engineReused": true,
+      "status": "ok",
+      "blocks": 10,
+      "stream": {
+        "firstLiveSeconds": 3.6289026679996823,
+        "totalSeconds": 10.949679792999632,
+        "snapshots": 22,
+        "regions": [
+          {
+            "threads": 4,
+            "requestId": "reqr0001",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 离线文档识别验证\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 863,
+            "elapsedMs": 950,
+            "visionMs": 117,
+            "prefillMs": 739,
+            "decodeMs": 84,
+            "outputTokens": 7
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0002",
+            "type": "text",
+            "attempt": 1,
+            "raw": "这是一张新生成的单页测试图片。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 864,
+            "elapsedMs": 1000,
+            "visionMs": 118,
+            "prefillMs": 738,
+            "decodeMs": 130,
+            "outputTokens": 10
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0003",
+            "type": "text",
+            "attempt": 1,
+            "raw": "输入在识别前保存，模型在本地运行。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 875,
+            "elapsedMs": 1042,
+            "visionMs": 111,
+            "prefillMs": 757,
+            "decodeMs": 161,
+            "outputTokens": 12
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0004",
+            "type": "text",
+            "attempt": 1,
+            "raw": "结果包括文字、公式、表格和插图。\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 888,
+            "elapsedMs": 1044,
+            "visionMs": 112,
+            "prefillMs": 769,
+            "decodeMs": 151,
+            "outputTokens": 11
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0005",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 能量公式\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 839,
+            "elapsedMs": 900,
+            "visionMs": 97,
+            "prefillMs": 735,
+            "decodeMs": 58,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0006",
+            "type": "formula",
+            "attempt": 1,
+            "raw": "$$ \\mathrm{E}=\\mathrm{mc}^{2} $$\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 823,
+            "elapsedMs": 1054,
+            "visionMs": 94,
+            "prefillMs": 723,
+            "decodeMs": 223,
+            "outputTokens": 16
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0007",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 商品统计\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 853,
+            "elapsedMs": 914,
+            "visionMs": 114,
+            "prefillMs": 733,
+            "decodeMs": 59,
+            "outputTokens": 5
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0008",
+            "type": "table",
+            "attempt": 1,
+            "raw": "<table border=1><tr><td>商品</td><td>数量</td><td>金额</td></tr><tr><td>钢笔</td><td>3</td><td>45</td></tr><tr><td>笔记本</td><td>2</td><td>30</td></tr></table>\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 1232,
+            "elapsedMs": 2366,
+            "visionMs": 289,
+            "prefillMs": 930,
+            "decodeMs": 1099,
+            "outputTokens": 76
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0010",
+            "type": "text",
+            "attempt": 1,
+            "raw": "图 1：圆形与三角形\n",
+            "done": true,
+            "finishReason": "complete",
+            "firstContentMs": 860,
+            "elapsedMs": 967,
+            "visionMs": 125,
+            "prefillMs": 729,
+            "decodeMs": 103,
+            "outputTokens": 8
+          }
+        ],
+        "savedAssets": 27,
+        "saveResultsSeconds": 0.011065255999710644,
+        "rawMatchesSavedAttempts": true,
+        "phaseTotalsMs": {
+          "visionMs": 1177,
+          "prefillMs": 6853,
+          "decodeMs": 2068,
+          "elapsedMs": 10237
+        },
+        "phaseTotalsScope": "每个生成区域的最后一次尝试；重试前阶段不含在此合计中",
+        "pipelineTimingsMs": {
+          "decode": 1,
+          "layout": 560,
+          "recognition": 10239,
+          "export": 3
+        },
+        "pipelineTimingStatus": {
+          "decode": "measured",
+          "layout": "measured",
+          "recognition": "measured",
+          "export": "measured"
+        },
+        "recognitionRegions": 9,
+        "attempts": 9,
+        "retriedRegions": [],
+        "outputTokensLastAttempts": 150,
+        "modelName": "OvisOCR2"
+      },
+      "memory": {
+        "rssBytes": 2416726016,
+        "processPeakRssBytes": 2509053952
+      },
+      "useMmap": false,
+      "markdownSha256": "3b853714ebaf9b97af8390efef7e3e52a6afe9b56eb588f398e260498a7a7f84"
+    }
+  ],
+  "memoryAfterLoading": {
+    "rssBytes": 1555578880,
+    "processPeakRssBytes": 1795002368
+  },
+  "temporaryDirectory": {
+    "files": [],
+    "mmapDirectories": []
+  }
+}

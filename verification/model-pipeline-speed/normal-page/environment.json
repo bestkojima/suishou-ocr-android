@@ -1,0 +1,33 @@
+{
+  "recordedAtUtc": "2026-10-09T15:17:34.004488+00:00",
+  "sourceCommit": "bf174e6b86f307f1d6074676bdb79636a86a141c",
+  "nativeEvidence": "native-release-evidence.json",
+  "inputPath": "/home/dr/project/android_ocr/verification/ticket5/source.png",
+  "inputSha256": "c71ed55fd66f249cc6f2435f7986961e1065a804aee57665e48858455143a46d",
+  "benchmarkRunnerSha256": "0949ffe4d4d717c7fcadc4829bbcaf68ea524c6c0001b804eec6b907eead7646",
+  "comparisonToolSha256": "341fbcf2765fa406045d0378d800403606b3117c3f77f34888b6a853c378c431",
+  "engineBindings": {
+    "ovis": "../ovis-config.json",
+    "glm": "../glm-config.json"
+  },
+  "modelRuntimeConfigSha256": {
+    "ovis": {
+      "ocr_runtime.json": "17dc5e7b875f12bc70abee033dd220cb8e3ff59b11bbcdc70a6f710e725eaf7b",
+      "llm_config.json": "bb0d93883767c2c47de7f6965494c689c9890fffb79e3ca5e00e6f1fa5fd9770"
+    },
+    "glm": {
+      "ocr_runtime.json": "c2572f7ebd581cfca6b15113b5d4a7dc519586c37ef331ba5d3a698d53069555",
+      "llm_config.json": "552ca5ccd5b8aa3cfd59ff78882775dcb212a972ab8e7a35ee81ee3681d22403"
+    }
+  },
+  "modelOrder": [
+    "ovis",
+    "glm"
+  ],
+  "warmupRunsPerModel": 1,
+  "timedRunsPerModel": 3,
+  "threads": 4,
+  "modelWeightShaRescanned": false,
+  "clearedOsDiskCache": false,
+  "androidDevice": false
+}

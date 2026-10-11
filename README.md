@@ -2,7 +2,7 @@
 
 Android 本地离线文档识别应用：拍照或导入图片，使用 PP-DocLayoutV3 检测版面，使用 OvisOCR2 或 GLM-OCR 识别文字／表格／公式，模型输出实时显示，并支持校对、历史记录与导出。
 
-当前版本：**0.7.7-ocr**（`versionCode=14`，预发布）。Java + Camera2 + JNI/C++ + MNN，界面使用本地 WebView、React、Streamdown 和 KaTeX。APK不包含模型，首次需要在应用内下载；模型下载完成后，单图识别和结果阅读可离线运行。
+当前版本：**0.7.8-ocr**（`versionCode=15`，预发布）。Java + Camera2 + JNI/C++ + MNN，界面使用本地 WebView、React、Streamdown 和 KaTeX。APK不包含模型，首次需要在应用内下载；模型下载完成后，单图识别和结果阅读可离线运行。
 
 0.7.7 新增模型目录配置驱动的 GLM-OCR 适配与模型切换，Ovis 保持默认，完整保留版面检测和真实流式输出。详见 [GLM-OCR 交付记录](verification/glm-ocr/DELIVERY.md)。
 
@@ -10,10 +10,10 @@ Android 本地离线文档识别应用：拍照或导入图片，使用 PP-DocLa
 
 ## 下载与安装
 
-从 [GitHub Releases](https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.7) 下载：
+从 [GitHub Releases](https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.8) 下载：
 
-- `suishou-ocr-0.7.7-arm64.apk`：普通版，应用ID `cn.local.ocr`。
-- `suishou-ocr-0.7.7-lab-arm64.apk`：测试版，应用ID `cn.local.ocr.test`，可与普通版同时安装。
+- `suishou-ocr-0.7.8-arm64.apk`：普通版，应用ID `cn.local.ocr`。
+- `suishou-ocr-0.7.8-lab-arm64.apk`：测试版，应用ID `cn.local.ocr.test`，可与普通版同时安装。
 - `SHA256SUMS.txt`：安装包校验值。
 
 需要 **Android 8.0 / API 26或以上、arm64-v8a**，及支持现代JavaScript的Android System WebView（Chromium 100+）。本次为预发布，使用开发签名的Debug APK，原生 MNN／docprase／JNI 使用 Release／`-O3`／`NDEBUG`；覆盖安装同类型版本可保留已下载模型和记录。普通版没有测试开关或WebView调试。

@@ -17,4 +17,5 @@ native/mnn-download-*/
 artifacts/*.apk
 artifacts/**/*.apk
 artifacts/releases/
+artifacts/model-pipeline-speed/
 __pycache__/

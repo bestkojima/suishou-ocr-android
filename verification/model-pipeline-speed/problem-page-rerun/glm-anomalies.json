@@ -1,0 +1,64 @@
+{
+  "scope": "固定用户扫描页；三处可见正文末尾判据及全页短片段重复扫描，不等于准确率或通用幻觉验收",
+  "inputSha256": "0f69c46def894afc60ba0d36901578d9aa65705ad3a9510274e8915fb710f88e",
+  "verdict": "NOT_REPRODUCED",
+  "coveredAllThreeVisibleEndings": true,
+  "hasContinuationAnomaly": false,
+  "knownCases": [
+    {
+      "requestId": "reqr0009",
+      "kind": "date",
+      "attempts": [
+        {
+          "attempt": 1,
+          "coveredVisibleEnding": true,
+          "anomaly": null,
+          "stopReason": "normal",
+          "maxNewTokens": 512,
+          "elapsedMs": 5685,
+          "firstAnomalyBeforeReturnSeconds": null,
+          "rawOutput": "9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\nW: I did?\n"
+        }
+      ]
+    },
+    {
+      "requestId": "reqr0013",
+      "kind": "numbers",
+      "attempts": [
+        {
+          "attempt": 1,
+          "coveredVisibleEnding": true,
+          "anomaly": null,
+          "stopReason": "normal",
+          "maxNewTokens": 512,
+          "elapsedMs": 5653,
+          "firstAnomalyBeforeReturnSeconds": null,
+          "rawOutput": "Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the passages. The passages will be read twice but the questions will be spoken only once. When you hear a question, read the four possible answers on your paper and decide which one would be the best answer to the question you have heard.\n"
+        }
+      ]
+    },
+    {
+      "requestId": "reqr0014",
+      "kind": "punctuation",
+      "attempts": [
+        {
+          "attempt": 1,
+          "coveredVisibleEnding": true,
+          "anomaly": null,
+          "stopReason": "normal",
+          "maxNewTokens": 512,
+          "elapsedMs": 5690,
+          "firstAnomalyBeforeReturnSeconds": null,
+          "rawOutput": "Questions 11 through 13 are based on the following passage.\n"
+        }
+      ]
+    }
+  ],
+  "repeatedStrings": [],
+  "notNormalRegions": [],
+  "status": "ok",
+  "pipelineSeconds": 103.76581740200072,
+  "recognitionRegions": 17,
+  "attempts": 17,
+  "retriedRegions": []
+}
