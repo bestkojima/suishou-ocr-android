@@ -1,5 +1,6 @@
 """验证 Android 加载适配源码在 Linux 同源引擎中的加载配置及真实推理；不代表设备验收。"""
 import argparse
+# 冗余标记 R3：加载宿主与 verify_live_ocr.py 重复，合并条件见 docs/STRUCTURE.md。
 import ctypes as c
 import hashlib
 import json

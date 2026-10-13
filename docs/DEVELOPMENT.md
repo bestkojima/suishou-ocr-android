@@ -1,3 +1,5 @@
+> 目录维护更新（2026-10-13）：旧原型已退役，本文链接已指向现存模块；历史行为描述未重写，当前目录与冗余流程见 [STRUCTURE.md](STRUCTURE.md)。
+
 > 0.7.0 更新：单图 JNI 生产后端现已接入。当前构建与作业桥、已执行验证及设备待验收项见 [单图真实 OCR 开发说明](REAL_OCR.md) 与 [分项交付记录](../verification/real-ocr/DELIVERY.md)。下文的“尚未接入”描述属于 0.6.0 及更早版本，PDF/Office OCR 仍未接入。0.7.4 已实现真实模型增量输出、引擎复用、多线程与输入分辨率策略；0.7.5 的 APK 仍为 Debug 变体，原生引擎改为 Release／-O3，并固定关闭 use_mmap／kvcache_mmap；当前发布说明以 README 与 REAL_OCR.md 为准。
 
 # 随手识别：完整开发文档
@@ -70,7 +72,7 @@
 | 发现 | 工程影响 |
 | --- | --- |
 | 现有界面、输入管理、校对和下载已形成完整流程 | 可在此基础上接入推理，不必重新开发整套 UI |
-| `prototypes/ocr-streaming/stream-state.mjs` 仍被正式界面导入 | `prototypes/` 不是可以整体删除的历史目录 |
+| `web/replay-state.mjs` 承载正式界面的结果回放 | 2026-10-13 已迁出旧原型；当前目录见 STRUCTURE.md |
 | 区域 ID 同时关联渲染、校对、顺序及阅读锚点 | 接入真实结果时必须保持稳定 ID，不能按当前位置重编号 |
 | `progress` 表示完成区域的前缀长度 | 移动尚未完成区域会破坏回放语义，因此当前禁止 |
 | 原生导入返回完整文档后才打开结果页 | 当前没有“边解析输入文件、边显示已解析内容”的任务协议 |
@@ -150,7 +152,7 @@ android_ocr/
 ├── app/src/test/java/cn/local/ocr/    JVM 测试
 ├── app/src/test/resources/           Office/PDF 测试样本
 ├── web/                             当前正式前端源码及浏览器验收脚本
-├── prototypes/ocr-streaming/         早期原型、共享回放状态机、样本来源
+├── fixtures/replay/                  原始回放样本（2026-10-13 迁出早期原型）
 ├── tools/                           样本生成、ModelScope 探测、规则对照
 ├── verification/                    历次构建/验证摘要、日志、Office 回放包
 ├── artifacts/                       已归档 APK 和示例文件
@@ -180,7 +182,7 @@ android_ocr/
 | `web/drag-regions.js` | 长按、普通滑动区分、插入位置、边缘滚动 |
 | `web/markdown-editor.jsx` | 格式按钮、选区编辑、撤销重做、预览 |
 | `web/models.jsx` | 仓库入口、文件选择、下载状态显示 |
-| `prototypes/ocr-streaming/stream-state.mjs` | JSON 回放 reducer 与未闭合公式暂存 |
+| `web/replay-state.mjs` | JSON 回放 reducer 与未闭合公式暂存 |
 
 ## 6. 系统架构与线程
 
@@ -1013,7 +1015,7 @@ adb install -r app/build/outputs/apk/lab/debug/app-lab-debug.apk
 - [ModelHub](../app/src/main/java/cn/local/ocr/ModelHub.java)、[下载服务](../app/src/main/java/cn/local/ocr/DownloadService.java)、[HTTP 传输](../app/src/main/java/cn/local/ocr/ModelTransfer.java)。
 - [主界面](../web/app.jsx)、[桥接与浏览器实现](../web/host.js)、[渲染器](../web/renderer.jsx)。
 - [拖动](../web/drag-regions.js)、[编辑器](../web/markdown-editor.jsx)、[模型管理页](../web/models.jsx)。
-- [共享回放状态机](../prototypes/ocr-streaming/stream-state.mjs)。
+- [共享回放状态机](../web/replay-state.mjs)。
 - [最新版本验证摘要](../verification/editor-summary.json)、[编辑拖动报告](../verification/editor-drag-ui.json)。
 - [PDF 验证摘要](../verification/pdf-summary.json)、[ModelScope 网络探测](../verification/modelscope-network.json)。
 - [源项目 C ABI（当前开发机）](/home/dr/project/docprase/include/dococr/dococr.h)。跨机器阅读时替换为相应 checkout 路径。

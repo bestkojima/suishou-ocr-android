@@ -80,6 +80,12 @@ OutputAssessment assess(const GenerationOutput& output, const std::string& type,
         result.state = "failed"; result.reason = "visual_evidence_missing";
     } else if (text.empty() || output.text.empty()) {
         result.state = "failed"; result.reason = "ovis_empty_output";
+    } else if (output.stop_reason == "repetition") {
+        // 后端已在生成中确认循环；即使只占长正文尾部，或是纯标点/表格单元格，
+        // 也不能退回覆盖率判据，更不能把提前截停误记为 token 用尽。
+        result.state = "anomalous";
+        result.reason = output.error == "ocr_repetition_empty_numbering" ?
+            "empty_numbering_structure" : "repeated_fragment";
     } else if (result.empty_number_lines >= 8 &&
                result.empty_number_lines * 5 >= result.nonempty_lines * 4) {
         result.state = limit ? "anomalous" : "unverified";

@@ -3,7 +3,7 @@ import assert from'node:assert/strict';
 import{mkdir,readFile,writeFile,rm}from'node:fs/promises';
 import{spawn}from'node:child_process';
 import{unzipSync,strFromU8}from'fflate';
-const out='web/test-results';await mkdir(out,{recursive:true});await rm(`${out}/failure.txt`,{force:true});await rm(`${out}/report.json`,{force:true});
+const out=process.env.OCR_EVIDENCE_DIR||'web/test-results';await mkdir(out,{recursive:true});await rm(`${out}/failure.txt`,{force:true});await rm(`${out}/report.json`,{force:true});
 const port=4184;const server=spawn('python3',['-m','http.server',String(port),'--bind','127.0.0.1','--directory','web/dist'],{stdio:'ignore'});const origin=`http://127.0.0.1:${port}`;
 const results=[],errors=[],requests=[];let browser;
 try{
@@ -29,7 +29,7 @@ try{
  await check('模型页列出版面、Ovis 和 GLM-OCR 三个 ModelScope 仓库',async()=>{await page.getByRole('button',{name:'设置',exact:true}).click();await page.getByRole('button',{name:/识别模型/}).click();assert(await page.getByText('dr3334/PP-DocLayoutV3-mnn',{exact:true}).isVisible());assert(await page.getByText('dr3334/ovrics-ocrv2_mnn',{exact:true}).isVisible());assert(await page.getByText('MNN/GLM-OCR-MNN',{exact:true}).isVisible());await page.screenshot({path:`${out}/models.png`});await page.getByRole('dialog').getByRole('button',{name:'关闭',exact:true}).click();});
  await page.getByRole('button',{name:'返回首页'}).click();await page.setViewportSize({width:412,height:892});
  await check('公式样本完整输出，KaTeX 已渲染',async()=>{await page.getByRole('button',{name:'公式 / 图片',exact:true}).click();await page.getByRole('button',{name:'重新回放'}).waitFor({timeout:45000});assert.equal(await page.locator('.region').count(),10);assert(await page.locator('.katex').count()>=5);await page.locator('.reader').evaluate(e=>e.scrollTop=e.scrollHeight);await page.screenshot({path:`${out}/formulas.png`});});
- await check('缺失图片展示固定占位并可重试',async()=>{await page.getByRole('button',{name:'返回首页'}).click();const p=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入文件',exact:true}).click();await(await p).setFiles('prototypes/ocr-streaming/fixtures/odb-13/document.json');await page.getByRole('button',{name:'重新回放'}).waitFor({timeout:45000});const img=page.locator('.image-frame').first();const height=await img.evaluate(e=>e.getBoundingClientRect().height);await img.getByRole('button',{name:'重试'}).click();assert.equal(await img.evaluate(e=>e.getBoundingClientRect().height),height);});
+ await check('缺失图片展示固定占位并可重试',async()=>{await page.getByRole('button',{name:'返回首页'}).click();const p=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入文件',exact:true}).click();await(await p).setFiles('fixtures/replay/odb-13/document.json');await page.getByRole('button',{name:'重新回放'}).waitFor({timeout:45000});const img=page.locator('.image-frame').first();const height=await img.evaluate(e=>e.getBoundingClientRect().height);await img.getByRole('button',{name:'重试'}).click();assert.equal(await img.evaluate(e=>e.getBoundingClientRect().height),height);});
  for(const [name,title,colspan] of [['sales-with-image.xlsx','图片附件',3],['slides-with-table-and-image.pptx','第 2 张幻灯片',2]]){
   await check(`Office 原生解析结果回放：${name}`,async()=>{
    await page.getByRole('button',{name:'返回首页'}).click();const chooser=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入文件',exact:true}).click();await(await chooser).setFiles(`verification/office-fixtures/${name}.zip`);

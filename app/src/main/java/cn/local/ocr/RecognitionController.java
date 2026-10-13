@@ -13,6 +13,11 @@ final class RecognitionController {
     interface NativeResources {
         void jobDestroy(long job) throws IOException;
         void destroy(long engine) throws IOException;
+        default long jobCreate(long engine)throws IOException {return NativeOcr.jobCreate(engine);}
+        default int runRegion(long job,String image,String type)throws IOException {return NativeOcr.runRegion(job,image,type);}
+        default String status(long job)throws IOException {return NativeOcr.status(job);}
+        default void cancel(long job)throws IOException {NativeOcr.cancel(job);}
+        default void export(long job,String directory)throws IOException {NativeOcr.export(job,directory);}
     }
     private NativeResources resources=new NativeResources() {
         public void jobDestroy(long job)throws IOException {NativeOcr.jobDestroy(job);}
@@ -34,6 +39,7 @@ final class RecognitionController {
     private boolean busy, cancelled;
     private long engine, nativeJob, sequence;
     private int engineThreads;
+    private String engineModel="";
     private RecognitionController(Context c) { context=c;store=new DocumentStore(c);models=new RecognitionModels(c); }
     DocumentStore store() { return store; }
     void listen(Listener l) { listeners.add(l); }
@@ -42,6 +48,32 @@ final class RecognitionController {
         return new JSONObject(readiness.toString()).put("inUse",busy).put("cpuThreads",engine!=0&&engineThreads>0?engineThreads:models.cpuThreads()).put("threadChoice",models.threadChoice()).put("modelChoice",models.modelChoice());
     }
     JSONArray modelChoices()throws Exception {return models.choices();}
+    synchronized JSONObject regionOptions(String id,String blockId)throws Exception {
+        JSONObject doc=store.load(id);String unavailable="",source="";
+        try{RegionRetry.input(store,doc,blockId);source=store.url(id,RegionRetry.block(doc,blockId).getString("resource"));}
+        catch(IOException e){unavailable=e.getMessage();}
+        JSONArray choices=models.choices();
+        for(int i=0;i<choices.length();i++) {
+            JSONObject choice=choices.getJSONObject(i),ready=models.downloadedReadiness(choice.getString("id"));
+            choice.put("ready",ready.optString("state").equals("files-ready"));
+        }
+        return FilesUtil.obj("models",choices,"defaultModel",models.modelChoice(),"source",source,
+            "unavailable",unavailable,"state",regionStatus(id));
+    }
+    synchronized JSONObject startRegion(String id,String blockId,String choice)throws Exception {
+        if(busy)throw new IOException("已有识别作业，请等待安全停止后再重新识别区域");
+        if(DownloadService.active||DownloadService.reserved)throw new IOException("请先完成或暂停模型下载");
+        models.profile(choice);
+        JSONObject doc=store.load(id),block=RegionRetry.block(doc,blockId);
+        File input=RegionRetry.input(store,doc,blockId);
+        busy=true;cancelled=false;nativeJob=0;
+        current=FilesUtil.obj("kind","region","docId",id,"blockId",blockId,"modelChoice",choice,
+            "jobId",UUID.randomUUID().toString(),"state","preparing","message","正在准备区域识别","sequence",++sequence);
+        try{update("preparing","正在准备区域识别");}catch(Exception e){busy=false;current=null;throw e;}
+        final String type=block.getString("type"),jobId=current.getString("jobId");
+        inference.execute(()->runRegion(id,input,type,choice,jobId));
+        return new JSONObject(current.toString());
+    }
     synchronized JSONObject start(String id,boolean again) throws Exception {
         if(busy) throw new IOException("已有识别作业，请返回该文档或等待安全停止");
         JSONObject doc=store.load(id);
@@ -71,10 +103,12 @@ final class RecognitionController {
             return start(doc.getString("id"),false);
         }
     }
-    synchronized JSONObject status(String id) throws Exception {
-        if(current!=null&&id.equals(current.optString("docId"))) {
+    synchronized JSONObject status(String id) throws Exception { return status(id,false); }
+    synchronized JSONObject regionStatus(String id) throws Exception { return status(id,true); }
+    private JSONObject status(String id,boolean region) throws Exception {
+        if(current!=null&&id.equals(current.optString("docId"))&&region=="region".equals(current.optString("kind"))) {
             if(nativeJob!=0&&!cancelled&&current.optString("state").equals("recognizing")) {
-                JSONObject status=new JSONObject(NativeOcr.status(nativeJob));
+                JSONObject status=new JSONObject(resources.status(nativeJob));
                 JSONObject event=status.optJSONObject("latestEvent");
                 JSONObject stream=status.optJSONObject("stream");
                 boolean streamChanged=stream!=null&&stream.optLong("revision")>(current.optJSONObject("stream")==null?0:current.getJSONObject("stream").optLong("revision"));
@@ -87,10 +121,10 @@ final class RecognitionController {
             }
             return new JSONObject(current.toString());
         }
-        JSONObject doc=store.load(id),state=doc.optJSONObject("recognition");
+        JSONObject doc=store.load(id),state=doc.optJSONObject(region?"regionRecognition":"recognition");
         if(state==null) return FilesUtil.obj("state","waiting","message","输入已保存，可开始识别");
         if(Arrays.asList("preparing","recognizing","cancelling","saving").contains(state.optString("state"))) {
-            if(doc.optString("mode").equals("real-ocr")) state.put("state",doc.optString("recognitionOutcome","succeeded")).put("resultSaved",true).put("message","识别结果已保存，已显示完整结果");
+            if(!region&&doc.optString("mode").equals("real-ocr")) state.put("state",doc.optString("recognitionOutcome","succeeded")).put("resultSaved",true).put("message","识别结果已保存，已显示完整结果");
             else state.put("state","failed").put("message","上次识别随进程退出而停止，输入已保留，可重试");
             sequence=Math.max(sequence,state.optLong("sequence"))+1;
             state.put("sequence",sequence);
@@ -122,9 +156,9 @@ final class RecognitionController {
         if(current.optBoolean("resultSaved")) return new JSONObject(current.toString());
         cancelled=true;
         if(nativeJob!=0) {
-            JSONObject nativeState=new JSONObject(NativeOcr.status(nativeJob));
+            JSONObject nativeState=new JSONObject(resources.status(nativeJob));
             if(!nativeState.optBoolean("terminal")) {
-                try{NativeOcr.cancel(nativeJob);}catch(IOException e){if(!new JSONObject(NativeOcr.status(nativeJob)).optBoolean("terminal"))throw e;}
+                try{resources.cancel(nativeJob);}catch(IOException e){if(!new JSONObject(resources.status(nativeJob)).optBoolean("terminal"))throw e;}
             }
         }
         update("cancelling","正在安全停止，当前区域完成及资源清理后结束");
@@ -137,8 +171,10 @@ final class RecognitionController {
         inference.execute(()->{try{prepare();}catch(Exception|LinkageError e){synchronized(this){readiness=FilesUtil.obj("state","load-failed","message","模型加载失败："+e.getMessage());}}finally{synchronized(this){busy=false;}}});
         return readiness();
     }
-    private boolean prepare() throws Exception {
+    private boolean prepare() throws Exception { return prepare(models.modelChoice()); }
+    private boolean prepare(String choice) throws Exception {
         synchronized(this) {
+            if(engine!=0&&!choice.equals(engineModel.isEmpty()?models.modelChoice():engineModel))unloadIdleEngine();
             if(engine!=0) {
                 if(cancelled&&current!=null)return false;
                 readiness=FilesUtil.obj("state","ready","message","引擎已加载，本次识别直接复用");
@@ -148,16 +184,16 @@ final class RecognitionController {
         }
         long started=SystemClock.elapsedRealtime();
         synchronized(this){readiness=FilesUtil.obj("state","checking","message","正在检查模型下载状态");}
-        JSONObject verified=models.downloadedReadiness();
+        JSONObject verified=models.downloadedReadiness(choice);
         Log.i("OcrEngine","Download readiness: "+(SystemClock.elapsedRealtime()-started)+" ms");
         synchronized(this){readiness=verified;}
         if(!verified.optString("state").equals("files-ready")) return false;
         synchronized(this){if(cancelled&&current!=null)return false;readiness=FilesUtil.obj("state","loading","message","正在加载生产引擎");if(current!=null)update("preparing",readiness.getString("message"));}
         if(engine==0) {
             started=SystemClock.elapsedRealtime();
-            String config=models.config();
+            String config=models.config(choice);
             long loaded=NativeOcr.create(config,context.getCacheDir().getPath());
-            synchronized(this){engine=loaded;engineThreads=new JSONObject(config).getJSONObject("platform").getInt("threads");}
+            synchronized(this){engine=loaded;engineModel=choice;engineThreads=new JSONObject(config).getJSONObject("platform").getInt("threads");}
             Log.i("OcrEngine","Production engine load: "+(SystemClock.elapsedRealtime()-started)+" ms");
         }
         synchronized(this){readiness=FilesUtil.obj("state","ready","message","本地引擎已实际加载，支持离线单图识别");}
@@ -165,7 +201,7 @@ final class RecognitionController {
     }
     private synchronized void update(String state,String message) throws Exception {
         current.put("state",state).put("message",message).put("sequence",++sequence);
-        JSONObject doc=store.load(current.getString("docId"));JSONObject persisted=new JSONObject(current.toString());persisted.remove("stream");doc.put("recognition",persisted);store.save(doc);
+        JSONObject doc=store.load(current.getString("docId"));JSONObject persisted=new JSONObject(current.toString());persisted.remove("stream");doc.put("region".equals(current.optString("kind"))?"regionRecognition":"recognition",persisted);store.save(doc);
         for(Listener l:listeners) l.changed(new JSONObject(current.toString()));
     }
     private void run(String id,String imagePolicy) {
@@ -217,6 +253,46 @@ final class RecognitionController {
         }
     }
 
+    private void runRegion(String id,File image,String type,String choice,String jobId) {
+        String terminal="failed",message="区域识别失败，原内容已保留";
+        try {
+            if(!prepare(choice)){terminal="missing-models";message=readiness().getString("message");return;}
+            synchronized(this) {
+                if(cancelled)return;
+                nativeJob=resources.jobCreate(engine);update("recognizing","正在使用所选模型重新识别此区域");
+            }
+            int code=resources.runRegion(nativeJob,image.getPath(),type);
+            synchronized(this) {
+                if(cancelled||code==7){terminal="cancelled";message="已取消区域识别，原内容已保留";return;}
+                if(code!=0)throw new IOException("区域引擎返回 "+code+"："+resources.status(nativeJob));
+                regionStatus(id);update("saving","正在保存新结果，原内容保持不变");
+            }
+            File output=FilesUtil.child(store.dir(id),"region-recognition/"+jobId);output.mkdirs();
+            resources.export(nativeJob,output.getPath());
+            JSONObject candidate=RegionRetry.candidate(new JSONObject(FilesUtil.read(new File(output,"document.json"))));
+            synchronized(this) {
+                if(cancelled)return;
+                current.put("result",candidate).put("resultSaved",true);
+                terminal=candidate.optString("sourceStatus").equals("ok")?"succeeded":"partial";
+                message=terminal.equals("succeeded")?"新结果已就绪，可选择用于校对":"新结果仍需核对，请比较后决定是否使用";
+            }
+        } catch(Exception|LinkageError e) {
+            message="区域识别失败："+e.getMessage()+"；原内容已保留";
+            synchronized(this){if(!readiness.optString("state").equals("ready"))readiness=FilesUtil.obj("state","load-failed","message",message);}
+        }
+        finally {
+            try {
+                cleanupCompletedJob();
+                synchronized(this) {
+                    if(cancelled){terminal="cancelled";message="已取消区域识别，原内容已保留";current.remove("result");}
+                    current.remove("stream");update(terminal,message);busy=false;
+                }
+            } catch(Exception|LinkageError e) {
+                synchronized(this){try{update("failed","清理失败，请重启 App 后重试："+e.getMessage());}catch(Exception ignored){}}
+            }
+        }
+    }
+
     // 每张图释放作业／结果；权重和已准备的运行缓存留给下一张图。
     private void cleanupCompletedJob() throws Exception {
         long jobToClose;
@@ -229,14 +305,14 @@ final class RecognitionController {
         synchronized(this) {if(busy||engine==0)return;busy=true;handle=engine;}
         try {
             resources.destroy(handle);
-            synchronized(this){engine=0;engineThreads=0;busy=false;readiness=FilesUtil.obj("state","files-ready","message","为释放内存已卸载模型，下次识别会重新加载");}
+            synchronized(this){engine=0;engineThreads=0;engineModel="";busy=false;readiness=FilesUtil.obj("state","files-ready","message","为释放内存已卸载模型，下次识别会重新加载");}
         }catch(Exception|LinkageError e) {
             // 保留占用及句柄，避免清理失败后复用资源。
             synchronized(this){readiness=FilesUtil.obj("state","load-failed","message","模型卸载失败，请重启 App："+e.getMessage());}
         }
     }
     private void unloadIdleEngine() throws IOException {
-        try {resources.destroy(engine);engine=0;engineThreads=0;}
+        try {resources.destroy(engine);engine=0;engineThreads=0;engineModel="";}
         catch(IOException|LinkageError e) {
             busy=true;readiness=FilesUtil.obj("state","load-failed","message","模型卸载失败，请重启 App："+e.getMessage());throw e;
         }

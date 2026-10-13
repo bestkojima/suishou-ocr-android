@@ -1,0 +1,7 @@
+[  3%] Building CXX object CMakeFiles/dococr_core.dir/src/output_assessment.cpp.o
+[  6%] Building CXX object CMakeFiles/dococr_core.dir/src/region_recognition.cpp.o
+[ 10%] Linking CXX static library libdococr_core.a
+[ 93%] Built target dococr_core
+[ 96%] Linking CXX executable dococr_block_result_test
+[100%] Built target dococr_block_result_test
+区域结果：内容规范化、失败隔离、完成证据、字节保存与错误优先级检查通过

@@ -19,6 +19,10 @@ final class RecognitionModels {
     }
     String modelChoice() {return context.getSharedPreferences("settings",0).getString("ocrModel","ovis");}
     JSONObject profile() throws Exception {return profiles().getJSONObject(modelChoice());}
+    JSONObject profile(String choice) throws Exception {
+        if(!profiles().has(choice))throw new IOException("未知识别模型配置");
+        return profiles().getJSONObject(choice);
+    }
     JSONArray choices() throws Exception {
         JSONObject profiles=profiles();JSONArray out=new JSONArray();
         for(java.util.Iterator<String> keys=profiles.keys();keys.hasNext();) {
@@ -28,12 +32,18 @@ final class RecognitionModels {
         return out;
     }
     JSONArray contract() throws Exception {
-        try(InputStream in=context.getAssets().open("ocr/"+profile().getString("catalog"))) {
+        return contract(modelChoice());
+    }
+    JSONArray contract(String choice) throws Exception {
+        try(InputStream in=context.getAssets().open("ocr/"+profile(choice).getString("catalog"))) {
             return new JSONArray(new String(FilesUtil.bytes(in,65536),StandardCharsets.UTF_8));
         }
     }
     JSONObject downloadedReadiness() throws Exception {
-        return ModelHub.downloadedReadiness(ModelHub.root(context),contract(),ModelHub.state(context));
+        return downloadedReadiness(modelChoice());
+    }
+    JSONObject downloadedReadiness(String choice) throws Exception {
+        return ModelHub.downloadedReadiness(ModelHub.root(context),contract(choice),ModelHub.state(context));
     }
 
     static int effectiveCpuThreads(int choice,int processors) {
@@ -44,13 +54,16 @@ final class RecognitionModels {
     int threadChoice() {return context.getSharedPreferences("settings",0).getInt("ocrThreads",0);}
     int cpuThreads() {return effectiveCpuThreads(threadChoice(),Runtime.getRuntime().availableProcessors());}
     String config() throws Exception {
+        return config(modelChoice());
+    }
+    String config(String choice) throws Exception {
         JSONObject config;
         try(InputStream in=context.getAssets().open("ocr/config.json")) {
             config=new JSONObject(new String(FilesUtil.bytes(in,65536),StandardCharsets.UTF_8));
         }
         config.getJSONObject("platform").put("threads",cpuThreads());
         config.getJSONObject("models").getJSONObject("layout").put("root",FilesUtil.child(ModelHub.root(context),ModelHub.REPOS[0]+"/files").getPath());
-        JSONObject profile=profile();String repo=profile.getString("repo");
+        JSONObject profile=profile(choice);String repo=profile.getString("repo");
         File folder=FilesUtil.child(ModelHub.root(context),repo+"/files");
         String sourceText=FilesUtil.read(new File(folder,"config.json"));
         JSONObject source=new JSONObject(sourceText);
@@ -64,7 +77,7 @@ final class RecognitionModels {
         }
         JSONObject recognition=config.getJSONObject("models").getJSONObject("recognition");
         recognition.put("root",folder.getPath());JSONArray artifacts=new JSONArray();
-        JSONArray contract=contract();
+        JSONArray contract=contract(choice);
         for(int i=0;i<contract.length();i++) {
             JSONObject file=contract.getJSONObject(i);
             if(file.getString("repo").equals(repo))artifacts.put(FilesUtil.obj("path",file.getString("path"),"sha256",file.getString("sha256")));

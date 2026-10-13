@@ -111,7 +111,7 @@ job=new_job(engine);assert lib.dococr_job_run(job,c.byref(req))==0
 complete_ir=export(job,OUT/'output');complete=snapshot(job)
 assert complete['terminal'] and complete_ir['pages'][0]['blocks']
 assert lib.dococr_job_destroy(job)==0
-Image.open(ROOT/'prototypes/ocr-streaming/fixtures/odb-09/source.jpg').convert('RGB').save(OUT/'partial-source.png')
+Image.open(ROOT/'fixtures/replay/odb-09/source.jpg').convert('RGB').save(OUT/'partial-source.png')
 buffer,req=request(OUT/'partial-source.png')
 job=new_job(engine);assert lib.dococr_job_run(job,c.byref(req))==0
 ir=export(job,OUT/'repeated');assert ir['status'] in ('ok','partial')

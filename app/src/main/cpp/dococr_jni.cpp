@@ -1,5 +1,6 @@
 #include <jni.h>
 #include "android_recognition_stream.hpp"
+#include "android_region_recognition.hpp"
 #include <dococr/dococr.h>
 #include <filesystem>
 #include <fstream>
@@ -50,7 +51,7 @@ extern "C" JNIEXPORT jlong JNICALL Java_cn_local_ocr_NativeOcr_jobCreate(JNIEnv*
     try { DocOcrJob job=0; check(dococr_job_create(engine,&job)); return job; }
     catch(const std::exception& e) { fail(env,e); return 0; }
 }
-extern "C" JNIEXPORT jint JNICALL Java_cn_local_ocr_NativeOcr_run(JNIEnv* env,jclass,jlong job,jstring image) {
+static jint run_image(JNIEnv* env,jlong job,jstring image,const char* task) {
     try { String path(env,image); std::ifstream in(path.data,std::ios::binary|std::ios::ate);
         if(!in) throw std::runtime_error("无法读取已保存的输入");
         auto size=in.tellg(); if(size<=0||size>256*1024*1024) throw std::runtime_error("输入图片大小无效");
@@ -79,8 +80,14 @@ extern "C" JNIEXPORT jint JNICALL Java_cn_local_ocr_NativeOcr_run(JNIEnv* env,jc
                 input.width=width;input.height=height;input.row_stride=static_cast<size_t>(width)*3;
             }
         }
-        return android_ocr_run_streaming(job,&input);
+        return task ? android_ocr_run_region(job,&input,task) : android_ocr_run_streaming(job,&input);
     } catch(const std::exception& e) { fail(env,e); return DOCOCR_FAILED; }
+}
+extern "C" JNIEXPORT jint JNICALL Java_cn_local_ocr_NativeOcr_run(JNIEnv* env,jclass,jlong job,jstring image) {
+    return run_image(env,job,image,nullptr);
+}
+extern "C" JNIEXPORT jint JNICALL Java_cn_local_ocr_NativeOcr_runRegion(JNIEnv* env,jclass,jlong job,jstring image,jstring task) {
+    String type(env,task);return run_image(env,job,image,type.data);
 }
 extern "C" JNIEXPORT jstring JNICALL Java_cn_local_ocr_NativeOcr_status(JNIEnv* env,jclass,jlong job) {
     try {

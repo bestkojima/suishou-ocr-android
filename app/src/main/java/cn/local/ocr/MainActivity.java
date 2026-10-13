@@ -39,6 +39,7 @@ public final class MainActivity extends Activity {
                 JSONObject quick=new JSONObject(raw);String method=quick.getString("method"),qid=quick.getString("id");
                 if(method.equals("models")){reply(qid,FilesUtil.obj("tasks",ModelHub.summary(MainActivity.this).getJSONArray("tasks"),"repos",ModelHub.repos(MainActivity.this),"running",DownloadService.active,"activity",DownloadService.activity,"freeBytes",ModelHub.root(MainActivity.this).getUsableSpace(),"readiness",recognition.readiness(),"modelChoices",recognition.modelChoices()),null);return;}
                 if(method.equals("recognitionStatus")){reply(qid,recognition.status(quick.getJSONObject("args").getString("id")),null);return;}
+                if(method.equals("regionRecognitionStatus")){reply(qid,recognition.regionStatus(quick.getJSONObject("args").getString("id")),null);return;}
                 if(method.equals("cancelRecognition")){JSONObject a=quick.getJSONObject("args");reply(qid,recognition.cancel(a.getString("id"),a.getString("jobId")),null);return;}
                 if(method.equals("recognize")){JSONObject a=quick.getJSONObject("args");reply(qid,recognition.start(a.getString("id"),a.optBoolean("again")),null);return;}
                 if(method.equals("setOcrThreads")){reply(qid,recognition.configureThreads(quick.getJSONObject("args").getInt("threads")),null);return;}
@@ -52,6 +53,8 @@ public final class MainActivity extends Activity {
                 case "history":out=store.list();break;
                 case "sample":out=store.sample(a.getString("sample"));break;
                 case "open":out=store.load(a.getString("id"));break;
+                case "regionRecognitionOptions":out=recognition.regionOptions(a.getString("id"),a.getString("blockId"));break;
+                case "recognizeRegion":out=recognition.startRegion(a.getString("id"),a.getString("blockId"),a.getString("model"));break;
                 case "beginCrop":out=recognition.beginCrop(a.getString("id"));break;
                 case "previewCrop":out=recognition.previewCrop(a.getString("id"),a.getJSONArray("points"));break;
                 case "confirmCrop":out=recognition.confirmCrop(a.getString("id"),a.getString("token"));break;

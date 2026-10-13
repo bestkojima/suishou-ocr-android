@@ -118,4 +118,75 @@ public class EngineReuseTest {
         assertThrows(IOException.class,()->controller.setModel("glm"));
         assertEquals("ovis",modelPreference.get());assertEquals(99L,get("engine"));assertTrue(controller.readiness().getBoolean("inUse"));
     }
+    String regionDocument()throws Exception {
+        DocumentStore store=controller.store();String id=store.create();
+        FilesUtil.write(FilesUtil.child(store.dir(id),"assets/crop.png"),"controlled image");
+        store.save(FilesUtil.obj("id",id,"mode","real-ocr","input","source.png","status","complete","progress",2,
+            "blocks",new org.json.JSONArray().put(FilesUtil.obj("id","b1","type","table","resource","assets/crop.png","markdown","旧表格"))
+                .put(FilesUtil.obj("id","b2","type","text","markdown","其他区域")),
+            "edits",FilesUtil.obj("b1","原校对内容"),"recognition",FilesUtil.obj("state","succeeded","jobId","original")));
+        cacheProfiles();set("engine",99L);set("engineModel","glm");return id;
+    }
+    class RegionNative extends Cleanup {
+        java.util.concurrent.CountDownLatch entered=new java.util.concurrent.CountDownLatch(1),resume=new java.util.concurrent.CountDownLatch(1);
+        boolean cancelled,exported;String path,type;
+        public long jobCreate(long engine){assertEquals(99L,engine);return 12;}
+        public int runRegion(long job,String path,String type)throws IOException {
+            this.path=path;this.type=type;entered.countDown();
+            try{if(!resume.await(5,java.util.concurrent.TimeUnit.SECONDS))throw new IOException("test timeout");}catch(InterruptedException e){throw new IOException(e);}
+            return cancelled?7:0;
+        }
+        public String status(long job){return "{\"terminal\":false}";}
+        public void cancel(long job){cancelled=true;resume.countDown();}
+        public void export(long job,String directory)throws IOException {
+            exported=true;
+            try{FilesUtil.write(new File(directory,"document.json"),"{\"pages\":[{\"blocks\":[{\"status\":\"ok\",\"content\":{\"text\":\"新表格\",\"format\":\"markdown\"}}]}]}");}
+            catch(Exception e){throw new IOException(e);}
+        }
+    }
+    void finished()throws Exception {
+        ((java.util.concurrent.ExecutorService)get("inference")).submit(()->{}).get(8,java.util.concurrent.TimeUnit.SECONDS);
+    }
+    @Test public void regionCandidateIsIsolatedAndDoesNotChangeDefaultModelOrExistingEdits()throws Exception {
+        String id=regionDocument();RegionNative api=new RegionNative();set("resources",api);
+        JSONObject started=controller.startRegion(id,"b1","glm");
+        assertTrue(api.entered.await(3,java.util.concurrent.TimeUnit.SECONDS));
+        assertThrows(IOException.class,()->controller.startRegion(id,"b2","ovis"));
+        assertEquals("original",controller.status(id).getString("jobId"));
+        api.resume.countDown();finished();
+        JSONObject state=controller.regionStatus(id);assertEquals("succeeded",state.getString("state"));assertEquals("新表格",state.getJSONObject("result").getString("markdown"));
+        JSONObject saved=controller.store().load(id);assertEquals("原校对内容",saved.getJSONObject("edits").getString("b1"));
+        assertEquals("其他区域",saved.getJSONArray("blocks").getJSONObject(1).getString("markdown"));
+        assertEquals("ovis",modelPreference.get());assertEquals("table",api.type);assertTrue(api.path.endsWith("assets/crop.png"));
+        assertEquals(1,api.jobs);assertEquals(0,api.engines);assertFalse(controller.readiness().getBoolean("inUse"));
+        assertEquals(started.getString("jobId"),state.getString("jobId"));
+    }
+    @Test public void cancellingRegionDoesNotExportOrReplaceTheDocument()throws Exception {
+        String id=regionDocument();RegionNative api=new RegionNative();set("resources",api);
+        JSONObject state=controller.startRegion(id,"b1","glm");assertTrue(api.entered.await(3,java.util.concurrent.TimeUnit.SECONDS));
+        controller.cancel(id,state.getString("jobId"));finished();
+        assertEquals("cancelled",controller.regionStatus(id).getString("state"));assertFalse(api.exported);
+        assertEquals("原校对内容",controller.store().load(id).getJSONObject("edits").getString("b1"));assertEquals(1,api.jobs);
+    }
+    @Test public void failedRegionLeavesExistingEditsAndReleasesJob()throws Exception {
+        String id=regionDocument();RegionNative api=new RegionNative(){
+            @Override public int runRegion(long job,String path,String type)throws IOException {throw new IOException("controlled inference failure");}
+        };set("resources",api);controller.startRegion(id,"b1","glm");finished();
+        JSONObject state=controller.regionStatus(id);assertEquals("failed",state.getString("state"));assertFalse(state.has("result"));
+        assertEquals("原校对内容",controller.store().load(id).getJSONObject("edits").getString("b1"));
+        assertEquals(1,api.jobs);assertFalse(controller.readiness().getBoolean("inUse"));
+    }
+    @Test public void perRequestModelSwitchUnloadsOldEngineWithoutChangingPreference()throws Exception {
+        cacheProfiles();Cleanup cleanup=new Cleanup();set("resources",cleanup);set("engine",99L);set("engineModel","ovis");
+        Method prepare=RecognitionController.class.getDeclaredMethod("prepare",String.class);prepare.setAccessible(true);
+        // 测试 profile 故意没有模型工件，准备在卸载旧引擎后失败。
+        assertThrows(InvocationTargetException.class,()->prepare.invoke(controller,"glm"));
+        assertEquals(1,cleanup.engines);assertEquals(0L,get("engine"));assertEquals("ovis",modelPreference.get());
+    }
+    @Test public void interruptedRegionIsNotMistakenForSavedWholePageResult()throws Exception {
+        String id=regionDocument();JSONObject doc=controller.store().load(id);
+        doc.put("regionRecognition",FilesUtil.obj("docId",id,"blockId","b1","jobId","lost","state","recognizing","sequence",100));controller.store().save(doc);
+        JSONObject state=controller.regionStatus(id);assertEquals("failed",state.getString("state"));assertTrue(state.getLong("sequence")>100);
+        assertEquals("succeeded",controller.status(id).getString("state"));
+    }
 }

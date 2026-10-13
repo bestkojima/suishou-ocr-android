@@ -2,12 +2,13 @@ import React,{useEffect,useLayoutEffect,useMemo,useRef,useState}from'react';
 import{createRoot}from'react-dom/client';
 import{request,native}from'./host.js';
 import{Region,ImageResource}from'./renderer.jsx';
-import{initialState,reduceReplay}from'../prototypes/ocr-streaming/stream-state.mjs';
+import{initialState,reduceReplay}from'./replay-state.mjs';
 import './style.css';
 import {useRegionDrag} from './drag-regions.js';
 import {MarkdownEditor} from './markdown-editor.jsx';
 import {ModelManager} from './models.jsx';
 import {DocumentCropEditor} from './document-crop.jsx';
+import {RegionRerecognition} from './region-rerecognition.jsx';
 const recognitionStages={started:'开始处理',page_started:'读取页面',layout_started:'版面分析',layout_completed:'版面分析完成',region_started:'正在识别区域',region_completed:'区域完成',export_started:'保存结果',export_completed:'结果已导出',page_completed:'页面完成',terminal:'推理结束'};
 const activeRecognition=s=>['preparing','recognizing','cancelling','saving'].includes(s?.state);
 const finishedRecognition=s=>['succeeded','partial','blank'].includes(s?.state);
@@ -17,13 +18,14 @@ function acceptsRecognition(current,state){
  if(previous?.jobId&&state.jobId!==previous.jobId)return false;
  return !previous?.jobId||(state.sequence||0)>(previous.sequence||0);
 }
-function liveReplay(stream,docId,jobId,sequence){return {streamDocId:docId,streamJobId:jobId,streamSequence:sequence,phase:'live',index:0,blocks:stream.regions.map(r=>({id:'live-'+r.requestId,type:r.type,raw:r.raw,markdown:r.raw,count:Array.from(r.raw).length,done:r.done&&r.finishReason!=='failed'&&r.finishReason!=='truncated',live:true,sourceStatus:r.finishReason==='failed'?'failed':'ok',attempt:r.attempt})),ticks:0,events:[]};}
+function liveReplay(stream,docId,jobId,sequence){return {streamDocId:docId,streamJobId:jobId,streamSequence:sequence,phase:'live',index:0,blocks:stream.regions.map(r=>({id:'live-'+r.requestId,type:r.type,raw:r.raw,markdown:r.raw,count:Array.from(r.raw).length,done:r.done&&(r.stopReason==='repetition'||r.finishReason!=='failed'&&r.finishReason!=='truncated'),live:true,stopReason:r.stopReason,sourceStatus:r.stopReason==='repetition'?'partial':r.finishReason==='failed'?'failed':'ok',attempt:r.attempt})),ticks:0,events:[]};}
 const phases={interrupted:'输出已停止',live:'模型实时输出',idle:'准备输出',running:'正在回放结果',paused:'已暂停',complete:'已完成'};
 function App(){
  const[boot,setBoot]=useState(null),[settings,setSettings]=useState({chunk:8}),[doc,setDoc]=useState(null),[replay,setReplay]=useState(initialState),[sheet,setSheet]=useState(''),[history,setHistory]=useState([]),[busy,setBusy]=useState(''),[error,setError]=useState(''),[notice,setNotice]=useState(''),[edit,setEdit]=useState(null),[draft,setDraft]=useState(''),[viewer,setViewer]=useState(''),[zoom,setZoom]=useState(1),[following,setFollowing]=useState(true),[fonts,setFonts]=useState(false),[cameraMessage,setCameraMessage]=useState('对准文档，拍下即可开始'),[selectedPage,setSelectedPage]=useState(0),[cameraReady,setCameraReady]=useState(false);
  const cameraRef=useRef(),readerRef=useRef(),dialogRef=useRef(),snapshot=useRef(),follow=useRef(true),anchor=useRef(null),restore=useRef(false),saveQueue=useRef(Promise.resolve()),persistTimer=useRef(),touchY=useRef(0);
  snapshot.current={doc,replay,settings,sheet,viewer};
  const[cropping,setCropping]=useState(false);const cropBusy=useRef(false);const setCropBusy=useMemo(()=>value=>{cropBusy.current=value;},[]);
+ const [retryRevision,setRetryRevision]=useState(0);
  const recognition=doc?.recognition;
  const cropPending=!!doc?.documentCrop&&doc.documentCrop.state!=='confirmed';
  const resultLoading=useRef(null),navigation=useRef(0),starting=useRef(new Set());
@@ -40,6 +42,7 @@ function App(){
  useEffect(()=>{if(doc)save().catch(fail);},[replay.index,replay.phase,doc?.id]);
 
  async function refreshRecognition(state){
+  if(state?.kind==='region')return;
   const current=snapshot.current.doc;
   if(!acceptsRecognition(current,state))return;
   if(finishedRecognition(state)&&current.mode!=='real-ocr'){
@@ -105,7 +108,7 @@ function App(){
  {sheet==='settings'&&<><button className="setting-row" onClick={()=>setSheet('models')}><span>识别模型<small>ModelScope · 仓库与文件管理</small></span><span>管理 ›</span></button><label className="setting-row resolution-setting"><span>图片分辨率<small>下次识别生效；小字模糊可选原图，重新识别会保留旧结果</small></span><select aria-label="图片分辨率" value={settings.imageResolution||'balanced'} onChange={e=>act(()=>pref({imageResolution:e.target.value}))}><option value="balanced">均衡（最多 800 万像素）</option><option value="fast">快速（最多 400 万像素）</option><option value="original">原图（较慢）</option></select></label><label className="setting-row"><span>仅通过 Wi-Fi 下载</span><input type="checkbox" checked={!!settings.wifiOnly} onChange={e=>act(()=>pref({wifiOnly:e.target.checked}))}/></label>{boot?.testBuild&&<><label className="setting-row"><span>测试模式<small>显示增量、区域和处理路径</small></span><input type="checkbox" checked={debug} onChange={e=>act(()=>pref({debug:e.target.checked}))}/></label><label className="setting-row">JSON 回放每次字符数<select aria-label="JSON 回放每次字符数" value={settings.chunk} onChange={e=>act(()=>pref({chunk:+e.target.value}))}>{[3,8,24,64].map(n=><option key={n}>{n}</option>)}</select></label></>}<p className="fine">版本 {boot?.version} · {boot?.testBuild?'测试版':'用户版'}<br/>支持本地单图 OCR，模型生成内容实时显示。</p></>}
  {sheet==='history'&&<>{!history.length&&<p>还没有文档</p>}{history.map(h=><div className="history-row" key={h.id}><button onClick={()=>act(async()=>{await saveQueue.current;openDocument(await request('open',{id:h.id}),false);})}><strong>{h.title}</strong><small>{h.mode==='json-replay'?'JSON 回放':h.mode==='pending-ocr'?'待识别输入':h.mode==='real-ocr'?'真实识别':'文件解析'} · {h.progress||0}/{h.count} 区域</small></button><button aria-label={'删除 '+h.title} onClick={()=>act(async()=>{if(confirm('删除此文档和本地图片？'))setHistory(await request('delete',{id:h.id}));})}>删除</button></div>)}</>}
  {sheet==='models'&&<ModelManager preview={!!boot?.preview}/>}
- {sheet==='edit'&&<><p className="fine">编辑已输出区域，保留原始 JSON 供核对。</p><MarkdownEditor key={edit.id} value={draft} onChange={setDraft} components={components} block={edit}/><button className="primary full" onClick={()=>act(async()=>{const edits={...doc.edits,[edit.id]:draft};await save({edits});setDoc(d=>({...d,edits}));setReplay(s=>({...s,blocks:s.blocks.map(b=>b.id===edit.id?{...b,raw:draft,markdown:draft}:b)}));setSheet('');setEdit(null);})}>保存修改</button></>}
+ {sheet==='edit'&&<><p className="fine">编辑已输出区域，保留原始 JSON 供核对。</p><RegionRerecognition key={`${doc.id}-${edit.id}`} documentId={doc.id} block={edit} components={components} onUse={text=>{setDraft(text);setRetryRevision(v=>v+1);}}/><MarkdownEditor key={`${edit.id}-${retryRevision}`} value={draft} onChange={setDraft} components={components} block={edit}/><button className="primary full" onClick={()=>act(async()=>{const edits={...doc.edits,[edit.id]:draft};await save({edits});setDoc(d=>({...d,edits}));setReplay(s=>({...s,blocks:s.blocks.map(b=>b.id===edit.id?{...b,raw:draft,markdown:draft}:b)}));setSheet('');setEdit(null);})}>保存修改</button></>}
  {sheet==='export'&&<><p className="fine">导出已完成的 {replay.index} 个区域。图片文档请选择 ZIP，包含原始 JSON、Markdown 和资源。</p>{[['txt','纯文字 TXT'],['md','Markdown 单文件'],['zip','完整文档 ZIP（含图片）']].map(([format,label])=><button className="full export-option" key={format} onClick={()=>act(()=>exportFile(format))}>{label}</button>)}<button disabled={!!boot?.preview} className="primary full" onClick={()=>act(()=>exportFile('zip',true))}>通过系统分享完整文档</button></>}
  </section></div>}
  <dialog ref={dialogRef} className="image-dialog" onCancel={()=>setViewer('')}><div className="viewer-header"><span>图片预览</span><button onClick={()=>setZoom(z=>Math.max(1,z-.5))}>−</button><button onClick={()=>setZoom(z=>Math.min(4,z+.5))}>＋</button><button onClick={()=>setViewer('')}>关闭</button></div><div className="viewer-body">{viewer&&<img src={viewer} alt="原文或插图" style={{width:zoom*100+'%',maxWidth:'none'}}/>}</div></dialog>

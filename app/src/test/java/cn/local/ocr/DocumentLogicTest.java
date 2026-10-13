@@ -10,6 +10,18 @@ import java.util.zip.*;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 public class DocumentLogicTest {
+ @Test public void rejectedInvoiceTableRemainsReadableAndEditable()throws Exception{
+  File files=temp.newFolder();DocumentStore store=new DocumentStore(new android.content.ContextWrapper(null){@Override public File getFilesDir(){return files;}});
+  String raw="<table><tr><td>发票</td><td>$\\badcommand{税额}$</td></tr></table>";
+  org.json.JSONObject block=FilesUtil.obj("id","b1","type","table","status","partial","content",FilesUtil.obj("format","markdown","text","","resource","assets/invoice.png"),"provenance",FilesUtil.obj("raw_output",raw));
+  org.json.JSONObject ir=FilesUtil.obj("pages",new org.json.JSONArray().put(FilesUtil.obj("page_id","p1","blocks",new org.json.JSONArray().put(block))));
+  org.json.JSONObject doc=store.normalize(store.create(),"发票",ir),display=doc.getJSONArray("blocks").getJSONObject(0);
+  assertEquals(raw,display.getString("markdown"));assertEquals("partial",display.getString("sourceStatus"));
+  assertEquals("assets/invoice.png",display.getString("resource"));
+  assertEquals("",block.getJSONObject("content").getString("text"));
+  block.getJSONObject("content").put("text","已修正的正文");
+  assertEquals("已修正的正文",store.normalize(store.create(),"发票",ir).getJSONArray("blocks").getJSONObject(0).getString("markdown"));
+ }
  @Rule public TemporaryFolder temp=new TemporaryFolder();
  static class Result implements OfficeParser.Sink{List<String> content=new ArrayList<>();int images;public void text(String type,String text){content.add(type+":"+text);}public void image(String name,byte[] data){images++;}}
  File zip(String...pairs)throws Exception{File f=temp.newFile();try(ZipOutputStream z=new ZipOutputStream(new FileOutputStream(f))){for(int i=0;i<pairs.length;i+=2){z.putNextEntry(new ZipEntry(pairs[i]));z.write(pairs[i+1].getBytes(StandardCharsets.UTF_8));z.closeEntry();}}return f;}

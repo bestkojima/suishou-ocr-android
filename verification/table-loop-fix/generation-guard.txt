@@ -1,0 +1,11 @@
+PASS 短片段/标点/UTF-8 分片/空编号截停；正常题目/重复表格行/后续区域隔离；终态原因
+date
+227/916 repeated_fragment
+numbers
+435/921 empty_numbering
+punctuation
+160/805 repeated_fragment
+punctuation
+160/6181 repeated_fragment
+PASS ovis 已有正常输出 14 区无误停
+PASS glm 已有正常输出 17 区无误停

@@ -1,4 +1,4 @@
-import fixtures from '../prototypes/ocr-streaming/fixture-data.json';
+import fixtures from './generated/replay-fixtures.json';
 import { unzipSync, zipSync, strFromU8, strToU8 } from 'fflate';
 export const native = !!window.AndroidHost;
 const pending = new Map(); let next = 0;
@@ -9,10 +9,11 @@ function prefs(){try{return {wifiOnly:true,debug:false,chunk:8,imageResolution:'
 const dataURL=blob=>new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=()=>no(r.error);r.readAsDataURL(blob);});
 function dimensions(src){return new Promise((ok,no)=>{const image=new Image();image.onload=()=>ok({width:image.naturalWidth,height:image.naturalHeight});image.onerror=()=>no(Error('无法解码图片'));image.src=src;});}
 const safePath=p=>p&&!p.startsWith('/')&&!p.includes('\\')&&!p.split('/').includes('..')&&!p.includes(':');
+// 冗余标记 R4：与 Android DocumentStore 的规范化/导出契约需共同维护，见 docs/STRUCTURE.md。
 function normalize(ir,files,title){
  if(!ir.pages?.length)throw Error('JSON 缺少 DocumentIR pages');const assets={};
  for(const r of ir.resources||[]){if(!safePath(r.path))throw Error('无效资源路径');assets[r.path]={src:files[r.path]||'',width:r.width||400,height:r.height||240,missing:!files[r.path]};}
- const blocks=[];for(const [p,page] of ir.pages.entries()){const byId=Object.fromEntries((page.blocks||[]).map(b=>[b.id,b]));for(const id of page.reading_order||Object.keys(byId)){const b=byId[id];if(!b)continue;const c=b.content||{text:'> 此区域未完成识别，请对照原图校对。',format:'markdown'};blocks.push({id:`${page.page_id||p}-${id}`,type:b.type,page:p+1,markdown:b.type==='image'?`![插图](${c.resource})`:c.format==='latex'?`$$\n${c.text}\n$$`:c.text||'',sourceStatus:b.status||'ok',resource:c.resource,format:c.format});}}
+ const blocks=[];for(const [p,page] of ir.pages.entries()){const byId=Object.fromEntries((page.blocks||[]).map(b=>[b.id,b]));for(const id of page.reading_order||Object.keys(byId)){const b=byId[id];if(!b)continue;const raw=b.provenance?.raw_output;const recover=b.type==='table'&&b.status&&b.status!=='ok'&&!b.content?.text&&typeof raw==='string'&&raw.length>0;const c=recover?{...b.content,text:raw,format:'markdown'}:b.content||{text:'> 此区域未完成识别，请对照原图校对。',format:'markdown'};blocks.push({id:`${page.page_id||p}-${id}`,type:b.type,page:p+1,markdown:b.type==='image'?`![插图](${c.resource})`:c.format==='latex'?`$$\n${c.text}\n$$`:c.text||'',sourceStatus:b.status||'ok',resource:c.resource,format:c.format});}}
  if(blocks.length>10000)throw Error('区域超过 10000');
  const partial=ir.status==='partial'||ir.pages.some(p=>p.status==='partial')||blocks.some(b=>b.sourceStatus!=='ok');
  const blank=blocks.length===0&&ir.pages.every(p=>ir.status==='blank'||p.status==='blank'||p.reading_order_evidence?.reason==='empty_page');

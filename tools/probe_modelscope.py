@@ -1,4 +1,5 @@
 """Small public-network probe: listings, checksum, and two 64 KiB ranges (no full model download)."""
+# 冗余标记 R2：与 verify_modelscope.py 共享候选见 docs/STRUCTURE.md；严格分段验证仍独立保留。
 import hashlib,json,urllib.request,urllib.parse
 from pathlib import Path
 repos=['dr3334/PP-DocLayoutV3-mnn','dr3334/ovrics-ocrv2_mnn']

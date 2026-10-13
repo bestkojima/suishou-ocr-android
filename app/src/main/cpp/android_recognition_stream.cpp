@@ -13,7 +13,7 @@ namespace {
 using Clock = std::chrono::steady_clock;
 thread_local DocOcrJob running_job = 0;
 struct Region {
-    std::string id, type, raw, finish;
+    std::string id, type, raw, finish, stop;
     int attempt = 0, threads = 1;
     bool done = false;
     Clock::time_point started;
@@ -64,6 +64,7 @@ extern "C" const char* android_ocr_stream_snapshot(DocOcrJob job) {
         snapshot+="{\"threads\":"+std::to_string(r.threads)+",\"requestId\":"+dococr::json_quote(r.id)+",\"type\":"+dococr::json_quote(r.type)+
             ",\"attempt\":"+std::to_string(r.attempt)+",\"raw\":"+dococr::json_quote(valid_utf8(r.raw))+
             ",\"done\":"+(r.done?"true":"false")+",\"finishReason\":"+dococr::json_quote(r.finish)+
+            ",\"stopReason\":"+dococr::json_quote(r.stop)+
             ",\"firstContentMs\":"+std::to_string(r.first_ms)+",\"elapsedMs\":"+std::to_string(r.done?r.elapsed_ms:elapsed(r.started))+
             ",\"visionMs\":"+std::to_string(r.vision_us/1000)+",\"prefillMs\":"+std::to_string(r.prefill_us/1000)+
             ",\"decodeMs\":"+std::to_string(r.decode_us/1000)+",\"outputTokens\":"+std::to_string(r.tokens)+"}";
@@ -72,7 +73,7 @@ extern "C" const char* android_ocr_stream_snapshot(DocOcrJob job) {
 }
 namespace dococr {
 AndroidGenerationStream::AndroidGenerationStream(const GenerationRequest& request, int threads)
-    :std::ostream(this),request_(request.request_id),job_(running_job) {
+    :std::ostream(this),request_(request.request_id),job_(running_job),loop_guard_(request.task == "table") {
     if(!job_)return;
     std::lock_guard<std::mutex> lock(stream_mutex);auto& s=streams[job_];auto& r=region(s,request_);
     int attempt=r.attempt+1;r=Region{};r.id=request_;r.type=request.task;r.attempt=attempt;r.threads=threads;r.started=Clock::now();++s.revision;
@@ -83,7 +84,10 @@ AndroidGenerationStream::~AndroidGenerationStream() {
     r.done=true;r.finish="failed";r.elapsed_ms=elapsed(r.started);++s.revision;
 }
 std::streamsize AndroidGenerationStream::xsputn(const char* data,std::streamsize size) {
-    if(size<=0)return 0;raw_.append(data,static_cast<size_t>(size));
+    if(size<=0)return 0;
+    if(loop_guard_.detected())return size;
+    raw_.append(data,static_cast<size_t>(size));
+    loop_guard_.append(data,static_cast<size_t>(size));
     if(job_) {
         std::lock_guard<std::mutex> lock(stream_mutex);auto& s=streams[job_];auto& r=region(s,request_);
         if(r.first_ms<0)r.first_ms=elapsed(r.started);
@@ -98,7 +102,7 @@ AndroidGenerationStream::int_type AndroidGenerationStream::overflow(int_type ch)
 void AndroidGenerationStream::finish(const GenerationOutput& output,const MNN::Transformer::LlmContext* context) {
     finished_=true;if(!job_)return;
     std::lock_guard<std::mutex> lock(stream_mutex);auto& s=streams[job_];auto& r=region(s,request_);
-    r.done=true;r.finish=output.finish_reason;r.elapsed_ms=output.elapsed_ms;
+    r.done=true;r.finish=output.finish_reason;r.stop=output.stop_reason;r.elapsed_ms=output.elapsed_ms;
     if(context){r.vision_us=context->vision_us;r.prefill_us=context->prefill_us;r.decode_us=context->decode_us;r.tokens=context->output_tokens.size();}
     ++s.revision;
 #ifdef __ANDROID__

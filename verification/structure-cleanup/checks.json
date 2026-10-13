@@ -1,0 +1,27 @@
+{
+  "browserFixtureDataEqual": true,
+  "mergedAssetsEqual": [
+    "userDebug",
+    "labDebug"
+  ],
+  "browserPassed": 19,
+  "removedObsoleteFiles": [
+    ".gitignore",
+    "app.jsx",
+    "build.mjs",
+    "fixture-data.json",
+    "package.json",
+    "package-lock.json",
+    "prepare-fixtures.py",
+    "style.css",
+    "verify.mjs"
+  ],
+  "removedTrackedBytes": 3355097,
+  "newGeneratorBytes": 2909,
+  "documentationLinks": "passed",
+  "gradleUnchanged": "UP-TO-DATE",
+  "gradleMissingGeneratedData": "rebuilt successfully",
+  "syntaxChecks": "passed",
+  "diffWhitespace": "passed",
+  "scope": "web regression and both Android asset merges; no APK build or device inference"
+}

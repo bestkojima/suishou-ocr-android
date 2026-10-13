@@ -169,3 +169,14 @@ Status: ready-for-agent
 2026-10-09：已发布 [v0.7.6 预发布](https://github.com/bestkojima/suishou-ocr-android/releases/tag/v0.7.6)，上传两版 APK 与 SHA256SUMS.txt，下载复核通过。真机验收继续待办。
 
 任务见 [.scratch/document-crop/spec.md](.scratch/document-crop/spec.md)，详细证据见 [verification/document-crop/DELIVERY.md](verification/document-crop/DELIVERY.md)。其余 BUG 仍保持原记录状态。
+
+## 2026-10-13：BUG-004／BUG-002 修复进展
+
+Status: ready-for-agent
+
+用户补充表格在生成中正常、完成后异常，并授权生产循环输出检测。
+
+- BUG-004：已复现同类终态丢失：引擎清空未通过公式/结构校验的表格 content.text，但 provenance.raw_output 尚在。Android 和浏览器转展示时恢复该原文，保留 partial/failed 与校对入口。合并单元格、异常公式、保存重开、模拟桥 live→保存切换已通过。
+- BUG-002：实时尾窗检测短片段、标点循环与连续空编号；以 repetition 停止解码、保留证据、避免扩大 token 预算重试。正常重复表格行跳过结构片段检测；正常题号带正文不误停。
+- Linux 真实 Ovis 异常扫描页的三处循环已截停，其他 14 区正常继续且原始输出与此前逐字一致。此为保护措施，不宣称解决模型退化根因或所有异常续写。
+- 用户发票原图及 Titan_1 真机仍待验收；本轮未发布。详情见 [交付记录](verification/table-loop-fix/DELIVERY.md)。

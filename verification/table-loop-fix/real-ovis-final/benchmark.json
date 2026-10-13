@@ -1,0 +1,502 @@
+{
+  "environment": "Linux x86_64，同源 Android 加载适配＋真实模型；非设备推理",
+  "library": "/tmp/ocr-table-loop-host/docprase/libdococr_c.so",
+  "librarySha256": "fe646e273ff9631021702449ec220ddec82a7d83ef377790a81b86e4c8391935",
+  "loadedNativeLibrariesSha256": {
+    "/home/dr/project/MNN/build/express/libMNN_Express.so": "058d8669293ce6390d10bafe7f683992114c25da146a0bf250c3e708d9e97e63",
+    "/home/dr/project/MNN/build/libllm.so": "6350e3461088e4531a677db83ee2a54001587e10e228b563423d5623ffc4dd01",
+    "/home/dr/project/MNN/build/libMNN.so": "3dfe05cd51a3916db5da236d44a08f945b4054cfaae7ee1d88d0cc30b7655ded",
+    "/home/dr/project/MNN/build/tools/cv/libMNNOpenCV.so": "91e9bfc4996bb97c70e7e69483e96417826283c5f904f2beb01ed41fd7b3c6be",
+    "/tmp/ocr-table-loop-host/docprase/libdococr_c.so": "fe646e273ff9631021702449ec220ddec82a7d83ef377790a81b86e4c8391935",
+    "/home/dr/project/MNN/build/tools/audio/libMNNAudio.so": "0d26cfaaafa176dd7a77b8d7d8a310e7c7d04196adb40f8d0885303f2bdacc2c"
+  },
+  "inputPath": "/home/dr/project/android_ocr/verification/ocr-degeneration/user-page-20261009/source.png",
+  "inputSha256": "0f69c46def894afc60ba0d36901578d9aa65705ad3a9510274e8915fb710f88e",
+  "modelsVerifiedBeforeLoading": false,
+  "modelIntegrityBoundary": "已准备绑定；本次不扫描权重 SHA",
+  "config": {
+    "schema_version": "1.0",
+    "mode": "production",
+    "backend": "mnn:pp-doclayout-v3+ovisocr2",
+    "models": {
+      "layout": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/docprase/models/doclayout",
+        "artifacts": [
+          {
+            "path": "PP-DocLayoutV3.mnn",
+            "sha256": "5f1a43441d70f6843012b47eb294bed7edd3d0ef2344f0074700a38cb2e29c67"
+          }
+        ]
+      },
+      "recognition": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/docprase/models/ovis",
+        "artifacts": [
+          {
+            "path": "config.json",
+            "sha256": "b81ac7008ba5f894301b7b9265bba882889df52c6e25c86390514c1bd4afe0c4"
+          },
+          {
+            "path": "llm_config.json",
+            "sha256": "bb0d93883767c2c47de7f6965494c689c9890fffb79e3ca5e00e6f1fa5fd9770"
+          },
+          {
+            "path": "llm.mnn",
+            "sha256": "1da84439dec62e4f966833c54438859e1bdae8a07b03a55c643aabbeb48bc880"
+          },
+          {
+            "path": "llm.mnn.weight",
+            "sha256": "f09832b6ee9d63167ef456e83dea7f5df28e3983953e28b0a1e63e598cb45d32"
+          },
+          {
+            "path": "visual.mnn",
+            "sha256": "d85dbe1c24890bdd514cf35f23d2c0dfdb3d207489f50c05705782759881daa5"
+          },
+          {
+            "path": "visual.mnn.weight",
+            "sha256": "2a1b5138bdc1f6369df64f2b21b379b11f47ec51a46bb74a5013e4b2b9c4aa6d"
+          },
+          {
+            "path": "tokenizer.mtok",
+            "sha256": "1a0c1ee1d04a63791ea87be31bb8c1f6346ecdd9c3b55ccdbb894cea32fbedfa"
+          },
+          {
+            "path": "export_args.json",
+            "sha256": "953745b0456e0e4e3d2d4a0b31dd5a2d4dce632230a0b1d7c0ccfeead2de9334"
+          },
+          {
+            "path": "ocr_runtime.json",
+            "sha256": "17dc5e7b875f12bc70abee033dd220cb8e3ff59b11bbcdc70a6f710e725eaf7b"
+          }
+        ]
+      }
+    },
+    "skills": {
+      "layout.detect": "layout",
+      "ocr.transcribe": "recognition"
+    },
+    "flow": [
+      {
+        "id": "load",
+        "processor": "page_loader",
+        "depends_on": []
+      },
+      {
+        "id": "layout",
+        "skill": "layout.detect",
+        "depends_on": [
+          "load"
+        ]
+      },
+      {
+        "id": "transcribe",
+        "skill": "ocr.transcribe",
+        "depends_on": [
+          "layout"
+        ]
+      },
+      {
+        "id": "assemble",
+        "processor": "document_assembler",
+        "depends_on": [
+          "transcribe"
+        ]
+      },
+      {
+        "id": "export",
+        "processor": "document_exporter",
+        "depends_on": [
+          "assemble"
+        ]
+      }
+    ],
+    "processing": [
+      {
+        "id": "decode",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "rgb_identity",
+        "owner": "none",
+        "enabled": true
+      },
+      {
+        "id": "normalize",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "crop",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "session_reset",
+        "owner": "runtime",
+        "enabled": true
+      },
+      {
+        "id": "deskew",
+        "owner": "none",
+        "enabled": false
+      }
+    ],
+    "platform": {
+      "device": "cpu",
+      "threads": 4
+    },
+    "execution": {
+      "max_page_pixels": 64000000,
+      "max_output_bytes": 67108864,
+      "max_new_tokens": 512,
+      "layout_preprocess": "smartresize_lanczos",
+      "layout_score_threshold": 0.3,
+      "markdown_ignore_labels": [
+        "number",
+        "footnote",
+        "header",
+        "header_image",
+        "footer",
+        "footer_image",
+        "aside_text"
+      ],
+      "show_formula_number": false
+    }
+  },
+  "threads": 4,
+  "expectedMmap": false,
+  "memoryBeforeLoading": {
+    "rssBytes": 35569664,
+    "processPeakRssBytes": 35553280
+  },
+  "loads": [
+    {
+      "attempt": 1,
+      "seconds": 10.851655916000254,
+      "engineReused": false,
+      "status": "partial",
+      "blocks": 17,
+      "stream": {
+        "firstLiveSeconds": 17.9272975089998,
+        "totalSeconds": 74.26342796299969,
+        "snapshots": 116,
+        "regions": [
+          {
+            "threads": 4,
+            "requestId": "reqr0001",
+            "type": "text",
+            "attempt": 1,
+            "raw": "1. M: When will Flight BA981 from New York arrive?\n\nW: It was scheduled to arrive at 1:00 p.m., but it will be delayed for an hour and a half.\n\nQ: When will the plane arrive?\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 3639,
+            "elapsedMs": 5893,
+            "visionMs": 797,
+            "prefillMs": 2811,
+            "decodeMs": 2226,
+            "outputTokens": 55
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0002",
+            "type": "text",
+            "attempt": 1,
+            "raw": "2. M: I'd like to have a look at that blue sweater in the window, please.\n\nW: Yes, what size do you take?\n\nQ: Where does the conversation most probably take place?\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 6581,
+            "elapsedMs": 10558,
+            "visionMs": 4930,
+            "prefillMs": 1620,
+            "decodeMs": 3956,
+            "outputTokens": 45
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0003",
+            "type": "text",
+            "attempt": 1,
+            "raw": "3. W: Good evening, sir, would you like to see the menu?\n\nM: No, thank you. I've already known what I want to order.\n\nQ: What's the possible relationship between the two speakers?\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 3171,
+            "elapsedMs": 4046,
+            "visionMs": 1203,
+            "prefillMs": 1934,
+            "decodeMs": 848,
+            "outputTokens": 49
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0004",
+            "type": "text",
+            "attempt": 1,
+            "raw": "4. M: Hotel rooms along the beach must be very expensive.\n\nW: Not now. It's out of the season and they are awfully cheap.\n\nQ: What does the woman say about the hotel rooms now?\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 1397,
+            "elapsedMs": 2176,
+            "visionMs": 631,
+            "prefillMs": 737,
+            "decodeMs": 754,
+            "outputTokens": 48
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0005",
+            "type": "text",
+            "attempt": 1,
+            "raw": "5. W: John, how did your maths exam go?\n\nM: I thought I might have failed but in fact I became the top 10% in the class.\n\nQ: What can we learn about the man from the conversation?\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 1982,
+            "elapsedMs": 2771,
+            "visionMs": 725,
+            "prefillMs": 1217,
+            "decodeMs": 763,
+            "outputTokens": 52
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0006",
+            "type": "text",
+            "attempt": 1,
+            "raw": "6. W: What did you thing of yesterday's film?\n\nM: Well, I left when the film was only half way through.\n\nQ: What was the film like according to the man?\n\n0782\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 1477,
+            "elapsedMs": 2201,
+            "visionMs": 758,
+            "prefillMs": 689,
+            "decodeMs": 700,
+            "outputTokens": 48
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0007",
+            "type": "text",
+            "attempt": 1,
+            "raw": "7. W: Come on, what are we waiting for?\n\nM: Sorry, Madam, I can't start until you put on your seat belt.\n\nQ: What does the man mean?\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 1409,
+            "elapsedMs": 2059,
+            "visionMs": 691,
+            "prefillMs": 688,
+            "decodeMs": 629,
+            "outputTokens": 43
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0008",
+            "type": "text",
+            "attempt": 1,
+            "raw": "8. M: Congratulations, Mary! I heard you won the first prize at the speech contest.\n\nW: There must be another Mary, I wasn't there.\n\nQ: What does the woman mean?\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 2429,
+            "elapsedMs": 3144,
+            "visionMs": 675,
+            "prefillMs": 1722,
+            "decodeMs": 693,
+            "outputTokens": 44
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0009",
+            "type": "text",
+            "attempt": 1,
+            "raw": "9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n",
+            "done": true,
+            "finishReason": "truncated",
+            "stopReason": "repetition",
+            "firstContentMs": 2093,
+            "elapsedMs": 3766,
+            "visionMs": 784,
+            "prefillMs": 1278,
+            "decodeMs": 1622,
+            "outputTokens": 107
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0010",
+            "type": "text",
+            "attempt": 1,
+            "raw": "Q: What's the woman's reaction to the man's remark?\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 1962,
+            "elapsedMs": 2191,
+            "visionMs": 644,
+            "prefillMs": 1291,
+            "decodeMs": 221,
+            "outputTokens": 15
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0011",
+            "type": "text",
+            "attempt": 1,
+            "raw": "10. W: Oh, that's too bad. It's out of order again.\n\nM: Sorry, Madam, but you have to walk upstairs today.\n\nQ: What are the speakers probably talking about?\n\n1\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 1861,
+            "elapsedMs": 2855,
+            "visionMs": 701,
+            "prefillMs": 1128,
+            "decodeMs": 971,
+            "outputTokens": 49
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0012",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## Part B Passages\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 1099,
+            "elapsedMs": 1192,
+            "visionMs": 201,
+            "prefillMs": 886,
+            "decodeMs": 90,
+            "outputTokens": 6
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0013",
+            "type": "text",
+            "attempt": 1,
+            "raw": "Directions: In Part B, you will hear two short passages, and you will be asked three questions on each of the passages. The passages will be read twice but the questions will be spoken only once. When you hear a question, read the four possible answers on your paper and decide which one would be the best answer to the question you have heard.\n\nFor each to read a self-based way to,\n\n1.\n\n2.\n\n3.\n\n4.\n\n5.\n\n6.\n\n7.\n\n8.\n\n9.\n\n10.\n\n11.\n\n12.\n\n",
+            "done": true,
+            "finishReason": "truncated",
+            "stopReason": "repetition",
+            "firstContentMs": 1783,
+            "elapsedMs": 3677,
+            "visionMs": 636,
+            "prefillMs": 1115,
+            "decodeMs": 1834,
+            "outputTokens": 122
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0014",
+            "type": "text",
+            "attempt": 1,
+            "raw": "Questions 11 through 13 are based on the following passage.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n.\n\n",
+            "done": true,
+            "finishReason": "truncated",
+            "stopReason": "repetition",
+            "firstContentMs": 1722,
+            "elapsedMs": 2992,
+            "visionMs": 628,
+            "prefillMs": 1068,
+            "decodeMs": 1232,
+            "outputTokens": 84
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0015",
+            "type": "text",
+            "attempt": 1,
+            "raw": "Last month, I went to Manchester for a work meeting. I booked into a very nice hotel for two nights and I was very happy with it. My room was beautiful and the restaurant served very good food. In fact my dinner there that first night was delicious, but when I came back from my meeting on the second day, I found my room empty. All my things had disappeared. I checked that I was in the right room and then I rushed down to the reception. I was really worried because I thought I'd been robbed. When I got to the reception, I said my room was empty. All my things had been stolen but the\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 1752,
+            "elapsedMs": 3738,
+            "visionMs": 625,
+            "prefillMs": 1097,
+            "decodeMs": 1928,
+            "outputTokens": 131
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0016",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 灿烂在六月 听力文字和参考答案\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 1824,
+            "elapsedMs": 1988,
+            "visionMs": 714,
+            "prefillMs": 1084,
+            "decodeMs": 158,
+            "outputTokens": 11
+          },
+          {
+            "threads": 4,
+            "requestId": "reqr0017",
+            "type": "text",
+            "attempt": 1,
+            "raw": "## 第 50 页（共 52 页）\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 1139,
+            "elapsedMs": 1381,
+            "visionMs": 254,
+            "prefillMs": 867,
+            "decodeMs": 234,
+            "outputTokens": 17
+          }
+        ],
+        "saveResultsSeconds": 0.00012237499959155684,
+        "rawMatchesSavedAttempts": true,
+        "phaseTotalsMs": {
+          "visionMs": 15597,
+          "prefillMs": 21232,
+          "decodeMs": 18859,
+          "elapsedMs": 56628
+        },
+        "phaseTotalsScope": "每个生成区域的最后一次尝试；重试前阶段不含在此合计中",
+        "pipelineTimingsMs": {
+          "decode": 1284,
+          "layout": 1941,
+          "recognition": 56744,
+          "export": 212
+        },
+        "pipelineTimingStatus": {
+          "decode": "measured",
+          "layout": "measured",
+          "recognition": "measured",
+          "export": "measured"
+        },
+        "recognitionRegions": 17,
+        "attempts": 17,
+        "retriedRegions": [],
+        "outputTokensLastAttempts": 926,
+        "modelName": "OvisOCR2"
+      },
+      "memory": {
+        "rssBytes": 1920397312,
+        "processPeakRssBytes": 2802122752
+      },
+      "useMmap": false,
+      "markdownSha256": "40a4283d0ea153439af5313680d38ce0e46bc1c6e730412339366fc335bd9fbd"
+    }
+  ],
+  "memoryAfterLoading": {
+    "rssBytes": 1564798976,
+    "processPeakRssBytes": 1804062720
+  },
+  "temporaryDirectory": {
+    "files": [],
+    "mmapDirectories": []
+  }
+}

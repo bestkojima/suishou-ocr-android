@@ -1,0 +1,31 @@
+{
+  "versionName": "0.7.8-ocr",
+  "versionCode": 15,
+  "localOnly": true,
+  "unitTests": {
+    "User": {
+      "tests": 82,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "Lab": {
+      "tests": 82,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "apks": [
+    {
+      "path": "/home/dr/project/android_ocr/app/build/outputs/apk/user/debug/app-user-debug.apk",
+      "sha256": "a899678a034c0fed45e52abf4bb633cc4d34378b7c14f515d674746ac90fd62e",
+      "bytes": 53634290
+    },
+    {
+      "path": "/home/dr/project/android_ocr/app/build/outputs/apk/lab/debug/app-lab-debug.apk",
+      "sha256": "85ec37985eda4f1d93b52b85da3c5a0a6196132324403e30d83deacec1e6bb5e",
+      "bytes": 53634302
+    }
+  ]
+}

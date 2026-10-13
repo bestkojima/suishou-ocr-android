@@ -1,0 +1,161 @@
+{
+  "baselineCommit": "cf70c006da552451518323358fd8fcb0e43534f7",
+  "unchangedMovedFiles": [
+    {
+      "path": "fixtures/replay/odb-09/assets/p0001-b0001.png",
+      "sha256": "2876f27543f7cccb2b63637fe1fefd9168d9db7af190119033d790607e4dd0f4"
+    },
+    {
+      "path": "fixtures/replay/odb-09/assets/p0001-b0002.png",
+      "sha256": "71f2cb47b99dd3df4558e34de81f8929dbe75a015be7c92063c12386fa1def97"
+    },
+    {
+      "path": "fixtures/replay/odb-09/assets/p0001-b0003.png",
+      "sha256": "afddd62c229ba82e49a6401d4b49506a23d47df9ace60698b00ff74826e45b2f"
+    },
+    {
+      "path": "fixtures/replay/odb-09/assets/p0001-b0004.png",
+      "sha256": "7199130e4917bb88d3521376d149fc877d2ca60791f7b564490dbaca10c929bc"
+    },
+    {
+      "path": "fixtures/replay/odb-09/assets/p0001-b0005.png",
+      "sha256": "58e792ee4403d417c0fc12d4f517321dfdc4f39edbf5affd79b08881602cff7d"
+    },
+    {
+      "path": "fixtures/replay/odb-09/assets/p0001-b0006.png",
+      "sha256": "56b134a2074f9cb48f77fa5e40b0538df574da8971e6231e0dfb3b4ff3b3ce2c"
+    },
+    {
+      "path": "fixtures/replay/odb-09/assets/p0001-b0007.png",
+      "sha256": "b1a8095ca740976e342c3d023247fcce7564ae7f74e3ac222874720b9f356576"
+    },
+    {
+      "path": "fixtures/replay/odb-09/assets/p0001-b0008.png",
+      "sha256": "076fdc17c7dee9e83b3af35f608cd44b896d73460e3a90ad5db92b3c3ce904c1"
+    },
+    {
+      "path": "fixtures/replay/odb-09/assets/p0001-b0009.png",
+      "sha256": "a7fe1d7e276af5defbfbf804dbe2addfa04e712a8ac683fe90e3f2cb4bafc5ca"
+    },
+    {
+      "path": "fixtures/replay/odb-09/assets/p0001-b0010.png",
+      "sha256": "92e2a5dae56d4028766eebef7f9d9032f0d4e048a59f7c737c1cb404810ae646"
+    },
+    {
+      "path": "fixtures/replay/odb-09/document.json",
+      "sha256": "c2a0d9b92947d1ecb891efd915e98c6a6fc1ee9e13e1cac1f62e22238dbb3938"
+    },
+    {
+      "path": "fixtures/replay/odb-09/document.md",
+      "sha256": "f7e6a3e9df41d0597f0f9ff46ae4489e4006a76d43723e0252cc2b6e6331ebd4"
+    },
+    {
+      "path": "fixtures/replay/odb-09/provenance.json",
+      "sha256": "35b6694e3ebc140ff1889cfe02ba36189a274b04aee0494090ed37c188856cfc"
+    },
+    {
+      "path": "fixtures/replay/odb-09/source.jpg",
+      "sha256": "9f9a0969fe7056dc3c8965b224ab61628aae7b9459723b5a0910011802553522"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0001.png",
+      "sha256": "77df0f6696adc2854f0d94f5db235d4e4d2455495acd68b2d208b31253007809"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0002.png",
+      "sha256": "910e0f70f82e7783ed7399e7edbd84d66eb383c9b2949cb08c10850ca087ac82"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0003.png",
+      "sha256": "0780bdfc797f117e6d883f61b2582aa797990296dafcbf4108de49f239eadaeb"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0004.png",
+      "sha256": "b86e70098ca505e214d0771533506430137996cec273c9724aeaa547c405a44a"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0005.png",
+      "sha256": "250c698694b02e16ee2757e42a485a701afd01fd18d85ad3c2c9917a35608b16"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0006.png",
+      "sha256": "2c51ae8088f30c65a893ada62d7356e250a38c8ac720c20e0f658b13b2072a96"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0007.png",
+      "sha256": "a57bc77f31876acb12397c8886b6107da7db614ee975849034da0d57e8af9c5b"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0008.png",
+      "sha256": "b41d66e2760b7ef3224a70e838b30412f455720be9d545ee468c45120512a7b4"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0009.png",
+      "sha256": "b1f3399573b78ff56ceeaa0fb72d6c1f8ea43addce4418fdcb1e9ede3f63abe3"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0010.png",
+      "sha256": "7b72cb6d81680946650ebba3c596202d290719437886f863866b4c2704ea4d87"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0011.png",
+      "sha256": "9cc1936ce1197320498bdde27736a1a4500b10c51c38e548c220ad115881db72"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0012.png",
+      "sha256": "c370a526c1cde88fff0c7b2230a2479b1bb7d623b9d23e5432f16ea54719ecba"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0013.png",
+      "sha256": "86af92c4c445a0ccf682aff2f25ed577981d620d44bcdc841dbb722308c392b4"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0014.png",
+      "sha256": "b9dedb9ab4e3ce1970fecc7c11a930ba1e83f24d7d737ee1c1e7c2fc16b9af4a"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0015.png",
+      "sha256": "7f10124842c9e6e3117f490ab6bf8b61c8490bd4ebbeda4061ce4bac54f4dbe9"
+    },
+    {
+      "path": "fixtures/replay/odb-13/assets/p0001-b0016.png",
+      "sha256": "3450c939fb10b951302bbedb52335e902e9ac6dfcd3a6d8b95ac65fb86371e9f"
+    },
+    {
+      "path": "fixtures/replay/odb-13/document.json",
+      "sha256": "186872facb5803fe20043026b4c965bc53d444f6ae232108eba8e38c29f640e6"
+    },
+    {
+      "path": "fixtures/replay/odb-13/document.md",
+      "sha256": "4a3ee5e3ab8c6615fa0a3ad27451b6f27c4ba03cc2cb1df3d3ee57b53756917b"
+    },
+    {
+      "path": "fixtures/replay/odb-13/provenance.json",
+      "sha256": "c69383d41ca31833eb47df340b3fe27166fb6fc5028479f5576415e30cf9b9d8"
+    },
+    {
+      "path": "fixtures/replay/odb-13/source.jpg",
+      "sha256": "63b11a697d37d0b7621e9f98edf32f594d3ff0db1adb513d2e0909f41ae35a8f"
+    },
+    {
+      "path": "verification/streaming-prototype/failure.png",
+      "sha256": "ca5a524556a5c3baacee4787c487305eab147f44a3838408bd543114cfc89f5d"
+    },
+    {
+      "path": "verification/streaming-prototype/landscape-formula.png",
+      "sha256": "92abdd3e76d16686697d4209e6dfb54dfee843d288daa5498e35862452c8a795"
+    },
+    {
+      "path": "verification/streaming-prototype/landscape-table.png",
+      "sha256": "18812691e91bb5305e642253fbc1055652a89590a5003a5a6a84336266115b70"
+    },
+    {
+      "path": "verification/streaming-prototype/portrait-formula.png",
+      "sha256": "fcf81f41ae2059fb848cef59cb254a0dd1e22dbf4145c61de1bed7723835763c"
+    },
+    {
+      "path": "verification/streaming-prototype/report.json",
+      "sha256": "286a32522d1b9a7586547044f295ebdb89d565499092dd7117ef38ae3bce1e15"
+    }
+  ]
+}

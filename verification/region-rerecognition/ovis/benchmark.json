@@ -1,0 +1,247 @@
+{
+  "environment": "Linux x86_64，同源 Android 加载适配＋真实模型；非设备推理",
+  "library": "/tmp/ocr-table-loop-host/docprase/libdococr_c.so",
+  "librarySha256": "5a219f03b3db6f4ff562fb7a950c1ede7dd2a92915d2c50b74c78f6b081348c4",
+  "loadedNativeLibrariesSha256": {
+    "/home/dr/project/MNN/build/express/libMNN_Express.so": "058d8669293ce6390d10bafe7f683992114c25da146a0bf250c3e708d9e97e63",
+    "/home/dr/project/MNN/build/libMNN.so": "3dfe05cd51a3916db5da236d44a08f945b4054cfaae7ee1d88d0cc30b7655ded",
+    "/home/dr/project/MNN/build/libllm.so": "6350e3461088e4531a677db83ee2a54001587e10e228b563423d5623ffc4dd01",
+    "/tmp/ocr-table-loop-host/docprase/libdococr_c.so": "5a219f03b3db6f4ff562fb7a950c1ede7dd2a92915d2c50b74c78f6b081348c4",
+    "/home/dr/project/MNN/build/tools/audio/libMNNAudio.so": "0d26cfaaafa176dd7a77b8d7d8a310e7c7d04196adb40f8d0885303f2bdacc2c",
+    "/home/dr/project/MNN/build/tools/cv/libMNNOpenCV.so": "91e9bfc4996bb97c70e7e69483e96417826283c5f904f2beb01ed41fd7b3c6be"
+  },
+  "inputPath": "/home/dr/project/android_ocr/verification/ocr-degeneration/user-page-20261009/captured/date-region.crop.png",
+  "inputSha256": "3e1bf8e87014b16a9de137aff2aeb78a5123149092a9dd79a3825fb5b801af41",
+  "modelsVerifiedBeforeLoading": false,
+  "modelIntegrityBoundary": "已准备绑定；本次不扫描权重 SHA",
+  "config": {
+    "schema_version": "1.0",
+    "mode": "production",
+    "backend": "mnn:pp-doclayout-v3+ovisocr2",
+    "models": {
+      "layout": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/docprase/models/doclayout",
+        "artifacts": [
+          {
+            "path": "PP-DocLayoutV3.mnn",
+            "sha256": "5f1a43441d70f6843012b47eb294bed7edd3d0ef2344f0074700a38cb2e29c67"
+          }
+        ]
+      },
+      "recognition": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/docprase/models/ovis",
+        "artifacts": [
+          {
+            "path": "config.json",
+            "sha256": "b81ac7008ba5f894301b7b9265bba882889df52c6e25c86390514c1bd4afe0c4"
+          },
+          {
+            "path": "llm_config.json",
+            "sha256": "bb0d93883767c2c47de7f6965494c689c9890fffb79e3ca5e00e6f1fa5fd9770"
+          },
+          {
+            "path": "llm.mnn",
+            "sha256": "1da84439dec62e4f966833c54438859e1bdae8a07b03a55c643aabbeb48bc880"
+          },
+          {
+            "path": "llm.mnn.weight",
+            "sha256": "f09832b6ee9d63167ef456e83dea7f5df28e3983953e28b0a1e63e598cb45d32"
+          },
+          {
+            "path": "visual.mnn",
+            "sha256": "d85dbe1c24890bdd514cf35f23d2c0dfdb3d207489f50c05705782759881daa5"
+          },
+          {
+            "path": "visual.mnn.weight",
+            "sha256": "2a1b5138bdc1f6369df64f2b21b379b11f47ec51a46bb74a5013e4b2b9c4aa6d"
+          },
+          {
+            "path": "tokenizer.mtok",
+            "sha256": "1a0c1ee1d04a63791ea87be31bb8c1f6346ecdd9c3b55ccdbb894cea32fbedfa"
+          },
+          {
+            "path": "export_args.json",
+            "sha256": "953745b0456e0e4e3d2d4a0b31dd5a2d4dce632230a0b1d7c0ccfeead2de9334"
+          },
+          {
+            "path": "ocr_runtime.json",
+            "sha256": "17dc5e7b875f12bc70abee033dd220cb8e3ff59b11bbcdc70a6f710e725eaf7b"
+          }
+        ]
+      }
+    },
+    "skills": {
+      "layout.detect": "layout",
+      "ocr.transcribe": "recognition"
+    },
+    "flow": [
+      {
+        "id": "load",
+        "processor": "page_loader",
+        "depends_on": []
+      },
+      {
+        "id": "layout",
+        "skill": "layout.detect",
+        "depends_on": [
+          "load"
+        ]
+      },
+      {
+        "id": "transcribe",
+        "skill": "ocr.transcribe",
+        "depends_on": [
+          "layout"
+        ]
+      },
+      {
+        "id": "assemble",
+        "processor": "document_assembler",
+        "depends_on": [
+          "transcribe"
+        ]
+      },
+      {
+        "id": "export",
+        "processor": "document_exporter",
+        "depends_on": [
+          "assemble"
+        ]
+      }
+    ],
+    "processing": [
+      {
+        "id": "decode",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "rgb_identity",
+        "owner": "none",
+        "enabled": true
+      },
+      {
+        "id": "normalize",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "crop",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "session_reset",
+        "owner": "runtime",
+        "enabled": true
+      },
+      {
+        "id": "deskew",
+        "owner": "none",
+        "enabled": false
+      }
+    ],
+    "platform": {
+      "device": "cpu",
+      "threads": 4
+    },
+    "execution": {
+      "max_page_pixels": 64000000,
+      "max_output_bytes": 67108864,
+      "max_new_tokens": 512,
+      "layout_preprocess": "smartresize_lanczos",
+      "layout_score_threshold": 0.3,
+      "markdown_ignore_labels": [
+        "number",
+        "footnote",
+        "header",
+        "header_image",
+        "footer",
+        "footer_image",
+        "aside_text"
+      ],
+      "show_formula_number": false
+    }
+  },
+  "threads": 4,
+  "expectedMmap": false,
+  "memoryBeforeLoading": {
+    "rssBytes": 25812992,
+    "processPeakRssBytes": 27025408
+  },
+  "loads": [
+    {
+      "attempt": 1,
+      "seconds": 1.8265086399997017,
+      "engineReused": false,
+      "status": "partial",
+      "blocks": 1,
+      "stream": {
+        "firstLiveSeconds": 2.021622248999847,
+        "totalSeconds": 5.59173210499921,
+        "snapshots": 14,
+        "regions": [
+          {
+            "threads": 4,
+            "requestId": "reqr0001",
+            "type": "text",
+            "attempt": 1,
+            "raw": "9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\n\nW: I did?\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n2023年1月1日\n\n",
+            "done": true,
+            "finishReason": "truncated",
+            "stopReason": "repetition",
+            "firstContentMs": 1850,
+            "elapsedMs": 3975,
+            "visionMs": 651,
+            "prefillMs": 1165,
+            "decodeMs": 2076,
+            "outputTokens": 107
+          }
+        ],
+        "saveResultsSeconds": 0.0005156790002729394,
+        "rawMatchesSavedAttempts": true,
+        "phaseTotalsMs": {
+          "visionMs": 651,
+          "prefillMs": 1165,
+          "decodeMs": 2076,
+          "elapsedMs": 3975
+        },
+        "phaseTotalsScope": "每个生成区域的最后一次尝试；重试前阶段不含在此合计中",
+        "pipelineTimingsMs": {
+          "decode": 11,
+          "layout": 0,
+          "recognition": 3980,
+          "export": 53
+        },
+        "pipelineTimingStatus": {
+          "decode": "measured",
+          "layout": "not_run",
+          "recognition": "measured",
+          "export": "measured"
+        },
+        "recognitionRegions": 1,
+        "attempts": 1,
+        "retriedRegions": [],
+        "outputTokensLastAttempts": 107,
+        "regionType": "text",
+        "modelName": "OvisOCR2"
+      },
+      "memory": {
+        "rssBytes": 1948524544,
+        "processPeakRssBytes": 2184224768
+      },
+      "useMmap": false,
+      "markdownSha256": "eafcfd7924d04407d5e497fc338ce7b22cea8f9299b220b36b1e32f2e2f373aa"
+    }
+  ],
+  "memoryAfterLoading": {
+    "rssBytes": 1555972096,
+    "processPeakRssBytes": 1795457024
+  },
+  "temporaryDirectory": {
+    "files": [],
+    "mmapDirectories": []
+  }
+}

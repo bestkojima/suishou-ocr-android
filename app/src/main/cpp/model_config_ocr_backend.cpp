@@ -199,12 +199,28 @@ public:
         }
         // 模型写入由 AndroidGenerationStream 实时发布。
         const auto generation_start = Clock::now();
-        llm_->response(tokens, &raw, nullptr, int(generation->max_new_tokens));
+        // 首次 response 做 prefill + 一个 token；后续沿同一 KV 状态逐 token 推进。
+        // 不通过 ostream 错误/异常中断 MNN，也不将循环误标为用户取消。
+        llm_->response(tokens, &raw, nullptr, 1);
+        for (uint64_t decoded = 1; decoded < generation->max_new_tokens; ++decoded) {
+            const auto* current = llm_->getContext();
+            if (context.cancelled || raw.repetition_detected() || !current ||
+                current->status != LlmStatus::MAX_TOKENS_FINISHED) break;
+            llm_->generate(1);
+        }
         output.generation_elapsed_ms = uint64_t(std::chrono::duration_cast<std::chrono::milliseconds>(Clock::now()-generation_start).count());
         output.raw_output = raw.str();
         output.elapsed_ms = uint64_t(std::chrono::duration_cast<std::chrono::milliseconds>(Clock::now()-begin).count());
         const auto* state = llm_->getContext();
-        if (!state) {
+        if (context.cancelled) {
+            output.finish_reason = "failed"; output.stop_reason = "cancelled";
+            output.error = "cancelled";
+        } else if (raw.repetition_detected()) {
+            // 使用已有非正常终态，阻止扩大 token 预算重试；后续区域仍可重置后识别。
+            output.finish_reason = "truncated"; output.stop_reason = "repetition";
+            output.text = output.raw_output;
+            output.error = "ocr_repetition_" + raw.repetition_reason();
+        } else if (!state) {
             output.finish_reason = "failed"; output.stop_reason = "vision_missing";
             output.error = "ocr_visual_processing_missing";
         } else if (state->status == LlmStatus::NORMAL_FINISHED && !output.raw_output.empty()) {

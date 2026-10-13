@@ -23,6 +23,7 @@ parser.add_argument('--expect-mmap', choices=['false','true'], default='false', 
 parser.add_argument('--engine-config', type=Path, help='使用已准备的模型目录绑定（支持 Ovis／GLM）；不重复扫描权重 SHA')
 parser.add_argument('--gzip-timeline', action='store_true', help='无损压缩生成时间线，适合完整长页面')
 parser.add_argument('--export-assets', action='store_true', help='保存完整 DocumentIR／Markdown 及全部真实图片资源，单独记录落盘耗时')
+parser.add_argument('--region-type', choices=['text','table','formula'], help='Android 区域重识别：直接识别输入裁图，不执行版面分析')
 args = parser.parse_args()
 expected_mmap = args.expect_mmap == 'true'
 if args.runs < 1: parser.error("runs必须为正整数")
@@ -118,6 +119,8 @@ with tempfile.TemporaryDirectory(prefix='android-ocr-runtime-') as cache:
             for attempt in range(args.runs):
                 check(lib.dococr_job_create(engine, c.byref(job)))
                 lib.android_ocr_run_streaming.argtypes = [c.c_uint64, c.POINTER(Input)]
+                if args.region_type:
+                    lib.android_ocr_run_region.argtypes = [c.c_uint64, c.POINTER(Input), c.c_char_p]
                 lib.android_ocr_stream_snapshot.argtypes = [c.c_uint64]
                 lib.android_ocr_stream_snapshot.restype = c.c_char_p
                 lib.android_ocr_stream_forget.argtypes = [c.c_uint64]
@@ -127,7 +130,9 @@ with tempfile.TemporaryDirectory(prefix='android-ocr-runtime-') as cache:
                 completed_attempts = set()
                 start = time.monotonic()
                 def run():
-                    try: outcome.append(lib.android_ocr_run_streaming(job, c.byref(request)))
+                    try:
+                        outcome.append(lib.android_ocr_run_region(job, c.byref(request), args.region_type.encode()) if args.region_type else
+                                       lib.android_ocr_run_streaming(job, c.byref(request)))
                     finally: finished.set()
                 worker = threading.Thread(target=run)
                 worker.start()
@@ -188,6 +193,8 @@ with tempfile.TemporaryDirectory(prefix='android-ocr-runtime-') as cache:
                     stream_report['savedAssets'] = count.value
                 stream_report['saveResultsSeconds'] = time.monotonic() - save_started
                 blocks = sum(len(page['blocks']) for page in ir['pages'])
+                if args.region_type:
+                    assert blocks == 1 and ir['pages'][0]['blocks'][0]['type'] == args.region_type
                 assert (ir['status'] == 'ok' or args.allow_partial and ir['status'] == 'partial') and blocks > 0, ir['status']
                 by_request = {block['provenance']['request_id']: block for page in ir['pages'] for block in page['blocks'] if block.get('provenance', {}).get('request_id')}
                 for region in snapshot['regions']:
@@ -204,6 +211,8 @@ with tempfile.TemporaryDirectory(prefix='android-ocr-runtime-') as cache:
                 stream_report['attempts'] = sum(len(region['recognition']['attempts']) for region in recognition_regions)
                 stream_report['retriedRegions'] = [region['request_id'] for region in recognition_regions if len(region['recognition']['attempts']) > 1]
                 stream_report['outputTokensLastAttempts'] = sum(region['outputTokens'] for region in snapshot['regions'])
+                if args.region_type:
+                    stream_report['regionType'] = args.region_type
                 stream_report['modelName'] = manifest_json['runtime_configuration'].get('model_name')
 
                 report['loads'].append({'attempt': attempt + 1, 'seconds': load_seconds if attempt == 0 else 0, 'engineReused': attempt > 0,

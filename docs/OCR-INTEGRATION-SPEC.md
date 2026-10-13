@@ -1,5 +1,7 @@
 # Android 单图真实 OCR 融合规格
 
+> 历史规格入口，保留任务来源；下列分流标签不表示当前实施进度。当前实现见 [REAL_OCR.md](REAL_OCR.md)。
+
 规格已发布到本项目的本地 Markdown tracker：
 
 - [完整规格](../.scratch/android-real-ocr/spec.md)

@@ -1,3 +1,4 @@
+// 冗余标记 R1：场景与 verify-editor-drag.mjs 开头重复，合并条件见 docs/STRUCTURE.md。
 import{chromium}from'playwright';import assert from'node:assert/strict';import{readFile,writeFile}from'node:fs/promises';import{spawn}from'node:child_process';import{unzipSync,strFromU8}from'fflate';
 const port=4195,origin=`http://127.0.0.1:${port}`,server=spawn('python3',['-m','http.server',String(port),'--bind','127.0.0.1','--directory','web/dist'],{stdio:'ignore'});let browser;const results=[];
 try{

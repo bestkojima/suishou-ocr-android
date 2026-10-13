@@ -6,6 +6,7 @@ final class NativeOcr {
     static native long create(String config, String cache) throws java.io.IOException;
     static native long jobCreate(long engine) throws java.io.IOException;
     static native int run(long job, String image) throws java.io.IOException;
+    static native int runRegion(long job, String image, String task) throws java.io.IOException;
     static native String status(long job) throws java.io.IOException;
     static native void cancel(long job) throws java.io.IOException;
     static native void export(long job, String directory) throws java.io.IOException;

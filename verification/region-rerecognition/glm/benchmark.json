@@ -1,0 +1,251 @@
+{
+  "environment": "Linux x86_64，同源 Android 加载适配＋真实模型；非设备推理",
+  "library": "/tmp/ocr-table-loop-host/docprase/libdococr_c.so",
+  "librarySha256": "5a219f03b3db6f4ff562fb7a950c1ede7dd2a92915d2c50b74c78f6b081348c4",
+  "loadedNativeLibrariesSha256": {
+    "/home/dr/project/MNN/build/express/libMNN_Express.so": "058d8669293ce6390d10bafe7f683992114c25da146a0bf250c3e708d9e97e63",
+    "/home/dr/project/MNN/build/tools/cv/libMNNOpenCV.so": "91e9bfc4996bb97c70e7e69483e96417826283c5f904f2beb01ed41fd7b3c6be",
+    "/home/dr/project/MNN/build/libMNN.so": "3dfe05cd51a3916db5da236d44a08f945b4054cfaae7ee1d88d0cc30b7655ded",
+    "/home/dr/project/MNN/build/libllm.so": "6350e3461088e4531a677db83ee2a54001587e10e228b563423d5623ffc4dd01",
+    "/tmp/ocr-table-loop-host/docprase/libdococr_c.so": "5a219f03b3db6f4ff562fb7a950c1ede7dd2a92915d2c50b74c78f6b081348c4",
+    "/home/dr/project/MNN/build/tools/audio/libMNNAudio.so": "0d26cfaaafa176dd7a77b8d7d8a310e7c7d04196adb40f8d0885303f2bdacc2c"
+  },
+  "inputPath": "/home/dr/project/android_ocr/verification/ocr-degeneration/user-page-20261009/captured/date-region.crop.png",
+  "inputSha256": "3e1bf8e87014b16a9de137aff2aeb78a5123149092a9dd79a3825fb5b801af41",
+  "modelsVerifiedBeforeLoading": false,
+  "modelIntegrityBoundary": "已准备绑定；本次不扫描权重 SHA",
+  "config": {
+    "schema_version": "1.0",
+    "mode": "production",
+    "backend": "mnn:pp-doclayout-v3+ovisocr2",
+    "models": {
+      "layout": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/docprase/models/doclayout",
+        "artifacts": [
+          {
+            "path": "PP-DocLayoutV3.mnn",
+            "sha256": "5f1a43441d70f6843012b47eb294bed7edd3d0ef2344f0074700a38cb2e29c67"
+          }
+        ]
+      },
+      "recognition": {
+        "contract_status": "contract_verified",
+        "root": "/home/dr/project/models/GLM-OCR-MNN",
+        "artifacts": [
+          {
+            "path": "config.json",
+            "sha256": "40d2d5bf0393cc347ff48cf29246ca9efff9a44a29c2c1ea4acac3135fff87fe"
+          },
+          {
+            "path": "llm_config.json",
+            "sha256": "552ca5ccd5b8aa3cfd59ff78882775dcb212a972ab8e7a35ee81ee3681d22403"
+          },
+          {
+            "path": "llm.mnn",
+            "sha256": "02d24795f89d82e16062b6ce5e90e573e003d88d7a00cbea3ca9e10da0e54210"
+          },
+          {
+            "path": "llm.mnn.weight",
+            "sha256": "71017aaf1be71d9ac2630300f89db1cb37a5fd863017bc95799b1fdc2a3a9d01"
+          },
+          {
+            "path": "visual.mnn",
+            "sha256": "7d78231555814a1d9e4146d62c9b92db6f87483bf1170f76fc16544b427183a5"
+          },
+          {
+            "path": "visual.mnn.weight",
+            "sha256": "3b28d1f97a5cc27927deeb14c73f5029019aebc32351ac788ca633ae226aa208"
+          },
+          {
+            "path": "tokenizer.txt",
+            "sha256": "c3823c73bda8910d027b26cedec0d703aa0a1f342ce6ce503eb74b7e8b776431"
+          },
+          {
+            "path": "embeddings_bf16.bin",
+            "sha256": "b8dbafc308854bb52ff5f9f0b852b6e58dfe54b1a2f3490d2299ad278601f603"
+          },
+          {
+            "path": "export_args.json",
+            "sha256": "e7c8a5d731ae629b48e28e761484b7b7c60c1938865805ad3161c4ee30aa536f"
+          },
+          {
+            "path": "ocr_runtime.json",
+            "sha256": "c2572f7ebd581cfca6b15113b5d4a7dc519586c37ef331ba5d3a698d53069555"
+          }
+        ]
+      }
+    },
+    "skills": {
+      "layout.detect": "layout",
+      "ocr.transcribe": "recognition"
+    },
+    "flow": [
+      {
+        "id": "load",
+        "processor": "page_loader",
+        "depends_on": []
+      },
+      {
+        "id": "layout",
+        "skill": "layout.detect",
+        "depends_on": [
+          "load"
+        ]
+      },
+      {
+        "id": "transcribe",
+        "skill": "ocr.transcribe",
+        "depends_on": [
+          "layout"
+        ]
+      },
+      {
+        "id": "assemble",
+        "processor": "document_assembler",
+        "depends_on": [
+          "transcribe"
+        ]
+      },
+      {
+        "id": "export",
+        "processor": "document_exporter",
+        "depends_on": [
+          "assemble"
+        ]
+      }
+    ],
+    "processing": [
+      {
+        "id": "decode",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "rgb_identity",
+        "owner": "none",
+        "enabled": true
+      },
+      {
+        "id": "normalize",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "crop",
+        "owner": "adapter",
+        "enabled": true
+      },
+      {
+        "id": "session_reset",
+        "owner": "runtime",
+        "enabled": true
+      },
+      {
+        "id": "deskew",
+        "owner": "none",
+        "enabled": false
+      }
+    ],
+    "platform": {
+      "device": "cpu",
+      "threads": 4
+    },
+    "execution": {
+      "max_page_pixels": 64000000,
+      "max_output_bytes": 67108864,
+      "max_new_tokens": 512,
+      "layout_preprocess": "smartresize_lanczos",
+      "layout_score_threshold": 0.3,
+      "markdown_ignore_labels": [
+        "number",
+        "footnote",
+        "header",
+        "header_image",
+        "footer",
+        "footer_image",
+        "aside_text"
+      ],
+      "show_formula_number": false
+    }
+  },
+  "threads": 4,
+  "expectedMmap": false,
+  "memoryBeforeLoading": {
+    "rssBytes": 25841664,
+    "processPeakRssBytes": 27054080
+  },
+  "loads": [
+    {
+      "attempt": 1,
+      "seconds": 2.66457518200059,
+      "engineReused": false,
+      "status": "ok",
+      "blocks": 1,
+      "stream": {
+        "firstLiveSeconds": 5.31467893900026,
+        "totalSeconds": 5.593980894999731,
+        "snapshots": 4,
+        "regions": [
+          {
+            "threads": 4,
+            "requestId": "reqr0001",
+            "type": "text",
+            "attempt": 1,
+            "raw": "9. M: Honey, do you realize you had an appointment with the dentist an hour ago?\nW: I did?\n",
+            "done": true,
+            "finishReason": "complete",
+            "stopReason": "normal",
+            "firstContentMs": 5162,
+            "elapsedMs": 5526,
+            "visionMs": 4405,
+            "prefillMs": 711,
+            "decodeMs": 355,
+            "outputTokens": 27
+          }
+        ],
+        "saveResultsSeconds": 0.0004331580003054114,
+        "rawMatchesSavedAttempts": true,
+        "phaseTotalsMs": {
+          "visionMs": 4405,
+          "prefillMs": 711,
+          "decodeMs": 355,
+          "elapsedMs": 5526
+        },
+        "phaseTotalsScope": "每个生成区域的最后一次尝试；重试前阶段不含在此合计中",
+        "pipelineTimingsMs": {
+          "decode": 7,
+          "layout": 0,
+          "recognition": 5528,
+          "export": 55
+        },
+        "pipelineTimingStatus": {
+          "decode": "measured",
+          "layout": "not_run",
+          "recognition": "measured",
+          "export": "measured"
+        },
+        "recognitionRegions": 1,
+        "attempts": 1,
+        "retriedRegions": [],
+        "outputTokensLastAttempts": 27,
+        "regionType": "text",
+        "modelName": "GLM-OCR"
+      },
+      "memory": {
+        "rssBytes": 2260787200,
+        "processPeakRssBytes": 2390925312
+      },
+      "useMmap": false,
+      "markdownSha256": "f666b870004b09174c569b5579ffcce3b8cc39bc94f8c510ecca3dde4dac26c6"
+    }
+  ],
+  "memoryAfterLoading": {
+    "rssBytes": 2142052352,
+    "processPeakRssBytes": 2141683712
+  },
+  "temporaryDirectory": {
+    "files": [],
+    "mmapDirectories": []
+  }
+}

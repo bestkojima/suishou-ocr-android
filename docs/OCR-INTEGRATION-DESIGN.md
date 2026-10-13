@@ -1,5 +1,7 @@
 # Android 真实 OCR 融合设计讨论
 
+> 历史设计记录：下文状态为首次设计时的快照。单图真实 OCR 已实现；当前行为见 [REAL_OCR.md](REAL_OCR.md)，目录及流程整理见 [STRUCTURE.md](STRUCTURE.md)。
+
 状态：各分支已明确，已通过 to-spec 形成并发布 [ready-for-agent 规格](../.scratch/android-real-ocr/spec.md)；尚未开始代码实施。本文不代表已经接入模型或完成设备验证。
 
 ## 用户目标

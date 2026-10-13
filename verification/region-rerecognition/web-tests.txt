@@ -1,0 +1,36 @@
+
+> test:web
+> node web/verify.mjs && node web/verify-invoice-table.mjs && node web/verify-region-rerecognition.mjs
+
+PASS 首页保留拍照、导入和 JSON 入口
+PASS 真实 JSON 完成 16 个区域，图片和表格渲染
+PASS 竖屏内容不会撑宽页面
+PASS 已完成区域保持 DOM 身份；上翻不被新输出拉走
+PASS 暂停停止增量并可继续
+PASS 横屏显示原文和结果，图片可缩放查看
+PASS 校对内容保存，导出 Markdown 包含修改
+PASS ZIP 导出包含图片、JSON 和校对状态
+PASS 历史在刷新后保留进度与校对内容
+PASS ZIP 再导入保留校对和图片，刷新后图片可用
+PASS 仅测试模式显示处理详情
+PASS 模型页列出版面、Ovis 和 GLM-OCR 三个 ModelScope 仓库
+PASS 公式样本完整输出，KaTeX 已渲染
+PASS 缺失图片展示固定占位并可重试
+PASS Office 原生解析结果回放：sales-with-image.xlsx
+PASS Office 原生解析结果回放：slides-with-table-and-image.pptx
+PASS Office 回放导出的 JSON 保留幻灯片边界和图片状态
+PASS 原生大表格按区域直接显示，不逐字等待
+PASS 离线渲染无第三方请求和未捕获异常
+PASS 发票终态恢复原文、合并单元格、异常公式、校对保存及重开、横竖屏
+PASS 模拟桥区域完成→整页保存保持表格；循环停止提示
+PASS [
+  '默认选择另一可用模型；新结果只在采用并保存后修改当前区域；保留其他校对和原始正文；重复停止提示',
+  '取消保留原文；关闭后迟到回复不污染其他区域；重开恢复候选',
+  '缺失裁图或未下载模型时禁用识别并说明原因'
+]
+PASS [
+  '终态之前显示模型正文，禁止校对与导出',
+  '保留区域 DOM，重试替换正文，表格即时显示，隔离旧作业',
+  '真实识别结束直接显示全部保存结果，不自动模拟流式回放',
+  '真实模型返回前采集的流快照可直接渲染（浏览器重放，非设备桥实测）'
+]

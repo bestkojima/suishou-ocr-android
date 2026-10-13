@@ -8,6 +8,7 @@ local.properties
 *.weight
 *.safetensors
 web/dist/
+web/generated/
 app/src/main/assets/web/
 app/src/main/assets/fixtures/
 

@@ -1,0 +1,53 @@
+{
+  "environment": "Linux 同源适配＋真实 Ovis；非 Android 真机",
+  "normalRegionsByteIdentical": [
+    "b0001",
+    "b0002",
+    "b0003",
+    "b0004",
+    "b0005",
+    "b0006",
+    "b0007",
+    "b0008",
+    "b0010",
+    "b0011",
+    "b0012",
+    "b0015",
+    "b0016",
+    "b0017"
+  ],
+  "stopped": [
+    {
+      "id": "b0009",
+      "reason": "repeated_fragment",
+      "attempts": 1,
+      "beforeBytes": 916,
+      "afterBytes": 229,
+      "dateCopies": 8,
+      "dotLines": 0,
+      "lastNumber": 0
+    },
+    {
+      "id": "b0013",
+      "reason": "empty_numbering_structure",
+      "attempts": 1,
+      "beforeBytes": 921,
+      "afterBytes": 436,
+      "dateCopies": 0,
+      "dotLines": 0,
+      "lastNumber": 12
+    },
+    {
+      "id": "b0014",
+      "reason": "repeated_fragment",
+      "attempts": 1,
+      "beforeBytes": 6181,
+      "afterBytes": 163,
+      "dateCopies": 0,
+      "dotLines": 34,
+      "lastNumber": 0
+    }
+  ],
+  "allAttemptsSingle": true,
+  "sourceStopReasonsCorrect": true
+}

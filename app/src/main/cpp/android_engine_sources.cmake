@@ -35,6 +35,9 @@ function(android_engine_source target filename)
   elseif(filename STREQUAL "printed_page_mnn_backend.cpp")
     # 模型目录配置驱动后端已经包含 Android 加载、线程及真实流式适配。
   elseif(filename STREQUAL "abi.cpp")
+    android_replace_once([=[#include "dococr/dococr.h"]=] [=[#include "dococr/dococr.h"
+#include "android_region_recognition.hpp"]=])
+    android_replace_once("dococr::run_page(engine->backend.get(), view, job->cancelled," "dococr::android_run_page(engine->backend.get(), view, job->cancelled,")
     android_replace_once([=[#include "config.hpp"]=] [=[#include "config.hpp"
 #include "model_ocr_config.hpp"]=])
     android_replace_once([=[        out += ",\"runtime_configuration\":{\"layout_threads\":1,\"ovis_threads\":1,"
@@ -78,3 +81,4 @@ android_engine_source(dococr_c layout_mnn_backend.cpp)
 android_engine_source(dococr_c printed_page_mnn_backend.cpp)
 
 target_sources(dococr_c PRIVATE "${CMAKE_CURRENT_LIST_DIR}/android_recognition_stream.cpp")
+target_sources(dococr_c PRIVATE "${CMAKE_CURRENT_LIST_DIR}/android_region_recognition.cpp")
