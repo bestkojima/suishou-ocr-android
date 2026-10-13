@@ -147,7 +147,7 @@ public class EngineReuseTest {
     void finished()throws Exception {
         ((java.util.concurrent.ExecutorService)get("inference")).submit(()->{}).get(8,java.util.concurrent.TimeUnit.SECONDS);
     }
-    @Test public void regionCandidateIsIsolatedAndDoesNotChangeDefaultModelOrExistingEdits()throws Exception {
+    @Test public void regionResultReplacesOldOutputWithoutChangingDefaultModelOrOtherBlocks()throws Exception {
         String id=regionDocument();RegionNative api=new RegionNative();set("resources",api);
         JSONObject started=controller.startRegion(id,"b1","glm");
         assertTrue(api.entered.await(3,java.util.concurrent.TimeUnit.SECONDS));
@@ -155,11 +155,28 @@ public class EngineReuseTest {
         assertEquals("original",controller.status(id).getString("jobId"));
         api.resume.countDown();finished();
         JSONObject state=controller.regionStatus(id);assertEquals("succeeded",state.getString("state"));assertEquals("新表格",state.getJSONObject("result").getString("markdown"));
-        JSONObject saved=controller.store().load(id);assertEquals("原校对内容",saved.getJSONObject("edits").getString("b1"));
+        JSONObject saved=controller.store().load(id);assertEquals("新表格",saved.getJSONObject("edits").getString("b1"));
+        assertEquals("新表格",saved.getJSONArray("blocks").getJSONObject(0).getString("markdown"));
+        assertFalse(controller.store().markdown(saved,false).contains("原校对内容"));
+        assertTrue(state.getBoolean("resultApplied"));
         assertEquals("其他区域",saved.getJSONArray("blocks").getJSONObject(1).getString("markdown"));
         assertEquals("ovis",modelPreference.get());assertEquals("table",api.type);assertTrue(api.path.endsWith("assets/crop.png"));
         assertEquals(1,api.jobs);assertEquals(0,api.engines);assertFalse(controller.readiness().getBoolean("inUse"));
         assertEquals(started.getString("jobId"),state.getString("jobId"));
+    }
+    @Test public void staleDraftCannotRestoreOldOutputAndOtherRegionSaveKeepsReplacement()throws Exception {
+        String id=regionDocument();RegionNative api=new RegionNative();set("resources",api);
+        File original=new File(controller.store().dir(id),"document.json");FilesUtil.write(original,"original evidence");
+        controller.startRegion(id,"b1","glm");api.resume.countDown();finished();
+        DocumentStore store=controller.store();
+        assertThrows(IOException.class,()->store.update(FilesUtil.obj("id",id,"blockEdit",FilesUtil.obj("id","b1","text","旧错误草稿","regionRevision",""))));
+        store.update(FilesUtil.obj("id",id,"blockEdit",FilesUtil.obj("id","b2","text","其他区域新校对","regionRevision","")));
+        JSONObject saved=store.load(id);assertEquals("新表格",saved.getJSONObject("edits").getString("b1"));
+        assertEquals("其他区域新校对",saved.getJSONObject("edits").getString("b2"));
+        String revision=saved.getJSONArray("blocks").getJSONObject(0).getString("regionRevision");
+        store.update(FilesUtil.obj("id",id,"blockEdit",FilesUtil.obj("id","b1","text","完成后人工修改","regionRevision",revision)));
+        assertTrue(store.markdown(store.load(id),false).contains("完成后人工修改"));
+        assertEquals("original evidence",FilesUtil.read(original));
     }
     @Test public void cancellingRegionDoesNotExportOrReplaceTheDocument()throws Exception {
         String id=regionDocument();RegionNative api=new RegionNative();set("resources",api);

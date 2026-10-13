@@ -1,0 +1,32 @@
+{
+  "versionName": "0.7.9-ocr",
+  "versionCode": 16,
+  "localFixOnly": true,
+  "publishedReleaseUnchanged": "v0.7.9",
+  "unitTests": {
+    "User": {
+      "tests": 84,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "Lab": {
+      "tests": 84,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "apks": [
+    {
+      "path": "/home/dr/project/android_ocr/app/build/outputs/apk/user/debug/app-user-debug.apk",
+      "bytes": 53653293,
+      "sha256": "cfb958c0fefcb0ffd296159d514600706d650dcca78f7a2a96651da2a139c48f"
+    },
+    {
+      "path": "/home/dr/project/android_ocr/app/build/outputs/apk/lab/debug/app-lab-debug.apk",
+      "bytes": 53653309,
+      "sha256": "52f34149547924ae52d2cfcc5c1d6afe2fc392d0a65c0f9fe34095d576f9929f"
+    }
+  ]
+}

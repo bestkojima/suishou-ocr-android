@@ -200,10 +200,20 @@ final class RecognitionController {
         return true;
     }
     private synchronized void update(String state,String message) throws Exception {
-        current.put("state",state).put("message",message).put("sequence",++sequence);
-        JSONObject doc=store.load(current.getString("docId"));JSONObject persisted=new JSONObject(current.toString());persisted.remove("stream");doc.put("region".equals(current.optString("kind"))?"regionRecognition":"recognition",persisted);store.save(doc);
+        JSONObject next=new JSONObject(current.toString());
+        next.put("state",state).put("message",message).put("sequence",++sequence);
+        synchronized(store) {
+            JSONObject doc=store.load(next.getString("docId"));
+            boolean region="region".equals(next.optString("kind"));
+            if(region&&next.optBoolean("resultSaved")&&!next.optBoolean("resultApplied")&&
+                (state.equals("succeeded")||state.equals("partial")))RegionRetry.apply(doc,next);
+            JSONObject persisted=new JSONObject(next.toString());persisted.remove("stream");
+            doc.put(region?"regionRecognition":"recognition",persisted);store.save(doc);
+        }
+        current=next;
         for(Listener l:listeners) l.changed(new JSONObject(current.toString()));
     }
+
     private void run(String id,String imagePolicy) {
         String terminal="failed",message="识别失败，输入已保留";
         try {
@@ -265,7 +275,7 @@ final class RecognitionController {
             synchronized(this) {
                 if(cancelled||code==7){terminal="cancelled";message="已取消区域识别，原内容已保留";return;}
                 if(code!=0)throw new IOException("区域引擎返回 "+code+"："+resources.status(nativeJob));
-                regionStatus(id);update("saving","正在保存新结果，原内容保持不变");
+                regionStatus(id);update("saving","正在替换此区域的旧识别结果");
             }
             File output=FilesUtil.child(store.dir(id),"region-recognition/"+jobId);output.mkdirs();
             resources.export(nativeJob,output.getPath());
@@ -274,7 +284,7 @@ final class RecognitionController {
                 if(cancelled)return;
                 current.put("result",candidate).put("resultSaved",true);
                 terminal=candidate.optString("sourceStatus").equals("ok")?"succeeded":"partial";
-                message=terminal.equals("succeeded")?"新结果已就绪，可选择用于校对":"新结果仍需核对，请比较后决定是否使用";
+                message=terminal.equals("succeeded")?"新结果已替换旧输出，可继续校对":"已替换旧输出，新结果仍需对照原图核对";
             }
         } catch(Exception|LinkageError e) {
             message="区域识别失败："+e.getMessage()+"；原内容已保留";

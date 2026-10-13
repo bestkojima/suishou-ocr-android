@@ -23,9 +23,10 @@ const phases={interrupted:'输出已停止',live:'模型实时输出',idle:'准�
 function App(){
  const[boot,setBoot]=useState(null),[settings,setSettings]=useState({chunk:8}),[doc,setDoc]=useState(null),[replay,setReplay]=useState(initialState),[sheet,setSheet]=useState(''),[history,setHistory]=useState([]),[busy,setBusy]=useState(''),[error,setError]=useState(''),[notice,setNotice]=useState(''),[edit,setEdit]=useState(null),[draft,setDraft]=useState(''),[viewer,setViewer]=useState(''),[zoom,setZoom]=useState(1),[following,setFollowing]=useState(true),[fonts,setFonts]=useState(false),[cameraMessage,setCameraMessage]=useState('对准文档，拍下即可开始'),[selectedPage,setSelectedPage]=useState(0),[cameraReady,setCameraReady]=useState(false);
  const cameraRef=useRef(),readerRef=useRef(),dialogRef=useRef(),snapshot=useRef(),follow=useRef(true),anchor=useRef(null),restore=useRef(false),saveQueue=useRef(Promise.resolve()),persistTimer=useRef(),touchY=useRef(0);
- snapshot.current={doc,replay,settings,sheet,viewer};
+ snapshot.current={doc,replay,settings,sheet,viewer,edit};
  const[cropping,setCropping]=useState(false);const cropBusy=useRef(false);const setCropBusy=useMemo(()=>value=>{cropBusy.current=value;},[]);
  const [retryRevision,setRetryRevision]=useState(0);
+ const regionLoads=useRef(new Set());
  const recognition=doc?.recognition;
  const cropPending=!!doc?.documentCrop&&doc.documentCrop.state!=='confirmed';
  const resultLoading=useRef(null),navigation=useRef(0),starting=useRef(new Set());
@@ -41,8 +42,24 @@ function App(){
  useEffect(()=>{if(!doc||replay.phase!=='running'||!fonts)return;const sources=doc.blocks.map(b=>({...b,markdown:doc.edits?.[b.id]??b.markdown}));const t=setInterval(()=>setReplay(s=>reduceReplay(s,{type:'tick',source:sources,chunk:doc.mode==='native-parse'?Math.max(1,Array.from(sources[s.index]?.markdown||'').length):(settings.chunk||8)})),80);return()=>clearInterval(t);},[doc,replay.phase,fonts,settings.chunk]);
  useEffect(()=>{if(doc)save().catch(fail);},[replay.index,replay.phase,doc?.id]);
 
+ async function refreshRegion(state){
+  const current=snapshot.current.doc,version=navigation.current;
+  if(!state?.resultApplied||state.docId!==current?.id)return;
+  const previous=current.blocks.find(b=>b.id===state.blockId),key=`${state.docId}/${state.jobId}`;
+  if(!previous||previous.regionRevision===state.jobId||regionLoads.current.has(key))return;
+  regionLoads.current.add(key);
+  try {
+   const fresh=await request('open',{id:current.id});
+   if(!isCurrentDocumentOpening(current.id,version)||fresh.regionRecognition?.jobId!==state.jobId)return;
+   const block=fresh.blocks.find(b=>b.id===state.blockId);if(!block||block.regionRevision!==state.jobId)return;
+   const text=fresh.edits?.[block.id]??block.markdown,display={...block,raw:text,markdown:text,done:true,count:Array.from(text).length};
+   setDoc(d=>d?.id===current.id?{...d,blocks:d.blocks.map(b=>b.id===block.id?block:b),edits:{...d.edits,[block.id]:text},regionRecognition:fresh.regionRecognition}:d);
+   setReplay(s=>({...s,blocks:s.blocks.map(b=>b.id===block.id?display:b)}));
+   if(snapshot.current.sheet==='edit'&&snapshot.current.edit?.id===block.id){setEdit(display);setDraft(text);setRetryRevision(v=>v+1);}
+  }finally{regionLoads.current.delete(key);}
+ }
  async function refreshRecognition(state){
-  if(state?.kind==='region')return;
+  if(state?.kind==='region')return refreshRegion(state);
   const current=snapshot.current.doc;
   if(!acceptsRecognition(current,state))return;
   if(finishedRecognition(state)&&current.mode!=='real-ocr'){
@@ -57,6 +74,11 @@ function App(){
   async function poll(){try{const state=await request('recognitionStatus',{id:doc.id});if(alive)await refreshRecognition(state);}catch(e){if(alive)fail(e);}finally{if(alive)timer=setTimeout(poll,activeRecognition(snapshot.current.doc?.recognition)?150:1000);}}
   poll();return()=>{alive=false;clearTimeout(timer);};
  },[doc?.id,doc?.input]);
+ useEffect(()=>{
+  if(!native||!doc)return;let alive=true,timer;
+  async function poll(){try{const state=await request('regionRecognitionStatus',{id:doc.id});if(alive)await refreshRegion(state);}catch(e){if(alive)fail(e);}finally{if(alive)timer=setTimeout(poll,1000);}}
+  poll();return()=>{alive=false;clearTimeout(timer);};
+ },[doc?.id]);
  async function recognize(again=false){
   const id=doc.id,version=navigation.current;
   if(starting.current.has(id))return;
@@ -91,7 +113,7 @@ function App(){
  async function importFile(){setBusy('请选择文件…');const d=await request('import');openDocument(d);}
  async function sample(id){setBusy('正在打开 JSON 示例…');openDocument(await request('sample',{sample:id}));}
  async function pref(p){const v=await request('settings',p);setSettings(v);}
- async function exportFile(format,share=false){await save({edits:doc.edits||{}});await request('export',{id:doc.id,format,share});setNotice('已交给系统保存或分享');setSheet('');}
+ async function exportFile(format,share=false){await save();await request('export',{id:doc.id,format,share});setNotice('已交给系统保存或分享');setSheet('');}
  function jumpPage(index){setSelectedPage(index);const number=doc?.pages?.[index]?.number;const block=replay.blocks.find(b=>b.page===number);if(block){stopFollow();requestAnimationFrame(()=>{const el=[...readerRef.current.querySelectorAll('[data-region]')].find(e=>e.dataset.region===block.id);el?.scrollIntoView({block:'start'});});}}
  const dragHint=useRegionDrag(readerRef,{enabled:!!doc&&!sheet&&!viewer&&!orderSaving&&replay.index>1,blocks:replay.blocks.slice(0,replay.index),onStart:()=>{stopFollow();setReplay(s=>({...s,phase:s.phase==='running'?'paused':s.phase}));},onCommit:async completed=>{const current=snapshot.current;await applyOrder([...completed,...current.doc.blocks.slice(current.replay.index)]);},onError:fail});
  async function beginCrop(){setBusy('正在检测文档边界…');openDocument(await request('beginCrop',{id:doc.id}));}
@@ -108,7 +130,7 @@ function App(){
  {sheet==='settings'&&<><button className="setting-row" onClick={()=>setSheet('models')}><span>识别模型<small>ModelScope · 仓库与文件管理</small></span><span>管理 ›</span></button><label className="setting-row resolution-setting"><span>图片分辨率<small>下次识别生效；小字模糊可选原图，重新识别会保留旧结果</small></span><select aria-label="图片分辨率" value={settings.imageResolution||'balanced'} onChange={e=>act(()=>pref({imageResolution:e.target.value}))}><option value="balanced">均衡（最多 800 万像素）</option><option value="fast">快速（最多 400 万像素）</option><option value="original">原图（较慢）</option></select></label><label className="setting-row"><span>仅通过 Wi-Fi 下载</span><input type="checkbox" checked={!!settings.wifiOnly} onChange={e=>act(()=>pref({wifiOnly:e.target.checked}))}/></label>{boot?.testBuild&&<><label className="setting-row"><span>测试模式<small>显示增量、区域和处理路径</small></span><input type="checkbox" checked={debug} onChange={e=>act(()=>pref({debug:e.target.checked}))}/></label><label className="setting-row">JSON 回放每次字符数<select aria-label="JSON 回放每次字符数" value={settings.chunk} onChange={e=>act(()=>pref({chunk:+e.target.value}))}>{[3,8,24,64].map(n=><option key={n}>{n}</option>)}</select></label></>}<p className="fine">版本 {boot?.version} · {boot?.testBuild?'测试版':'用户版'}<br/>支持本地单图 OCR，模型生成内容实时显示。</p></>}
  {sheet==='history'&&<>{!history.length&&<p>还没有文档</p>}{history.map(h=><div className="history-row" key={h.id}><button onClick={()=>act(async()=>{await saveQueue.current;openDocument(await request('open',{id:h.id}),false);})}><strong>{h.title}</strong><small>{h.mode==='json-replay'?'JSON 回放':h.mode==='pending-ocr'?'待识别输入':h.mode==='real-ocr'?'真实识别':'文件解析'} · {h.progress||0}/{h.count} 区域</small></button><button aria-label={'删除 '+h.title} onClick={()=>act(async()=>{if(confirm('删除此文档和本地图片？'))setHistory(await request('delete',{id:h.id}));})}>删除</button></div>)}</>}
  {sheet==='models'&&<ModelManager preview={!!boot?.preview}/>}
- {sheet==='edit'&&<><p className="fine">编辑已输出区域，保留原始 JSON 供核对。</p><RegionRerecognition key={`${doc.id}-${edit.id}`} documentId={doc.id} block={edit} components={components} onUse={text=>{setDraft(text);setRetryRevision(v=>v+1);}}/><MarkdownEditor key={`${edit.id}-${retryRevision}`} value={draft} onChange={setDraft} components={components} block={edit}/><button className="primary full" onClick={()=>act(async()=>{const edits={...doc.edits,[edit.id]:draft};await save({edits});setDoc(d=>({...d,edits}));setReplay(s=>({...s,blocks:s.blocks.map(b=>b.id===edit.id?{...b,raw:draft,markdown:draft}:b)}));setSheet('');setEdit(null);})}>保存修改</button></>}
+ {sheet==='edit'&&<><p className="fine">编辑已输出区域，保留原始 JSON 供核对。</p><RegionRerecognition key={`${doc.id}-${edit.id}`} documentId={doc.id} block={edit} components={components} onResult={refreshRegion}/><MarkdownEditor key={`${edit.id}-${retryRevision}`} value={draft} onChange={setDraft} components={components} block={edit}/><button className="primary full" onClick={()=>act(async()=>{await save({blockEdit:{id:edit.id,text:draft,regionRevision:edit.regionRevision||''}});setDoc(d=>({...d,edits:{...d.edits,[edit.id]:draft}}));setReplay(s=>({...s,blocks:s.blocks.map(b=>b.id===edit.id?{...b,raw:draft,markdown:draft}:b)}));setSheet('');setEdit(null);})}>保存修改</button></>}
  {sheet==='export'&&<><p className="fine">导出已完成的 {replay.index} 个区域。图片文档请选择 ZIP，包含原始 JSON、Markdown 和资源。</p>{[['txt','纯文字 TXT'],['md','Markdown 单文件'],['zip','完整文档 ZIP（含图片）']].map(([format,label])=><button className="full export-option" key={format} onClick={()=>act(()=>exportFile(format))}>{label}</button>)}<button disabled={!!boot?.preview} className="primary full" onClick={()=>act(()=>exportFile('zip',true))}>通过系统分享完整文档</button></>}
  </section></div>}
  <dialog ref={dialogRef} className="image-dialog" onCancel={()=>setViewer('')}><div className="viewer-header"><span>图片预览</span><button onClick={()=>setZoom(z=>Math.max(1,z-.5))}>−</button><button onClick={()=>setZoom(z=>Math.min(4,z+.5))}>＋</button><button onClick={()=>setViewer('')}>关闭</button></div><div className="viewer-body">{viewer&&<img src={viewer} alt="原文或插图" style={{width:zoom*100+'%',maxWidth:'none'}}/>}</div></dialog>

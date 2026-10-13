@@ -28,4 +28,12 @@ public class RegionRetryTest {
   block.getJSONObject("content").put("text","x^2").put("format","latex");assertEquals("$$\nx^2\n$$",RegionRetry.candidate(ir).getString("markdown"));
   block.getJSONObject("content").put("text","");block.remove("provenance");assertThrows(IOException.class,()->RegionRetry.candidate(ir));
  }
+ @Test public void emptyOrFailedNewResultDoesNotReplaceOldContent()throws Exception {
+  JSONObject block=FilesUtil.obj("status","ok","content",FilesUtil.obj("text","  "),"provenance",FilesUtil.obj("raw_output",JSONObject.NULL));
+  JSONObject ir=FilesUtil.obj("pages",new JSONArray().put(FilesUtil.obj("blocks",new JSONArray().put(block))));
+  assertThrows(IOException.class,()->RegionRetry.candidate(ir));
+  block.getJSONObject("content").put("text",JSONObject.NULL);assertThrows(IOException.class,()->RegionRetry.candidate(ir));
+  block.put("status","failed").getJSONObject("content").put("text","失败输出");assertThrows(IOException.class,()->RegionRetry.candidate(ir));
+ }
+
 }
