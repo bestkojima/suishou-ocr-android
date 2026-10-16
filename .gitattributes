@@ -1,0 +1,2 @@
+# 校验清单按原始字节记录；Windows autocrlf 也不能改写预编译包的头文件和许可。
+native/mnn-prebuilt/** -text -whitespace

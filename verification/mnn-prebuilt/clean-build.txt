@@ -1,0 +1,160 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build
+> Task :app:bundleMnnLegal
+
+> Task :app:installWebDependencies
+
+added 151 packages in 2s
+
+111 packages are looking for funding
+  run `npm fund` for details
+
+> Task :app:bundleWeb
+Built browser preview and Android offline assets
+
+> Task :app:preBuild
+> Task :app:preUserDebugBuild
+> Task :app:mergeUserDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateUserDebugBuildConfig
+> Task :app:javaPreCompileUserDebug
+> Task :app:checkUserDebugAarMetadata
+> Task :app:generateUserDebugResValues
+> Task :app:mapUserDebugSourceSetPaths
+> Task :app:generateUserDebugResources
+> Task :app:packageUserDebugResources
+> Task :app:mergeUserDebugResources
+> Task :app:createUserDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksUserDebug
+> Task :app:parseUserDebugLocalResources
+> Task :app:processUserDebugMainManifest
+> Task :app:processUserDebugManifest
+> Task :app:mergeUserDebugShaders
+> Task :app:compileUserDebugShaders NO-SOURCE
+> Task :app:processUserDebugManifestForPackage
+> Task :app:generateUserDebugAssets UP-TO-DATE
+> Task :app:mergeUserDebugAssets
+> Task :app:processUserDebugResources
+> Task :app:compressUserDebugAssets
+
+> Task :app:compileUserDebugJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:desugarUserDebugFileDependencies
+> Task :app:checkUserDebugDuplicateClasses
+> Task :app:dexBuilderUserDebug
+> Task :app:mergeLibDexUserDebug
+> Task :app:mergeExtDexUserDebug
+> Task :app:mergeUserDebugGlobalSynthetics
+> Task :app:mergeProjectDexUserDebug
+> Task :app:processUserDebugJavaRes NO-SOURCE
+> Task :app:preLabReleaseBuild
+> Task :app:configureCMakeRelease[arm64-v8a]
+> Task :app:mergeUserDebugJavaResource
+
+> Task :app:buildCMakeRelease[arm64-v8a][dococr_jni]
+C/C++: ninja: Entering directory `/tmp/android-ocr-no-mnn-etwu5_bq/project/app/.cxx/Release/5k573m1u/arm64-v8a'
+C/C++: /tmp/android-ocr-no-mnn-etwu5_bq/project/app/.cxx/Release/5k573m1u/arm64-v8a/android-engine/layout_mnn_backend.cpp:17:17: warning: 'const' qualifier on reference type 'TensorMap' (aka 'const map<basic_string<char>, MNN::Tensor *> &') has no effect [-Wignored-reference-qualifiers]
+C/C++:    17 | bool shape_type(const TensorMap& tensors, const std::string& name,
+C/C++:       |                 ^~~~~
+C/C++: 1 warning generated.
+
+> Task :app:mergeUserDebugJniLibFolders
+> Task :app:validateSigningUserDebug
+> Task :app:writeUserDebugAppMetadata
+> Task :app:writeUserDebugSigningConfigVersions
+> Task :app:preLabDebugBuild
+> Task :app:mergeLabDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateLabDebugBuildConfig
+> Task :app:javaPreCompileLabDebug
+> Task :app:checkLabDebugAarMetadata
+> Task :app:generateLabDebugResValues
+> Task :app:mapLabDebugSourceSetPaths
+> Task :app:generateLabDebugResources
+> Task :app:mergeLabDebugResources
+> Task :app:packageLabDebugResources
+> Task :app:parseLabDebugLocalResources
+> Task :app:createLabDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksLabDebug
+> Task :app:processLabDebugMainManifest
+> Task :app:processLabDebugManifest
+> Task :app:processLabDebugManifestForPackage
+> Task :app:processLabDebugResources
+
+> Task :app:compileLabDebugJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:mergeUserDebugNativeLibs
+> Task :app:mergeLabDebugShaders
+> Task :app:compileLabDebugShaders NO-SOURCE
+> Task :app:generateLabDebugAssets UP-TO-DATE
+> Task :app:mergeLabDebugAssets
+> Task :app:compressLabDebugAssets
+> Task :app:stripUserDebugDebugSymbols
+> Task :app:checkLabDebugDuplicateClasses
+> Task :app:desugarLabDebugFileDependencies
+> Task :app:packageUserDebug
+> Task :app:createUserDebugApkListingFileRedirect
+> Task :app:assembleUserDebug
+> Task :app:mergeExtDexLabDebug
+> Task :app:dexBuilderLabDebug
+> Task :app:processLabDebugJavaRes NO-SOURCE
+> Task :app:mergeLabDebugGlobalSynthetics
+> Task :app:mergeLibDexLabDebug
+> Task :app:mergeProjectDexLabDebug
+> Task :app:mergeLabDebugJniLibFolders
+> Task :app:mergeLabDebugNativeLibs
+> Task :app:mergeLabDebugJavaResource
+> Task :app:validateSigningLabDebug
+> Task :app:writeLabDebugAppMetadata
+> Task :app:writeLabDebugSigningConfigVersions
+> Task :app:bundleUserDebugClassesToRuntimeJar
+> Task :app:bundleUserDebugClassesToCompileJar
+> Task :app:preUserDebugUnitTestBuild
+> Task :app:javaPreCompileUserDebugUnitTest
+> Task :app:stripLabDebugDebugSymbols
+> Task :app:compileUserDebugUnitTestJavaWithJavac
+> Task :app:processUserDebugUnitTestJavaRes
+> Task :app:testUserDebugUnitTest
+> Task :app:bundleLabDebugClassesToRuntimeJar
+> Task :app:packageLabDebug
+> Task :app:createLabDebugApkListingFileRedirect
+> Task :app:assembleLabDebug
+> Task :app:preLabDebugUnitTestBuild
+> Task :app:bundleLabDebugClassesToCompileJar
+> Task :app:javaPreCompileLabDebugUnitTest
+> Task :app:processLabDebugUnitTestJavaRes
+> Task :app:compileLabDebugUnitTestJavaWithJavac
+> Task :app:testLabDebugUnitTest
+> Task :app:preUserDebugAndroidTestBuild SKIPPED
+> Task :app:generateUserDebugAndroidTestResValues
+> Task :app:generateUserDebugAndroidTestLintModel
+> Task :app:extractProguardFiles
+> Task :app:generateUserDebugLintReportModel
+> Task :app:generateUserDebugUnitTestLintModel
+> Task :app:lintAnalyzeUserDebugAndroidTest
+> Task :app:lintAnalyzeUserDebugUnitTest
+> Task :app:preLabDebugAndroidTestBuild SKIPPED
+> Task :app:generateLabDebugAndroidTestResValues
+> Task :app:generateLabDebugAndroidTestLintModel
+> Task :app:generateLabDebugLintReportModel
+> Task :app:generateLabDebugUnitTestLintModel
+> Task :app:lintAnalyzeLabDebug
+> Task :app:lintAnalyzeLabDebugAndroidTest
+> Task :app:lintAnalyzeLabDebugUnitTest
+
+> Task :app:lintReportLabDebug
+Wrote HTML report to file:///tmp/android-ocr-no-mnn-etwu5_bq/project/app/build/reports/lint-results-labDebug.html
+
+> Task :app:lintLabDebug
+> Task :app:lintAnalyzeUserDebug
+
+> Task :app:lintReportUserDebug
+Wrote HTML report to file:///tmp/android-ocr-no-mnn-etwu5_bq/project/app/build/reports/lint-results-userDebug.html
+
+> Task :app:lintUserDebug
+[Incubating] Problems report is available at: file:///tmp/android-ocr-no-mnn-etwu5_bq/project/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 1m 5s
+106 actionable tasks: 106 executed

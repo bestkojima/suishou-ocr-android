@@ -6,21 +6,20 @@
 
 ## 两个项目与最小接入范围
 
-Android 项目保留 Java 相机、导入器、模型下载和 DocumentStore，前端保留 React/Streamdown、回放 reducer、校对、排序和导出。相邻 docprase 的 `dococr_c` 公共 C ABI 已有 PP-DocLayoutV3、区域规划、归属与阅读顺序、OvisOCR2、JSON/Markdown/资源导出及安全取消；发布版使用 native/docprase 中的实际源码快照构建，MNN 由工具获取固定提交。本轮没有修改 docprase 或 MNN 工作区中的源码和已有未提交改动。
+Android 项目保留 Java 相机、导入器、模型下载和 DocumentStore，前端保留 React/Streamdown、回放 reducer、校对、排序和导出。相邻 docprase 的 `dococr_c` 公共 C ABI 已有 PP-DocLayoutV3、区域规划、归属与阅读顺序、OvisOCR2、JSON/Markdown/资源导出及安全取消；发布版使用 native/docprase 中的实际源码快照构建，MNN 默认使用仓库内固定提交的预编译包，维护者可显式选择源码构建。本轮没有修改 docprase 或 MNN 工作区中的源码和已有未提交改动。
 
 新增模块：`NativeOcr` 与 JNI 为薄适配，`RecognitionController` 管理应用级单作业，`RecognitionModels` 绑定固定工件，`ImageInput`/`ImagePixels` 将 EXIF 1～8 规范为已旋转/镜像的 PNG。规范图片先写同目录临时文件，同步成功后原子替换；失败不留下阻断重试的 PNG，现有原始文件不被覆盖。Android 的 PDF OCR 返回明确的 unsupported 错误，PDF/Office 原生解析继续走已有 Java 实现。
 
 ## 构建与模型
 
-先运行 `python tools/setup_native_deps.py` 获取固定 MNN，docprase 源码已随仓库放在 `native/docprase`；还需要 Android SDK 35、NDK `28.1.13356709`、CMake `3.31.6`、JDK 17 和现有 npm 依赖：
+默认无需获取或编译 MNN：`native/mnn-prebuilt` 已内附运行库和头文件，docprase 源码也已放在 `native/docprase`。需要 Android SDK 35、NDK `28.1.13356709`、CMake `3.31.6`、JDK 17、Node.js/npm，Gradle 自动准备 npm 依赖：
 
 ```bash
-npm run build:web
 CMAKE_BUILD_PARALLEL_LEVEL=2 ./gradlew assembleUserDebug assembleLabDebug
 python3 tools/verify_ocr_apk.py
 ```
 
-`app/src/main/cpp/CMakeLists.txt` 可配置 `DOCOCR_SOURCE_ROOT` 和 `MNN_SOURCE_ROOT`。默认从仓库内 native 依赖构建，MNN 分库；合并库时将 LLM 绑定为 MNN target，避免查找到宿主 Linux 库。MNN Android command 的 Express 输出目录在 App CMake 中修正，保证 Gradle 收集依赖。分库构建已执行；合并库分支尚未独立构建验收。
+默认 CMake 仅编译宿主 docprase/JNI，再链接预编译的四个 MNN 分库；Gradle 显式打包运行库及许可。通过 `-PmnnSourceRoot=...` 才进入维护者源码模式，不再自动寻找相邻 MNN。来源校验、预编译包维护和源码构建步骤见 [原生依赖](../native/README.md)。
 
 支持工件清单在 `app/src/main/assets/ocr/models.json`（Ovis）和 `ocr/glm-models.json`（GLM），数据预设在 `ocr/model-profiles.json`，管线配置在 `ocr/config.json`。模型根目录直接指向现有私有 `models/{repo}/files`。SHA-256 在下载完成时校验，校验成功并将文件移到最终路径后记录大小、修改时间与校验值。加载仅检查所选模型及共同版面模型的必需文件（Ovis 共九个、GLM 共十个）的存在性、大小及匹配的已校验下载记录；新记录还检查修改时间，旧版 `verified` 记录保留兼容。未完成下载、仅大小校验、工件版本不匹配或已变化文件不能激活。需要重新校验时，在下载页选择对应文件并点击“下载 / 继续所选文件”，完整本地文件会在下载流程中校验并复用，不在加载阶段扫描权重。
 

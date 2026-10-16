@@ -1,16 +1,22 @@
-"""获取固定版本 MNN；保留已有目录，下载成功后再移到目标位置。"""
+"""默认校验内附 MNN；仅 --source 模式下载固定源码供维护者重编译。"""
 import argparse
 import json
 from pathlib import Path
 import shutil
 import subprocess
 import tempfile
+from mnn_prebuilt import verify_bundle
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--source', action='store_true', help='显式下载/检查 MNN 源码，普通 APK 构建不需要')
 parser.add_argument('--destination', type=Path, help='覆盖默认的 native/MNN 安装位置')
 parser.add_argument('--check-only', action='store_true', help='只核对已安装源码的版本与受跟踪文件')
 args = parser.parse_args()
+if not args.source and args.destination is None:
+    manifest = verify_bundle()
+    print(f'已就绪：仓库内预编译 MNN @ {manifest["source"]["commit"]}；无需下载源码')
+    raise SystemExit(0)
 config = json.loads((ROOT / 'native/dependencies.json').read_text(encoding='utf-8'))['mnn']
 destination = (args.destination or ROOT / config['directory']).resolve()
 

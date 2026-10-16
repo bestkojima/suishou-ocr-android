@@ -1,0 +1,23 @@
+.To /tmp/tmpoa0y5cov/remote.git
+ * [new branch]      22128641b7ecb09ab5c5d2e3ce0cb4bb874cdf9e -> main
+ * [new tag]         v0.7.8 -> v0.7.8
+.To /tmp/tmp8laeg5q3/remote.git
+ * [new branch]      345878141504fec3b2cce54d463b16fe5580cfc6 -> main
+ * [new tag]         v0.7.8 -> v0.7.8
+.....To /tmp/tmp8i5ik1c8/remote.git
+ * [new branch]      345878141504fec3b2cce54d463b16fe5580cfc6 -> main
+ * [new tag]         v0.7.8 -> v0.7.8
+..To /tmp/tmpcijlpla8/remote.git
+ * [new branch]      e7bd1b308ed0309ce2a0e71ae5240bf2335f6199 -> main
+ * [new tag]         v0.7.8 -> v0.7.8
+.To /tmp/tmpoecsjx7s/remote.git
+ * [new branch]      e7bd1b308ed0309ce2a0e71ae5240bf2335f6199 -> main
+ * [new tag]         v0.7.8 -> v0.7.8
+.To /tmp/tmpg4a8k1yo/remote.git
+ * [new branch]      231fcfe30348369cf4ffc51f23e793f2201cdd5d -> main
+ * [new tag]         v1.0.0 -> v1.0.0
+.
+----------------------------------------------------------------------
+Ran 12 tests in 1.150s
+
+OK

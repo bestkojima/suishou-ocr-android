@@ -2,6 +2,7 @@
 from pathlib import Path
 from zipfile import ZipFile
 import argparse,subprocess,tempfile,json,hashlib,os,platform as host_platform,shutil,re,shlex
+from mnn_prebuilt import verify_bundle, LIBRARIES
 root=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output',type=Path,default=root/'verification/real-ocr/apk.json',help='APK 静态检查报告路径')
@@ -35,10 +36,19 @@ def native_build(flavor,library_ids):
         metadata=folder/'android_gradle_build.json'
         if not metadata.is_file():continue
         libraries={item['artifactName']:Path(item['output']) for item in json.loads(metadata.read_text())['libraries'].values() if 'output' in item}
-        required={'dococr_jni':'libdococr_jni.so','dococr_c':'libdococr_c.so','MNN':'libMNN.so'}
+        cache_path=folder/'CMakeCache.txt'
+        cache=dict(line.split('=',1) for line in cache_path.read_text().splitlines() if '=' in line and not line.startswith(('#','//')))
+        required={'dococr_jni':'libdococr_jni.so','dococr_c':'libdococr_c.so'}
         if not all(name in libraries and libraries[name].is_file() for name in required):continue
-        if all(build_id(libraries[name])==library_ids[filename] for name,filename in required.items()):
-            matches.append((model_path,folder))
+        if not all(build_id(libraries[name])==library_ids[filename] for name,filename in required.items()):continue
+        if cache.get('MNN_USE_PREBUILT:BOOL')=='ON':
+            directory=Path(cache['MNN_PREBUILT_ROOT:PATH'])
+            manifest=verify_bundle(directory)
+            if not all(manifest['libraries'][name]['buildId']==library_ids[name] and
+                       build_id(directory/'lib/arm64-v8a'/name)==library_ids[name] for name in LIBRARIES):continue
+        elif 'MNN' not in libraries or build_id(libraries['MNN'])!=library_ids['libMNN.so']:
+            continue
+        matches.append((model_path,folder))
     assert matches,('APK 无匹配的原生构建记录，请先构建该 APK',flavor)
     # AGP 可让两个 flavor 共用相同原生构建；不同原生目录同时匹配时拒绝猜测。
     folders={folder.resolve() for _,folder in matches}
@@ -55,6 +65,11 @@ def native_build(flavor,library_ids):
         'docprase':[r for r in native_rows if '/docprase/' in r['file'].replace('\\','/') or '/android-engine/' in r['file'].replace('\\','/')],
         'JNI':[r for r in native_rows if r['file'].endswith('dococr_jni.cpp')],
     }
+    prebuilt=cache.get('MNN_USE_PREBUILT:BOOL')=='ON'
+    if prebuilt:
+        assert not groups['MNN_CPU'] and not groups['MNN_LLM'],('预编译模式意外编译了 MNN',flavor)
+        del groups['MNN_CPU'];del groups['MNN_LLM']
+        manifest=verify_bundle(Path(cache['MNN_PREBUILT_ROOT:PATH']))
     assert all(groups.values()),('编译记录缺少生产目标',flavor)
     def flags(row):
         parts=row.get('arguments') or shlex.split(row['command'])
@@ -78,6 +93,8 @@ def native_build(flavor,library_ids):
     return {'flavor':flavor,'buildModel':str(model_path),'directory':str(folder),'buildType':cache.get('CMAKE_BUILD_TYPE:STRING'),
             'nativeReleaseRequired':args.require_native_release,'translationUnits':len(native_rows),
             'groups':{name:{'translationUnits':len(items),'sample':items[0],'optimization':flags(items[0])[0]} for name,items in groups.items()},
+            'mnnMode':'prebuilt' if prebuilt else 'source',
+            'mnnPrebuilt':{'source':manifest['source'],'android':manifest['android'],'groups':manifest['build']['groups'],'libraries':manifest['libraries']} if prebuilt else None,
             'productionBackendCompileCommands':backend}
 
 reports=[]
@@ -114,7 +131,13 @@ for flavor in ['user','lab']:
             assert sdk,'检查当前 NDK libc++ 需要 Android SDK 路径'
             runtime=Path(sdk)/'ndk/28.1.13356709/toolchains/llvm/prebuilt'/host/'sysroot/usr/lib/aarch64-linux-android/libc++_shared.so'
             assert info['libc++_shared.so']['buildId']==build_id(runtime),('APK libc++ 不是当前 MNN 编译使用的 NDK 运行库',flavor)
-        native_reports.append(native_build(flavor,{name:item['buildId'] for name,item in info.items()}))
+        native_report=native_build(flavor,{name:item['buildId'] for name,item in info.items()})
+        if native_report['mnnMode']=='prebuilt':
+            assert 'assets/legal/mnn-LICENSE.txt' in names,('缺少 MNN 许可',flavor)
+            bundle=verify_bundle()
+            for name in LIBRARIES:
+                assert hashlib.sha256(archive.read(libs[name])).hexdigest()==bundle['libraries'][name]['sha256'],('APK 与内附 MNN 字节不符',name)
+        native_reports.append(native_report)
         reports.append({'flavor':flavor,'path':str(apk),'sha256':hashlib.file_digest(apk.open('rb'),'sha256').hexdigest(),'size':apk.stat().st_size,'abi':'arm64-v8a','libraries':info,'weightsPackaged':False})
 compiled=[row for report in native_reports for row in report['productionBackendCompileCommands']]
 output.write_text(json.dumps({'environment':'Android NDK 编译与静态打包检查，未在设备加载','productionBackendCompileCommands':compiled,'nativeBuilds':native_reports,'apks':reports},indent=2)+'\n')

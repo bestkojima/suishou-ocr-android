@@ -62,20 +62,22 @@ v0.7.7 新增 [GLM-OCR-MNN](https://modelscope.cn/models/MNN/GLM-OCR-MNN) 与模
 
 ## 从源码构建
 
-环境：JDK17、Node.js22、Git、Python3、Android SDK35、NDK28.1.13356709、CMake3.31.6。Gradle Wrapper与npm lockfile随仓库提供。
+环境：JDK17、Node.js22（含 npm，加入 PATH）、Android SDK35、NDK28.1.13356709、CMake3.31.6。Gradle Wrapper与npm lockfile随仓库提供；Python3 仅维护/校验脚本需要。
 
 ```bash
 git clone https://github.com/bestkojima/suishou-ocr-android.git
 cd suishou-ocr-android
-python tools/setup_native_deps.py
-npm ci
 ```
 
-`native/docprase`包含实际构建源码快照；脚本从GitHub获取固定提交的MNN到`native/MNN`。已有目录版本不匹配或受跟踪文件有改动时，脚本保留该目录并报错。来源与文件校验记录见 [原生依赖](native/README.md)。不需要单独克隆另一个docprase仓库，也不需要在构建机下载模型权重。
+也可以点击 GitHub 的 **Code → Download ZIP**，解压后用 Android Studio 打开根目录，安装上述 SDK／NDK／CMake，选择 `userDebug` 或 `labDebug`，同步并构建。
 
-Gradle 的 APK build type 与原生编译类型分开：`userDebug`／`labDebug` 仍可用开发签名覆盖安装，原生代码固定为 Release；以 CMakeCache 和实际编译命令验收优化，不以 APK 名称或符号是否被 strip 判断。
+**默认不下载、不编译 MNN。** 仓库内的 `native/mnn-prebuilt` 已附带固定提交的 Android arm64-v8a MNN、Express、MNNOpenCV、LLM 动态库、必要头文件及许可证，普通 Git clone 和 Download ZIP 均包含，不需要子模块或 Git LFS。`native/docprase` 也已内附源码快照。首次构建会自动执行 `npm ci` 准备界面依赖，仍需正常获取 Gradle／Maven／npm 和 Android SDK 依赖；不需要在构建机下载 OCR 模型权重。
 
-可用Android Studio打开根目录，设置SDK位置、安装上述NDK／CMake并选择`userDebug`或`labDebug`构建；也可以命令行构建。Windows使用`gradlew.bat`，Linux/macOS使用`./gradlew`；SDK位置保存在不提交的`local.properties`，或通过`ANDROID_HOME`配置。
+运行库来源、SHA 校验和维护者可选的 MNN 源码构建方式见 [原生依赖](native/README.md)。预编译包仅提供项目当前支持的 arm64-v8a，使用已固定的 NDK；不要换入桌面 Linux `.so`。
+
+Gradle 的 APK build type 与原生编译类型分开：`userDebug`／`labDebug` 仍可用开发签名覆盖安装，原生代码固定为 Release；docprase/JNI 以 CMakeCache 和实际编译命令验收优化；预编译 MNN 以清单内记录的来源、编译参数、SHA 和 APK 工件对应关系验收。
+
+Android Studio 中设置 SDK 位置即可；也可以命令行构建。Windows使用`gradlew.bat`，Linux/macOS使用`./gradlew`；SDK位置保存在不提交的`local.properties`，或通过`ANDROID_HOME`配置。
 
 ```bash
 ./gradlew assembleUserDebug assembleLabDebug

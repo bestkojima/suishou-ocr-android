@@ -141,6 +141,9 @@ class ReleaseFlowTests(unittest.TestCase):
         checksums = publisher.assets()[2].read_text(encoding="utf-8").splitlines()
         for apk, line in zip(publisher.assets()[:2], checksums):
             self.assertEqual(line, f"{hashlib.sha256(apk.read_bytes()).hexdigest()}  {apk.name}")
+        setup = [command[1:] for command in publisher.commands if command[1:2] == ["tools/setup_native_deps.py"]]
+        self.assertEqual(setup, [["tools/setup_native_deps.py", "--check-only"]])
+        self.assertFalse(any(command[:2] == ["git", "fetch"] for command in publisher.commands))
         # 上传必须是整个流程中的最后一条外部命令。
         upload = publisher.commands[-1]
         self.assertEqual(upload[:4], ["gh", "release", "create", "v0.7.8"])

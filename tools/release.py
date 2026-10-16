@@ -194,10 +194,7 @@ class Publisher:
 
     def build(self):
         self.stage = "构建与本地检查"
-        mnn = self.root / "native/MNN"
-        if not mnn.exists() and (self.root.parent / "MNN/CMakeLists.txt").exists():
-            mnn = self.root.parent / "MNN"
-        self.run([sys.executable, "tools/setup_native_deps.py", "--destination", mnn])
+        self.run([sys.executable, "tools/setup_native_deps.py", "--check-only"])
         if not (self.root / "node_modules/.package-lock.json").exists():
             self.run(["npm.cmd" if os.name == "nt" else "npm", "ci"])
         wrapper = "gradlew.bat" if os.name == "nt" else "./gradlew"
