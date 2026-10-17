@@ -1,0 +1,13 @@
+{
+  "feedbackId": "78fc8b0e-45ea-4a55-8d5c-c540da6b0846",
+  "entries": [
+    "input.png",
+    "document.json",
+    "feedback.json",
+    "description.txt"
+  ],
+  "actualInputMatches": true,
+  "rawJsonMatches": true,
+  "submitted": false,
+  "bytes": 2921621
+}

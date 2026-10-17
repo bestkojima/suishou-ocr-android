@@ -1,0 +1,12 @@
+{
+  "User": {
+    "tests": 88,
+    "failures": 0,
+    "errors": 0
+  },
+  "Lab": {
+    "tests": 88,
+    "failures": 0,
+    "errors": 0
+  }
+}

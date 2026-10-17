@@ -1,0 +1,12 @@
+{
+  "user": {
+    "path": "app\\build\\outputs\\apk\\user\\debug\\app-user-debug.apk",
+    "bytes": 53681504,
+    "sha256": "c5e16245f5eb09c63043876dd9a16f48b898e02d0957cc77e42b7f41b077a2d8"
+  },
+  "lab": {
+    "path": "app\\build\\outputs\\apk\\lab\\debug\\app-lab-debug.apk",
+    "bytes": 53681520,
+    "sha256": "d4d642209d9457c1a3db9637bf9409bf9b263aa1100e9a93b5a83c833c4dd67b"
+  }
+}

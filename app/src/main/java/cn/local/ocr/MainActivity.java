@@ -16,7 +16,8 @@ import java.util.*;
 import java.util.concurrent.*;
 
 public final class MainActivity extends Activity {
-    WebView web;RecognitionController recognition;DocumentStore store;
+    WebView web;RecognitionController recognition;DocumentStore store;RecognitionFeedback feedback;
+    synchronized RecognitionFeedback feedback(){if(feedback==null)feedback=new RecognitionFeedback(this,store);return feedback;}
     final RecognitionController.Listener recognitionListener=value->event("recognition",value);DocumentImporter importer;CameraController camera;TextureView texture;
     ExecutorService modelRequests=Executors.newFixedThreadPool(2);
     ExecutorService worker=Executors.newSingleThreadExecutor();volatile String pickerRequest,captureRequest,exportRequest;File pendingExport;
@@ -31,7 +32,14 @@ public final class MainActivity extends Activity {
     }
     static String mime(String p){String x=p.substring(p.lastIndexOf('.')+1).toLowerCase(Locale.ROOT);switch(x){case "html":return "text/html";case "js":return "application/javascript";case "css":return "text/css";case "json":return "application/json";case "png":return "image/png";case "jpg":case "jpeg":return "image/jpeg";case "webp":return "image/webp";case "gif":return "image/gif";case "bmp":return "image/bmp";case "woff2":return "font/woff2";default:return "application/octet-stream";}}
     static WebResourceResponse blocked(){return new WebResourceResponse("text/plain","UTF-8",404,"Not found",Collections.emptyMap(),new ByteArrayInputStream(new byte[0]));}
-    void reply(String id,Object value,Exception error){if(id==null)return;JSONObject res=FilesUtil.obj("id",id,"value",value==null?JSONObject.NULL:value,"error",error==null?JSONObject.NULL:String.valueOf(error.getMessage()));runOnUiThread(()->{if(web!=null)web.evaluateJavascript("window.nativeReply("+res+")",null);});}
+    void reply(String id,Object value,Exception error){if(id==null)return;JSONObject res=FilesUtil.obj("id",id,"value",value==null?JSONObject.NULL:value,"error",error==null?JSONObject.NULL:String.valueOf(error.getMessage()));runOnUiThread(()->{if(web!=null){
+        boolean transition=error==null&&value instanceof JSONObject&&((JSONObject)value).optBoolean("switchTransition");
+        if(transition&&android.animation.ValueAnimator.areAnimatorsEnabled()){
+            web.animate().cancel();web.setAlpha(.35f);web.setTranslationX(24*getResources().getDisplayMetrics().density);
+            web.animate().alpha(1f).translationX(0).setDuration(220).setInterpolator(new android.view.animation.DecelerateInterpolator()).start();
+        }
+        web.evaluateJavascript("window.nativeReply("+res+")",null);
+    }});}
     void event(String type,JSONObject value){runOnUiThread(()->{if(web!=null)web.evaluateJavascript("window.nativeEvent&&window.nativeEvent("+JSONObject.quote(type)+","+value+")",null);});}
     final class Bridge {
         @JavascriptInterface public void request(String raw){
@@ -45,12 +53,19 @@ public final class MainActivity extends Activity {
                 if(method.equals("setOcrThreads")){reply(qid,recognition.configureThreads(quick.getJSONObject("args").getInt("threads")),null);return;}
                 if(method.equals("activateModels")){reply(qid,recognition.activate(),null);return;}
                 if(method.equals("pauseDownload")){DownloadService.requestPause();reply(qid,FilesUtil.obj("paused",true),null);return;}
+                if(method.equals("submitFeedback")){String feedbackId=quick.getJSONObject("args").getString("feedbackId");modelRequests.execute(()->{try{reply(qid,feedback().submit(feedbackId),null);}catch(Exception e){reply(qid,null,e);}});return;}
                 if(method.equals("catalog")){String repo=ModelHub.normalizeRepo(quick.getJSONObject("args").getString("repo"));modelRequests.execute(()->{try{reply(qid,ModelHub.catalog(MainActivity.this,repo),null);}catch(Exception e){reply(qid,null,e);}});return;}
             }catch(Exception e){try{reply(new JSONObject(raw).getString("id"),null,e);}catch(Exception ignored){}return;}
             worker.execute(()->{String id=null;try{JSONObject r=new JSONObject(raw);id=r.getString("id");String method=r.getString("method");JSONObject a=r.optJSONObject("args");if(a==null)a=new JSONObject();Object out=null;String rid=id;
             switch(method){
                 case "bootstrap":out=FilesUtil.obj("testBuild",BuildConfig.TEST_FEATURES,"settings",settings(),"history",store.list(),"version",BuildConfig.VERSION_NAME);break;
                 case "history":out=store.list();break;
+                case "feedbackOptions":out=feedback().options(a.getString("id"),a.getString("jobId"));break;
+                case "prepareFeedback":out=feedback().prepare(a.getString("id"),a.getString("jobId"),a.optString("category","other"),a.getString("description"));break;
+                case "shareFeedback":case "saveFeedback":
+                    if(exportRequest!=null)throw new IOException("请先完成当前保存或分享");
+                    pendingExport=feedback().sharingFile(a.getString("feedbackId"));exportRequest=id;
+                    boolean shareFeedback=method.equals("shareFeedback");runOnUiThread(()->exportUi(shareFeedback));return;
                 case "sample":out=store.sample(a.getString("sample"));break;
                 case "open":out=store.load(a.getString("id"));break;
                 case "regionRecognitionOptions":out=recognition.regionOptions(a.getString("id"),a.getString("blockId"));break;

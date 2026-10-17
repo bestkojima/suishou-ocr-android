@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "mainPid": "14342",
+  "oldWorker": "14809",
+  "newWorker": "14907",
+  "enterDocumentMs": 217,
+  "cancelledWorkerExited": true,
+  "loadingCancellationPassed": true,
+  "errors": []
+}

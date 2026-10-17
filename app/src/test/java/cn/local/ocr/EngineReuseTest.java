@@ -160,7 +160,7 @@ public class EngineReuseTest {
         assertFalse(controller.store().markdown(saved,false).contains("原校对内容"));
         assertTrue(state.getBoolean("resultApplied"));
         assertEquals("其他区域",saved.getJSONArray("blocks").getJSONObject(1).getString("markdown"));
-        assertEquals("ovis",modelPreference.get());assertEquals("table",api.type);assertTrue(api.path.endsWith("assets/crop.png"));
+        assertEquals("ovis",modelPreference.get());assertEquals("table",api.type);assertTrue(api.path.endsWith("assets"+File.separator+"crop.png"));
         assertEquals(1,api.jobs);assertEquals(0,api.engines);assertFalse(controller.readiness().getBoolean("inUse"));
         assertEquals(started.getString("jobId"),state.getString("jobId"));
     }
@@ -205,5 +205,31 @@ public class EngineReuseTest {
         doc.put("regionRecognition",FilesUtil.obj("docId",id,"blockId","b1","jobId","lost","state","recognizing","sequence",100));controller.store().save(doc);
         JSONObject state=controller.regionStatus(id);assertEquals("failed",state.getString("state"));assertTrue(state.getLong("sequence")>100);
         assertEquals("succeeded",controller.status(id).getString("state"));
+    }
+    @Test public void replacementRunsOnlyLatestRequestAndOldFinalizationCannotOverwriteIt()throws Exception {
+        String first=regionDocument(),second=regionDocument();
+        java.util.concurrent.atomic.AtomicInteger runs=new java.util.concurrent.atomic.AtomicInteger();
+        RegionNative api=new RegionNative(){
+            @Override public int runRegion(long job,String path,String type)throws IOException {
+                if(runs.incrementAndGet()==1)return super.runRegion(job,path,type);
+                return 0;
+            }
+            @Override public void cancel(long job){cancelled=true;/* 模拟旧调用迟到返回 */}
+        };set("resources",api);
+        JSONObject old=controller.startRegion(first,"b1","glm");assertTrue(api.entered.await(3,java.util.concurrent.TimeUnit.SECONDS));
+        JSONObject middle=controller.startRegion(second,"b1","glm");
+        assertTrue(middle.getBoolean("switchTransition"));
+        JSONObject latest=controller.startRegion(second,"b1","glm");
+        assertEquals(latest.getString("jobId"),controller.regionStatus(second).getString("jobId"));
+        assertEquals(latest.getString("jobId"),controller.store().load(second).getJSONObject("regionRecognition").getString("jobId"));
+        assertThrows(IOException.class,()->controller.cancel(second,middle.getString("jobId")));
+        api.resume.countDown();finished();
+        assertEquals(2,runs.get());assertEquals("cancelled",controller.regionStatus(first).getString("state"));
+        assertEquals("replaced",controller.regionStatus(first).getString("cancellationReason"));
+        assertEquals("terminal",controller.regionStatus(first).getString("stage"));assertFalse(controller.regionStatus(first).getBoolean("liveOutput"));
+        assertEquals("succeeded",controller.regionStatus(second).getString("state"));assertEquals(latest.getString("jobId"),controller.regionStatus(second).getString("jobId"));
+        assertEquals("原校对内容",controller.store().load(first).getJSONObject("edits").getString("b1"));
+        assertEquals("新表格",controller.store().load(second).getJSONObject("edits").getString("b1"));
+        assertEquals(old.getString("jobId"),controller.regionStatus(first).getString("jobId"));
     }
 }

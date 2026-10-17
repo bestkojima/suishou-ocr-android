@@ -4,11 +4,11 @@ import{mkdir,readFile,writeFile,rm}from'node:fs/promises';
 import{spawn}from'node:child_process';
 import{unzipSync,strFromU8}from'fflate';
 const out=process.env.OCR_EVIDENCE_DIR||'web/test-results';await mkdir(out,{recursive:true});await rm(`${out}/failure.txt`,{force:true});await rm(`${out}/report.json`,{force:true});
-const port=4184;const server=spawn('python3',['-m','http.server',String(port),'--bind','127.0.0.1','--directory','web/dist'],{stdio:'ignore'});const origin=`http://127.0.0.1:${port}`;
+const port=Number(process.env.OCR_TEST_PORT||4184);const server=spawn(process.env.PYTHON||(process.platform==='win32'?'python':'python3'),['-m','http.server',String(port),'--bind','127.0.0.1','--directory','web/dist'],{stdio:'ignore'});const origin=`http://127.0.0.1:${port}`;
 const results=[],errors=[],requests=[];let browser;
 try{
  for(let n=0;n<50;n++){try{if((await fetch(origin)).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}
- browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/home/dr/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome',args:['--no-sandbox']});
+ browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
  const context=await browser.newContext({viewport:{width:412,height:892},acceptDownloads:true});const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url())&&!r.url().startsWith(origin))requests.push(r.url());});
  const check=async(name,fn)=>{await fn();results.push({name,passed:true});console.log('PASS',name);};
  await page.goto(origin);await page.waitForSelector('.sample-card');

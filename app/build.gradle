@@ -17,6 +17,10 @@ android {
         lab { dimension 'audience'; applicationIdSuffix '.test'; buildConfigField 'boolean', 'TEST_FEATURES', 'true'; resValue 'string', 'app_name', '随手识别 · 测试' }
     }
     buildFeatures { buildConfig true }
+    defaultConfig {
+        buildConfigField 'String', 'FEEDBACK_ENDPOINT', groovy.json.JsonOutput.toJson(providers.gradleProperty('feedbackEndpoint').getOrElse(''))
+        buildConfigField 'String', 'FEISHU_FEEDBACK_ENDPOINT', groovy.json.JsonOutput.toJson(providers.gradleProperty('feishuFeedbackEndpoint').getOrElse(''))
+    }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
     packaging {
         resources { excludes += ['META-INF/DEPENDENCIES','META-INF/LICENSE*','META-INF/NOTICE*','META-INF/INDEX.LIST'] }

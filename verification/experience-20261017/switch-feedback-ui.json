@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "environment": "Chromium mock bridge",
+  "checks": [
+    "取消终态覆盖旧 stream",
+    "待识别输入不展示结果反馈",
+    "无接收地址不假报成功",
+    "图片和 JSON 附件预览",
+    "草稿与包编号重开保留",
+    "失败重试使用同一反馈包",
+    "收到回执后禁用重复提交"
+  ],
+  "errors": []
+}

@@ -2,12 +2,12 @@ import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
 import {mkdir,writeFile} from 'node:fs/promises';
-const origin='http://127.0.0.1:4199';
-const server=spawn('python3',['-m','http.server','4199','--bind','127.0.0.1','--directory','web/dist'],{stdio:'ignore'});
+const port=Number(process.env.OCR_TEST_PORT||4199),origin=`http://127.0.0.1:${port}`;
+const server=spawn(process.env.PYTHON||(process.platform==='win32'?'python':'python3'),['-m','http.server',String(port),'--bind','127.0.0.1','--directory','web/dist'],{stdio:'ignore'});
 let browser;const errors=[],results=[];
 try {
  for(let i=0;i<50;i++){try{if((await fetch(origin)).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}
- browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||'/home/dr/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome',args:['--no-sandbox']});
+ browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
  const page=await browser.newPage({viewport:{width:375,height:812}});page.on('pageerror',e=>errors.push(e.message));
  await page.addInitScript(()=>{
   window.calls=[];window.job=0;window.unavailable='';window.modelsReady=true;window.delayStart=false;

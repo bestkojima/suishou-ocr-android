@@ -156,5 +156,5 @@ public final class DocumentStore {
         return FilesUtil.obj("schema_version","app-replay-1","pages",pages,"resources",resources);
     }
     static void put(ZipOutputStream zip,String name,byte[] data)throws Exception{zip.putNextEntry(new ZipEntry(name));zip.write(data);zip.closeEntry();}
-    static void zipAssets(ZipOutputStream zip,File root,File dir,Set<String> included)throws Exception{if(!dir.isDirectory())return;for(File f:dir.listFiles()){if(f.isDirectory())zipAssets(zip,root,f,included);else{String path=root.toPath().relativize(f.toPath()).toString();if(included.add(path))putFile(zip,path,f);}}}
+    static void zipAssets(ZipOutputStream zip,File root,File dir,Set<String> included)throws Exception{if(!dir.isDirectory())return;for(File f:dir.listFiles()){if(f.isDirectory())zipAssets(zip,root,f,included);else{String path=root.toPath().relativize(f.toPath()).toString().replace(File.separatorChar,'/');if(included.add(path))putFile(zip,path,f);}}}
 }

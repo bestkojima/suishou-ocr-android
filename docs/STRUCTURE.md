@@ -25,6 +25,14 @@
 3. APK 构建只由 Gradle `preBuild → bundleWeb → web/build.mjs`（首次自动准备 npm 依赖） 打包网页；`npm run build:apk` 不再提前重复执行网页构建。独立浏览器预览仍用 `npm run build:web`。
 4. Gradle 跟踪全部网页 `.mjs`、原始样本与生成目录；`build-info.json` 在复制 Android assets 前生成，使网页和 APK 内的构建信息一致。
 
+## 识别进程与反馈（2026-10-17）
+
+`RecognitionController` 在主进程串行调度并提交文档，`RecognitionWorker` 管理单代进程连接，`RecognitionService` 在非导出的 `:ocr` 进程持有 JNI 引擎。新请求终止旧进程，确认其退出后启动最新请求；正常完成则保留引擎。`IRemoteOcr` 是两个调用的 Binder 边界，大进度快照通过私有缓存传递以避开 Binder 大小限制。此实现不修改模型参数或原生流水线。
+
+`RecognitionFeedback` 负责冻结图片、原始 JSON 和描述，`FeedbackDelivery` 负责可配置主备接收及回执校验。页面入口和草稿位于 `web/recognition-feedback.jsx`；配置及未接入部分见 [识别反馈说明](RECOGNITION-FEEDBACK.md)。
+
+Windows 浏览器回归可通过 `PYTHON` 指向实际 Python 可执行文件，`CHROMIUM_PATH` 指向浏览器，`OCR_TEST_PORT` 避开本机保留端口。默认使用 Playwright 已安装的浏览器。
+
 ## 冗余处理标记
 
 以下是待合并项，不表示已经移除或验证过替代路径。

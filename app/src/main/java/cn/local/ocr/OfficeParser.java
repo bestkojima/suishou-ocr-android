@@ -30,7 +30,7 @@ public final class OfficeParser {
     static String resolvePart(String source,String target)throws IOException{
         if(target.contains(":")||target.contains("\\"))throw new IOException("无效 Office 关联路径");
         java.nio.file.Path path=target.startsWith("/")?java.nio.file.Paths.get(target.substring(1)):java.nio.file.Paths.get(source).getParent().resolve(target);
-        path=path.normalize();if(path.isAbsolute()||path.startsWith(".."))throw new IOException("Office 关联越界");return path.toString();
+        path=path.normalize();if(path.isAbsolute()||path.startsWith(".."))throw new IOException("Office 关联越界");return path.toString().replace(File.separatorChar,'/');
     }
     static String relsPath(String part){int slash=part.lastIndexOf('/');return part.substring(0,slash+1)+"_rels/"+part.substring(slash+1)+".rels";}
     public static void parse(File file,String ext,Sink sink)throws Exception{

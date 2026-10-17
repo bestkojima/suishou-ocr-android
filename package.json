@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build:web": "node web/build.mjs",
-    "test:web": "node web/verify.mjs && node web/verify-invoice-table.mjs && node web/verify-region-rerecognition.mjs",
+    "test:web": "node web/verify.mjs && node web/verify-invoice-table.mjs && node web/verify-region-rerecognition.mjs && node web/verify-switch-feedback.mjs",
     "preview": "python3 -m http.server 4174 --bind 127.0.0.1 --directory web/dist",
     "build:apk": "./gradlew assembleUserDebug assembleLabDebug",
     "test": "npm run test:web && ./gradlew testUserDebugUnitTest"

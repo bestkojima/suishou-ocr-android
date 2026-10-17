@@ -8,21 +8,23 @@ import java.io.*;
 import java.util.*;
 import java.util.concurrent.*;
 
-/** 应用级单作业控制；页面销毁不拥有引擎，也不取消推理。 */
+/** 应用级调度：最多一个运行作业和一个最新请求，推理资源属于独立进程。 */
 final class RecognitionController {
     interface NativeResources {
         void jobDestroy(long job) throws IOException;
         void destroy(long engine) throws IOException;
+        default long create(String config,String cache)throws IOException {return NativeOcr.create(config,cache);}
+        default int run(long job,String image)throws IOException {return NativeOcr.run(job,image);}
+        default boolean stopProcess()throws IOException {return false;}
+        default boolean invalidated(){return false;}
+        default NativeResources next()throws IOException {return this;}
         default long jobCreate(long engine)throws IOException {return NativeOcr.jobCreate(engine);}
         default int runRegion(long job,String image,String type)throws IOException {return NativeOcr.runRegion(job,image,type);}
         default String status(long job)throws IOException {return NativeOcr.status(job);}
         default void cancel(long job)throws IOException {NativeOcr.cancel(job);}
         default void export(long job,String directory)throws IOException {NativeOcr.export(job,directory);}
     }
-    private NativeResources resources=new NativeResources() {
-        public void jobDestroy(long job)throws IOException {NativeOcr.jobDestroy(job);}
-        public void destroy(long engine)throws IOException {NativeOcr.destroy(engine);}
-    };
+    private NativeResources resources;
     interface Listener { void changed(JSONObject state); }
     private static RecognitionController instance;
     static synchronized RecognitionController get(Context c) {
@@ -40,7 +42,15 @@ final class RecognitionController {
     private long engine, nativeJob, sequence;
     private int engineThreads;
     private String engineModel="";
-    private RecognitionController(Context c) { context=c;store=new DocumentStore(c);models=new RecognitionModels(c); }
+    private Pending pending;
+    private String cancellationReason="";
+    private static final class Pending {
+        final JSONObject state; final String policy,choice,type; final File image;
+        Pending(JSONObject state,String policy,String choice,String type,File image) {
+            this.state=state;this.policy=policy;this.choice=choice;this.type=type;this.image=image;
+        }
+    }
+    private RecognitionController(Context c) { context=c;store=new DocumentStore(c);models=new RecognitionModels(c);resources=new RecognitionWorker(c); }
     DocumentStore store() { return store; }
     void listen(Listener l) { listeners.add(l); }
     void unlisten(Listener l) { listeners.remove(l); }
@@ -61,42 +71,95 @@ final class RecognitionController {
             "unavailable",unavailable,"state",regionStatus(id));
     }
     synchronized JSONObject startRegion(String id,String blockId,String choice)throws Exception {
-        if(busy)throw new IOException("已有识别作业，请等待安全停止后再重新识别区域");
         if(DownloadService.active||DownloadService.reserved)throw new IOException("请先完成或暂停模型下载");
         models.profile(choice);
         JSONObject doc=store.load(id),block=RegionRetry.block(doc,blockId);
         File input=RegionRetry.input(store,doc,blockId);
-        busy=true;cancelled=false;nativeJob=0;
-        current=FilesUtil.obj("kind","region","docId",id,"blockId",blockId,"modelChoice",choice,
+        validateReplacement(choice);
+        JSONObject state=FilesUtil.obj("kind","region","docId",id,"blockId",blockId,"modelChoice",choice,
             "jobId",UUID.randomUUID().toString(),"state","preparing","message","正在准备区域识别","sequence",++sequence);
-        try{update("preparing","正在准备区域识别");}catch(Exception e){busy=false;current=null;throw e;}
-        final String type=block.getString("type"),jobId=current.getString("jobId");
-        inference.execute(()->runRegion(id,input,type,choice,jobId));
-        return new JSONObject(current.toString());
+        boolean replaced=enqueue(new Pending(state,"",choice,block.getString("type"),input));
+        return new JSONObject(state.toString()).put("switchTransition",replaced);
     }
     synchronized JSONObject start(String id,boolean again) throws Exception {
-        if(busy) throw new IOException("已有识别作业，请返回该文档或等待安全停止");
         JSONObject doc=store.load(id);
         if(DocumentCrop.pending(doc))throw new IOException("请先预览并确认文档裁剪，再开始识别");
         if(doc.optString("input").isEmpty()) throw new IOException("首轮仅支持已保存的单张图片");
         if(DownloadService.active||DownloadService.reserved) throw new IOException("请先完成或暂停模型下载，再开始识别");
+        if(pending!=null&&id.equals(pending.state.optString("sourceId"))&&!"region".equals(pending.state.optString("kind")))return store.load(pending.state.getString("docId"));
+        if(busy&&current!=null&&!cancelled&&id.equals(current.optString("docId"))&&!"region".equals(current.optString("kind")))return store.load(id);
+        String choice=models.modelChoice();
+        validateReplacement(choice);
         String imagePolicy=ImageInput.policy(context);
         if(doc.optString("mode").equals("real-ocr")) {
             if(!again) throw new IOException("已有识别结果，请使用重新识别另存新记录");
             doc=store.copyInput(doc);
         }
-        busy=true;cancelled=false;nativeJob=0;
-        current=FilesUtil.obj("docId",doc.getString("id"),"jobId",UUID.randomUUID().toString(),"state","preparing","message","正在检查模型下载状态","sequence",++sequence);
-        try{doc.put("recognition",new JSONObject(current.toString()));store.save(doc);}catch(Exception e){busy=false;current=null;throw e;}
-        String documentId=doc.getString("id");
-        inference.execute(()->run(documentId,imagePolicy));
-        return doc;
+        JSONObject state=FilesUtil.obj("docId",doc.getString("id"),"sourceId",id,"modelChoice",choice,"jobId",UUID.randomUUID().toString(),"state","preparing","message","正在准备识别","sequence",++sequence);
+        boolean replaced=enqueue(new Pending(state,imagePolicy,choice,"",null));
+        return store.load(doc.getString("id")).put("switchTransition",replaced);
+    }
+    private void validateReplacement(String choice)throws Exception {
+        if(busy&&!(engine!=0&&choice.equals(engineModel))&&!models.downloadedReadiness(choice).optString("state").equals("files-ready"))
+            throw new IOException("请先下载所选识别模型");
+    }
+    private boolean enqueue(Pending request)throws Exception {
+        boolean replaced=busy;
+        // 先保存新请求，再撤销旧任务；校验/落盘失败不会丢弃仍在执行的工作。
+        persistState(request.state);
+        if(pending!=null&&!request.state.optString("docId").equals(pending.state.optString("docId")))persistState(stoppedState(pending.state,"replaced"));
+        if(busy)stopCurrent("replaced");
+        pending=request;busy=true;
+        inference.execute(this::runNext);
+        return replaced;
+    }
+    private void runNext() {
+        Pending request;
+        try {
+            while(true) {
+                NativeResources next=resources.next();
+                synchronized(this) {
+                    // next() 与取得调度锁之间可能又发生取消，不能复活已经停止的代次。
+                    if(next.invalidated())continue;
+                    request=pending;if(request==null)return;
+                    if(resources.invalidated()){engine=0;engineThreads=0;engineModel="";}
+                    pending=null;resources=next;busy=true;cancelled=false;cancellationReason="";nativeJob=0;
+                    current=request.state;break;
+                }
+            }
+            if("region".equals(request.state.optString("kind")))runRegion(request.state.optString("docId"),request.image,request.type,request.choice,request.state.optString("jobId"));
+            else run(request.state.optString("docId"),request.policy);
+        } catch(Exception e) {
+            synchronized(this) {
+                try{if(pending!=null){JSONObject state=pending.state;state.put("state","failed").put("message",e.getMessage()).put("sequence",++sequence);persistState(state);}}catch(Exception ignored){}
+                pending=null;busy=false;
+            }
+        }
+    }
+    private JSONObject stoppedState(JSONObject state,String reason)throws Exception {
+        JSONObject result=new JSONObject(state.toString());
+        result.remove("stream");result.remove("result");
+        return result.put("state","cancelled").put("stage","terminal").put("liveOutput",false)
+            .put("cancellationReason",reason).put("sequence",++sequence)
+            .put("message",reason.equals("replaced")?"已停止，已切换到其他识别任务":"已取消，输入已保留；本次未完成结果未保存");
+    }
+    private void persistState(JSONObject state)throws Exception {
+        JSONObject doc=store.load(state.getString("docId"));
+        JSONObject persisted=new JSONObject(state.toString());persisted.remove("stream");persisted.remove("switchTransition");
+        doc.put("region".equals(state.optString("kind"))?"regionRecognition":"recognition",persisted);store.save(doc);
+    }
+    private void stopCurrent(String reason)throws Exception {
+        if(cancelled)return;
+        cancelled=true;cancellationReason=reason;
+        if(resources.stopProcess()){engine=0;nativeJob=0;engineThreads=0;engineModel="";readiness=FilesUtil.obj("state","files-ready","message","下次识别将加载模型");}
+        else if(nativeJob!=0)resources.cancel(nativeJob);
+        if(current!=null&&!current.optBoolean("resultSaved"))update("cancelling","正在停止识别");
     }
     JSONObject autoStart(JSONObject doc) throws Exception {
         if(DocumentCrop.pending(doc))return doc;
         if(!doc.optString("mode").equals("pending-ocr")||doc.optString("input").isEmpty()||doc.optJSONObject("recognition")!=null&&doc.getJSONObject("recognition").optString("state").equals("failed")) return doc;
         synchronized(this) {
-            if(busy||DownloadService.active||DownloadService.reserved) {
+            if(DownloadService.active||DownloadService.reserved) {
                 doc.put("recognition",FilesUtil.obj("state","waiting","message",busy?"输入已保存，已有识别作业；稍后可开始识别":"输入已保存，请完成模型下载后开始识别"));
                 store.save(doc);return doc;
             }
@@ -106,6 +169,7 @@ final class RecognitionController {
     synchronized JSONObject status(String id) throws Exception { return status(id,false); }
     synchronized JSONObject regionStatus(String id) throws Exception { return status(id,true); }
     private JSONObject status(String id,boolean region) throws Exception {
+        if(pending!=null&&id.equals(pending.state.optString("docId"))&&region=="region".equals(pending.state.optString("kind")))return new JSONObject(pending.state.toString());
         if(current!=null&&id.equals(current.optString("docId"))&&region=="region".equals(current.optString("kind"))) {
             if(nativeJob!=0&&!cancelled&&current.optString("state").equals("recognizing")) {
                 JSONObject status=new JSONObject(resources.status(nativeJob));
@@ -127,48 +191,48 @@ final class RecognitionController {
             if(!region&&doc.optString("mode").equals("real-ocr")) state.put("state",doc.optString("recognitionOutcome","succeeded")).put("resultSaved",true).put("message","识别结果已保存，已显示完整结果");
             else state.put("state","failed").put("message","上次识别随进程退出而停止，输入已保留，可重试");
             sequence=Math.max(sequence,state.optLong("sequence"))+1;
-            state.put("sequence",sequence);
+            state.remove("stream");state.put("liveOutput",false).put("stage","terminal").put("sequence",sequence);
             store.save(doc);
+        }
+        if(Arrays.asList("cancelled","failed","missing-models").contains(state.optString("state"))&&
+            (state.optBoolean("liveOutput")||state.has("stream")||!"terminal".equals(state.optString("stage")))) {
+            state.remove("stream");sequence=Math.max(sequence,state.optLong("sequence"))+1;
+            state.put("liveOutput",false).put("stage","terminal").put("sequence",sequence);store.save(doc);
         }
         return state;
     }
     synchronized JSONObject beginCrop(String id)throws Exception {
-        if(busy)throw new IOException("请先等待当前识别或加载作业结束，再调整裁剪");
         JSONObject doc=store.load(id);
         if(!doc.has("documentCrop"))throw new IOException("此记录没有拍照裁剪底图");
-        if(doc.optString("mode").equals("real-ocr"))doc=store.copyInput(doc);
+        if(doc.optString("mode").equals("real-ocr")||busy&&current!=null&&id.equals(current.optString("docId")))doc=store.copyInput(doc);
         if(current!=null&&doc.getString("id").equals(current.optString("docId")))current=null;
         return DocumentCrop.detect(store,DocumentCrop.begin(store,doc));
     }
     synchronized JSONObject previewCrop(String id,JSONArray points)throws Exception {
-        if(busy)throw new IOException("请先等待当前识别或加载作业结束");
         JSONObject doc=store.load(id);
         if(!DocumentCrop.pending(doc))throw new IOException("请先打开调整裁剪");
         return DocumentCrop.preview(store,doc,points,ImageInput.policy(context));
     }
     synchronized JSONObject confirmCrop(String id,String token)throws Exception {
-        if(busy)throw new IOException("请先等待当前识别或加载作业结束");
         JSONObject doc=DocumentCrop.confirm(store,store.load(id),token);
         return autoStart(doc);
     }
     synchronized JSONObject cancel(String id,String jobId) throws Exception {
+        if(pending!=null&&id.equals(pending.state.optString("docId"))&&jobId.equals(pending.state.optString("jobId"))) {
+            JSONObject state=stoppedState(pending.state,"user");persistState(state);pending=null;
+            if(current==null||!Arrays.asList("preparing","recognizing","saving","cancelling").contains(current.optString("state")))busy=false;
+            return state;
+        }
         if(!busy||current==null||!id.equals(current.optString("docId"))||!jobId.equals(current.optString("jobId"))) throw new IOException("该作业已结束或不是当前作业");
         if(current.optBoolean("resultSaved")) return new JSONObject(current.toString());
-        cancelled=true;
-        if(nativeJob!=0) {
-            JSONObject nativeState=new JSONObject(resources.status(nativeJob));
-            if(!nativeState.optBoolean("terminal")) {
-                try{resources.cancel(nativeJob);}catch(IOException e){if(!new JSONObject(resources.status(nativeJob)).optBoolean("terminal"))throw e;}
-            }
-        }
-        update("cancelling","正在安全停止，当前区域完成及资源清理后结束");
+        stopCurrent("user");
         return new JSONObject(current.toString());
     }
     synchronized JSONObject activate() throws Exception {
         if(busy) throw new IOException("已有识别或加载作业");
         if(DownloadService.active||DownloadService.reserved) throw new IOException("请先完成或暂停下载");
         busy=true;cancelled=false;current=null;readiness=FilesUtil.obj("state","loading","message","正在加载本地模型");
-        inference.execute(()->{try{prepare();}catch(Exception|LinkageError e){synchronized(this){readiness=FilesUtil.obj("state","load-failed","message","模型加载失败："+e.getMessage());}}finally{synchronized(this){busy=false;}}});
+        inference.execute(()->{try{NativeResources next=resources.next();synchronized(this){if(cancelled)return;resources=next;}prepare();}catch(Exception|LinkageError e){synchronized(this){if(!cancelled)readiness=FilesUtil.obj("state","load-failed","message","模型加载失败："+e.getMessage());}}finally{synchronized(this){if(resources.invalidated())engine=0;busy=pending!=null;}}});
         return readiness();
     }
     private boolean prepare() throws Exception { return prepare(models.modelChoice()); }
@@ -176,7 +240,7 @@ final class RecognitionController {
         synchronized(this) {
             if(engine!=0&&!choice.equals(engineModel.isEmpty()?models.modelChoice():engineModel))unloadIdleEngine();
             if(engine!=0) {
-                if(cancelled&&current!=null)return false;
+                if(cancelled)return false;
                 readiness=FilesUtil.obj("state","ready","message","引擎已加载，本次识别直接复用");
                 Log.i("OcrEngine","Reusing loaded production engine");
                 return true;
@@ -188,12 +252,12 @@ final class RecognitionController {
         Log.i("OcrEngine","Download readiness: "+(SystemClock.elapsedRealtime()-started)+" ms");
         synchronized(this){readiness=verified;}
         if(!verified.optString("state").equals("files-ready")) return false;
-        synchronized(this){if(cancelled&&current!=null)return false;readiness=FilesUtil.obj("state","loading","message","正在加载生产引擎");if(current!=null)update("preparing",readiness.getString("message"));}
+        synchronized(this){if(cancelled)return false;readiness=FilesUtil.obj("state","loading","message","正在加载生产引擎");if(current!=null)update("preparing",readiness.getString("message"));}
         if(engine==0) {
             started=SystemClock.elapsedRealtime();
             String config=models.config(choice);
-            long loaded=NativeOcr.create(config,context.getCacheDir().getPath());
-            synchronized(this){engine=loaded;engineModel=choice;engineThreads=new JSONObject(config).getJSONObject("platform").getInt("threads");}
+            long loaded=resources.create(config,context.getCacheDir().getPath());
+            synchronized(this){if(cancelled)return false;engine=loaded;engineModel=choice;engineThreads=new JSONObject(config).getJSONObject("platform").getInt("threads");}
             Log.i("OcrEngine","Production engine load: "+(SystemClock.elapsedRealtime()-started)+" ms");
         }
         synchronized(this){readiness=FilesUtil.obj("state","ready","message","本地引擎已实际加载，支持离线单图识别");}
@@ -202,9 +266,16 @@ final class RecognitionController {
     private synchronized void update(String state,String message) throws Exception {
         JSONObject next=new JSONObject(current.toString());
         next.put("state",state).put("message",message).put("sequence",++sequence);
+        if(!Arrays.asList("preparing","recognizing","cancelling","saving").contains(state)) {
+            next.remove("stream");next.put("liveOutput",false).put("stage","terminal");
+            if(state.equals("cancelled"))next=stoppedState(next,cancellationReason.isEmpty()?"user":cancellationReason);
+        }
         synchronized(store) {
             JSONObject doc=store.load(next.getString("docId"));
             boolean region="region".equals(next.optString("kind"));
+            JSONObject saved=doc.optJSONObject(region?"regionRecognition":"recognition");
+            // 同一文档连续重试时，新作业已落盘；旧作业的收尾不能覆盖它。
+            if(saved!=null&&!saved.optString("jobId").equals(next.optString("jobId"))){current=next;return;}
             if(region&&next.optBoolean("resultSaved")&&!next.optBoolean("resultApplied")&&
                 (state.equals("succeeded")||state.equals("partial")))RegionRetry.apply(doc,next);
             JSONObject persisted=new JSONObject(next.toString());persisted.remove("stream");
@@ -219,21 +290,22 @@ final class RecognitionController {
         try {
             synchronized(this){update("preparing","正在准备识别图片");}
             ImageInput.prepare(store,store.load(id),imagePolicy);
+            synchronized(this){if(cancelled)return;}
             if(!prepare()) { terminal="missing-models";message=readiness().getString("message");return; }
             synchronized(this) {
                 if(cancelled) {terminal="cancelled";message="已安全取消，输入已保留，可重试";return;}
-                nativeJob=NativeOcr.jobCreate(engine);update("recognizing","正在本地识别，阶段与区域进度来自引擎");
+                nativeJob=resources.jobCreate(engine);update("recognizing","正在本地识别，阶段与区域进度来自引擎");
             }
             JSONObject doc=store.load(id);
-            int code=NativeOcr.run(nativeJob,FilesUtil.child(store.dir(id),doc.getString("input")).getPath());
+            int code=resources.run(nativeJob,FilesUtil.child(store.dir(id),doc.getString("input")).getPath());
             synchronized(this) {
                 if(cancelled||code==7) {terminal="cancelled";message="已安全取消，输入已保留，可重试";return;}
-                if(code!=0) throw new IOException("引擎返回 "+code+"："+NativeOcr.status(nativeJob));
+                if(code!=0) throw new IOException("引擎返回 "+code+"："+resources.status(nativeJob));
                 status(id);
                 update("saving","识别已返回，正在保存完整结果和资源");
             }
-            File output=new File(store.dir(id),"recognized");FilesUtil.remove(output);output.mkdirs();
-            NativeOcr.export(nativeJob,output.getPath());
+            File output=FilesUtil.child(store.dir(id),"recognized/"+current.getString("jobId"));output.mkdirs();
+            resources.export(nativeJob,output.getPath());
             synchronized(this) {
                 if(cancelled){terminal="cancelled";message="已安全取消，输入已保留，可重试";return;}
                 JSONObject result=store.recognized(id,output);
@@ -249,10 +321,11 @@ final class RecognitionController {
                 // 不持有控制锁执行 native 清理；状态查询和取消仍能即时响应。
                 cleanupCompletedJob();
                 synchronized(this) {
+                    if(resources.invalidated())engine=0;
                     if(engine!=0) readiness=FilesUtil.obj("state","ready","message","引擎已加载，下次识别直接复用");
-                    if(cancelled){terminal="cancelled";message="已安全取消，输入已保留，可重试";}
+                    if(cancelled&&!current.optBoolean("resultSaved")){terminal="cancelled";message="已取消，输入已保留，可重试";}
                     current.remove("stream");
-                    update(terminal,message);busy=false;
+                    update(terminal,message);busy=pending!=null;
                 }
             } catch(Exception|LinkageError e) {
                 synchronized(this) {
@@ -294,8 +367,9 @@ final class RecognitionController {
             try {
                 cleanupCompletedJob();
                 synchronized(this) {
-                    if(cancelled){terminal="cancelled";message="已取消区域识别，原内容已保留";current.remove("result");}
-                    current.remove("stream");update(terminal,message);busy=false;
+                    if(resources.invalidated())engine=0;
+                    if(cancelled&&!current.optBoolean("resultSaved")){terminal="cancelled";message="已取消区域识别，原内容已保留";current.remove("result");}
+                    current.remove("stream");update(terminal,message);busy=pending!=null;
                 }
             } catch(Exception|LinkageError e) {
                 synchronized(this){try{update("failed","清理失败，请重启 App 后重试："+e.getMessage());}catch(Exception ignored){}}
@@ -315,7 +389,7 @@ final class RecognitionController {
         synchronized(this) {if(busy||engine==0)return;busy=true;handle=engine;}
         try {
             resources.destroy(handle);
-            synchronized(this){engine=0;engineThreads=0;engineModel="";busy=false;readiness=FilesUtil.obj("state","files-ready","message","为释放内存已卸载模型，下次识别会重新加载");}
+            synchronized(this){engine=0;engineThreads=0;engineModel="";busy=pending!=null;readiness=FilesUtil.obj("state","files-ready","message","为释放内存已卸载模型，下次识别会重新加载");}
         }catch(Exception|LinkageError e) {
             // 保留占用及句柄，避免清理失败后复用资源。
             synchronized(this){readiness=FilesUtil.obj("state","load-failed","message","模型卸载失败，请重启 App："+e.getMessage());}
@@ -372,6 +446,7 @@ final class RecognitionController {
         return ModelHub.summary(context);
     }
     synchronized void delete(String id) throws Exception {
+        if(pending!=null&&id.equals(pending.state.optString("docId")))throw new IOException("请先取消待启动的识别再删除输入");
         if(busy&&current!=null&&id.equals(current.optString("docId"))) throw new IOException("请先安全停止识别再删除输入");
         store.delete(id);
     }
