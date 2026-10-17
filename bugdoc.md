@@ -180,3 +180,59 @@ Status: ready-for-agent
 - BUG-002：实时尾窗检测短片段、标点循环与连续空编号；以 repetition 停止解码、保留证据、避免扩大 token 预算重试。正常重复表格行跳过结构片段检测；正常题号带正文不误停。
 - Linux 真实 Ovis 异常扫描页的三处循环已截停，其他 14 区正常继续且原始输出与此前逐字一致。此为保护措施，不宣称解决模型退化根因或所有异常续写。
 - 用户发票原图及 Titan_1 真机仍待验收；本轮未发布。详情见 [交付记录](verification/table-loop-fix/DELIVERY.md)。
+
+## 2026-10-17：真机全链路走查（Titan_1 / MT6897，Android 16）
+
+Status: ready-for-agent
+
+对 release 0.7.9-ocr 与本地 debug 构建做真机走查：设置、模型管理、历史、样本回放、区域排序、校对、导出（TXT/MD/ZIP/分享）、原图查看器、拍照→裁剪→识别引导、导入、返回键层级、快速连点。工具：Playwright over CDP（WebView 远程调试）+ adb。全部 30+ 场景零 JS 报错。
+
+### BUG-006：宽屏设备取景区把操作区挤出屏幕（本轮发现并已修复）
+
+Status: fixed
+
+- 现象：竖屏取景幅面（如 720×1280）以 `aspect-ratio` 直接铺满 800 CSS px 宽的平板 WebView，取景区高 1422px，拍照按钮、提示条被推出视口；此前 412px 宽视口的离线验证掩盖了该问题。
+- 修复：`web/app.jsx` 取景区样式改为 `width:min(100%, calc(58dvh * w / h))` + `flex:0 1 auto`，任何屏宽下取景区高度不超过 58dvh 且严格保持与成片一致的宽高比；同时 `cameraBounds` 上报 effect 加入 `cameraSize` 依赖，保证比例切换后原生 TextureView 重新布局（此前仅依赖 window resize，inline style 变化不触发）。
+- 验收：真机 800×1232 视口下 `.camera`/`.camera-hint`/`.capture-row`/`.sample-card` 全部 `bottom ≤ innerHeight`；启用相机后布局保持；拍照→裁剪全链路通过。
+
+### BUG-003 真机验收补充
+
+- 首页提示条已不在取景区内（位于取景区与拍照按钮之间）；取景框与拍摄范围一致（比例锁定）。
+- 遗留：取景幅面与成片同宽高比依赖原生 `previewSize` 选择逻辑，已在 debug 构建实测通过；建议在 release 版真机验收后关闭本条。
+
+### 走查发现的不足（待分诊）
+
+1. 添加模型仓库不校验存在性：`no-such-user-xyz/no-such-repo` 可静默加入列表，直到浏览/下载才暴露失败（web/models.jsx `addRepo` 仅做格式校验）。建议添加时调用 ModelScope API 预检。
+2. 未下载过文件的仓库卡片上"删除文件"按钮可点（确认后仅清除断点记录），建议与"暂停"一致按 `!live||无tasks` 禁用或隐藏。
+3. 每次打开样本回放都会新建一条文档记录（`sample()` 每次 `crypto.randomUUID()`），历史列表出现多条同名"中文 · 表格 · 四张插图"，无排序/搜索/批量清理。
+4. 后台进程被系统查杀（MTK `excessive binder traffic during cached`）：app 退后台后 WebView 仍有周期性 bridge 活动（模型状态每秒轮询），在 Titan_1 上约 1 分钟内被杀。前台使用无影响；建议 `onPause` 时暂停 models 轮询。
+5. （现象澄清，非缺陷）导出 TXT/MD/ZIP 点击后弹出系统"保存到"对话框，期间 sheet 保持打开、无额外提示，曾误判为无响应；实测保存后文件正常落盘（`Download/f1f5911d-….txt`，2289 B）。
+
+### 走查确认正常的能力
+
+设置（分辨率/Wi-Fi 开关对称切换）、模型库浏览（catalog 4 文件/已选 124.5MB 提示）、历史打开与删除取消、样本回放（暂停/继续/重新回放）、区域排序（上移/保存生效）、校对（textarea + 工具栏 + 区域重识别入口）、原图查看器（缩放 100%–400% 双向边界正确）、拍照→边界检测→手动四角→使用整张照片→预览裁剪→确认并识别（无模型时"开始识别"禁用 + 引导下载入口）、返回键层级（sheet/viewer/doc→退出）、无模型引导文案。
+
+### BUG-007：平板/横屏下取景区比例失真，画面上下被裁（本轮发现并已修复）
+
+Status: fixed
+
+- 现象：竖屏尚可，但平板上（1600×2560，dpr 2 → WebView 800×1232 CSS；横屏 1280×752）取景区被容器压成 327×398（比例 0.821），而相机预览幅面是 768×1024（比例 0.75）。`CameraController.transform()` 用 `Math.max` 做 CENTER_CROP，比例不一致时直接把画面**上下裁掉一大块** —— 用户看到的"上下显示不正常"。
+- 根因两条：
+  1. 取景区由 CSS `width:min(100%, 58dvh*w/h)` 决定，但在 flex/grid 容器中会被后续约束再压缩，`aspect-ratio` 被覆盖失效 → 真实比例失真。
+  2. 项目自带横屏响应式断点为 `@media(orientation:landscape) and (max-height:550px)`，**平板横屏高度 752 不满足 ≤550，侧栏布局从未触发**，控件仍按竖屏列排列，取景区被挤成小方块。
+- 修复：
+  - `web/app.jsx`：新增 `camBox` 精确计算 —— ResizeObserver 测量父容器与兄弟元素得到取景区真实可用空间，取 `h=min(可用高-8, 可用宽/比例)`，直接输出 **px 宽高**（不再依赖 `aspect-ratio` 在 flex 中生效）；`cameraBounds` 上报依赖从 `cameraSize` 改为 `camBox`，尺寸一变原生 TextureView 立即重新布局。
+  - `web/style.css`：横屏断点 `max-height:550px` → `900px`；grid 行改 `auto auto auto 1fr`，并显式给 `.camera-hint`/`.capture-row`/`.sample-card` 分配 `grid-column:2` 与行号（此前提示条被拉伸到 520px、样本卡片被挤出视口）；首行由固定 64px 改 auto（消除取景区与顶栏 8px 重叠）；横屏顶栏 padding 压缩 + h1 20px，把高度让给取景区。
+- 验收（真机 Titan_1，物理 1600×2560）：
+
+  | 方向 | 修复前 | 修复后 |
+  |---|---|---|
+  | 竖屏 800×1232 | 536×715，比例 0.75 | **653×870，比例 0.7506**（面积 +38%） |
+  | 横屏 1280×752 | 327×398，比例 **0.821（失真，上下被裁）** | **505×674，比例 0.7493** |
+
+  - 物理截图像素分析：取景区内平均亮度 69.5、标准差 59.4、56 种颜色，四条边缘均有明暗变化 → 画面铺满、无黑边、未被 UI 遮挡。
+  - 拍照 → 边界裁剪 → 使用整张照片 → 结果页全链路通过，零 JS 报错；无模型时"开始识别"正确禁用并给出下载入口。
+
+### 环境备注
+
+- 本机 `web/build.mjs` 直写 `web/dist/app.js` 被安全策略拦截；改用外部输出目录 `D:/app/webbuild` 构建后再 `cp` 进 `app/src/main/assets/web/`，效果一致。

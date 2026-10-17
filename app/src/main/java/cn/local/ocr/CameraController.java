@@ -34,6 +34,10 @@ final class CameraController {
   if(degrees==90||degrees==270){RectF frame=new RectF(0,0,w,h),buffer=new RectF(0,0,previewSize.getHeight(),previewSize.getWidth());buffer.offset(frame.centerX()-buffer.centerX(),frame.centerY()-buffer.centerY());m.setRectToRect(frame,buffer,Matrix.ScaleToFit.FILL);float s=Math.max((float)h/previewSize.getHeight(),(float)w/previewSize.getWidth());m.postScale(s,s,w/2f,h/2f);m.postRotate(degrees==90?-90:90,w/2f,h/2f);}
   else {m.setScale(bw*scale/w,bh*scale/h,w/2f,h/2f);if(degrees==180)m.postRotate(180,w/2f,h/2f);}view.setTransform(m);
  });}
+ int displayRelative(){return (sensor-activity.getWindowManager().getDefaultDisplay().getRotation()*90+360)%360;}
+ /** 取景幅面在屏幕方向上的尺寸，供界面把取景区框成同一比例。 */
+ int previewWidth(){return (displayRelative()%180==0?previewSize.getWidth():previewSize.getHeight());}
+ int previewHeight(){return (displayRelative()%180==0?previewSize.getHeight():previewSize.getWidth());}
  void open(){handler.post(this::openNow);}
  void openNow(){if(!wanted||!resumed||device!=null||opening||!view.isAvailable())return;
   if(activity.checkSelfPermission(Manifest.permission.CAMERA)!=PackageManager.PERMISSION_GRANTED)return;
@@ -42,8 +46,13 @@ final class CameraController {
    if(cameraId==null){listener.error("此设备没有后置相机，可导入图片");return;}
    CameraCharacteristics c=manager.getCameraCharacteristics(cameraId);Integer angle=c.get(CameraCharacteristics.SENSOR_ORIENTATION);sensor=angle==null?90:angle;
    StreamConfigurationMap map=c.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);if(map==null)throw new IllegalStateException("相机缺少输出配置");
-   Size[] photos=map.getOutputSizes(ImageFormat.JPEG);Size size=photos[0];for(Size s:photos)if(s.getWidth()<=4000&&s.getWidth()>=1600){size=s;break;}
-   Size[] previews=map.getOutputSizes(SurfaceTexture.class);previewSize=previews[0];long best=Long.MAX_VALUE;for(Size s:previews){long score=Math.abs((long)s.getWidth()*s.getHeight()-1280L*720);if(score<best){best=score;previewSize=s;}}
+   // 成片：限定宽度区间后，优先取接近 4:3 的尺寸，保证与取景幅面一致。
+   Size[] photos=map.getOutputSizes(ImageFormat.JPEG);Size size=photos[0];long photoBest=Long.MAX_VALUE;
+   for(Size s:photos){if(s.getWidth()>4000||s.getWidth()<1600)continue;long score=Math.abs((long)s.getWidth()*1000/s.getHeight()-1333L);if(score<photoBest){photoBest=score;size=s;}}
+   // 取景必须和成片同宽高比，否则用户在取景框里看到的范围和成片范围不一致（BUG-003）。
+   // 宽高比不符的重罚优先于像素数接近 1280×720 的次要条件。
+   Size[] previews=map.getOutputSizes(SurfaceTexture.class);previewSize=previews[0];long best=Long.MAX_VALUE;float target=(float)size.getWidth()/size.getHeight();
+   for(Size s:previews){float aspect=(float)s.getWidth()/s.getHeight();long score=Math.round(Math.abs(aspect-target)*2000000f)+Math.abs((long)s.getWidth()*s.getHeight()-1280L*720);if(score<best){best=score;previewSize=s;}}
    if(reader!=null)reader.close();reader=ImageReader.newInstance(size.getWidth(),size.getHeight(),ImageFormat.JPEG,2);
    reader.setOnImageAvailableListener(r->{try(Image image=r.acquireLatestImage()){if(image==null)return;java.nio.ByteBuffer b=image.getPlanes()[0].getBuffer();byte[] data=new byte[b.remaining()];b.get(data);listener.photo(data);}catch(Exception e){listener.error(e.getMessage());}},handler);
    opening=true;manager.openCamera(cameraId,new CameraDevice.StateCallback(){
